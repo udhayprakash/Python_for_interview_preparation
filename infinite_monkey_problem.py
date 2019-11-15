@@ -17,8 +17,9 @@ Sample Output:
 """
 import re
 
+
 def spaces_required_to_make_number(given_no, favourite_nums):
-    favourite_nums.sort(key= lambda x:len(x), reverse=True)
+    favourite_nums.sort(key=lambda x: len(x), reverse=True)
 
     result = []
     for ech_number in favourite_nums:
@@ -31,7 +32,8 @@ def spaces_required_to_make_number(given_no, favourite_nums):
                 given_no = given_no[:m.start()] + given_no[m.end():]
 
     # print(result, len(result) -1)
-    return len(result) -1
+    return len(result) - 1
+
 
 if __name__ == '__main__':
     assert spaces_required_to_make_number(
