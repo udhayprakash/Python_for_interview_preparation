@@ -18,7 +18,7 @@ def find_fixed_point_linear_search(arr):
             return ind
         elif arr[ind] > ind:
             return False
-    
+
     return False
 
 
@@ -34,16 +34,16 @@ def find_fixed_point_binary_search(arr):
             left = mid + 1
         else:
             return False
-    
+
     return False
 
 
 def main():
-    print(find_fixed_point_linear_search([-6, 0, 2, 40]))      # 2
-    print(find_fixed_point_linear_search([1, 5, 7, 8]))        # False
+    print(find_fixed_point_linear_search([-6, 0, 2, 40]))  # 2
+    print(find_fixed_point_linear_search([1, 5, 7, 8]))  # False
     print()
-    print(find_fixed_point_binary_search([-6, 0, 2, 40]))      # 2
-    print(find_fixed_point_binary_search([1, 5, 7, 8]))        # False
+    print(find_fixed_point_binary_search([-6, 0, 2, 40]))  # 2
+    print(find_fixed_point_binary_search([1, 5, 7, 8]))  # False
 
 
 if __name__ == "__main__":

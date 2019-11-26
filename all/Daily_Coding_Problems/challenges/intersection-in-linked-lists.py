@@ -12,13 +12,15 @@ Do this in O(M + N) time (where M and N are the lengths of the lists) and consta
 
 """
 
+
 class Node:
     def __init__(self, val, next=None):
         self.val = val
         self.next = next
-    
+
     def __str__(self):
         return str(self.val)
+
 
 def findIntersection(A, B):
     visitedIDs = set()
@@ -27,7 +29,7 @@ def findIntersection(A, B):
     while currentNode != None:
         visitedIDs.add(id(currentNode))
         currentNode = currentNode.next
-    
+
     print(visitedIDs)
 
     currentNode = B
@@ -37,11 +39,11 @@ def findIntersection(A, B):
             return currentNode
         visitedIDs.add(currentID)
         currentNode = currentNode.next
-    
-    return None
-    
-if __name__ == "__main__":
 
+    return None
+
+
+if __name__ == "__main__":
     A = Node(3, Node(7, Node(8, Node(10))))
     B = Node(99, Node(1, A.next.next))
 

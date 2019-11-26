@@ -14,12 +14,12 @@ Each operation should run in O(1) time.
 """
 
 
-class LRUCache():
+class LRUCache:
     def __init__(self, capacity):
         self.cache = dict()
         self.orderList = []
         self.capacity = capacity
-    
+
     def set(self, key, value):
         if key in self.cache:
             # Key is in cache, mark it as recently used item.
@@ -31,10 +31,10 @@ class LRUCache():
                 leastRecent = self.orderList.pop(0)
                 del self.cache[leastRecent]
             self.orderList.append(key)
-        
+
         # Setting the (new) key and value
         self.cache[key] = value
-    
+
     def get(self, key):
         if key in self.cache:
             # Mark item as recently used
@@ -47,16 +47,15 @@ class LRUCache():
 
 def main():
     lruCache = LRUCache(2)
-    lruCache.set(1,1)
-    lruCache.set(2,2)
+    lruCache.set(1, 1)
+    lruCache.set(2, 2)
     print(lruCache.get(1))
-    lruCache.set(3,3)
+    lruCache.set(3, 3)
     print(lruCache.get(2))
-    lruCache.set(4,4)
+    lruCache.set(4, 4)
     print(lruCache.get(1))
     print(lruCache.get(3))
-    print(lruCache.get(4))    
-
+    print(lruCache.get(4))
 
 
 if __name__ == "__main__":

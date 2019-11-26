@@ -14,19 +14,19 @@ return either ['bed', 'bath', 'and', 'beyond] or ['bedbath', 'and', 'beyond'].
 """
 validSentences = []
 
+
 def parseSentenceString(dictionary, sentenceString, currWords):
     currWord = ""
 
     if sentenceString == []:
         validSentences.append(currWords)
-    
+
     for i in range(len(sentenceString)):
         letter = sentenceString[i]
         currWord += letter
         if currWord in dictionary:
-            parseSentenceString(dictionary, sentenceString[i+1:], currWords+[currWord])
-        
-        
+            parseSentenceString(dictionary, sentenceString[i + 1:], currWords + [currWord])
+
 
 def findValidSentences(dictionary, sentenceString):
     global validSentences
@@ -38,6 +38,7 @@ def findValidSentences(dictionary, sentenceString):
     if validSentences:
         return validSentences
     return None
+
 
 if __name__ == "__main__":
     dictionary = ['bed', 'bath', 'bedbath', 'and', 'beyond']

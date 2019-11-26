@@ -8,23 +8,28 @@ By the pigeonhole principle, there must be a duplicate. Find it in linear time a
 """
 import random
 
+
 def generateList():
-    n = random.randint(10,100)
-    l = [x for x in range(1,n)]
+    n = random.randint(10, 100)
+    l = [x for x in range(1, n)]
     l.append(random.choice(l))
     random.shuffle(l)
     return l
 
+
 def summationTillN(n):
-    return int(n*(n+1)/2)
+    return int(n * (n + 1) / 2)
+
 
 def findDuplicate(l):
     actualSum = sum(l)
-    expectedSum = summationTillN(len(l)-1)
+    expectedSum = summationTillN(len(l) - 1)
     return actualSum - expectedSum
 
+
 def findDuplicateUsingCount(l):
-    return [x for x in l if l.count(x)==2][0]
+    return [x for x in l if l.count(x) == 2][0]
+
 
 def main():
     testCaseCount = 10
@@ -42,11 +47,12 @@ def main():
         except:
             print("Error:", listWithDuplicate, duplicateValue, duplicateValueUsingCount)
             testCasesFailed += 1
-    
+
     print()
     print("Total test cases:", testCaseCount)
     print("Test cases passed:", testCasesPassed)
     print("Test cases failed:", testCasesFailed)
+
 
 if __name__ == "__main__":
     main()

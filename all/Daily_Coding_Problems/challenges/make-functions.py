@@ -23,33 +23,39 @@ What will this code print out?
 How can we make it print out what we apparently want?
 """
 
+
 def make_functions():
     flist = []
 
-    for i in [1,2,3]:
+    for i in [1, 2, 3]:
         def print_i():
             print(i)
+
         flist.append(print_i)
-    
+
     return flist
+
 
 def make_functions_modified():
     flist = []
 
-    for i in [1,2,3]:
+    for i in [1, 2, 3]:
         def print_i(i=i):
             print(i)
+
         flist.append(print_i)
-    
+
     return flist
+
 
 def make_lambdas():
     llist = []
 
-    for i in [1,2,3]:
+    for i in [1, 2, 3]:
         llist.append(lambda i=i: print(i))
-    
+
     return llist
+
 
 def main():
     functions = make_functions()
@@ -92,7 +98,7 @@ def main():
     Explanation:
     Use lambdas to achieve the same functionality using anonymous functions.
     """
-    
+
 
 if __name__ == "__main__":
     main()

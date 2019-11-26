@@ -8,21 +8,23 @@ For example, given the list of points [(0, 0), (5, 4), (3, 1)], the central poin
 
 from heapq import heappush, heappop
 
+
 def distanceSquare(a, b):
-    return (a[0]-b[0])**2 + (a[1]-b[1])**2
+    return (a[0] - b[0]) ** 2 + (a[1] - b[1]) ** 2
+
 
 def kNearestPointsUsingHeap(points, centralPoint, k):
     h = []
 
     for point in points:
-        heappush(h,(distanceSquare(point,centralPoint),point))
-    
+        heappush(h, (distanceSquare(point, centralPoint), point))
+
     return [heappop(h)[1] for _ in range(k)]
 
 
 def main():
-    points = [(0,0), (5,4), (3,1)]
-    centralPoint = (1,2)
+    points = [(0, 0), (5, 4), (3, 1)]
+    centralPoint = (1, 2)
     k = 2
 
     print(kNearestPointsUsingHeap(points, centralPoint, k))

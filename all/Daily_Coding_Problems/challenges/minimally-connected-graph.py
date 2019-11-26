@@ -9,6 +9,7 @@ Given an undirected graph, check if the graph is minimally-connected.
 You can choose to represent the graph as either an adjacency matrix or adjacency list.
 """
 
+
 def hasCycleHelper(adjacencyMatrix, visitedNodes):
     # print(visitedNodes)
     for nodeIndex in range(len(adjacencyMatrix)):
@@ -18,11 +19,11 @@ def hasCycleHelper(adjacencyMatrix, visitedNodes):
                 return True
             if len(visitedNodes) > 1 and nodeIndex == visitedNodes[-2]:
                 continue
-            if hasCycleHelper(adjacencyMatrix, visitedNodes+[nodeIndex]):
+            if hasCycleHelper(adjacencyMatrix, visitedNodes + [nodeIndex]):
                 # print(visitedNodes, nodeIndex)
                 return True
     return False
-            
+
 
 def hasCycle(adjacencyMatrix):
     return hasCycleHelper(adjacencyMatrix, [0])
@@ -35,7 +36,8 @@ def isMinimallyConnected(adjacencyMatrix):
         Max(row) > 1            =>  Parallel Edge
         Max([row[i][i]]) != 0   =>  Self Loop 
     """
-    if min([max(row) for row in adjacencyMatrix]) != 1 or max([max(row) for row in adjacencyMatrix]) != 1 or max([adjacencyMatrix[i][i] for i in range(len(adjacencyMatrix))]) != 0:
+    if min([max(row) for row in adjacencyMatrix]) != 1 or max([max(row) for row in adjacencyMatrix]) != 1 or max(
+            [adjacencyMatrix[i][i] for i in range(len(adjacencyMatrix))]) != 0:
         return False
 
     # Checking for cycles
@@ -54,15 +56,14 @@ def main():
       3     4
     """
     adjacencyMatrix = [
-       # 0  1  2  3  4
-        [0, 1, 1, 0, 0], #0
-        [0, 0, 0, 1, 1], #1
-        [1, 0, 0, 0, 0], #2
-        [0, 1, 0, 0, 0], #3
-        [0, 1, 0, 0, 0], #4
+        # 0  1  2  3  4
+        [0, 1, 1, 0, 0],  # 0
+        [0, 0, 0, 1, 1],  # 1
+        [1, 0, 0, 0, 0],  # 2
+        [0, 1, 0, 0, 0],  # 3
+        [0, 1, 0, 0, 0],  # 4
     ]
-    print(isMinimallyConnected(adjacencyMatrix)) # True
-
+    print(isMinimallyConnected(adjacencyMatrix))  # True
 
     """
     Graph with cycle
@@ -73,12 +74,12 @@ def main():
         1 — — — 2
     """
     adjacencyMatrix = [
-       # 0  1  2
-        [0, 1, 1], #0
-        [1, 0, 1], #1
-        [1, 1, 0], #2
+        # 0  1  2
+        [0, 1, 1],  # 0
+        [1, 0, 1],  # 1
+        [1, 1, 0],  # 2
     ]
-    print(isMinimallyConnected(adjacencyMatrix)) # False
+    print(isMinimallyConnected(adjacencyMatrix))  # False
 
     """
     Graph with parallel edge
@@ -89,12 +90,12 @@ def main():
         1        2
     """
     adjacencyMatrix = [
-       # 0  1  2
-        [0, 2, 1], #0
-        [2, 0, 0], #1
-        [1, 0, 0], #2
+        # 0  1  2
+        [0, 2, 1],  # 0
+        [2, 0, 0],  # 1
+        [1, 0, 0],  # 2
     ]
-    print(isMinimallyConnected(adjacencyMatrix)) # False
+    print(isMinimallyConnected(adjacencyMatrix))  # False
 
     """
     Graph with self loop
@@ -108,12 +109,12 @@ def main():
                  — — —                
     """
     adjacencyMatrix = [
-       # 0  1  2
-        [0, 1, 1], #0
-        [1, 0, 0], #1
-        [1, 0, 1], #2
+        # 0  1  2
+        [0, 1, 1],  # 0
+        [1, 0, 0],  # 1
+        [1, 0, 1],  # 2
     ]
-    print(isMinimallyConnected(adjacencyMatrix)) # False
+    print(isMinimallyConnected(adjacencyMatrix))  # False
 
     """
     Graph with isolated vertex
@@ -126,13 +127,13 @@ def main():
            2
     """
     adjacencyMatrix = [
-       # 0  1  2  3
-        [0, 1, 0, 0], #0
-        [1, 0, 1, 0], #1
-        [0, 1, 0, 0], #2
-        [0, 0, 0, 0], #3
+        # 0  1  2  3
+        [0, 1, 0, 0],  # 0
+        [1, 0, 1, 0],  # 1
+        [0, 1, 0, 0],  # 2
+        [0, 0, 0, 0],  # 3
     ]
-    print(isMinimallyConnected(adjacencyMatrix)) # False
+    print(isMinimallyConnected(adjacencyMatrix))  # False
 
 
 if __name__ == "__main__":

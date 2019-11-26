@@ -8,10 +8,12 @@ Hint: The basic equation of a circle is x2 + y2 = r2.
 
 """
 
-import random, math
+import random
+
 
 def isInsideCircle(x, y):
-    return x*x + y*y <= 0.5*0.5
+    return x * x + y * y <= 0.5 * 0.5
+
 
 if __name__ == "__main__":
     NO_OF_POINTS = 10000000
@@ -22,9 +24,8 @@ if __name__ == "__main__":
         x = random.uniform(-0.5, 0.5)
         y = random.uniform(-0.5, 0.5)
 
-        if isInsideCircle(x,y):
+        if isInsideCircle(x, y):
             insideTheCircleCount += 1
-        
 
-    pi = 4 * insideTheCircleCount/ NO_OF_POINTS
-    print("%.3f" %pi)
+    pi = 4 * insideTheCircleCount / NO_OF_POINTS
+    print("%.3f" % pi)

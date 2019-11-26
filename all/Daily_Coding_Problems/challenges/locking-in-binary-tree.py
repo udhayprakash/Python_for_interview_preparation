@@ -18,6 +18,7 @@ Each method should run in O(h), where h is the height of the tree.
 
 """
 
+
 class Node:
     def __init__(self, val, parent=None, left=None, right=None):
         self.val = val
@@ -25,13 +26,13 @@ class Node:
         self.left = left
         self.right = right
         self.locked = False
-    
+
     def __str__(self):
         return "<" + str(self.val) + ">"
-    
+
     def is_locked(self):
         return self.locked
-    
+
     def checkAncestors(self):
         if self.locked:
             return False
@@ -40,7 +41,7 @@ class Node:
             return True
 
         return self.parent.checkAncestors()
-    
+
     def checkDescendants(self):
         if self.locked:
             return False
@@ -50,29 +51,31 @@ class Node:
     def lock(self):
         if self.locked:
             return False
-        
-        if (not self.parent or self.parent.checkAncestors()) or ((not self.left or self.left.checkDescendants()) and (not self.right or self.right.checkDescendants())):
+
+        if (not self.parent or self.parent.checkAncestors()) or (
+                (not self.left or self.left.checkDescendants()) and (not self.right or self.right.checkDescendants())):
             self.locked = True
-            print("Locked "+str(self))
+            print("Locked " + str(self))
             return True
-        
-        print("Cannot lock "+str(self))
+
+        print("Cannot lock " + str(self))
         return False
-    
+
     def unlock(self):
         if self.locked == False:
             return False
-        
-        if (not self.parent or self.parent.checkAncestors()) or ((not self.left or self.left.checkDescendants()) and (not self.right or self.right.checkDescendants())):
+
+        if (not self.parent or self.parent.checkAncestors()) or (
+                (not self.left or self.left.checkDescendants()) and (not self.right or self.right.checkDescendants())):
             self.locked = False
-            print("Unlocked "+str(self))
+            print("Unlocked " + str(self))
             return True
-        
-        print("Cannot unlock "+str(self))
+
+        print("Cannot unlock " + str(self))
         return False
 
+
 if __name__ == "__main__":
-    
     """
            4
           / \

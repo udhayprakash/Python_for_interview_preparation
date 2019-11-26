@@ -22,17 +22,20 @@ it should become:
 You can assume keys do not contain dots in them, i.e. no clobbering will occur.
 """
 
+
 def flattenDictionaryHelper(nestedDict, flattenedDic, currentKey):
     for key in nestedDict.keys():
         if type(nestedDict[key]) == int:
-            flattenedDic[(currentKey+"."+key).strip(".")] = nestedDict[key]
+            flattenedDic[(currentKey + "." + key).strip(".")] = nestedDict[key]
         else:
-            flattenedDic = flattenDictionaryHelper(nestedDict[key], flattenedDic, (currentKey+"."+key).strip('.'))
-    
+            flattenedDic = flattenDictionaryHelper(nestedDict[key], flattenedDic, (currentKey + "." + key).strip('.'))
+
     return flattenedDic
+
 
 def flattenDictionary(nestedDic):
     return flattenDictionaryHelper(nestedDic, dict(), "")
+
 
 def main():
     nestedDictionary = {
@@ -47,6 +50,7 @@ def main():
 
     flattenedDictionary = flattenDictionary(nestedDictionary)
     print(flattenedDictionary)
+
 
 if __name__ == "__main__":
     main()

@@ -22,6 +22,7 @@ and k = 16, you should return the following:
 
 """
 
+
 # Using "-" instead of " " for clarity in output
 def justify(wordList, k):
     print(wordList)
@@ -36,24 +37,24 @@ def justify(wordList, k):
         if wordList:
             newWordFlag = True
             currentWord = wordList.pop(0)
-        
-        if currentLength + len(currentWord) + 1 <= k+1 and newWordFlag:
+
+        if currentLength + len(currentWord) + 1 <= k + 1 and newWordFlag:
             currentWordList.append(currentWord)
             currentLength += len(currentWord) + 1
         else:
-            unusedSpace = k-(currentLength-1)
+            unusedSpace = k - (currentLength - 1)
 
             try:
-                extraEvenSpaces = unusedSpace // (len(currentWordList)-1)
+                extraEvenSpaces = unusedSpace // (len(currentWordList) - 1)
             except:
                 break
 
-            currentSpaceList = ["-"]*(len(currentWordList)-1)
+            currentSpaceList = ["-"] * (len(currentWordList) - 1)
 
             for i in range(len(currentSpaceList)):
-                currentSpaceList[i] += "-"*extraEvenSpaces
+                currentSpaceList[i] += "-" * extraEvenSpaces
 
-            extraUnevenSpaces = unusedSpace%len(currentSpaceList)
+            extraUnevenSpaces = unusedSpace % len(currentSpaceList)
 
             for i in range(extraUnevenSpaces):
                 currentSpaceList[i] += "-"
@@ -63,26 +64,28 @@ def justify(wordList, k):
             while currentSpaceList:
                 currentLine += currentWordList.pop(0) + currentSpaceList.pop(0)
             currentLine += currentWordList.pop(0)
-            
+
             justifiedLineList.append(currentLine)
 
             if newWordFlag:
                 currentWordList = [currentWord]
                 currentLength = len(currentWord) + 1
-            
+
             if not wordList:
                 break
-    
+
     if currentWordList:
-        lastLine = currentWordList[0] + "-"*(k-len(currentWordList[0]))
+        lastLine = currentWordList[0] + "-" * (k - len(currentWordList[0]))
         justifiedLineList.append(lastLine)
 
     return justifiedLineList
+
 
 def printJustifiedText(justifiedLineList):
     for line in justifiedLineList:
         print(line)
     print()
+
 
 def main():
     wordList = ["the", "quick", "brown", "fox", "jumps", "over", "the", "lazy", "dog"]
@@ -92,6 +95,7 @@ def main():
         tempWordList = wordList[:]
         printJustifiedText(justify(tempWordList, k))
         wordList.pop()
+
 
 if __name__ == "__main__":
     main()

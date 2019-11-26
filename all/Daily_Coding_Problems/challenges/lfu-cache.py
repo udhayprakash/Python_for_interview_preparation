@@ -21,19 +21,18 @@ class LFUCache:
         self.countDict = dict()
         self.grouping = dict()
         self.capacity = capacity
-        
 
     def get(self, key: int) -> int:
         if key in self.cache:
             currentCount = self.countDict[key]
-            self.countDict[key] = currentCount+1
+            self.countDict[key] = currentCount + 1
             self.grouping[currentCount].remove(key)
             if len(self.grouping[currentCount]) == 0:
                 del self.grouping[currentCount]
-            if currentCount+1 in self.grouping:
-                self.grouping[currentCount+1].append(key)
+            if currentCount + 1 in self.grouping:
+                self.grouping[currentCount + 1].append(key)
             else:
-                self.grouping[currentCount+1] = [key]
+                self.grouping[currentCount + 1] = [key]
             return self.cache[key]
         else:
             return -1
@@ -44,14 +43,14 @@ class LFUCache:
         if key in self.cache:
             self.cache[key] = value
             currentCount = self.countDict[key]
-            self.countDict[key] = currentCount+1
+            self.countDict[key] = currentCount + 1
             self.grouping[currentCount].remove(key)
             if len(self.grouping[currentCount]) == 0:
                 del self.grouping[currentCount]
-            if currentCount+1 in self.grouping:
-                self.grouping[currentCount+1].append(key)
+            if currentCount + 1 in self.grouping:
+                self.grouping[currentCount + 1].append(key)
             else:
-                self.grouping[currentCount+1] = [key]
+                self.grouping[currentCount + 1] = [key]
         else:
             if len(self.countDict) >= self.capacity:
                 lfuCount = min(self.grouping.keys())
@@ -67,37 +66,38 @@ class LFUCache:
             else:
                 self.grouping[1] = [key]
             self.countDict[key] = 1
-    
+
     def __str__(self):
-        return "Capacity: {}\nCache: {}\nCount Dict: {}\nGrouping Dict: {}\n".format(self.capacity, self.cache, self.countDict, self.grouping)
+        return "Capacity: {}\nCache: {}\nCount Dict: {}\nGrouping Dict: {}\n".format(self.capacity, self.cache,
+                                                                                     self.countDict, self.grouping)
 
 
 def main():
     lfuCache = LFUCache(2)
     print(lfuCache)
-    
-    lfuCache.put(1,1)
+
+    lfuCache.put(1, 1)
     print(lfuCache)
-    
-    lfuCache.put(2,2)
-    print(lfuCache)
-    
-    print(lfuCache.get(1))
-    
-    lfuCache.put(3,3)
-    print(lfuCache)
-    
-    print(lfuCache.get(2))
-    
-    print(lfuCache.get(3))
-    
-    lfuCache.put(4,4)
+
+    lfuCache.put(2, 2)
     print(lfuCache)
 
     print(lfuCache.get(1))
-    
+
+    lfuCache.put(3, 3)
+    print(lfuCache)
+
+    print(lfuCache.get(2))
+
     print(lfuCache.get(3))
-    
+
+    lfuCache.put(4, 4)
+    print(lfuCache)
+
+    print(lfuCache.get(1))
+
+    print(lfuCache.get(3))
+
     print(lfuCache.get(4))
 
 
