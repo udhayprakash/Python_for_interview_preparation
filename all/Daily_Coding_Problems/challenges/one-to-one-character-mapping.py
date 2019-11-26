@@ -10,17 +10,19 @@ Given s1 = foo and s2 = bar, return false since the o cannot map to two characte
 
 """
 
+
 def formCharCountMap(s):
     charCountMap = dict()
-    
+
     for letter in s:
         if letter in charCountMap.keys():
             charCountMap[letter] += 1
         else:
             charCountMap[letter] = 1
-    
+
     return charCountMap
-    
+
+
 def formInvertedCountMap(charCountMap):
     invertedCountMap = dict()
 
@@ -30,8 +32,9 @@ def formInvertedCountMap(charCountMap):
             invertedCountMap[count] += 1
         else:
             invertedCountMap[count] = 0
-    
+
     return invertedCountMap
+
 
 def oneToOneCharacterMapping(s1, s2):
     s1CharCountMap = formCharCountMap(s1)
@@ -42,6 +45,7 @@ def oneToOneCharacterMapping(s1, s2):
 
     return s1InvertedCountMap == s2InvertedCountMap
 
+
 def main():
     s1 = "abc"
     s2 = "bcd"
@@ -50,6 +54,7 @@ def main():
     s1 = "foo"
     s2 = "bar"
     print(oneToOneCharacterMapping(s1, s2))
+
 
 if __name__ == "__main__":
     main()

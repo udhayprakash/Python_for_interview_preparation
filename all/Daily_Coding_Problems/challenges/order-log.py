@@ -15,19 +15,23 @@ You should be as efficient with time and space as possible.
 orderLog = []
 N = 5
 
+
 def record(orderID):
     if len(orderLog) == N:
         orderLog.pop(0)
     orderLog.append(orderID)
 
+
 def get_last(position):
-    if position <= N and position <= len(orderLog) :
-        return orderLog[position*-1]
+    if position <= N and position <= len(orderLog):
+        return orderLog[position * -1]
     else:
         return None
 
+
 def showLog():
     print(*orderLog)
+
 
 if __name__ == "__main__":
 
@@ -36,9 +40,9 @@ if __name__ == "__main__":
     print("1. Record\n2. Get Last\n3. Show log\n4. Exit")
 
     while True:
-        
+
         choice = int(input("\nEnter your choice:").strip())
-        
+
         if choice == 1:
             orderID = int(input("Enter the order ID:").strip())
             record(orderID)
