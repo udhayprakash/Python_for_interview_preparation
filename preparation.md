@@ -30,6 +30,9 @@ TODO
     https://github.com/kenwoodjw/python_interview_question#81%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F%E7%9A%84%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF%E6%9C%89%E9%82%A3%E4%BA%9B
 
 
+https://www.codechef.com/certification/data-structures-and-algorithms/prepare
+
 Blogs
 ------
     https://www.dailycodingproblem.com/blog
+

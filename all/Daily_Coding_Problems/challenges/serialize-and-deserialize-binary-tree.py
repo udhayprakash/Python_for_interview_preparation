@@ -20,6 +20,7 @@ assert deserialize(serialize(node)).left.left.val == 'left.left'
 """
 import json
 
+
 class Node:
 
     def __init__(self, val, left=None, right=None):
@@ -47,19 +48,23 @@ def serializeNode(node):
 
     return node.serializedTree
 
+
 def serialize(node):
     return json.dumps(serializeNode(node))
+
 
 def deserialize(s):
     nodeJson = json.loads(s)
     if nodeJson["left"] != None and nodeJson["right"] != None:
-        return Node(nodeJson["val"], deserialize(json.dumps(nodeJson["left"])), deserialize(json.dumps(nodeJson["right"])))
+        return Node(nodeJson["val"], deserialize(json.dumps(nodeJson["left"])),
+                    deserialize(json.dumps(nodeJson["right"])))
     elif nodeJson["left"] != None:
         return Node(nodeJson["val"], deserialize(json.dumps(nodeJson["left"])))
     elif nodeJson["right"] != None:
         return Node(nodeJson["val"], None, deserialize(json.dumps(nodeJson["right"])))
     else:
         return Node(nodeJson["val"])
+
 
 if __name__ == "__main__":
     n = Node('root', Node('left', Node('left.left')), Node('right'))

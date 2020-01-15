@@ -18,7 +18,8 @@ import random
 URLDict = dict()
 alphabets = "abcdefghijklmnopqrstuvwxyz"
 numbers = "0123456789"
-alnum = list(alphabets+alphabets.upper()+numbers)
+alnum = list(alphabets + alphabets.upper() + numbers)
+
 
 def createShortURL():
     shortURL = ""
@@ -29,6 +30,7 @@ def createShortURL():
             shortURL = ""
     return shortURL
 
+
 def shortenNonRedundant(newLongURL):
     for shortURL in URLDict.keys():
         if URLDict[shortURL] == newLongURL:
@@ -37,10 +39,12 @@ def shortenNonRedundant(newLongURL):
     URLDict[newShortURL] = newLongURL
     return newShortURL
 
+
 def shortenRedundant(newLongURL):
     newShortURL = createShortURL()
     URLDict[newShortURL] = newLongURL
     return newShortURL
+
 
 def restore(shortURL):
     if shortURL in URLDict.keys():
@@ -48,18 +52,20 @@ def restore(shortURL):
     else:
         return None
 
+
 def main():
     URLs = ["www.facebook.com", "www.google.com", "www.facebook.com"]
 
     print("Non-redundant Shortening:")
     for URL in URLs:
         shortURL = shortenNonRedundant(URL)
-        print(shortURL,"-",restore(shortURL))
-    
+        print(shortURL, "-", restore(shortURL))
+
     print("\nRedundant Shortening:")
     for URL in URLs:
         shortURL = shortenRedundant(URL)
-        print(shortURL,"-",restore(shortURL))
+        print(shortURL, "-", restore(shortURL))
+
 
 if __name__ == "__main__":
     main()

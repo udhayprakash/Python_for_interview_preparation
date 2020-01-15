@@ -1,0 +1,64 @@
+original                    : [(0, 0), (1, 2), (2, 0), (2, 3)]
+90 degree clockwise rotation: [(0, 1), (0, 3), (2, 2), (3, 1)]
+90 degree clockwise rotation: [(1, 0), (1, 3), (2, 1), (3, 3)]
+90 degree clockwise rotation: [(0, 2), (1, 1), (3, 0), (3, 2)]
+90 degree clockwise rotation: [(0, 1), (1, 2), (2, 0), (2, 3)]
+
+---------------
+http://xahlee.info/python/gzip.html
+https://pymotw.com/2/gzip/
+https://www.tutorialspoint.com/python-support-for-gzip-files-gzip
+https://www.journaldev.com/19827/python-gzip-compress-decompress
+https://stackoverflow.com/questions/8156707/gzip-a-file-in-python
+https://docs.python.org/3/library/gzip.html
+
+
+---------------------
+paranthesis balancing
+
+
+Function to print element and Next Greatest Element (NGE) pair for all elements of list
+    NGE - Maximum element present afterwards the current one which is also greater than current one
+    >>> printNGE([11,13,21,3])
+    11 -- 13
+    13 -- 21
+    21 -- -1
+    3 -- -1
+
+
+Assignment: write a program to scrap the temparatures of day, and 
+plot the graph with date as x axis and temperature and you axis.
+Ensure to convert the temparatures from °F to °C
+    data source: twiiter handle - https://twitter.com/upstairsutopia
+
+Assignment: https://www3.nd.edu/~dwang5/courses/spring15/assignments/A1/Assignment1_SocialSensing.html  
+complete this assignment, based on today's class
+
+
+
+def cumulative_sum(given_list):
+    pass
+
+assert cumulative_sum([1, 2, 3]) == [1, 3, 6]
+assert cumulative_sum([-7, 4, 9, -12]) == [-7, -3, 6, -6]
+assert cumulative_sum([10, 20, 30, 40, 50]) == [10, 30, 60, 100, 150]
+assert cumulative_sum([4, 10, 15, 18, 20]) == [4, 14, 29, 47, 67]
+
+
+def decimal_rotation(given_num):
+    pass
+
+assert decimal_rotation('12.12345', 1) == '12.51234'
+assert decimal_rotation('12.12345', -1) == '12.23451'
+assert decimal_rotation('12.12345', -2) == '12.34512'
+
+WAP to convert camel case words to underscore case words in the given sentence.
+
+https://www.geeksforgeeks.org/python-split-string-on-kth-occurrence-of-character/
+
+
+HTML & Css
+https://pirple.thinkific.com/courses/take/frontend-fundamentals/lessons/5932519-course-introduction
+
+couresera
+    https://www.coursera.org/learn/python-text-mining/lecture/sVe8B/regular-expressions

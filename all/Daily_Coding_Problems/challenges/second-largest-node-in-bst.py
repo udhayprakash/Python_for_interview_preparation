@@ -8,14 +8,16 @@ Given the root to a binary search tree, find the second largest node in the tree
 
 """
 
+
 class Node:
     def __init__(self, val, left=None, right=None):
         self.val = val
         self.left = left
         self.right = right
-    
+
     def __str__(self):
         return "< " + str(self.val) + " >"
+
 
 def findSecondMax(root):
     if root.right:
@@ -29,7 +31,7 @@ def findSecondMax(root):
 
         if maxNode.left:
             secondMaxNode = maxNode.left
-            
+
             while secondMaxNode.right:
                 secondMaxNode = secondMaxNode.right
 
@@ -43,7 +45,7 @@ def findSecondMax(root):
     else:
         # No second maximum node
         return None
-            
+
 
 def main():
     """
@@ -57,8 +59,7 @@ def main():
     """
     BST = Node(8, Node(3, Node(1), Node(6, Node(4), Node(7))), Node(10, None, Node(14, Node(13))))
     print(findSecondMax(BST))
-    
-    
+
     """
         8
        / \
@@ -82,6 +83,7 @@ def main():
     """
     BST = Node(8, Node(3, Node(1), Node(6, Node(4), Node(7))))
     print(findSecondMax(BST))
+
 
 if __name__ == "__main__":
     main()

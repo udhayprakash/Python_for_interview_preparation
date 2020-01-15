@@ -9,16 +9,16 @@ Given a stream of elements too large to store in memory, pick a random element f
 import random
 from datetime import datetime
 
-class Stream:
 
+class Stream:
     def __init__(self):
-        self.pseudoStream = [random.randint(-10000, 10000)]*10000000+[None]
+        self.pseudoStream = [random.randint(-10000, 10000)] * 10000000 + [None]
 
     def nextSample(self):
         return random.choice(self.pseudoStream)
 
-def selectSample():
 
+def selectSample():
     sampleCount = 1
 
     stream = Stream()
@@ -28,7 +28,7 @@ def selectSample():
 
     while True:
         currentSample = stream.nextSample()
-        
+
         if currentSample == None:
             print("Received", sampleCount, "samples.")
             return selectedSample
@@ -40,14 +40,13 @@ def selectSample():
         if currentProbability > maxProbability:
             selectedSample = currentSample
             maxProbability = currentProbability
-        
+
 
 if __name__ == "__main__":
-    
     startTime = datetime.now()
 
-    print("Chosen sample:", selectSample() )
+    print("Chosen sample:", selectSample())
 
     stopTime = datetime.now()
 
-    print("Time elapsed: ", stopTime-startTime)
+    print("Time elapsed: ", stopTime - startTime)

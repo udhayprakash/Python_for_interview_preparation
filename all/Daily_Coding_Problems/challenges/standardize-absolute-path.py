@@ -11,7 +11,6 @@ For example, given "/usr/bin/../bin/./scripts/../", return "/usr/bin/".
 
 def standardize(path):
     dirs = path.split("/")
-
     standardDirs = []
 
     for directory in dirs:

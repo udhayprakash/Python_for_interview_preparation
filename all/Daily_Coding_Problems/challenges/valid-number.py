@@ -19,6 +19,7 @@ And here are examples of non-numbers:
 
 import re
 
+
 def isValidNumber(numStr):
     numStr = numStr.strip()
     regex = re.compile("^[-+]?\d+(\.\d+)?([eE][+-]?\d+(\.\d+)?)?$")
@@ -26,12 +27,12 @@ def isValidNumber(numStr):
 
 
 def main():
-    print(isValidNumber("11.5"))        # True
-    print(isValidNumber("abc"))         # False
-    print(isValidNumber("2e10"))        # True
-    print(isValidNumber("2e.10"))       # False
-    print(isValidNumber("10e5.4"))      # True
-    print(isValidNumber("-10E5.4"))     # True
+    print(isValidNumber("11.5"))  # True
+    print(isValidNumber("abc"))  # False
+    print(isValidNumber("2e10"))  # True
+    print(isValidNumber("2e.10"))  # False
+    print(isValidNumber("10e5.4"))  # True
+    print(isValidNumber("-10E5.4"))  # True
 
 
 if __name__ == "__main__":

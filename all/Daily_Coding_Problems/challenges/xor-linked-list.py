@@ -11,6 +11,7 @@ and dereference_pointer functions that converts between nodes and memory address
 
 """
 
+
 class Node:
     def __init__(self, val):
         self.val = val
@@ -19,28 +20,29 @@ class Node:
     def __str__(self):
         return str(self.val)
 
+
 class XORLinkedList:
     def __init__(self):
         self.head = Node(None)
         self.tail = Node(None)
 
-    def add(element):
-        newNode = Node(element)
-        if self.head.val == None:
-            self.head = self.tail = newNode
+    def add(self, _element):
+        new_node = Node(_element)
+        if self.head.val:
+            new_node.both = get_pointer(self.tail)
+            self.tail.both = self.tail.both ^ get_pointer(new_node)
+            self.tail = new_node
         else:
-            newNode.both = get_pointer(self.tail)
-            self.tail.both = self.tail.both ^ get_pointer(newNode)
-            self.tail = newNode
+            self.head = self.tail = new_node
 
-    def get(ind):
-        previousAddr = 0
-        current = this.head
-        for i in range(0,ind-1):
+    def get(self, _ind):
+        previous_addr = 0
+        current = self.head
+        for i in range(0, _ind - 1):
             temp = get_pointer(current)
-            current = dereference_pointer(previousAddr^current.both)
-            previousAddr = temp
-            if curret.both == previousAddr and i < ind-2:
+            current = dereference_pointer(previous_addr ^ current.both)
+            previous_addr = temp
+            if curret.both == previous_addr and i < _ind - 2:
                 print("Invalid index.")
                 return None
         return current
@@ -57,10 +59,9 @@ if __name__ == "__main__":
         elif choice == 2:
             ind = int(input("Enter the index: ").strip())
             node = xorLinkedList.get(ind)
-            if node != None
+            if node:
                 print(node)
         elif choice == 3:
             exit(0)
         else:
             print("Invalid choice.")
-            

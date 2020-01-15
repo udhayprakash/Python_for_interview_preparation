@@ -11,18 +11,20 @@ For example, [15, 7, 1, 1, '+', '-', '/', 3, '*', 2, 1, 1, '+', '+', '-'] should
 You can assume the given expression is always valid.
 """
 
+
 class Stack:
     def __init__(self):
         self.array = []
-    
+
     def push(self, val):
         self.array.append(val)
-    
+
     def pop(self):
         if len(self.array):
             return self.array.pop()
         else:
             return None
+
 
 def calculate(operand1, operand2, operator):
     if operator == '+':
@@ -33,6 +35,7 @@ def calculate(operand1, operand2, operator):
         return operand1 * operand2
     elif operator == '/':
         return operand1 / operand2
+
 
 def evaluate(exprList):
     operators = ['+', '-', '*', '/']
@@ -46,8 +49,9 @@ def evaluate(exprList):
             evalStack.push(calculate(operand1, operand2, token))
         else:
             evalStack.push(token)
-    
+
     return evalStack.pop()
+
 
 def main():
     expressionList = [5, 3, '+']
@@ -55,6 +59,7 @@ def main():
 
     expressionList = [15, 7, 1, 1, '+', '-', '/', 3, '*', 2, 1, 1, '+', '+', '-']
     print(evaluate(expressionList))
+
 
 if __name__ == "__main__":
     main()

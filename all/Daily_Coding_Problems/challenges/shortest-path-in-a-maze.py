@@ -25,10 +25,10 @@ import math
 
 shortestDistance = math.inf
 
-def findshortestDistance(maze, source, destination, visited, currentDistance):
 
+def findshortestDistance(maze, source, destination, visited, currentDistance):
     global shortestDistance
-    (x,y) = source
+    (x, y) = source
 
     if x not in range(0, len(maze)) or y not in range(0, len(maze)):
         return
@@ -40,20 +40,21 @@ def findshortestDistance(maze, source, destination, visited, currentDistance):
         if currentDistance < shortestDistance:
             shortestDistance = currentDistance
             return
-    
-    findshortestDistance(maze, (x-1, y  ), destination, visited+[source], currentDistance+1)
-    findshortestDistance(maze, (x  , y-1), destination, visited+[source], currentDistance+1)
-    findshortestDistance(maze, (x  , y+1), destination, visited+[source], currentDistance+1)
-    findshortestDistance(maze, (x+1, y  ), destination, visited+[source], currentDistance+1)
+
+    findshortestDistance(maze, (x - 1, y), destination, visited + [source], currentDistance + 1)
+    findshortestDistance(maze, (x, y - 1), destination, visited + [source], currentDistance + 1)
+    findshortestDistance(maze, (x, y + 1), destination, visited + [source], currentDistance + 1)
+    findshortestDistance(maze, (x + 1, y), destination, visited + [source], currentDistance + 1)
+
 
 if __name__ == "__main__":
-    maze =  [[False, False, False, False],
+    maze = [[False, False, False, False],
             [True, True, False, True],
             [False, False, False, False],
             [False, False, False, False]]
-    
+
     start = (3, 0)
-    end   = (0, 0)
+    end = (0, 0)
 
     findshortestDistance(maze, start, end, [], 0)
 
@@ -61,4 +62,3 @@ if __name__ == "__main__":
         print(shortestDistance)
     else:
         print(None)
-    

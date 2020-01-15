@@ -9,11 +9,13 @@ For example, given the string "([])[]({})", you should return true.
 Given the string "([)]" or "((()", you should return false.
 
 """
+
+
 def checkWellFormedness(bracketString):
     bracketStack = []
     openingBrackets = {"(", "{", "["}
 
-    matchingBracketsDict = {")":"(", "]":"[", "}":"{"}
+    matchingBracketsDict = {")": "(", "]": "[", "}": "{"}
 
     for bracket in bracketString:
         if bracket in openingBrackets:
@@ -23,13 +25,15 @@ def checkWellFormedness(bracketString):
                 bracketStack.pop()
             else:
                 return False
-    
+
     return not bracketStack
+
 
 def main():
     print(checkWellFormedness("([])[]({})"))
     print(checkWellFormedness("([)]"))
     print(checkWellFormedness("((()"))
+
 
 if __name__ == "__main__":
     main()

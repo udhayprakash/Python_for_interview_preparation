@@ -19,8 +19,8 @@ The same regular expression on the string "chats" should return false.
 
 matched = False
 
+
 def match(regex, string):
-    
     global matched
 
     if regex == "" and string == "":
@@ -29,11 +29,11 @@ def match(regex, string):
     elif regex == "" or string == "":
         matched = False
         return
-    
+
     if len(regex) >= 2 and regex[1] == "*":
         front = 0
         try:
-            while string[front] == regex[0] or regex[0] == ".": 
+            while string[front] == regex[0] or regex[0] == ".":
                 match(regex[2:], string[front:])
                 front += 1
             match(regex[2:], string[front:])
@@ -48,17 +48,20 @@ def match(regex, string):
             else:
                 return
 
+
 def matchRegex(regex, string):
     global matched
     matched = False
-    match(regex,string)
+    match(regex, string)
     return matched
 
+
 def main():
-    print(matchRegex("ra.", "ray"))         # True
-    print(matchRegex("ra.", "raymond"))     # False
-    print(matchRegex(".*at", "chat"))       # True
-    print(matchRegex(".*at", "chats"))      # False
+    print(matchRegex("ra.", "ray"))  # True
+    print(matchRegex("ra.", "raymond"))  # False
+    print(matchRegex(".*at", "chat"))  # True
+    print(matchRegex(".*at", "chats"))  # False
+
 
 if __name__ == "__main__":
     main()

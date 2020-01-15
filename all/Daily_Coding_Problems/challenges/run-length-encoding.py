@@ -12,12 +12,13 @@ You can assume the string to be decoded is valid.
 
 """
 
+
 def encode(plaintext):
     encodedString = ""
 
     if not plaintext:
         return plaintext
-    
+
     currentLetter = plaintext[0]
     repetitionCount = 1
 
@@ -28,10 +29,11 @@ def encode(plaintext):
             repetitionCount = 1
         else:
             repetitionCount += 1
-    
+
     encodedString += str(repetitionCount) + currentLetter
 
     return encodedString
+
 
 # Parses string and returns the parsed number and remaining string
 def parseNumber(string):
@@ -48,18 +50,19 @@ def parseNumber(string):
 
     return (int(numberString), "".join(stringList))
 
+
 def decode(encodedString):
     decodedString = ""
 
     if not encodedString:
         return encodedString
-    
+
     while encodedString:
         repetitionCount, encodedString = parseNumber(encodedString)
         letter = encodedString[0]
         encodedString = encodedString[1:]
         decodedString += (letter * repetitionCount)
-    
+
     return decodedString
 
 
@@ -68,6 +71,7 @@ def main():
     print(plaintext)
     print(encode(plaintext))
     print(decode(encode(plaintext)))
+
 
 if __name__ == "__main__":
     main()

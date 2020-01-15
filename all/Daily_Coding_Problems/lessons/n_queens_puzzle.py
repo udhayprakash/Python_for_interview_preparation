@@ -1,32 +1,42 @@
+#!/usr/bin/python
 """
-You have an N by N board. Write a function that returns the number of possible arrangements of the board where 
-N queens can be placed on the board without threatening each other,i.e. no two queens share the same row, column, or diagonal.
+Purpose:
+    You have an N by N board. Write a function that returns the number of
+    possible arrangements of the board where N queens can be placed on the
+    board without threatening each other,i.e. no two queens share the same
+    row, column, or diagonal.
 """
 
-def nQueens(n, board=[]):
+
+def n_queens(n, board=None):
+    if board is None:
+        board = []
+
     if n == len(board):
         return 1
-    
+
     count = 0
     for col in range(n):
         board.append(col)
-        if isValid(board):
-            count += nQueens(n, board)
+        if is_valid(board):
+            count += n_queens(n, board)
         board.pop()
-    
+
     return count
 
-def isValid(board):
-    currentQueenRow, currentQueenCol = len(board)-1, board[-1]
+
+def is_valid(board):
+    current_queen_row, current_queen_col = len(board) - 1, board[-1]
 
     for row, col in enumerate(board[:-1]):
-        diff = abs(currentQueenCol - col)
+        diff = abs(current_queen_col - col)
 
-        if diff == 0 or diff == currentQueenRow - row:
+        if diff == 0 or diff == current_queen_row - row:
             return False
-    
+
     return True
 
-if __name__ == "__main__":
-    for n in range(10):
-        print(nQueens(n))
+
+if __name__ == '__main__':
+    for _n in range(10):
+        print(n_queens(_n))

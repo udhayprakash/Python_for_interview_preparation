@@ -15,6 +15,7 @@ There are no smaller elements to the right of 1
 """
 import heapq
 
+
 def smallerElementsOnRight(l):
     h = []
     resultList = []
@@ -23,11 +24,13 @@ def smallerElementsOnRight(l):
         currentElement = l.pop()
         heapq.heappush(h, currentElement)
         resultList = [h.index(currentElement)] + resultList
-    
+
     return resultList
+
 
 def main():
     print(smallerElementsOnRight([3, 4, 9, 6, 1]))
+
 
 if __name__ == "__main__":
     main()

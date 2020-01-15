@@ -11,6 +11,7 @@ and the key in the right child must be greater than or equal to the root.
 
 import math
 
+
 class Node:
     def __init__(self, val=None, left=None, right=None):
         self.val = val
@@ -31,17 +32,20 @@ def isBSThelper(root, minVal, maxVal):
     else:
         return False
 
+
 def isBST(root):
     minVal = -1 * math.inf
     maxVal = math.inf
     return isBSThelper(root, minVal, maxVal)
+
 
 def main():
     binaryTreeOne = Node(4, Node(2, Node(1), Node(3)), Node(5))
     binaryTreeTwo = Node(3, Node(2, Node(1), Node(4)), Node(5))
 
     print(isBST(binaryTreeOne))
-    print(isBST(binaryTreeTwo)) 
+    print(isBST(binaryTreeTwo))
+
 
 if __name__ == "__main__":
     main()

@@ -12,10 +12,11 @@ Do not use flatten or otherwise clone the arrays. Some of the arrays can be empt
 
 """
 
+
 class TwoDIterator:
     def __init__(self, array):
         self.array = array
-    
+
     def next(self):
         while True:
             try:
@@ -32,7 +33,7 @@ class TwoDIterator:
                     self.array = self.array[1:]
                 else:
                     raise e
-    
+
     def has_next(self):
         while True:
             try:
@@ -50,11 +51,10 @@ def main():
 
     while twoDIterator.has_next():
         print(twoDIterator.next(), end=" ")
-    
+
     # 1 2 3 4 5 6
 
     print()
-
 
     twoDIterator = TwoDIterator([[1, 2], [3], [], [4, 5, 6]])
 
@@ -64,9 +64,9 @@ def main():
         except Exception as e:
             print(e)
             break
-    
+
     # 1 2 3 4 5 6 list index out of range
-    
+
 
 if __name__ == "__main__":
     main()
