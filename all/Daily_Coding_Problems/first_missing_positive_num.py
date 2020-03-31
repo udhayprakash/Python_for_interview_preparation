@@ -15,13 +15,23 @@ Example:
 
 
 def get_first_missing_pstv_num(given_list):
-    given_list.sort()
-    for _index, num in enumerate(given_list):
-        if _index and num > 0 and given_list[_index - 1] > 0:
-            print(num, given_list[_index - 1], num - given_list[_index - 1])
+    given_list = sorted({i for i in given_list if i>0})
+    if not given_list:
+        return 1
+    for _index, current_pos_num in enumerate(given_list):
+        if _index == 0 and current_pos_num != 1:
+            return 1
+        if _index:
+            previous_pos_num = given_list[_index - 1]
+            if current_pos_num - previous_pos_num > 1:
+                return previous_pos_num + 1
+    return current_pos_num + 1
 
 
 if __name__ == '__main__':
-    get_first_missing_pstv_num([3, 4, -1, 1])
     assert get_first_missing_pstv_num([3, 4, -1, 1]) == 2
     assert get_first_missing_pstv_num([1, 2, 0]) == 3
+    assert get_first_missing_pstv_num([2, 3, 7, 6, 8, -1, -10, 15]) == 1
+    assert get_first_missing_pstv_num([1, 3, 6, 4, 1, 2]) == 5
+    assert get_first_missing_pstv_num([1, 2, 3]) == 4
+    assert get_first_missing_pstv_num([-1, -3]) == 1
