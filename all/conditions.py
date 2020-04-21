@@ -8,7 +8,8 @@ def sign(a):
         return +1
     else:
         return 0
-    
+
+
 def median(a, b, c):
     """Find and return the median of the three given parameters.
     a, b, c --- The three values whose median to compute.
@@ -19,19 +20,21 @@ def median(a, b, c):
         return a
     else:
         return c
-    
+
+
 def median_other_way(a, b, c):
     """Find and return the median of the three given parameters.
     a, b, c --- The three values whose median to compute.
     """
-    if a > b and a > c: # a is maximum of three
+    if a > b and a > c:  # a is maximum of three
         return max(b, c)
-    elif a < b and a < c: # a minimum of three
+    elif a < b and a < c:  # a minimum of three
         return min(b, c)
     else:
         return a  # the only possibility that remains
-    
-def days_in_month(m, leap_year = False):
+
+
+def days_in_month(m, leap_year=False):
     """Given the month as an integer, compute how many days there
     are in that month.
     m -- The month number as an integer 1 to 12.
@@ -48,7 +51,8 @@ def days_in_month(m, leap_year = False):
         return 30
     else:
         return 31
-    
+
+
 def is_leap_year(y):
     """Determine whether the current year is a leap year.
     y -- The current year.
@@ -58,6 +62,7 @@ def is_leap_year(y):
     if y % 100 != 0:
         return True
     return y % 400 == 0
+
 
 # The same conditions written in a different way.
 
@@ -71,6 +76,7 @@ def is_leap_year_another_way(y):
         return False
     return y % 4 == 0
 
+
 # The whole function as a Pythonesque one-liner.
 
 def is_leap_year_with_logic(y):
@@ -78,6 +84,7 @@ def is_leap_year_with_logic(y):
     y -- The current year.
     """
     return y % 4 == 0 and (y % 100 != 0 or y % 400 == 0)
+
 
 def test_leap_year():
     """Verify that all three functions give the same answer
@@ -88,6 +95,6 @@ def test_leap_year():
         a1 = is_leap_year(y)
         a2 = is_leap_year_another_way(y)
         a3 = is_leap_year_with_logic(y)
-        if(a1 != a2 or a2 != a3):
-            return False # Tear it down and start again.
-    return True     # I am pleased where man has been.
+        if (a1 != a2 or a2 != a3):
+            return False  # Tear it down and start again.
+    return True  # I am pleased where man has been.
