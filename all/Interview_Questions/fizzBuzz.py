@@ -5,6 +5,8 @@ But, for multiples of three print 'Fizz' instead of number and
 for multiples of five print 'Buzz'. For numbers which are multiples
 of both three and five, print 'FizzBuzz'.
 """
+
+
 def fizz_buzz():
     for i in range(1, 101):
         result = ''
@@ -16,6 +18,6 @@ def fizz_buzz():
 
         print(result if result else i)
 
+
 if __name__ == '__main__':
     fizz_buzz()
-    

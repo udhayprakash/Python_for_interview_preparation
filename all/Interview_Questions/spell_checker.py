@@ -19,21 +19,19 @@ valid_words = ('cat', 'bat')
 
 def spell_checker(word):
     for each_word in valid_words:
-        if each_word == word:
+        if (each_word == word or 
+            each_word.startswith(word) or 
+            sorted(each_word) == sorted(word)):
             return each_word
-        elif sorted(each_word) == sorted(word):
-            return each_word
-        elif each_word.startswith(word):
-            return each_word
-    return None
 
-assert spell_checker('cat') == 'cat'
-assert spell_checker('act') == 'cat'
-assert spell_checker('tac') == 'cat'
-assert spell_checker('atc') == 'cat'
-assert spell_checker('ca') == 'cat'
-assert spell_checker('ba') == 'bat'
-assert spell_checker('acct') == None
-assert spell_checker('batty') == None
-assert spell_checker('bats') == None
-assert spell_checker('at') == None
+if __name__ == '__main__':
+    assert spell_checker('cat') == 'cat'
+    assert spell_checker('act') == 'cat'
+    assert spell_checker('tac') == 'cat'
+    assert spell_checker('atc') == 'cat'
+    assert spell_checker('ca') == 'cat'
+    assert spell_checker('ba') == 'bat'
+    assert spell_checker('acct') == None
+    assert spell_checker('batty') == None
+    assert spell_checker('bats') == None
+    assert spell_checker('at') == None
