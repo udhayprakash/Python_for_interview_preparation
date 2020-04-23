@@ -19,8 +19,7 @@ def check_2_sum(given_list, k):
     :return: True or False
     """
     for _index1, ele1 in enumerate(given_list):
-        for _index2, ele2 in enumerate(given_list[_index1:]):
-            # if ele1 != ele2:
+        for ele2 in given_list[_index1:]:
             if ele1 + ele2 == k:
                 print(f'{ele1} + {ele2} == {k}')
                 return True

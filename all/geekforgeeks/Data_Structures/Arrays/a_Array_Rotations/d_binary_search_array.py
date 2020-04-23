@@ -3,6 +3,7 @@
 Purpose:  
 """
 
+
 def binary_search(given_array, search_ele):
     """ Binary Search assumes that the array is already sorted
     """

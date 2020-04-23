@@ -7,6 +7,7 @@ Purpose:  https://www.geeksforgeeks.org/find-rotation-count-rotated-sorted-array
     Given such an array, find the value of k.
 """
 
+
 def array_rotation(given_array, shift_positions):
     """ 
     Pythonic way 
@@ -15,12 +16,14 @@ def array_rotation(given_array, shift_positions):
     """
     return given_array[shift_positions:] + given_array[:shift_positions]
 
+
 def is_sorted(arr):
     min_val = arr[0]
     for val in arr[1:]:
         if val < min_val:
             return False
     return True
+
 
 def find_rotation_count(given_arr):
     for _index, _ in enumerate(given_arr):

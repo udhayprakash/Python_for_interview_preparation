@@ -5,6 +5,7 @@ Find maximum value of Sum( i*arr[i]) with only rotations on given array allowed
 
 """
 
+
 def array_rotation(given_array, shift_positions):
     """ 
     Pythonic way 
@@ -24,35 +25,37 @@ def get_max_count(arr):
         if count > max_count:
             max_count = count
     return max_count
-        
+
+
 def get_max_count(arr):
     """
         Time Complexity : O(n)
         Auxiliary Space : O(1)
     """
     # stores sum of arr[i] 
-    arrSum = 0    
-  
+    arrSum = 0
+
     # stores sum of i*arr[i] 
     currVal = 0
-      
-    n = len(arr) 
-  
-    for i in range(0, n): 
-        arrSum += arr[i] 
-        currVal += (i * arr[i]) 
-  
-    # initialize result 
-    maxVal = currVal 
-  
+
+    n = len(arr)
+
+    for i in range(0, n):
+        arrSum += arr[i]
+        currVal += (i * arr[i])
+
+        # initialize result
+    maxVal = currVal
+
     # try all rotations one by one and find the maximum  
     # rotation sum 
-    for j in range(1, n): 
-        currVal = currVal + arrSum-n * arr[n-j] 
-        if currVal > maxVal: 
-            maxVal = currVal 
-  
-    return maxVal 
+    for j in range(1, n):
+        currVal = currVal + arrSum - n * arr[n - j]
+        if currVal > maxVal:
+            maxVal = currVal
+
+    return maxVal
+
 
 if __name__ == '__main__':
     assert get_max_count([1, 20, 2, 10]) == 72

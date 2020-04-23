@@ -23,6 +23,17 @@ def bruteforce(arr):
     return prod
 
 
+def bruteforce2(arr):
+    # O(n * (n-1))
+    new_list = []
+    for _index, _ in enumerate(arr):
+        product = 1
+        for each in arr[:_index] + arr[_index + 1:]:
+            product *= each
+        new_list.append(product)
+    return new_list
+
+
 def usingDivision(arr):
     product = 1
     for number in arr:
@@ -51,7 +62,7 @@ def withoutdivision(arr):
 
 
 if __name__ == "__main__":
-    arr = [int(x) for x in input().strip().split()]
-    print(bruteforce(arr))
-    print(usingDivision(arr))
-    print(withoutdivision(arr))
+    assert bruteforce([1, 2, 3, 4, 5]) == [120, 60, 40, 30, 24]
+    assert bruteforce2([1, 2, 3, 4, 5]) == [120, 60, 40, 30, 24]
+    assert usingDivision([1, 2, 3, 4, 5]) == [120, 60, 40, 30, 24]
+    assert withoutdivision([1, 2, 3, 4, 5]) == [120, 60, 40, 30, 24]

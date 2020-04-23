@@ -3,6 +3,7 @@
 Purpose:  https://www.geeksforgeeks.org/search-an-element-in-a-sorted-and-pivoted-array/
 """
 
+
 def linear_search(given_array, search_ele):
     for _index, ele in enumerate(given_array):
         if ele == search_ele:

@@ -17,4 +17,3 @@ Example:
     could climb any number from a set of positive integers X?
     Example: If X = {1, 3, 5}, you could climb 1, 3, 5 steps at a time.
 """
-

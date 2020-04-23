@@ -120,7 +120,7 @@ print(time.time_ns() - start_time)
 # -2,-12,-14,-10,-8,6,2,-5,-7,-11,7,14,-6,-10,-12,8,-4,-10,-5,14,-3,9,-12,8,14,-13], 3))
 # print(time.time_ns()- start_time)
 
-from itertools import permutations, combinations
+from itertools import permutations
 
 print(list(permutations('ABC')))
 print()

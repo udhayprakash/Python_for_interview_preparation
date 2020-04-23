@@ -15,7 +15,7 @@ Example:
 
 
 def get_first_missing_pstv_num(given_list):
-    given_list = sorted({i for i in given_list if i>0})
+    given_list = sorted({i for i in given_list if i > 0})
     if not given_list:
         return 1
     for _index, current_pos_num in enumerate(given_list):
@@ -26,6 +26,16 @@ def get_first_missing_pstv_num(given_list):
             if current_pos_num - previous_pos_num > 1:
                 return previous_pos_num + 1
     return current_pos_num + 1
+
+
+def get_first_missing_pstv_num(given_list):
+    given_list = sorted({i for i in given_list if i > 0})
+    if (not given_list) or given_list[0] != 1:
+        return 1
+    for _index, num in enumerate(given_list):
+        if _index and num - given_list[_index - 1] > 1:
+            return given_list[_index - 1] + 1
+    return given_list[-1] + 1
 
 
 if __name__ == '__main__':

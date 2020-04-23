@@ -19,16 +19,18 @@ courseMap = {
 
 completedCourses = []
 
+
 def addToCompletedCourses(course):
     if course not in completedCourses:
         # print("Completed:", course)
         completedCourses.append(course)
 
+
 def completeCourse(course, currentPrerequisites):
     # Cyclic Dependency
     if course in currentPrerequisites:
         return False
-    
+
     # Cannot take up this course
     if course not in courseMap.keys():
         return False
@@ -36,15 +38,15 @@ def completeCourse(course, currentPrerequisites):
     elif courseMap[course] == []:
         addToCompletedCourses(course)
         return True
-    
+
     for prerequsite in courseMap[course]:
         if prerequsite not in completedCourses:
-            canComplete = completeCourse(prerequsite, currentPrerequisites+[course])
+            canComplete = completeCourse(prerequsite, currentPrerequisites + [course])
             if canComplete == True:
                 pass
             else:
                 return False
-    
+
     addToCompletedCourses(course)
     return True
 
@@ -59,6 +61,7 @@ def findCourseSchedule(courseMap):
 
 def main():
     print(findCourseSchedule(courseMap))
+
 
 if __name__ == "__main__":
     main()

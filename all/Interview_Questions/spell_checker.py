@@ -17,12 +17,14 @@ Should return a correctly spelled word if found, otherwise return None.
 
 valid_words = ('cat', 'bat')
 
+
 def spell_checker(word):
     for each_word in valid_words:
-        if (each_word == word or 
-            each_word.startswith(word) or 
-            sorted(each_word) == sorted(word)):
+        if (each_word == word or
+                each_word.startswith(word) or
+                sorted(each_word) == sorted(word)):
             return each_word
+
 
 if __name__ == '__main__':
     assert spell_checker('cat') == 'cat'

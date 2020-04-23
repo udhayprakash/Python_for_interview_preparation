@@ -2,6 +2,8 @@
 """
 Purpose: https://www.geeksforgeeks.org/program-for-array-rotation-continued-reversal-algorithm/
 """
+
+
 def array_rev_rotation(given_array, shift_positions):
     """ 
     Pythonic way 
@@ -9,7 +11,6 @@ def array_rev_rotation(given_array, shift_positions):
         Auxiliary Space : O(shift_positions)
     """
     return given_array[-shift_positions:] + given_array[:-shift_positions]
-
 
 
 if __name__ == '__main__':

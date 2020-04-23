@@ -7,8 +7,8 @@ Recall that a Pythogorean triplet (a, b, c) is defined by the equation a2+ b2= c
 
 """
 
-import random
 import math
+import random
 
 
 def has_pythagorean_triplet(arr):

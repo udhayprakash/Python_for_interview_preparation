@@ -18,6 +18,7 @@ And i1 = 1, j1 = 1, i2 = 3, j2 = 3, return 15 as there are 15 numbers in the mat
 
 """
 
+
 # Uncomment all print statements to see the valid upper and lower bound elements and their respective count
 def countElements(matrix, upperBound, lowerBound):
     N = len(matrix)
@@ -33,7 +34,7 @@ def countElements(matrix, upperBound, lowerBound):
         else:
             # print(matrix[i][0], end = " ")
             upperBoundCount += 1
-        
+
         for j in range(1, M):
             if matrix[i][j] >= upperBound:
                 break
@@ -41,14 +42,14 @@ def countElements(matrix, upperBound, lowerBound):
             upperBoundCount += 1
 
     # print("\nLower Bound Elements: ", end = " ")
-    for i in range(N-1, -1, -1):
-        if matrix[i][M-1] <= lowerBound:
+    for i in range(N - 1, -1, -1):
+        if matrix[i][M - 1] <= lowerBound:
             break
         else:
             # print(matrix[i][M-1], end = " ")
             lowerBoundCount += 1
-        
-        for j in range(M-2, -1, -1):
+
+        for j in range(M - 2, -1, -1):
             if matrix[i][j] <= lowerBound:
                 break
             # print(matrix[i][j], end = " ")
@@ -56,7 +57,7 @@ def countElements(matrix, upperBound, lowerBound):
 
     # print("\nUpper Bound Count:", upperBoundCount, "\nLower Bound Count:", lowerBoundCount)
     return upperBoundCount + lowerBoundCount
-        
+
 
 def main():
     matrix = [
@@ -77,6 +78,7 @@ def main():
     lowerBound = matrix[i2][j2]
 
     print(countElements(matrix, upperBound, lowerBound))
+
 
 if __name__ == "__main__":
     main()

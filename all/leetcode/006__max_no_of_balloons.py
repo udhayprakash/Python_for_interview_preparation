@@ -8,7 +8,6 @@ Given a string text, you want to use the characters of text to form as many inst
 You can use each character in text at most once. Return the maximum number of instances that can 
 be formed.
 """
-from pprint import pprint
 
 
 class Solution:
