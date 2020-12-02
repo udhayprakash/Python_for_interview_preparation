@@ -22,6 +22,8 @@ def check_braces_balance(expression):
                     braces_found[-1] != braces[each_chr]):
                 return False
             braces_found.pop()
+    if braces_found:
+        return False
     return True
 
 
@@ -30,3 +32,17 @@ if __name__ == '__main__':
     assert check_braces_balance('sdjf{[d)f]})()') is False
     assert check_braces_balance('sdjf{[d()f]})()') is False
     assert check_braces_balance('sdjf{[d()f]}()') is True
+    assert check_braces_balance('{{') is False
+    assert check_braces_balance('{{()') is False
+    assert check_braces_balance('{[()}]') is False
+    assert check_braces_balance('[{()()}({[]})]({}[({})])((((((()[])){}))[]{{{({({({{{{{{}}}}}})})})}}}))[][][]{') is False
+    assert check_braces_balance('[{()()}({[]})]({}[({})])((((((()[])){}))[]{{{({({({{{{{{}}}}}})})})}}}))[][][]]') is False
+    assert check_braces_balance('[{()([)}({[]})]({}[({})])((((((()[])){}))[]{{{({({({{{{{{}}}}}})})})}}}))[][][]') is False
+    assert check_braces_balance('{}[]()') is True
+    assert check_braces_balance('{[}]') is False
+    assert check_braces_balance(')') is False
+    assert check_braces_balance('}') is False
+    assert check_braces_balance(']') is False
+    assert check_braces_balance('[()]') is True
+    assert check_braces_balance('[{}]') is True
+    assert check_braces_balance('{][}') is False
