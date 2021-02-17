@@ -7,15 +7,15 @@ def extract_info(flag):
 
 
 if '-pq' not in sys.argv:
-    print ('You must provide PQ using the -pq flag')
+    print('You must provide PQ using the -pq flag')
     sys.exit(1)
 
 if '--key' not in sys.argv:
-    print ('You must provide your key using the --key flag')
+    print('You must provide your key using the --key flag')
     sys.exit(1)
 
 if '-m' not in sys.argv:
-    print ('You must provide a message using the -m flag')
+    print('You must provide a message using the -m flag')
     sys.exit(1)
 
 pq = int(extract_info('-pq'))

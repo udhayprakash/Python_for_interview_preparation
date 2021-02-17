@@ -35,9 +35,12 @@ if __name__ == '__main__':
     assert check_braces_balance('{{') is False
     assert check_braces_balance('{{()') is False
     assert check_braces_balance('{[()}]') is False
-    assert check_braces_balance('[{()()}({[]})]({}[({})])((((((()[])){}))[]{{{({({({{{{{{}}}}}})})})}}}))[][][]{') is False
-    assert check_braces_balance('[{()()}({[]})]({}[({})])((((((()[])){}))[]{{{({({({{{{{{}}}}}})})})}}}))[][][]]') is False
-    assert check_braces_balance('[{()([)}({[]})]({}[({})])((((((()[])){}))[]{{{({({({{{{{{}}}}}})})})}}}))[][][]') is False
+    assert check_braces_balance(
+        '[{()()}({[]})]({}[({})])((((((()[])){}))[]{{{({({({{{{{{}}}}}})})})}}}))[][][]{') is False
+    assert check_braces_balance(
+        '[{()()}({[]})]({}[({})])((((((()[])){}))[]{{{({({({{{{{{}}}}}})})})}}}))[][][]]') is False
+    assert check_braces_balance(
+        '[{()([)}({[]})]({}[({})])((((((()[])){}))[]{{{({({({{{{{{}}}}}})})})}}}))[][][]') is False
     assert check_braces_balance('{}[]()') is True
     assert check_braces_balance('{[}]') is False
     assert check_braces_balance(')') is False

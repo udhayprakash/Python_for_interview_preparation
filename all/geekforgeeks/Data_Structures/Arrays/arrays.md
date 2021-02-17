@@ -1,5 +1,6 @@
 Array
 ------
+
     - Collection of items stored at contiguous memory locations
     - General idea is to store multiple items of the same type together
 

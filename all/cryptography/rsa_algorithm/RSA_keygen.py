@@ -15,6 +15,7 @@ def is_prime(n):
             return False
     return True
 
+
 # >>python RSA_keygen.py -pq 2 3 -x 1
 # >>sys.argv -> [RSA_keygen.py, -pq, 2, 3, -x, 1]
 
@@ -42,14 +43,13 @@ else:
 eq = (p - 1) * (q - 1) + 1
 
 y = 1
-xy = x*y
+xy = x * y
 
 while xy != eq:
     x += 1
     y = eq / x
-    xy = x*y
+    xy = x * y
 
-
-print ("public key, x: " + str(x))
-print ("private key, y: " + str(y))
-print ("modulo (pq): " + str(p*q))
+print("public key, x: " + str(x))
+print("private key, y: " + str(y))
+print("modulo (pq): " + str(p * q))

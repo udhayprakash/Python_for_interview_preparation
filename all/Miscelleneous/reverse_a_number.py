@@ -6,6 +6,7 @@ Purpose: Reverse a number
 
 """
 
+
 # Method 1 - Using Iteration
 
 
@@ -22,7 +23,6 @@ assert reverse_integer(123) == 321
 assert reverse_integer(100) == 1
 assert reverse_integer(101) == 101
 
-
 # Method 2 - Using Recursion
 _result = 0
 
@@ -34,7 +34,7 @@ def reverse_integer(number):
     else:
         remainder = number % 10
         _result = (_result * 10) + remainder
-        return reverse_integer(number//10)
+        return reverse_integer(number // 10)
 
 
 assert reverse_integer(123) == 321

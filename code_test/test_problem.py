@@ -1,6 +1,7 @@
 #!/usr/bin/python3
-from problem import Solution
 import unittest
+
+from problem import Solution
 
 
 class TestMinMaxRotation(unittest.TestCase):

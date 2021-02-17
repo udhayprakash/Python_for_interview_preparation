@@ -6,14 +6,15 @@ for multiples of five print 'Buzz'. For numbers which are multiples
 of both three and five, print 'FizzBuzz'.
 """
 
+
 def fizz_buzz(n):
-    for i in range(1, n+1):
+    for i in range(1, n + 1):
         result = ''
         if i % 3 == 0:
             result += 'Fizz'
         if i % 5 == 0:
             result += 'Buzz'
-        
+
         print(result if result else i)
 
 

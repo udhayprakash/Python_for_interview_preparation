@@ -35,7 +35,7 @@ class Solution(object):
             array_count += _index * value
 
         result_max = result_min = array_count
-        for i in range(len(A)-1, 0, -1):
+        for i in range(len(A) - 1, 0, -1):
             array_count += array_sum - (len(A) * A[i])
             result_max = max(array_count, result_max)
             result_min = min(array_count, result_min)
@@ -59,7 +59,7 @@ class Solution(object):
             else:
                 min_val = max_val = array_sum
 
-        return max_val,  min_val
+        return max_val, min_val
 
 
 if __name__ == '__main__':

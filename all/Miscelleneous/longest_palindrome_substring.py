@@ -19,7 +19,6 @@ def find_longest_substring(given_string):
         return longest_palindrome
 
 
-
 def get_prefixes_of_string(given_string):
     lg_prefix_lengths = []
     for index, _ in enumerate(given_string):
@@ -27,5 +26,6 @@ def get_prefixes_of_string(given_string):
         lg_prefix_lengths.append(len(lg_pal_str))
         # print(f'{given_string[index:]:7} ==>{len(lg_pal_str)} {lg_pal_str}')
     return sorted(lg_prefix_lengths)
+
 
 assert get_prefixes_of_string("ababa") == [1, 1, 3, 3, 5]

@@ -3,7 +3,7 @@
 Purpose: 
 """
 from collections import defaultdict
-from pprint import pprint
+
 
 # def get_anagrams(given_words):
 #     sorted_words = {''.join(sorted(word.lower())) for word in given_words}
