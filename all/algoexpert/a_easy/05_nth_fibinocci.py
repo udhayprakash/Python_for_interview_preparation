@@ -20,10 +20,12 @@ def getNthFib(n):
     Time Complexity : O(2 ^ n)
     Space Complexity: O(n)
     """
-    if n == 2:
-        return 1
-    elif n == 1:
+    if n == 0:
         return 0
+    elif n == 1:
+        return 1
+    elif n == 2:
+        return 1
     else:
         return getNthFib(n - 1) + getNthFib(n - 2)
 
@@ -91,7 +93,7 @@ def getNthFib(n):
     a, b = 0, 1
     for _ in range(n - 1):  # range ignores 1, so, -1
         a, b = b, a + b
-    return a  # nth value 
+    return a  # nth value
 
 
 start_time = perf_counter()
