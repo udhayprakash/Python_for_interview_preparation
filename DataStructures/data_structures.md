@@ -17,3 +17,9 @@
     - Circular Queue
     - Priority Queue
     
+Trees
+Tries
+Graphs
+Vectors
+Heaps
+Hashtables

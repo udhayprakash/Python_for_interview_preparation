@@ -1,0 +1,559 @@
+INTRODUCTION:
+-------------
+I am a Full-Stack Python Developer, with all years of experience, 
+ with around 80% into Backend work and 20% into frontend.
+ 
+IN Backend, I worked on creating standalone scripts for automations, scheduled jobs,
+ETL jobs and data pipelines; and RESTful APIs and web applications.
+ 
+IN FRONTEND, I worked on creating dashboards/graphs/charts using d3.js library,
+and tables using ag-grid. Also, worked on JavaScript, jQuery and react.
+ 
+In databases, 
+	In relational dB, I worked with MySQL , MS SQL , oracle dB and PostgreSQL. 
+	In no-relational dB, I worked with MongoDB and Cassandra. 
+	In data warehousing, I worked with Snowflake schema
+
+In Caching, 
+	I worked with Redis and Elasticsearch
+	
+	
+In Python, 
+	- worked on creating web applications and RESTFUL APIs using Django/flask/FastAPI frameworks
+	- worked on creating process automation and integrating with infrastructure(Linux/windows) boxes
+	- worked on web scrapping using beautiful soup
+	- created unit test, integration test for the source code, using unittest and pytest modules
+	
+In Public Cloud, I am mostly associated with AWS Cloud.
+	In AWS Cloud, I worked with 
+		Server-based Architectures with 
+			EC2 Instances 
+			Elastic Load balancer
+			Auto-Scaling 
+			Route53
+			
+			s3 bucket for file storage
+			s3 Glacier for Archival Storage
+			
+		Server-less Architectures with 
+			AWS Lambda - with either time-triggered or event triggered
+			AWS API Gateway with http-triggered 
+			For long running jobs beyond 15min, as AWS lambda has limitation, i use Step Functions
+			
+		Also, worked with SQS, SNS and SES
+		And, EMR cluster for Pyspark 
+		for the ETLs, I worked with AWS Glue Jobs with DataCatalog and Pyspark
+
+In current project, I created the CI/CD setup using Jenkins and Groovy script.
+ 
+	
+In Golang, I created microservices and ETL jobs, 
+	Mainly using go concurrency. 
+	Used Gokit for microservices implementation, 
+	and Cobra package for creating command line utilities.
+	GORM - for working with the databases
+	BDD with ginko framework
+
+REASON FOR CHANGE - 
+	CONTRACT COMPLETED. NO more SCOPE FOR EXTENSION. SO, Looking for the change.
+But It is a very interesting project. 
+
+
+Python Modules 
+	Requests 	     	: for consuming APIs
+	Re   				: for regular expressions 
+	Scikit-learn  		: for machine learning - I used for creating linear regression model
+	BeautifulSoap 		: for parsing html content. Used when I worked on web crawling
+	NumPy				: Advanced linear algebra and NumPy array operations
+	SciPy				: Contains modules for optimization, linear algebra, and other essential data science functions.
+	Matplotlib			: Visualization and data plotting in 2 or 3 dimensions.
+	IPython				: Increasing console interactivity.
+	SymPy				: Symbolic computation and computer algebra.
+	Pandas				: Data manipulation and analysis, mainly through dataframes and tables.
+	
+Frameworks 
+	Django , flask, fastapi 
+
+Python Questions
+=================
+	- List vs Tuple 
+		- List is mutable object, means we can edit the object like append, delete, ..
+		- Tuple are faster than list
+			- Tuples are stored in a single block of memory. Tuples are immutable so, 
+			It doesn't require extra space to store new objects.
+			- Lists are allocated in two blocks: 
+				1. fixed one with all the Python object information, and 
+				2. variable sized block for the data.
+		- Tuples is that they use less memory where lists use more memory
+		List is used when we need to make changes in code, say like adding values while loop . 
+		Tuple is used when we wont change something in the code
+
+	- append vs extend 
+		- both adding elements in last of list 
+		- with append, we can add either single element or an iterable
+		- it will add at the end as it is 
+		- whereas extend works with iterable objects only, but adds in same dimension
+	- List
+		- Mutable object - it is editable. we can add , remove any element in it. 
+		- indexed and retains the order of initialization 
+		- will retain duplicates and can store any data type 
+	- Tuple 
+		- same as list, but once created, we cant change any element in it . 
+		- it is immutable object 
+	- Set 
+		- mutable object - we can edit it 
+		- unordered and wont store duplicates
+		- will store only immutable objects(int, float, string, frozenset, tuple)
+	- Dictionaries
+		- They are called as HashMap in other languages
+		- They store in key: value relation 
+		- keys should be immutable and unique
+		- ex: {1:2, 3:4, 5:6}
+	- Pickling 
+		- Pickling means Python object to flat file conversion 
+		- unpickling means flat file to python object conversion 
+		- This process is also called serialization/deserialization 
+		- Other serialization formats are json, yaml, ...
+
+	- lambda function
+		- one liner
+		- SYNATAX is lambda arguments: expression
+		- We need not define complete function. We can use instantly for the purpose. 
+		- I use it in map() and filter() functions 
+	- range() vs xrange() 
+		- In python 2, 
+			- range will give list of integers
+			- xrange will give a xrange object, which will give values only when iterated.  
+		- In python3, xrange is renamed as range.
+	- copy vs deepcopy 
+		- This problem occurs in mutable objects i.e., list, dictionary
+		- when working with mutables, when we assign a
+				list1 = list2 
+			it will not create new object 
+	it 
+	both wil refer to the same object 
+	so, if you change in one list, it will reflect in others 
+	to avoid, we go with copy 
+	using 
+	copy -- module 
+	- OOP 
+		- Object Oriented Programming 
+		- There are 4 principles:
+			1) ENCAPSULATION - with public , protected and private variables/methods
+					public variable -- it a variable is starting with no underscore 
+					protected variable -- if it is starting with SINGLE underscore
+					private variable -- if it is starting and ending with TWO underscores
+				
+				We can access all variables  of all classes irrespective of public or private or protected. 
+				This name mangling is to avoid accidental override 
+				
+				
+			2) ABSTRACTION: It is a process of hiding implementation details and showing only
+							functionality to the user.
+			3) INHERITANCE:
+					- python supports single, multiple and multi-level inheritance, using MRO (Method Resolution Order) 
+							single ---> one parent & one child 
+							multiple --> two parents & one child 
+							multi-level -->  parent1 => child ==> subChild
+			4) POLYMORPHISM: It is an ability of object to behave in multiple form. 
+				Ex: + operator, It will work differently in different contexts
+							addition operation between integers
+							List concatenation operator between lists
+							Tuple concatenation operator between tuples
+	- python 2 to 3
+		- I used python built-in module, lib2to3 , for migrating from python2 to python3. 
+		- Wrote code with six module to write compatible code, for both python2 and 3, during migrating phase.
+		- Difference between python2 and python3 
+			- Default encoding is ASCII in python2, whereas it  is UTF-8 in python3
+			- There were both old & new style classes in python2, whereas in python3, we have only new style classes.
+			- IN python2, range, map, filter will return list; where these are iterators in python3.
+		- Challenges during conversion	
+			- In python2, we can compare string and int; We cant do the same with python3
+				- I wrote wrapper to handle it 
+			- DEPENDENCY MANAGEMENT is another difficult thing, as some modules are either not available in python3,
+				or the latest features are not available in python3 modules.
+	- Virtual environment 
+		- It is like a container. 
+		- When in same server, we need to execute different versions, Or same python version, with different module 
+			versions, we go with a virtual environment.
+		- virtual environments can be created using modules like
+			- virtualenv
+			- pipenv, or 
+			- poerty	
+	- Generators 
+		- are the functions with yield, instead of return
+		- They are useful for large computations, like reading a large file, or creating 1000 prime numbers, or so.
+		- Generators follow the "STATE SUSPENSION"
+			- we can get one value at a time using next() builtin function, 
+				or iterate , or convert to list, tuple or set, to get all values
+		- return vs yield
+			- return is the last statement to execute in any function
+			- yield is a keyword in python
+				- If yield is placed within function definition, it becomes generator
+
+			- PEP8 - don't use both return & yield in same function
+
+			
+			def grepper_gen():
+				yield "add"
+				yield "grepper"
+				yield "answer"
+			grepper = grepper_gen()
+			
+	- Threading vs Asyncio 
+		Threading 
+			- In threading, OS actually knows about each thread and can interrupt it at 
+				any time to start running a different thread. 
+			- It is Pre-Emptive Multitasking 
+			- code in the thread doesn't need to do anything to make the switch. 
+			- difficult as OS can pause/resume thread "AT ANY TIME"
+		Asyncio	
+			- Cooperative Multitasking 
+			- Tasks must cooperate by announcing when they are ready to be switched out.
+			- You always know where your task will be swapped out. 
+	- GIL Problem 
+		- GIL means Global Interpreter Lock 
+		- Basically, Python is of three flavours, based on backend implementation 
+			- Cpython, Jython, Ironthon
+		- In Cpython, as it go with reference based assignment, if two threads are trying to update, 
+		  say, the same list, it can lead to data races, and deadlock. 
+		- To avoid deadlocks, it will lock a single thread, safely execute it and release it. 
+		- Due to this, we cant achieve the concurrency with python, unlike other languages. 
+		- Next solution, is multiprocessing. But, it is resource exhaustive. And, the maximum limit 
+		 on the processes which can be created, is limited to the system hardware limits.
+		- So, from python 3.6, with the advent of async and await keywords, I am using the asyncio 
+		 based non-blocking execution. 
+		- Here, within the single thread event loop, we will invoke all child threads; which is a solution 
+		  to this GIL problem 
+
+Django 
+	- Django vs Flask
+		- Django is Full-fledged framework within builtin features like ORM, Session management, Token management, Middleware, etc
+		- Flask is mini-framework, where we can create an application server in just 10 lines of code.
+
+	Django process flow 
+		Step 1: user will hit the endpoint in browser
+		Step 2: It will go to project level  urls.py 
+		Step 3: It will go to application level urls.py 
+		Step 4: It will go to  application level views.py 
+		Step 5: it will run business logic & models.py; and response is in reverse direction
+
+	Django Project Structure 
+		Project
+			Urls.py      ----------->  all project URLs routing
+			Settings.py  ----------->  all dB settings and all with be here 
+			at App Level
+				Urls.py 
+				Views.py  ----------->   business logic 
+				Models.py ----------->   dB table schemas
+				Tests.py  ----------->   unit tests for the specific app related code
+				admin.py  ----------->   It will be used for registering what models to be seen in admin page 
+
+	Django Migrations
+		- In Django project, in each app folder level, a folder named "migrations" will be present.
+			In it, there will be python scripts like 
+				001__CHANGENAME_TIMESTAMP.py
+				002__CHANGENAME_TIMESTAMP.py
+			When we make changes in models.py file, and run "python manage.py makemigrations", these files 
+			will be created.
+
+		Python manage.py makemigrations ----> Will create the migration files, in app/migrations folder
+		Python manage.py migrate        ----> will Apply the migrations files, on to the database.
+		Python manage.py showmigrations ----> will see the status of migrations, on to the database.
+
+	Django Serializers
+		- Serializers allow complex data such as querysets and model instances to be converted to native
+			Python datatypes that can then be easily rendered into JSON, XML or other content types. 
+		- Serializers also provide deserialization, allowing parsed data to be converted back into complex 
+			types, after first validating the incoming data.
+		
+			from rest_framework import serializers
+			from .models import Product
+
+			class ProductSerializers(serializers.ModelSerializer):
+				class Meta:
+					model = Product
+					fields = '__all__'
+
+	Django Models
+		- Under each app folder in Django project, we have models.py file.
+		- It is the placeholder for the database schema for the app in that project.
+		- Each class represents a DB table
+		- Ex:
+		Class  MyTable(model.Model):
+			Col1 = models.CharFiled(max_length= 20)
+			Col2 = model.IntegerFiled(default=0)
+
+	Session Management
+		- Django uses Django-sessions table to store the session related information 
+		- we can configure it 
+
+	Django Authentication 
+		- Django supports session based authentication for the UI , means web applications
+		- And, Token-based Authentication   -- for REST APIs
+		- Also, I worked with JWT and OAuth for authentication
+
+	Django Middleware
+		- Middleware is processes that acts between request and response execution
+		- GZipMiddleware - will compress the response 
+		- CsrfViewMiddleware - will not allow any POST request without valid CSRF token to each the app server.
+		- Other examples include SecurityMiddleware, SessionMiddleware, AuthenticationMiddleware.
+		- I created a custom Middleware for counting the User requests and analytics on it.
+		
+			class CountRequestsMiddleware:
+			
+				def __init__(self, get_response):
+					self.get_response = get_response
+					self.count_requests = 0
+					self.count_exceptions = 0
+			
+				def __call__(self, request, *args, **kwargs):
+					self.count_requests += 1
+					logger.info(f"Handled {self.count_requests} requests so far")
+					return self.get_response(request)
+
+	- Django ORM - object relational mapper
+		- I will use ORM for small queries 
+		- For large queries, I will use raw SQL code 
+		- It will be scalable, readable and fast to use when multiple joins are present . 
+		Optimizing ORM queries - https://schegel.net/posts/optimizing-django-orm-queries/
+	- Django ORM vs SQLAlchemy 
+
+	- Multiple Databases in Django Project 
+
+		DATABASES = {
+			'default': {
+				'NAME': 'app_data',
+				'ENGINE': 'django.db.backends.postgresql',
+				'USER': 'postgres_user',
+				'PASSWORD': 's3krit'
+			},
+			'users': {
+				'NAME': 'user_data',
+				'ENGINE': 'django.db.backends.mysql',
+				'USER': 'mysql_user',
+				'PASSWORD': 'priv4te'
+			}
+		}
+		
+		$ ./manage.py migrate --database=users
+		$ ./manage.py migrate --database=customers
+	
+	- Django Cheatsheet
+		https://cheatography.com/papousekp/cheat-sheets/django-class-based-views/	
+		https://cheatography.com/lewiseason/cheat-sheets/django-models/
+	- Django Test Setup
+
+		Django Settings.py 
+
+			TEST_RUNNER = 'xmlrunner.extra.djangotestrunner.XMLTestRunner'
+			TEST_OUTPUT_FILE_NAME = 'unit.xml'
+			
+		requirements.txt
+			unittest-xml-reporting==3.0.2
+			
+		python_install.sh
+			
+			#!/usr/bin/env bash 
+			
+			sudo apt update 
+			sudo apt --yes install software-properties-common;
+			sudo add-apt-repository ppa:deadsnakes/ppa;
+			sudo apt update; sudo apt --yes install python3.7;
+			sudo rm /usr/bin/python3;
+			sudo ln -s /usr/bin/python3.7 /usr/bin/python3
+			curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py;
+			python3 get-pip.py --force-reinstall;
+			sudo apt-get --yes install python3.7-dev;
+			sudo apt-get --yes install libpq-dev;
+			pip3 install virtualenv;
+			virtualenv -p python3 env1;
+
+CI/CD 
+	- it  means Continuous Integration/Continuous Deployment 
+	- I worked with Jenkins
+	- created a EC2 instance, installed Jenkins, added plugins like Filesystem Trigger, …
+	- I used bitbucket as the code repository.
+	- Gone to settings, and brought the webhook and integrated in the Jenkins.
+	- Now any git push to the bitbucket event will trigger the build process. 
+	- And, in the code repository, I wrote the code in Groovy script. 
+	- It involved 5 stages:
+		1. unit testing 
+		2. Integration testing 
+		3. code coverage check -- whether it is greater than 90% or not 
+		4. Static code analysis with flake8 and SonarQube 
+		5. security scanning using Veracode
+		As no build, next step is deployment 
+	Current project, it is with containers 
+		We use docker.yaml for containzation 
+		And kubernetes.yaml for orchestration 
+	
+	- Also, worked with cloudformation.json templates for infra management .  
+		 - Terraform is very naive experience 
+
+	- Code Flow process 
+		- feature branch -(once completed) - dev branch -(testers signoff)-> release branch -(signoff from client)- production branch 
+
+Git Commands 
+	- git commit vs git push?
+		git commit  - puts your changes into your local repo, 
+		git push    - sends your changes to the remote location.
+
+	- git fetch vs git pull?
+
+		git pull pulls down from a remote and instantly merges.
+		git fetch is similar to pull but doesn't merge. 
+			
+		git fetch - tells your local git to retrieve the latest meta-data info from the original 
+						(yet doesn't do any file transferring. It's more like just checking to see if 
+						there are any changes available). 
+		git pull  - does git fetch AND brings (copy) those changes from the remote repository.
+		
+	- Git merge vs git rebase
+   
+		Git rebase and merge both integrate changes from one branch into another.
+		Git rebase moves a feature branch into a master. Git merge adds a new commit, preserving the history.
+
+		Merge: Moves changes from a branch to another and creates a merge commit.
+		History is preserved.
+			(Feature branch context) When to Merge: Merge if target branch has no changes. 
+		
+		Rebase: Moves changes from a branch to another but alters the history by moving
+		the origin branch's starting point. It does not create a merge commit.
+		
+		(Feature branch context) When to Rebase: Pull and rebase if there are changes on target branch.
+
+
+AWS Cloud 
+	- boto3 is built on top of botocore
+		- client is for lower-level interactions
+		- resource for higher-level object oriented abstractions
+		- waiters are polling the status of specific resource
+			- say, when creating ec2 instance, waiting till it reaches "Running" state
+		- collections indicate a group of resources such as a group of s3 objects
+		  in a bucket, or a group of SQS queues
+  			- It helps to perform some action on those groups
+	- Lambda layer 
+		- It is an archive containing additional code, such as libraries, dependencies, or 
+		  even custom runtimes. 
+		- When you include a layer in a function, the contents are extracted to the /opt 
+		  directory in the execution environment.
+	- AWS Lambda Performance Optimizaton 
+		- increasing RAM => faster execution => same price.
+		- Watch out for function size to reduce the cold start durations.
+		- Split complex processes into separate functions to save money and gain speed.
+		- When possible, execute code in parallel.
+		- Reusing connections with Keep-Alive.
+	- AWS Glue 
+		- https://docs.aws.amazon.com/glue/latest/dg/add-job.html
+		- https://docs.aws.amazon.com/glue/latest/dg/workflows_overview.html
+
+- Database 
+	- https://www.interviewbit.com/sql-interview-questions
+	- - Normalization
+		- process of organizing the columns, tables of a database to minimize the 
+			redundancy of data. Normalization involves in dividing large tables 
+			into smaller tables and defining relationships between them. 
+		- First Normal Form: 
+			Duplicate columns from the same table needs to be eliminated. 
+			We have to create separate tables for each group of related data and 
+			identify each row with a unique column or set of columns (Primary Key)
+		- Second Normal Form: 
+			First it should meet the requirement of first normal form. 
+			Removes the subsets of data that apply to multiple rows of a table and 
+			place them in separate tables. 
+			Relationships must be created between the new tables and their predecessors 
+			through the use of foreign keys.
+		- Third Normal Form: 
+			First it should meet the requirements of second normal form. 
+			Remove columns that are not depending upon the primary key.
+			- Most databases will be Third Normal Form
+		- Fourth Normal Form: 
+			- There should not be any multi-valued dependencies.
+	- Relations 
+		- one-to-one relationship 
+			- simple reference between two tables. Consider Customer and Address tables 
+			as an example. 
+			- A customer can have only one address and an address references only one customer.
+		- One-to-many relationships 
+			- Implemented by splitting the data into two tables with a primary key and 
+				foreign key relationship. 
+			- Here the row in one table is referenced by one or more rows in the other table. 
+			An example is the Employees and Departments table, where the row in the Departments
+			table is referenced by one or more rows in the Employees table.
+		- Many-to-Many relationship 
+			- created between two tables by creating a junction table with the key from both 
+			the tables forming the composite primary key of the junction table.
+	-  Truncate vs Delete
+		- Both used to delete data from the table
+		- Truncate is a DDL statement. Delete is a DML statement
+		- Truncate does not generate rollback segments. Whereas Delete does.
+		- In case of delete, rollback recovers data before issuing a commit. 
+			In case of truncate, you cannot recover data.
+		- Truncate does not fire any delete triggers created on the table. 
+			Whereas the delete does.
+		DELETE -
+		- DML COMMAND
+		- Delete Rows from the table one by one
+		- We can use where clause with Delete to delete single row
+		- Delete is slower than truncate
+		- ROLLBACK is possible with DELETE
+
+		DROP-
+		- DDL COMMAND
+		- Delete the entire structure or schema
+		- We can't use where clause with drop
+		- Drop is slower than DELETE & TRUNCATE
+		- ROLLBACK IS NOT POSSIBLE WITH DROP
+
+		TRUNCATE-
+		- DDL COMMAND
+		- Truncate deletes rows at a one goal
+		- We can't use where clause with Truncate
+		- Truncate faster than both DELETE & DROP
+		- Rollback is not possible with Truncate
+	- Union vs Union all 
+		- Union set operator removes duplicate records. Whereas union all does not.
+		- Union operator sorts the data in ascending order. union all does not.
+		- Union all is faster than union operator.
+	- keys 
+		- Primary key: 
+			- used to uniquely identify each row in a table and does not allow null values.
+		- Foreign key: 
+			- it is one or more columns whose values are based on the primary key values 
+			from another table.
+		- Unique Key: 
+			- Unique key identifies a each row in the table uniquely. Unique key allows null values.
+
+	- stored procedure vs Functions
+		- stored procs neither contain any parameter, nor return any value. 
+		  Functions should contain atleast one parameter and should return a value.
+		- functions can be called from stored procs; but cant call stored procs from functions.
+		- Transactions and DML commands can be executed on stored procs; but not with functions.
+	- DB Indexing
+	- SQL JOINs
+		- Four types -  left, right, inner, and outer.
+		- (INNER) JOIN 		 : Returns records that have matching values in both tables.
+		- LEFT (OUTER) JOIN  : Returns all records from the left table, and the matched records from the right table.
+		- RIGHT (OUTER) JOIN : Returns all records from the right table, and the matched records from the left table.
+
+	
+		○ DB View vs Materialized View
+			DB Views	Materialized DB Views
+			Virtual table and doesn’t occupy any storage space	Copies of data are stored in the memory
+			It will have up to date data in it as it is executed at run-time	Needs to be refreshed every time when it is used as it has compiled data
+			Executed when a query is run n view using SELECT	Executed and records are stored in the database
+			Data access is slower	 Faster data access because data is directly accessed from physical location
+			Generally, used to restrict data from database	Generally, used in data warehousing
+				
+
+	- MongoDB - https:
+		- cheatography.com/zeineb-and-kawther/cheat-sheets/mongodb/
+
+- Data Warehouse
+	- single, complete and consistent store of data obtained from 
+	  a variety of different sources made available to end users
+	
+	OLAP -- for  application
+	
+	OLTP - for warehouse 
