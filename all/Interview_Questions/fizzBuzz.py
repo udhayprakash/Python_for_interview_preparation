@@ -18,5 +18,11 @@ def fizz_buzz(n):
         print(result if result else i)
 
 
+def fizz_buzz(n):
+    result = [("Fizz"*(i % 3 == 0)+"Buzz"*(i % 5 == 0) or i)
+              for i in range(1, n)]
+    return result
+
+
 if __name__ == '__main__':
     fizz_buzz(15)
