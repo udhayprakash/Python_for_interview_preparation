@@ -1,0 +1,190 @@
+- Database 
+	- https://www.interviewbit.com/sql-interview-questions
+	- Normalization
+		- process of organizing the columns, tables of a database to minimize the 
+			redundancy of data. Normalization involves in dividing large tables 
+			into smaller tables and defining relationships between them. 
+		- First Normal Form: 
+			Duplicate columns from the same table needs to be eliminated. 
+			We have to create separate tables for each group of related data and 
+			identify each row with a unique column or set of columns (Primary Key)
+		- Second Normal Form: 
+			First it should meet the requirement of first normal form. 
+			Removes the subsets of data that apply to multiple rows of a table and 
+			place them in separate tables. 
+			Relationships must be created between the new tables and their predecessors 
+			through the use of foreign keys.
+		- Third Normal Form: 
+			First it should meet the requirements of second normal form. 
+			Remove columns that are not depending upon the primary key.
+			- Most databases will be Third Normal Form
+		- Fourth Normal Form: 
+			- There should not be any multi-valued dependencies.
+	- Relations 
+		- one-to-one relationship 
+			- simple reference between two tables. Consider Customer and Address tables 
+			as an example. 
+			- A customer can have only one address and an address references only one customer.
+		- One-to-many relationships 
+			- Implemented by splitting the data into two tables with a primary key and 
+				foreign key relationship. 
+			- Here the row in one table is referenced by one or more rows in the other table. 
+			An example is the Employees and Departments table, where the row in the Departments
+			table is referenced by one or more rows in the Employees table.
+		- Many-to-Many relationship 
+			- created between two tables by creating a junction table with the key from both 
+			the tables forming the composite primary key of the junction table.
+	-  Truncate vs Delete
+		- Both used to delete data from the table
+		- Truncate is a DDL statement. Delete is a DML statement
+		- Truncate does not generate rollback segments. Whereas Delete does.
+		- In case of delete, rollback recovers data before issuing a commit. 
+			In case of truncate, you cannot recover data.
+		- Truncate does not fire any delete triggers created on the table. 
+			Whereas the delete does.
+		DELETE -
+		- DML COMMAND
+		- Delete Rows from the table one by one
+		- We can use where clause with Delete to delete single row
+		- Delete is slower than truncate
+		- ROLLBACK is possible with DELETE
+
+		DROP-
+		- DDL COMMAND
+		- Delete the entire structure or schema
+		- We can't use where clause with drop
+		- Drop is slower than DELETE & TRUNCATE
+		- ROLLBACK IS NOT POSSIBLE WITH DROP
+
+		TRUNCATE-
+		- DDL COMMAND
+		- Truncate deletes rows at a one goal
+		- We can't use where clause with Truncate
+		- Truncate faster than both DELETE & DROP
+		- Rollback is not possible with Truncate
+
+	- Union vs Union all 
+		- Union set operator removes duplicate records. Whereas union all does not.
+		- Union operator sorts the data in ascending order. union all does not.
+		- Union all is faster than union operator.
+	- keys 
+		- Primary key: 
+			- used to uniquely identify each row in a table and does not allow null values.
+		- Foreign key: 
+			- it is one or more columns whose values are based on the primary key values 
+			from another table.
+		- Unique Key: 
+			- Unique key identifies a each row in the table uniquely. Unique key allows null values.
+
+	- stored procedure vs Functions
+		- stored procs neither contain any parameter, nor return any value. 
+		  Functions should contain atleast one parameter and should return a value.
+		- functions can be called from stored procs; but cant call stored procs from functions.
+		- Transactions and DML commands can be executed on stored procs; but not with functions.
+
+	- DB Indexing
+		- Clustered
+			- sort and store the data rows in the table, or view based on their key values.
+			- index contains pointers to block, but not direct data.
+			- Ex:if primary key is applied to any column, it automatically becomes clustered index.
+			- You can have only one clustered index in one table, but you can have one clustered 
+			  index on multiple columns, and that type of index is called composite index.
+			- faster and requires less memory for operations
+		- Non-clustered
+			- The data is stored in one place, and index is stored in another place. 
+			  Since, the data and non-clustered index is stored separately, then you can have 
+			  multiple non-clustered index in a table. 
+			- In non-clustered index, index contains the pointer to data. 
+			- slow and requires more memory for operations
+
+	- window functions 
+		- window functions operate on a set of rows and return a single aggregated value for each row.
+		- Unlike regular aggregate functions, window functions retuns single aggregated value for each row.
+		- There are 3 types of window functions
+			- Aggregate window functions - SUM(), MAX(), MIN(), AVG(), COUNT()
+			- Ranking Window Functions - RANK(), DENSE_RANK(), ROW_NUMBER(), NTILE()
+			- Value Window Functions - LAG(), LEAD(), FIRST_VALUE(), LAST_VALUE()
+
+	- SQL JOINs
+		- Four types -  left, right, inner, and outer.
+		- (INNER) JOIN 		 : Returns records that have matching values in both tables.
+		- LEFT (OUTER) JOIN  : Returns all records from the left table, and the matched records from the right table.
+		- RIGHT (OUTER) JOIN : Returns all records from the right table, and the matched records from the left table.
+
+	- temp tables 
+		- Table variables (DECLARE @t TABLE) are visible only to the connection that creates it, 
+						and are deleted when the batch or stored procedure ends.
+		- Local temporary tables (CREATE TABLE #t) are visible only to the connection that creates it, 
+						and are deleted when the connection is closed.
+		- Global temporary tables (CREATE TABLE ##t) are visible to everyone, and are deleted when all 
+						connections that have referenced them have closed.
+		- Tempdb permanent tables (USE tempdb CREATE TABLE t) are visible to everyone, and are deleted 
+						when the server is restarted.
+
+	- DB View vs Materialized View
+		DB Views	Materialized DB Views
+		Vi	rtual table and doesn’t occupy any storage space	Copies of data are stored in the memory
+		It will have up to date data in it as it is executed at run-time	Needs to be refreshed every time when it is used as it has compiled data
+		Executed when a query is run n view using SELECT	Executed and records are stored in the database
+		Data access is slower	 Faster data access because data is directly accessed from physical location
+		Generally, used to restrict data from database	Generally, used in data warehousing
+				
+	- DB Triggers 
+		- they are kind of stored procedures, which reacts to certain actions we make in db. 
+		- actions like creating/updating/deleting a record
+		- 3 groups 
+			- DML (data manipulation language) triggers react to INSERT, UPDATE, and DELETE
+			- DDL (data definition language) triggers react to  CREATE, ALTER, and DROP
+			- Logon triggers reacts to LOGON events
+		ref: https://www.sqlshack.com/learn-sql-sql-triggers/
+
+	- MongoDB - https:
+		- cheatography.com/zeineb-and-kawther/cheat-sheets/mongodb/
+
+			SQL						|    NoSQL
+			  relational			| non-relational
+									|
+			use structured query	| NoSQL databases have 
+			language and have a		| dynamic schemas for 
+			predefined schema.		| unstructured data.
+									|
+			are vertically scalable | are horizontally scalable.
+			are table based			| are document, key-value,
+									| graph or wide-column stores.
+	- SQL performance Tuning 
+		1. Use EXISTS instead of IN to check existence of data.
+		2. Avoid * in SELECT statement. Give the name of columns which you require.
+		3. Choose appropriate Data Type. E.g. To store strings use varchar in place of text data type. Use text data type, whenever you need to store large data (more than 8000 characters).
+		4. Avoid nchar and nvarchar if possible since both the data types takes just double memory as char and varchar.
+		5. Avoid NULL in fixed-length field. In case of requirement of NULL, use variable-length (varchar) field that takes less space for NULL.
+		6. Avoid Having Clause. Having clause is required if you further wish to filter the result of an aggregations.
+		7. Create Clustered and Non-Clustered Indexes.
+		8. Keep clustered index small since the fields used in clustered index may also used in non-clustered index.
+		9. Most selective columns should be placed leftmost in the key of a non-clustered index.
+		10. Drop unused Indexes.
+		11. Better to create indexes on columns that have integer values instead of characters. Integer values use less overhead than character values.
+		12. Use joins instead of sub-queries.
+		13. Use WHERE expressions to limit the size of result tables that are created with joins.
+		14. Use TABLOCKX while inserting into a table and TABLOCK while merging.
+		15. Use WITH (NOLOCK) while querying the data from any table.
+		16. Use SET NOCOUNT ON and use TRY- CATCH to avoid deadlock condition.
+		17. Avoid Cursors since cursor are very slow in performance.
+		18. Use Table variable in place of Temp table. Use of Temp tables required interaction with TempDb database which is a time taking task.
+		19. Use UNION ALL in place of UNION if possible.
+		20. Use Schema name before SQL objects name.
+		21. Use Stored Procedure for frequently used data and more complex queries.
+		22. Keep transaction as small as possible since transaction lock the processing tables data and may results into deadlocks.
+		23. Avoid prefix “sp_” with user defined stored procedure name because SQL server first search the user defined procedure in the master database and after that in the current session database.
+		24. Avoid use of Non-correlated Scalar Sub Query. Use this query as a separate query instead of part of the main query and store the output in a variable, which can be referred to in the main query or later part of the batch.
+		25. Avoid Multi-statement Table Valued Functions (TVFs). Multi-statement TVFs are more costly than inline TVFs.
+	- rank vs dense rank 
+		views vs materialized views 
+		slowly changing dimensions
+		stored procedures		
+- Data Warehouse
+	- single, complete and consistent store of data obtained from 
+	  a variety of different sources made available to end users
+	
+	OLAP -- for  application
+	
+	OLTP - for warehouse 

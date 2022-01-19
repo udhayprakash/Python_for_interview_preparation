@@ -1,0 +1,142 @@
+- Django vs Flask 
+	- Django is Full-fledged framework within builtin features like ORM, Session management,
+	  Token management, Middleware, etc 
+	- Flask is mini-framework, where we can create an application server in just 10 lines of code.
+
+    Django process flow
+    	Step 1: user will hit the endpoint in browser
+    	Step 2: It will go to project level  urls.py
+    	Step 3: It will go to application level urls.py
+    	Step 4: It will go to  application level views.py
+    	Step 5: it will run business logic & models.py; and response is in reverse direction
+
+    Django Project Structure
+    	Project
+    		Urls.py      ----------->  all project URLs routing
+    		Settings.py  ----------->  all dB settings and all with be here
+    		at App Level
+    			Urls.py
+    			Views.py  ----------->   business logic
+    			Models.py ----------->   dB table schemas
+    			Tests.py  ----------->   unit tests for the specific app related code
+    			admin.py  ----------->   It will be used for registering what models to be seen in admin page
+
+    Django Migrations
+    	- In Django project, in each app folder level, a folder named "migrations" will be present.
+    		In it, there will be python scripts like
+    			001__CHANGENAME_TIMESTAMP.py
+    			002__CHANGENAME_TIMESTAMP.py
+    		When we make changes in models.py file, and run "python manage.py makemigrations", these files
+    		will be created.
+
+    	Python manage.py makemigrations ----> Will create the migration files, in app/migrations folder
+    	Python manage.py migrate        ----> will Apply the migrations files, on to the database.
+    	Python manage.py showmigrations ----> will see the status of migrations, on to the database.
+
+    Django Serializers
+    	- Serializers allow complex data such as querysets and model instances to be converted to native
+    		Python datatypes that can then be easily rendered into JSON, XML or other content types.
+    	- Serializers also provide deserialization, allowing parsed data to be converted back into complex
+    		types, after first validating the incoming data.
+
+    		from rest_framework import serializers
+    		from .models import Product
+
+    		class ProductSerializers(serializers.ModelSerializer):
+    			class Meta:
+    				model = Product
+    				fields = '__all__'
+
+    Django Models
+    	- Under each app folder in Django project, we have models.py file.
+    	- It is the placeholder for the database schema for the app in that project.
+    	- Each class represents a DB table
+    	- Ex:
+    	Class  MyTable(model.Model):
+    		Col1 = models.CharFiled(max_length= 20)
+    		Col2 = model.IntegerFiled(default=0)
+
+    Session Management
+    	- Django uses Django-sessions table to store the session related information
+    	- we can configure it
+
+    Django Authentication
+    	- Django supports session based authentication for the UI , means web applications
+    	- And, Token-based Authentication   -- for REST APIs
+    	- Also, I worked with JWT and OAuth for authentication
+
+    Django Middleware
+    	- Middleware is processes that acts between request and response execution
+    	- GZipMiddleware - will compress the response
+    	- CsrfViewMiddleware - will not allow any POST request without valid CSRF token to each the app server.
+    	- Other examples include SecurityMiddleware, SessionMiddleware, AuthenticationMiddleware.
+    	- I created a custom Middleware for counting the User requests and analytics on it.
+
+    		class CountRequestsMiddleware:
+
+    			def __init__(self, get_response):
+    				self.get_response = get_response
+    				self.count_requests = 0
+    				self.count_exceptions = 0
+
+    			def __call__(self, request, *args, **kwargs):
+    				self.count_requests += 1
+    				logger.info(f"Handled {self.count_requests} requests so far")
+    				return self.get_response(request)
+
+    - Django ORM - object relational mapper
+    	- I will use ORM for small queries
+    	- For large queries, I will use raw SQL code
+    	- It will be scalable, readable and fast to use when multiple joins are present .
+    	Optimizing ORM queries - https://schegel.net/posts/optimizing-django-orm-queries/
+    - Django ORM vs SQLAlchemy
+
+    - Multiple Databases in Django Project
+
+    	DATABASES = {
+    		'default': {
+    			'NAME': 'app_data',
+    			'ENGINE': 'django.db.backends.postgresql',
+    			'USER': 'postgres_user',
+    			'PASSWORD': 's3krit'
+    		},
+    		'users': {
+    			'NAME': 'user_data',
+    			'ENGINE': 'django.db.backends.mysql',
+    			'USER': 'mysql_user',
+    			'PASSWORD': 'priv4te'
+    		}
+    	}
+
+    	$ ./manage.py migrate --database=users
+    	$ ./manage.py migrate --database=customers
+
+    - Django Cheatsheet
+    	https://cheatography.com/papousekp/cheat-sheets/django-class-based-views/
+    	https://cheatography.com/lewiseason/cheat-sheets/django-models/
+    - Django Test Setup
+
+    	Django Settings.py
+
+    		TEST_RUNNER = 'xmlrunner.extra.djangotestrunner.XMLTestRunner'
+    		TEST_OUTPUT_FILE_NAME = 'unit.xml'
+
+    	requirements.txt
+    		unittest-xml-reporting==3.0.2
+
+    	python_install.sh
+
+    		#!/usr/bin/env bash
+
+    		sudo apt update
+    		sudo apt --yes install software-properties-common;
+    		sudo add-apt-repository ppa:deadsnakes/ppa;
+    		sudo apt update; sudo apt --yes install python3.7;
+    		sudo rm /usr/bin/python3;
+    		sudo ln -s /usr/bin/python3.7 /usr/bin/python3
+    		curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py;
+    		python3 get-pip.py --force-reinstall;
+    		sudo apt-get --yes install python3.7-dev;
+    		sudo apt-get --yes install libpq-dev;
+    		pip3 install virtualenv;
+    		virtualenv -p python3 env1;

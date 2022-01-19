@@ -1,0 +1,30 @@
+- Docker 
+	1. `docker ps`  # current containers
+	2. `docker run` # create and start the container
+	3. `docker create` # create container
+	4. `dokcer exec` # to run commnads in container for once
+	5. `docker stop [container ID]` # terminate the container and save it's state by commit it 
+	6. `docker rm [container ID]` # remove container 
+	7. `docker inspect [container ID]` # Get more info about running container
+	___
+	7. `docker images` # list the images
+	8. `docker push` # push your image to docker repo
+	9. `docker pull` # download an image from docker repo
+	10. `docker commit` # create an image from container
+	11. `docker rmi` # remove image
+	___
+	12. `docker volume` # create a docker volume
+	13. `docker network` # create a docker network
+	14. `docker build` # build a new image from dockerfile
+	
+			docker build -t imageName:imageTag pathToDockerfileDirectory/
+
+			Example:
+			docker build -t vieux/apache:2.0
+			
+- Kubernetes
+	-  Ingress 
+		- An object that allows access to your Kubernetes services from outside the Kubernetes cluster. 
+		- we can configure access by creating a collection of rules that define which inbound connections reach which services.
+		- Ingress traffic is composed of all the data communications and network traffic originating from external networks and destined for a node in the host network. Ingress traffic can be any form of traffic whose source lies in an external network and whose destination resides inside the host network.
+	

@@ -1,0 +1,16 @@
+I have created ETL jobs with event driven architecture 
+worked with multiple ETL jobs.
+
+s3 bucket -- > new file comes --> triggered lambda --> pandas dataframes process --> push to dB -- 
+
+time triggered  ---> periodically, it will check for new data in the files and dump them together 
+		say it may run for every 1 hr 
+http triggered -- > some one want to push data to out application 
+		--- I exposed my lambda via API gateway --
+
+
+
+Also, used the AWS GLue jobs for transformation of around 50k records. 
+I configured the glue data catalog to pick the specific columns AND  perform operations
+	Within the python code, i connected with the pyspark for some transformations, etc
+And dumped final results in either parquet for any further jobs, or to the db 

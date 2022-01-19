@@ -1,0 +1,47 @@
+In current project, there is a Data pipeline
+	- If a file is created in s3 bucket, AWS lambda will be triggered and we can dump to another s3 bucket or to the database.
+	- I created one in that way
+	- But problem is that in production, due to sudden change in permission, in one of the intermediate buckets, the process was stopped in middle I am not aware of this issue because I am configured to report only if there are issues. 
+	- This is a production issue.
+	- After this , I learned best practice
+		○ To be careful; and guide all to be careful in changing permission.
+		○ I created custom alert to notify such things
+			§ I am reading CloudWatch logs  for doing these
+I have written am AWS Lambda which will be time triggered, on periodic basis and check for such logs and reports  via SNS - Simple notification service 
+
+
+1. Have you faced any challenges during your work time? How did you resolve it?
+Answer) 
+	There is an ETL job, where there is a stream of XML records( which are valid SAP records). 
+	I wrote a microservice in AWS lambda to 
+		a) parse each of these XMLs, 
+		b) convert that to python dict, 
+		c) filter few key-values among them, and then, 
+		d) dump that to database
+	It's a simple ETL job. So, as per design, I created unit and integration tests, and then were working. 
+	When I did performance testing, I found that it took 19.5 seconds for this entire microservice. 
+	To add some math, say on average I get 10 XMLs per minute and each takes 19 seconds. For a 1 minute book of work, I need to spend 190 seconds, or 3 minutes. Or, for one day of work, I need to process for 3 days. 
+	
+	When using the cProfiler, I understood that it is taking more time at the xml to dict conversion. 
+	As i used xmltodict python module for this conversion, I gone to code base of that module, pulled the 
+	exact code responsible for this conversion, and added to my code. Also, refactored my script further, which 
+	resulted in optimization from 19 seconds to 14 seconds. 
+	
+	Still when seen in cProfiler, I found that it is taking time at the XML to dict conversion only. 
+	With further analysis, I understood that each XML has around 70-85 tags, but I am using only 20 among them. 
+	So, I decided to use regular expressions to cherry pick what I need, instead of converting the entire XML to dict. 
+	Finally, i result in optimization from 19.5 seconds, to 14 seconds, till just 5 seconds. 
+	It is around 400 % optimization.
+
+
+2. Have you ever faced any difficulties working with technologies and how did you resolved it?
+Answer) I implemented multiple scripts in AWS lambda. But lambda functions have problem with both time of execution
+	and amount of memory consumption. Precisely, as we cant run a lambda function beyond 15 minutes, I 
+	rewrote the code, to split each functionality and coordinated them with AWS Step Functions. 
+	It is a promising solutions, as we can only coordinate the lambda functions to run either sequentially, 
+	or parallelly, but also we can feed result of one to the another. 
+	But, this kind of work distribution is not easy in all the cases. 
+	
+	So, I explored and got to know about the container based architecture. I got to know that there were no limits 
+	on execution time and/or memory consumption. So, I implemented new scripts AWS using AWS ECR (Elastic Container Registry)
+and EKS ( Elastic Kubernetes Service). I used docker for containerization and Kubernetes for orchestration of these pods.
