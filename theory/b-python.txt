@@ -7,7 +7,6 @@ Python Modules
 	SciPy				: Contains modules for optimization, linear algebra, and other essential data science functions.
 	Matplotlib			: Visualization and data plotting in 2 or 3 dimensions.
 	IPython				: Increasing console interactivity.
-	SymPy				: Symbolic computation and computer algebra.
 	Pandas				: Data manipulation and analysis, mainly through dataframes and tables.
 	
 Frameworks 
