@@ -1,0 +1,21 @@
+TLS vs mTLS
+	- TLS 
+		- Transport Layer Security
+		- One-way SSL 
+		- client always verifies the server certificates and the server never verifies the client certificates
+
+	- mTLS 
+		- Mutual Transport Layer Security 
+		- two-way SSL 
+		- client verifies the server certificates and server verifies the client certificates. 
+		- Sometimes two-way SSL is also known as Mutual Authentication
+
+SQL injection atack 
+	
+	xss 
+	XSS if you fill in a search field for example, and that variable is used
+on the page somewhere, you could type in "bullshit."
+"bullstit" appears in the markup. If the idiot that wrote the code doesn't
+filter, limit, or otherwise sanitize that value. You could have a problem...
+Dr. Evil could just type in some script ij the search field right?
+<p>Your search for 'flowers <script>evil_script()</script>

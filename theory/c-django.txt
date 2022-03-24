@@ -1,7 +1,24 @@
-- Django vs Flask 
+- Django vs Flask
 	- Django is Full-fledged framework within builtin features like ORM, Session management,
-	  Token management, Middleware, etc 
+	  Token management, Middleware, etc
 	- Flask is mini-framework, where we can create an application server in just 10 lines of code.
+
+	- Django MVC & MVT
+		- MVC - Model, View, Controller
+		- MVT - Model, View, Template
+
+		- Model
+			- It handles the data representation & db schema
+			- It serves as interface to data stored in database itself, and also allows you to
+			  interact with your data without having to pertubed with all complexities of the
+			  underlying database.
+		- View
+			- It represents what you see from web application, or REST API.
+		- Controller
+			- URL dispatcher
+
+		- Template
+			- Presentation layer when working with web application
 
     Django process flow
     	Step 1: user will hit the endpoint in browser
@@ -20,6 +37,25 @@
     			Models.py ----------->   dB table schemas
     			Tests.py  ----------->   unit tests for the specific app related code
     			admin.py  ----------->   It will be used for registering what models to be seen in admin page
+
+	Django Project Working Procedure
+		Step 1: Creating the project, using the command
+					django-admin startproject projectName
+
+		Step 2: Creating the app, within project,
+					python manage.py startapp appname
+
+		Step 3: In settings.py file, in apps section, add the application name, to register.
+
+		Step 4: In app-level, models.py, we need to add the db table schemas as classes,
+		        and do makemigrations and migrate, to apply schema changes to the database.
+
+		Step 5: In the app-level, views.py file, we need to write the business logic.
+				In app-level, create urls.py file, we need to link the views with the url endpoints
+
+		Step 6: Now, run the application, using the command
+					python manage.py runserver
+
 
     Django Migrations
     	- In Django project, in each app folder level, a folder named "migrations" will be present.
@@ -52,9 +88,9 @@
     	- It is the placeholder for the database schema for the app in that project.
     	- Each class represents a DB table
     	- Ex:
-    	Class  MyTable(model.Model):
-    		Col1 = models.CharFiled(max_length= 20)
-    		Col2 = model.IntegerFiled(default=0)
+			Class  MyTable(model.Model):
+				Col1 = models.CharFiled(max_length= 20)
+				Col2 = model.IntegerFiled(default=0)
 
     Session Management
     	- Django uses Django-sessions table to store the session related information
@@ -67,10 +103,30 @@
 
     Django Middleware
     	- Middleware is processes that acts between request and response execution
-    	- GZipMiddleware - will compress the response
-    	- CsrfViewMiddleware - will not allow any POST request without valid CSRF token to each the app server.
-    	- Other examples include SecurityMiddleware, SessionMiddleware, AuthenticationMiddleware.
+		- each middleware carries a performance overhead for each request.
+
+		- CsrfViewMiddleware  	- ensures that the CSRF token is present and valid on form submissions.
+		- LocaleMiddleware 		- for language translations if you choose to internationalize your project.
+    	- GZipMiddleware 		- will compress the response
+    	- CommonMiddleware  	- handles a variety of Django settings to control certain aspects of your project.
+								  Ex: APPEND_SLASH setting will redirect a request like
+								              example.com/accounts to example.com/accounts/.
+		- SessionMiddleware     - manages the session state of a user.
+
+		- Other examples include SecurityMiddleware, SessionMiddleware, AuthenticationMiddleware.
     	- I created a custom Middleware for counting the User requests and analytics on it.
+
+					   +--------- SecurityMiddleware --------------+
+					   |+-------- SessionMiddleware --------------+|
+					   ||+------- CommonMiddleware --------------+||
+					   |||+------ CsrfViewMiddleware -----------+|||
+					   ||||+----- AuthenticationMiddleware ----+||||
+					   |||||+---- MessageMiddleware ----------+|||||
+					   ||||||+--- XFrameOptionsMiddleware ---+||||||
+					   |||||||                               |||||||
+		HttpRequest =================> view function ==================> HttpResponse
+					   |||||||                               |||||||
+
 
     		class CountRequestsMiddleware:
 
@@ -84,11 +140,89 @@
     				logger.info(f"Handled {self.count_requests} requests so far")
     				return self.get_response(request)
 
+		- writing custom middleware; we can create middleware.py file
+
+				class AwesomeMiddleware:
+					def __init__(self, get_response):
+						self.get_response = get_response
+
+					def __call__(self, request):
+						return self.get_response(request)
+
+		  After creating the middleware, you add it to your settings.
+
+				# project/settings.py
+
+				MIDDLEWARE = [
+					'django.middleware.security.SecurityMiddleware',
+					...,
+					'middleware.AwesomeMiddleware',
+				]
+		 - another middleware example,
+			import logging
+			import time
+
+			logger = logging.getLogger(__name__)
+
+
+			class AwesomeMiddleware:
+				def __init__(self, get_response):
+					self.get_response = get_response
+
+				def __call__(self, request):
+					before_timestamp = time.time()
+					logger.info(f"Tracking {before_timestamp}")
+
+					response = self.get_response(request)
+
+					after_timestamp = time.time()
+					delta = after_timestamp - before_timestamp
+					logger.info(f"Tracking {after_timestamp} for a delta of {delta}")
+
+					return response
+
+		- another example
+			import logging
+			import time
+
+			logger = logging.getLogger(__name__)
+
+
+			class AwesomeMiddleware:
+				def __init__(self, get_response):
+					self.get_response = get_response
+
+				def __call__(self, request):
+					before_timestamp = time.time()
+					logger.info(f"Tracking {before_timestamp}")
+
+					response = self.get_response(request)
+
+					after_timestamp = time.time()
+					delta = after_timestamp - before_timestamp
+					logger.info(f"Tracking {after_timestamp} for a delta of {delta}")
+
+					return response
+
+				def process_view(self, request, view_func, view_args, view_kwargs):
+					logger.info(f"Running {view_func.__name__} view")
+
     - Django ORM - object relational mapper
     	- I will use ORM for small queries
     	- For large queries, I will use raw SQL code
     	- It will be scalable, readable and fast to use when multiple joins are present .
     	Optimizing ORM queries - https://schegel.net/posts/optimizing-django-orm-queries/
+
+		- select_related()
+			- "follows" foreign-key relationships, selecting additional related-object
+			   data when it executes its query.
+		- prefetch_related()
+			- does a separate lookup for each relationship, and does the "joining" in Python.
+
+	- Django Manager
+		- Manager is some kind of interface between application and the database.
+		- we can define custom base querysets, for the models.
+
     - Django ORM vs SQLAlchemy
 
     - Multiple Databases in Django Project
@@ -140,3 +274,8 @@
     		sudo apt-get --yes install libpq-dev;
     		pip3 install virtualenv;
     		virtualenv -p python3 env1;
+
+
+
+Flask
+	- Sqlachemy with Alembic for database migrations

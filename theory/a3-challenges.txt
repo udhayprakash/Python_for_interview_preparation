@@ -22,12 +22,12 @@ Answer)
 	When I did performance testing, I found that it took 19.5 seconds for this entire microservice. 
 	To add some math, say on average I get 10 XMLs per minute and each takes 19 seconds. For a 1 minute book of work, I need to spend 190 seconds, or 3 minutes. Or, for one day of work, I need to process for 3 days. 
 	
-	When using the cProfiler, I understood that it is taking more time at the xml to dict conversion. 
+	When using the cProfiler, I understood that it is taking more time at the xml to dictionary conversion. 
 	As i used xmltodict python module for this conversion, I gone to code base of that module, pulled the 
 	exact code responsible for this conversion, and added to my code. Also, refactored my script further, which 
 	resulted in optimization from 19 seconds to 14 seconds. 
 	
-	Still when seen in cProfiler, I found that it is taking time at the XML to dict conversion only. 
+	Still when seen in cProfiler, I found that it is taking time at the XML to dictionary conversion only. 
 	With further analysis, I understood that each XML has around 70-85 tags, but I am using only 20 among them. 
 	So, I decided to use regular expressions to cherry pick what I need, instead of converting the entire XML to dict. 
 	Finally, i result in optimization from 19.5 seconds, to 14 seconds, till just 5 seconds. 
@@ -45,3 +45,67 @@ Answer) I implemented multiple scripts in AWS lambda. But lambda functions have 
 	So, I explored and got to know about the container based architecture. I got to know that there were no limits 
 	on execution time and/or memory consumption. So, I implemented new scripts AWS using AWS ECR (Elastic Container Registry)
 and EKS ( Elastic Kubernetes Service). I used docker for containerization and Kubernetes for orchestration of these pods.
+
+
+Biggest Failures
+	- I worked on AWS lambda, when they were introduced, some 5 years back.
+	  At that test, there is no ecosystem for the local development, unittest, and mocking.
+
+	  I used to write test cases for other code workflows; but not for the aws lambda code.
+	  In a particular Aws lambda, i created logic to do recursive calls, based on an environment
+	  variable. But, when another person accidentally changes the environment variable, and it
+	  when unnoticed, code called itself recursively and it spawn multiple aws lambda.
+	  As the cloudwatch metrics and monitoring is not that active in those days, no emails triggered.
+
+	  But, luckily, we capped the AWS bill to some dollars. As the limit was reached, entire infra
+	  stopped.  We initially, thought it was some cyber attack. But it took sometime for us to
+	  analyze the billing to figure the issue.
+
+	  Then, we approached AWS with this case; After hearing, they waved-off the bill; But it is
+	  the biggest failure.
+
+	  Leasons learned here were
+		- no unit & integration tests -- means less reliability
+		- Thinking of edge cases before moving to production
+			- Using Monkey patching, and dynamically modifying classes/functions at runtime
+			  to see the effect
+		- Overall, i learned to do local setup using 'localstack' for working with those, without
+		  even going to AWs Cloud.
+
+Innovation - Process Improvement
+	- This is when i am working on one new product.
+	  Generally, we are in initial alpha/beta stages, we will focus more on adding new features.
+	  Resolving bugs will be done, but in a slow process.
+	  In that project, we followed the 2-week sprint. so, If any enhancement/bug is coming after the
+	  start of new sprint, we placed them in backlog; and pulled only in the coming sprint.
+	  DUe to this, in this case, when a bug is raised, it takes two weeks to start and another two-weeks
+	  to work and release to production. So, literally, after one month. By that time, half of people
+	  who raised the bugs, might have moved with different tool/process; or they lost interest.
+
+	  I noticed it by analysing the unique user hits to our portal. i could see with advertising, we
+	  could pull new users, but the retaining old/existing users became a challenge.
+
+	  To solve this problem, i proposed an idea, which i learned from one of the blogs.
+	  It is to combine both SCRUM and KANBAN.
+		  SCRUM --> for feature development
+		  KANBAN --> for bug management
+
+	  Idea is that in initial days, 80% time as dedicated for feature development, and 20 % of the time
+	  for bug management. Over period of time, when product development is most completed, we reduce the 
+	  time for feature development and give more to bug management. 
+
+	  In this way, we can create new features as designed; yet address the bugs in timely manner based on 
+	  thier SLAs. It actually helped increase the daily unique-user hits to our portal.
+
+	  Initally my manager objected this idea, as we need to maintain two separate dashboards;
+	  but i convinced him to  experiment for couple of sprints. Then, after seeing the success, he
+	  was very happy.
+
+Managing Tight deadlines
+	There was a time when the
+	Lessons Learned
+		Tip 1: Never commit to a deadline you know you cannot meet.
+		Tip 2: Once you have committed to a deadline, always meet it.
+		Tip 3: Planning and time management are key.
+		Tip 4: Concentration is the key to meeting deadlines and delivering good work.
+

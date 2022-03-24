@@ -1,0 +1,82 @@
+- REST	
+	- REST stands for REpresentational State Transfer
+	- It's principles are:
+		- It should be stateless
+		- It should access all the resources from the server using only URI
+		- It does not have inbuilt encryption
+		- It does not have session
+		- It uses one and only one protocol - HTTP
+		- For CRUD operations, it should use HTTP methods like 
+			GET  - to retrieve one or more records 
+			POST - to create record 
+			PUT  - to update an existing record 
+			PATCH- to update a column in existing record 
+			DELETE- to delete a record
+			
+			HEAD - response identical to GET, but without response body
+			CONNECT- establishes a tunnel to server identifier by the target resource
+			OPTIONS- used to describe the communication options for the target resource.
+			TRACE- performs a message loop-back test along the path to the target resource.
+			PATCH- used to apply partial modifications to a resource
+		- response can be JSON or XML, atom, OData etc.
+		1. POST is NOT idempotent.
+		2. GET, PUT, DELETE, HEAD, OPTIONS and TRACE are idempotent.
+		
+	- REST based vs RESTFUL
+		- REST based services follow some of the above principles and not all
+		- RESTFUL services means it follows all the above principles.
+	- Richardson-maturity-model
+		- to know level of RESTful your API is.
+		- https://developers.redhat.com/blog/2017/09/13/know-how-restful-your-api-is-an-overview-of-the-richardson-maturity-model
+		
+		
+REST features 
+=============
+	- Performance 
+		— best suited for systems requiring rapid iteration and HTTP standardized verbiage,
+	- Scalability 
+		— allows the support of large numbers of components and interactions among them,
+	- Simplicity 
+		— REST has a uniform interface which simplifies and decouples the architecture,
+	- Modifiability 
+		— components can be modified to fit changing needs even while the application is running.
+
+
+GraphQL features
+================
+	- Adaptability 
+		— the client decides what data they want, how they want it and what format they
+          want to get it in,
+	- Efficiency 
+		— delivers exactly what the client requests without over fetching,
+	- Flexibility 
+		— GraphQl is cross-platform and supports more than a dozen languages (Perl, Java,
+          Python, PHP among others).
+
+GRPC features 
+=============
+	- Lightweight and quick system for requesting data
+	- RPC functions on contracts, the negotiation is defined by the relationship
+    	between the server and the client not by the architecture. 
+	  Most of the power relies on the client-side while handling and computations 
+	  are offloaded to a remote server hosting the resource. 
+	
+	- lightweight
+		- requires very little resources which makes it a handy solution for even 
+		extremely low powered situations
+	- efficient
+		- gPRC uses protobufs, a method of serializing structured data which focuses
+		on serializing communication in an effective manner
+	- open-source 
+	- Mainly suited for systems where requester is low power or want to preserve resources. 
+	- suitable for IoT devices like voice controllers, smart light switches, 
+	  smock alarm locks, cameras. 
+	  
+	
+MicroService vs Web Service
+----------------------------
+	- microservice is a small, independent, application that performs a highly focused service 
+	  as well as possible. 
+	- web service is an internet-based interface that makes the "services" of one application 
+	  available to applications running on different platforms.
+

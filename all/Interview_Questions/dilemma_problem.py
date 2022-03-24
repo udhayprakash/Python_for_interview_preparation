@@ -35,6 +35,3 @@ assert myfunc('10100') == 'LOSE'
 assert myfunc('101') == 'LOSE'
 
 print(myfunc('1010011100001'))
-
-
-

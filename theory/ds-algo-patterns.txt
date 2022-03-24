@@ -1,16 +1,30 @@
+Memory
+	- Stack vs Heap
+		- Whenever an object is created, it's always stored in the Heap space,
+		   and stack memory contains the reference to it.
+		- Stack memory only contains local primitive variables and reference variables to objects in heap space.
+		- Objects stored in the heap are globally accessible whereas stack memory can’t be accessed by other threads.
+		- Memory management in stack is done in LIFO manner whereas it’s more complex in Heap memory because it’s used globally.
+		- Stack memory is short-lived whereas heap memory lives from the start till the end of application execution.
+		- Heap memory is used by all the parts of the application, stack memory is used only by one thread of execution.
+		- When stack memory is full, Java runtime throws
+				java.lang.StackOverFlowError When heap memory is full, it throws
+				java.lang.OutOfMemoryError: Java Heap Space error.
+		- Stack memory is faster than heap memory.
+
 - SOLID
-	- Single responsibility  - one method/function one job 
+	- Single responsibility  - one method/function one job
 	- Open-closed principle  - open for extension, but closed for modification
-	- Liskoc substitution	 - objects of a superclass shall be replaceable with objects of its subclass 
-	- Interface Segregration - client should not be forced to depens on methods its does not use 
-	- Dependency Inversion   - Depend on interface decouping 
-	
+	- Liskov substitution	 - objects of a superclass shall be replaceable with objects of its subclass
+	- Interface Segregration - client should not be forced to depens on methods its does not use
+	- Dependency Inversion   - Depend on interface decouping
+
 - Data Structures
 	- https://www.interviewbit.com/data-structure-interview-questions/
-	- Used for efficient organization and modification of data 
+	- Used for efficient organization and modification of data
 	- Types
 		1) Linear Data structures:
-			- If elemenets of a data structure result in a sequence or a linear list 
+			- If elemenets of a data structure result in a sequence or a linear list
 			- Ex: Arrays, Linked List, Stacks, Queues, etc
 		2) Non-Linear Data structures:
 			- If elemenets of data structure results in a way that traversal of nodes is not done in a sequenctial manner
@@ -19,11 +33,11 @@
 		- Arrays are the collection of similar types of data stored at contiguous memory locations.
 		- It is the simplest data structure where the data element can be accessed randomly just by using its index number.
 	- Binary Trees
-		- A binary Tree is a special type of tree where each node can have at most two children. 
-		- Binary tree is generally partitioned into three disjoint subsets, i.e. the root of the tree, left sub-tree and 
+		- A binary Tree is a special type of tree where each node can have at most two children.
+		- Binary tree is generally partitioned into three disjoint subsets, i.e. the root of the tree, left sub-tree and
 		  right sub-tree.
 	- AVL Trees
-		- AVL trees are height balancing BST. 
-		- AVL tree checks the height of left and right sub-trees and assures that the difference is not more than 1. 
+		- AVL trees are height balancing BST.
+		- AVL tree checks the height of left and right sub-trees and assures that the difference is not more than 1.
 		- This difference is called Balance Factor and is calculates as:
 				BalanceFactor = height(left subtree) − height(right subtree)

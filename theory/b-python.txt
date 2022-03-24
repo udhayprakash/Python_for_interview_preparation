@@ -1,144 +1,204 @@
-Python Modules 
-	Requests 	     	: for consuming APIs
-	Re   				: for regular expressions 
-	Scikit-learn  		: for machine learning - I used for creating linear regression model
-	BeautifulSoap 		: for parsing html content. Used when I worked on web crawling
-	NumPy				: Advanced linear algebra and NumPy array operations
-	SciPy				: Contains modules for optimization, linear algebra, and other essential data science functions.
-	Matplotlib			: Visualization and data plotting in 2 or 3 dimensions.
-	IPython				: Increasing console interactivity.
-	Pandas				: Data manipulation and analysis, mainly through dataframes and tables.
-	
-Frameworks 
-	Django , flask, fastapi 
+Python Modules
+	Requests     : for consuming APIs
+	Re           : for regular expressions
+	Scikit-learn : for machine learning - I used for creating linear regression model
+	BeautifulSoap: for parsing html content. Used when I worked on web crawling/Scrapping
+	NumPy        : Advanced linear algebra and NumPy array operations
+	Matplotlib   : Visualization and data plotting in 2 or 3 dimensions.
+	IPython      : Increasing console interactivity.
+	Jupyter notebook: for interactively exploring the datasets and other functions
+	Pandas       : Data manipulation and analysis, mainly through dataframes and tables.
+	boto3        : For connecting and managing AWS Cloud resources
+
+	file system modules like csv, json, pyyaml, openpyxl
+
+Frameworks
+	Django , flask, fastapi
+
+Files i worked with
+--------------------
+	- pdf files using modules like reportlab, pypdf2
+	- image files using tesserect, Pillow
+	- CSV, .dat files, tsv files with pandas
 
 Python Questions
 =================
-	- List vs Tuple 
-		- List is mutable object, means we can edit the object like append, delete, ..
-		- Tuple are faster than list
-			- Tuples are stored in a single block of memory. Tuples are immutable so, 
-			It doesn't require extra space to store new objects.
-			- Lists are allocated in two blocks: 
-				1. fixed one with all the Python object information, and 
-				2. variable sized block for the data.
-		- Tuples is that they use less memory where lists use more memory
-		List is used when we need to make changes in code, say like adding values while loop . 
-		Tuple is used when we wont change something in the code
+	- Basic Data Types - Int, Float, Str, None, bool
+	- Built-in Data Structures - List, Tuple, set, Dictionary
 
-	- append vs extend 
-		- both adding elements in last of list 
-		- with append, we can add either single element or an iterable
-		- it will add at the end as it is 
-		- whereas extend works with iterable objects only, but adds in same dimension
-	- List vs Dict 
-		- list is suitable when order of element is preferred. 
-		- dict is suitable when there were more reads. dict has O(1) for search an element, as 
-		  it stored each element uniquely with its hash.
 	- List
-		- Mutable object - it is editable. we can add , remove any element in it. 
-		- indexed and retains the order of initialization 
-		- will retain duplicates and can store any data type 
-	- Tuple 
-		- same as list, but once created, we cant change any element in it . 
-		- it is immutable object 
-	- Set 
-		- mutable object - we can edit it 
+		- Mutable object - it is editable. we can add , remove any element in it.
+		- indexed and retains the order of initialization
+		- will retain duplicates and can store any data type
+	- Tuple
+		- same as list, but once created, we cant change any element in it .
+		- it is immutable object
+	- Set
+		- mutable object - we can edit it
 		- unordered and wont store duplicates
 		- will store only immutable objects(int, float, string, frozenset, tuple)
 	- Dictionaries
 		- They are called as HashMap in other languages
-		- They store in key: value relation 
-		- keys should be immutable and unique
+		- They store in key: value relation
+		- keys should be immutable and unique, and hashable
 		- ex: {1:2, 3:4, 5:6}
-		
-	- Pickling 
-		- Pickling means Python object to flat file conversion 
-		- unpickling means flat file to python object conversion 
-		- This process is also called serialization/deserialization 
+
+	- Mutable vs Immutable
+		- Mutable object
+
+	- List vs Tuple
+		- List is mutable object, means we can edit the object like append, delete, ..
+		- Tuple are faster than list
+			- Tuples are stored in a single block of memory. Tuples are immutable so,
+			It doesn't require extra space to store new objects.
+			- Lists are allocated in two blocks:
+				1. fixed one with all the Python object information, and
+				2. variable sized block for the data.
+		- Tuples is that they use less memory where lists use more memory
+		List is used when we need to make changes in code, say like adding values while loop .
+		Tuple is used when we wont change something in the code
+
+	- append vs extend
+		- both adding elements in last of list
+		- with append, we can add either single element or an iterable
+		- it will add at the end as it is
+		- whereas extend works with iterable objects only, but adds in same dimension
+
+	- List vs Dict
+		- list is suitable when order of element is preferred.
+		- dict is suitable when there were more reads. dict has O(1) for search an element, as
+		  it stored each element uniquely with its hash.
+
+	- List vs Array
+		- list is builtin data structure in python
+		- we can either have all elements of same type, or different type
+
+		- array is available from numpy
+		- IN array, we need to have all elements of same type.
+		- whenever i have to store all elements of same type, as arrays are more performant than lists.
+
+	- Pickling
+		- Pickling means Python object to flat file conversion
+		- unpickling means flat file to python object conversion
+		- This process is also called serialization/deserialization
 		- Other serialization formats are json, yaml, ...
 		- we use it when we need to pass python object to other language processes, and vice versa.
-		
+
 	- lambda function
 		- one liner
 		- SYNATAX is lambda arguments: expression
-		- We need not define complete function. We can use instantly for the purpose. 
+		- We need not define complete function. We can use instantly for the purpose.
 		- I use it when working with higher order function like map(), filter(), zip() and reduce()
-		
-	- range() vs xrange() 
-		- In python 2, 
+		- example
+			- if we have to increment all values in a list by one,
+					map(lambda x:x + 1, range(10))
+
+	- List comprehension
+		- rewriting the for loop in single line.
+
+	- funtion Overloading
+		- function overloading is not supported in python
+		- only function overwriting is present.
+
+		- In java,
+			If you create function with 2 arguments and another with 3 arguments,
+			we can call each invidivally.
+		- But, in python, it will overwrite with the latest function/method
+
+	- range() vs xrange()
+		- In python 2,
 			- range will give list of integers
-			- xrange will give a xrange object, which will give values only when iterated.  
+			- xrange will give a xrange object, which will give values only when iterated.
 		- In python3, xrange is renamed as range.
-	- copy vs deepcopy 
+
+	- copy vs deepcopy
 		- This problem occurs in mutable objects i.e., list, dictionary
 		- when working with mutables, when we assign a
-				list1 = list2 
-			it will not create new object 
-			it 
-			both wil refer to the same object 
-			so, if you change in one list, it will reflect in others 
-			to avoid, we go with copy 
-			using 
-			copy -- module 
-	- OOP 
-		- Object Oriented Programming 
+				list1 = list2
+			it will not create new object
+			it
+			both wil refer to the same object
+			so, if you change in one list, it will reflect in others
+			to avoid, we go with copy
+			using
+			copy -- module
+
+	- try-exception blocks
+		1) Try   --- executed every time
+		2) Except--- executed when there is exception in try block
+					 , check if it can handle break code if it cant
+
+		3) Else  --- executed when no exception in try block
+		4) Finally-- exceutd everytime  — irrespective of failure  –
+					 it is like for file closing, etc ….
+
+	- OOP
+		- Object Oriented Programming
 		- There are 4 principles:
 			1) ENCAPSULATION - with public , protected and private variables/methods
-					public variable -- it a variable is starting with no underscore 
+					public variable -- it a variable is starting with no underscore
 					protected variable -- if it is starting with SINGLE underscore
 					private variable -- if it is starting and ending with TWO underscores
-				
-				We can access all variables  of all classes irrespective of public or private or protected. 
-				This name mangling is to avoid accidental override 
-				
-				
+
+				We can access all variables  of all classes irrespective of public or private or protected.
+				This name mangling is to avoid accidental override
+
+
 			2) ABSTRACTION: It is a process of hiding implementation details and showing only
 							functionality to the user.
 			3) INHERITANCE:
-					- python supports single, multiple and multi-level inheritance, using MRO (Method Resolution Order) 
-							single ---> one parent & one child 
-							multiple --> two parents & one child 
+					- python supports single, multiple and multi-level inheritance, using MRO (Method Resolution Order)
+							single ---> one parent & one child
+							multiple --> two parents & one child
 							multi-level -->  parent1 => child ==> subChild
-			4) POLYMORPHISM: It is an ability of object to behave in multiple form. 
+			4) POLYMORPHISM: It is an ability of object to behave in multiple form.
 				Ex: + operator, It will work differently in different contexts
 							addition operation between integers
 							List concatenation operator between lists
 							Tuple concatenation operator between tuples
 	- python 2 to 3
-		- I used python built-in module, lib2to3 , for migrating from python2 to python3. 
+		- I used python built-in module, lib2to3 , for migrating from python2 to python3.
 		- Wrote code with six module to write compatible code, for both python2 and 3, during migrating phase.
-		- Difference between python2 and python3 
+		- Difference between python2 and python3
 			- Default encoding is ASCII in python2, whereas it  is UTF-8 in python3
 			- There were both old & new style classes in python2, whereas in python3, we have only new style classes.
 			- IN python2, range, map, filter will return list; where these are iterators in python3.
-		- Challenges during conversion	
+		- Challenges during conversion
 			- In python2, we can compare string and int; We cant do the same with python3
-				- I wrote wrapper to handle it 
+				- I wrote wrapper to handle it
 			- DEPENDENCY MANAGEMENT is another difficult thing, as some modules are either not available in python3,
 				or the latest features are not available in python3 modules.
-	- Virtual environment 
+
+	- Virtual environment
 		- It is like a container, for isolating the project dependencies
-		- When in same server, we need to execute different versions, Or same python version, with different module 
+		- When in same server, we need to execute different versions, Or same python version, with different module
 			versions, we go with a virtual environment.
 		- virtual environments can be created using modules like
 			- virtualenv
-			- pipenv, or 
+			- pipenv, or
 			- poerty
 
-		- Using virtualenv module, 
-			command to create virtual enviromment is 
+		- Using virtualenv module,
+			command to create virtual enviromment is
 				virtualenv venv
-			
-			To activate the virtual enviromment, 
+
+			To activate the virtual enviromment,
 				venv/scripts/active - in windows
 				venv/bin/active - in linux/mac
-						
-	- Generators 
+
+	- .py vs .pyc files
+		❏ .py files contain the source code of a program. Whereas, .pyc file contains the bytecode of your
+		program.
+		❏ Python compiles the .py files and saves it as .pyc files, so it can reference them in subsequent
+		invocations.
+		❏ The .pyc contain the compiled bytecode of Python source files. This code is then executed by
+		Python's virtual machine.
+
+	- Generators
 		- are the functions with yield, instead of return
 		- They are useful for large computations, like reading a large file, or creating 1000 prime numbers, or so.
 		- Generators follow the "STATE SUSPENSION"
-			- we can get one value at a time using next() builtin function, 
+			- we can get one value at a time using next() builtin function,
 				or iterate , or convert to list, tuple or set, to get all values
 		- return vs yield
 			- return is the last statement to execute in any function
@@ -147,47 +207,65 @@ Python Questions
 
 			- PEP8 - don't use both return & yield in same function
 
-			
+
 			def grepper_gen():
 				yield "add"
 				yield "grepper"
 				yield "answer"
 			grepper = grepper_gen()
-			
-	- Threading vs Asyncio 
-		Threading 
-			- In threading, OS actually knows about each thread and can interrupt it at 
-				any time to start running a different thread. 
-			- It is Pre-Emptive Multitasking 
-			- code in the thread doesn't need to do anything to make the switch. 
+
+	- Iterator
+		- Any python iterable object can be converted to an intertor using iter() protocol
+		- iterator can be created from any iterable object
+
+	- Map
+		- Higher-order function , which is designed to work on other functions
+		- map will superimpose a function on one or more iterables
+		- say, we want to get double of all values in a list
+			map(lambda x:x * 2, range(9))
+
+		- in python2, map will result a list, where as in python3, it will return an iterator
+     	  object. Other higher order functions are Filter, Zip and Reduce
+
+	- Threading vs Asyncio
+		Threading
+			- In threading, OS actually knows about each thread and can interrupt it at
+				any time to start running a different thread.
+			- It is Pre-Emptive Multitasking
+			- code in the thread doesn't need to do anything to make the switch.
 			- difficult as OS can pause/resume thread "AT ANY TIME"
-		Asyncio	
-			- Cooperative Multitasking 
+		Asyncio
+			- Cooperative Multitasking
 			- Tasks must cooperate by announcing when they are ready to be switched out.
-			- You always know where your task will be swapped out. 
-	- GIL Problem 
-		- GIL means Global Interpreter Lock 
-		- Basically, Python is of three flavours, based on backend implementation 
+			- You always know where your task will be swapped out.
+
+	- GIL Problem
+		- GIL means Global Interpreter Lock
+		- Basically, Python is of three flavours, based on backend implementation
 			- Cpython, Jython, Ironthon
-		- In Cpython, as it go with reference based assignment, if two threads are trying to update, 
-		  say, the same list, it can lead to data races, and deadlock. 
-		- To avoid deadlocks, it will lock a single thread, safely execute it and release it. 
-		- Due to this, we cant achieve the concurrency with python, unlike other languages. 
-		- Next solution, is multiprocessing. But, it is resource exhaustive. And, the maximum limit 
+		- In Cpython, as it go with reference based assignment, if two threads are trying to update,
+		  say, the same list, it can lead to data races, and deadlock.
+		- To avoid deadlocks, it will lock a single thread, safely execute it and release it.
+		- Due to this, we can't achieve the concurrency with python, unlike other languages.
+		- Next solution is multiprocessing. But, it is resource exhaustive. And, the maximum limit
 		 on the processes which can be created, is limited to the system hardware limits.
-		- So, from python 3.6, with the advent of async and await keywords, I am using the asyncio 
-		 based non-blocking execution. 
-		- Here, within the single thread event loop, we will invoke all child threads; which is a solution 
-		  to this GIL problem 
+		- So, from python 3.6, with the advent of async and await keywords, I am using the asyncio
+		 based non-blocking execution.
+		- Here, within the single thread event loop, we will invoke all child threads; which is a solution
+		  to this GIL problem
+
+	- Multiprocessing vs Multithreading
+		- Multithreading for IO-bound tasks. Multiprocessing for CPU-bound tasks.
+
 	- context managers
 		- will allow you to allocate and release resources precisely when you want to.
-		- Examples include when working with 
+		- Examples include when working with
 			- file operations, database or socket connections, etc.
-		- we can do with the 'with' keyword, like 
-		
+		- we can do with the 'with' keyword, like
+
 			with open('file_name.txt', 'r') as fh:
 				data = fh.read()
-				
+
 		- we need not close the file handler. Once it comes out of the context indentation, it will automatically close
 	I	- we can create custom context managers, using the dunder methods, __enter__() and __exit__().
 		- I remember using it to track the file operations.
@@ -195,11 +273,11 @@ Python Questions
 			class File:
 			  def __init__(self, filename, method):
 				self.file = open(filename, method)
-			   
+
 			  def __enter__(self):
 				print("Enter")
 				return self.file
-			  
+
 			  def __exit__(self, type, value, traceback):
 				print(f"{type}, {value}, {traceback}")
 				print("Exit")
@@ -211,50 +289,199 @@ Python Questions
 			  raise Exception()
 			  raise FileExistsEoor()
 
+	- call by value vs call by reference
+		- python supports both call by value and call by reference.
+			- For immutables, it is call by values
+				- by default, means changes within the function were not reflected outside
+				- in variables are defined as global, local changes cAN be reflected outside
+				  - that is in that case, it is call by reference
+			- For immutables , if you define as global,  – it is be call by reference
 
-Numpy 
-	- How are numpy and pandas related 
+	- name mangling
+		- python supports Public, private and protected variables/methods/functions
+		- We can access even private variables, methods too  in python,
+			But the convention is made to  avoid accidental override
+
+		- Variable starting with no _underscores are called public variables
+		- Variables starting with single underscore are called protected variables
+		- variables starting with two underscores are called private variables
+			- Also, variables starting with two underscores and ending with two underscores
+			  are magic methods (or dunder/double underscore methods).
+			- Ex: __init__ is the constructor
+				  __del__ is the destructor
+				  __enter__ and __exit__ are used for creating custom context managers
+				  __iter__ and __next__ are used for creating Iterator objects.
+				  __str__ and __repr__ are used for string representation of the instances
+
+
+	- Monkey patching is replacing a function/method/class by another at runtime,
+	   for testing purpses, fixing a bug or otherwise changing behaviour.
+
+	- namespaces
+		LEGB - Local, Enclosed, Global, Builtin scopes
+
+	- py vs pyc
+		- py extension files are ordinary python files
+		- pyc extension files are python bytecode files,
+
+	- PEP 8
+		- PEP is abbreviation for Python Enhancement Proposal
+		- It deals with the coding style guide
+		- It will list the best practices, in coding in python
+
+	- Memory Management in python
+		- Python has a so automatic memory management.
+		- We have a garbage collector, which will check for any unreferenced objects
+		  on a periodic basis, and it will delete them.
+
+Numpy
+	- How are numpy and pandas related
 	- numpy arrays
-	
-Pandas 
-	- loc vs iloc 
+
+Pandas
+	- loc vs iloc
 		- loc gets rows (or columns) with particular labels from the index.
 		- iloc gets rows (or columns) at particular positions in the index (so it only takes integers).
 	- dataframe index
-		- When index is unique, pandas use a hashtable to map key to value O(1). 
-		- When index is non-unique and sorted, pandas use binary search O(logN), 
+		- When index is unique, pandas use a hashtable to map key to value O(1).
+		- When index is non-unique and sorted, pandas use binary search O(logN),
 		  when index is random ordered pandas need to check all the keys in the index O(N).
-	- dataframe to series 
-	- series to dataframe 
-	- uses of series 
+	- dataframe to series
+	- series to dataframe
+	- uses of series
 	- vectorization
-	multi index pandas 
+	multi index pandas
+	- Feature Engineering
+		- technique to create  new features from existing data that could help to gain more
+		  insight into the data.
+		- pandas.apply() for text extraction
+		- pandas.groupby() and transform() for Aggregation Features
+		- pandas.value_counts() and apply() for Frequency Encoding
 
+	- to read specific columns
+		df = pd.read_csv("sample_file.csv", usecols=col_list)
 
-spark 
+spark
 	pyspark bucketby vs partitionby
 	pyspark compression parquet
 	spark splittable compression
 	sqlContext.setConf("spark.sql.parquet.compression.codec.", "snappy")
-	How to read large parquet file 
+	How to read large parquet file
 	map and reduce in big data
-	
 
 
-Cybersecurity modules
-----------------------
-	1. Scapy
-	2. Requests
-	3. Beautiful Soup
-	4. Socket
-	5. Impacket
-	6. Paramiko
-	7. Pexpect
-	8. Yara
-	9. NLTK
-	10. Twisted
-	11. Pymetasploit3
-	12. Cryptography 
-	13. Nmap
-	14. Scikit
-	15. Mechanize
+
+Q1) Describe truthy vs falsy
+Ans) Python supports boolean type: True, False
+
+	bool() -- builtin function which will result the boolean-ness of the object in it.
+
+	For integers,
+		0 			-> False
+		non-zero 	-> True
+	For floats,
+		0.0			-> False
+		non-zero	-> True
+		0.000001    -> True
+
+	For None		-> False
+
+	For boolean
+		False		-> False
+		True 		-> True
+
+	For empty collections,
+		empty list 	[] 		-> False
+		empty tuple () 		-> False
+		empty set   set()	-> False
+		empty dict 	{}		-> False
+
+		with atleast one element, it is True
+
+	For relational and logical operations, based on result
+		logical and --> will result in True, if all are True ONLY, else False
+		logical OR  --> will result in False, if all are False ONLY, else True
+
+Q2) How do you get the last item of a list?
+Ans) we can use the reverse index to retrieve the last element from the list
+
+	 Ex: mylist = [23, 45,  6,  3, 23, 65,  2,   4]
+		           0   1    2   3   4   5   6     7  <----- forward indexing
+				   -8  -7  -6  -5  -4  -3  -2    -1  <------ reverse indexing
+
+		lastnum = mylist[-1]
+
+		Also, we can get indirectly (not preferred) by
+			lastNum = mylist[len(mylist) - 1]
+
+Q3) What does a leading _ (underscore) before a variable typically identify in python (used as a common naming convention)?
+Ans) Python follows naming convention called name mangling for the variables/methods
+
+		name 	-> Public variable  	- no leading underscores - can be accessed directly
+		_name	-> Protected variables  - one leading underscore - can be accessed directly
+		__name	-> Private variables 	- two leading underscores - prepend class name as protected variable before it to access
+											Ex: _ClassName__name
+
+		__name__ -> built-in variables, or dunder methods, or magic methods
+					there are some specific methods, as such.
+
+	What is a magic method ( aka dunder method)?
+Ans)
+	These are the builtin methods with some specific usage
+	As they start and end with two (double) underscores, they were called as dunder (double-underscore) methods.
+	Examples:
+		__init__		constructor method - responsible for added default actions, after creating instance
+		__del__			destructor method  - will invoke when deleting the instance
+		__new__			method responsible for creating the instance, from a class
+
+		__slot__				will restrict the attributes of class instance
+
+		__enter__ & __exit__ 	used for creating custom context managers
+
+		__iter__ & __next__ 	used for creating custom iterator classes
+
+
+	Also, if we create the class methods with dundermethods like __add__, then
+	with the instances, instead of addressing with this method names like
+
+		instance1.__add__(instance2)
+
+	we can also do as below
+		instance1 + instance2
+
+
+Q4) What was introduced in python 3.6 that changed string formatting?
+	What do you prefer: f-string or .format()?
+Ans)  String formattings in python
+		- old style formatting  - using % with the specific data types
+			Ex: language = "%s is rank %d language " %("python", 1)
+
+
+		- new style formatting - using format() with placeholders, and not specific on data types
+			Ex: language = "{0} is rank {1} language ".format("python", 1)
+
+		- F-strings (from python 3.6)  -- advanced formatting
+			Ex:
+				lang = "python"
+				rank = 1
+				language = f"{lang} is rank {rank} language "
+
+			Also, we can do computations within the braces to do more operations
+
+				language = f"{lang.upper()} is rank {float(rank)} language "
+
+		- F-string assignments ( from python 3.8)
+			it will help in the debugging results.
+			Instead of
+				print("langauge = ", language)
+				print("langauge = %s"% language)
+				print("langauge = {}".format(language))
+				print(f"langauge = {language}")
+
+			we can write as
+				print(f"{language =}"
+
+	Finally, among the three (old-style, new-style with format() and f-strings), the
+	F-string based formatting with take the least amount of time.
+
+	So, i prefer F-strings among all.

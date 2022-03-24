@@ -1,0 +1,92 @@
+Current Project is into data analytics
+we have a couple of data scientists, who will drive this data analytics process. 
+
+my responsibilities here includes
+	- data gathering from both internal and external data sources
+		- including REST APIs, SOAP interfaces, GRAPHQL, and internal databases
+	- also, writing scripts for etl jobs, data transformations, and for the
+	  business logic
+	- finally, the cleansed and transformed data will be exposed as an API, for both
+		UI consumption and for app to app communication
+
+In terms of technical stack,
+
+	Our application server is in a EC2 instance, and celery workers are running 
+	in another server.
+	Both are in multiple regions for DR (disaster recovery) strategy.
+
+	Which is behind the autoscaling and inturn, behind the Route53
+
+	All my data feeds and ETL jobs are microservices written in either aws lambda,
+	or aws step functions; or recently, with container based microservices
+	Used docker for containerization and kubernetes for orchestration.
+
+
+In Machine Learning,
+	I worked with Linear regression algorithm, using scikit-learn module.
+	The use-case is that there was a archive database.
+	We need to do future predictions based on these past values.
+
+	I created a model and also, exposed it via  a flask application, for further training.
+
+======================================================
+In AWS cloud, my roles involve,
+	I will create the architecture,
+	We will implement using the cloud formation templates
+	And integrate with ci/cd
+
+	We will do POCs with new components in aws, and if success, we try to incorporate in architecture, using cloud formation templates
+
+Day-to-day actvities
+--------------------
+	- on a daily basis,
+		Initially when I started I will check for any emails or alerts which we need to addressed.
+		So, and if I need to reach out any stakeholders I will reach out to them And then like I
+		started working on my JIRAs And after the stand up during the stand up like you know, so 
+		we discuss on what are the pain points or any you know blockers Then finally, so after
+		the, you know, the standup like I will start working on my JIRAs.
+
+========================================================================================
+In terms of the technical stack,
+	we have a web application written in Django , with frontend as React
+	This web application is a monolithic architecture
+
+	For the data collections, transformations and business logic,
+	I worked on creating multiple microservices with AWS Lambda
+		I created data pipelines with s3 bucket to aws lambda with time and event triggers
+		Also, exposed lambdas with API Gateway for other teams, for data infusion to my db
+
+
+Current Project - Bank of America - Financial transactions analysis
+-----------------------------------------------------------------------
+	 - WallMart can store all the financial transactions
+	 - But for small organization, for capturing their transactions for post analysis
+	 - we are here for that transaction capturing.
+
+
+Current Project - T-Mobile
+-------------------------------
+	- I am part of team which will create the cellular propagation models.
+	- Means for call drop analysis
+
+
+Current Project - Fault-analysis project
+------------------------------------------
+	- At Denso, we sell vehicle spare parts
+
+	we sell vehicle spare parts, and some of the products will send back some
+	anonymous data back to our servers.
+
+
+Current project - Mortgage analytics
+-----------------------------------
+	- we have mortgage products.
+	- I am here, part of the R&D team, doing research on these products and their
+	  enhancements.
+
+
+Current Project - Medical Research Analytics
+---------------------------------------------
+
+
+

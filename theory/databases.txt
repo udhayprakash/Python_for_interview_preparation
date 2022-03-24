@@ -1,124 +1,204 @@
-- Database 
+- Database
+	- Modules worked with databases
+		- For ORM - Sqlalchemy, and for django - using django ORM
+		- Modules
+			- MySQL db with pymysql
+			- MS-SQL db with pyodbc
+			- Oracle db with CX_Oracle
+			- MongoDB with pymongo
+
 	- https://www.interviewbit.com/sql-interview-questions
+	- ACID
+		- Atomicity
+
 	- Normalization
-		- process of organizing the columns, tables of a database to minimize the 
-			redundancy of data. Normalization involves in dividing large tables 
-			into smaller tables and defining relationships between them. 
-		- First Normal Form: 
-			Duplicate columns from the same table needs to be eliminated. 
-			We have to create separate tables for each group of related data and 
+		- process of organizing the columns, tables of a database to minimize the
+			redundancy of data. Normalization involves in dividing large tables
+			into smaller tables and defining relationships between them.
+		- First Normal Form:
+			Duplicate columns from the same table needs to be eliminated.
+			We have to create separate tables for each group of related data and
 			identify each row with a unique column or set of columns (Primary Key)
-		- Second Normal Form: 
-			First it should meet the requirement of first normal form. 
-			Removes the subsets of data that apply to multiple rows of a table and 
-			place them in separate tables. 
-			Relationships must be created between the new tables and their predecessors 
+		- Second Normal Form:
+			First it should meet the requirement of first normal form.
+			Removes the subsets of data that apply to multiple rows of a table and
+			place them in separate tables.
+			Relationships must be created between the new tables and their predecessors
 			through the use of foreign keys.
-		- Third Normal Form: 
-			First it should meet the requirements of second normal form. 
+		- Third Normal Form:
+			First it should meet the requirements of second normal form.
 			Remove columns that are not depending upon the primary key.
 			- Most databases will be Third Normal Form
-		- Fourth Normal Form: 
+		- Fourth Normal Form:
 			- There should not be any multi-valued dependencies.
-	- Relations 
-		- one-to-one relationship 
-			- simple reference between two tables. Consider Customer and Address tables 
-			as an example. 
+
+	- Relations
+		- one-to-one relationship
+			- simple reference between two tables. Consider Customer and Address tables
+			as an example.
 			- A customer can have only one address and an address references only one customer.
-		- One-to-many relationships 
-			- Implemented by splitting the data into two tables with a primary key and 
-				foreign key relationship. 
-			- Here the row in one table is referenced by one or more rows in the other table. 
+		- One-to-many relationships
+			- Implemented by splitting the data into two tables with a primary key and
+				foreign key relationship.
+			- Here the row in one table is referenced by one or more rows in the other table.
 			An example is the Employees and Departments table, where the row in the Departments
 			table is referenced by one or more rows in the Employees table.
-		- Many-to-Many relationship 
-			- created between two tables by creating a junction table with the key from both 
+		- Many-to-Many relationship
+			- created between two tables by creating a junction table with the key from both
 			the tables forming the composite primary key of the junction table.
+
 	-  Truncate vs Delete
 		- Both used to delete data from the table
 		- Truncate is a DDL statement. Delete is a DML statement
 		- Truncate does not generate rollback segments. Whereas Delete does.
-		- In case of delete, rollback recovers data before issuing a commit. 
+		- In case of delete, rollback recovers data before issuing a commit.
 			In case of truncate, you cannot recover data.
-		- Truncate does not fire any delete triggers created on the table. 
+		- Truncate does not fire any delete triggers created on the table.
 			Whereas the delete does.
-		DELETE -
+
+	- DELETE
 		- DML COMMAND
 		- Delete Rows from the table one by one
 		- We can use where clause with Delete to delete single row
 		- Delete is slower than truncate
 		- ROLLBACK is possible with DELETE
 
-		DROP-
+	- DROP
 		- DDL COMMAND
 		- Delete the entire structure or schema
 		- We can't use where clause with drop
 		- Drop is slower than DELETE & TRUNCATE
 		- ROLLBACK IS NOT POSSIBLE WITH DROP
 
-		TRUNCATE-
+	- TRUNCATE
 		- DDL COMMAND
 		- Truncate deletes rows at a one goal
 		- We can't use where clause with Truncate
 		- Truncate faster than both DELETE & DROP
 		- Rollback is not possible with Truncate
 
-	- Union vs Union all 
+	- Union vs Union all
 		- Union set operator removes duplicate records. Whereas union all does not.
 		- Union operator sorts the data in ascending order. union all does not.
 		- Union all is faster than union operator.
-	- keys 
-		- Primary key: 
+
+	- Intersect vs Except
+		- INTERSECT: Takes the data from both result sets which are in common.
+		- EXCEPT: Takes the data from the first result set, but not in the second
+		          result set (i.e. no matching to each other)
+	- keys
+		- Primary key:
 			- used to uniquely identify each row in a table and does not allow null values.
-		- Foreign key: 
-			- it is one or more columns whose values are based on the primary key values 
+			- composite primary key
+				- combination of multiple columns, to make the primary key
+		- Foreign key:
+			- it is one or more columns whose values are based on the primary key values
 			from another table.
-		- Unique Key: 
+		- Unique Key:
 			- Unique key identifies a each row in the table uniquely. Unique key allows null values.
 
 	- stored procedure vs Functions
-		- stored procs neither contain any parameter, nor return any value. 
+		- procedure allows SELECT as well as DML(INSERT/UPDATE/DELETE) statement in it
+		  whereas Function allows only SELECT statement in it.
+		- Procedures cannot be utilized in a SELECT statement whereas Function can be
+		  embedded in a SELECT statement.
+		- Stored Procedures cannot be used in the SQL statements anywhere in the
+		  WHERE/HAVING/SELECT section whereas Function can be.
+		- An exception can be handled by try-catch block in a Procedure whereas
+		  try-catch block cannot be used in a Function.
+		- stored procs neither contain any parameter, nor return any value.
 		  Functions should contain atleast one parameter and should return a value.
 		- functions can be called from stored procs; but cant call stored procs from functions.
 		- Transactions and DML commands can be executed on stored procs; but not with functions.
+
+	- SubQuery properties
+		- A sub-query must be enclosed in the parenthesis.
+		- A sub-query must be put in the right hand of the comparison operator, and
+		- A sub-query cannot contain an ORDER-BY clause.
+		- A query can contain more than one sub-query.
+		- Types
+			- Single-row sub-query, where the sub-query returns only one row.
+			- Multiple-row sub-query, where the sub-query returns multiple rows,. and
+			- Multiple column sub-query, where the sub-query returns multiple columns.
+
+	- COALESCE
+		- it will return the first non-null value, in the column
+
+	- Cursor
+		- Used when application logic need to work with one row at a time, rather than entire result at once.
+		- Advatanges
+			- Cursors provide first few rows before the whoel result set is assembled.
+			  so, better response time is achived, compared to traditional queries, without cursor.
+		- Limitations
+			- Uses more resource because each time you fetch a row from cursor, it results in
+			  a network roundtrip.
+			- Because of the round trips, performance and speed is slow
+
+		- Alternatively, we can use JOIN to retrieve the data much fastly
 
 	- DB Indexing
 		- Clustered
 			- sort and store the data rows in the table, or view based on their key values.
 			- index contains pointers to block, but not direct data.
 			- Ex:if primary key is applied to any column, it automatically becomes clustered index.
-			- You can have only one clustered index in one table, but you can have one clustered 
+			- You can have only one clustered index in one table, but you can have one clustered
 			  index on multiple columns, and that type of index is called composite index.
 			- faster and requires less memory for operations
 		- Non-clustered
-			- The data is stored in one place, and index is stored in another place. 
-			  Since, the data and non-clustered index is stored separately, then you can have 
-			  multiple non-clustered index in a table. 
-			- In non-clustered index, index contains the pointer to data. 
+			- The data is stored in one place, and index is stored in another place.
+			  Since, the data and non-clustered index is stored separately, then you can have
+			  multiple non-clustered index in a table.
+			- In non-clustered index, index contains the pointer to data.
 			- slow and requires more memory for operations
 
-	- window functions 
+	- window functions
 		- window functions operate on a set of rows and return a single aggregated value for each row.
 		- Unlike regular aggregate functions, window functions retuns single aggregated value for each row.
 		- There are 3 types of window functions
 			- Aggregate window functions - SUM(), MAX(), MIN(), AVG(), COUNT()
 			- Ranking Window Functions - RANK(), DENSE_RANK(), ROW_NUMBER(), NTILE()
+					ROW_NUMBER() -- 1,2,3,4,5 (different rank no. to same value)
+					RANK() 		 -- 1,2,2,4,5 (same rank no. to same value but next rank is skipped)
+					DENSE_RANK() -- 1,2,2,3,4 (same rank no. to same value but no skip in rank no.)
 			- Value Window Functions - LAG(), LEAD(), FIRST_VALUE(), LAST_VALUE()
+
+	- SQL constraints
+		NOT NULL 	 # Ensures a column cannot have a NULL value
+		UNIQUE 		 # Ensures all values in a column are unique
+		PRIMARY KEY  # Identifies a record in a table, is NOT NULL & UNIQUE
+		FOREIGN KEY  # References a unique record from another table
+		CHECK		 # Ensures all column values satisfy a condition
+		DEFAULT		 # Set a default value for a column if none is entered
+		INDEX		 # Quick way of retrieving records from database
 
 	- SQL JOINs
 		- Four types -  left, right, inner, and outer.
 		- (INNER) JOIN 		 : Returns records that have matching values in both tables.
 		- LEFT (OUTER) JOIN  : Returns all records from the left table, and the matched records from the right table.
 		- RIGHT (OUTER) JOIN : Returns all records from the right table, and the matched records from the left table.
+		- CROSS JOIN :
+				SELECT w.name AS wine, m.name AS main_course
+				FROM wine w
+				CROSS JOIN main_course m;
 
-	- temp tables 
-		- Table variables (DECLARE @t TABLE) are visible only to the connection that creates it, 
+		- FULL OUTER JOIN
+			-- MySql FULL OUTER JOIN
+
+					SELECT * FROM t1
+					LEFT JOIN t2 ON t1.id = t2.id
+					UNION ALL
+					SELECT * FROM t1
+					RIGHT JOIN t2 ON t1.id = t2.id
+					WHERE t1.id IS NULL
+
+	- temp tables
+		- Table variables (DECLARE @t TABLE) are visible only to the connection that creates it,
 						and are deleted when the batch or stored procedure ends.
-		- Local temporary tables (CREATE TABLE #t) are visible only to the connection that creates it, 
+		- Local temporary tables (CREATE TABLE #t) are visible only to the connection that creates it,
 						and are deleted when the connection is closed.
-		- Global temporary tables (CREATE TABLE ##t) are visible to everyone, and are deleted when all 
+		- Global temporary tables (CREATE TABLE ##t) are visible to everyone, and are deleted when all
 						connections that have referenced them have closed.
-		- Tempdb permanent tables (USE tempdb CREATE TABLE t) are visible to everyone, and are deleted 
+		- Tempdb permanent tables (USE tempdb CREATE TABLE t) are visible to everyone, and are deleted
 						when the server is restarted.
 
 	- DB View vs Materialized View
@@ -128,15 +208,24 @@
 		Executed when a query is run n view using SELECT	Executed and records are stored in the database
 		Data access is slower	 Faster data access because data is directly accessed from physical location
 		Generally, used to restrict data from database	Generally, used in data warehousing
-				
-	- DB Triggers 
-		- they are kind of stored procedures, which reacts to certain actions we make in db. 
+
+	- DB Triggers
+		- they are kind of stored procedures, which reacts to certain actions we make in db.
 		- actions like creating/updating/deleting a record
-		- 3 groups 
+		- 3 groups
 			- DML (data manipulation language) triggers react to INSERT, UPDATE, and DELETE
 			- DDL (data definition language) triggers react to  CREATE, ALTER, and DROP
 			- Logon triggers reacts to LOGON events
 		ref: https://www.sqlshack.com/learn-sql-sql-triggers/
+
+	- row-store vs column-store
+		- row store
+			- easy to add/modify a record
+			- might read in unnecessary data
+		- column-store
+			- only need to read in relevant data
+			- tuple writes require multiple accesses
+			- suitable for read-mostly, read-intensive, large repositories
 
 	- MongoDB - https:
 		- cheatography.com/zeineb-and-kawther/cheat-sheets/mongodb/
@@ -144,18 +233,47 @@
 			SQL						|    NoSQL
 			  relational			| non-relational
 									|
-			use structured query	| NoSQL databases have 
-			language and have a		| dynamic schemas for 
+			use structured query	| NoSQL databases have
+			language and have a		| dynamic schemas for
 			predefined schema.		| unstructured data.
 									|
 			are vertically scalable | are horizontally scalable.
 			are table based			| are document, key-value,
 									| graph or wide-column stores.
-	- SQL performance Tuning 
-		1. Use EXISTS instead of IN to check existence of data.
-		2. Avoid * in SELECT statement. Give the name of columns which you require.
+	- SQL vs no-SQL
+		- SQL
+			- Data is stored in tables with mutable but pre-defined Columns. Records are stored
+			  as Rows in these tables.
+			- Implements the ACID database model, which basically means it favors consistency over
+    		  availability.
+			- Scalability is mainly achieved by increasing the resources on the host, usually this
+			  means more cpu, memory, storage or network capacity.
+		- NoSQL
+			- Data can be stored as documents, key-value pairs, tables and graphs.
+			- Implements the BASE database model, which basically means it favors availability
+			  over consistency.
+			- Scalability is mainly achieved by spreading datasets across multiple servers.
+
+	- BASE model
+		- Basically Available
+			– Rather than enforcing immediate consistency, BASE-modelled NoSQL databases will
+			  ensure availability of data by spreading and replicating it across the nodes of
+			  the database cluster.
+		- Soft State
+			– Due to the lack of immediate consistency, data values may change over time.
+			- The BASE model breaks off with the concept of a database which enforces its own
+			  consistency, delegating that responsibility to developers.
+		- Eventually Consistent
+			– The fact that BASE does not enforce immediate consistency does not mean that it
+			  never achieves it.
+			- However, until it does, data reads are still possible (even though they might
+			  not reflect the reality).
+
+	- SQL performance Tuning
+		1. Use EXISTS instead of IN to check the existence of data.
+		2. Avoid * in the SELECT statement. Give the name of the columns which you require.
 		3. Choose appropriate Data Type. E.g. To store strings use varchar in place of text data type. Use text data type, whenever you need to store large data (more than 8000 characters).
-		4. Avoid nchar and nvarchar if possible since both the data types takes just double memory as char and varchar.
+		4. Avoid nchar and nvarchar if possible since both the data types take just double memory as char and varchar.
 		5. Avoid NULL in fixed-length field. In case of requirement of NULL, use variable-length (varchar) field that takes less space for NULL.
 		6. Avoid Having Clause. Having clause is required if you further wish to filter the result of an aggregations.
 		7. Create Clustered and Non-Clustered Indexes.
@@ -177,14 +295,33 @@
 		23. Avoid prefix “sp_” with user defined stored procedure name because SQL server first search the user defined procedure in the master database and after that in the current session database.
 		24. Avoid use of Non-correlated Scalar Sub Query. Use this query as a separate query instead of part of the main query and store the output in a variable, which can be referred to in the main query or later part of the batch.
 		25. Avoid Multi-statement Table Valued Functions (TVFs). Multi-statement TVFs are more costly than inline TVFs.
-	- rank vs dense rank 
-		views vs materialized views 
+
+
+	- rank vs dense rank
+		views vs materialized views
 		slowly changing dimensions
-		stored procedures		
+		stored procedures
+	- User-defined Functions Vs Stored Procedures
+		- The function must return a value but in Stored Procedure it is optional. Even a procedure can return zero or n values.
+		- Functions can have only input parameters for it whereas Procedures can have input or output parameters.
+		- Functions can be called from Procedure whereas Procedures cannot be called from a Function.
+	- sql subquery properties
+		- A subquery should be placed within the right hand of the comparison operator, and
+		  a subquery cannot contain an ORDER BY clause.
+		- A query can contain more than one sub-queries.
+
+
 - Data Warehouse
-	- single, complete and consistent store of data obtained from 
+	- single, complete and consistent store of data obtained from
 	  a variety of different sources made available to end users
-	
+
 	OLAP -- for  application
-	
-	OLTP - for warehouse 
+
+	OLTP - for warehouse
+
+
+Q) How to get last day of previous month?
+
+	SELECT LAST_DAY(CURDATE());						-- Current month
+	SELECT LAST_DAY(CURDATE() - INTERVAL 1 MONTH);	-- Previous month
+	SELECT LAST_DAY(CURDATE() + INTERVAL 1 MONTH);	-- Next month

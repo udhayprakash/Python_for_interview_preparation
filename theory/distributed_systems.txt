@@ -1,0 +1,36 @@
+Redis 
+	- data store that is also used as message queue
+Apache Kafka
+	- message queues with database-like durability guarantees 
+Elasticsearch/Solr
+	- full text search server 
+Memcached
+	- for in-memory cache 
+	
+	
+Reliability
+	The system should continue to work correctly (performing the correct function at the desired level of performance) even in the face of adversity (hardware or software faults, and even human error). See “Reliability”.
+
+Scalability
+	As the system grows (in data volume, traffic volume, or complexity), there should be reasonable ways of dealing with that growth. See “Scalability”.
+
+Maintainability
+	Over time, many different people will work on the system (engineering and operations, both maintaining current behavior and adapting the system to new use cases), and they should all be able to work on it productively. See “Maintainability”.
+
+
+failure vs fault 
+	A fault is usually defined as one component of the system deviating from its spec, whereas a failure is when the system as a whole stops providing the required service to the user. 
+It is impossible to reduce the probability of a fault to zero; therefore it is usually best to design fault-tolerance mechanisms that prevent faults from causing failures.
+
+
+Netflix Chaos Monkey
+	TO check the fault-tolerance, 
+		t can make sense to increase the rate of faults by triggering them deliberately—for example, by randomly killing individual processes without warning
+		
+Scalability is the term we use to describe a system’s ability to cope with increased load.
+
+ response time is what the client sees: besides the actual time to process the request (the service time), it includes network delays and queueing delays. Latency is the duration that a request is waiting to be handled—during which it is latent, awaiting service [
+ 
+
+
+monolithic vs microservice

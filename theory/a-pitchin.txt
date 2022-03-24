@@ -1,47 +1,53 @@
 INTRODUCTION:
 -------------
 I am a Full-Stack Python Developer, with all years of experience, 
- with around 80% into Backend work and 20% into frontend.
+ with around 80% into Backend work and 20% into the frontend.
  
-IN Backend, I worked on creating standalone scripts for automations, scheduled jobs,
+IN Backend, I worked on creating standalone scripts for automation, scheduled jobs,
 ETL jobs and data pipelines; and RESTful APIs and web applications.
  
 IN FRONTEND, I worked on creating dashboards/graphs/charts using d3.js library,
-and tables using ag-grid. Also, worked on JavaScript, jQuery and react.
+and tables using ag-grid. Also, worked on JavaScript, jQuery, and react.
  
 In databases, 
-	In relational dB, I worked with MySQL, MS SQL , oracle dB and PostgreSQL. 
+	In relational dB, I worked with MySQL, MS SQL, oracle dB and PostgreSQL. 
 	In no-relational dB, I worked with MongoDB and Cassandra. 
 	In data warehousing, I worked with Snowflake schema
 
-In Caching, 
-	I worked with Redis and Elasticsearch
-	
 In Python, 
 	- worked on creating web applications and RESTFUL APIs using Django/flask/FastAPI frameworks
 	- worked on creating process automation and integrating with infrastructure(Linux/windows) boxes
 	- worked on web scrapping using beautiful soup
 	- created unit test, integration test for the source code, using unittest and pytest modules
+
+In Caching, 
+	I worked with Redis
 	
+In scheduling, 
+	I worked with celery. I did integrations with my django application for periodic jobs
+
+
 In Public Cloud, I am mostly associated with AWS Cloud.
 	In AWS Cloud, I worked with 
 		Server-based Architectures with 
-			EC2 Instances 
-			Elastic Load balancer
-			Auto-Scaling 
-			Route53
+			- EC2 Instances 
+			- Elastic Load balancer
+			- Auto-Scaling 
+			- Route53
 			
-			s3 bucket for file storage
-			s3 Glacier for Archival Storage
+		for Storage,
+			- s3 bucket for file storage
+			- s3 Glacier for Archival Storage
 			
 		Server-less Architectures with 
-			AWS Lambda - with either time-triggered or event triggered
-			AWS API Gateway with http-triggered 
-			For long running jobs beyond 15min, as AWS lambda has limitation, i use Step Functions
+			- AWS Lambda - with either time-triggered or event triggered
+			- AWS API Gateway with http-triggered 
+			- For long running jobs beyond 15min, as AWS lambda has limitation, 
+			  i use Step Functions
 			
-		Also, worked with SQS, SNS and SES
-		And, EMR cluster for Pyspark 
-		for the ETLs, I worked with AWS Glue Jobs with DataCatalog and Pyspark
+		- Also, worked with SQS, SNS and SES
+		- And, EMR cluster for Pyspark 
+		- for the ETLs, I worked with AWS Glue Jobs with DataCatalog and Pyspark
 
 In current project, I created the CI/CD setup using Jenkins and Groovy script.
  
@@ -58,9 +64,43 @@ REASON FOR CHANGE -
 But It is a very interesting project. 
 
 
+how do you learn new technologies, and trends
+--------------------------------------------
+	- i subscribed to various blogs and weekly newsletters
+	- Apart from them, i go through the stackoverflow questions and workplace stackoverflow 
+	  questions, in my free time.
+	- And, part of enhancements or POCs, i research and read , and sometimes implement,
+	  based on some articles
 
 ----------
 Questions to Interviewers
-	- May i know about the project, and the technical stack like the tools used?
-	- What are you expecting from me, for this role 
-	- What is the volume of data, which we will be working with, on daily basis. some approxiamte numbers of records?
+  - May I know about the project, and the technical stack like the tools used?
+  - What are you expecting from me, for this role? What can be the day-to-day activities?
+  - What is the volume of data, which we will be working with, on a daily basis. some approximate numbers of records?
+  - What kind of data we work with , and what are our data sources ?
+  - Are we with agile methodology?  And how about the sprint cycle duration?
+  - Were we using any custom frameworks in our project? If so, can you help with the details?
+  - What were the next steps in the interview process? And how many more rounds of interview, can i expect?
+
+  - Will there be an opportunity to reach out to the clients, either for requirement gathering and/or for demoing the end solution?
+  - How do you help your team grow professionally?
+  - What are the challenges of this position?
+  - Have I answered all your questions?
+  - Do you have any hesitations about my qualifications?
+  - What is the biggest challenge your company is facing today?
+  - What do you enjoy most about working in this company?
+  - Whats are the characteristics of someone who would succeed in this role?
+  - What metrics or goals will my performance be evaluated against?
+  - What are the most immediate projects that need to be addressed?
+  - Can you describe a typical day or week in the job?
+  - What will be the process to getting up to the speed? In our team, we use confluence
+    and teams' channel to collaborate? How do they collaborate and maintain documentation?
+  - What will be the area that you want this role to be focusses?
+  - Do you expect the main responsibilities for this position to change in the next
+    six months to a year?
+  - What are the current goals that the company is focussed on, and how does this team work
+    to support hitting those goals?
+  - Who will i report to directly?
+  - What are the common career paths in this department?
+  - Is there anything else i can provide you with that would be helpful?
+  - What's one of the most interesting projects or opportunities that you've worked on?

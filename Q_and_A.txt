@@ -228,8 +228,14 @@ Ans)
 					result.append(ele)
 			return result
 
-
-
+		def flatten(data):
+			result = []
+			for ele in data:
+				if isinstance(ele, list):
+					result.extend(flatten(ele))
+				else:
+					result.append(ele)
+			return result
 
 
 17.	What does this code output?

@@ -1,47 +1,75 @@
-CI/CD 
-	- it  means Continuous Integration/Continuous Deployment 
+CI/CD
+	- it  means Continuous Integration/Continuous Deployment
 	- I worked with Jenkins
 	- created a EC2 instance, installed Jenkins, added plugins like Filesystem Trigger, …
 	- I used bitbucket as the code repository.
 	- Gone to settings, and brought the webhook and integrated in the Jenkins.
-	- Now any git push to the bitbucket event will trigger the build process. 
-	- And, in the code repository, I wrote the code in Groovy script. 
+	- Now any git push to the bitbucket event will trigger the build process.
+	- And, in the code repository, I wrote the code in Groovy script.
 	- It involved 5 stages:
-		1. unit testing 
-		2. Integration testing 
-		3. code coverage check -- whether it is greater than 90% or not 
-		4. Static code analysis with flake8 and SonarQube 
+		1. unit testing
+		2. Integration testing
+		3. code coverage check -- whether it is greater than 90% or not
+		4. Static code analysis with flake8 and SonarQube
 		5. security scanning using Veracode
-		As there is no build step in python, next step is deployment 
-	Current project, it is with containers 
-		We use docker.yaml for containzation 
-		And kubernetes.yaml for orchestration 
-	
-	- Also, worked with cloudformation.json templates for infra management .  
-		 - Terraform is very naive experience 
+		As there is no build step in python, next step is deployment
+	Current project, it is with containers
+		We use docker.yaml for containzation
+		And kubernetes.yaml for orchestration
 
-	- Code Flow process 
-		- feature branch -(Pull requests)(once completed) - dev branch -(testers signoff)-> release branch -(signoff from client)- production branch 
+	- Also, worked with cloudformation.json templates for infra management .
+		 - Terraform is very naive experience
+
+	- Code Flow process
+		- feature branch -(Pull requests)(once completed) - dev branch -(testers signoff)-> release branch -(signoff from client)- production branch
+
+
+Development Process
+	System design
+	Data flow design
+	DataBase design
+	Creating jira, by speaking with stakeholders
 
 
 Code Flow
 	Step 1 : we will create a branch for each jira
-		Under the feature branch, we will start developing 
+		Under the feature branch, we will start developing
 		We will follow TDD - Test driven development
 				Unittest  mocks or pytest fixtures for mocking the 3rd party resources or REST APIs
-				Use mypy for testing the annotations and types 
+				Use mypy for testing the annotations and types
 				For linting, i used pylint and autopep8 for reformatting code for PEP8 guidienesles
-		
-		We need to ensure all existing and new  test cases are running 
-		Then, push the code 
-		Then, CI/CD proces will run 
-		If all correct, then we can give pull request 
-	 
-	Step 3: two  approvals needed; team will review the code; if any changes i will 
-	Address them; 
-	Else they will approve; i will merge the code 
-	 
+
+		We need to ensure all existing and new  test cases are running
+		Then, push the code
+		Then, CI/CD proces will run
+		If all correct, then we can give pull request
+
+	Step 3: two  approvals needed; team will review the code; if any changes i will
+	Address them;
+	Else they will approve; i will merge the code
+
 	The, code goes to next branch
-	 
-	We are with python; we add release tag and push the code 
-	Python don't have build, so next step is deployment. 
+
+	We are with python; we add release tag and push the code
+	Python don't have build, so next step is deployment.
+
+
+
+We will follow all sprint ceremonies
+We will sit with the clients for requirement gathering
+Then, place the jiras in the backlog
+
+During the sprint planning, we will discuss on want among them to take, check for any dependencies and get all needed things.
+At the end of the sprint, we will have sprint review and retrospective meetings
+
+We give utmost importance to these review feedbacks, and try to improve this continuous process
+
+Development Tools
+==================
+	for code Management - Bitbucket, Github
+	for Issue Tracking  - Jira, CA Rally
+	for CI/CD           - Jenkins
+	for monitoring      - Dynatrace
+	for log management  - Splunk
+
+	for local development - Intellij, Visual Studio Code
