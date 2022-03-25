@@ -66,7 +66,7 @@ Current Project - Bank of America - Financial transactions analysis
 
 Current Project - T-Mobile
 -------------------------------
-	- I am part of team which will create the cellular propagation models.
+	- I am part of a team which will create the cellular propagation models.
 	- Means for call drop analysis
 
 
@@ -87,6 +87,3 @@ Current project - Mortgage analytics
 
 Current Project - Medical Research Analytics
 ---------------------------------------------
-
-
-

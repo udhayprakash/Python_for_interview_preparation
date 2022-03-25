@@ -247,12 +247,12 @@
 			- Implements the ACID database model, which basically means it favors consistency over
     		  availability.
 			- Scalability is mainly achieved by increasing the resources on the host, usually this
-			  means more cpu, memory, storage or network capacity.
+			  means more cpu, memory, storage or network capacity(vertically scalable).
 		- NoSQL
 			- Data can be stored as documents, key-value pairs, tables and graphs.
 			- Implements the BASE database model, which basically means it favors availability
 			  over consistency.
-			- Scalability is mainly achieved by spreading datasets across multiple servers.
+			- Scalability is mainly achieved by spreading datasets across multiple servers.(horizontally scalable)
 
 	- BASE model
 		- Basically Available

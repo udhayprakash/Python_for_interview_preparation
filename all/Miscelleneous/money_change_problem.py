@@ -27,3 +27,9 @@ coins = (25, 10, 5, 1)
 denominations = len(coins)
 
 print(change(money, coins, denominations))  # [3, 0, 0, 2] = 3 * 25 + 1 * 2
+
+# minNumberOfCoins
+# 11, 9, 7, 5, 1
+# 25 --> 3 : 11, 9, 5  or  9, 9, 7
+# 6  --> 2 :
+# 16 --> 2 :

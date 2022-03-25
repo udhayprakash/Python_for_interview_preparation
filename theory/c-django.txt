@@ -248,6 +248,7 @@
     - Django Cheatsheet
     	https://cheatography.com/papousekp/cheat-sheets/django-class-based-views/
     	https://cheatography.com/lewiseason/cheat-sheets/django-models/
+
     - Django Test Setup
 
     	Django Settings.py

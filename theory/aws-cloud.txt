@@ -7,20 +7,24 @@ AWS Cloud
 		- collections indicate a group of resources such as a group of s3 objects
 		  in a bucket, or a group of SQS queues
   			- It helps to perform some action on those groups
+
 	- Lambda layer 
 		- It is an archive containing additional code, such as libraries, dependencies, or 
 		  even custom runtimes. 
 		- When you include a layer in a function, the contents are extracted to the /opt 
 		  directory in the execution environment.
+
 	- AWS Lambda Performance Optimizaton 
 		- increasing RAM => faster execution => same price.
 		- Watch out for function size to reduce the cold start durations.
 		- Split complex processes into separate functions to save money and gain speed.
 		- When possible, execute code in parallel.
 		- Reusing connections with Keep-Alive.
+
 	- AWS Glue 
 		- https://docs.aws.amazon.com/glue/latest/dg/add-job.html
 		- https://docs.aws.amazon.com/glue/latest/dg/workflows_overview.html
+
 	- ETL Jobs
 		- I have created ETLs jobs like say, 
 			Users can connect to an endpoint, from where request goes via 
@@ -28,4 +32,14 @@ AWS Cloud
 				AWS API Gateway and then 
 				aws lambda and from there 
 				it can make AWS Athena queries on top of s3 buckets 
-				and reply that response in JSON 
+				and reply that response in JSON
+
+	- dead letter queue
+		- A dead-letter queue is an Amazon SQS queue that an Amazon SNS subscription can
+		target for messages that can't be delivered to subscribers successfully.
+		- Messages that can't be delivered due to client errors or server errors are held
+		in the dead-letter queue for further analysis or reprocessing.
+
+
+AWS account security tools
+	- AWS Identity and Access Management (IAM)

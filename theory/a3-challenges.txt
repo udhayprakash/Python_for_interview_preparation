@@ -20,7 +20,7 @@ Answer)
 		d) dump that to database
 	It's a simple ETL job. So, as per design, I created unit and integration tests, and then were working. 
 	When I did performance testing, I found that it took 19.5 seconds for this entire microservice. 
-	To add some math, say on average I get 10 XMLs per minute and each takes 19 seconds. For a 1 minute book of work, I need to spend 190 seconds, or 3 minutes. Or, for one day of work, I need to process for 3 days. 
+	To add some math, say on average I get 10 XMLs per minute and each takes 19 seconds. For one minute book of work, I need to spend 190 seconds, or 3 minutes. Or, for one day of work, I need to process for 3 days. 
 	
 	When using the cProfiler, I understood that it is taking more time at the xml to dictionary conversion. 
 	As i used xmltodict python module for this conversion, I gone to code base of that module, pulled the 
@@ -48,6 +48,7 @@ and EKS ( Elastic Kubernetes Service). I used docker for containerization and Ku
 
 
 Biggest Failures
+================
 	- I worked on AWS lambda, when they were introduced, some 5 years back.
 	  At that test, there is no ecosystem for the local development, unittest, and mocking.
 

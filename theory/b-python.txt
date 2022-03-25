@@ -26,6 +26,13 @@ Python Questions
 	- Basic Data Types - Int, Float, Str, None, bool
 	- Built-in Data Structures - List, Tuple, set, Dictionary
 
+	- Mutable objects
+		- supports inplace changes
+		- list, set, dict
+	- Immutable objects
+		- doesnt support inplace changes
+		- tuple, string, frozenset
+
 	- List
 		- Mutable object - it is editable. we can add , remove any element in it.
 		- indexed and retains the order of initialization
@@ -43,8 +50,11 @@ Python Questions
 		- keys should be immutable and unique, and hashable
 		- ex: {1:2, 3:4, 5:6}
 
-	- Mutable vs Immutable
-		- Mutable object
+	- conclusions
+		- List is suitable when order of storage is needed and/or if there were more writes.
+		- Dict suitable when there were more reads
+		- Set is suitable when unique values are needed and/or set operations like union, intersection, etc are needed.
+		- Tuple is suitable when there need to be immutability
 
 	- List vs Tuple
 		- List is mutable object, means we can edit the object like append, delete, ..
