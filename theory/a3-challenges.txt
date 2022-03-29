@@ -1,17 +1,22 @@
-In current project, there is a Data pipeline
-	- If a file is created in s3 bucket, AWS lambda will be triggered and we can dump to another s3 bucket or to the database.
-	- I created one in that way
-	- But problem is that in production, due to sudden change in permission, in one of the intermediate buckets, the process was stopped in middle I am not aware of this issue because I am configured to report only if there are issues. 
-	- This is a production issue.
-	- After this , I learned best practice
-		○ To be careful; and guide all to be careful in changing permission.
-		○ I created custom alert to notify such things
-			§ I am reading CloudWatch logs  for doing these
-I have written am AWS Lambda which will be time triggered, on periodic basis and check for such logs and reports  via SNS - Simple notification service 
+challenges
+==========
+- Permissions related production issue challenge
+	In current project, there is a Data pipeline
+		- If a file is created in s3 bucket, AWS lambda will be triggered and we can 
+		  dump to another s3 bucket or to the database.
+		- I created one in that way
+		- But problem is that in production, due to sudden change in permission, in 
+		  one of the intermediate buckets, the process was stopped in middle I am 
+		  not aware of this issue because I am configured to report only if there are issues. 
+		- This is a production issue.
+		- After this , I learned best practice
+			○ To be careful; and guide all to be careful in changing permission.
+			○ I created custom alert to notify such things
+				§ I am reading CloudWatch logs  for doing these
+	I have written an AWS Lambda which will be time triggered, on periodic basis and check
+	for such logs and reports  via SNS - Simple notification service 
 
-
-1. Have you faced any challenges during your work time? How did you resolve it?
-Answer) 
+- Coding Performance Related challenge
 	There is an ETL job, where there is a stream of XML records( which are valid SAP records). 
 	I wrote a microservice in AWS lambda to 
 		a) parse each of these XMLs, 

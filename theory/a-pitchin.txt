@@ -77,7 +77,7 @@ Questions to Interviewers
   - What are you expecting from me, for this role? What can be the day-to-day activities?
   - What is the volume of data, which we will be working with, on a daily basis. some approximate numbers of records?
   - What kind of data we work with , and what are our data sources ?
-  - Are we with agile methodology?  And how about the sprint cycle duration?
+  - Are we using agile methodology?  And how about the sprint cycle duration?
   - Were we using any custom frameworks in our project? If so, can you help with the details?
   - What were the next steps in the interview process? And how many more rounds of interview can I expect?
 

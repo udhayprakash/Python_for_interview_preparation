@@ -128,3 +128,8 @@ copy directory of files
 	cp -a /source/. /dest/
 
 	The -a option is an improved recursive option, that preserve all file attributes, and also preserve symlinks.
+
+
+disk space check 
+	du -h
+	df -H

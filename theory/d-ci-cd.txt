@@ -53,8 +53,6 @@ Code Flow
 	We are with python; we add release tag and push the code
 	Python don't have build, so next step is deployment.
 
-
-
 We will follow all sprint ceremonies
 We will sit with the clients for requirement gathering
 Then, place the jiras in the backlog

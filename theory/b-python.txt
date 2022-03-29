@@ -10,7 +10,13 @@ Python Modules
 	Pandas       : Data manipulation and analysis, mainly through dataframes and tables.
 	boto3        : For connecting and managing AWS Cloud resources
 
-	file system modules like csv, json, pyyaml, openpyxl
+	file system modules like
+		csv files with csv and pandas modules 
+		json files with json and pandas modules 
+		yaml files with pyyaml module 
+		Excel files with openpyxl, Xlsxwriter, xlrd and pandas modules 
+		pdf files  with reportlab, pypdf2 modules
+		image files with Pillow and tesserect modules
 
 Frameworks
 	Django , flask, fastapi
@@ -234,7 +240,7 @@ Python Questions
       in that case, we extract common code, create a closure for it, and use as a decorator. 
 	- built-in decorators are classmethod, staticmethod and property
 	- I created custom decorators for calculating the time taken by functions, or 
-	  like logging the events , etc 
+	  like logging the events, etc 
 
 - Map
 	- Higher-order function , which is designed to work on other functions
@@ -315,6 +321,24 @@ I	- we can create custom context managers, using the dunder methods, __enter__()
 			  - that is in that case, it is call by reference
 		- For immutables , if you define as global,  – it is be call by reference
 
+unittesting
+	- I used modules like unit test and pytest.
+	- Generally, we follow TDD - test driven development
+	- It means that first write the unit tests and then write logic to address them. 
+	- This way, we can assure that code is more reliable, handling all edge cases. 
+	- Also, any further logic changes, will be integrable easily, as all test cases need to pass,
+	  before pushing the code 
+	  
+	
+	In Unittesting, for each test suite, there will be 
+		a pair of class methods, called setup and tearDown 
+		and pair of instance methods, called setup and tearDown 
+		
+			setup class method 		-- executes at the start of the test suite 
+			tearDown class method 	--  executes at the end of the test suite 
+			
+			setup instance method 	-- executes
+		
 - name mangling
 	- python supports Public, private and protected variables/methods/functions
 	- We can access even private variables, methods too  in python,
@@ -348,7 +372,7 @@ I	- we can create custom context managers, using the dunder methods, __enter__()
 	- It will list the best practices, in coding in python
 
 - Memory Management in python
-	- Python has utomatic memory management.
+	- Python has automatic memory management.
 	- We have a garbage collector, which will check for any unreferenced objects
 	  on a periodically, for each CPU clock cycle, and it will delete them.
 	- we can check the reference count of any value using the sys module, sys.getreferencecount

@@ -1,4 +1,16 @@
-- Docker 
+Docker 
+======
+- Use cases 
+	- Simplifying configuration
+	- App isolation 
+	- server consolidation
+	- multi-tenancy 
+	- code pipeline management
+	- Rapid Deployment
+	- Developer productivity
+	- Debugging capabilities
+
+- Commands
 	1. `docker ps`  # current containers
 	2. `docker run` # create and start the container
 	3. `docker create` # create container
