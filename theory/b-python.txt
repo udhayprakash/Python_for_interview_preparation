@@ -71,6 +71,7 @@ Python Questions
 			1. fixed one with all the Python object information, and
 			2. variable sized block for the data.
 	- Tuples is that they use less memory where lists use more memory
+	- USAGE:
 	List is used when we need to make changes in code, say like adding values while loop .
 	Tuple is used when we wont change something in the code
 

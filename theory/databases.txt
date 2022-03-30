@@ -191,6 +191,17 @@
 					RIGHT JOIN t2 ON t1.id = t2.id
 					WHERE t1.id IS NULL
 
+	- number of records in each JOIN
+		TableA - 10 rows
+		TableB - 20 rows
+
+		CROSS JOIN -- 10 * 20 = 200 rows
+
+		Left joins can increase the number of rows in the left table if there are multiple
+		matches in the right table.
+		Left joins can increase the number of rows in the left table if there are multiple
+		matches in the right table.
+
 	- temp tables
 		- Table variables (DECLARE @t TABLE) are visible only to the connection that creates it,
 						and are deleted when the batch or stored procedure ends.

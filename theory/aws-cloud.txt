@@ -1,4 +1,4 @@
-AWS Cloud 
+AWS Cloud
 	- boto3 is built on top of botocore
 		- client is for lower-level interactions
 		- resource for higher-level object oriented abstractions
@@ -8,30 +8,39 @@ AWS Cloud
 		  in a bucket, or a group of SQS queues
   			- It helps to perform some action on those groups
 
-	- Lambda layer 
-		- It is an archive containing additional code, such as libraries, dependencies, or 
-		  even custom runtimes. 
-		- When you include a layer in a function, the contents are extracted to the /opt 
+	- Lambda layer
+		- It is an archive containing additional code, such as libraries, dependencies, or
+		  even custom runtimes.
+		- When you include a layer in a function, the contents are extracted to the /opt
 		  directory in the execution environment.
 
-	- AWS Lambda Performance Optimizaton 
+	- AWS Lambda Performance Optimizaton
 		- increasing RAM => faster execution => same price.
 		- Watch out for function size to reduce the cold start durations.
 		- Split complex processes into separate functions to save money and gain speed.
 		- When possible, execute code in parallel.
 		- Reusing connections with Keep-Alive.
 
-	- AWS Glue 
+	- AWS Lambda Limitations
+		- The disk space (ephemeral) is limited to 512 MB.
+		- The default deployment package size is 50 MB.
+		- The memory range is from 128 to 3008 MB.
+		- The maximum execution timeout for a function is 15 minutes*.
+		- Requests limitations by Lambda:
+		- Request and response (synchronous calls) body payload size can be up to to 6 MB.
+		- Event request (asynchronous calls) body can be up to 128 KB.
+
+	- AWS Glue
 		- https://docs.aws.amazon.com/glue/latest/dg/add-job.html
 		- https://docs.aws.amazon.com/glue/latest/dg/workflows_overview.html
 
 	- ETL Jobs
-		- I have created ETLs jobs like say, 
-			Users can connect to an endpoint, from where request goes via 
-				AWS Congnito for authentication , Then 
-				AWS API Gateway and then 
-				aws lambda and from there 
-				it can make AWS Athena queries on top of s3 buckets 
+		- I have created ETLs jobs like say,
+			Users can connect to an endpoint, from where request goes via
+				AWS Congnito for authentication , Then
+				AWS API Gateway and then
+				aws lambda and from there
+				it can make AWS Athena queries on top of s3 buckets
 				and reply that response in JSON
 
 	- dead letter queue

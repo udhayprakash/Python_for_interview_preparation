@@ -23,8 +23,8 @@ In terms of technical stack,
 
 
 In Machine Learning,
-	I worked with Linear regression algorithm, using scikit-learn module.
-	The use-case is that there was a archive database.
+	I worked with a Linear regression algorithm, using scikit-learn module.
+	The use-case is that there was an archive database.
 	We need to do future predictions based on these past values.
 
 	I created a model and also, exposed it via  a flask application, for further training.
