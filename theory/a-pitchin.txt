@@ -73,12 +73,15 @@ how do you learn new technologies, and trends
 
 ----------
 Questions to Interviewers
+----------
   - May I know about the project, and the technical stack like the tools used?
   - What are you expecting from me, for this role? What can be the day-to-day activities?
+
   - What is the volume of data, which we will be working with, on a daily basis. some approximate numbers of records?
   - What kind of data we work with , and what are our data sources ?
-  - Are we using agile methodology?  And how about the sprint cycle duration?
   - Were we using any custom frameworks in our project? If so, can you help with the details?
+
+  - Are we using agile methodology?  And how about the sprint cycle duration?
   - What were the next steps in the interview process? And how many more rounds of interview can I expect?
 
   - Will there be an opportunity to reach out to the clients, either for requirement gathering and/or for demoing the end solution?
