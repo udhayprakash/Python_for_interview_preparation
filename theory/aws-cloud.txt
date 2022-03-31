@@ -21,6 +21,10 @@ AWS Cloud
 		- When possible, execute code in parallel.
 		- Reusing connections with Keep-Alive.
 
+	- AWS Lambda Advantages
+		- Reduced Cost of Execution
+		- Improved Application Resiliency
+
 	- AWS Lambda Limitations
 		- The disk space (ephemeral) is limited to 512 MB.
 		- The default deployment package size is 50 MB.
@@ -29,6 +33,81 @@ AWS Cloud
 		- Requests limitations by Lambda:
 		- Request and response (synchronous calls) body payload size can be up to to 6 MB.
 		- Event request (asynchronous calls) body can be up to 128 KB.
+		- More Complex Call Patterns
+		- No Control Over Environment
+
+	- AWS Lambda Examples
+		- say, for Returning a message
+
+		def lambda_handler(event, context):
+			message = 'Hello {} {}!'.format(event['first_name'], event['last_name'])
+			return {
+				'message' : message
+			}
+
+		- The first argument is the event object.
+		  An event is a JSON-formatted document that contains data for a Lambda function
+		  to process. The Lambda runtime converts the event to an object and passes it to
+		  your function code. It is usually of the Python dict type. It can also be list,
+		  str, int, float, or the NoneType type.
+		- The event object contains information from the invoking service.
+		  When you invoke a function, you determine the structure and contents of the event.
+		  When an AWS service invokes your function, the service defines the event structure.
+		- The second argument is the context object.
+		  A context object is passed to your function by Lambda at runtime.
+		  This object provides methods and properties that provide information about the
+		  invocation, function, and runtime environment.
+
+		- AWS lambda can be invoked both synchronously or asynchronously
+		  In synchronous invocation, lambda runs the function and waits for response.
+		     when function completes, lambda returns response from the function's code with
+			 additional data, such as the version of the function that was invoked.
+
+			AWS CLI command for the same:
+				aws lambda invoke --function-name my-function --payload '{ "key": "value" }' response.json
+
+		  In asynchronous invocation, we dont wait for function response.
+			you handoff event to lambda and handles rest.
+			we configure how Lambda handles errors, and can send invocation records to a downstream resource to chain together components of your application.
+			AWS services like S3 and SNS invoke functions asynchronously to process the events.
+			Error handling for asynchronous events:
+			we can configure
+				1) Maximum age of event – The maximum amount of time Lambda retains an event
+				                 in the asynchronous event queue, up to 6 hours.
+				2) Retry attempts – The number of times Lambda retries when the function
+				                 returns an error, between 0 and 2
+
+			AWS CLI command:
+				aws lambda invoke --function-name my-function  \
+					  --invocation-type Event --cli-binary-format raw-in-base64-out \
+							  --payload '{ "key": "value" }' response.json
+
+	- AWS Lambda Vs Glue
+		- Lambda can use a number of different languages (Node.js, Python, Go, Java, etc.)
+          whereas Glue can only execute jobs using Scala or Python code.
+		- Lambda can execute code from triggers by other services (SQS, Kafka, DynamoDB,
+		  Kinesis, CloudWatch, etc.) vs. Glue which can be triggered by lambda events,
+		  another Glue jobs, manually or from a schedule.
+		- Lambda runs much faster for smaller tasks vs. Glue jobs which take longer to
+		  initialize due to the fact that it's using distributed processing. That being
+		  said, Glue leverages its parallel processing to run large workloads faster than Lambda.
+		- Lambda looks to require more complexity/code to integrate into data sources
+		  (Redshift, RDS, S3, DBs running on ECS instances, DynamoDB, etc.) while Glue
+		  can easily integrate with these. However, with the addition of Step Functions,
+		  multiple lambda functions can be written and ordered sequentially due reduce
+		  complexity and improve modularity where each function could integrate into a
+		  aws service (Redshift, RDS, S3, DBs running on ECS instances, DynamoDB, etc.)
+		- Glue looks to have a number of additional components, such as Data Catalog which
+		  is a central metadata repository to view your data, a flexible scheduler that
+		  handles dependency resolution/job monitoring/retries, AWS Glue DataBrew for
+		  cleaning and normalizing data with a visual interface, AWS Glue Elastic Views
+		  for combining and replicating data across multiple data stores, AWS Glue Schema
+		  Registry to validate streaming data schema.
+
+
+
+
+
 
 	- AWS Glue
 		- https://docs.aws.amazon.com/glue/latest/dg/add-job.html

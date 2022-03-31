@@ -11,10 +11,10 @@ Python Modules
 	boto3        : For connecting and managing AWS Cloud resources
 
 	file system modules like
-		csv files with csv and pandas modules 
-		json files with json and pandas modules 
-		yaml files with pyyaml module 
-		Excel files with openpyxl, Xlsxwriter, xlrd and pandas modules 
+		csv files with csv and pandas modules
+		json files with json and pandas modules
+		yaml files with pyyaml module
+		Excel files with openpyxl, Xlsxwriter, xlrd and pandas modules
 		pdf files  with reportlab, pypdf2 modules
 		image files with Pillow and tesserect modules
 
@@ -235,13 +235,13 @@ Python Questions
 	- Any python iterable object can be converted to an intertor using iter() protocol
 	- iterator can be created from any iterable object
 
-- Decorators 
-	- Generally, when some code is repeating, we will create a function, reuse the code. 
-	- If there were more than one function, with some part of the code which is common among all, 
-      in that case, we extract common code, create a closure for it, and use as a decorator. 
+- Decorators
+	- Generally, when some code is repeating, we will create a function, reuse the code.
+	- If there were more than one function, with some part of the code which is common among all,
+      in that case, we extract common code, create a closure for it, and use as a decorator.
 	- built-in decorators are classmethod, staticmethod and property
-	- I created custom decorators for calculating the time taken by functions, or 
-	  like logging the events, etc 
+	- I created custom decorators for calculating the time taken by functions, or
+	  like logging the events, etc
 
 - Map
 	- Higher-order function , which is designed to work on other functions
@@ -325,21 +325,21 @@ I	- we can create custom context managers, using the dunder methods, __enter__()
 unittesting
 	- I used modules like unit test and pytest.
 	- Generally, we follow TDD - test driven development
-	- It means that first write the unit tests and then write logic to address them. 
-	- This way, we can assure that code is more reliable, handling all edge cases. 
+	- It means that first write the unit tests and then write logic to address them.
+	- This way, we can assure that code is more reliable, handling all edge cases.
 	- Also, any further logic changes, will be integrable easily, as all test cases need to pass,
-	  before pushing the code 
-	  
-	
-	In Unittesting, for each test suite, there will be 
-		a pair of class methods, called setup and tearDown 
-		and pair of instance methods, called setup and tearDown 
-		
-			setup class method 		-- executes at the start of the test suite 
-			tearDown class method 	--  executes at the end of the test suite 
-			
+	  before pushing the code
+
+
+	In Unittesting, for each test suite, there will be
+		a pair of class methods, called setup and tearDown
+		and pair of instance methods, called setup and tearDown
+
+			setup class method 		-- executes at the start of the test suite
+			tearDown class method 	--  executes at the end of the test suite
+
 			setup instance method 	-- executes
-		
+
 - name mangling
 	- python supports Public, private and protected variables/methods/functions
 	- We can access even private variables, methods too  in python,
@@ -377,13 +377,13 @@ unittesting
 	- We have a garbage collector, which will check for any unreferenced objects
 	  on a periodically, for each CPU clock cycle, and it will delete them.
 	- we can check the reference count of any value using the sys module, sys.getreferencecount
-	
 
-Heap 
+
+Heap
 	- Whenever an object is created, it’s always stored in the Heap space, and stack
 	memory contains the reference to it. Stack memory only contains local
 	primitive variables and reference variables to objects in heap space.
-	Objects stored in the heap are globally accessible whereas stack memory can’t 
+	Objects stored in the heap are globally accessible whereas stack memory can’t
 	be accessed by other threads.
 	Memory management in stack is done in LIFO manner whereas it’s more complex in
 	Heap memory because it’s used globally.
@@ -397,17 +397,27 @@ Heap
 	Stack memory is faster than heap memory.
 
 Numpy
+------
 - How are numpy and pandas related
 - numpy arrays
 
 Pandas
+------
 - loc vs iloc
 	- loc gets rows (or columns) with particular labels from the index.
 	- iloc gets rows (or columns) at particular positions in the index (so it only takes integers).
+
 - dataframe index
 	- When index is unique, pandas use a hashtable to map key to value O(1).
 	- When index is non-unique and sorted, pandas use binary search O(logN),
 	  when index is random ordered pandas need to check all the keys in the index O(N).
+
+- find differences between two dataframes
+	df1=pd.DataFrame({'A':[1,2,3,3],'B':[2,3,4,4]})
+	df2=pd.DataFrame({'A':[1],'B':[2]})
+
+	pd.concat([df1,df2]).drop_duplicates(keep=False)
+
 - dataframe to series
 - series to dataframe
 - uses of series

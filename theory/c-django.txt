@@ -223,6 +223,20 @@
 		- Manager is some kind of interface between application and the database.
 		- we can define custom base querysets, for the models.
 
+	- Custom model field
+		from django.db import models
+
+		class MyField(models.Field):
+
+			description = "my field details"
+
+			def __init__(self, *args, **kwargs):
+				kwargs['max_length'] = 50
+				super().__init__(*args, **kwargs)
+
+		The Field.__init__() method takes the following parameters:
+			verbose_name, name, primary_key, max_length, unique, blank, null, db_index, etc
+
     - Django ORM vs SQLAlchemy
 
     - Multiple Databases in Django Project

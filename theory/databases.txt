@@ -5,6 +5,7 @@
 			- MySQL db with pymysql
 			- MS-SQL db with pyodbc
 			- Oracle db with CX_Oracle
+			- psycopg2 with postgres
 			- MongoDB with pymongo
 
 	- https://www.interviewbit.com/sql-interview-questions
