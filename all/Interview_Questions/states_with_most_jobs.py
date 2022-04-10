@@ -11,10 +11,14 @@ code performance, cleanliness, formatting, and anything else is fair game to cha
 The goal of this challenge is not only to see what you notice, but to see what matters 
 to you when writing or editing code.
 """
-
+import os
 
 import requests
-import json
+
+# pip3 install python-dotenv
+# Load .env file using:
+from dotenv import load_dotenv
+load_dotenv('states_with_most_jobs.ini')
 
 
 def states_with_most_jobs(clone, count, unique=False):
@@ -33,7 +37,7 @@ def states_with_most_jobs(clone, count, unique=False):
     while count > 0:
         big_state = None
         big_num = 0
-        for state, titles in clone.items():
+        for state, _ in clone.items():
             if count == None:
                 big_state = state
                 big_num = len(clone[state])
@@ -50,8 +54,9 @@ def states_with_most_jobs(clone, count, unique=False):
 
 
 def get_data(url, host_dns, _payload):
-    authKey = 'uAE5mkc61hl6qdUmp1okypCi6dMZbudqMa++R90IE7I='
-    userAgent = 'petercho39@gmail.com'
+    # 'uAE5mkc61hl6qdUmp1okypCi6dMZbudqMa++R90IE7I='
+    authKey = os.getenv('authKey')
+    userAgent = os.getenv('userAgent')  # 'petercho39@gmail.com'
 
     r = requests.get(url, headers={'Host': host_dns, 'User-Agent': userAgent,
                                    'Authorization-Key': authKey}, params=_payload)
