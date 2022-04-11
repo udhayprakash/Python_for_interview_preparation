@@ -1,7 +1,23 @@
 - Django vs Flask
-	- Django is Full-fledged framework within builtin features like ORM, Session management,
-	  Token management, Middleware, etc
-	- Flask is mini-framework, where we can create an application server in just 10 lines of code.
+	- Django is Full-fledged framework within builtin features like ORM, Session
+	  management, Token management, Middleware, etc
+	- Flask is mini-framework, where we can create an application server in just 10
+      lines of code.
+	- Django has built-in ORM, whereas in flask, we need to use the sqlalchemy ORM.
+	- Django comes with Django Template language, whereas in flask, we need to use
+	  jinja2 templates.
+	- Flask supports both sql and no-sql databases, whereas django is suitable for
+	  only relational databases.
+	- By default, django comes with batteries to be production ready, whereas in flask, we need to know
+	  what all need to be added, to our application.
+	- Conclusions
+		- flask is suitable
+			- when no-sql database is of choice, or
+			- when small utility application is needed, or
+			- when we need quick development
+		- Django is suitable
+			- when full-fledged application is needed,
+			- when production-ready application is needed,
 
 	- Django MVC & MVT
 		- MVC - Model, View, Controller

@@ -96,7 +96,8 @@
 			- it is one or more columns whose values are based on the primary key values
 			from another table.
 		- Unique Key:
-			- Unique key identifies a each row in the table uniquely. Unique key allows null values.
+			- Unique key identifies a each row in the table uniquely.
+			- Unique key allows null values.
 
 	- stored procedure vs Functions
 		- procedure allows SELECT as well as DML(INSERT/UPDATE/DELETE) statement in it
@@ -151,6 +152,12 @@
 			  multiple non-clustered index in a table.
 			- In non-clustered index, index contains the pointer to data.
 			- slow and requires more memory for operations
+	- Sharding
+		- It is a technique that splits data into separate rows and columns held on separate database
+		server instances in order to distribute the traffic load.
+		- Each small table is called a shard.
+		• Sharding key: a specific column value that indicates which shard this row is stored in.
+		• Sharding algorithm: an algorithm to distribute your data to one or more shards.
 
 	- window functions
 		- window functions operate on a set of rows and return a single aggregated value for each row.
@@ -175,9 +182,13 @@
 	- SQL JOINs
 		- Four types -  left, right, inner, and outer.
 		- (INNER) JOIN 		 : Returns records that have matching values in both tables.
-		- LEFT (OUTER) JOIN  : Returns all records from the left table, and the matched records from the right table.
-		- RIGHT (OUTER) JOIN : Returns all records from the right table, and the matched records from the left table.
-		- CROSS JOIN :
+		- LEFT (OUTER) JOIN  : Returns all records from the left table, and the matched
+		                       records from the right table.
+		- RIGHT (OUTER) JOIN : Returns all records from the right table, and the matched
+		                       records from the left table.
+		- CROSS JOIN 		 : there is no ON clause here. All rows from the first table
+                               are combined with all rows from the second table.
+
 				SELECT w.name AS wine, m.name AS main_course
 				FROM wine w
 				CROSS JOIN main_course m;
@@ -322,6 +333,17 @@
 		  a subquery cannot contain an ORDER BY clause.
 		- A query can contain more than one sub-queries.
 
+Characteristics of MySQL:
+	- Database locking (MUCH easier for financial transactions)
+	- Consistency/security (as above, you can guarantee that, for instance, no changes happen between the time you read a bank account balance and you update it).
+	- Data organization/refactoring (you can have disorganized data anywhere, but MySQL is better with tables that represent "types" or "components" and then combining them into queries -- this is called normalization).
+	- MySQL (and relational databases) are more well suited for arbitrary datasets and requirements common in AGILE software projects.
+
+Characteristics of Cassandra:
+	- Speed: For simple retrieval of large documents. However, it will require multiple queries for highly relational data – and "by default" these queries may not be consistent (and the dataset can change between these queries).
+	- Availability: The opposite of "consistency". Data is always available, regardless of being 100% "correct".[1]
+	- Optional fields (wide columns): This CAN be done in MySQL with meta tables etc., but it's for-free and by-default in Cassandra.
+
 
 - Data Warehouse
 	- single, complete and consistent store of data obtained from
@@ -337,3 +359,11 @@ Q) How to get last day of previous month?
 	SELECT LAST_DAY(CURDATE());						-- Current month
 	SELECT LAST_DAY(CURDATE() - INTERVAL 1 MONTH);	-- Previous month
 	SELECT LAST_DAY(CURDATE() + INTERVAL 1 MONTH);	-- Next month
+
+
+DB Design Books
+===============
+	SRE book, https://sre.google/sre-book/table-of-contents/
+	Designing Data-Intensive Applications (O’Reilly)
+	Streaming Systems (O’Reilly)
+	Clean Code

@@ -1,75 +1,75 @@
 INTRODUCTION:
 -------------
-I am a Full-Stack Python Developer, with all years of experience, 
+I am a Full-Stack Python Developer, with all years of experience,
  with around 80% into Backend work and 20% into the frontend.
- 
+
 IN Backend, I worked on creating standalone scripts for automation, scheduled jobs,
 ETL jobs and data pipelines; and RESTful APIs and web applications.
- 
+
 IN FRONTEND, I worked on creating dashboards/graphs/charts using d3.js library,
 and tables using ag-grid. Also, worked on JavaScript, jQuery, and react.
- 
-In databases, 
-	In relational dB, I worked with MySQL, MS SQL, oracle dB and PostgreSQL. 
-	In no-relational dB, I worked with MongoDB and Cassandra. 
+
+In databases,
+	In relational dB, I worked with MySQL, MS SQL, oracle dB and PostgreSQL.
+	In no-relational dB, I worked with MongoDB and Cassandra.
 	In data warehousing, I worked with Snowflake schema
 
-In Python, 
+In Python,
 	- worked on creating web applications and RESTFUL APIs using Django/flask/FastAPI frameworks
 	- worked on creating process automation and integrating with infrastructure(Linux/windows) boxes
-	- worked on web scrapping using beautiful soup
+	- worked on web scraping using beautiful soup
 	- created unit test, integration test for the source code, using unittest and pytest modules
 
-In Caching, 
+In Caching,
 	I worked with Redis
-	
-In scheduling, 
+
+In scheduling,
 	I worked with celery. I did integrations with my django application for periodic jobs
 
-
 In Public Cloud, I am mostly associated with AWS Cloud.
-	In AWS Cloud, I worked with 
-		Server-based Architectures with 
-			- EC2 Instances 
+	In AWS Cloud, I worked with
+		Server-based Architectures with
+			- EC2 Instances
 			- Elastic Load balancer
-			- Auto-Scaling 
+			- Auto-Scaling
 			- Route53
-			
+
 		for Storage,
 			- s3 bucket for file storage
 			- s3 Glacier for Archival Storage
-			
-		Server-less Architectures with 
+
+		Server-less Architectures with
 			- AWS Lambda - with either time-triggered or event triggered
-			- AWS API Gateway with http-triggered 
-			- For long running jobs beyond 15min, as AWS lambda has limitation, 
+			- AWS API Gateway with http-triggered
+			- For long running jobs beyond 15min, as AWS lambda has limitation,
 			  i use Step Functions
-			
+
 		- Also, worked with SQS, SNS and SES
-		- And, EMR cluster for Pyspark 
+		- And, EMR cluster for Pyspark
 		- for the ETLs, I worked with AWS Glue Jobs with DataCatalog and Pyspark
 
 In current project, I created the CI/CD setup using Jenkins and Groovy script.
-	
-In Golang, I created microservices and ETL jobs, 
-	Mainly using go concurrency. 
-	Used Gokit for microservices implementation, 
+
+In Golang, I created microservices and ETL jobs,
+	Mainly using go concurrency.
+	Used Gokit for microservices implementation,
 	and Cobra package for creating command line utilities.
 	GORM - for working with the databases
 	BDD with ginko framework
 
-REASON FOR CHANGE - 
+REASON FOR CHANGE -
 	CONTRACT COMPLETED. NO more SCOPE FOR EXTENSION. SO, Looking for the change.
-But It is a very interesting project. 
+But It is a very interesting project.
 
 
 how do you learn new technologies, and trends
 --------------------------------------------
 	- i subscribed to various blogs and weekly newsletters
-	- Apart from them, i go through the stackoverflow questions and workplace stackoverflow 
+	- Apart from them, i go through the stackoverflow questions and workplace stackoverflow
 	  questions, in my free time.
-	- And, part of enhancements or POCs, i research and read , and sometimes implement,
+	- And, part of enhancements or POCs, i research and read, and sometimes implement,
 	  based on some articles
+	- sometimes, i will listen to some  tech related podcasts.
 
 ----------
 Questions to Interviewers
@@ -78,7 +78,7 @@ Questions to Interviewers
   - What are you expecting from me, for this role? What can be the day-to-day activities?
 
   - What is the volume of data, which we will be working with, on a daily basis. some approximate numbers of records?
-  - What kind of data we work with , and what are our data sources ?
+  - What kind of data we work with, and what are our data sources ?
   - Were we using any custom frameworks in our project? If so, can you help with the details?
 
   - Are we using agile methodology?  And how about the sprint cycle duration?
@@ -95,8 +95,8 @@ Questions to Interviewers
   - What metrics or goals will my performance be evaluated against?
   - What are the most immediate projects that need to be addressed?
   - Can you describe a typical day or week in the job?
-  - What will be the process to getting up to the speed? In our team, we use confluence
-    and teams' channel to collaborate? How do they collaborate and maintain documentation?
+  - What will be the process of getting up to speed? In our team, we use confluence
+    and teams' channels to collaborate? How do they collaborate and maintain documentation?
   - What will be the area that you want this role to be focusses?
   - Do you expect the main responsibilities for this position to change in the next
     six months to a year?
@@ -106,3 +106,41 @@ Questions to Interviewers
   - What are the common career paths in this department?
   - Is there anything else i can provide you with that would be helpful?
   - What's one of the most interesting projects or opportunities that you've worked on?
+
+
+company expenses
+-----------------
+	Green Dollar Expense -- busines from external vendors like AWS Cloud
+	Blue Dollar Expense  -- business between LOBs, in same organization
+
+
+
+================================================================================
+We have Built micro services for different use cases with Rest APIs using aws api gateway and Lambda and
+integrated these APIs with several components to get, post, delete info from the database.
+
+Created IAM role based services that can access aws s3, dynamodb for data storage.
+
+Worked on aws EMR clusters with python, spark to move large data from different sources, transform and
+load into mongodb and cloud databases like auroradb/datalake s3.
+
+Used Django and python to build an application which shows the data movement statistics and related graphs.
+
+hands-on experience using Python in developing data-based applications,
+
+
+
+Reading the unstructured large text files (around 70 Gigabytes each from external vendor) into Pyspark DataFrames,
+ cleaning the data and making it structured and storing it in Amazon S3 to use it for further processes.
+
+Worked on high configuration EMR cluster to run Spark jobs and created bootstrap scripts to install additional
+ applications required on the EMR cluster.
+
+Based on the new or updated business requirements, redesigned and implemented the Rules for Processing Workflows.
+
+Analyzing existing applications consisting of multiple batch programs in SAS and developed the code in Python and Spark.
+
+Built new connections to databases like ORE, Snowflake, Redshift, and Teradata from spark and python and
+incorporated everything in a python library to make the DA's life easier.
+
+Rewrote the Teradata SQL queries to Amazon Snowflake as part of database migration.

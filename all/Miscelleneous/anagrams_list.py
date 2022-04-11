@@ -9,6 +9,7 @@ def group_anagrams(words):
 
 
 print(group_anagrams(['eat', 'tea', 'tan', 'ate', 'nat', 'bat']))
+print(group_anagrams(['act', 'tac', 'cat', 'shad', 'dash']))
 
 
 def group_anagrams(words):
@@ -21,3 +22,4 @@ def group_anagrams(words):
 
 
 print(group_anagrams(['eat', 'tea', 'tan', 'ate', 'nat', 'bat']))
+print(group_anagrams(['act', 'tac', 'cat', 'shad', 'dash']))

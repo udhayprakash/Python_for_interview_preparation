@@ -1,5 +1,5 @@
 Current Project is into data analytics
-we have a couple of data scientists, who will drive this data analytics process. 
+We have a couple of data scientists, who will drive this data analytics process.
 
 my responsibilities here includes
 	- data gathering from both internal and external data sources
@@ -11,7 +11,7 @@ my responsibilities here includes
 
 In terms of technical stack,
 
-	Our application server is in a EC2 instance, and celery workers are running 
+	Our application server is in a EC2 instance, and celery workers are running
 	in another server.
 	Both are in multiple regions for DR (disaster recovery) strategy.
 
@@ -21,13 +21,21 @@ In terms of technical stack,
 	or aws step functions; or recently, with container based microservices
 	Used docker for containerization and kubernetes for orchestration.
 
+    Project Stack
+    --------------
+    Frontend    : Django Template Language(DTL), Jinja, Javascript, jQuery, D3.js, Aggrid
+    Backend     : Django, Django Rest Framework (DRF)
+    Cache       : Redis
+    Queuing     : RabbitMQ
+    Scheduler   : Celery
+
 
 In Machine Learning,
-	I worked with a Linear regression algorithm, using scikit-learn module.
+	I worked with a Linear regression algorithm, using the scikit-learn module.
 	The use-case is that there was an archive database.
 	We need to do future predictions based on these past values.
 
-	I created a model and also, exposed it via  a flask application, for further training.
+	I created a model and also exposed it via  a flask application, for further training.
 
 ======================================================
 In AWS cloud, my roles involve,
@@ -37,24 +45,31 @@ In AWS cloud, my roles involve,
 
 	We will do POCs with new components in aws, and if success, we try to incorporate in architecture, using cloud formation templates
 
-Day-to-day actvities
+Day-to-day activities
 --------------------
 	- on a daily basis,
-		Initially when I started I will check for any emails or alerts which we need to addressed.
+		Initially when I start I will check for any emails or alerts which we need to address.
 		So, and if I need to reach out any stakeholders I will reach out to them And then like I
-		started working on my JIRAs And after the stand up during the stand up like you know, so 
+		started working on my JIRAs And after the stand up during the stand up like you know, so
 		we discuss on what are the pain points or any you know blockers Then finally, so after
 		the, you know, the standup like I will start working on my JIRAs.
+	- We prioritise  based on situation and some times, i will take manager’s decision
 
 ========================================================================================
 In terms of the technical stack,
-	we have a web application written in Django , with frontend as React
+	we have a web application written in Django, with frontend as React
 	This web application is a monolithic architecture
 
 	For the data collections, transformations and business logic,
 	I worked on creating multiple microservices with AWS Lambda
 		I created data pipelines with s3 bucket to aws lambda with time and event triggers
 		Also, exposed lambdas with API Gateway for other teams, for data infusion to my db
+
+Current Project - Fault-analysis for medical devices @ Medtronic
+-----------------------------------------------------------------
+	- We are into medical devices manufacturing and servicing
+	- we collect the anonymous data from medical devices, and store in mongodb
+	- we do post-analysis on this archival data.
 
 
 Current Project - Bank of America - Financial transactions analysis
@@ -66,7 +81,7 @@ Current Project - Bank of America - Financial transactions analysis
 
 Current Project - T-Mobile
 -------------------------------
-	- I am part of a team which will create the cellular propagation models.
+	- I am part of a team which will create cellular propagation models.
 	- Means for call drop analysis
 
 
@@ -87,3 +102,5 @@ Current project - Mortgage analytics
 
 Current Project - Medical Research Analytics
 ---------------------------------------------
+
+

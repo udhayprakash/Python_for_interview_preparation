@@ -9,6 +9,8 @@ Python Modules
 	Jupyter notebook: for interactively exploring the datasets and other functions
 	Pandas       : Data manipulation and analysis, mainly through dataframes and tables.
 	boto3        : For connecting and managing AWS Cloud resources
+	paramiko	 : for connecting to linux machines
+	fabric		 : for connecting to windows machines
 
 	file system modules like
 		csv files with csv and pandas modules
@@ -44,7 +46,7 @@ Python Questions
 	- indexed and retains the order of initialization
 	- will retain duplicates and can store any data type
 - Tuple
-	- same as list, but once created, we cant change any element in it .
+	- same as a list, but once created, we can't change any element in it .
 	- it is immutable object
 - Set
 	- mutable object - we can edit it
@@ -151,7 +153,10 @@ Python Questions
 
 - OOP
 	- Object Oriented Programming
-	- There are 4 principles:
+		- I use Object-Oriented Programming and Design predominantly.
+		- It gives us the scalability in code to adapt any requirement changes.
+
+ 	- There are 4 principles:
 		1) ENCAPSULATION - with public , protected and private variables/methods
 				public variable -- it a variable is starting with no underscore
 				protected variable -- if it is starting with SINGLE underscore
@@ -282,6 +287,22 @@ Python Questions
 - Multiprocessing vs Multithreading
 	- Multithreading for IO-bound tasks. Multiprocessing for CPU-bound tasks.
 
+- stack & heap
+	- each thread will have its own stack, but all the threads in a process will share the heap.
+
+- thread vs process
+	-------------------------------------------------------------------------------------------
+		PROCESS								    |			THREAD
+	-------------------------------------------------------------------------------------------
+	- Processes are heavyweight operations.	    | Threads are lighter weight operations.
+	- Each process has its own memory space.    | Threads use the memory of the process they belong to.
+	- Inter-process communication is slow as    | Inter-thread communication can be faster than inter-process communication
+	  processes have different memory addresses.| because threads of the same process share memory with the process they belong to.
+	- Context switching between processes is    | Context switching between threads of the same process is less expensive
+	  more expensive.
+	- Processes don’t share memory with other   | Threads share memory with other threads of the same process.
+	  processes.
+
 - context managers
 	- will allow you to allocate and release resources precisely when you want to.
 	- Examples include when working with
@@ -371,6 +392,20 @@ unittesting
 	- PEP is abbreviation for Python Enhancement Proposal
 	- It deals with the coding style guide
 	- It will list the best practices, in coding in python
+	- These recommendations include
+		- to use 4 spaces, and not tabs , for indentation
+		- Use triple quotes for docstrings
+		- Wrap lines so that they don’t exceed 79 characters, in each line
+		- class names should in camel casing, and all others should be in underscore casing
+		- Use Python’s default UTF-8 or ASCII encodings and not any fancy encodings
+		- Blank Lines
+			- Two blank lines should be both before and after class/method/function definitions.
+			- You should use blank lines conservatively within your code to separate groups of functions.
+		- One space around the operators
+		- Wildcard imports (*) should not be preferred
+		- Avoid trailing white-spaces
+
+
 
 - Memory Management in python
 	- Python has automatic memory management.
@@ -557,3 +592,8 @@ Finally, among the three (old-style, new-style with format() and f-strings), the
 F-string based formatting with take the least amount of time.
 
 So, i prefer F-strings among all.
+
+
+big data
+	mapper - producer
+	reduce - receiver

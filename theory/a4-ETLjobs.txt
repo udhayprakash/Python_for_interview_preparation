@@ -1,23 +1,36 @@
-I have created ETL jobs with event driven architecture 
+I have created ETL jobs with event driven architecture
 worked with multiple ETL jobs.
 
-	s3 bucket -- > new file comes --> triggered lambda --> pandas dataframes process --> push to dB -- 
+	s3 bucket -- > new file comes --> triggered lambda --> pandas dataframes process --> push to dB --
 
-	time triggered  ---> periodically, it will check for new data in the files and dump them together 
-			say it may run for every 1 hr 
-	http triggered -- > some one want to push data to out application 
+	time triggered  ---> periodically, it will check for new data in the files and dump them together
+			say it may run for every 1 hr
+	http triggered -- > some one want to push data to out application
 			--- I exposed my lambda via API gateway --
 
 	aws kenisis stream ---> SQS ---> event triggered ---> AWS lambda
 
+	MYSQL db ->  aws kinesis stream -> aws lambda → MYSQL db NEW
 
-Also, used the AWS GLue jobs for transformation of around 50k records. 
+
+Also, used the AWS GLue jobs for transformation of around 50k records.
 I configured the glue data catalog to pick the specific columns AND  perform operations
 	Within the python code, i connected with the pyspark for some transformations, etc
-And dumped final results in either parquet for any further jobs, or to the db 
+And dumped final results in either parquet for any further jobs, or to the db
+
+Data Migration Strategy
+------------------------
+We can take offsets from the db and transfer,
+	Say when i pulled there were 100 records
+	Say after active migration, we repoint to new db , so, no more data to old db.
+
+	Say now there were 120 records count
+	Remaining small chunk (20 records), we will get after active migration
+
+	I know, i will make hold of offset when pull the data
+	I mean, i will count the no of records at that time, when i am pulling
 
 
-
-Data Quality Checks 
-	- is there numeric data 
-	- 
+Data Quality Checks
+	- is there numeric data
+	-

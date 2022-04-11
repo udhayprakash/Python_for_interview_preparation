@@ -1,0 +1,144 @@
+Python
+======
+	args and kwargs
+	sorted(d, key=d.get, reverse=True)
+
+	local vs global vs non-local 
+	--main---
+	is possible indexing in dict
+	
+	___new__      birth
+	__init__       name
+	
+	class decorator vs metaclass
+	setup.py python
+	metaclass in python
+	pytest request fixture
+	python descriptor protocol
+	python __get__
+	
+	multithreading vs multiprocessing 
+	handling-hash-collisions-in-python
+	https://hackersandslackers.com/extract-data-from-complex-json-python/
+
+
+Pandas
+======
+	How do I get a list of all the duplicate items using pandas in python?
+	statictical modelling
+	numpy dimension broadcast
+	pandas sum group by multiple columns
+	https://stackoverflow.com/questions/40957932/transform-vs-aggregate-in-pandas
+	df to_numpy
+	https://thispointer.com/data-analysis-in-python-using-pandas/
+	https://www.shanelynn.ie/category/tutorials/
+	https://datatofish.com/convert-pandas-series-to-dataframe/
+	https://saralgyaan.com/posts/category/pandas/
+
+Flask 
+======
+	flask - before and after request ,  blueprints
+
+Django 
+=======
+	how to exclude certain fields from django migrations
+
+spark
+=======
+	rdd vs dataframe vs dataset
+	spark dataframe vs pandas dataframe
+	spark architecture
+
+AWS Cloud
+==========
+	sns vs sqs
+	Amazon Aurora
+	aws lambda scale horiontally and vertically in console 
+	aws lambda - event and context objects
+	aws glue dynamic frame
+
+
+Databases 
+==========
+	rank () function -- top 3 in each group
+		https://www.sqlshack.com/overview-of-sql-rank-functions/
+
+	redis vs mysql
+	How does using TRUNCATE TABLE affect Indexes
+	where vs having in sql
+	db phsical index vs logical indexing
+	How to get duplicate records in a db table, if not unique or primary key?
+	get first two records in each group
+	What are different isolation levels in SQL?
+	SQL - horizontal vs Vertical Scaling
+	second highest and second smallest, among the list of numbers
+	indexing -- update effect
+	data consistency sql vs nosql
+	database indexing clustered or nonclustered
+	common table expression in sql
+	cpe database
+	database custom function mysql
+	mysql stored procedure try catch
+	Are both same: A left join b & B right join A
+	replications of databases
+	common table expression in sql
+	
+Web Servers
+============
+	nginx vs apache - https://www.javatpoint.com/difference-between-apache-and-nginx
+	nginx
+
+Architecture
+============
+	microservices architecture vs monolithic architecture
+	concurrency - preemptive and nonpreemptive scheduling
+	thread stack
+	DB Design - write-heavy & read-heavy
+
+datawarehousing
+================
+	fact tables - types and examples
+	dimensional tables
+	OLTP and OLAP environment.
+
+
+Situation-based
+================
+	time when you missed the project deadline 
+	when requirement is not clear 
+	pull requst review checks
+	
+Linux 
+=====
+	linux iptables
+
+Tools 
+======
+	elasticSearch / Solr
+
+Javascript Questions
+====================
+	1) Javascript prototyping
+	2) local storage vs session storage
+	3) data attribute in html
+	4) what are CSS Selectors
+	5) event loop in javascript
+	closures in javascript
+	let vs var vs const, in js
+	How to implement js privacy
+	Promise.all()
+	service workers
+	what-is-the-new-keyword-in-javascript
+	preventdefault
+	stop propagation vs preventdefault
+	event delegation in javascript? usecase
+	call,  apply  vs bind in javascript
+	pure function
+
+
+materialized view vs non materialized view
+https://www.webforefront.com/django/setuprelationshipsdjangomodels.html
+
+
+docker optimize image size
+git braNCHING strategies

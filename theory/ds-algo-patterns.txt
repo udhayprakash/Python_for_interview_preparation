@@ -19,6 +19,29 @@ Memory
 	- Interface Segregration - client should not be forced to depens on methods its does not use
 	- Dependency Inversion   - Depend on interface decouping
 
+High Level Design(HLD) vs Low Level Design(LLD)
+	- High Level Design refers to the overall system design.
+	  Low Level Design is like detailing HLD means it refers to component-level design process.
+	- First HLD is created, followed by LLD
+
+	- HLD is also known as macro level/system design.
+	  LLD is also known as micro level/detailed design.
+	- HLD describes the overall description/architecture of the application.
+	  LLD describes detailed description of each and every module.
+	- HLD expresses the brief functionality of each module.
+	  LLD expresses details functional logic of the module.
+	- HLD is created by solution architect.
+	  LLD is created by designers and developers.
+	- In HLD the output criteria is data base design, functional design and review record.
+	  In LLD the output criteria is program specification and unit test plan.
+	- High Level Solution converts the Business/client requirement into High Level Solution.
+	  Low Level Design converts the High Level Solution into Detailed solution.
+	- In HLD the input criteria is Software Requirement Specification (SRS).
+	  In LLD the input criteria is reviewed High Level Design (HLD).
+	- In HLD the participants are design team, review team, and client team.
+	  Where as in LLD, participants are design team, Operation Teams, and Implementers.
+
+
 - Data Structures
 	- https://www.interviewbit.com/data-structure-interview-questions/
 	- Used for efficient organization and modification of data
@@ -27,17 +50,79 @@ Memory
 			- If elemenets of a data structure result in a sequence or a linear list
 			- Ex: Arrays, Linked List, Stacks, Queues, etc
 		2) Non-Linear Data structures:
-			- If elemenets of data structure results in a way that traversal of nodes is not done in a sequenctial manner
+			- If elemenets of data structure results in a way that traversal of nodes is not
+              done in a sequenctial manner
 			- Ex: Trees, Graphs, Tables, sets, etc
 	- Arrays
 		- Arrays are the collection of similar types of data stored at contiguous memory locations.
-		- It is the simplest data structure where the data element can be accessed randomly just by using its index number.
+		- It is the simplest data structure where the data element can be accessed randomly just
+		  by using its index number.
 	- Binary Trees
 		- A binary Tree is a special type of tree where each node can have at most two children.
-		- Binary tree is generally partitioned into three disjoint subsets, i.e. the root of the tree, left sub-tree and
-		  right sub-tree.
+		- Binary tree is generally partitioned into three disjoint subsets,
+		  i.e. the root of the tree, left sub-tree and right sub-tree.
 	- AVL Trees
 		- AVL trees are height balancing BST.
-		- AVL tree checks the height of left and right sub-trees and assures that the difference is not more than 1.
+		- AVL tree checks the height of left and right sub-trees and assures that the difference
+		  is not more than 1.
 		- This difference is called Balance Factor and is calculates as:
 				BalanceFactor = height(left subtree) − height(right subtree)
+
+Design Patterns
+================
+- Singleton (Creational)
+    Object that can only be instantiated once.
+    Use case: Settings
+
+- Prototype (Creational)
+    Fancy word for "clone".
+    Create clone object instead of extending object.
+
+- Builder (Creational)
+    Create object with methods instead of constructor.
+    Examples:
+        JQuery.
+
+- Factory (Creational)
+    Instead of using a new keyword to instantiate and object you use a function or method to do it for you.
+    Use case: Cross platform app - Conditional checking to determine which button to show.
+
+- Facade (Structural)
+     A simplified API to hide low level details in your code base.
+    Use case: Create facade class that contain the low level systems as dependencies which then simplifies their operation.
+    Examples:
+        JQuery.
+
+- Proxy (Structural)
+    Fancy word for "substitue".
+    Replace target object with a proxy.
+    Examples:
+        Vue's reactivity system.
+
+- Iterator (Behavioral)
+    Traverse through a collection of objects. for loop.
+
+- Observer (Behavioral)
+    Many objects subscribe to events that are broadcast from another object.
+    one-to-many relationship.
+    Loop that unfolds over the dimension of time.
+
+- Mediator (Behavioral)
+    Is like a middle man or broker.
+    Examples:
+        1. Air traffic controller that sits between the runways & airplains to provide coordination & communication .
+        2. Middleware
+
+- State (Behavioral)
+
+    Object behaves differently based on a finite amount of states.
+    Examples:
+        Finite State Machines
+
+
+- Data Mapper Pattern
+	- The interface of an object conforming to this pattern would include functions such as Create, Read, Update, and Delete, that operate on objects that represent domain entity types in a data store.
+	- A Data Mapper is a Data Access Layer that performs bidirectional transfer of data between a persistent data store (often a relational database) and an in-memory data representation (the domain layer). The goal of the pattern is to keep the in-memory representation and the persistent data store independent of each other and the data mapper itself.
+	Ex: SQLAlchemy library
+
+
