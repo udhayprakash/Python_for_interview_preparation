@@ -168,16 +168,29 @@ Python Questions
 
 		2) ABSTRACTION: It is a process of hiding implementation details and showing only
 						functionality to the user.
+
 		3) INHERITANCE:
 				- python supports single, multiple and multi-level inheritance, using MRO (Method Resolution Order)
 						single ---> one parent & one child
 						multiple --> two parents & one child
 						multi-level -->  parent1 => child ==> subChild
+
 		4) POLYMORPHISM: It is an ability of object to behave in multiple form.
 			Ex: + operator, It will work differently in different contexts
 						addition operation between integers
 						List concatenation operator between lists
 						Tuple concatenation operator between tuples
+
+- class Variables vs Instance Variables
+	- Class variable is used to work with class methods
+	- Instance variables are just associated with instance methods
+
+	- Say, we have created  5 instances  from a car class
+	  We need to give unique id to all the car instances,
+	  Then, We can track using the class variables
+	- Instance variables of each instance, will be isolated
+	  from that of other instances.
+
 - python 2 to 3
 	- I used python built-in module, lib2to3 , for migrating from python2 to python3.
 	- Wrote code with six module to write compatible code, for both python2 and 3, during migrating phase.
@@ -249,13 +262,21 @@ Python Questions
 	  like logging the events, etc
 
 - Map
-	- Higher-order function , which is designed to work on other functions
+	- Higher-order function, which is designed to work on other functions
 	- map will superimpose a function on one or more iterables
 	- say, we want to get double of all values in a list
 		map(lambda x:x * 2, range(9))
 
-	- in python2, map will result a list, where as in python3, it will return an iterator
+	- In python2, map will result a list, where as in python3, it will return an iterator
 	  object. Other higher order functions are Filter, Zip and Reduce
+- Filter
+	- This higher-order function will superimpose a function, on one or more iterables
+	  and return the values, for whom the function returns boolean true.
+
+- Zip
+	- It will create pairs, on two or more iterables.
+	- It will create pairs to the minimum size, among the iterables;
+	  and discard asymmetric size values.
 
 - Threading vs Asyncio
 	Threading
@@ -359,7 +380,9 @@ unittesting
 			setup class method 		-- executes at the start of the test suite
 			tearDown class method 	--  executes at the end of the test suite
 
-			setup instance method 	-- executes
+			setup instance method 	-- executes at the start of each test case
+			tearDown instance method – executes at end of each test case
+
 
 - name mangling
 	- python supports Public, private and protected variables/methods/functions
@@ -414,22 +437,22 @@ unittesting
 	- we can check the reference count of any value using the sys module, sys.getreferencecount
 
 
-Heap
+Heap vs stack
 	- Whenever an object is created, it’s always stored in the Heap space, and stack
-	memory contains the reference to it. Stack memory only contains local
-	primitive variables and reference variables to objects in heap space.
-	Objects stored in the heap are globally accessible whereas stack memory can’t
+	memory contains the reference to it.
+	- Stack memory only contains local primitive variables and reference variables
+	to objects in heap space.
+	- Objects stored in the heap are globally accessible whereas stack memory can’t
 	be accessed by other threads.
-	Memory management in stack is done in LIFO manner whereas it’s more complex in
+	- Memory management in stack is done in LIFO manner whereas it’s more complex in
 	Heap memory because it’s used globally.
-	Stack memory is short-lived whereas heap memory lives from the start till the
+	- Stack memory is short-lived whereas heap memory lives from the start till the
 	end of application execution.
-	Heap memory is used by all the parts of the application, stack memory is used
+	- Heap memory is used by all the parts of the application, stack memory is used
 	only by one thread of execution.
-	When stack memory is full, Java runtime throws
-	java.lang.StackOverFlowError When heap memory is full, it throws
-	java.lang.OutOfMemoryError: Java Heap Space error.
-	Stack memory is faster than heap memory.
+	- When stack memory is full, Java runtime throws java.lang.StackOverFlowError
+	  When heap memory is full, it throws java.lang.OutOfMemoryError: Java Heap Space error.
+	- Stack memory is faster than heap memory.
 
 Numpy
 ------

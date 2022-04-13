@@ -1,54 +1,54 @@
-==============================================	
-MPhasis interview Question answers 
+==============================================
+MPhasis interview Question answers
 ------------
 Q1) 80 - Initially table will have 5 rows
-		Then, It will double to 10 rows. 
+		Then, It will double to 10 rows.
 		Next time, it will be 20 rows and thenn, 40 an 80
-Q2) MAX 
+Q2) MAX
 Q3) AttributeError: ‘Box’ object has no attribute ‘volume’
 	- because we didnt create that volume attribute
 
-Q4) print is now a function and not a statement 
-	Division of integers now returns a float 
+Q4) print is now a function and not a statement
+	Division of integers now returns a float
 Q5) c - Xrange doesn't exit and range returns an object
-Q6) a - [1, 3, 5, 3, 7, 8] – list concatenation 
+Q6) a - [1, 3, 5, 3, 7, 8] – list concatenation
 Q7) PEP- python enhancement proposal
 Q8) a, c, d
-Q9)  all  of above 
+Q9)  all  of above
 Q10) SELECT distinct
-11)  blob - binary large object 
-12)  19 
-13) c is invalid  ; not space allowed in  variable name 
-14) 4 - when no expectation occurs, else part of try-except else will execute 
-15) 2 – with double slash \\ for file path 
+11)  blob - binary large object
+12)  19
+13) c is invalid  ; not space allowed in  variable name
+14) 4 - when no expectation occurs, else part of try-except else will execute
+15) 2 – with double slash \\ for file path
 16) 2 is remainder
-17) second option -4  →  7 * 3 /5  – > type casting in python 2  is the reason – if all ints result is int - truncation happens 
+17) second option -4  →  7 * 3 /5  – > type casting in python 2  is the reason – if all ints result is int - truncation happens
 18) last option – [31, 5, 8, 15, 8] – 5 is out of range – give randint(7, 40)
-19) -1  str.find will give -1 if not present.  ‘python’ word is present; but case sensitive 
-20) 
- 
+19) -1  str.find will give -1 if not present.  ‘python’ word is present; but case sensitive
+20)
+
 	class Rectangle:
 		def __init__(self, length=0, width=0):
-			self.length = length 
-			self.width = width 
+			self.length = length
+			self.width = width
 		def  area(self):
 			Return self.length * self.width
-		
+
 	myrec = Rectangle(length=10, width=20)
 	print(‘area = ‘, myrec.area())
 
 
 ====================================
 We need to create IAM roles and with that create access key and secret
-With boto3 we can connect with s3 bucket and check the access and know specify bucket name 
+With boto3 we can connect with s3 bucket and check the access and know specify bucket name
 With the paramiko module, we can connect with the linux server . With the fabric module, we can connect with the windows server.
-As it is periodic , I will write a lambda function which is time triggered every month on that date and push the data . 
-Noew, in that script, i will connect with the server, pull the latest file of this month and connect with s3 bucket using boto3 and push the data 
+As it is periodic , I will write a lambda function which is time triggered every month on that date and push the data .
+Noew, in that script, i will connect with the server, pull the latest file of this month and connect with s3 bucket using boto3 and push the data
 
 
-Using the timestamp in the file name 
-I will check the os.stat  – it will tell the last modified and created date for the file . with that metadata, i will 
+Using the timestamp in the file name
+I will check the os.stat  – it will tell the last modified and created date for the file . with that metadata, i will
 
-I will report the same – i can sent a email notification using SES - simple email service 
-, 
-Befre that i will retry 
+I will report the same – i can sent a email notification using SES - simple email service
+,
+Befre that i will retry
