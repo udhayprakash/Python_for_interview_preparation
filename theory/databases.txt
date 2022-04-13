@@ -344,6 +344,22 @@ Characteristics of Cassandra:
 	- Availability: The opposite of "consistency". Data is always available, regardless of being 100% "correct".[1]
 	- Optional fields (wide columns): This CAN be done in MySQL with meta tables etc., but it's for-free and by-default in Cassandra.
 
+- Logical DB Design Tools
+	1) Visual Paradigm ERD Tools
+	2) Vertabelo
+	3) Lucidchart
+	4) SQL Server Database Modeler
+	5) DeZign for Databases
+	6) Erwin Data Modeler
+	7) Aqua Data Studio ER Modeler
+	8) DbWrench
+	9) IBM InfoSphere Data Architect
+	10) DbDesigner.net
+	11) dModelAid
+	12) dbdiagram.io
+	13) Diagrams.net (formerly Draw.io)
+	14) QuickDBD
+	15) ERD Plus
 
 - Data Warehouse
 	- single, complete and consistent store of data obtained from

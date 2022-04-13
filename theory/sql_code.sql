@@ -3,12 +3,12 @@ https://www.w3schools.com/sql/trysql.asp?filename=trysql_select_all
 A)    What are the products ordered by customerId =4 (Around the horn)
 
 	SELECT C.CustomerName, O.OrderID, O.CustomerID, OD.ProductID, P.ProductName FROM [Customers] C
-	JOIN Orders O ON O.CustomerID= C.CustomerID	
+	JOIN Orders O ON O.CustomerID= C.CustomerID
 	JOIN OrderDetails OD ON OD.OrderID = O.OrderID
 	JOIN Products P ON P.ProductID = OD.ProductID
 	where C.CustomerID	= 4
-	
-	
+
+
 B)    Which customer has most orders?
 
 
@@ -50,7 +50,7 @@ Please use http://sqlite.online/ for your test environment and paste the final q
 
 CREATE TABLE users (
   id INTEGER NOT NULL PRIMARY KEY,
-  managerId INTEGER REFERENCES users(id), 
+  managerId INTEGER REFERENCES users(id),
   name VARCHAR(50) NOT NULL
 );
 
@@ -77,7 +77,7 @@ s = {('a', 'b', 'c')}
 s = set('a', 'b', 'c')
 
 
-3) BONUS: Given the following table structure and records therein, write a query which selects names of people who have a grade that is more than 3.5 and have taken all of the classes offered - without use of keyword ‘join’ 
+3) BONUS: Given the following table structure and records therein, write a query which selects names of people who have a grade that is more than 3.5 and have taken all of the classes offered - without use of keyword ‘join’
 
 DROP TABLE IF EXISTS `courses`;
 CREATE TABLE courses (
@@ -132,22 +132,22 @@ Please use http://sqlite.online/ for your test environment and paste the final q
 
 
 
-1) 
+1)
 select * from (select userid, count(id) as cnt, sum(minutes) from activity
 group by userId) res where res.cnt > 1
 
 2)
 select DISTINCT name from users where managerid is not NULL
 
-3) - a) sets are mutable 
+3) - a) sets are mutable
      e) A given element can’t appear in a set more than once.
 
 4) Which of the following in Python define the set {'a', 'b', 'c'}:
     all true except last option
-    
-5) 
-	select DISTINCT p.name from grades g, people p, courses c 
-	where grade > 3.5 AND g.pid = p.id  AND g.cid = c.id 
+
+5)
+	select DISTINCT p.name from grades g, people p, courses c
+	where grade > 3.5 AND g.pid = p.id  AND g.cid = c.id
 
 
 ============================
@@ -166,7 +166,7 @@ values
 
 
 ================================================================================================
-SELECT * 
+SELECT *
 FROM(
   SELECT MAX(NoOfM) AS MostMeetingsHappened
   FROM(
@@ -220,9 +220,26 @@ Q) select the products those are not part of any order in the last 30 days
 
 Q) select products ordered by same customer more than once in the last 30 days
 
-	select o.customer_id, GROUP_CONTACT(Distinct p.product_name) from product p 
+	select o.customer_id, GROUP_CONTACT(Distinct p.product_name) from product p
 	JOIN Order o ON p.product_id = o.product_id AND o.order_date < DATE(SUB(NOW(), INTERVAL 30 DAY ))
-	GROUP BY o.cutomer_id HAVING  Count(p.product_name) > 1 
+	GROUP BY o.cutomer_id HAVING  Count(p.product_name) > 1
 	ORDER BY o.customer_id
 
 ================================================================================================
+  prfid, dptid, sal
+  1
+
+  select  dptid,  max(sal) from mytable group by dptid order by depid
+
+  select dptid, prfid, rank() over ( partition by deptid order by sal) from mytable
+===================================================================================================
+SELECT
+	p.id, p.title, coalsce(SUM(r.number_of_tickets), 0)as reserved_tickets
+FROM plays p
+LEFT JOIN reservations r ON p.id = r.play_id
+GROUP BY p.id, p.title
+ORDER BY reserved_tickets
+
+===================================================================================================
+
+	ORDER BY [Submission Date] IS NULL DESC, [Submission Date] ASC

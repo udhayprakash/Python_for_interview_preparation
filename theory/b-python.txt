@@ -64,6 +64,9 @@ Python Questions
 	- Set is suitable when unique values are needed and/or set operations like union, intersection, etc are needed.
 	- Tuple is suitable when there need to be immutability
 
+hashable
+	- An object is hashable if it has a hash value which never changes during its lifetime
+
 - List vs Tuple
 	- List is mutable object, means we can edit the object like append, delete, ..
 	- Tuple are faster than list
@@ -174,6 +177,7 @@ Python Questions
 						single ---> one parent & one child
 						multiple --> two parents & one child
 						multi-level -->  parent1 => child ==> subChild
+				- Method Resolution Order is the order in which base classes are searched for a member during lookup.
 
 		4) POLYMORPHISM: It is an ability of object to behave in multiple form.
 			Ex: + operator, It will work differently in different contexts
@@ -256,7 +260,7 @@ Python Questions
 - Decorators
 	- Generally, when some code is repeating, we will create a function, reuse the code.
 	- If there were more than one function, with some part of the code which is common among all,
-      in that case, we extract common code, create a closure for it, and use as a decorator.
+      in that case, we extract common code, create a closure for it, and use it as a decorator.
 	- built-in decorators are classmethod, staticmethod and property
 	- I created custom decorators for calculating the time taken by functions, or
 	  like logging the events, etc
@@ -297,7 +301,7 @@ Python Questions
 	- In Cpython, as it go with reference based assignment, if two threads are trying to update,
 	  say, the same list, it can lead to data races, and deadlock.
 	- To avoid deadlocks, it will lock a single thread, safely execute it and release it.
-	- Due to this, we can't achieve the concurrency with python, unlike other languages.
+	- Due to this, we can't achieve concurrency with python, unlike other languages.
 	- Next solution is multiprocessing. But, it is resource exhaustive. And, the maximum limit
 	 on the processes which can be created, is limited to the system hardware limits.
 	- So, from python 3.6, with the advent of async and await keywords, I am using the asyncio
@@ -307,7 +311,7 @@ Python Questions
 
 - Multiprocessing vs Multithreading
 	- Multithreading for IO-bound tasks. Multiprocessing for CPU-bound tasks.
-
+	- computationally-intensive tasks such as compression or hashing.
 - stack & heap
 	- each thread will have its own stack, but all the threads in a process will share the heap.
 
@@ -428,14 +432,15 @@ unittesting
 		- Wildcard imports (*) should not be preferred
 		- Avoid trailing white-spaces
 
-
-
 - Memory Management in python
 	- Python has automatic memory management.
 	- We have a garbage collector, which will check for any unreferenced objects
 	  on a periodically, for each CPU clock cycle, and it will delete them.
-	- we can check the reference count of any value using the sys module, sys.getreferencecount
+	- Reference count is the number of references to an object.
+	  When the reference count of an object drops to zero, it is deallocated.
 
+	- we can check the reference count of any value using the sys module, sys.getreferencecount
+	- The garbage collector can be controlled using the gc module.
 
 Heap vs stack
 	- Whenever an object is created, it’s always stored in the Heap space, and stack
