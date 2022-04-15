@@ -2,7 +2,7 @@ CI/CD
 	- it  means Continuous Integration/Continuous Deployment
 	- I worked with Jenkins
 	- created a EC2 instance, installed Jenkins, added plugins like Filesystem Trigger,
-      code Build plugin, http requst plugin, …
+      code Build plugin, http request plugin, ...
 	- I used bitbucket as the code repository.
 	- Gone to settings, and brought the webhook and integrated in the Jenkins.
 	- Now any git push to the bitbucket event will trigger the build process.
@@ -24,6 +24,7 @@ CI/CD
 	- Code Flow process
 		- feature branch -(Pull requests)(once completed) - dev branch -(testers signoff)-> release branch -(signoff from client)- production branch
 
+- https://www.xenonstack.com/blog/continuous-integration-and-delivery
 
 Development Process
 	System design
@@ -72,3 +73,20 @@ Development Tools
 	for log management  - Splunk
 
 	for local development - Intellij, Visual Studio Code
+
+
+how to resolve conflicts
+------------------------
+When there are conflicts,
+	If they are working at different lines, in the same file,
+	Bitbucket can intelligently merge them
+
+	Say, if both are working in same lines, then conflict comes
+	In that case, in the second pushed person need to resolve the conflict
+
+	best practice is
+		"Pull the code, before pushing the code"
+
+	We need to push from the default branch, say develop.
+	So, these conflict and confusions can be reduced to very minimum
+

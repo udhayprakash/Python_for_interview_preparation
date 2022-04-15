@@ -124,7 +124,6 @@
 	- Messages that can't be delivered due to client errors or server errors are held
 	in the dead-letter queue for further analysis or reprocessing.
 
-
 AWS account security tools
 - AWS IAM (Identity & Access Management)
 	- Enables to create users and roles with permissions
@@ -188,6 +187,11 @@ Application Security Tools
 	- Use fine-grained permissions to specify exact actions an entity can perform on the secrets, such as creating, updating, deleting, or retrieving secrets.
 	- Secrets Manager also supports automatic rotation for AWS services such as Amazon Relational Database Service (RDS).
 
+
+Amazon Athena Workgroups are resource types, used to separate query execution and query 
+history between Users, Teams, or Applications running under the same AWS account. 
+Because Workgroups act as resources, you can use resource-based policies to control access
+to a Workgroup.
 
 i have experience migrating applications and data, from on-prem to cloud
 

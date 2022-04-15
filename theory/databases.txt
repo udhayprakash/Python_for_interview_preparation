@@ -2,15 +2,21 @@
 	- Modules worked with databases
 		- For ORM - Sqlalchemy, and for django - using django ORM
 		- Modules
-			- MySQL db with pymysql
-			- MS-SQL db with pyodbc
-			- Oracle db with CX_Oracle
-			- psycopg2 with postgres
-			- MongoDB with pymongo
+			- pymysql for working with MySQL db
+			- pyodbc for working with MS-SQL db
+			- cx_oracle for working wih Oracle db
+			- postgres for working with psycopg2
+			- pymongo for working with MongoDB
 
 	- https://www.interviewbit.com/sql-interview-questions
 	- ACID
 		- Atomicity
+	- DDL commands
+		CREATE	– Create an object. ...
+		DROP 	– This SQL DDL command helps to delete objects. ...
+		ALTER 	– Used to alter the existing database or its object structures.
+		TRUNCATE– This SQL DDL command removes records from tables.
+		RENAME 	– Renaming the database objects.
 
 	- Normalization
 		- process of organizing the columns, tables of a database to minimize the

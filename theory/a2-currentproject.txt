@@ -10,7 +10,6 @@ my responsibilities here includes
 		UI consumption and for app to app communication
 
 In terms of technical stack,
-
 	Our application server is in a EC2 instance, and celery workers are running
 	in another server.
 	Both are in multiple regions for DR (disaster recovery) strategy.

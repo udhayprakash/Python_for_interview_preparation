@@ -60,6 +60,8 @@ AWS Cloud
 
 Databases
 ==========
+	sql to get duplicate records employee table
+
 	rank () function -- top 3 in each group
 		https://www.sqlshack.com/overview-of-sql-rank-functions/
 

@@ -44,6 +44,7 @@ In Public Cloud, I am mostly associated with AWS Cloud.
 			- For long running jobs beyond 15min, as AWS lambda has limitation,
 			  i use Step Functions
 
+		For oauth, i wo
 		- Also, worked with SQS, SNS and SES
 		- And, EMR cluster for Pyspark
 		- for the ETLs, I worked with AWS Glue Jobs with DataCatalog and Pyspark

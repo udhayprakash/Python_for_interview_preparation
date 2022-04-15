@@ -9,7 +9,7 @@ challenges
 		  one of the intermediate buckets, the process was stopped in middle I am
 		  not aware of this issue because I am configured to report only if there are issues.
 		- This is a production issue.
-		- After this , I learned best practice
+		- After this, I learned best practice
 			○ To be careful; and guide all to be careful in changing permission.
 			○ I created custom alert to notify such things
 				§ I am reading CloudWatch logs  for doing these

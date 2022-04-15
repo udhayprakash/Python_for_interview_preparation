@@ -1,6 +1,6 @@
 https://www.w3schools.com/sql/trysql.asp?filename=trysql_select_all
 
-A)    What are the products ordered by customerId =4 (Around the horn)
+A) What are the products ordered by customerId =4 (Around the horn)
 
 	SELECT C.CustomerName, O.OrderID, O.CustomerID, OD.ProductID, P.ProductName FROM [Customers] C
 	JOIN Orders O ON O.CustomerID= C.CustomerID
@@ -8,76 +8,57 @@ A)    What are the products ordered by customerId =4 (Around the horn)
 	JOIN Products P ON P.ProductID = OD.ProductID
 	where C.CustomerID	= 4
 
-
-B)    Which customer has most orders?
-
+B) Which customer has most orders?
 
 	SELECT C.CustomerName, COUNT(O.OrderID) as cnt FROM [Customers] C
 	JOIN Orders O ON O.CustomerID= C.CustomerID
 	GROUP BY  C.CustomerID
 	ORDER BY cnt DESC LIMIT 1
 
-
-C)    What customers have not placed an order?
+C) What customers have not placed an order?
 
 	SELECT  C.CustomerName FROM [Customers] C
 	LEFT JOIN Orders O ON O.CustomerID= C.CustomerID
 	WHERE O.CustomerID is NULL
 	ORDER BY C.CustomerName ASC
 
-
 newscorp
 --------
 
 1) Given the following table structure and records therein, write a query which selects userId and average minutes for each user who has more than one activity record:
 
-CREATE TABLE activity (
-  id INTEGER NOT NULL PRIMARY KEY,
-  userId INTEGER NOT NULL,
-  minutes DECIMAL NOT NULL
-);
+	CREATE TABLE activity (
+	  id INTEGER NOT NULL PRIMARY KEY,
+	  userId INTEGER NOT NULL,
+	  minutes DECIMAL NOT NULL
+	);
 
-INSERT INTO activity(id, userId, minutes) VALUES(1, 1, 11);
-INSERT INTO activity(id, userId, minutes) VALUES(2, 2, 19);
-INSERT INTO activity(id, userId, minutes) VALUES(3, 1, 17);
-
-
-Please use http://sqlite.online/ for your test environment and paste the final query below:
+	INSERT INTO activity(id, userId, minutes) VALUES(1, 1, 11);
+	INSERT INTO activity(id, userId, minutes) VALUES(2, 2, 19);
+	INSERT INTO activity(id, userId, minutes) VALUES(3, 1, 17);
 
 
+	Please use http://sqlite.online/ for your test environment and paste the final query below:
 
 2) Given the following table structure and records therein, write a query which selects names of users who are not managers:
 
-CREATE TABLE users (
-  id INTEGER NOT NULL PRIMARY KEY,
-  managerId INTEGER REFERENCES users(id),
-  name VARCHAR(50) NOT NULL
-);
+	CREATE TABLE users (
+	  id INTEGER NOT NULL PRIMARY KEY,
+	  managerId INTEGER REFERENCES users(id),
+	  name VARCHAR(50) NOT NULL
+	);
 
-INSERT INTO users(id, managerId, name) VALUES(1, NULL, 'Moe');
-INSERT INTO users(id, managerId, name) VALUES(2, 1, 'Tori');
-
-
-Please use http://sqlite.online/ for your test environment and paste the final query below:
+	INSERT INTO users(id, managerId, name) VALUES(1, NULL, 'Moe');
+	INSERT INTO users(id, managerId, name) VALUES(2, 1, 'Tori');
 
 
+	Please use http://sqlite.online/ for your test environment and paste the final query below:
 
 
-Checkbox the following which are true for objects of Python’s set type:
-Sets are mutable.
-Correct
-The order of elements in a set is significant.
-A set may contain elements that are mutable.
-A given element can’t appear in a set more than once.
-Which of the following in Python define the set {'a', 'b', 'c'}:
-s = set(['a', 'b', 'c'])
-s = {'a', 'b', 'c'}
-s = set('abc')
-s = {('a', 'b', 'c')}
-s = set('a', 'b', 'c')
 
-
-3) BONUS: Given the following table structure and records therein, write a query which selects names of people who have a grade that is more than 3.5 and have taken all of the classes offered - without use of keyword ‘join’
+3) BONUS: Given the following table structure and records therein,
+   write a query which selects names of people who have a grade that is more
+   than 3.5 and have taken all of the classes offered - without use of keyword ‘join’
 
 DROP TABLE IF EXISTS `courses`;
 CREATE TABLE courses (
@@ -126,11 +107,7 @@ INSERT INTO grades(pid, cid, grade) VALUES(3, 3, 100.0);
 INSERT INTO grades(pid, cid, grade) VALUES(4, 2, 100.0);
 INSERT INTO grades(pid, cid, grade) VALUES(4, 3, 100.0);
 
-
-
 Please use http://sqlite.online/ for your test environment and paste the final query below:
-
-
 
 1)
 select * from (select userid, count(id) as cnt, sum(minutes) from activity
@@ -241,5 +218,23 @@ GROUP BY p.id, p.title
 ORDER BY reserved_tickets
 
 ===================================================================================================
+sql for order in ascending order by score column, but nulls should come first
 
-	ORDER BY [Submission Date] IS NULL DESC, [Submission Date] ASC
+	ORDER BY score IS NULL DESC, score ASC
+===================================================================================================
+sql for nth highest salary from employees table
+
+	SELECT FIRST_NAME , SALARY FROM
+	(SELECT FIRST_NAME, SALARY, DENSE_RANK() OVER (ORDER BY SALARY DESC) AS SALARY_RANK
+	FROM EMPLOYEES)
+	WHERE SALARY_RANK = n;
+
+	or
+
+	SELECT MAX(SALARY) 'SECOND_MAX' FROM EMPLOYEES
+	WHERE SALARY <> (SELECT MAX(SALARY) FROM EMPLOYEES);
+
+	OR
+
+	SELECT FIRST_NAME, SALARY FROM EMPLOYEES
+	WHERE SALARY = (SELECT DISTINCT SALARY FROM EMPLOYEES ORDER BY SALARY LIMIT 1 OFFSET 1)

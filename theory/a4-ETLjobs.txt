@@ -30,6 +30,76 @@ We can take offsets from the db and transfer,
 	I know, i will make hold of offset when pull the data
 	I mean, i will count the no of records at that time, when i am pulling
 
+Slowly Changing Dimensions
+---------------------------
+- dimensions that change slowly over time, rather than changing on regular schedule, time-base.
+- implementing one of the SCD types should enable users assigning proper dimension's attribute
+  value for given date.
+- Example of such dimensions could be: customer, geography, employee.
+- SCD approaches can be like
+	Type 0 - The passive method
+	Type 1 - Overwriting the old value
+	Type 2 - Creating a new additional record
+	Type 3 - Adding a new column
+	Type 4 - Using historical table
+	Type 6 - Combine approaches of types 1,2,3 (1+2+3=6)
+- In detail,
+	Type 0
+		- The passive method.
+		- In this method no special action is performed upon dimensional changes.
+		- Some dimension data can remain the same as it was first time inserted, others may
+		  be overwritten.
+	Type 1
+		- Overwriting the old value.
+		- In this method no history of dimension changes is kept in the database.
+		- The old dimension value is simply overwritten be the new one.
+		- This type is easy to maintain and is often use for data which changes are caused
+		  by processing corrections(e.g. removal special characters, correcting spelling errors).
+	Type 2
+		- Creating a new additional record.
+		- In this methodology all history of dimension changes is kept in the database.
+		- You capture attribute change by adding a new row with a new surrogate key to the
+		  dimension table.
+		- Both the prior and new rows contain as attributes the natural key(or other durable
+          identifier).
+		- Also 'effective date' and 'current indicator' columns are used in this method.
+		- There could be only one record with current indicator set to 'Y'.
+		- For 'effective date' columns, i.e. start_date and end_date, the end_date for current
+		  record usually is set to value 9999-12-31.
+		- Introducing changes to the dimensional model in type 2 could be very expensive
+		  database operation so it is not recommended to use it in dimensions where a new
+		  attribute could be added in the future.
+	Type 3
+		- Adding a new column.
+		- In this type usually only the current and previous value of dimension is kept in
+		  the database.
+		- The new value is loaded into 'current/new' column and the old one into 'old/previous'
+		  column.
+		- Generally speaking the history is limited to the number of column created for
+		  storing historical data.
+		- This is the least commonly needed technique.
+	Type 4
+		- Using historical table.
+		- In this method a separate historical table is used to track all dimension's
+		  attribute historical changes for each of the dimension.
+		- The 'main' dimension table keeps only the current data e.g. customer and
+		  customer_history tables.
+	Type 6
+		- Combine approaches of types 1,2,3 (1+2+3=6).
+		- In this type we have in dimension table such additional columns as:
+
+		current_type 	- for keeping current value of the attribute. All history records
+                          for given item of attribute have the same current value.
+		historical_type - for keeping historical value of the attribute. All history
+		                  records for given item of attribute could have different values.
+		start_date 		- for keeping start date of 'effective date' of attribute's history.
+		end_date 		- for keeping end date of 'effective date' of attribute's history.
+		current_flag 	- for keeping information about the most recent record.
+
+		- In this method to capture attribute change we add a new record as in type 2.
+		- The current_type information is overwritten with the new one as in type 1.
+		- We store the history in a historical_column as in type 3.
+
 
 Data Quality Checks
 	- is there numeric data
