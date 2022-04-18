@@ -9,14 +9,45 @@
 			- pymongo for working with MongoDB
 
 	- https://www.interviewbit.com/sql-interview-questions
+	- Relational Databases
+		- row oriented
+			- Eg: Mysql, postgre
+			- Organizes data records row by row
+			- these are write optimized
+			- suitable for OLTP (online transactional processing) style applications
+			  as they can manage writes to the database well.
+			- Fast at retrieving a row or a set of rows but when performing an aggregation
+			  it brings extra data (columns) into memory which is slower than only selecting
+			  the columns that you are performing the aggregation on.
+			- And the number of disks the row oriented database might need to access
+			  is usually larger.
+		- column oriented / columnar or C-store databases
+			- Eg: RedShift, BigQuery, snowflake
+			- Organizes data by field, keeping all of the data associated with a field
+			  next to each other
+			- these are read-optimized
+			- suitable for OLAP (online Analytics Processing) style applications
+			  as they support adhoc querying the data
 	- ACID
 		- Atomicity
+		- Consistency
+		- Isolation
+		- Durability
+
 	- DDL commands
 		CREATE	– Create an object. ...
 		DROP 	– This SQL DDL command helps to delete objects. ...
 		ALTER 	– Used to alter the existing database or its object structures.
 		TRUNCATE– This SQL DDL command removes records from tables.
 		RENAME 	– Renaming the database objects.
+
+	- DML commands
+		INSERT 		: It is used to insert data into a table.
+		UPDATE		: It is used to update existing data within a table.
+		DELETE 		: It is used to delete records from a database table.
+		LOCK		: Table control concurrency.
+		CALL		: Call a PL/SQL or JAVA subprogram.
+		EXPLAIN PLAN: It describes the access path to data.
 
 	- Normalization
 		- process of organizing the columns, tables of a database to minimize the

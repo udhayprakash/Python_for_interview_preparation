@@ -188,10 +188,29 @@ Application Security Tools
 	- Secrets Manager also supports automatic rotation for AWS services such as Amazon Relational Database Service (RDS).
 
 
-Amazon Athena Workgroups are resource types, used to separate query execution and query 
-history between Users, Teams, or Applications running under the same AWS account. 
+Amazon Athena Workgroups are resource types, used to separate query execution and query
+history between Users, Teams, or Applications running under the same AWS account.
 Because Workgroups act as resources, you can use resource-based policies to control access
 to a Workgroup.
 
 i have experience migrating applications and data, from on-prem to cloud
 
+AWS IAM
+========
+	- IAM roles define the set of permissions for making AWS service request
+	- IAM policies define the permissions that you will require.
+
+
+	- Admin or root user for the account can create IAM identities.
+	- An IAM identity provides access to an AWS account.
+	- user group is a collection of IAM users managed as a unit.
+	- IAM identity represents a user, and can be authenticated and then authorized to
+	  perform actions in AWS.
+	  Each IAM identity can be associated with one or more policies.
+
+	- Policies determine what actions a user, role, or member of a user group can perform,
+	  on which AWS resources, and under what conditions.
+		- Identity-based policies are permissions policies that you attach to an IAM identity,
+		  such as an IAM user, group, or role.
+		- Resource-based policies are permissions policies that you attach to a resource such
+		  as an Amazon S3 bucket or an IAM role trust policy.

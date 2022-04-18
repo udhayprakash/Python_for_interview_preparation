@@ -296,8 +296,7 @@ hashable
 
 - GIL Problem
 	- GIL means Global Interpreter Lock
-	- Basically, Python is of three flavours, based on backend implementation
-		- Cpython, Jython, Ironthon
+	- Simply, it means "One thread runs Python, while N others sleep or await I/O."
 	- In Cpython, as it go with reference based assignment, if two threads are trying to update,
 	  say, the same list, it can lead to data races, and deadlock.
 	- To avoid deadlocks, it will lock a single thread, safely execute it and release it.
