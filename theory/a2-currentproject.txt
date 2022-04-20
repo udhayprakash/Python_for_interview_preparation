@@ -11,7 +11,7 @@ my responsibilities here includes
 
 In terms of technical stack,
 	Our application server is in a EC2 instance, and celery workers are running
-	in another server.
+	on another server.
 	Both are in multiple regions for DR (disaster recovery) strategy.
 
 	Which is behind the autoscaling and inturn, behind the Route53

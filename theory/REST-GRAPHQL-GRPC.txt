@@ -29,7 +29,23 @@
 		- to know level of RESTful your API is.
 		- https://developers.redhat.com/blog/2017/09/13/know-how-restful-your-api-is-an-overview-of-the-richardson-maturity-model
 
-
+- API Authentication
+	1) HTTP Authentication
+		- Basic HTTP Auth
+			- where we send credentails to server, in http header. so less secure.
+		- Bearer HTTP Auth
+			- where we send token to server. Eg: Authorization: Bearer <Token>
+		- JWT (Json Web Token)
+			- It gives user-level access
+			- Also, contains additional information like expiration date, user's uniqueID, ...
+	2) API Keys
+		- its a long unique code used to access APIs
+		- used for both authentication of users and tracking usage statistics.
+	3) OAuth
+		- provides a way for users to grant 3rd party access to their web resources
+		  without sharing their passwords.
+		- oauth providers can be social logins like facebook, google, twitter, ...
+		- Also, we can create using AWS Cognito
 REST features
 =============
 	- Performance

@@ -35,7 +35,7 @@ challenges
 	Still when seen in cProfiler, I found that it is taking time at the XML to dictionary conversion only.
 	With further analysis, I understood that each XML has around 70-85 tags, but I am using only 20 among them.
 	So, I decided to use regular expressions to cherry pick what I need, instead of converting the entire XML to dict.
-	Finally, i result in optimization from 19.5 seconds, to 14 seconds, till just 5 seconds.
+	Finally, it resulted in optimization from 19.5 seconds, to 14 seconds, till just 5 seconds.
 	It is around 400 % optimization.
 
 Project/task you are proud of

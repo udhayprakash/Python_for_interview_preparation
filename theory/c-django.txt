@@ -26,7 +26,7 @@
 		- Model
 			- It handles the data representation & db schema
 			- It serves as interface to data stored in database itself, and also allows you to
-			  interact with your data without having to pertubed with all complexities of the
+			  interact with your data without having to perturbed with all complexities of the
 			  underlying database.
 		- View
 			- It represents what you see from web application, or REST API.

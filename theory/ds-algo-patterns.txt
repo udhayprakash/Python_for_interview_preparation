@@ -1,3 +1,24 @@
+DRY principle
+	- DRY means Do not  Repeat Yourself
+	- "Every piece of knowledge must have a single, unambiguous, authoritative
+	  representation within a system"
+	- Less code is good: It saves time and effort, is easy to maintain, and also
+	  reduces the chances of bugs.
+	- Ex: helper class in enterprise libraries, in which every piece of code is
+	  unique in the libraries and helper classes
+
+WET principle
+	- WET means Write Everything Twice
+	- It mean the opposite i.e. code that doesn't adhere to DRY principle.
+
+KISS princple
+	- keep it simple, stupid
+
+sorting
+	Time Complexities
+		- Quick Sort -  O(n*logn)
+		- Linked List - Search - O(n)
+
 Memory
 	- Stack vs Heap
 		- Whenever an object is created, it's always stored in the Heap space,

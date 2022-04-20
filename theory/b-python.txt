@@ -168,7 +168,6 @@ hashable
 			We can access all variables  of all classes irrespective of public or private or protected.
 			This name mangling is to avoid accidental override
 
-
 		2) ABSTRACTION: It is a process of hiding implementation details and showing only
 						functionality to the user.
 
@@ -296,7 +295,7 @@ hashable
 
 - GIL Problem
 	- GIL means Global Interpreter Lock
-	- Simply, it means "One thread runs Python, while N others sleep or await I/O."
+	- Simply, it means "One thread runs Python, while others sleep or await I/O."
 	- In Cpython, as it go with reference based assignment, if two threads are trying to update,
 	  say, the same list, it can lead to data races, and deadlock.
 	- To avoid deadlocks, it will lock a single thread, safely execute it and release it.

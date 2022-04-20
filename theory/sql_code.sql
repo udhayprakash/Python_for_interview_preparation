@@ -238,3 +238,10 @@ sql for nth highest salary from employees table
 
 	SELECT FIRST_NAME, SALARY FROM EMPLOYEES
 	WHERE SALARY = (SELECT DISTINCT SALARY FROM EMPLOYEES ORDER BY SALARY LIMIT 1 OFFSET 1)
+===================================================================================================
+HackerRank: Value of Properties Owned
+
+	SELECT H.BUYER_ID, SUM(P.PRICE) AS TOTAL_WORTH FROM HOUSE H
+	JOIN PRICE P USING(HOUSE_ID)
+	GROUP BY H.BUYER_ID HAVING SUM(P.PRICE) > 100 AND COUNT(H.BUYER_ID) > 1;
+===================================================================================================

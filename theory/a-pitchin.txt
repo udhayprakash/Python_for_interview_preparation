@@ -44,7 +44,7 @@ In Public Cloud, I am mostly associated with AWS Cloud.
 			- For long running jobs beyond 15min, as AWS lambda has limitation,
 			  i use Step Functions
 
-		For oauth, i wo
+		For oauth, i worked with aws cognito
 		- Also, worked with SQS, SNS and SES
 		- And, EMR cluster for Pyspark
 		- for the ETLs, I worked with AWS Glue Jobs with DataCatalog and Pyspark
@@ -78,12 +78,14 @@ Questions to Interviewers
   - May I know about the project, and the technical stack like the tools used?
   - What are you expecting from me, for this role? What can be the day-to-day activities?
 
-  - What is the volume of data, which we will be working with, on a daily basis. some approximate numbers of records?
+  - What is the volume of data, which we will be working with, on a daily basis.
+    some approximate numbers of records?
   - What kind of data we work with, and what are our data sources ?
   - Were we using any custom frameworks in our project? If so, can you help with the details?
 
   - Are we using agile methodology?  And how about the sprint cycle duration?
-  - What were the next steps in the interview process? And how many more rounds of interview can I expect?
+  - What were the next steps in the interview process?
+    And how many more rounds of interviews can I expect?
 
   - Will there be an opportunity to reach out to the clients, either for requirement gathering and/or for demoing the end solution?
   - How do you help your team grow professionally?
