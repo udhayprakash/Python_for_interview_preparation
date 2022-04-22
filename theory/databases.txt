@@ -403,8 +403,7 @@ Characteristics of Cassandra:
 	  a variety of different sources made available to end users
 
 	OLAP -- for  application
-
-	OLTP - for warehouse
+	OLTP -- for warehouse
 
 
 Q) How to get last day of previous month?

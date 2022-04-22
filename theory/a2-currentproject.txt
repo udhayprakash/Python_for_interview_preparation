@@ -1,7 +1,7 @@
 Current Project is into data analytics
 We have a couple of data scientists, who will drive this data analytics process.
 
-my responsibilities here includes
+my responsibilities here include
 	- data gathering from both internal and external data sources
 		- including REST APIs, SOAP interfaces, GRAPHQL, and internal databases
 	- also, writing scripts for etl jobs, data transformations, and for the
@@ -27,7 +27,6 @@ In terms of technical stack,
     Cache       : Redis
     Queuing     : RabbitMQ
     Scheduler   : Celery
-
 
 In Machine Learning,
 	I worked with a Linear regression algorithm, using the scikit-learn module.
