@@ -26,7 +26,7 @@ codes = {
     ".--": "w",
     "-..-": "x",
     "-.--": "y",
-    "--..": "z"
+    "--..": "z",
 }
 
 # Morse code is not what is known as "prefix code" so that
@@ -35,7 +35,7 @@ codes = {
 # ambiguous unless the Morse operator takes a noticeable
 # short pause between the individual letters.
 
-# Construct a reverse dictionary from an existing dictionary 
+# Construct a reverse dictionary from an existing dictionary
 # with this handy dictionary comprehension.
 
 codes_r = {codes[v]: v for v in codes}
@@ -69,7 +69,7 @@ def decode_morse(message):
 if __name__ == "__main__":
     from random import sample
 
-    with open('words_alpha.txt', encoding="utf-8") as f:
+    with open("words_alpha.txt", encoding="utf-8") as f:
         wordlist = [word.strip().lower() for word in f if len(word) < 8]
     print(f"Read a list of {len(wordlist)} words.")
 

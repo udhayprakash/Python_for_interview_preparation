@@ -47,11 +47,16 @@ def findBottomView(node, breadth, bottomView):
 
 def findBottomViewWrapper(node):
     bottomView = findBottomView(node, 0, dict())
-    return [bottomView[breadth] for breadth in range(min(bottomView.keys()), max(bottomView.keys()) + 1)]
+    return [
+        bottomView[breadth]
+        for breadth in range(min(bottomView.keys()), max(bottomView.keys()) + 1)
+    ]
 
 
 def main():
-    tree = Node(5, Node(3, Node(1, Node(0)), Node(4)), Node(7, Node(6), Node(9, Node(8))))
+    tree = Node(
+        5, Node(3, Node(1, Node(0)), Node(4)), Node(7, Node(6), Node(9, Node(8)))
+    )
     print(findBottomViewWrapper(tree))
 
 

@@ -1,6 +1,6 @@
 #!/usr/bin/python
 """"
-Purpose: Money change problem 
+Purpose: Money change problem
 Q) Convert some amount of money into given denominations, using the smallest
 possible number of coins.
 

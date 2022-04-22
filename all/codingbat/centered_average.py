@@ -2,7 +2,7 @@
 def centered_average(nums):
     nums.sort()
     nums = nums[1:-1]
-    return int(sum(nums)/len(nums))  # int() needed in python3
+    return int(sum(nums) / len(nums))  # int() needed in python3
 
 
 def centered_average(nums):
@@ -17,7 +17,7 @@ def centered_average(nums):
             max_val = num
 
     summation = summation - min_val - max_val
-    return int(summation/(len(nums) - 2))
+    return int(summation / (len(nums) - 2))
 
 
 assert centered_average([1, 2, 3, 4, 100]) == 3

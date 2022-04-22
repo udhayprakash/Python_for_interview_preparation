@@ -1,9 +1,9 @@
 #!/usr/bin/python
 """
-Purpose: 
+Purpose:
 https://leetcode.com/contest/weekly-contest-154/problems/reverse-substrings-between-each-pair-of-parentheses/
 https://leetcode.com/problems/reverse-substrings-between-each-pair-of-parentheses/
-Given a string s that consists of lower case English letters and brackets. 
+Given a string s that consists of lower case English letters and brackets.
 
 Reverse the strings in each pair of matching parentheses, starting from the innermost one.
 
@@ -19,35 +19,35 @@ Constraints:
 
 class Solution:
     def reverseParentheses(self, s):
-        if '(' not in s:
+        if "(" not in s:
             return s
-        s = s.replace('()', '')
-        if s.rfind('(') < s.find(')'):
-            substring = s[s.rfind('('): s.find(')') + 1]
+        s = s.replace("()", "")
+        if s.rfind("(") < s.find(")"):
+            substring = s[s.rfind("(") : s.find(")") + 1]
         else:
-            substring = s[s.find('('):s.find(')') + 1]
-            if substring.count('(') > 1:
-                substring = substring[substring.rfind('('): substring.find(')') + 1]
-        s = s.replace(substring, substring[::-1].strip('()'))
+            substring = s[s.find("(") : s.find(")") + 1]
+            if substring.count("(") > 1:
+                substring = substring[substring.rfind("(") : substring.find(")") + 1]
+        s = s.replace(substring, substring[::-1].strip("()"))
         return self.reverseParentheses(s)
 
     def reverseParentheses(self, s):
         st = []
         for i in s:
-            if i == '(':
-                st.append('(')
-            elif i != ')':
+            if i == "(":
+                st.append("(")
+            elif i != ")":
                 st.append(i)
-            elif i == ')':
-                word = ''
-                while st[-1] != '(':
+            elif i == ")":
+                word = ""
+                while st[-1] != "(":
                     word += st.pop(-1)
                 # print(f'word is now {word}')
                 # print(f'st is {st}' )
                 st.pop(-1)
                 for letter in word:
                     st.append(letter)
-        res = ''
+        res = ""
         for letter in st:
             res += letter
         return res

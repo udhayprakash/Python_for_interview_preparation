@@ -6,7 +6,7 @@ Purpose: To replace the consequtive repetitive characters
 
 
 def replace_cons_reps(sentence):
-    result_str = ''
+    result_str = ""
     for _index, char in enumerate(sentence):
         if _index and sentence[_index] == sentence[_index - 1]:
             continue
@@ -14,6 +14,6 @@ def replace_cons_reps(sentence):
     return result_str
 
 
-if __name__ == '__main__':
-    assert replace_cons_reps('Seeking good work') == 'Seking god work'
-    assert replace_cons_reps('Apple fruit') == 'Aple fruit'
+if __name__ == "__main__":
+    assert replace_cons_reps("Seeking good work") == "Seking god work"
+    assert replace_cons_reps("Apple fruit") == "Aple fruit"

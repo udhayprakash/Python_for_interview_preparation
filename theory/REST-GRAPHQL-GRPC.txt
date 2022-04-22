@@ -105,4 +105,3 @@ MicroService vs Web Service
 	  as well as possible.
 	- web service is an internet-based interface that makes the "services" of one application
 	  available to applications running on different platforms.
-

@@ -89,4 +89,3 @@ When there are conflicts,
 
 	We need to push from the default branch, say develop.
 	So, these conflict and confusions can be reduced to very minimum
-

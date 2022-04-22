@@ -34,20 +34,26 @@ def sieveOfEratosthenes(n):
 
 # Reference: https://github.com/ActiveState/code/blob/master/recipes/Python/117119_Sieve_of_Eratosthenes/recipe-117119.py
 def indefiniteSieveOfEratosthenes():
-    compositeDic = dict()  # Dictionary to hold composite numbers and their witness primes.
+    compositeDic = (
+        dict()
+    )  # Dictionary to hold composite numbers and their witness primes.
     currentNum = 2  # Starting prime.
 
     while True:
         if currentNum not in compositeDic:
             yield currentNum  # Not in compositeDic, so currentNum is prime.
             compositeDic[currentNum * currentNum] = [
-                currentNum]  # Adding the first multiple of currentNum and setting the witness as currentNum.
+                currentNum
+            ]  # Adding the first multiple of currentNum and setting the witness as currentNum.
         else:
             # currentNum is composite.
             for prime in compositeDic[currentNum]:
                 compositeDic.setdefault(prime + currentNum, []).append(
-                    prime)  # Moving each witness prime to it's next multiple.
-            del compositeDic[currentNum]  # compositeNum[currentNum] is no longer needed.
+                    prime
+                )  # Moving each witness prime to it's next multiple.
+            del compositeDic[
+                currentNum
+            ]  # compositeNum[currentNum] is no longer needed.
         currentNum += 1
 
 

@@ -1,6 +1,6 @@
 #!/usr/bin/python
 """
-Purpose: Find the longest substring 
+Purpose: Find the longest substring
     with each substring containing two unique characters,
     in ascending order
 """
@@ -15,15 +15,14 @@ def get_longest_substr(sentence):
         else:
             repeat_chars.append(temp)
             temp = each_char
-    longest_substr = ''
+    longest_substr = ""
     for index, each_repeat_chars in enumerate(repeat_chars):
         if index:
             substr = repeat_chars[index - 1] + each_repeat_chars
             if len(substr) > len(longest_substr):
-                longest_substr = ''.join(sorted(substr))
+                longest_substr = "".join(sorted(substr))
     return longest_substr
 
 
-if __name__ == '__main__':
-    assert get_longest_substr(
-        'cbbbbbaaaaadddddddeeeeffffffffg') == 'aaaaaddddddd'
+if __name__ == "__main__":
+    assert get_longest_substr("cbbbbbaaaaadddddddeeeeffffffffg") == "aaaaaddddddd"

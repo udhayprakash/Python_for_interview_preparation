@@ -20,11 +20,11 @@ class Solution:
         x1, x0 = 0, 0
         for num in nums:
             x1, x0 = x1 ^ (x0 & num), x0 ^ num
-            mask = ~ (x1 & x0)
+            mask = ~(x1 & x0)
             x1, x0 = x1 & mask, x0 & mask
         return x0
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     assert Solution().singleNumber([2, 2, 3, 2]) == 3
     assert Solution().singleNumber([0, 1, 0, 1, 0, 1, 99]) == 99

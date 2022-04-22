@@ -1,6 +1,10 @@
+import functools
+import operator
+
 # Many problems can be solved surprisingly easily by first solving a
 # smaller version of that problem, whose result is then used to solve
 # the original problem. The classic textbook example is the factorial.
+
 
 def factorial(n):
     if n < 2:
@@ -10,9 +14,6 @@ def factorial(n):
 
 
 # Functional programming version, for humour value:
-
-import functools
-import operator
 
 
 def factorial2(n):
@@ -28,6 +29,7 @@ def factorial2(n):
 # classic Towers of Hanoi puzzle.
 # http://en.wikipedia.org/wiki/Towers_of_Hanoi
 
+
 def hanoi(src, tgt, n):
     if n < 1:
         return
@@ -39,6 +41,7 @@ def hanoi(src, tgt, n):
 
 # For computing high integer powers, binary power is more efficient than
 # repeated multiplication n - 1 times.
+
 
 def binary_power(a, n):
     if n < 0:
@@ -54,6 +57,7 @@ def binary_power(a, n):
 # Without converting a number to a string but using only operations of
 # integer arithmetic, reverse its digits. For example, the integer 12345
 # would become 54321.
+
 
 def reverse_digits(n):
     def rev_dig_acc(n, a):  # accumulator recursion
@@ -73,10 +77,11 @@ def reverse_digits(n):
 # way of checking of something is a list is to check if it is iterable,
 # that is, for our purposes it behaves like a list.
 
+
 def flatten(li):
     result = []
     for x in li:
-        if hasattr(x, '__iter__'):  # is x an iterable?
+        if hasattr(x, "__iter__"):  # is x an iterable?
             result.extend(flatten(x))
         else:
             result.append(x)
@@ -88,6 +93,7 @@ def flatten(li):
 # If there is no solution, the function returns None, otherwise it returns
 # the list of items that together add up to the goal.
 # http://en.wikipedia.org/wiki/Subset_sum_problem
+
 
 def subset_sum(items, goal):
     if goal == 0:
@@ -110,6 +116,7 @@ def subset_sum(items, goal):
 # the square that the knight started from.
 # http://en.wikipedia.org/wiki/Knight's_tour
 
+
 def knight_tour(n=8, sx=1, sy=1):
     # List to accumulate the moves during the recursion.
     result = []
@@ -125,8 +132,11 @@ def knight_tour(n=8, sx=1, sy=1):
 
     # Find all the unvisited neighbours of square (x, y).
     def neighbours(x, y):
-        return [(x + dx, y + dy) for (dx, dy) in moves if inside(x + dx, y + dy)
-                and (x + dx, y + dy) not in visited]
+        return [
+            (x + dx, y + dy)
+            for (dx, dy) in moves
+            if inside(x + dx, y + dy) and (x + dx, y + dy) not in visited
+        ]
 
         # Try to generate the rest of the tour from square (cx, cy).
 
@@ -139,7 +149,7 @@ def knight_tour(n=8, sx=1, sy=1):
         for (nx, ny) in neighbours(cx, cy):
             if generate_tour(nx, ny):
                 return True
-        # Undo the current move 
+        # Undo the current move
         result.pop()
         visited.remove((cx, cy))
         return False
@@ -154,6 +164,7 @@ def knight_tour(n=8, sx=1, sy=1):
 # fast. Faster than you can begin to imagine, until you have taken some
 # decent theory of computability courses. And not even then.
 # http://en.wikipedia.org/wiki/Ackermann_function
+
 
 def ackermann(m, n):
     if m == 0:

@@ -41,17 +41,27 @@ def findshortestDistance(maze, source, destination, visited, currentDistance):
             shortestDistance = currentDistance
             return
 
-    findshortestDistance(maze, (x - 1, y), destination, visited + [source], currentDistance + 1)
-    findshortestDistance(maze, (x, y - 1), destination, visited + [source], currentDistance + 1)
-    findshortestDistance(maze, (x, y + 1), destination, visited + [source], currentDistance + 1)
-    findshortestDistance(maze, (x + 1, y), destination, visited + [source], currentDistance + 1)
+    findshortestDistance(
+        maze, (x - 1, y), destination, visited + [source], currentDistance + 1
+    )
+    findshortestDistance(
+        maze, (x, y - 1), destination, visited + [source], currentDistance + 1
+    )
+    findshortestDistance(
+        maze, (x, y + 1), destination, visited + [source], currentDistance + 1
+    )
+    findshortestDistance(
+        maze, (x + 1, y), destination, visited + [source], currentDistance + 1
+    )
 
 
 if __name__ == "__main__":
-    maze = [[False, False, False, False],
-            [True, True, False, True],
-            [False, False, False, False],
-            [False, False, False, False]]
+    maze = [
+        [False, False, False, False],
+        [True, True, False, True],
+        [False, False, False, False],
+        [False, False, False, False],
+    ]
 
     start = (3, 0)
     end = (0, 0)

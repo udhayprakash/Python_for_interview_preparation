@@ -61,7 +61,7 @@ def decode(encodedString):
         repetitionCount, encodedString = parseNumber(encodedString)
         letter = encodedString[0]
         encodedString = encodedString[1:]
-        decodedString += (letter * repetitionCount)
+        decodedString += letter * repetitionCount
 
     return decodedString
 

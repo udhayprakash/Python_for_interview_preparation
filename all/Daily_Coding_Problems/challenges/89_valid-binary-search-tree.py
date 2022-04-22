@@ -22,7 +22,9 @@ class Node:
 def isBSThelper(root, minVal, maxVal):
     if root.val <= maxVal and root.val >= minVal:
         if root.left != None and root.right != None:
-            return isBSThelper(root.left, minVal, root.val) and isBSThelper(root.right, root.val, maxVal)
+            return isBSThelper(root.left, minVal, root.val) and isBSThelper(
+                root.right, root.val, maxVal
+            )
         elif root.left != None:
             return isBSThelper(root.left, minVal, root.val)
         elif root.right != None:

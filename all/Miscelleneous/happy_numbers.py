@@ -10,4 +10,4 @@ for x in given_array:
         if x != i and i in given_array:
             happy_numbers += 1
             break
-print(f'{happy_numbers =}')
+print(f"{happy_numbers =}")

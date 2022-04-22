@@ -11,7 +11,17 @@ def findCompletePrefixes(names, query):
     return list(prefix_freq.values())
 
 
-names1 = ['steve', 'stevens', 'danny', 'steves', 'dan',
-          'john', 'johnny', 'joe', 'alex', 'alexander']
-query1 = ['steve', 'alex', 'joe', 'john', 'dan']
+names1 = [
+    "steve",
+    "stevens",
+    "danny",
+    "steves",
+    "dan",
+    "john",
+    "johnny",
+    "joe",
+    "alex",
+    "alexander",
+]
+query1 = ["steve", "alex", "joe", "john", "dan"]
 print(findCompletePrefixes(names1, query1) == [2, 1, 0, 1, 1])

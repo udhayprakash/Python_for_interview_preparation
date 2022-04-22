@@ -1,7 +1,7 @@
 from heapq import heappop, heappush
 
-
 # A traditional version to compute and return the n:th Hamming number.
+
 
 def nth_hamming(n):
     muls = (2, 3, 5)
@@ -42,7 +42,8 @@ def iterator_uniq(i):
     while True:
         while True:
             v2 = next(i)
-            if v != v2: break
+            if v != v2:
+                break
         v = v2
         yield v
 
@@ -51,13 +52,14 @@ def iterator_uniq(i):
 # Hamming numbers with their values multiplied by 2, 3 and 5.
 def hamming_it():
     yield 1
-    i = iterator_uniq(iterator_merge(
-        (2 * x for x in hamming_it()),
+    i = iterator_uniq(
         iterator_merge(
-            (3 * x for x in hamming_it()),
-            (5 * x for x in hamming_it())
+            (2 * x for x in hamming_it()),
+            iterator_merge(
+                (3 * x for x in hamming_it()), (5 * x for x in hamming_it())
+            ),
         )
-    ))
+    )
     for x in i:
         yield x
 

@@ -11,7 +11,7 @@ class Node:
         self.right = right
 
     def __str__(self):
-        return '<' + str(self.val) + '>'
+        return "<" + str(self.val) + ">"
 
 
 def deepest(node):
@@ -24,8 +24,8 @@ def deepest(node):
         return increment_depth(deepest(node.left))
 
     return increment_depth(
-        max(deepest(node.left), deepest(node.right),
-            key=lambda x: x[1]))
+        max(deepest(node.left), deepest(node.right), key=lambda x: x[1])
+    )
 
 
 def increment_depth(_node_depth_tuple):
@@ -33,7 +33,7 @@ def increment_depth(_node_depth_tuple):
     return node, depth + 1
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     tree = Node(4, Node(2, Node(1, Node(0)), Node(3)), Node(5))
     """
             4
@@ -45,4 +45,4 @@ if __name__ == '__main__':
           0
     """
     node_depth_tuple = deepest(tree)
-    print(node_depth_tuple[0], ' of depth ', node_depth_tuple[1])
+    print(node_depth_tuple[0], " of depth ", node_depth_tuple[1])

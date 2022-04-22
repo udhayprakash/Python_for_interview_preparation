@@ -2,9 +2,14 @@
 """
 Purpose: Parsing string
 """
+
+
 def string_parser(givStr, limit):
-    result = {v.split(':')[0] for v in givStr.replace('%', ':').split(',')
-              if int(v.split(':')[1]) <= limit}
+    result = {
+        v.split(":")[0]
+        for v in givStr.replace("%", ":").split(",")
+        if int(v.split(":")[1]) <= limit
+    }
     return sorted(result)
 
 

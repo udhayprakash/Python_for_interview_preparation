@@ -1,4 +1,4 @@
-# Pycharm IDE specific 
+# Pycharm IDE specific
 .idea
 
 # virtual Environments
@@ -102,3 +102,11 @@ ENV/
 
 # executables
 *.exe
+
+# mypy cache files
+.mypy_cache
+
+http response code images/
+
+# multimedia
+*.mp4

@@ -14,7 +14,7 @@ Purpose:
 
     salary considering that he works for same no. of hours daily
 """
-hours_worked_per_day = float(input('Enter the number of hours worked:'))
+hours_worked_per_day = float(input("Enter the number of hours worked:"))
 
 salary_per_day = 0
 if hours_worked_per_day > 18:
@@ -29,4 +29,4 @@ if 8 < hours_worked_per_day <= 12:
 if hours_worked_per_day <= 8:
     salary_per_day += hours_worked_per_day * 20
 
-print('salary_per_day:', salary_per_day)
+print("salary_per_day:", salary_per_day)

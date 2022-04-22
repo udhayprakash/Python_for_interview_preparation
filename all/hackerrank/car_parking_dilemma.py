@@ -6,7 +6,6 @@ import random
 import re
 import sys
 
-
 #
 # Complete the 'carParkingRoof' function below.
 #
@@ -16,22 +15,23 @@ import sys
 #  2. INTEGER k
 #
 
+
 def carParkingRoof(cars, k):
     l = len(cars)
     if l == 0 or k == 0:
         return 0
     cars.sort()
 
-    res = float('inf')
+    res = float("inf")
     for i in range(l):
-        if i >= (k-1):
-            res = min(res, cars[i] - cars[i-(k-1)])
+        if i >= (k - 1):
+            res = min(res, cars[i] - cars[i - (k - 1)])
     print(res)
     return res + 1
 
 
-if __name__ == '__main__':
-    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+if __name__ == "__main__":
+    fptr = open(os.environ["OUTPUT_PATH"], "w")
 
     cars_count = int(input().strip())
 
@@ -45,6 +45,6 @@ if __name__ == '__main__':
 
     result = carParkingRoof(cars, k)
 
-    fptr.write(str(result) + '\n')
+    fptr.write(str(result) + "\n")
 
     fptr.close()

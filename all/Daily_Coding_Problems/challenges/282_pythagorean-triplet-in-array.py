@@ -19,7 +19,11 @@ def has_pythagorean_triplet(arr):
         for i in range(ind):
             for j in range(i + 1, ind):
                 if squares[i] + squares[j] == squares[ind]:
-                    print(int(math.sqrt(squares[i])), int(math.sqrt(squares[j])), int(math.sqrt(squares[ind])))
+                    print(
+                        int(math.sqrt(squares[i])),
+                        int(math.sqrt(squares[j])),
+                        int(math.sqrt(squares[ind])),
+                    )
                     return True
         ind -= 1
 

@@ -6,7 +6,6 @@ import random
 import re
 import sys
 
-
 #
 # Complete the 'numDuplicates' function below.
 #
@@ -17,12 +16,14 @@ import sys
 #  3. INTEGER_ARRAY weight
 #
 
+
 def numDuplicates(name, price, weight):
     pairs = [(name[i], price[i], weight[i]) for i in range(0, len(name))]
     return len(pairs) - len(set(pairs))
 
-if __name__ == '__main__':
-    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+if __name__ == "__main__":
+    fptr = open(os.environ["OUTPUT_PATH"], "w")
 
     name_count = int(input().strip())
 
@@ -50,6 +51,6 @@ if __name__ == '__main__':
 
     result = numDuplicates(name, price, weight)
 
-    fptr.write(str(result) + '\n')
+    fptr.write(str(result) + "\n")
 
     fptr.close()

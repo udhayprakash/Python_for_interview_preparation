@@ -1,5 +1,4 @@
-Interview Preparation
-----------------------
+## Interview Preparation
 
 1. Questions to ask for the interviewer
    https://github.com/viraptor/reverse-interview/blob/master/README.md
@@ -9,7 +8,8 @@ Interview Preparation
 TODO
 
 - 120+ Common code and interview problems solved in Python
-    - https://github.com/devAmoghS/Python-Interview-Problems-for-Practice
+
+  - https://github.com/devAmoghS/Python-Interview-Problems-for-Practice
 
 - https://app.codility.com/programmers/lessons/1-iterations/
 
@@ -18,7 +18,6 @@ TODO
   https://github.com/wuduhren/leetcode-python
   https://github.com/yuzhoujr/leetcode
   https://github.com/taizilongxu/Leetcode-Py
-
 
 - cracking the coding interview
   https://github.com/zachwill/cracking-the-coding-interview
@@ -33,8 +32,6 @@ TODO
 
 https://www.codechef.com/certification/data-structures-and-algorithms/prepare
 
-Blogs
-------
+## Blogs
 
     https://www.dailycodingproblem.com/blog
-

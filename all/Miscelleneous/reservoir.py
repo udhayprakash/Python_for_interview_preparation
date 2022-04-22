@@ -1,7 +1,7 @@
 from random import randint
 
-
 # Randomly choose k elements from those produced by iterator it.
+
 
 def reservoir(items, k):
     buffer = []
@@ -19,6 +19,8 @@ def reservoir(items, k):
 
 if __name__ == "__main__":
     print("Here are 20 random non-short lines from 'War and Peace':")
-    with open('warandpeace.txt', encoding="utf-8") as wap:
-        for (idx, line) in enumerate(reservoir((x.strip() for x in wap if len(x) > 60), 20)):
+    with open("warandpeace.txt", encoding="utf-8") as wap:
+        for (idx, line) in enumerate(
+            reservoir((x.strip() for x in wap if len(x) > 60), 20)
+        ):
             print(f"{idx:2}: {line}")

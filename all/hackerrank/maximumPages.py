@@ -49,7 +49,7 @@ def print_singly_linked_list(node, sep, fptr):
 
 def maximumPages(head):
     if head == None:
-        return 'list is empty'
+        return "list is empty"
 
     maxpages = 0
     while head:
@@ -75,8 +75,8 @@ def maximumPages(head):
     return maxpages
 
 
-if __name__ == '__main__':
-    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+if __name__ == "__main__":
+    fptr = open(os.environ["OUTPUT_PATH"], "w")
 
     head_count = int(input().strip())
 
@@ -88,6 +88,6 @@ if __name__ == '__main__':
 
     result = maximumPages(head.head)
 
-    fptr.write(str(result) + '\n')
+    fptr.write(str(result) + "\n")
 
     fptr.close()

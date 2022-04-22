@@ -66,6 +66,7 @@ def is_leap_year(y):
 
 # The same conditions written in a different way.
 
+
 def is_leap_year_another_way(y):
     """Determine whether the current year is a leap year.
     y -- The current year.
@@ -78,6 +79,7 @@ def is_leap_year_another_way(y):
 
 
 # The whole function as a Pythonesque one-liner.
+
 
 def is_leap_year_with_logic(y):
     """Determine whether the current year is a leap year.
@@ -95,6 +97,6 @@ def test_leap_year():
         a1 = is_leap_year(y)
         a2 = is_leap_year_another_way(y)
         a3 = is_leap_year_with_logic(y)
-        if (a1 != a2 or a2 != a3):
+        if a1 != a2 or a2 != a3:
             return False  # Tear it down and start again.
     return True  # I am pleased where man has been.

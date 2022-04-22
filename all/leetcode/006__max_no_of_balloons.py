@@ -2,17 +2,17 @@
 """
 Purpose:
 https://leetcode.com/problems/maximum-number-of-balloons/submissions/
-Given a string text, you want to use the characters of text to form as many instances of the word 
+Given a string text, you want to use the characters of text to form as many instances of the word
 "balloon" as possible.
 
-You can use each character in text at most once. Return the maximum number of instances that can 
+You can use each character in text at most once. Return the maximum number of instances that can
 be formed.
 """
 
 
 class Solution:
     # FAILED LOGIC
-    # def maxNumberOfBalloons(self, text): 
+    # def maxNumberOfBalloons(self, text):
     #     balloon_chars = {}
     #     for ech_chr in text:
     #         if ech_chr in 'balloon':
@@ -43,9 +43,9 @@ class Solution:
 
     def maxNumberOfBalloons(self, text):
         words_counts = []
-        for search_chr in 'balloon':
+        for search_chr in "balloon":
             chr_count = text.count(search_chr)
-            if search_chr in ('l', 'o'):
+            if search_chr in ("l", "o"):
                 chr_count //= 2
             words_counts.append(chr_count)
         return min(words_counts)
@@ -60,17 +60,20 @@ class Solution:
                 else:
                     char_count[c] += 1
         nl = []
-        nl.append(char_count.get('b', 0))
-        nl.append(char_count.get('a', 0))
-        nl.append(char_count.get('l', 0) // 2)
-        nl.append(char_count.get('o', 0) // 2)
-        nl.append(char_count.get('n', 0))
+        nl.append(char_count.get("b", 0))
+        nl.append(char_count.get("a", 0))
+        nl.append(char_count.get("l", 0) // 2)
+        nl.append(char_count.get("o", 0) // 2)
+        nl.append(char_count.get("n", 0))
 
         return min(nl)
 
 
-print(Solution().maxNumberOfBalloons(
-    "siobnxjnmhnzoxjztwoezeqgoqkhetrpwszmwwwfpyybcizuzhrxriynbyjpbeplhfavddkwspyoddheetjgfqsmywnmxjviftexuzdbpuexfhsmyagqefhdilhehlhkitmkijgzoogicywcfxzalrvayrxavieoqodwoasbxuuuormvktvhwlidiilotsfwgcztxjktibraglhnhneororppplsylbfkebmqbzvftzsrrwfoiifajmxkjxtaxmvfmgxkdbxdycgottuymuknrnhjjcpwkpmbweirromdikbtcptxgtkslozeoejpchphkydsjexwjkiquaahuphtqftzoayqyqevtwszfmmkjqoqxexexltnwxpisszxdxljfubboxalbxhmnuabbypkpmrxyecuibqjoixdbjfvinxcgnjtwpyhieqneerorbllszkavoxearikldjeomdzyotdxioprkkvisadoccdrhkdknoyzmldomfdytzuvwvwoqatojlczydkvyfifkygtmwjynrtvllunelpkargfrkltadhzhggdmdtzordxrlxegknsqwmyqmpndpjtiwoutoxvgmxomhcjursxqzsoipvecltqjgurzhgsahpgrvshqddlqivbfiwcvrxpmneuwmpepyswrktflewfgfbtghjcvzfomsbozadzxzkmyzjsroftglrpmxzjnyekkiplfmuzkabmvdwurhuwnywqlxfzjzgsfsshbmszxxnxbotgryafvsyksaxvcxqbveuvqmutauqtcrqwnczzhrhgsjbxhnrpgxauqxtaouasklqxhndpsvrfcigpkjqgwyisaqzzcviqibbuzljshpbwgfgkjdcbsygptdebhyrdkmnibhedccpkoyfbgjbokdrxocfavwrqxrdrzfarhidwxcvtiqlmkecrhmvrbswyqsllxieztqppouuvxjuglyajhvypjtwegokegkmeh"))
+print(
+    Solution().maxNumberOfBalloons(
+        "siobnxjnmhnzoxjztwoezeqgoqkhetrpwszmwwwfpyybcizuzhrxriynbyjpbeplhfavddkwspyoddheetjgfqsmywnmxjviftexuzdbpuexfhsmyagqefhdilhehlhkitmkijgzoogicywcfxzalrvayrxavieoqodwoasbxuuuormvktvhwlidiilotsfwgcztxjktibraglhnhneororppplsylbfkebmqbzvftzsrrwfoiifajmxkjxtaxmvfmgxkdbxdycgottuymuknrnhjjcpwkpmbweirromdikbtcptxgtkslozeoejpchphkydsjexwjkiquaahuphtqftzoayqyqevtwszfmmkjqoqxexexltnwxpisszxdxljfubboxalbxhmnuabbypkpmrxyecuibqjoixdbjfvinxcgnjtwpyhieqneerorbllszkavoxearikldjeomdzyotdxioprkkvisadoccdrhkdknoyzmldomfdytzuvwvwoqatojlczydkvyfifkygtmwjynrtvllunelpkargfrkltadhzhggdmdtzordxrlxegknsqwmyqmpndpjtiwoutoxvgmxomhcjursxqzsoipvecltqjgurzhgsahpgrvshqddlqivbfiwcvrxpmneuwmpepyswrktflewfgfbtghjcvzfomsbozadzxzkmyzjsroftglrpmxzjnyekkiplfmuzkabmvdwurhuwnywqlxfzjzgsfsshbmszxxnxbotgryafvsyksaxvcxqbveuvqmutauqtcrqwnczzhrhgsjbxhnrpgxauqxtaouasklqxhndpsvrfcigpkjqgwyisaqzzcviqibbuzljshpbwgfgkjdcbsygptdebhyrdkmnibhedccpkoyfbgjbokdrxocfavwrqxrdrzfarhidwxcvtiqlmkecrhmvrbswyqsllxieztqppouuvxjuglyajhvypjtwegokegkmeh"
+    )
+)
 
 assert Solution().maxNumberOfBalloons("nlaebolko") == 1
 assert Solution().maxNumberOfBalloons("loonbalxballpoon") == 2
@@ -78,5 +81,9 @@ assert Solution().maxNumberOfBalloons("leetcode") == 0
 assert Solution().maxNumberOfBalloons("balon") == 0
 assert Solution().maxNumberOfBalloons("ballon") == 0
 assert Solution().maxNumberOfBalloons("baloon") == 0
-assert Solution().maxNumberOfBalloons(
-    "krhizmmgmcrecekgyljqkldocicziihtgpqwbticmvuyznragqoyrukzopfmjhjjxemsxmrsxuqmnkrzhgvtgdgtykhcglurvppvcwhrhrjoislonvvglhdciilduvuiebmffaagxerjeewmtcwmhmtwlxtvlbocczlrppmpjbpnifqtlninyzjtmazxdbzwxthpvrfulvrspycqcghuopjirzoeuqhetnbrcdakilzmklxwudxxhwilasbjjhhfgghogqoofsufysmcqeilaivtmfziumjloewbkjvaahsaaggteppqyuoylgpbdwqubaalfwcqrjeycjbbpifjbpigjdnnswocusuprydgrtxuaojeriigwumlovafxnpibjopjfqzrwemoinmptxddgcszmfprdrichjeqcvikynzigleaajcysusqasqadjemgnyvmzmbcfrttrzonwafrnedglhpudovigwvpimttiketopkvqw") == 10
+assert (
+    Solution().maxNumberOfBalloons(
+        "krhizmmgmcrecekgyljqkldocicziihtgpqwbticmvuyznragqoyrukzopfmjhjjxemsxmrsxuqmnkrzhgvtgdgtykhcglurvppvcwhrhrjoislonvvglhdciilduvuiebmffaagxerjeewmtcwmhmtwlxtvlbocczlrppmpjbpnifqtlninyzjtmazxdbzwxthpvrfulvrspycqcghuopjirzoeuqhetnbrcdakilzmklxwudxxhwilasbjjhhfgghogqoofsufysmcqeilaivtmfziumjloewbkjvaahsaaggteppqyuoylgpbdwqubaalfwcqrjeycjbbpifjbpigjdnnswocusuprydgrtxuaojeriigwumlovafxnpibjopjfqzrwemoinmptxddgcszmfprdrichjeqcvikynzigleaajcysusqasqadjemgnyvmzmbcfrttrzonwafrnedglhpudovigwvpimttiketopkvqw"
+    )
+    == 10
+)

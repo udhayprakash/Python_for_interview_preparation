@@ -12,6 +12,7 @@
 # negative if the turn p1:p2:p3 is right-handed, and zero if
 # the points are collinear.
 
+
 def cross(p1, p2, p3):
     (x1, y1), (x2, y2), (x3, y3) = p1, p2, p3
     return (x2 - x1) * (y3 - y1) - (y2 - y1) * (x3 - x1)
@@ -34,6 +35,7 @@ def cross(p1, p2, p3):
 # the origin. These signed areas cancel each other out when adding
 # and subtracting the space outside the polygon.
 
+
 def polygon_area_twice(poly):
     total, prev = 0, poly[-1]
     for p in poly:
@@ -45,6 +47,7 @@ def polygon_area_twice(poly):
 # Testing whether two line segments intersect can be done with
 # checking turn handedness. No floating point arithmetic, trig or
 # any kind of divisions are needed.
+
 
 def __sign(n):
     if n < 0:
@@ -63,8 +66,12 @@ def line_segment_intersect(p0, p1, p2, p3):
     (x0, y0), (x1, y1), (x2, y2), (x3, y3) = p0, p1, p2, p3
 
     # Bounding box quick rejection check.
-    if max(x0, x1) < min(x2, x3) or max(x2, x3) < min(x0, x1) or \
-            max(y0, y1) < min(y2, y3) or max(y2, y3) < min(y0, y1):
+    if (
+        max(x0, x1) < min(x2, x3)
+        or max(x2, x3) < min(x0, x1)
+        or max(y0, y1) < min(y2, y3)
+        or max(y2, y3) < min(y0, y1)
+    ):
         return False
     # The turns (p0:p1:p2) and (p0:p1:p3) must have opposite signs.
     s1 = __sign(cross(p0, p1, p2))
@@ -74,6 +81,7 @@ def line_segment_intersect(p0, p1, p2, p3):
 
 # To check whether the given polygon is convex, check that on the
 # the route along the polygon edge, every turn is left-handed.
+
 
 def polygon_is_convex(poly):
     p1, p2 = poly[-1], poly[-2]
@@ -92,6 +100,7 @@ def polygon_is_convex(poly):
 # on the edge, 2 if it is a corner point, and 3 if the point lies
 # properly inside with a nonzero distance to the outside world.
 
+
 def point_inside_convex_polygon(poly, p):
     p1 = poly[-1]
     for p0 in poly:
@@ -109,6 +118,7 @@ def point_inside_convex_polygon(poly, p):
 # Convexify the given polygon by eliminating right turns along
 # the polygon edge. Also removes the redundant corner points
 # that connect two consecutive collinear edges.
+
 
 def convexify(poly, cleanonly=False):
     # Initialize the stack with the first polygon edge.
@@ -136,6 +146,7 @@ def convexify(poly, cleanonly=False):
 # edges. Since we get to choose the direction of our imaginary
 # ray freely, let's shoot it straight up towards the infinity of
 # heavens.
+
 
 def __cross_ray(x, y, x0, y0, x1, y1):
     # Quick rejection tests.
@@ -169,6 +180,7 @@ def point_inside_polygon(poly, p):
 
 
 # https://en.wikipedia.org/wiki/Pick%27s_theorem
+
 
 def demonstrate_picks_theorem(poly):
     area_shoe = polygon_area_twice(poly)
@@ -225,7 +237,7 @@ def convex_hull(pts, cleanonly=False):
 # the points by ascending x-coordinate. When comparing pairs of
 # points, each point needs to be compared only with the previous
 # points whose x-distance is less than equal to the current best
-# distance that we have found somewhere. 
+# distance that we have found somewhere.
 
 from math import sqrt
 

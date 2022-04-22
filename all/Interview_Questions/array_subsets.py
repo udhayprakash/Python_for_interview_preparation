@@ -2,7 +2,7 @@ import copy
 
 
 def subsetA(arr):
-    print('\narr     :', arr)
+    print("\narr     :", arr)
     arr.sort()
     sub_arrA = []
     for index1, num1 in enumerate(arr):
@@ -19,16 +19,14 @@ def subsetA(arr):
                 if (num1 + num2) >= sum(new_arr):
                     # print(num1 + num2, sum(new_arr), end='\t')
                     # print(num1, num2, '--->', new_arr)
-                    if (sub_arrA
-                            and sum(sub_arrA) < (num1 + num2)
-                            or not sub_arrA):
+                    if sub_arrA and sum(sub_arrA) < (num1 + num2) or not sub_arrA:
                         sub_arrA = sorted((num1, num2))
 
-    print('sub_arrA:', sub_arrA)
+    print("sub_arrA:", sub_arrA)
     return sub_arrA
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     assert subsetA([3, 7, 5, 6, 2]) == [6, 7]  # [(5, 7), (6, 7)]
     assert subsetA([5, 3, 2, 4, 1, 2]) == [4, 5]
     assert subsetA([4, 2, 5, 1, 6]) == [5, 6]  # (5, 6), (4, 6)

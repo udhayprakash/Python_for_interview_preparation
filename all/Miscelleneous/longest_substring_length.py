@@ -2,7 +2,7 @@
 
 
 def longest_substr_len(my_string: str) -> bool:
-    longest_unique_substr = ''
+    longest_unique_substr = ""
     lus_len = 0
     for index, _ in enumerate(my_string):
         for sub_str in (my_string[index:], my_string[:index]):
@@ -10,7 +10,7 @@ def longest_substr_len(my_string: str) -> bool:
             if sub_str_len == len(set(sub_str)) and lus_len < sub_str_len:
                 longest_unique_substr = sub_str
                 lus_len = len(longest_unique_substr)
-    print(f'{my_string =}\t{longest_unique_substr =}')
+    print(f"{my_string =}\t{longest_unique_substr =}")
     return len(longest_unique_substr)
 
 
@@ -33,11 +33,11 @@ def longest_substr_len(my_string: str) -> bool:
 
         # Updating the last seen value of the character
         seen[my_string[end]] = end
-        maximum_length = max(maximum_length, end-start + 1)
+        maximum_length = max(maximum_length, end - start + 1)
     return maximum_length
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     assert longest_substr_len("abcdef") == 6
     assert longest_substr_len("bob") == 2
     assert longest_substr_len("apple") == 3

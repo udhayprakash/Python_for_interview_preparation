@@ -37,6 +37,6 @@ def is_valid(board):
     return True
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     for _n in range(10):
         print(n_queens(_n))

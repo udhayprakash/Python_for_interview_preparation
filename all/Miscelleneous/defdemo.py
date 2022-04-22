@@ -5,6 +5,7 @@
 
 # Factorial of n is the product of positive integers up to n.
 
+
 def factorial(n):
     """Return the factorial of a positive integer.
     n -- The positive integer whose factorial is computed.
@@ -43,8 +44,9 @@ print(result)  # 265252859812191058636308480000000
 # operate on lists. First, find the largest element in the list. We do
 # this by iterating over the elements of the list
 
+
 def maximum(seq):
-    """ Return the largest element in sequence.
+    """Return the largest element in sequence.
     seq -- The sequence whose maximum we are looking for.
     """
     first = True
@@ -64,6 +66,7 @@ print(max([5, 2, 8, 1, 0, 9, 6]))  # 9
 
 # Next, a function that creates and returns another list whose each element
 # equals the sum of the elements in the original list up to that index.
+
 
 def accum(seq):
     """Given a sequence, return its accumulation sequence as a list.
@@ -91,6 +94,7 @@ print(list(accumulate([1, 2, 3, 4, 5])))
 
 # Select precisely the elements that are larger than their predecessor.
 
+
 def select_upsteps(seq):
     prev = None
     result = []
@@ -108,11 +112,12 @@ print(select_upsteps([4, 8, 3, 7, 9, 1, 2, 5, 6]))
 # Compute the factorials up to n! and count how many times each digit
 # from 1 to 9 appears as the first digit of those factorials.
 
+
 def leading_digit_list(n):
     prod = 1  # The current factorial
     digits = [0] * 10  # Create a list full of zeros
     for i in range(2, n + 1):
-        lead = ord(str(prod)[0]) - ord('0')  # Compute first digit
+        lead = ord(str(prod)[0]) - ord("0")  # Compute first digit
         digits[lead] += 1
         prod = prod * i  # The next factorial from the current one
     return digits
@@ -120,8 +125,8 @@ def leading_digit_list(n):
 
 from math import log
 
-
 # https://en.wikipedia.org/wiki/Benford%27s_law
+
 
 def output_leading_digits(n):
     digits = leading_digit_list(n)
@@ -142,8 +147,7 @@ xx = 42
 
 
 def scope_demo():
-    """Demonstrate the behaviour of local and global variables.
-    """
+    """Demonstrate the behaviour of local and global variables."""
     # print(f"xx is now {xx}") # error, Python compiles entire function
     xx = 99
     print(f"xx is now {xx}")
@@ -188,7 +192,7 @@ import random
 def roll_dice(rolls, faces=6):
     """Roll a die given number of times and return the sum.
     rolls -- Number of dice to roll.
-    faces -- Number of faces on a single die.    
+    faces -- Number of faces on a single die.
     """
     total = 0
     for x in range(rolls):
@@ -225,16 +229,17 @@ print("foo() equals %d, bar() equals %d" % (foo(), bar()))  # 42 99
 # number is divisible by 5, you say "buzz", and if by both 3 and 5, you
 # say "fizzbuzz".
 
+
 def fizzbuzz_translate(n):
     """Convert positive integer n to its fizzbuzz representation.
     n -- The positive integer to convert.
     """
     if n % 5 == 0 and n % 3 == 0:
-        return 'fizzbuzz'
+        return "fizzbuzz"
     elif n % 5 == 0:
-        return 'buzz'
+        return "buzz"
     elif n % 3 == 0:
-        return 'fizz'
+        return "fizz"
     else:
         return str(n)
 
@@ -245,6 +250,7 @@ print(", ".join([fizzbuzz_translate(y) for y in range(1, 101)]))
 
 # Next, let us write a function that evaluates a polynomial, given in
 # the list of coefficients, at the given point x.
+
 
 def evaluate_poly(coeff, x):
     """Evaluate the polynomial, given as coefficient list, at point x.
@@ -268,6 +274,7 @@ print(evaluate_poly([-6, 7, -10, 5], 3))  # 60.0
 # A function that returns either True or False is called a predicate. It
 # checks whether the given parameter values have some particular property.
 # For example, the simple predicate that checks if its parameter is odd:
+
 
 def is_odd(n):
     """A simple function to check if an integer is odd.
@@ -293,6 +300,7 @@ print(oddsquares)
 # asterisk, that parameter is a list that collects all the parameters
 # given to it after the possible other, normal arguments.
 
+
 def gimmeanyargs(*args):
     # inside the function, args is an ordinary list.
     print("All right, you gave me the following arguments:")
@@ -306,6 +314,7 @@ gimmeanyargs(42, "Hello world", -8.4, evaluate_poly)
 # If we even wanted to allow any keyword arguments, one more parameter
 # after *args starting with ** will collect all those.
 
+
 def gimmeanything(*args, **kwargs):
     gimmeanyargs(*args)  # might as well use the function that we have
     print("And then you gave me these keyword arguments:")
@@ -314,4 +323,4 @@ def gimmeanything(*args, **kwargs):
         print(kwa)
 
 
-gimmeanything(55, "foobar", name='Billy', age=24)
+gimmeanything(55, "foobar", name="Billy", age=24)

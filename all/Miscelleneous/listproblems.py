@@ -2,6 +2,7 @@
 # elements that exactly add up to goal. If parameters i and j are
 # given, search only within the subarray from i up to j, inclusive.
 
+
 def two_summers(items, goal, i=None, j=None):
     i = i if i else 0
     j = j if j else 0
@@ -18,6 +19,7 @@ def two_summers(items, goal, i=None, j=None):
 
 # Given two lists s1 and s2, zip them together into one list.
 # (Python function zip produces pairs of elements.)
+
 
 def zip_together(s1, s2):
     i, result = 0, []
@@ -36,6 +38,7 @@ def zip_together(s1, s2):
 
 # Given two sorted lists, create a new list that contains the elements
 # of both lists sorted, constructing the new list in one pass.
+
 
 def merge_sorted(s1, s2):
     i1, i2, result = 0, 0, []
@@ -59,6 +62,7 @@ def merge_sorted(s1, s2):
 # the elements that are in both lists. If the lists are sorted, this
 # operation can be done in linear time in one pass through both lists.
 
+
 def intersection_sorted(s1, s2):
     i1, i2, result = 0, 0, []
     while i1 < len(s1) and i2 < len(s2):
@@ -75,7 +79,8 @@ def intersection_sorted(s1, s2):
 
 # Modify the list s in place so that all elements for which the
 # given predicate pred is true are in the front in some order,
-# followed by the elements for which pred is false, in some order.    
+# followed by the elements for which pred is false, in some order.
+
 
 def partition(s, pred):
     i1, i2 = 0, len(s) - 1
@@ -96,6 +101,7 @@ def partition(s, pred):
 # maintains the mutual ordering of elements inside the left and
 # right partitions, though.
 
+
 def stable_partition(s, pred):
     return [x for x in s if pred(x)] + [x for x in s if not (pred(x))]
 
@@ -105,7 +111,8 @@ def stable_partition(s, pred):
 # If these lists are equal, their dissimilarity is zero, otherwise
 # this dissimilarity measure gets larger the more different the lists.
 
-def dissimilarity(first, second, kind='yule'):
+
+def dissimilarity(first, second, kind="yule"):
     n, n00, n01, n10, n11 = len(first), 0, 0, 0, 0
     for i in range(n):
         if first[i] and second[i]:
@@ -117,17 +124,17 @@ def dissimilarity(first, second, kind='yule'):
         else:  # first[i] and second[i] are both false
             n00 += 1
     try:
-        if kind == 'yule':
+        if kind == "yule":
             return (2 * (n10 + n01)) / (n11 * n00 + n01 * n10)
-        elif kind == 'dice':
+        elif kind == "dice":
             return (n10 + n01) / (2 * n11 + n10 + n01)
-        elif kind == 'sokal-sneath':
+        elif kind == "sokal-sneath":
             return (2 * (n10 + n01)) / (n11 + 2 * (n10 + n01))
-        elif kind == 'jaccard':
+        elif kind == "jaccard":
             return (n10 + n01) / (n11 + n10 + n01)
-        elif kind == 'matching':
+        elif kind == "matching":
             return (n10 + n01) / len(first)
-        elif kind == 'rogers-tanimoto':
+        elif kind == "rogers-tanimoto":
             return (2 * (n10 + n01)) / (n11 + 2 * (n10 + n01) + n00)
         else:
             raise ValueError(f"Unknown dissimilarity metric {kind}")
@@ -175,7 +182,7 @@ if __name__ == "__main__":
 
     from random import randint
 
-    kinds = ['yule', 'dice', 'sokal-sneath', 'jaccard', 'matching', 'rogers-tanimoto']
+    kinds = ["yule", "dice", "sokal-sneath", "jaccard", "matching", "rogers-tanimoto"]
     print("\nHere are some dissimilarity metrics for random bit vectors.\n")
     print("v1       v2       yule   dice   s-s    jac    match  r-t")
     for i in range(10):

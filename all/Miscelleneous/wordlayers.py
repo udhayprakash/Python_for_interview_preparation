@@ -5,6 +5,7 @@
 # different character. In the word graph, we consider two words
 # to be neighbours if their Hamming distance equals one.
 
+
 def hamming_distance(w1, w2):
     d = 0
     for i in range(len(w1)):
@@ -15,6 +16,7 @@ def hamming_distance(w1, w2):
 
 # Compute the word layers from the given starting word using the
 # breadth first search algorithm.
+
 
 def word_layers(start, neighbours, maxd=99):
     # The zeroth layer contains only the starting word.
@@ -49,7 +51,7 @@ if __name__ == "__main__":
 
     # The length of the words that we consider.
     n = 5
-    with open('words_alpha.txt', encoding="utf-8") as f:
+    with open("words_alpha.txt", encoding="utf-8") as f:
         wordlist = [x.strip() for x in f if x.islower()]
     print(f"Read in a word list of {len(wordlist)} lowercase words.")
     wordlist = sorted([x for x in wordlist if len(x) == n])

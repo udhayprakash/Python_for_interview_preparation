@@ -8,31 +8,34 @@ profiling steps
 """
 
 
-import urllib.request
 import json
+import urllib.request
 
 
 def time_taken(func):
     def inner(*args, **kwargs):
         import time
+
         start = time.process_time()
         result = func(*args, **kwargs)
-        print(f'TIME TAKEN:{time.process_time() - start}')
+        print(f"TIME TAKEN:{time.process_time() - start}")
         return result
+
     return inner
 
 
 @time_taken
 def getMovieTitles(substr):
     import requests
+
     page = 1
     titles = []
     while True:
-        url = f'https://jsonmock.hackerrank.com/api/movies/search/?Title={substr}&page={page}'
+        url = f"https://jsonmock.hackerrank.com/api/movies/search/?Title={substr}&page={page}"
         response_data = requests.get(url).json()
-        if response_data['page'] == response_data['total_pages']:
+        if response_data["page"] == response_data["total_pages"]:
             break
-        titles.extend([each['Title'] for each in response_data['data']])
+        titles.extend([each["Title"] for each in response_data["data"]])
         page += 1
 
     return sorted(titles)
@@ -40,17 +43,18 @@ def getMovieTitles(substr):
 
 @time_taken
 def getMovieTitles2(substr):
-    import urllib.request
     import json
+    import urllib.request
+
     page = 1
     titles = []
     while True:
-        url = f'https://jsonmock.hackerrank.com/api/movies/search/?Title={substr}&page={page}'
+        url = f"https://jsonmock.hackerrank.com/api/movies/search/?Title={substr}&page={page}"
         response = urllib.request.urlopen(url).read()
         response_data = json.loads(response)
-        if response_data['page'] == response_data['total_pages']:
+        if response_data["page"] == response_data["total_pages"]:
             break
-        titles.extend([each['Title'] for each in response_data['data']])
+        titles.extend([each["Title"] for each in response_data["data"]])
         page += 1
 
     return sorted(titles)
@@ -58,16 +62,17 @@ def getMovieTitles2(substr):
 
 @time_taken
 def getMovieTitles3(substr):
-    import urllib.request
     import re
+    import urllib.request
+
     page = 1
     titles = []
     while True:
-        url = f'https://jsonmock.hackerrank.com/api/movies/search/?Title={substr}&page={page}'
+        url = f"https://jsonmock.hackerrank.com/api/movies/search/?Title={substr}&page={page}"
         response = str(urllib.request.urlopen(url).read())
         titles += re.findall('"Title":"(.+?)",', response)
         current_page = re.search('"page":(\d+),', response).group(1)
-        total_pages = ''
+        total_pages = ""
         if not total_pages:
             total_pages = re.search('"total_pages":(\d+),', response).group(1)
         if current_page == total_pages:
@@ -85,14 +90,16 @@ def build_query(base_url, params):
 def json_from_url(url):
     request = urllib.request.urlopen(url)
     response = request.read()
-    encoding = request.info().get_content_charset('utf-8')
+    encoding = request.info().get_content_charset("utf-8")
     json_data = json.loads(response.decode(encoding))
     return json_data
 
 
 @time_taken
 def get_all_titles():
-    url_base = "https://jsonmock.hackerrank.com/api/movies/search/?Title=spiderman&page="
+    url_base = (
+        "https://jsonmock.hackerrank.com/api/movies/search/?Title=spiderman&page="
+    )
     page_num = 1
 
     max_pages_reached = False
@@ -114,8 +121,8 @@ def get_all_titles():
     return titles
 
 
-if __name__ == '__main__':
-    getMovieTitles('spiderman')
-    getMovieTitles2('spiderman')
-    getMovieTitles3('spiderman')
+if __name__ == "__main__":
+    getMovieTitles("spiderman")
+    getMovieTitles2("spiderman")
+    getMovieTitles3("spiderman")
     get_all_titles()

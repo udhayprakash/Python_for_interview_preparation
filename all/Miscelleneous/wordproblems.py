@@ -1,8 +1,8 @@
 from bisect import bisect_left, bisect_right
 from random import choice, sample
 
-
 # Compute a histogram of individual characters in words.
+
 
 def histogram(words):
     result = {}
@@ -14,11 +14,13 @@ def histogram(words):
 
 # Find all words that are palindromes.
 
+
 def palindromes(words):
     return [x for x in words if x == x[::-1]]
 
 
 # Find all words that are a different word when read backwards.
+
 
 def semordnilap(words):
     wset = set(words)
@@ -26,6 +28,7 @@ def semordnilap(words):
 
 
 # Find all the rotodromes, words that become other words when rotated.
+
 
 def rotodromes(words):
     def _is_rotodrome(word, wset):
@@ -42,10 +45,11 @@ def rotodromes(words):
 # Find the "almost palindromes", words that become palindromes when
 # one letter is tactically removed.
 
+
 def almost_palindromes(words):
     def _almost(word):
         for i in range(len(word) - 1):
-            w2 = word[:i] + word[i + 1:]
+            w2 = word[:i] + word[i + 1 :]
             if w2 == w2[::-1]:
                 return True
         return False
@@ -87,31 +91,34 @@ def rotate_consonants(text, off=1):
 # Regular expressions can come handy in all kinds of string problems.
 import re
 
-
 # Find the words that contain at least three duplicated letters.
 
+
 def triple_duplicate(words):
-    return [x for x in words if len(re.findall(r'(.)\1', x)) > 2]
+    return [x for x in words if len(re.findall(r"(.)\1", x)) > 2]
 
 
 # Find the words that contain three duplicated letters all together.
 
+
 def consec_triple_duplicate(words):
-    return [x for x in words if len(re.findall(r'(.)\1(.)\2(.)\3', x)) > 0]
+    return [x for x in words if len(re.findall(r"(.)\1(.)\2(.)\3", x)) > 0]
 
 
 # How many words can be spelled out using only given characters?
 
+
 def limited_alphabet(words, chars):
     # A regular expression used many times is good to precompile
     # into the matching machine for speed and efficiency.
-    pat = re.compile('^[' + chars + ']+$')
+    pat = re.compile("^[" + chars + "]+$")
     return [word for word in words if pat.match(word)]
 
 
-# Stolen from Programming Praxis. Given text string and integer 
+# Stolen from Programming Praxis. Given text string and integer
 # k, find and return the longest substring that contains at most
 # k different characters inside it.
+
 
 def longest_substring_with_k_chars(text, k=2):
     # The k most recently seen characters mapped to the last
@@ -129,7 +136,7 @@ def longest_substring_with_k_chars(text, k=2):
                 maxpos = i - max_ + 1
         else:
             # Find the least recently seen character.
-            min_, minc = len(text), '$'
+            min_, minc = len(text), "$"
             for cc in last_seen:
                 if last_seen[cc] < min_:
                     min_ = last_seen[cc]
@@ -140,7 +147,7 @@ def longest_substring_with_k_chars(text, k=2):
             last_seen[c] = i
             len_ = i - min_
     # Extract the longest found substring as the answer.
-    return text[maxpos:maxpos + max_]
+    return text[maxpos : maxpos + max_]
 
 
 # Given a sorted list of words and the first word, construct a
@@ -149,7 +156,8 @@ def longest_substring_with_k_chars(text, k=2):
 # ['grama', 'ramal', 'amala', 'malar', 'alarm'] for k = 1.
 
 # Since words are sorted, we can use binary search algorithm to
-# quickly find the sublist whose words start with the given prefix. 
+# quickly find the sublist whose words start with the given prefix.
+
 
 def word_chain(words, first, k=1, len_=3):
     # Recursive algorithm to complete the given wordlist.
@@ -161,7 +169,7 @@ def word_chain(words, first, k=1, len_=3):
         suffix = chain[-1][k:]
         # Extract the words that start with that suffix.
         start = bisect_left(words, suffix)
-        end = bisect_right(words, suffix + k * 'z')
+        end = bisect_right(words, suffix + k * "z")
         # Try out those words one at the time.
         for idx in range(start, end):
             word = words[idx]
@@ -183,6 +191,7 @@ def word_chain(words, first, k=1, len_=3):
 # i, mapped to the list of words of length i-1 that they can be turned
 # into by removing one letter.
 
+
 def remain_words(words):
     result = [[], [x for x in words if len(x) == 1]]
     wl = 2
@@ -192,7 +201,7 @@ def remain_words(words):
         for w in (x for x in words if len(x) == wl):
             shorter = []
             for i in range(0, wl - 1):
-                ww = w[:i] + w[i + 1:]  # word w with i:th letter removed
+                ww = w[:i] + w[i + 1 :]  # word w with i:th letter removed
                 if ww in result[wl - 1]:
                     shorter.append(ww)
             if len(shorter) > 0:
@@ -209,13 +218,39 @@ def remain_words(words):
 def all_anagrams(words):
     godel = {}
     # The first 26 prime numbers, one for each letter from a to z.
-    primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47,
-              53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101]
+    primes = [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31,
+        37,
+        41,
+        43,
+        47,
+        53,
+        59,
+        61,
+        67,
+        71,
+        73,
+        79,
+        83,
+        89,
+        97,
+        101,
+    ]
     for word in words:
         m = 1
         for c in word:
             # ord(c) gives the Unicode integer codepoint of c.
-            m *= primes[ord(c) - ord('a')]
+            m *= primes[ord(c) - ord("a")]
         # All anagrams have the same godel number, due to commutativity
         # of integer multiplication and the Fundamental Theorem of
         # Arithmetic that says every integer has one prime factorization.
@@ -224,7 +259,7 @@ def all_anagrams(words):
 
 
 if __name__ == "__main__":
-    with open('words.txt', encoding="utf-8") as f:
+    with open("words.txt", encoding="utf-8") as f:
         words = [x.strip() for x in f if x.islower()]
     words = limited_alphabet(words, "abcdefghijklmnopqrstuvwxyz")
     print(f"Read in {len(words)} words.")
@@ -278,30 +313,30 @@ if __name__ == "__main__":
         print(f"Some of them are:")
         print(f"{', '.join(sample(rotos, min(10, len(rotos))))}.")
 
-    name = 'Donald Erwin Knuth'
+    name = "Donald Erwin Knuth"
     print(f"\nSome consonant rotations of {name!r}.")
     for off in range(-5, 6):
         print(f"{off:2}: {rotate_consonants(name, off)}")
 
     print("\nWords that contain triple duplicate character:")
     for word in triple_duplicate(words):
-        print(word, end=' ')
+        print(word, end=" ")
 
     print("\n\nWords that contain consecutive triple duplicate:")
     for word in consec_triple_duplicate(words):
-        print(word, end=' ')
+        print(word, end=" ")
 
     print("\n\nWords that contain only hexadecimal digits [a-f]:")
     for word in limited_alphabet(words, "abcdef"):
-        print(word, end=' ')
+        print(word, end=" ")
 
     print("\n\nWords that contain only vowels:")
     for word in limited_alphabet(words, "aeiouy"):
-        print(word, end=' ')
+        print(word, end=" ")
 
     print("\n\nWords spelled with upside down calculator:")
     for word in limited_alphabet(words, "oieslbg"):
-        print(word.upper(), end=' ')
+        print(word.upper(), end=" ")
 
     text = "ceterumautemcenseocarthaginemessedelendam"
     print(f"\n\nThe text is '{text}'.")
@@ -310,7 +345,7 @@ if __name__ == "__main__":
         print(f"k = {k:2}: {longest_substring_with_k_chars(text, k)}")
 
     print(f"\nHow about the longest 10-char substring of War and Peace?")
-    with open('warandpeace.txt', encoding="utf-8") as wap:
+    with open("warandpeace.txt", encoding="utf-8") as wap:
         text = " ".join(wap)
     text.replace("\n", " ")
     print(f"It is:{longest_substring_with_k_chars(text, 10)}")

@@ -4,12 +4,12 @@
 # A binary tree node has data, pointer to left
 # child and a pointer to right child
 class Node:
-
     def __init__(self, x):
 
         self.data = x
         self.left = None
         self.right = None
+
 
 # Recursive function to construct binary of size n
 # from Inorder traversal in[] and Postorder traversal
@@ -24,7 +24,7 @@ def buildUtil(inn, post, innStrt, innEnd):
     global mp, index
 
     # Base case
-    if (innStrt > innEnd):
+    if innStrt > innEnd:
         return None
 
     # Pick current node from Postorder traversal
@@ -34,7 +34,7 @@ def buildUtil(inn, post, innStrt, innEnd):
     index -= 1
 
     # If this node has no children then return
-    if (innStrt == innEnd):
+    if innStrt == innEnd:
         return node
 
     # Else find the index of this node inn
@@ -43,12 +43,11 @@ def buildUtil(inn, post, innStrt, innEnd):
 
     # Using index inn Inorder traversal,
     # construct left and right subtress
-    node.right = buildUtil(inn, post,
-                           iIndex + 1, innEnd)
-    node.left = buildUtil(inn, post, innStrt,
-                          iIndex - 1)
+    node.right = buildUtil(inn, post, iIndex + 1, innEnd)
+    node.left = buildUtil(inn, post, innStrt, iIndex - 1)
 
     return node
+
 
 # This function mainly creates an unordered_map,
 # then calls buildTreeUtil()
@@ -67,12 +66,13 @@ def buildTree(inn, post, lenn):
     index = lenn - 1
     return buildUtil(inn, post, 0, lenn - 1)
 
+
 # This function is here just to test
 
 
 def preOrder(node):
 
-    if (node == None):
+    if node == None:
         return
 
     print(node.data, end=" ")
@@ -81,7 +81,7 @@ def preOrder(node):
 
 
 # Driver Code
-if __name__ == '__main__':
+if __name__ == "__main__":
 
     inn = [4, 8, 2, 5, 1, 6, 3, 7]
     post = [8, 4, 5, 2, 6, 7, 3, 1]

@@ -19,9 +19,7 @@ def merge(lists):
         merged_list.append(val)
 
         if element_ind + 1 < len(lists[list_ind]):
-            next_tuple = (lists[list_ind][element_ind + 1],
-                          list_ind,
-                          element_ind + 1)
+            next_tuple = (lists[list_ind][element_ind + 1], list_ind, element_ind + 1)
             heapq.heappush(heap, next_tuple)
     return merged_list
 

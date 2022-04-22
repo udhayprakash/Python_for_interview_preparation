@@ -5,7 +5,7 @@ Google
 Implement an LFU (Least Frequently Used) cache.
 It should be able to be initialized with a cache size n, and contain the following methods:
 
-set(key, value): sets key to value. 
+set(key, value): sets key to value.
 If there are already n items in the cache and we are adding a new item, then it should also remove the least frequently used item.
 If there is a tie, then the least recently used key should be removed.
 
@@ -15,7 +15,6 @@ Each operation should run in O(1) time.
 
 
 class LFUCache:
-
     def __init__(self, capacity: int):
         self.cache = dict()
         self.countDict = dict()
@@ -68,8 +67,9 @@ class LFUCache:
             self.countDict[key] = 1
 
     def __str__(self):
-        return "Capacity: {}\nCache: {}\nCount Dict: {}\nGrouping Dict: {}\n".format(self.capacity, self.cache,
-                                                                                     self.countDict, self.grouping)
+        return "Capacity: {}\nCache: {}\nCount Dict: {}\nGrouping Dict: {}\n".format(
+            self.capacity, self.cache, self.countDict, self.grouping
+        )
 
 
 def main():

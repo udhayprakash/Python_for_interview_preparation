@@ -38,7 +38,7 @@ def get_first_missing_pstv_num(given_list):
     return given_list[-1] + 1
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     assert get_first_missing_pstv_num([3, 4, -1, 1]) == 2
     assert get_first_missing_pstv_num([1, 2, 0]) == 3
     assert get_first_missing_pstv_num([2, 3, 7, 6, 8, -1, -10, 15]) == 1

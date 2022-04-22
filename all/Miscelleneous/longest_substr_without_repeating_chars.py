@@ -2,7 +2,7 @@
 """
 Problem: Longest substr Without Repeating Characters
 
-For example: 
+For example:
 "abccba" -> 3 since "abc" or "cba" are substrs without repeating characters
 "abcd" -> 4 since no characters repeat
 "abcdefgha" -> 8 since only the last character repeats
@@ -12,13 +12,13 @@ For example:
 
 def longsubstr(somestring: str) -> int:
     largestSubStrLen = 0
-    substr = ''
+    substr = ""
     for each_chr in somestring:  # O(n^2)
         if each_chr in substr:
             substr_len = len(substr)
             if largestSubStrLen < substr_len:
                 largestSubStrLen = substr_len
-            substr = ''
+            substr = ""
         substr += each_chr
     if substr:
         substr_len = len(substr)

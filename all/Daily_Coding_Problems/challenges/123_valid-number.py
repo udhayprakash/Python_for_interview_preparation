@@ -2,7 +2,8 @@
 #123
 LinkedIn
 
-Given a string, return whether it represents a number. Here are the different kinds of numbers:
+Given a string, return whether it represents a number.
+Here are the different kinds of numbers:
     "10", a positive integer
     "-10", a negative integer
     "10.1", a positive real number
@@ -22,8 +23,8 @@ import re
 
 def isValidNumber(numStr):
     numStr = numStr.strip()
-    regex = re.compile("^[-+]?\d+(\.\d+)?([eE][+-]?\d+(\.\d+)?)?$")
-    return regex.match(numStr) != None
+    regex = re.compile(r"^[-+]?\d+(\.\d+)?([eE][+-]?\d+(\.\d+)?)?$")
+    return regex.match(numStr) is not None
 
 
 def main():

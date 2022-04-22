@@ -31,13 +31,16 @@ def hasCycle(adjacencyMatrix):
 
 def isMinimallyConnected(adjacencyMatrix):
     """
-        Checking for isolated vertices, parallel edges and self loops
-        Max(row) == 0           =>  Isolated Vertex
-        Max(row) > 1            =>  Parallel Edge
-        Max([row[i][i]]) != 0   =>  Self Loop 
+    Checking for isolated vertices, parallel edges and self loops
+    Max(row) == 0           =>  Isolated Vertex
+    Max(row) > 1            =>  Parallel Edge
+    Max([row[i][i]]) != 0   =>  Self Loop
     """
-    if min([max(row) for row in adjacencyMatrix]) != 1 or max([max(row) for row in adjacencyMatrix]) != 1 or max(
-            [adjacencyMatrix[i][i] for i in range(len(adjacencyMatrix))]) != 0:
+    if (
+        min([max(row) for row in adjacencyMatrix]) != 1
+        or max([max(row) for row in adjacencyMatrix]) != 1
+        or max([adjacencyMatrix[i][i] for i in range(len(adjacencyMatrix))]) != 0
+    ):
         return False
 
     # Checking for cycles
@@ -106,7 +109,7 @@ def main():
         1       2 — —
                 |    |
                 |    |
-                 — — —                
+                 — — —
     """
     adjacencyMatrix = [
         # 0  1  2
@@ -121,7 +124,7 @@ def main():
             0
            /
           /
-        1          3 
+        1          3
          \
           \
            2

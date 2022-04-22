@@ -1,13 +1,13 @@
 		=====================================================
 								Python
 		=====================================================
-		
+
 1.	How are python arguments passed, by reference or by value?
-Ans) 
-	Immutable objects(int,float,str,tuple) -> call by value by default 
+Ans)
+	Immutable objects(int,float,str,tuple) -> call by value by default
 					with global declaration, call by reference
 	Mutable objects(list, set, dict) -> call by reference
-	
+
 		def add_one(num):
 			num += 1
 
@@ -15,12 +15,12 @@ Ans)
 		add_one(num)
 		print(num)  # 10 -- CALL BY VALUE
 
-		global num1 
+		global num1
 		def add_one():
-			global num1 
-			num1 += 1 
+			global num1
+			num1 += 1
 
-		num1 = 10 
+		num1 = 10
 		add_one()
 		print(num1) # 11  -- CALL BY REFERENCE
 
@@ -31,10 +31,10 @@ Ans)
 		mydict = {'fruit': 'mango'}
 		change_value(mydict)
 		print(mydict)  # {'fruit': 'apple'} -- CALL BY REFERENCE
-		
+
 
 2.	Provide an example of list comprehension & an example of dictionary comprehension.
-Ans) 
+Ans)
 	[i for i in range(6)]     # List Comprehension
 	{i for i in range(6)}     # Set Comprehension
 	{i:i*i for i in range(6)} # Dict Comprehension
@@ -47,21 +47,21 @@ Ans)
 		print(i, end=' ')
 
 	#OUTPUT - 0, 1, 2, 3, 4, 5
- 
-4.	What is __main__? 
-Ans) Every script has a metadata variable called __name__. 
-	when a script is called directly, its value is __main__. 
+
+4.	What is __main__?
+Ans) Every script has a metadata variable called __name__.
+	when a script is called directly, its value is __main__.
 	But, when imported as module, its value is same as the script name.
 
 5.	Provide an example of using map()
-Ans) 
+Ans)
 		def double(x):
-			return x * 2 
+			return x * 2
 
 		list(map(double, range(6)))   # [0, 2, 4, 6, 8, 10]
 
 6.	Write a decorator that can be used to print the input & output of a decorated function.
-Ans) 
+Ans)
 	from functools import wraps
 	def printer(func):
 		@wraps(func)
@@ -73,8 +73,8 @@ Ans)
 		return inner
 
 7.	What's a context manager? Write a class that can be used as a context manager.
-Ans) Instance created within the "with" block is held to close it, once it is out of 
-	the indentation block. 
+Ans) Instance created within the "with" block is held to close it, once it is out of
+	the indentation block.
 	Popularly used with file handler, socker handler, db connection handler, ...
 
 	class MyOpen(object):
@@ -99,24 +99,24 @@ Ans) Instance created within the "with" block is held to close it, once it is ou
 
 
 8.	Provide 3 different examples of python string formatting syntax.
-Ans) 
+Ans)
 	Method 1:
 		'name=%s age=%d salary=%f'%('John', 23, 213.2)
-		
+
 	Method 2:
 		'name={0} age={1} salary={2}'.format('John', 23, 213.2)
-	
+
 	Method 3:
 		name = 'John'
 		age = 23
 		salary = 213.2
 		f'name={name} age={age} salary={salary}'
-	
+
 9.	How do you determine whether a for loop exhausted the input list?
-Ans) 
-	case 1: 
+Ans)
+	case 1:
 		for i in range(6):
-			pass 
+			pass
 		else:
 			print('ALL LOOPS executed')   # this condition will execute
 
@@ -128,51 +128,51 @@ Ans)
 			print('ALL LOOPS executed')   # NOT EXECUTED, as one loop missed in middle
 
 10.	What does *args and **kwargs mean?
-Ans) 
-	Both are used for making variadic functions 
+Ans)
+	Both are used for making variadic functions
 	def variable_arguments(*args):
 		print(args)
-		
+
 	variable_arguments() # ()
 	variable_arguments(1, 2) # (1, 2)
 	variable_arguments(1, 2.3, True, None) # (1, 2.3, True, None)
-	
+
 	def variable_keyword_arguments(**kwargs):
 		print(kwargs)
-		
+
 	variable_keyword_arguments() # {}
 	variable_keyword_arguments(name='John') # {'name'='John'}
 	variable_keyword_arguments(a=1,b=2,c=4) # {'a':1,'b':2,'c':4}
 
 11.	How do you call a parent class method?
-Ans) 
+Ans)
 	class Parent(object):
 		def p_method(self):
 			print('p-method')
 	class Child(Parent): # Inheritance
-		pass 
-		
+		pass
+
 	c = Child() # creating child class instance
 	c.p_method() # calling parent class method
 
 12.	How does python import work?
-Ans) 
-	when we try to import a module, it will check for it in the sys.path list. 
-	we can tweek it to add/prioritize any specific folder path where custom 
-	module is present. 
-	
+Ans)
+	when we try to import a module, it will check for it in the sys.path list.
+	we can tweek it to add/prioritize any specific folder path where custom
+	module is present.
+
 	It looks for the python script with the imported name, and imports
-	It will create a .pyc(byte code) file for the first time and subsequently 
-	uses the .pyc file, until there is no change in the corresponding .py file. 
-	
-	when importing a script as module, it will execute all code except for the 
+	It will create a .pyc(byte code) file for the first time and subsequently
+	uses the .pyc file, until there is no change in the corresponding .py file.
+
+	when importing a script as module, it will execute all code except for the
 	code mentioned under the below condition:
 		__name__ == '__main__'
 	when importing as module , __name__ is equal to script name.
 
 
 13.	Provide two ways of reversing a python list without writing a for loop.
-Ans) 
+Ans)
 	mylist = [1,2,3,4,5,6,]
 	mylist[::-1]  # OUTPUT: [6, 5, 4, 3, 2, 1]
 	list(reversed(mylist)) # OUTPUT: [6, 5, 4, 3, 2, 1]
@@ -188,9 +188,9 @@ Ans)   []
 		some_code()
 	except:
 	  handle_error()
-Ans) 
+Ans)
 	1. Inconsistency of indentation
-	2. exceptions need to be handled explicitly with the corresponding exception names, 
+	2. exceptions need to be handled explicitly with the corresponding exception names,
 	   and then, with Exception to print/log the error message
 
 		try:
@@ -201,7 +201,7 @@ Ans)
 			print(ex)
 			handle_error()
 
-	   
+
 16.	Optimize the following code for speed.
 		import collections
 
@@ -216,7 +216,7 @@ Ans)
 
 		l = [1, [2, 3], [[4, [5,6],7], 8]]
 		print(flatten(l))
-Ans) 
+Ans)
 
 		def flatten(data, result=None):
 			if not result:
@@ -242,26 +242,26 @@ Ans)
 		def f(x,l=[]):
 			for i in range(x):
 				l.append(i*i)
-			print(l) 
+			print(l)
 
 		f(2)
 		f(3,[3,2,1])
 		f(3)
-Ans) 
+Ans)
 
 		f(2)               # [0, 1]
 		f(3,[3,2,1])       # [3, 2, 1, 0, 1, 4]
 		f(3)               # [0, 1, 0, 1, 4]   ===> leakge
 
 	default arguments should not be mutable objects. It is anti-pattern
-	
+
 	Better Design
 		def f(x,l=None):
 			if not l:
 				l = []
 			for i in range(x):
 				l.append(i*i)
-			print(l) 
+			print(l)
 
 		f(2)               # [0, 1]
 		f(3,[3,2,1])       # [3, 2, 1, 0, 1, 4]
@@ -269,7 +269,7 @@ Ans)
 
 18.	Given a string of numbers, space separated, which can have repetition,
    print the numbers that are repeated
-Ans) 
+Ans)
 	from collections import Counter
 
 	def get_repeating_nums(nums_str):
@@ -285,9 +285,9 @@ Ans)
 	get_repeating_nums('1 2 4 2 5 7 40 4 5')  # ['2', '4', '5']
 
 
-19.	Write a function that returns the number of occurrences of each item in the 
+19.	Write a function that returns the number of occurrences of each item in the
     above string of numbers.
-Ans) 
+Ans)
 	from collections import Counter
 
 	def get_nums_frequency(nums_str):
@@ -295,13 +295,13 @@ Ans)
 
 		counts = Counter(numbers)
 		return counts
-		
+
 	get_nums_frequency('1 2 4 2 5 7 40 4 5')  # {'2': 2, '4': 2, '5': 2, '1': 1, '7': 1, '40': 1}
 
 
-20.	Write class(es) that represent the following shapes: square, rectangle, circle. 
+20.	Write class(es) that represent the following shapes: square, rectangle, circle.
     Each shape should have a perimeter and an area.
-Ans) 
+Ans)
 
 	from abc import ABC, abstractmethod
 	import math
@@ -362,7 +362,7 @@ Ans)
 
 		s = Square(10)
 		print(f'{s.area()      =}') # 100
-		print(f'{s.perimeter() =}') # 20 
+		print(f'{s.perimeter() =}') # 20
 
 		r = Rectangle(10, 20)
 		print(f'{r.area()      =}') # 200

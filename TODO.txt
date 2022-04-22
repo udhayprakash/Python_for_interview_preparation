@@ -26,12 +26,12 @@ Function to print element and Next Greatest Element (NGE) pair for all elements 
     3 -- -1
 
 
-Assignment: write a program to scrap the temparatures of day, and 
+Assignment: write a program to scrap the temparatures of day, and
 plot the graph with date as x axis and temperature and you axis.
 Ensure to convert the temparatures from °F to °C
     data source: twiiter handle - https://twitter.com/upstairsutopia
 
-Assignment: https://www3.nd.edu/~dwang5/courses/spring15/assignments/A1/Assignment1_SocialSensing.html  
+Assignment: https://www3.nd.edu/~dwang5/courses/spring15/assignments/A1/Assignment1_SocialSensing.html
 complete this assignment, based on today's class
 
 

@@ -4,15 +4,27 @@ class Card:
     # to start its name. They can still access it, but at least they
     # know that they are doing something that they are not supposed
     # to be doing.
-    __values = {'ace': 1, 'deuce': 2, 'trey': 3, 'four': 4, 'five': 5,
-                'six': 6, 'seven': 7, 'eight': 8, 'nine': 9, 'ten': 10,
-                'jack': 11, 'queen': 12, 'king': 13}
+    __values = {
+        "ace": 1,
+        "deuce": 2,
+        "trey": 3,
+        "four": 4,
+        "five": 5,
+        "six": 6,
+        "seven": 7,
+        "eight": 8,
+        "nine": 9,
+        "ten": 10,
+        "jack": 11,
+        "queen": 12,
+        "king": 13,
+    }
 
     # Normally you would only put function and name declarations
     # inside a class body, but this one just goes to show that any
     # statements inside he class body are executed the same way as
     # any other statements.
-    print('Here we are, declaring a class...')
+    print("Here we are, declaring a class...")
 
     # Function definitions are stored inside the class object that
     # is being defined, instead of the global namespace as usual.
@@ -55,10 +67,10 @@ class Card:
 # game where each player is given a hand that is a list of cards. Let's
 # quickly demonstrate that our cards and their methods work correctly.
 
-c1 = Card('eight', 'hearts')
-c2 = Card('ace', 'clubs')
-c3 = Card('queen', 'hearts')
-c4 = Card('deuce', 'diamonds')
+c1 = Card("eight", "hearts")
+c2 = Card("ace", "clubs")
+c3 = Card("queen", "hearts")
+c4 = Card("deuce", "diamonds")
 print(f"Our cards are {c1}, {c2}, {c3} and {c4}.")
 
 # Let's ask these objects exactly who they think they are.
@@ -76,7 +88,7 @@ print(", ".join(dir(c1)))
 print(f"Here is the directory of names its class:")
 print(", ".join(dir(Card)))
 
-# Cards have the ability to check if they outrank other cards. 
+# Cards have the ability to check if they outrank other cards.
 
 print("\nNext, some ranking comparisons between these cards.")
 print(f"Does {c1} outrank {c2} in notrump? {c1.outranks(c2)}")
@@ -87,6 +99,7 @@ print(f"Does {c3} outrank {c1} in notrump? {c3.outranks(c1)}")
 
 # Watch how much easier thinking about computations becomes once the
 # concepts are of sufficiently high level. One from your graded labs:
+
 
 def winning_card(cards, trump=None, winner_so_far=None):
     for card in cards:

@@ -1,4 +1,4 @@
-#!/usr/bin/python 
+#!/usr/bin/python
 """
 Purpose: Program to validate whether an entered word is anagram
 """
@@ -10,11 +10,12 @@ def anagram_validation_pythonic(test_word):
 
 
 start_time = datetime.now()
-print(anagram_validation_pythonic('otto'))
+print(anagram_validation_pythonic("otto"))
 print(datetime.now() - start_time)
 
 
-#  Implementing without string slicing 
+#  Implementing without string slicing
+
 
 def anagram_validation_without_slicing(test_word):
     str_len = len(test_word)
@@ -25,5 +26,5 @@ def anagram_validation_without_slicing(test_word):
 
 
 start_time = datetime.now()
-print(anagram_validation_without_slicing('otto'))
+print(anagram_validation_without_slicing("otto"))
 print(datetime.now() - start_time)

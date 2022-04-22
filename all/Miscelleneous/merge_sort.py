@@ -1,6 +1,6 @@
 #!/usr/bin/python
 """
-Purpose: Merge Sort 
+Purpose: Merge Sort
 
 MergeSort(List):
     if List consists of a single element:
@@ -18,8 +18,8 @@ MergeSort(List):
 def merge_sort(given_list):
     if len(given_list) == 1:
         return given_list
-    first_half = given_list[:len(given_list) // 2]
-    second_half = given_list[len(given_list) // 2:]
+    first_half = given_list[: len(given_list) // 2]
+    second_half = given_list[len(given_list) // 2 :]
 
     sorted_first_half = merge_sort(first_half)
     sorted_second_half = merge_sort(second_half)

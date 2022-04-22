@@ -1,6 +1,5 @@
 from abc import ABC, abstractmethod
 
-
 # Making your class extend ABC forbids creation of objects of this type.
 # This type serves as abstract superclass that guarantees that all its
 # subclasses that will ever exist will have certain methods in them.
@@ -9,6 +8,7 @@ from abc import ABC, abstractmethod
 # than the Animal class hierarchy, both quite a bit cliched. But all
 # cliches became that way by being so good that everybody and their
 # brother kept using them!
+
 
 class Shape(ABC):
     # A class attribute, so the same value is shared by everyone.
@@ -45,7 +45,6 @@ class Shape(ABC):
 
 
 class Rectangle(Shape):
-
     def __init__(self, width, height):
         super().__init__()
         self.__width = width
@@ -53,9 +52,9 @@ class Rectangle(Shape):
 
     def name(self):
         if self.is_square():
-            return 'Square'
+            return "Square"
         else:
-            return 'Rectangle'
+            return "Rectangle"
 
     def area(self):
         return self.__width * self.__height
@@ -79,7 +78,7 @@ class Circle(Shape):
         self.__radius = radius
 
     def name(self):
-        return 'Circle'
+        return "Circle"
 
     def area(self):
         return pi * self.__radius * self.__radius
@@ -89,8 +88,9 @@ class Circle(Shape):
 
 
 # Just like function decorators, objects can be decorated. The class
-# for this purpose has the same methods, but those methods first ask 
+# for this purpose has the same methods, but those methods first ask
 # the underlying object for the answer that they then modify some way.
+
 
 class Scaled(Shape):
     def __init__(self, other, scale):
@@ -119,7 +119,7 @@ if __name__ == "__main__":
     except Exception as e:
         print(f"Caught: {e}")
 
-    # Let's create some objects to demonstrate how classes work.    
+    # Let's create some objects to demonstrate how classes work.
     r1 = Rectangle(2, 3)
     print(f"Created: {r1}.")
     r2 = Rectangle(5, 5)

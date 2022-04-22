@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
 Problem:
-Given an array of integers nums sorted in ascending order, find the starting 
+Given an array of integers nums sorted in ascending order, find the starting
 and ending positions of a given target values.
 
 If target is not found in the array, return [-1, -1]

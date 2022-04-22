@@ -21,12 +21,12 @@ def check_2_sum(given_list, k):
     for _index1, ele1 in enumerate(given_list):
         for ele2 in given_list[_index1:]:
             if ele1 + ele2 == k:
-                print(f'{ele1} + {ele2} == {k}')
+                print(f"{ele1} + {ele2} == {k}")
                 return True
     return False
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     assert check_2_sum([10, 15, 3, 7], k=17) is True
     assert check_2_sum([-1, -3, 4, 5], k=4) is True
     assert check_2_sum([2.5, 4.6, 2.1, 7], k=4.6) is True

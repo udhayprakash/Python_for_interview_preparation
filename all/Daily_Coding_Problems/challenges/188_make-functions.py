@@ -28,6 +28,7 @@ def make_functions():
     flist = []
 
     for i in [1, 2, 3]:
+
         def print_i():
             print(i)
 
@@ -40,6 +41,7 @@ def make_functions_modified():
     flist = []
 
     for i in [1, 2, 3]:
+
         def print_i(i=i):
             print(i)
 

@@ -36,5 +36,5 @@ class Solution:
         return [a, b]
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     assert Solution().singleNumber([1, 2, 1, 3, 2, 5]) == [3, 5]

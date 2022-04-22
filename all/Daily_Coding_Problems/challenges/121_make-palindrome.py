@@ -21,7 +21,9 @@ def palindromableHelper(word, k, x, y):
 
     while x < y:
         if word[x] != word[y]:
-            return palindromableHelper(word, k - 1, x + 1, y) or palindromableHelper(word, k - 1, x, y - 1)
+            return palindromableHelper(word, k - 1, x + 1, y) or palindromableHelper(
+                word, k - 1, x, y - 1
+            )
         x += 1
         y -= 1
 

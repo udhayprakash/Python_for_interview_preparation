@@ -1,6 +1,6 @@
 #!/usr/bin/python
 """
-Purpose: Given an integer N, returns the smallest 
+Purpose: Given an integer N, returns the smallest
 integer that is greater than N and the sum of whose
 digits is equal to the sum of the digits of N.
 """
@@ -22,7 +22,7 @@ def solution(N):
             return N
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     assert solution(28) == 37
     assert solution(734) == 743
     assert solution(1990) == 2089

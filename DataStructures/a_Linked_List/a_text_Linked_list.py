@@ -19,5 +19,5 @@ class MyTest(unittest.TestCase):
         del self.sl_list
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

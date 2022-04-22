@@ -3,8 +3,7 @@
 Purpose: https://www.hackerrank.com/challenges/python-lists/problem?isFullScreen=true
 """
 
-test_input = \
-    '''
+test_input = """
     29
     append 1
     append 6
@@ -34,26 +33,26 @@ test_input = \
     append 2
     append 5
     remove 2
-    print'''
+    print"""
 
 
 def execute_list_commands(test_input):
     my_list = []
-    for ech_line in test_input.split('\n')[1:]:
+    for ech_line in test_input.split("\n")[1:]:
         command = ech_line.split()
-        if command[0] == 'print':
+        if command[0] == "print":
             print(my_list)
-        elif command[0] == 'sort':
+        elif command[0] == "sort":
             my_list.sort()
-        elif command[0] == 'reverse':
+        elif command[0] == "reverse":
             my_list.reverse()  # sort(reverse=True)
-        elif command[0] == 'pop':
+        elif command[0] == "pop":
             my_list.pop()
-        elif command[0] == 'remove':
+        elif command[0] == "remove":
             my_list.remove(int(command[1]))
-        elif command[0] == 'append':
+        elif command[0] == "append":
             my_list.append(int(command[1]))
-        elif command[0] == 'insert':
+        elif command[0] == "insert":
             my_list.insert(int(command[1]), int(command[2]))
 
 

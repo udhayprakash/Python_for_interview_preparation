@@ -1,12 +1,12 @@
 #!/usr/bin/python
 """
-Purpose: Linear Search Implemenation 
+Purpose: Linear Search Implemenation
 """
 import time
 
-
 # linear search - O(n)
-# pythonic way 
+# pythonic way
+
 
 def linear_search_pythonic(given_list, search_ele):
     # return given_list.count(search_ele) != 0

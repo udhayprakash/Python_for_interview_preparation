@@ -44,7 +44,7 @@ def main():
             assert duplicateValue == duplicateValueUsingCount
             print(listWithDuplicate, duplicateValue)
             testCasesPassed += 1
-        except:
+        except Exception:
             print("Error:", listWithDuplicate, duplicateValue, duplicateValueUsingCount)
             testCasesFailed += 1
 

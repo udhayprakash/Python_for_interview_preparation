@@ -31,6 +31,6 @@ class Solution:
             found.append(num)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     assert Solution().findDuplicate([1, 3, 4, 2, 2]) == 2
     assert Solution().findDuplicate([3, 1, 3, 4, 2]) == 3

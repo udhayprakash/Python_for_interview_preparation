@@ -59,9 +59,10 @@ Python Questions
 	- ex: {1:2, 3:4, 5:6}
 
 - conclusions
-	- List is suitable when order of storage is needed and/or if there were more writes.
+	- List is suitable when the order of storage is needed and/or if there were more writes.
 	- Dict suitable when there were more reads
-	- Set is suitable when unique values are needed and/or set operations like union, intersection, etc are needed.
+	- Set is suitable when unique values are needed and/or set operations like union,
+	  intersection, etc are needed.
 	- Tuple is suitable when there need to be immutability
 
 hashable
@@ -310,6 +311,7 @@ hashable
 - Multiprocessing vs Multithreading
 	- Multithreading for IO-bound tasks. Multiprocessing for CPU-bound tasks.
 	- computationally-intensive tasks such as compression or hashing.
+
 - stack & heap
 	- each thread will have its own stack, but all the threads in a process will share the heap.
 
@@ -373,7 +375,6 @@ unittesting
 	- This way, we can assure that code is more reliable, handling all edge cases.
 	- Also, any further logic changes, will be integrable easily, as all test cases need to pass,
 	  before pushing the code
-
 
 	In Unittesting, for each test suite, there will be
 		a pair of class methods, called setup and tearDown

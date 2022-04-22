@@ -3,14 +3,14 @@
 Purpose:
 Please write pyest that covers all scenarios and we will review code in the interview.
 Given an array of integers A and let n to be its length.
-Assume Bk to be an array obtained by rotating the array A k positions clock-wise, 
+Assume Bk to be an array obtained by rotating the array A k positions clock-wise,
 we define a "rotation function" F on A as follow:
 F(k) = 0 * Bk[0] + 1 * Bk[1] + ... + (n-1) * Bk[n-1].
 Calculate the maximum and minimum value of F(0), F(1), ..., F(n-1).
 Note:
 n is guaranteed to be less than 105.
 Make sure list of elements are non-negative
-Sample input and output is : Basically, you are shifting number from right to left for 
+Sample input and output is : Basically, you are shifting number from right to left for
 each f(x).
 4, 3, 2, 6
 F(0) = (0 * 4) + (1 * 3) + (2 * 2) + (3 * 6) = 0 + 3 + 4 + 18 = 25
@@ -49,8 +49,7 @@ class Solution(object):
         max_val = min_val = 0
         for _index, _ in enumerate(A):
             shift_array = A[_index:] + A[:_index]
-            array_sum = sum(
-                [indx * val for indx, val in enumerate(shift_array)])
+            array_sum = sum([indx * val for indx, val in enumerate(shift_array)])
             if _index:
                 if array_sum < min_val:
                     min_val = array_sum
@@ -62,7 +61,7 @@ class Solution(object):
         return max_val, min_val
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     print(Solution().max_n_min_rotation([]))
     assert Solution().max_n_min_rotation([]) == (0, 0)
     assert Solution().max_n_min_rotation([4, 3, 2, 6]) == (26, 16)

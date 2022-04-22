@@ -130,6 +130,6 @@ copy directory of files
 	The -a option is an improved recursive option, that preserve all file attributes, and also preserve symlinks.
 
 
-disk space check 
+disk space check
 	du -h
 	df -H

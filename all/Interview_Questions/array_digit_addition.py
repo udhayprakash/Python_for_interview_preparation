@@ -8,7 +8,7 @@ def myfunc(arr, num):
         return arr
     i, arrLen, value = 0, len(arr), 0
     while i < arrLen:
-        value += arr[arrLen - i - 1] * (10 ** i)
+        value += arr[arrLen - i - 1] * (10**i)
         i += 1
 
     value += num
@@ -20,12 +20,12 @@ def myfunc(arr, num):
 
 
 def roll_odometer(arr):
-    """ with reset on buffer overflow"""
+    """with reset on buffer overflow"""
     if not arr:
         return arr
     i, arrLen, value = 0, len(arr), 0
     while i < arrLen:
-        value += arr[arrLen - i - 1] * (10 ** i)
+        value += arr[arrLen - i - 1] * (10**i)
         i += 1
 
     value += 1  # adding 1 to
@@ -37,7 +37,7 @@ def roll_odometer(arr):
     return result
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     assert myfunc([1, 2, 3], 1) == [1, 2, 4]
     assert myfunc([1, 2], 1) == [1, 3]
     assert myfunc([1], 1) == [2]

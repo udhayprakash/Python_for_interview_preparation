@@ -2,6 +2,7 @@
 # as its arguments each time, and return the average of the
 # answers returned by trialf.
 
+
 def trial_average(trialf, n, trialargs=[]):
     total = 0
     for i in range(n):
@@ -11,9 +12,9 @@ def trial_average(trialf, n, trialargs=[]):
 
 import random
 
-
 # If there are n different coupons, one random coupons inside each
 # cereal box, how many boxes do you need to buy to collect all n?
+
 
 def coupon_collector_trial(n):
     result = [0 for i in range(n)]
@@ -31,6 +32,7 @@ def coupon_collector_trial(n):
 # Does the randomly generated point from the unit square fall
 # inside the unit circle? Used to estimate the value of pi / 4.
 
+
 def estimate_pi_trial():
     x = random.random()
     y = random.random()
@@ -42,6 +44,7 @@ def estimate_pi_trial():
 
 # Roll two dice until you get either boxcars (6-6) or snake-eyes (1-1).
 # How many rolls do you need to make on average?
+
 
 def snake_eyes_or_boxcars_trial():
     count = 0
@@ -61,12 +64,13 @@ def snake_eyes_or_boxcars_trial():
 # to the town that he has previously visited, and gets tarred and
 # feathered by the angry citizens who remember him?
 
+
 def snake_oil_salesman_trial(step):
     visited = set()
     visited.add(0)
     count = 1
     curr = 0
-    while (True):
+    while True:
         curr += random.randint(1, step) * random.choice([-1, 1])
         if curr in visited:
             return count
@@ -77,6 +81,7 @@ def snake_oil_salesman_trial(step):
 
 # Given two functions f1 and f2 assumed to be probability distributions,
 # which one gives a bigger value now?
+
 
 def distribution_trial(f1, f2):
     x1 = f1()
@@ -89,6 +94,7 @@ def distribution_trial(f1, f2):
 
 # In the famous Monty Hall gameshow, follow the strategy of switching.
 # What is our expected win rate? It should be 2/3, if theory is correct.
+
 
 def monty_hall_switching_trial():
     car = random.randint(1, 3)
@@ -104,7 +110,8 @@ def monty_hall_switching_trial():
 # Starting at time zero, the time to the next random arrival is taken
 # from exponential probability distribution with parameter lamb. How
 # many arrivals appear before time reaches 1? The discrete distribution
-# of integers produced by this process is the useful Poisson distribution. 
+# of integers produced by this process is the useful Poisson distribution.
+
 
 def poisson_trial(lamb):
     total = 0
@@ -129,7 +136,7 @@ if __name__ == "__main__":
         print(f"To collect {n} coupons, need {result:.1f} boxes on average.")
     print("\nEstimate for pi:")
     for n in range(1, 8):
-        result = 4 * trial_average(estimate_pi_trial, 10 ** n)
+        result = 4 * trial_average(estimate_pi_trial, 10**n)
         print(f"{n}: {result:.7f}")
     result = trial_average(snake_eyes_or_boxcars_trial, 100000)
     print(f"\nNumber of rolls until snake eyes or boxcars is {result:.1f}.")
@@ -146,10 +153,17 @@ if __name__ == "__main__":
     # scores n goals per game on average, what percentage of their mutual matches
     # is won by Ni-Knights?
 
-    ducks = [100 * trial_average(distribution_trial, 100000, (
-        partial(poisson_trial, n),
-        partial(poisson_trial, 3)
-    )) for n in range(1, 20)]
+    ducks = [
+        100
+        * trial_average(
+            distribution_trial,
+            100000,
+            (partial(poisson_trial, n), partial(poisson_trial, 3)),
+        )
+        for n in range(1, 20)
+    ]
     print("\nVegas Ni-Knights vs. Anaheim Duckwalks:")
     for n in range(1, 10):
-        print(f"Averaging {n} goals per game, Ni-Knights wins {ducks[n - 1]:.1f} per cent of time.")
+        print(
+            f"Averaging {n} goals per game, Ni-Knights wins {ducks[n - 1]:.1f} per cent of time."
+        )

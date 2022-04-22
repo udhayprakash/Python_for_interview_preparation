@@ -1,22 +1,22 @@
 #!/usr/bin/python3
 """
-Purpose: Binary Search Tree  
+Purpose: Binary Search Tree
 
-Big-O complexity of O(log(n)) for search, insert, update, and delete operations. 
+Big-O complexity of O(log(n)) for search, insert, update, and delete operations.
 Log(n) is much faster than the linear O(n) time required to find elements in an unsorted array.
 
 
 Pros of a BST
 -------------
 - When balanced, a BST provides lightning-fast O(log(n)) insertions, deletions, and lookups.
-- Binary search trees are pretty simple. An ordinary BST, unlike a balanced tree like a 
+- Binary search trees are pretty simple. An ordinary BST, unlike a balanced tree like a
   red-black tree, requires very little code to get running.
 Cons of a BST
 -------------
-- Slow for a brute-force search. 
+- Slow for a brute-force search.
   - If you need to iterate over each node, you might have more success with an array.
 - When the tree becomes unbalanced, all fast O(log(n)) operations quickly degrade to O(n).
-- Since pointers to whole objects are typically involved, a BST can require quite a bit 
+- Since pointers to whole objects are typically involved, a BST can require quite a bit
   more memory than an array, although this depends on the implementation.
 """
 
@@ -155,5 +155,5 @@ def main():
     print(bst.exists(18))
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

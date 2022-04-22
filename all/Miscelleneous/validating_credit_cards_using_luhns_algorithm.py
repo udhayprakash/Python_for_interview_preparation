@@ -25,13 +25,13 @@ import sys
 
 def usage():
     msg = """
-        
+
         usage:
         python3 credit_card_validator credit_card_number
-        
+
         example:
         python3 credit_card_validator 34678253793
-        
+
     """
     print(msg)
 

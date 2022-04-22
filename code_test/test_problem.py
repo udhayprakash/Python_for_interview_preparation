@@ -38,5 +38,5 @@ class TestMinMaxRotation(unittest.TestCase):
         del cls.s
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

@@ -2,8 +2,8 @@
 #307
 Oracle
 
-Given a binary search tree, find the floor and ceiling of a given integer. 
-The floor is the highest element in the tree less than or equal to an integer, 
+Given a binary search tree, find the floor and ceiling of a given integer.
+The floor is the highest element in the tree less than or equal to an integer,
 while the ceiling is the lowest element in the tree greater than or equal to an integer.
 
 If either value does not exist, return None.
@@ -67,7 +67,11 @@ def floorAndCeil(bst, n):
 
 
 def main():
-    BST = Node(8, Node(3, Node(1), Node(6, Node(4), Node(7))), Node(10, None, Node(14, Node(13))))
+    BST = Node(
+        8,
+        Node(3, Node(1), Node(6, Node(4), Node(7))),
+        Node(10, None, Node(14, Node(13))),
+    )
     print(floorAndCeil(BST, 5))  # (4, 6)
     print(floorAndCeil(BST, 6))  # (6, 6)
 

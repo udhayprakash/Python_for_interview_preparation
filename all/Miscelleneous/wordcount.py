@@ -17,7 +17,7 @@ replacements = (
     ("can't", "can not"),
     ("shan't", "shall not"),
     ("shouldn't", "should not"),
-    ("mustn't", "must not")
+    ("mustn't", "must not"),
 )
 
 # Precompile a regex machine to recognize word separators.
@@ -34,7 +34,7 @@ word_separators = re.compile("[^a-z]+")
 
 words = {}
 
-with open('warandpeace.txt', encoding="utf-8") as wap:
+with open("warandpeace.txt", encoding="utf-8") as wap:
     for line in wap:
         if len(line) < 2:  # skip empty lines
             continue
@@ -52,7 +52,7 @@ with open('warandpeace.txt', encoding="utf-8") as wap:
                 words[word] = words.get(word, 0) + 1
 
 print("Here are some individual word counts.")
-for w in ('prince', 'russia', 'you', 'supercalifragilisticexpialidocious'):
+for w in ("prince", "russia", "you", "supercalifragilisticexpialidocious"):
     print(f"The word {w!r} occurs {words.get(w, 0)} times.")
 
 # Turn a dictionary into a list of its items as (key, value) tuples.

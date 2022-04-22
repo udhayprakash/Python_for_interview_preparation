@@ -2,6 +2,7 @@
 
 # Stack Abstract Data Type (ADT) Implementation
 
+
 class Stack:
     def __init__(self):
         self.items = []
@@ -28,7 +29,7 @@ print
 "s.is_empty() ", s.is_empty()
 
 s.push(1234)
-s.push('Python')
+s.push("Python")
 print
 "s = ", s
 print

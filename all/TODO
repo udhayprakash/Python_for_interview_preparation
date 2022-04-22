@@ -1,6 +1,6 @@
-anagram 
-permutation 
-combinations 
+anagram
+permutation
+combinations
 
 
 
@@ -13,8 +13,8 @@ http://www.ardendertat.com/
 Amazon interview Preparation
 -----------------------------
 common algorithms and understand the tradeoffs for each.
-    - traversals, 
-    - divide and conquer, 
-    - breadth-first search vs. depth-first search 
+    - traversals,
+    - divide and conquer,
+    - breadth-first search vs. depth-first search
 
 Knowing the runtimes, theoretical limitations, and basic implementation strategies

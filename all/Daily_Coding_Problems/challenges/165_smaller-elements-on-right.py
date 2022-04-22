@@ -10,7 +10,7 @@ There is 1 smaller element to the right of 3
 There is 1 smaller element to the right of 4
 There are 2 smaller elements to the right of 9
 There is 1 smaller element to the right of 6
-There are no smaller elements to the right of 1 
+There are no smaller elements to the right of 1
 
 """
 import heapq

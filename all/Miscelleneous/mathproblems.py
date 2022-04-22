@@ -1,6 +1,7 @@
 # The oldest algorithm in recorded history, Euclid's algorithm to find
 # the greatest common divisor of two nonnegative integers.
 
+
 def euclid_gcd(a, b, verbose=False):
     while b > 0:
         a, b = b, a % b
@@ -11,6 +12,7 @@ def euclid_gcd(a, b, verbose=False):
 
 # Generate the Collatz series from the given starting value.
 # https://en.wikipedia.org/wiki/Collatz_conjecture
+
 
 def collatz(start):
     curr, result = start, []
@@ -30,6 +32,7 @@ def collatz(start):
 # from the given number, determine which number from start to end - 1
 # produces the longest Collatz series, and return that number.
 
+
 def longest_collatz(start, end):
     best = start
     best_len = len(collatz(start))
@@ -44,6 +47,7 @@ def longest_collatz(start, end):
 # If you add up the sum of digits of a positive integer until only
 # a single digit remains, what is digit do you end up with?
 
+
 def final_digit(n):
     while n > 9:
         n = sum([int(d) for d in str(n)])
@@ -54,7 +58,8 @@ def final_digit(n):
 # to numerically iterate the guess for the square root of the positive
 # real number x. (This algorithm generalizes to arbitrary roots, and in
 # fact turns out to be special case of Newton's numerical iteration
-# with the function whose root we want to solve hardcoded to square root.) 
+# with the function whose root we want to solve hardcoded to square root.)
+
 
 def heron_root(x):
     if x < 0:
@@ -71,16 +76,26 @@ def heron_root(x):
 # for interesting and education excample of loops, lists and dictionaries.
 
 symbols_encode = [
-    (1000, 'M'), (900, 'CM'), (500, 'D'), (400, 'CD'), (100, 'C'),
-    (90, 'XC'), (50, 'L'), (40, 'XL'), (10, 'X'), (9, 'IX'),
-    (5, 'V'), (4, 'IV'), (1, 'I')
+    (1000, "M"),
+    (900, "CM"),
+    (500, "D"),
+    (400, "CD"),
+    (100, "C"),
+    (90, "XC"),
+    (50, "L"),
+    (40, "XL"),
+    (10, "X"),
+    (9, "IX"),
+    (5, "V"),
+    (4, "IV"),
+    (1, "I"),
 ]
 
 
 def roman_encode(n):
     if n < 1:
         raise ValueError("Romans did not have zero or negative numbers")
-    result = ''
+    result = ""
     for (v, s) in symbols_encode:
         while v <= n:  # same symbol can be used several times
             result += s
@@ -90,9 +105,7 @@ def roman_encode(n):
 
 # Dictionaries are handy to map symbols into the values that they encode.
 
-symbols_decode = {
-    'M': 1000, 'D': 500, 'C': 100, 'L': 50, 'X': 10, 'V': 5, 'I': 1
-}
+symbols_decode = {"M": 1000, "D": 500, "C": 100, "L": 50, "X": 10, "V": 5, "I": 1}
 
 
 def roman_decode(s):
@@ -113,6 +126,7 @@ def roman_decode(s):
 # inputs to first, and verifying that both functions really invert the
 # result produced by the other.
 
+
 def test_roman():
     for n in range(1, 5000):
         if n != roman_decode(roman_encode(n)):
@@ -122,6 +136,7 @@ def test_roman():
 
 # Another famous numerical method to find the root of the function f within
 # the given tolerance, looking for solution from real interval [x0, x1].
+
 
 def secant_method(f, x0=0, x1=1, tol=0.000000001, verbose=False):
     fx0 = f(x0)
@@ -156,10 +171,8 @@ if __name__ == "__main__":
     # Strange result. Why does that happen?
     print(", ".join([f"{i}->{c}" for (i, c) in counts]))
 
-
     def testfunc(x):
-        return 4 * x ** 4 - 17 * x ** 3 + 10 * x ** 2 + 8
-
+        return 4 * x**4 - 17 * x**3 + 10 * x**2 + 8
 
     print("Let us test out the secant method.")
     r = secant_method(testfunc, -1, 3, verbose=True)

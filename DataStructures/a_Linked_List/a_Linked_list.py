@@ -10,7 +10,7 @@ class Node:
         self.next = _next
 
     def __str__(self):
-        print(f'data:{self.data} next:{self.next}')
+        print(f"data:{self.data} next:{self.next}")
 
     __repr__ = __str__
 
@@ -26,12 +26,13 @@ class SingleLinkedList:
         self.nodes.append(new_node)
 
     def __str__(self):
-        result = ''
+        result = ""
         for each_node in self.nodes:
-            result += str(each_node) + '\n'
+            result += str(each_node) + "\n"
         return result
 
     __repr__ = __str__
+
 
 # if __name__ == '__main__':
 #     s = SingleLinkedList()
@@ -46,12 +47,12 @@ class SingleLinkedList:
 #             6. remove a node from kth position
 #             7. Get the LinkedList size
 #             8. Display LinkedList
-#             
-#         NOTE: Choosing any other option will terminate the process 
+#
+#         NOTE: Choosing any other option will terminate the process
 #         ''')
-# 
+#
 #     if choice == '1':
 #         val = input('Enter the value:')
 #         s.add_node_right_end(val)
-# 
+#
 #     print(s)

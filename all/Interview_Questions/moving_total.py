@@ -10,7 +10,7 @@ class MovingTotal:
         i = len(self.data) - 2 if self.data else 0
         self.data.extend(numbers)
         while True:
-            slice = self.data[i:i+3]
+            slice = self.data[i : i + 3]
             if len(slice) != 3:
                 break
             self.sums[sum(slice)] = 1

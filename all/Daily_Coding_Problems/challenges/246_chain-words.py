@@ -19,8 +19,9 @@ def checkForCycleHelper(usedWords, remainingWords):
     lastLetter = usedWords[-1][-1]
     for i in range(len(remainingWords)):
         nextWord = remainingWords[i]
-        if nextWord.startswith(lastLetter) and checkForCycleHelper(usedWords + [nextWord],
-                                                                   remainingWords[:i] + remainingWords[i + 1:]):
+        if nextWord.startswith(lastLetter) and checkForCycleHelper(
+            usedWords + [nextWord], remainingWords[:i] + remainingWords[i + 1 :]
+        ):
             return True
 
     return False
@@ -32,12 +33,20 @@ def checkForCycle(words):
 
 def main():
     print(checkForCycle(["geek", "king"]))  # True ['geek', 'king']
-    print(checkForCycle(["for", "geek", "rig", "kaf"]))  # True ['for', 'rig', 'geek', 'kaf']
-    print(checkForCycle(["aab", "bac", "aaa", "cda"]))  # True ['aab', 'bac', 'cda', 'aaa']
-    print(checkForCycle(["aaa", "bbb", "baa", "aab"]))  # True ['aaa', 'aab', 'bbb', 'baa']
+    print(
+        checkForCycle(["for", "geek", "rig", "kaf"])
+    )  # True ['for', 'rig', 'geek', 'kaf']
+    print(
+        checkForCycle(["aab", "bac", "aaa", "cda"])
+    )  # True ['aab', 'bac', 'cda', 'aaa']
+    print(
+        checkForCycle(["aaa", "bbb", "baa", "aab"])
+    )  # True ['aaa', 'aab', 'bbb', 'baa']
     print(checkForCycle(["aaa"]))  # True ['aaa']
     print(checkForCycle(["aaa", "bbb"]))  # False
-    print(checkForCycle(["abc", "efg", "cde", "ghi", "ija"]))  # True ['abc', 'cde', 'efg', 'ghi', 'ija']
+    print(
+        checkForCycle(["abc", "efg", "cde", "ghi", "ija"])
+    )  # True ['abc', 'cde', 'efg', 'ghi', 'ija']
     print(checkForCycle(["ijk", "kji", "abc", "cba"]))  # False
 
 

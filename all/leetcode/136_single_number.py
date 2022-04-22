@@ -33,6 +33,6 @@ class Solution:
         return xor_result
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     assert Solution().singleNumber([2, 2, 1]) == 1
     assert Solution().singleNumber([4, 1, 2, 1, 2]) == 4

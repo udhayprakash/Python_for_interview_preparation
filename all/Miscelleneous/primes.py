@@ -3,7 +3,7 @@
 
 # How far to explicitly store all found primes.
 
-__prime_max = 10 ** 6
+__prime_max = 10**6
 
 # The set of prime numbers that we know so far. This will grow.
 # These are just to "prime" the pump, heh, to get this thing started.
@@ -17,10 +17,10 @@ from math import sqrt
 
 
 def __is_prime(n):
-    # To check whether n is prime, check its divisibility with 
+    # To check whether n is prime, check its divisibility with
     # all known prime numbers up to the square root of n.
     upper = 1 + int(sqrt(n))
-    # First ensure that we have enough primes to do the test.    
+    # First ensure that we have enough primes to do the test.
     __expand_primes(upper)
     for d in __primelist:
         if n % d == 0:

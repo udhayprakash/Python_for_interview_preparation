@@ -1,6 +1,6 @@
 #!/usr/bin/python
 """
-Purpose: 
+Purpose:
 https://www.hackerrank.com/challenges/mark-and-toys/problem?isFullScreen=true
 """
 

@@ -20,8 +20,8 @@ def is_prime(n):
 # >>sys.argv -> [RSA_keygen.py, -pq, 2, 3, -x, 1]
 
 
-if '-pq' in sys.argv:
-    flag_index = sys.argv.index('-pq')
+if "-pq" in sys.argv:
+    flag_index = sys.argv.index("-pq")
     flag_index += 1
     p = int(sys.argv[flag_index])
     flag_index += 1
@@ -31,10 +31,10 @@ else:
     q = 2741
 
 if not is_prime(p) or not is_prime(q):
-    raise ValueError('P or Q were not prime')
+    raise ValueError("P or Q were not prime")
 
-if '-x' in sys.argv:
-    flag_index = sys.argv.index('-x')
+if "-x" in sys.argv:
+    flag_index = sys.argv.index("-x")
     flag_index += 1
     x = int(sys.argv[flag_index])
 else:

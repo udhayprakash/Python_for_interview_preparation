@@ -7,8 +7,8 @@ Purpose: This problem was asked in Apple.
 
 
 def task_1(args, kwargs):
-    print('Hello world !!!', args)
-    print('Hello world !!!', kwargs)
+    print("Hello world !!!", args)
+    print("Hello world !!!", kwargs)
 
 
 def job_scheduler(interval, func, *_args, **_kwargs):
@@ -26,10 +26,11 @@ def job_scheduler(interval, func, *_args, **_kwargs):
     :return:
     """
     import time
+
     time.sleep(interval * 0.001)
     func(_args, _kwargs)
 
 
-if __name__ == '__main__':
-    job_scheduler(20000, task_1, a='apple')
-    job_scheduler(200, task_1, a='apple')
+if __name__ == "__main__":
+    job_scheduler(20000, task_1, a="apple")
+    job_scheduler(200, task_1, a="apple")

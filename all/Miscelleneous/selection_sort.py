@@ -1,6 +1,6 @@
 #!/usr/bin/python
 """
-Purpose: Selection Sort 
+Purpose: Selection Sort
     Sort a list of integers.
         Input : A list of n distinct integers a = (a1,a2,...,an).
         Output: Sorted list of integers, that is, a reordering b = (b1,b2,...,bn)

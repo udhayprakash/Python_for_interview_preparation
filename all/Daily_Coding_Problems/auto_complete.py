@@ -15,9 +15,12 @@ Hint: Try pre-processing the dictionary into a more efficient data structure
 def time_taken(func):
     def __inner(*args, **kwargs):
         import time
+
         start_time = time.perf_counter_ns()
         _result = func(*args, **kwargs)
-        print(f'Execution time :{func.__name__} is {time.perf_counter_ns() - start_time :5} ns')
+        print(
+            f"Execution time :{func.__name__} is {time.perf_counter_ns() - start_time :5} ns"
+        )
         return _result
 
     return __inner
@@ -106,7 +109,16 @@ def auto_complete_3(word_dict, query_string):
     return [each_word for each_word in word_dict if each_word.startswith(query_string)]
 
 
-if __name__ == '__main__':
-    assert auto_complete_1(word_dict=['dog', 'deer', 'deal'], query_string='de') == ['deer', 'deal']  # 34896 ns
-    assert auto_complete_2(word_dict=['dog', 'deer', 'deal'], query_string='de') == ['deer', 'deal']  # 3592 ns
-    assert auto_complete_3(word_dict=['dog', 'deer', 'deal'], query_string='de') == ['deer', 'deal']  # 3593 ns
+if __name__ == "__main__":
+    assert auto_complete_1(word_dict=["dog", "deer", "deal"], query_string="de") == [
+        "deer",
+        "deal",
+    ]  # 34896 ns
+    assert auto_complete_2(word_dict=["dog", "deer", "deal"], query_string="de") == [
+        "deer",
+        "deal",
+    ]  # 3592 ns
+    assert auto_complete_3(word_dict=["dog", "deer", "deal"], query_string="de") == [
+        "deer",
+        "deal",
+    ]  # 3593 ns

@@ -9,7 +9,7 @@ Problem: Given a number, create a maximum & minimum
 def comp_diff(num):
     digits = list(str(num))
     digits.sort()
-    minVal = ''.join(digits)
+    minVal = "".join(digits)
     maxVal = minVal[::-1]
     print(minVal, maxVal)
     return int(maxVal) - int(minVal)
@@ -27,7 +27,7 @@ def comp_diff(num):
     minVal, maxVal = 0, 0
     digitsCount = len(digits)
     for index, digit in enumerate(digits):
-        maxVal += digit * (10 ** index)  # 0, 1, 2
+        maxVal += digit * (10**index)  # 0, 1, 2
         minVal += digit * (10 ** (digitsCount - index - 1))
     print(minVal, maxVal)
     return maxVal - minVal

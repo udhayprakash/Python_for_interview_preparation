@@ -28,7 +28,9 @@ def flattenDictionaryHelper(nestedDict, flattenedDic, currentKey):
         if type(nestedDict[key]) == int:
             flattenedDic[(currentKey + "." + key).strip(".")] = nestedDict[key]
         else:
-            flattenedDic = flattenDictionaryHelper(nestedDict[key], flattenedDic, (currentKey + "." + key).strip('.'))
+            flattenedDic = flattenDictionaryHelper(
+                nestedDict[key], flattenedDic, (currentKey + "." + key).strip(".")
+            )
 
     return flattenedDic
 
@@ -38,15 +40,7 @@ def flattenDictionary(nestedDic):
 
 
 def main():
-    nestedDictionary = {
-        "key": 3,
-        "foo": {
-            "a": 5,
-            "bar": {
-                "baz": 8
-            }
-        }
-    }
+    nestedDictionary = {"key": 3, "foo": {"a": 5, "bar": {"baz": 8}}}
 
     flattenedDictionary = flattenDictionary(nestedDictionary)
     print(flattenedDictionary)

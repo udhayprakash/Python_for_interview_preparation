@@ -2,7 +2,7 @@
 """
 Purpose:
     Given an Array A of N integers, return True
-    if A contains atleast two elements which 
+    if A contains atleast two elements which
     differ by 1 , and False otherwise.
 """
 
@@ -15,7 +15,7 @@ def solution(A):
     return False
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     assert solution([7]) is False
     assert solution([4, 3]) is True
     assert solution([11, 1, 8, 12, 14]) is True

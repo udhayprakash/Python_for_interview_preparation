@@ -11,11 +11,7 @@ For example, given {'CSC300': ['CSC100', 'CSC200'], 'CSC200': ['CSC100'], 'CSC10
 
 """
 
-courseMap = {
-    'CSC300': ['CSC100', 'CSC200'],
-    'CSC200': ['CSC100'],
-    'CSC100': []
-}
+courseMap = {"CSC300": ["CSC100", "CSC200"], "CSC200": ["CSC100"], "CSC100": []}
 
 completedCourses = []
 

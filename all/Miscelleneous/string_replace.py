@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Purpose: String Replace 
+Purpose: String Replace
 
 """
 
@@ -17,8 +17,7 @@ def string_replace(given_str):
             max_len_index = index
     words[max_len_index] = words[max_len_index].upper()
 
-    return ' '.join(words)
-
+    return " ".join(words)
 
 
 inputStr = "Adnan and Omkar are having discussion for a python developer role opportunity in nitor"

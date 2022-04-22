@@ -85,10 +85,13 @@ Questions to Interviewers
   - Were we using any custom frameworks in our project? If so, can you help with the details?
 
   - Are we using agile methodology?  And how about the sprint cycle duration?
+  - Can i know about the work culture of our company? And Any learning opportunities here?
+
   - What were the next steps in the interview process?
     And how many more rounds of interviews can I expect?
 
-  - Will there be an opportunity to reach out to the clients, either for requirement gathering and/or for demoing the end solution?
+  - Will there be an opportunity to reach out to the clients, either for requirement
+    gathering and/or for demoing the end solution?
   - How do you help your team grow professionally?
   - What are the challenges of this position?
   - Have I answered all your questions?

@@ -23,6 +23,6 @@ def flatten2(given_list):
     return final_list
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     assert flatten([1, [2, 3], 4, [5, [6, [7]]]]) == [1, 2, 3, 4, 5, 6, 7]
     assert flatten2([1, [2, 3], 4, [5, [6, [7]]]]) == [1, 2, 3, 4, 5, 6, 7]

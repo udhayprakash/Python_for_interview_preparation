@@ -19,10 +19,10 @@ from datetime import datetime
 class Transport(object):
     def __init__(self) -> None:
         self.live_journeys = {}  # cardId: (startStn, startTime)
-        self.journey_duration = {}   # sourcestn-dest_stn: duration
+        self.journey_duration = {}  # sourcestn-dest_stn: duration
 
     def entrance(self, card_id: int, station: str, timestamp: datetime):
-        self.live_journeys[card_id] = (station, timestamp)   # O(1)
+        self.live_journeys[card_id] = (station, timestamp)  # O(1)
 
     def exit(self, card_id: int, station: str, timestamp: datetime):
         if not card_id in self.live_journeys:  # O(1)
@@ -35,17 +35,19 @@ class Transport(object):
         if strt_end_stns in self.journey_duration:
             existing_duration, exiting_count = self.journey_duration[strt_end_stns]
             self.journey_duration[strt_end_stns] = [
-                existing_duration + curr_duration, exiting_count + 1]
+                existing_duration + curr_duration,
+                exiting_count + 1,
+            ]
         else:
             self.journey_duration[strt_end_stns] = [curr_duration, 1]
 
-    def get_average_journey_time(self, start_station: str, end_station: str):     # O(1)
+    def get_average_journey_time(self, start_station: str, end_station: str):  # O(1)
         if (start_station, end_station) in self.journey_duration:
-            durationsSum, Counts = self.journey_duration[(
-                start_station, end_station)]
+            durationsSum, Counts = self.journey_duration[(start_station, end_station)]
             print(durationsSum / Counts)
         else:
-            print('dont know')
+            print("dont know")
+
 
 # lt = Transport()
 # lt.get_average_journey_time("Oxford Circus", "Liverpool Street")

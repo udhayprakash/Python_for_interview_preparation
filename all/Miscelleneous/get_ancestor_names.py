@@ -16,14 +16,11 @@ class Person:
         return resultArray
 
 
-john = Person("John",
-              Person("Jane",
-                     Person("Jill", None, None),
-                     Person("Jack", None, None)),
-              Person("Jim",
-                     Person("Josephine", None, None),
-                     Person("Joe", None, None))
-              )
+john = Person(
+    "John",
+    Person("Jane", Person("Jill", None, None), Person("Jack", None, None)),
+    Person("Jim", Person("Josephine", None, None), Person("Joe", None, None)),
+)
 ancestors = john.getNamesOfAllAncestors()
-print(','.join(ancestors))
+print(",".join(ancestors))
 # John,Jane,Jill,Jack,Jim,Josephine,Joe

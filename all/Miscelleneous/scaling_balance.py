@@ -46,7 +46,7 @@ def scaling_balance(arr):
     # 1 + 6 = NO MATCH!
     for (counter, item) in enumerate(weights):
         for additionItem in weights[counter:]:
-            if (item + additionItem == init_weight):
+            if item + additionItem == init_weight:
                 if balance_key_init:
                     left = left + (item + additionItem)
                 else:
@@ -60,4 +60,4 @@ def scaling_balance(arr):
     # Solution is to have left - right == 0
 
 
-print(scaling_balance(['[3, 4]', '[1, 2, 7, 7]']))
+print(scaling_balance(["[3, 4]", "[1, 2, 7, 7]"]))

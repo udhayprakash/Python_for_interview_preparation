@@ -1,6 +1,6 @@
 #!/usr/bin/python
 """
-Purpose: 
+Purpose:
     https://leetcode.com/problems/two-sum/
 
 Given nums = [2, 7, 11, 15], target = 9,
@@ -17,9 +17,12 @@ class Solution:
         output: List[int]
         """
         for ech_num in nums:
-            for next_num in nums[nums.index(ech_num) + 1:]:
+            for next_num in nums[nums.index(ech_num) + 1 :]:
                 if ech_num + next_num == target:
-                    return [nums.index(ech_num), nums.index(next_num, nums.index(ech_num) + 1)]
+                    return [
+                        nums.index(ech_num),
+                        nums.index(next_num, nums.index(ech_num) + 1),
+                    ]
 
     def twoSum(self, nums, target):
         """
@@ -45,7 +48,7 @@ assert s.twoSum([3, 3], 6) == [0, 1]
 assert s.twoSum([3, 2, 3], 6) == [0, 2]
 assert s.twoSum([0, 4, 3, 0], 0) == [0, 3]
 assert s.twoSum([-3, 4, 3, 90], 0) == [0, 2]
-'''
+"""
 2, 7, 11, 15
 
 2, 7
@@ -53,7 +56,7 @@ assert s.twoSum([-3, 4, 3, 90], 0) == [0, 2]
 2, 15
 
 7, 11
-7, 15, 
+7, 15,
 
 11, 15
-'''
+"""

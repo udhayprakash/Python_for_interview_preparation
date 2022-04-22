@@ -26,7 +26,7 @@ def findSubArrRecursively(arr, subArr, targetSum, index):
     if ansSubArr or sum(subArr) > targetSum:
         return
 
-    # If there are any more elements left, make two recursive calls. 
+    # If there are any more elements left, make two recursive calls.
     #   -> One call including the next element
     #   -> Once call without the next element
     if index < len(arr):

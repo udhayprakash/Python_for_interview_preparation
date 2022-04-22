@@ -46,14 +46,18 @@ class Node:
         if self.locked:
             return False
 
-        return (not self.left or self.left.checkDescendants()) and (not self.right or self.right.checkDescendants())
+        return (not self.left or self.left.checkDescendants()) and (
+            not self.right or self.right.checkDescendants()
+        )
 
     def lock(self):
         if self.locked:
             return False
 
         if (not self.parent or self.parent.checkAncestors()) or (
-                (not self.left or self.left.checkDescendants()) and (not self.right or self.right.checkDescendants())):
+            (not self.left or self.left.checkDescendants())
+            and (not self.right or self.right.checkDescendants())
+        ):
             self.locked = True
             print("Locked " + str(self))
             return True
@@ -66,7 +70,9 @@ class Node:
             return False
 
         if (not self.parent or self.parent.checkAncestors()) or (
-                (not self.left or self.left.checkDescendants()) and (not self.right or self.right.checkDescendants())):
+            (not self.left or self.left.checkDescendants())
+            and (not self.right or self.right.checkDescendants())
+        ):
             self.locked = False
             print("Unlocked " + str(self))
             return True

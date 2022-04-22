@@ -6,7 +6,7 @@ Purpose: In the given list of numbers,
 
 
 def myfunc(arr):
-    half = sum(arr)/2
+    half = sum(arr) / 2
     part_sum = 0
     for index, num in enumerate(arr):
         part_sum += num
@@ -14,7 +14,7 @@ def myfunc(arr):
             break
     else:
         return -1
-    return [arr[:index+1], arr[index+1:]]
+    return [arr[: index + 1], arr[index + 1 :]]
 
 
 print(myfunc([1, 1, 1, 2, 1]))

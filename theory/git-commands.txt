@@ -1,29 +1,28 @@
-Git Commands 
+Git Commands
 	- git commit vs git push?
-		git commit  - puts your changes into your local repo, 
+		git commit  - puts your changes into your local repo,
 		git push    - sends your changes to the remote location.
 
 	- git fetch vs git pull?
 
 		git pull pulls down from a remote and instantly merges.
-		git fetch is similar to pull but doesn't merge. 
-			
-		git fetch - tells your local git to retrieve the latest meta-data info from the original 
-						(yet doesn't do any file transferring. It's more like just checking to see if 
-						there are any changes available). 
+		git fetch is similar to pull but doesn't merge.
+
+		git fetch - tells your local git to retrieve the latest meta-data info from the original
+						(yet doesn't do any file transferring. It's more like just checking to see if
+						there are any changes available).
 		git pull  - does git fetch AND brings (copy) those changes from the remote repository.
-		
+
 	- Git merge vs git rebase
-   
+
 		Git rebase and merge both integrate changes from one branch into another.
 		Git rebase moves a feature branch into a master. Git merge adds a new commit, preserving the history.
 
 		Merge: Moves changes from a branch to another and creates a merge commit.
 		History is preserved.
-			(Feature branch context) When to Merge: Merge if target branch has no changes. 
-		
+			(Feature branch context) When to Merge: Merge if target branch has no changes.
+
 		Rebase: Moves changes from a branch to another but alters the history by moving
 		the origin branch's starting point. It does not create a merge commit.
-		
-		(Feature branch context) When to Rebase: Pull and rebase if there are changes on target branch.
 
+		(Feature branch context) When to Rebase: Pull and rebase if there are changes on target branch.

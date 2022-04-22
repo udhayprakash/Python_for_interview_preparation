@@ -10,8 +10,9 @@ def time_taken(func):
         start = time.perf_counter_ns()
         result = func(*args, **kwargs)
         end = time.perf_counter_ns()
-        print(f'\nTIME TAKEN: {end- start} nano seconds')
+        print(f"\nTIME TAKEN: {end- start} nano seconds")
         return result
+
     return inner
 
 
@@ -26,8 +27,10 @@ def primes_below(number):
             primes.append(num)
     return primes
 
+
 print(primes_below(10))
 print(primes_below(100))
+
 
 @time_taken
 def primes_below(number):
@@ -39,6 +42,7 @@ def primes_below(number):
         else:
             primes.append(num)
     return primes
+
 
 print(primes_below(10))
 print(primes_below(100))
@@ -54,6 +58,7 @@ def primes_below(number):
         else:
             primes[num] = 0
     return primes.keys()
+
 
 print(primes_below(10))
 print(primes_below(100))

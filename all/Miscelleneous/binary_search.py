@@ -31,7 +31,11 @@ targetElementFound = False
 iterationNo = 1
 
 while targetElementFound is not True:
-    print("Iteration {}; beginningIndex: {}; endingIndex: {}".format(iterationNo, beginningIndex, endingIndex))
+    print(
+        "Iteration {}; beginningIndex: {}; endingIndex: {}".format(
+            iterationNo, beginningIndex, endingIndex
+        )
+    )
 
     middleIndex = (beginningIndex + endingIndex) // 2
     if targetElement == data[middleIndex]:

@@ -25,7 +25,9 @@ def parseSentenceString(dictionary, sentenceString, currWords):
         letter = sentenceString[i]
         currWord += letter
         if currWord in dictionary:
-            parseSentenceString(dictionary, sentenceString[i + 1:], currWords + [currWord])
+            parseSentenceString(
+                dictionary, sentenceString[i + 1 :], currWords + [currWord]
+            )
 
 
 def findValidSentences(dictionary, sentenceString):
@@ -41,7 +43,7 @@ def findValidSentences(dictionary, sentenceString):
 
 
 if __name__ == "__main__":
-    dictionary = ['bed', 'bath', 'bedbath', 'and', 'beyond']
+    dictionary = ["bed", "bath", "bedbath", "and", "beyond"]
     sentenceString = "bedbathandbeyond"
 
     print(findValidSentences(dictionary, sentenceString))

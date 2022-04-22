@@ -100,5 +100,3 @@ Current project - Mortgage analytics
 
 Current Project - Medical Research Analytics
 ---------------------------------------------
-
-

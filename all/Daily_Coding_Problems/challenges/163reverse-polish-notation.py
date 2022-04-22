@@ -27,18 +27,18 @@ class Stack:
 
 
 def calculate(operand1, operand2, operator):
-    if operator == '+':
+    if operator == "+":
         return operand1 + operand2
-    elif operator == '-':
+    elif operator == "-":
         return operand1 - operand2
-    elif operator == '*':
+    elif operator == "*":
         return operand1 * operand2
-    elif operator == '/':
+    elif operator == "/":
         return operand1 / operand2
 
 
 def evaluate(exprList):
-    operators = ['+', '-', '*', '/']
+    operators = ["+", "-", "*", "/"]
 
     evalStack = Stack()
 
@@ -54,10 +54,10 @@ def evaluate(exprList):
 
 
 def main():
-    expressionList = [5, 3, '+']
+    expressionList = [5, 3, "+"]
     print(evaluate(expressionList))
 
-    expressionList = [15, 7, 1, 1, '+', '-', '/', 3, '*', 2, 1, 1, '+', '+', '-']
+    expressionList = [15, 7, 1, 1, "+", "-", "/", 3, "*", 2, 1, 1, "+", "+", "-"]
     print(evaluate(expressionList))
 
 

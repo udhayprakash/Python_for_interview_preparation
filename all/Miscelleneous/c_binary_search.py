@@ -1,11 +1,11 @@
 #!/usr/bin/python
 """
-Purpose: Binary Search Implemenation 
+Purpose: Binary Search Implemenation
 """
 import time
 
-
 # binary search 0(n/2)
+
 
 def binary_search(given_list, search_ele):
     """
@@ -18,7 +18,7 @@ def binary_search(given_list, search_ele):
         elif given_list[mid_value] < search_ele:
             given_list = given_list[:mid_value]
         else:
-            given_list = given_list[mid_value + 1:]
+            given_list = given_list[mid_value + 1 :]
 
     return False
 

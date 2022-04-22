@@ -3,8 +3,8 @@ import time
 
 
 def print_guessed_letter(_user_guess_list):
-    """ Utility function to print User Guess List"""
-    print("Your Secret word is: " + ''.join(_user_guess_list))
+    """Utility function to print User Guess List"""
+    print("Your Secret word is: " + "".join(_user_guess_list))
 
 
 def main():
@@ -17,9 +17,13 @@ def main():
     name = input("Enter your name")
     print("Hello", name.capitalize(), "let's start playing Hangman!")
     time.sleep(1)
-    print("The objective of the game is to guess the secret word chosen by the computer.")
+    print(
+        "The objective of the game is to guess the secret word chosen by the computer."
+    )
     time.sleep(1)
-    print("You can guess only one letter at a time. Don't forget to press 'enter key' after each guess.")
+    print(
+        "You can guess only one letter at a time. Don't forget to press 'enter key' after each guess."
+    )
     time.sleep(2)
     print("Let the fun begin!")
     time.sleep(1)
@@ -27,27 +31,29 @@ def main():
     while True:
         # Choosing the Secret word
         while True:
-            if category.upper() == 'S':
+            if category.upper() == "S":
                 secret_word = random.choice(superHeroes)
                 break
-            elif category.upper() == 'F':
+            elif category.upper() == "F":
                 secret_word = random.choice(fruits)
                 break
             else:
-                category = input("Please select a valid category: F for Fruits / S for Super-Heroes; X to exit")
+                category = input(
+                    "Please select a valid category: F for Fruits / S for Super-Heroes; X to exit"
+                )
 
-            if category.upper() == 'X':
+            if category.upper() == "X":
                 print("Bye. See you next time!")
                 play_game = False
                 break
 
         if play_game:
             secret_word_list = list(secret_word)
-            attempts = (len(secret_word) + 2)
+            attempts = len(secret_word) + 2
 
             # Adding blank lines to user_guess_list to create the blank secret word
             for n in secret_word_list:
-                user_guess_list.append('_')
+                user_guess_list.append("_")
             print_guessed_letter(user_guess_list)
 
             print("The number of allowed guesses for this word is:", attempts)
@@ -67,7 +73,7 @@ def main():
                     if letter in secret_word_list:
                         print("Nice guess!")
                         if attempts > 0:
-                            print("You have ", attempts, 'guess left!')
+                            print("You have ", attempts, "guess left!")
                         for i in range(len(secret_word_list)):
                             if letter == secret_word_list[i]:
                                 letter_index = i
@@ -77,11 +83,11 @@ def main():
                     else:
                         print("Oops! Try again.")
                         if attempts > 0:
-                            print("You have ", attempts, 'guess left!')
+                            print("You have ", attempts, "guess left!")
                         print_guessed_letter(user_guess_list)
 
                 # Win/loss logic for the game
-                joined_list = ''.join(user_guess_list)
+                joined_list = "".join(user_guess_list)
                 if joined_list.upper() == secret_word.upper():
                     print("Yay! you won.")
                     break
@@ -91,9 +97,13 @@ def main():
                     break
 
             # Play again logic for the game
-            continue_game = input("Do you want to play again? Y to continue, any other key to quit")
-            if continue_game.upper() == 'Y':
-                category = input("Please select a valid category: F for Fruits / S for Super-Heroes")
+            continue_game = input(
+                "Do you want to play again? Y to continue, any other key to quit"
+            )
+            if continue_game.upper() == "Y":
+                category = input(
+                    "Please select a valid category: F for Fruits / S for Super-Heroes"
+                )
                 user_guess_list = []
                 user_guesses = []
                 play_game = True
@@ -104,8 +114,26 @@ def main():
             break
 
 
-if __name__ == '__main__':
-    fruits = ['pear', 'mango', 'apple', 'banana', 'apricot', 'pineapple', 'cantaloupe', 'grapefruit']
-    superHeroes = ['hawkeye', 'robin', 'Galactus', 'thor', 'mystique', 'superman', 'deadpool', 'vision']
+if __name__ == "__main__":
+    fruits = [
+        "pear",
+        "mango",
+        "apple",
+        "banana",
+        "apricot",
+        "pineapple",
+        "cantaloupe",
+        "grapefruit",
+    ]
+    superHeroes = [
+        "hawkeye",
+        "robin",
+        "Galactus",
+        "thor",
+        "mystique",
+        "superman",
+        "deadpool",
+        "vision",
+    ]
 
     main()

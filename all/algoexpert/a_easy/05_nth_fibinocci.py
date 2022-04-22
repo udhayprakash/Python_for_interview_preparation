@@ -1,12 +1,12 @@
 #!/usr/bin/python
 """
-Purpose: 
-The Fibonacci sequence is defined as follows: 
-    the first number of the sequence is 0, the secondsond number is 1, 
-    and the nth number is the sum of the (n - 1)th and (n - 2)th numbers. 
+Purpose:
+The Fibonacci sequence is defined as follows:
+    the first number of the sequence is 0, the secondsond number is 1,
+    and the nth number is the sum of the (n - 1)th and (n - 2)th numbers.
 Write a function that takes in an integer n and returns the nth Fibonacci number.
 
-sample input: 6 
+sample input: 6
 sample output : 5 (0, 1, 1, 2, 3, 5)
 """
 from time import perf_counter
@@ -31,13 +31,14 @@ def getNthFib(n):
 
 
 start_time = perf_counter()
-print(f'\ngetNthFib(6)  :{getNthFib(6)}')
-print(f'time taken    :{perf_counter() - start_time: 8} seconds')
+print(f"\ngetNthFib(6)  :{getNthFib(6)}")
+print(f"time taken    :{perf_counter() - start_time: 8} seconds")
 
 
 # start_time= perf_counter()   ==========> FAILS
 # print(f'getNthFib(100):{getNthFib(100)}')
 # print(f'time taken    :{perf_counter() - start_time: 8} seconds')
+
 
 def getNthFib(n, memoize={1: 0, 2: 1}):
     """
@@ -52,12 +53,12 @@ def getNthFib(n, memoize={1: 0, 2: 1}):
 
 
 start_time = perf_counter()
-print(f'\ngetNthFib(6)  :{getNthFib(6)}')
-print(f'time taken    :{perf_counter() - start_time: 8} seconds')
+print(f"\ngetNthFib(6)  :{getNthFib(6)}")
+print(f"time taken    :{perf_counter() - start_time: 8} seconds")
 
 start_time = perf_counter()
-print(f'getNthFib(100):{getNthFib(100)}')
-print(f'time taken    :{perf_counter() - start_time: 8} seconds')
+print(f"getNthFib(100):{getNthFib(100)}")
+print(f"time taken    :{perf_counter() - start_time: 8} seconds")
 
 
 def getNthFib(n):
@@ -76,12 +77,12 @@ def getNthFib(n):
 
 
 start_time = perf_counter()
-print(f'\ngetNthFib(6)  :{getNthFib(6)}')
-print(f'time taken    :{perf_counter() - start_time: 8} seconds')
+print(f"\ngetNthFib(6)  :{getNthFib(6)}")
+print(f"time taken    :{perf_counter() - start_time: 8} seconds")
 
 start_time = perf_counter()
-print(f'getNthFib(100):{getNthFib(100)}')
-print(f'time taken    :{perf_counter() - start_time: 8} seconds')
+print(f"getNthFib(100):{getNthFib(100)}")
+print(f"time taken    :{perf_counter() - start_time: 8} seconds")
 
 
 def getNthFib(n):
@@ -97,12 +98,12 @@ def getNthFib(n):
 
 
 start_time = perf_counter()
-print(f'\ngetNthFib(6)  :{getNthFib(6)}')
-print(f'time taken    :{perf_counter() - start_time: 8} seconds')
+print(f"\ngetNthFib(6)  :{getNthFib(6)}")
+print(f"time taken    :{perf_counter() - start_time: 8} seconds")
 
 start_time = perf_counter()
-print(f'getNthFib(100):{getNthFib(100)}')
-print(f'time taken    :{perf_counter() - start_time: 8} seconds')
+print(f"getNthFib(100):{getNthFib(100)}")
+print(f"time taken    :{perf_counter() - start_time: 8} seconds")
 
 # assert getNthFib(6) == 5
 # assert getNthFib(1) == 0

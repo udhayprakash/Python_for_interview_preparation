@@ -57,7 +57,11 @@ def main():
        / \   /
       4   7 13
     """
-    BST = Node(8, Node(3, Node(1), Node(6, Node(4), Node(7))), Node(10, None, Node(14, Node(13))))
+    BST = Node(
+        8,
+        Node(3, Node(1), Node(6, Node(4), Node(7))),
+        Node(10, None, Node(14, Node(13))),
+    )
     print(findSecondMax(BST))
 
     """
