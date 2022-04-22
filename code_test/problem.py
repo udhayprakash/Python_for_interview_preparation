@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
 Purpose:
-Please write pyest that covers all scenarios and we will review code in the interview.
+Please write pytest that covers all scenarios and we will review code in the interview.
 Given an array of integers A and let n to be its length.
 Assume Bk to be an array obtained by rotating the array A k positions clock-wise,
 we define a "rotation function" F on A as follow:
@@ -28,7 +28,6 @@ class Solution(object):
         :type A: List[int]
         :rtype: int
         """
-
         array_sum = sum(A)
         array_count = 0
         for _index, value in enumerate(A):
