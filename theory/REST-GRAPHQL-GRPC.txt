@@ -46,6 +46,52 @@
 		  without sharing their passwords.
 		- oauth providers can be social logins like facebook, google, twitter, ...
 		- Also, we can create using AWS Cognito
+
+		openID - facebook, google, twitter, etc
+
+OAuth vs JWT
+============
+	- OAuth 2.0 defines a protocol, i.e. specifies how tokens are transferred,
+	  JWT defines a token format.
+	- OAuth 2.0 and "JWT authentication" have similar appearance when it comes
+	  to the (2nd) stage where the Client presents the token to the Resource Server:
+	  the token is passed in a header.
+	- But "JWT authentication" is not a standard and does not specify how the Client
+	  obtains the token in the first place (the 1st stage).
+	  That is where the perceived complexity of OAuth comes from: it also defines
+	  various ways in which the Client can obtain an access token from something
+	  that is called an Authorization Server.
+	- So, JWT is just a token format, OAuth 2.0 is a protocol (that may use a
+	  JWT as a token format).
+
+
+JWT (JSON Web Tokens)
+	- It is just a token format. JWT tokens are JSON encoded data structures contains
+	information about issuer, subject (claims), expiration time etc.
+	- It is signed for tamper proof and authenticity and it can be encrypted to
+	protect the token information using symmetric or asymmetric approach.
+	- JWT is simpler than SAML 1.1/2.0 and supported by all devices and it is more
+	powerful than SWT(Simple Web Token).
+
+OAuth2
+	- OAuth2 solve a problem that user wants to access the data using client
+	 software like browse based web apps, native mobile apps or desktop apps.
+	- OAuth2 is just for authorization, client software can be authorized to
+	 access the resources on-behalf of end user using access token.
+
+OpenID Connect
+	- OpenID Connect builds on top of OAuth2 and add authentication.
+	- OpenID Connect add some constraint to OAuth2 like UserInfo Endpoint,
+	  ID Token, discovery and dynamic registration of OpenID Connect providers
+	  and session management.
+	- JWT is the mandatory format for the token.
+
+CSRF protection
+	- we don't need implement the CSRF protection if you do not store token
+	  in the browser's cookie.
+
+
+
 REST features
 =============
 	- Performance

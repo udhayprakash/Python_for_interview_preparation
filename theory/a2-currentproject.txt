@@ -51,7 +51,7 @@ Day-to-day activities
 		started working on my JIRAs And after the stand up during the stand up like you know, so
 		we discuss on what are the pain points or any you know blockers Then finally, so after
 		the, you know, the standup like I will start working on my JIRAs.
-	- We prioritise  based on situation and some times, i will take manager’s decision
+	- We prioritize based on the situation and sometimes, i will take manager’s decision
 
 ========================================================================================
 In terms of the technical stack,

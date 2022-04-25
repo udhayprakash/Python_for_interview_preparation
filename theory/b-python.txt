@@ -294,6 +294,15 @@ hashable
 		- Tasks must cooperate by announcing when they are ready to be switched out.
 		- You always know where your task will be swapped out.
 
+process vs thread
+	- processes do not share memory and run on a single core.
+	  They are better for compute-intensive tasks that do not have to communicate
+	  with each other.
+	- threads share memory.
+	  In Python, due to the Global Interpreter Lock (GIL), two threads cannot operate
+	  at the same time in the same program.
+	  As a result, only some operations can be run in parallel using threads.
+
 - GIL Problem
 	- GIL means Global Interpreter Lock
 	- Simply, it means "One thread runs Python, while others sleep or await I/O."
@@ -457,6 +466,25 @@ Heap vs stack
 	- When stack memory is full, Java runtime throws java.lang.StackOverFlowError
 	  When heap memory is full, it throws java.lang.OutOfMemoryError: Java Heap Space error.
 	- Stack memory is faster than heap memory.
+
+High Performance Computing , in python
+	- Dask
+		- for distributed computing.
+		- facilitates running many computations at the same time, either on a single machine or on many separate computers (cluster).
+		- Under the hood, Dask breaks a single large data processing job into many smaller tasks, which are then handled by numpy or pandas
+		- https://dask.org/
+	- Modin
+		- designed to parallelize pandas DataFrames by automatically distributing the
+		  computation across all of the system’s available CPU cores.
+		- Modin simply divides an existing DataFrame into different parts such that each part can be sent to a different CPU core. And to be more precise, Modin partitions the DataFrames across both rows and columns, which makes its parallel processing highly scalable for DataFrames of any size and shape.
+		- https://github.com/modin-project/modin
+	- vaex — 7k GitHub stars
+	- datatable — 1.5k GitHub stars
+	- cuDF — ~4.5k GitHub stars
+	- pyspark
+	- Koalas — ~3k GitHub stars
+	- polars — ~5k GitHub stars
+
 
 Numpy
 ------

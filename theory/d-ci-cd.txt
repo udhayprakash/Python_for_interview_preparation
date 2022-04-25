@@ -64,6 +64,14 @@ At the end of the sprint, we will have sprint review and retrospective meetings
 
 We give utmost importance to these review feedbacks, and try to improve this continuous process
 
+
+Sprint Burndown Chart
+	- is a graphic representation that shows the rate at which work is completed and
+	  how much work remains to be done.
+	- it shows Team progress towards the Sprint Goal, not in terms of time spent but
+	  in terms of how much work remains.
+
+
 Development Tools
 ==================
 	for code Management - Bitbucket, Github
@@ -89,3 +97,12 @@ When there are conflicts,
 
 	We need to push from the default branch, say develop.
 	So, these conflict and confusions can be reduced to very minimum
+
+
+Scrum Emergency Procedure: (do only as much as necessary)
+--------------------------
+	- Change the way the team does the work. Do something different.
+	- Get help, usually by offloading backlog to someone else.
+	- Reduce scope.
+	- Abort the Sprint and replan.
+	- Inform management how the emergency affects release dates.

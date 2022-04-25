@@ -72,7 +72,7 @@ Ref: https://hasura.io/blog/how-to-write-dockerfiles-for-python-web-apps-6d17384
 		- we can configure access by creating a collection of rules that define which inbound connections reach which services.
 		- Ingress traffic is composed of all the data communications and network traffic originating from external networks and destined for a node in the host network. Ingress traffic can be any form of traffic whose source lies in an external network and whose destination resides inside the host network.
 
-
+	- TODO: https://head-first-kubernetes.github.io/
 
 Terraform commands
 	refresh -> to get the current state of infrastructure

@@ -22,3 +22,10 @@ on the page somewhere, you could type in "bullshit."
 filter, limit, or otherwise sanitize that value. You could have a problem...
 Dr. Evil could just type in some script ij the search field right?
 <p>Your search for 'flowers <script>evil_script()</script>
+
+
+Cache-control
+	- It is an HTTP header used to specify browser caching policies in both client
+      requests and server responses.
+	- Policies include how a resource is cached, where it's cached and its maximum
+	age before expiring (i.e., time to live)
