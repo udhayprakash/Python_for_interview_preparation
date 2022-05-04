@@ -35,7 +35,20 @@
 	- More Complex Call Patterns
 	- No Control Over Environment
 
+- AWS Lambda event source mappings
+	- An event source mapping is a Lambda resource that reads from an event source and
+	invokes a Lambda function.
+	- we can use event source mappings to process items from a stream or queue in services
+	that don't invoke Lambda functions directly.
+	- Lambda provides event source mappings for
+		- Amazon DynamoDB
+		- Amazon Kinesis
+		- Amazon MQ
+		- Amazon Managed Streaming for Apache Kafka (Amazon MSK)
+		- Self-managed Apache Kafka
 
+
+Amazon Simple Queue Service (Amazon SQS)
 - AWS Lambda Examples
 	- say, for Returning a message
 
@@ -125,11 +138,14 @@
 	in the dead-letter queue for further analysis or reprocessing.
 
 AWS account security tools
+===========================
+
 - AWS IAM (Identity & Access Management)
 	- Enables to create users and roles with permissions
 	  too specific resources
 	- Supports Multi-factor authentication & supports
 	  single sign-on (SSO)
+
 - Amazon GuardDuty
 	- uses machine learning to look for malicious activity in AWS environment
 	- combines cloudTrail event logs, VPC flow logs, S3 event logs
@@ -140,6 +156,7 @@ AWS account security tools
 
 	- Also, detects access pattern anomalies such as API calls
 	  in new regions, ...
+
 - Amazon Macie
 	- discovers and protects sensitive data stored in s3 buckets.
 	- like personally-identifiable information, or personal health information,
@@ -214,3 +231,33 @@ AWS IAM
 		  such as an IAM user, group, or role.
 		- Resource-based policies are permissions policies that you attach to a resource such
 		  as an Amazon S3 bucket or an IAM role trust policy.
+
+RDS vs DynamoDb
+================
+	-  Amazon RDS is relational, whereas DynamoDB is a NoSQL database engine.
+	- DynamoDB can support tables of any size, where as in RDS, the storage size changes
+	 based on the database engine used.
+	- Storing data in DyanmoDb costs more, compared to RDS or Aurora.
+	- DynamoDb is very fast as it is key-value database
+
+	- DynamoDb should not be used:
+		- When multi-item or cross table transactions are required.
+		- When complex queries and joins are required.
+		- When real-time analytics on historic data is required.
+
+SNS vs SQS
+==========
+	SNS - sends messages to the subscriber using push mechanism and no need of pull.
+	SQS - it is a message queue service used by distributed applications to exchange
+	      messages through a polling model, and can be used to decouple sending and
+		  receiving components.
+
+
+AWS Limits
+==========
+	Lambda Environment variables limit is not per function; but overall @ no more than 4KB
+		   disk space (ephemeral) is limited to 512 MB
+		   default deployment package size is 50 MB
+		   memory range is from 128 to 3008 MB
+		   maximum execution timeout for a function is 15 minutes
+		   3000 concurrent request at time. If exceeded, requsts will throttle until lambda scales by 500 per minute

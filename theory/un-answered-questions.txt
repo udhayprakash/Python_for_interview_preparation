@@ -20,6 +20,11 @@ Python
 	multithreading vs multiprocessing
 	handling-hash-collisions-in-python
 	https://hackersandslackers.com/extract-data-from-complex-json-python/
+	instance vs classmethods vs staticmethod
+		when to use each
+
+		When we cerate a car class
+		And we needd to give chase number to each car instance
 
 
 Pandas
@@ -147,3 +152,18 @@ https://www.webforefront.com/django/setuprelationshipsdjangomodels.html
 
 docker optimize image size
 git braNCHING strategies
+
+
+
+
+Big Team vs Small Team
+	With big team, we can good number of ppl to reach for an help , or sharing thought
+
+	Both has advantages and limitations
+
+
+
+
+
+
+what you leanred recently

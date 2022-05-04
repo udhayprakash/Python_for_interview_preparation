@@ -49,7 +49,7 @@ counts = Counter()
 for line in data:
     line = line.strip()
     if line:
-        m = re.match("^[0-9]{2} (\w+)(.*) \(", line)
+        m = re.match(r"^[0-9]{2} (\w+)(.*) \(", line)
         if m:
             counts.update(m.groups(1))
             print(m.groups())

@@ -31,3 +31,4 @@ def longestPalindrome(s):
 
 
 print(longestPalindrome("ababd"))
+print(longestPalindrome("aabbaba"))

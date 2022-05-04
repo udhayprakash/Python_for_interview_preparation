@@ -18,7 +18,9 @@
 			OPTIONS- used to describe the communication options for the target resource.
 			TRACE- performs a message loop-back test along the path to the target resource.
 			PATCH- used to apply partial modifications to a resource
+
 		- response can be JSON or XML, atom, OData etc.
+
 		1. POST is NOT idempotent.
 		2. GET, PUT, DELETE, HEAD, OPTIONS and TRACE are idempotent.
 

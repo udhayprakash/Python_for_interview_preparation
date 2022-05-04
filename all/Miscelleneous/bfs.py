@@ -33,7 +33,7 @@ def bfs(graph, start_node, end_node):
 
     # Keep track of what nodes we've already seen
     # so we don't process them twice
-    nodes_already_seen = set([start_node])
+    nodes_already_seen = {start_node}
 
     while len(nodes_to_visit) > 0:
         current_node = nodes_to_visit.popleft()

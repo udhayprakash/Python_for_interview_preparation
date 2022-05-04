@@ -39,7 +39,7 @@ The name of a directory or sub-directory will not contain a period.
 
 
 def currentPathLength(pathStack):
-    return sum([len(x) for x in pathStack])
+    return sum(len(x) for x in pathStack)
 
 
 def longestAbsolutePath(fileSystemString):

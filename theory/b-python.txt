@@ -53,9 +53,10 @@ Python Questions
 	- unordered and wont store duplicates
 	- will store only immutable objects(int, float, string, frozenset, tuple)
 - Dictionaries
-	- They are called as HashMap in other languages
 	- They store in key: value relation
 	- keys should be immutable and unique, and hashable
+	- Values can be mutable
+	- They are called as HashMap in other languages
 	- ex: {1:2, 3:4, 5:6}
 
 - conclusions
@@ -303,27 +304,6 @@ process vs thread
 	  at the same time in the same program.
 	  As a result, only some operations can be run in parallel using threads.
 
-- GIL Problem
-	- GIL means Global Interpreter Lock
-	- Simply, it means "One thread runs Python, while others sleep or await I/O."
-	- In Cpython, as it go with reference based assignment, if two threads are trying to update,
-	  say, the same list, it can lead to data races, and deadlock.
-	- To avoid deadlocks, it will lock a single thread, safely execute it and release it.
-	- Due to this, we can't achieve concurrency with python, unlike other languages.
-	- Next solution is multiprocessing. But, it is resource exhaustive. And, the maximum limit
-	 on the processes which can be created, is limited to the system hardware limits.
-	- So, from python 3.6, with the advent of async and await keywords, I am using the asyncio
-	 based non-blocking execution.
-	- Here, within the single thread event loop, we will invoke all child threads; which is a solution
-	  to this GIL problem
-
-- Multiprocessing vs Multithreading
-	- Multithreading for IO-bound tasks. Multiprocessing for CPU-bound tasks.
-	- computationally-intensive tasks such as compression or hashing.
-
-- stack & heap
-	- each thread will have its own stack, but all the threads in a process will share the heap.
-
 - thread vs process
 	-------------------------------------------------------------------------------------------
 		PROCESS								    |			THREAD
@@ -336,6 +316,68 @@ process vs thread
 	  more expensive.
 	- Processes don’t share memory with other   | Threads share memory with other threads of the same process.
 	  processes.
+
+concurrency vs parallelism
+ - “Concurrency is about dealing with lots of things at once.
+    Parallelism is about doing lots of things at once” – Rob Pike
+
+- cooperative multitasking
+	- Whenever a thread begins sleeping or awaiting network I/O, there is a chance for
+	  another thread to take the GIL and execute Python code.
+
+- preemptive multitasking
+	- CPython has it. Something similar to time slicing
+	- If a thread runs uninterrupted for 1000 bytecode instructions in Python 2, or runs
+	  15 milliseconds(set via sys.setswitchinterval()) in Python 3, then it gives up
+	  the GIL and another thread may run.
+
+- Thread Safety
+	- If a thead loses GIL at any moment, we should ensure that code is thread safe.
+	- Many Python operations like sort(), ... are atomic.
+	- GIL wont switch in middle of automatic operations.
+	- EX: A thread cannot be interrupted in the middle of sorting, and other threads never see a partly sorted list, nor see stale data from before the list was sorted.
+
+	- Locks are needed to protect shared mutable state
+
+Atomic Operations
+	- All  single bytecode instruction. We can checking using dis module; dis.dis(object)
+	- Assuming L, L1, L2 are lists, D, D1, D2 are dicts, x, y are objects, i, j are ints,
+
+	L.append(x)
+	L1.extend(L2)
+	x = L[i]
+	x = L.pop()
+	L1[i:j] = L2
+	L.sort()
+	x = y
+	x.field = y
+	D[x] = y
+	D1.update(D2)
+	D.keys()
+
+Non-Automic Operations
+	i = i+1
+	L.append(L[-1])
+	L[i] = L[j]
+	D[x] = D[x] + 1
+
+- GIL Problem
+	- GIL means Global Interpreter Lock
+	- Simply, it means "One thread runs Python, while others sleep or await I/O."
+	- In Cpython, as it goes with reference based assignment, if two threads are trying to update,
+	  say, the same list, it can lead to data races, and deadlock.
+	- To avoid deadlocks, it will lock a single thread, safely execute it, and release it.
+	- Due to this, we can't achieve concurrency with python, unlike other languages.
+	- Next solution is multiprocessing. But, it is resource exhaustive. And, the maximum limit
+	 on the processes which can be created, is limited to the system hardware limits.
+	- So, from python 3.6, with the advent of async and await keywords, I am using the asyncio
+	 based non-blocking execution.
+	- Here, within the single thread event loop, we will invoke all child threads; which is a solution
+	  to this GIL problem
+
+- Multiprocessing vs Multithreading
+	- Multithreading for IO-bound tasks. Multiprocessing for CPU-bound tasks.
+	- computationally-intensive tasks such as compression or hashing.
 
 - context managers
 	- will allow you to allocate and release resources precisely when you want to.
@@ -399,17 +441,17 @@ unittesting
 - name mangling
 	- python supports Public, private and protected variables/methods/functions
 	- We can access even private variables, methods too  in python,
-		But the convention is made to  avoid accidental override
+		But the convention is made to avoid accidental override
 
 	- Variable starting with no _underscores are called public variables
 	- Variables starting with single underscore are called protected variables
 	- variables starting with two underscores are called private variables
 		- Also, variables starting with two underscores and ending with two underscores
-		  are magic methods (or dunder/double underscore methods).
+		  are magic methods (or dunder/double underscore methods, or special methods).
 		- Ex: __init__ is the constructor
 			  __del__ is the destructor
 			  __enter__ and __exit__ are used for creating custom context managers
-			  __iter__ and __next__ are used for creating Iterator objects.
+			  __iter__ and __next__ are used for creating Iterator objects
 			  __str__ and __repr__ are used for string representation of the instances
 
 
@@ -449,6 +491,10 @@ unittesting
 
 	- we can check the reference count of any value using the sys module, sys.getreferencecount
 	- The garbage collector can be controlled using the gc module.
+
+- stack & heap
+	- each thread will have its own stack, but all the threads in a process will share
+	  the heap.
 
 Heap vs stack
 	- Whenever an object is created, it’s always stored in the Heap space, and stack

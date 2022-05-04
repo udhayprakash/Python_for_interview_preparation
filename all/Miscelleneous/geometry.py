@@ -185,10 +185,10 @@ def point_inside_polygon(poly, p):
 def demonstrate_picks_theorem(poly):
     area_shoe = polygon_area_twice(poly)
     inside, boundary = 0, 0
-    minx = min((x for (x, y) in poly)) - 1
-    maxx = max((x for (x, y) in poly)) + 1
-    miny = min((y for (x, y) in poly)) - 1
-    maxy = max((y for (x, y) in poly)) + 1
+    minx = min(x for (x, y) in poly) - 1
+    maxx = max(x for (x, y) in poly) + 1
+    miny = min(y for (x, y) in poly) - 1
+    maxy = max(y for (x, y) in poly) + 1
     for x in range(minx, maxx):
         for y in range(miny, maxy):
             r = point_inside_polygon(poly, (x, y))
@@ -210,7 +210,7 @@ from functools import cmp_to_key
 
 
 def convex_hull(pts, cleanonly=False):
-    pb = (min((x for (x, y) in pts)), min(y for (x, y) in pts))
+    pb = (min(x for (x, y) in pts), min(y for (x, y) in pts))
 
     def angle_cmp(p1, p2):
         if p1 == pb:

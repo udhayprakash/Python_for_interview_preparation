@@ -37,7 +37,7 @@ from collections import defaultdict
 def myfunc(given_files):
     result = defaultdict(list)
     for file in given_files:
-        pattern = re.search("(.*)\.(\d+)\.(\w+)$", file)
+        pattern = re.search(r"(.*)\.(\d+)\.(\w+)$", file)
         if pattern:
             prefix, num, extn = pattern.groups()
             result[".".join([prefix, "%d", extn])].append(int(num))

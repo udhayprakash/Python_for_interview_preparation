@@ -11,7 +11,7 @@ def humansize(nbytes):
         nbytes /= 1024.0
         i += 1
     f = ("%.2f" % nbytes).rstrip("0").rstrip(".")
-    return "%s %s" % (f, suffixes[i])
+    return "{} {}".format(f, suffixes[i])
 
 
 assert humansize(131) == "131 B"

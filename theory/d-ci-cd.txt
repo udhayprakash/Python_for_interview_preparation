@@ -14,12 +14,13 @@ CI/CD
 		4. Static code analysis with flake8 and SonarQube
 		5. security scanning using Veracode
 		As there is no build step in python, next step is deployment
+
 	Current project, it is with containers
 		We use docker.yaml for containzation
 		And kubernetes.yaml for orchestration
 
 	- Also, worked with cloudformation.json templates for infra management .
-		 - Terraform is very naive experience
+		 - Terraform is a very naive experience
 
 	- Code Flow process
 		- feature branch -(Pull requests)(once completed) - dev branch -(testers signoff)-> release branch -(signoff from client)- production branch
@@ -78,9 +79,13 @@ Development Tools
 	for Issue Tracking  - Jira, CA Rally
 	for CI/CD           - Jenkins
 	for monitoring      - Dynatrace
-	for log management  - Splunk
+	for log management  - Splunk and Sumo-logic
 
 	for local development - Intellij, Visual Studio Code
+
+
+	Infrastructure Monitoring 	- AWS X-ray + AWS Cloudwatch
+	application Monitoring 		- worked with tools like Dynatrace, appDynamics and Datadog
 
 
 how to resolve conflicts
@@ -106,3 +111,30 @@ Scrum Emergency Procedure: (do only as much as necessary)
 	- Reduce scope.
 	- Abort the Sprint and replan.
 	- Inform management how the emergency affects release dates.
+
+
+
+SDLC
+======
+	Requirement gathering
+	Sprint planning
+	In sprint , witing code and test case, we do tdd – test driven develop,emt
+	Build procss – CI/CD - Jenkins
+	Pull request. Two approvals
+	cod e merges to dev
+	End of sprint, all new code to push to realse branch
+	===and demo
+
+
+what are you looking in th new work?
+-----------------------------------
+- Good Work and workcultre
+- IN terms of work,
+	- Write coding
+	- Design solutions
+	- Add tests to make the code reliable
+- In long term, i want to be architect. I am making every step towards that journey
+
+- In terms of work, it is almost match of what am doing now and your expectations
+- I am to prove myself initially , and learn to add value to the project
+- I want to be helpful , to more people, with my work

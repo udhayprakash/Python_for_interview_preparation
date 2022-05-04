@@ -30,7 +30,7 @@ for index, heading in enumerate(soup.find_all(["h3"])):
 details = dict(sorted(details.items(), key=lambda each: len(each[1]), reverse=True))
 
 for title, artist in details.items():
-    print("%55s ======> %s" % (title, artist))
+    print("{:>55} ======> {}".format(title, artist))
 
 sorted_artists_based_on_title_length = list(details.keys())
 print("sorted_artists_based_on_title_length:", sorted_artists_based_on_title_length)

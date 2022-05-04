@@ -54,7 +54,7 @@ if __name__ == "__main__":
     with open("words_alpha.txt", encoding="utf-8") as f:
         wordlist = [x.strip() for x in f if x.islower()]
     print(f"Read in a word list of {len(wordlist)} lowercase words.")
-    wordlist = sorted([x for x in wordlist if len(x) == n])
+    wordlist = sorted(x for x in wordlist if len(x) == n)
     print(f"There remain {len(wordlist)} words of length {n}.")
 
     print("Building the word neighbourhood graph...", end="")

@@ -40,7 +40,7 @@ def get_anagrams(given_words):
 
 words = ["Eat", "Ate", "Girl", "Girl"]
 print(get_anagrams(words))
-assert get_anagrams(words) == [set(["Ate", "Eat"])]
+assert get_anagrams(words) == [{"Ate", "Eat"}]
 
 words = ["Eat", "Ate", "Ate", "Girl", "Girl"]
 assert get_anagrams(words) == [set(["Ate", "Eat"], set("Girl"))]

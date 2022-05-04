@@ -15,7 +15,7 @@ def tableOfContents(text):
             if not result:
                 processed_line = "1. " + section_line.lstrip(" #")
             else:
-                prev_sec_nums = re.findall("\d+", result[-1][0])
+                prev_sec_nums = re.findall(r"\d+", result[-1][0])
                 if result[-1][-1] == no_of_hashes:
                     prev_sec_nums[-1] = str(int(prev_sec_nums[-1]) + 1) + "."
                 elif result[-1][-1] < no_of_hashes:

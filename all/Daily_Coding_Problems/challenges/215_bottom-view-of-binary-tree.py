@@ -14,7 +14,7 @@ For example, for the following tree, hd(1) = -2, and hd(6) = 0.
              5
           /     \
         3         7
-      /  \      /   \
+      /  \\      /   \
     1     4    6     9
    /                /
   0                8

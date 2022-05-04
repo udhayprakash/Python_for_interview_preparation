@@ -46,7 +46,7 @@ codes_r = {codes[v]: v for v in codes}
 # individual letters. Unknown characters are simply skipped
 # in this encoding.
 def encode_morse(text, sep=""):
-    return sep.join((codes_r.get(c, "") for c in text.lower()))
+    return sep.join(codes_r.get(c, "") for c in text.lower())
 
 
 # A generator function that yields all possible ways to

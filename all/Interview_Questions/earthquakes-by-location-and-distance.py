@@ -23,7 +23,7 @@ def getbylocation(locationname):
 
     locations = map(
         lambda locstr: re.search(
-            f"(\d+)km .* of (.*), {locationname}", locstr
+            rf"(\d+)km .* of (.*), {locationname}", locstr
         ).groups(),
         earthquakes,
     )

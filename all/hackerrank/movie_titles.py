@@ -71,10 +71,10 @@ def getMovieTitles3(substr):
         url = f"https://jsonmock.hackerrank.com/api/movies/search/?Title={substr}&page={page}"
         response = str(urllib.request.urlopen(url).read())
         titles += re.findall('"Title":"(.+?)",', response)
-        current_page = re.search('"page":(\d+),', response).group(1)
+        current_page = re.search(r'"page":(\d+),', response).group(1)
         total_pages = ""
         if not total_pages:
-            total_pages = re.search('"total_pages":(\d+),', response).group(1)
+            total_pages = re.search(r'"total_pages":(\d+),', response).group(1)
         if current_page == total_pages:
             break
         page += 1

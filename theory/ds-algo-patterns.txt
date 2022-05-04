@@ -37,7 +37,7 @@ Memory
 	- Single responsibility  - one method/function one job
 	- Open-closed principle  - open for extension, but closed for modification
 	- Liskov substitution	 - objects of a superclass shall be replaceable with objects of its subclass
-	- Interface Segregration - client should not be forced to depens on methods its does not use
+	- Interface Segregration - client should not be forced to depend on methods its does not use
 	- Dependency Inversion   - Depend on interface decouping
 
 High Level Design(HLD) vs Low Level Design(LLD)
@@ -94,6 +94,10 @@ Design Patterns
 - Singleton (Creational)
     Object that can only be instantiated once.
     Use case: Settings
+
+	Singleton pattern is a class which always gives you the same object when you create
+	an instance of the class.
+	It’s used to ensure that all users of a class are using the same object.
 
 - Prototype (Creational)
     Fancy word for "clone".

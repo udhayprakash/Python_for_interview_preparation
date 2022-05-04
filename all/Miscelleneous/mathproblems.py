@@ -50,7 +50,7 @@ def longest_collatz(start, end):
 
 def final_digit(n):
     while n > 9:
-        n = sum([int(d) for d in str(n)])
+        n = sum(int(d) for d in str(n))
     return n
 
 

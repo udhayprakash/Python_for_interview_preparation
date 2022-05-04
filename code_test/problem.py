@@ -48,7 +48,7 @@ class Solution(object):
         max_val = min_val = 0
         for _index, _ in enumerate(A):
             shift_array = A[_index:] + A[:_index]
-            array_sum = sum([indx * val for indx, val in enumerate(shift_array)])
+            array_sum = sum(indx * val for indx, val in enumerate(shift_array))
             if _index:
                 if array_sum < min_val:
                     min_val = array_sum

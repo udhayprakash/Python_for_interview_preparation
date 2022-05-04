@@ -1,4 +1,4 @@
-I have created ETL jobs with event driven architecture
+I have created ETL jobs with event-driven architecture
 worked with multiple ETL jobs.
 
 	s3 bucket -- > new file comes --> triggered lambda --> pandas dataframes process --> push to dB --

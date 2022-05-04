@@ -245,3 +245,13 @@ HackerRank: Value of Properties Owned
 	JOIN PRICE P USING(HOUSE_ID)
 	GROUP BY H.BUYER_ID HAVING SUM(P.PRICE) > 100 AND COUNT(H.BUYER_ID) > 1;
 ===================================================================================================
+SELECT name, COUNT(sal) FROM users
+GROUP BY email
+HAVING COUNT(email) > 1
+
+Select distinct salary from employee ORDER BY salary DESC limit 1 offset 1
+
+Select * from table where id in (Select id from table t1 GROUP BY id HAVING COUNT(Id) > 1)
+
+SELECT * FROM my_table WHERE created_at > DATE_SUB(NOW(), INTERVAL 1 DAY)
+===================================================================================================

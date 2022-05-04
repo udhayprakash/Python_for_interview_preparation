@@ -23,7 +23,7 @@ challenges
 		b) convert that to python dict,
 		c) filter few key-values among them, and then,
 		d) dump that to database
-	It's a simple ETL job. So, as per design, I created unit and integration tests, and then were working.
+	It's a simple ETL job. So, as per design, I created unit and integration tests and then were working.
 	When I did performance testing, I found that it took 19.5 seconds for this entire microservice.
 	To add some math, say on average I get 10 XMLs per minute and each takes 19 seconds. For one minute book of work, I need to spend 190 seconds, or 3 minutes. Or, for one day of work, I need to process for 3 days.
 
@@ -117,17 +117,17 @@ Innovation - Process Improvement
 	  thier SLAs. It actually helped increase the daily unique-user hits to our portal.
 
 	  Initally my manager objected this idea, as we need to maintain two separate dashboards;
-	  but i convinced him to  experiment for couple of sprints. Then, after seeing the success, he
+	  but i convinced him to  experiment for a couple of sprints. Then, after seeing the success, he
 	  was very happy.
 
 Managing Tight deadlines
 ========================
 	There was a time when the
 	Lessons Learned
-		Tip 1: Never commit to a deadline you know you cannot meet.
-		Tip 2: Once you have committed to a deadline, always meet it.
-		Tip 3: Planning and time management are key.
-		Tip 4: Concentration is the key to meeting deadlines and delivering good work.
+		1) Never commit to a deadline you know you cannot meet.
+		2) Once you have committed to a deadline, always meet it.
+		3) Planning and time management are key.
+		4) Concentration is the key to meeting deadlines and delivering good work.
 
 
 
