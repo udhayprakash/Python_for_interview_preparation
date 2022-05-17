@@ -255,3 +255,11 @@ Select * from table where id in (Select id from table t1 GROUP BY id HAVING COUN
 
 SELECT * FROM my_table WHERE created_at > DATE_SUB(NOW(), INTERVAL 1 DAY)
 ===================================================================================================
+Q) Display all the column values in a single row separated by comma in MySQL?
+Ans) select group_concat(Id)  from tableName GROUP BY tableName;
+
+Q) Delete all Duplicate Rows except for One in MySQL?
+Ans) DELETE n1 FROM names n1, names n2 WHERE n1.id > n2.id AND n1.name = n2.name
+
+	When full row duplicate,
+		add an id column virtually and delete all , but first in sequence

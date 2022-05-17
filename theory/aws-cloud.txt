@@ -121,6 +121,18 @@ Amazon Simple Queue Service (Amazon SQS)
 - AWS Glue
 	- https://docs.aws.amazon.com/glue/latest/dg/add-job.html
 	- https://docs.aws.amazon.com/glue/latest/dg/workflows_overview.html
+	- AWS Glue connectors
+		- Amazon S3
+		- JDBC
+			- Amazon Redshift
+			- Amazon Relational Database Service (Amazon RDS)
+		- Amazon DocumentDB
+		- DynamoDB
+		- Kafka
+		- Amazon Kinesis
+		- MongoDB
+		- Network (designates a connection to a data source within an
+					Amazon Virtual Private Cloud environment (Amazon VPC))
 
 - ETL Jobs
 	- I have created ETLs jobs like say,
@@ -261,3 +273,22 @@ AWS Limits
 		   memory range is from 128 to 3008 MB
 		   maximum execution timeout for a function is 15 minutes
 		   3000 concurrent request at time. If exceeded, requsts will throttle until lambda scales by 500 per minute
+
+
+boto3
+=======
+- List files in s3 bucket
+	import boto3
+	s3 = boto3.resource('s3')
+
+	## Bucket to use
+	bucket = s3.Bucket('my-bucket')
+
+	## List objects within a given prefix
+	for obj in bucket.objects.filter(Delimiter='/', Prefix='fruit/'):
+		print(obj.key)
+
+	Output:
+
+		fruit/apple.txt
+		fruit/banana.txt

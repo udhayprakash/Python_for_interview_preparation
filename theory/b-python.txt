@@ -66,7 +66,7 @@ Python Questions
 	  intersection, etc are needed.
 	- Tuple is suitable when there need to be immutability
 
-hashable
+- hashable
 	- An object is hashable if it has a hash value which never changes during its lifetime
 
 - List vs Tuple
@@ -79,8 +79,8 @@ hashable
 			2. variable sized block for the data.
 	- Tuples is that they use less memory where lists use more memory
 	- USAGE:
-	List is used when we need to make changes in code, say like adding values while loop .
-	Tuple is used when we wont change something in the code
+		List is used when we need to make changes in code, say adding values while loop .
+		Tuple is used when we wont change something in the code
 
 - append vs extend
 	- both adding elements in last of list
@@ -101,6 +101,12 @@ hashable
 	- IN array, we need to have all elements of same type.
 	- whenever i have to store all elements of same type, as arrays are more performant than lists.
 
+- range vs xrange
+	- xrange of python2 , is renamed as range in python 3
+	- range in python2 results a list, whereas in python 3, range results in range object.
+	- range takes three arguments - start number, stopNumber and step ;
+	  then, will return the sequence for those values
+
 - Pickling
 	- Pickling means Python object to flat file conversion
 	- unpickling means flat file to python object conversion
@@ -109,16 +115,24 @@ hashable
 	- we use it when we need to pass python object to other language processes, and vice versa.
 
 - lambda function
-	- one liner
-	- SYNATAX is lambda arguments: expression
-	- We need not define complete function. We can use instantly for the purpose.
-	- I use it when working with higher order function like map(), filter(), zip() and reduce()
+	- one liner function, mainly useful for evaluating a single expression that is
+	  supposed to be evaluated only once.
+	- SYNTAX is lambda arguments: expression
+	- We need not define a complete function. We can use it instantly for the purpose.
+	- It can be passed as a parameter to a higher-order function, like filter(),
+	  map(), and reduce().
 	- example
 		- if we have to increment all values in a list by one,
 				map(lambda x:x + 1, range(10))
+	- And, coming to the con side,
+		- It can’t perform multiple expressions.
+		- It can easily become cumbersome, for example when it includes an if-elif-…-else cycle.
+		- It can’t contain any variable assignments (e.g., lambda x: x=0 will throw a SyntaxError).
+		- We can’t provide a docstring to a lambda function.
 
 - List comprehension
 	- rewriting the for loop in single line.
+	- it will reate code object in the backend
 
 - funtion Overloading
 	- function overloading is not supported in python
@@ -179,7 +193,7 @@ hashable
 						multiple --> two parents & one child
 						multi-level -->  parent1 => child ==> subChild
 				- Method Resolution Order is the order in which base classes are searched for a member during lookup.
-
+			hybrid & hierarchial
 		4) POLYMORPHISM: It is an ability of object to behave in multiple form.
 			Ex: + operator, It will work differently in different contexts
 						addition operation between integers
@@ -274,6 +288,7 @@ hashable
 
 	- In python2, map will result a list, where as in python3, it will return an iterator
 	  object. Other higher order functions are Filter, Zip and Reduce
+
 - Filter
 	- This higher-order function will superimpose a function, on one or more iterables
 	  and return the values, for whom the function returns boolean true.
@@ -319,7 +334,7 @@ process vs thread
 
 concurrency vs parallelism
  - “Concurrency is about dealing with lots of things at once.
-    Parallelism is about doing lots of things at once” – Rob Pike
+    Parallelism is about doing lots of things at once”
 
 - cooperative multitasking
 	- Whenever a thread begins sleeping or awaiting network I/O, there is a chance for

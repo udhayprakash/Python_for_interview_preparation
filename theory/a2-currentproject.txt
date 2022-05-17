@@ -33,7 +33,7 @@ In Machine Learning,
 	The use-case is that there was an archive database.
 	We need to do future predictions based on these past values.
 
-	I created a model and also exposed it via  a flask application, for further training.
+	I created a model and also exposed it via a flask application, for further training.
 
 ======================================================
 In AWS cloud, my roles involve,
@@ -41,7 +41,8 @@ In AWS cloud, my roles involve,
 	We will implement using the cloud formation templates
 	And integrate with ci/cd
 
-	We will do POCs with new components in aws, and if success, we try to incorporate in architecture, using cloud formation templates
+	We will do POCs with new components in aws, and if success, we try to incorporate in architecture,
+	using cloud formation templates
 
 Day-to-day activities
 --------------------

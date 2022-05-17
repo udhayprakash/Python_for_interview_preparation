@@ -1,5 +1,7 @@
 Python
 ======
+	extend multiple abstract clases, in python
+
 	args and kwargs
 	sorted(d, key=d.get, reverse=True)
 
@@ -22,13 +24,13 @@ Python
 	https://hackersandslackers.com/extract-data-from-complex-json-python/
 	instance vs classmethods vs staticmethod
 		when to use each
-
-		When we cerate a car class
+		When we create a car class
 		And we needd to give chase number to each car instance
 
 
 Pandas
 ======
+	pandas - merge, concat and join
 	How do I get a list of all the duplicate items using pandas in python?
 	statictical modelling
 	numpy dimension broadcast
@@ -61,7 +63,16 @@ AWS Cloud
 	aws lambda scale horiontally and vertically in console
 	aws lambda - event and context objects
 	aws glue dynamic frame
-
+	aws kms vs secrets manager
+	rds to dynamodb migration
+	AWS Step functions usage
+	ec2 vs lambda
+	Using Lambda with Amazon SQS
+	Configuring a queue to trigger an AWS Lambda function (console)
+	aws s3 life cycle
+	s3 object storage classes
+	boto3 client vs resource
+	aws Services worked with boto3
 
 Databases
 ==========
@@ -90,6 +101,7 @@ Databases
 	replications of databases
 	common table expression in sql
 	cons of normalization
+	sql : rank vs dense_rank
 
 Web Servers
 ============
@@ -151,19 +163,15 @@ https://www.webforefront.com/django/setuprelationshipsdjangomodels.html
 
 
 docker optimize image size
+docker life cycle
+	8.  `docker save` to save the running container as image
+
 git braNCHING strategies
-
-
-
 
 Big Team vs Small Team
 	With big team, we can good number of ppl to reach for an help , or sharing thought
 
 	Both has advantages and limitations
-
-
-
-
 
 
 what you leanred recently
