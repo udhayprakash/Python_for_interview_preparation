@@ -45,13 +45,17 @@ Python Questions
 	- Mutable object - it is editable. we can add , remove any element in it.
 	- indexed and retains the order of initialization
 	- will retain duplicates and can store any data type
+
 - Tuple
 	- same as a list, but once created, we can't change any element in it .
 	- it is immutable object
+
 - Set
 	- mutable object - we can edit it
 	- unordered and wont store duplicates
 	- will store only immutable objects(int, float, string, frozenset, tuple)
+	- frozenset is same like set, but is immutable
+
 - Dictionaries
 	- They store in key: value relation
 	- keys should be immutable and unique, and hashable
@@ -110,24 +114,60 @@ hashable
 
 - lambda function
 	- one liner
-	- SYNATAX is lambda arguments: expression
+	- SYNTAX is lambda arguments: expression
 	- We need not define complete function. We can use instantly for the purpose.
 	- I use it when working with higher order function like map(), filter(), zip() and reduce()
 	- example
 		- if we have to increment all values in a list by one,
 				map(lambda x:x + 1, range(10))
 
-- List comprehension
+- enumerate 
+	- Its a build-in function, mainly used when iterating over any iterable,
+	  to get the loop index. 
+	- Ex: 
+			for loop_index, num in enumerate([1, 2, 3, 4]:
+				print(loop_index, num
+
+List comprehension
 	- rewriting the for loop in single line.
+	- As it creates a code object, it will be slighty faster. 
+	- But, comprehensions will reduce the readability of code. 
+	- Based on the braces we store with, comprehensions include 
+		- list comprehension 
+		- set comprehension 
+		- dictionary comprehension 
+		- Tuple comprehension is called generator expression 
 
-- funtion Overloading
-	- function overloading is not supported in python
-	- only function overwriting is present.
 
-	- In java,
-		If you create function with 2 arguments and another with 3 arguments,
-		we can call each invidivally.
-	- But, in python, it will overwrite with the latest function/method
+*args **kwargs 
+	- They are used for creating variadic functions. 
+	- *args will enable a function to take zero or any number of arguments. 
+	  It will store all the values in a tuple 
+	  
+	- **kwargs will enable the function to take any number of keyword arguments. 
+	  It will store all values in a dictionary.
+	  Ex: func(a=1, b=2, c=3)  will create a dict {'a': 1, 'b': 2, 'c': 3}
+	
+
+constructor 
+	- its the method, which will be called, automatically, when we 
+	  instantiate the class instance 
+	  __init__() is the method for the same 
+	  
+destructor 
+	- its the method, which will be called, automatically, when we 
+	  delete an instance, or at the end of scope of the instance. 
+	  __del__() is the method for the same
+	  
+
+overloading vs overwriting 
+	- If we define two functions/methods with same name, but different no. of arguments, 
+	  then, if we can call both functions/methods individually, it is called Overloading. 
+	  
+	- Python doesnt support overloading, but only overwriting is supported
+	- Overwriting means among the defined two functions, as both have same name, 
+	  the latest defined function/method will overwrite others
+
 
 - range() vs xrange()
 	- In python 2,
@@ -165,8 +205,8 @@ hashable
 		1) ENCAPSULATION - with public , protected and private variables/methods
 				public variable -- it a variable is starting with no underscore
 				protected variable -- if it is starting with SINGLE underscore
-				private variable -- if it is starting and ending with TWO underscores
-
+				private variable -- if it is starting  with TWO underscores
+					du
 			We can access all variables  of all classes irrespective of public or private or protected.
 			This name mangling is to avoid accidental override
 
@@ -174,19 +214,31 @@ hashable
 						functionality to the user.
 
 		3) INHERITANCE:
-				- python supports single, multiple and multi-level inheritance, using MRO (Method Resolution Order)
-						single ---> one parent & one child
-						multiple --> two parents & one child
-						multi-level -->  parent1 => child ==> subChild
-				- Method Resolution Order is the order in which base classes are searched for a member during lookup.
+				- For better code resusability, common code we write in one class, 
+				  and inherint in other classes 
+				  
+				- python supports single, multiple and multi-level inheritance, 
+				  using MRO (Method Resolution Order)
+				  
+				- Python supports all three types of inheritances 
+					(1) single ---> one parent & one child
+					(2)	multiple --> two parents & one child
+					(3)	multi-level -->  parent1 => child ==> subChild
+				
+				- Method Resolution Order is the order in which base classes are searched 
+				  for a member during lookup.
 
-		4) POLYMORPHISM: It is an ability of object to behave in multiple form.
+		4) POLYMORPHISM: It is an ability of an object to behave in multiple form.
 			Ex: + operator, It will work differently in different contexts
 						addition operation between integers
 						List concatenation operator between lists
 						Tuple concatenation operator between tuples
 
-- class Variables vs Instance Variables
+self 
+	- Its the placeholder for the instance being passed to the class 
+
+
+class variables vs instance variables
 	- Class variable is used to work with class methods
 	- Instance variables are just associated with instance methods
 
@@ -195,6 +247,12 @@ hashable
 	  Then, We can track using the class variables
 	- Instance variables of each instance, will be isolated
 	  from that of other instances.
+
+
+Abstract Classes 
+	- These are called as blueprint for other classes 
+	- These classes are used for inheritance only, and not for creating instances. 
+
 
 - python 2 to 3
 	- I used python built-in module, lib2to3 , for migrating from python2 to python3.
@@ -274,6 +332,7 @@ hashable
 
 	- In python2, map will result a list, where as in python3, it will return an iterator
 	  object. Other higher order functions are Filter, Zip and Reduce
+
 - Filter
 	- This higher-order function will superimpose a function, on one or more iterables
 	  and return the values, for whom the function returns boolean true.
@@ -282,6 +341,21 @@ hashable
 	- It will create pairs, on two or more iterables.
 	- It will create pairs to the minimum size, among the iterables;
 	  and discard asymmetric size values.
+
+- Reduce 
+	- It will iterate on a single iterable with the given function 
+	- It will take a function and work with every two consecutive elements in that iterable 
+	- Finally, returns a single value as result. 
+	-  Ex: for calculating factorial of a number, etc. 
+	- Its a build-in function in python2, whereas in python 3, it is part of functools module
+ 
+- pass, continue and break 
+	- pass is like a TODO. It does nothing, except to hold the syntax 
+	- say we need to have a class, or a condition, but want to write logic in future, 
+	  we use "pass" to retain the syntax. 
+	  
+	- continue will skip the current loop, whereas 
+	  break will stop the entire loop
 
 - Threading vs Asyncio
 	Threading
@@ -383,13 +457,17 @@ Non-Automic Operations
 	- will allow you to allocate and release resources precisely when you want to.
 	- Examples include when working with
 		- file operations, database or socket connections, etc.
+	- They implement the "finally" block once we come out of the context manager indentation. 
+	
 	- we can do with the 'with' keyword, like
 
 		with open('file_name.txt', 'r') as fh:
 			data = fh.read()
 
-	- we need not close the file handler. Once it comes out of the context indentation, it will automatically close
-I	- we can create custom context managers, using the dunder methods, __enter__() and __exit__().
+	- we need not close the file handler. Once it comes out of the context indentation,
+	  it will automatically close
+I	- we can create custom context managers, using the dunder methods, 
+      __enter__() and __exit__().
 	- I remember using it to track the file operations.
 
 		class File:

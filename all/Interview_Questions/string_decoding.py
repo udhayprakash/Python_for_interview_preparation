@@ -15,6 +15,7 @@ b2{o}2{k}2{e}per => bookkeeper
 10{a} => aaaaaaaaaa
 a2bc3{d} => a2bcddd
 """
+
 def decodeContainerId(input):
     resStr, repWord, num = '', '', 0
     for index, eachChar in enumerate(input):
