@@ -146,6 +146,9 @@ Javascript Questions
 	pure function
 
 
+security 
+	- zero day vs CVE
+
 materialized view vs non materialized view
 https://www.webforefront.com/django/setuprelationshipsdjangomodels.html
 
