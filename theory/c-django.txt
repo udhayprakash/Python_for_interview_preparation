@@ -310,3 +310,7 @@
 
 Flask
 	- Sqlachemy with Alembic for database migrations
+
+
+TODO 
+	- Django forms - https://justdjango.com/blog/dynamic-forms-in-django-htmx

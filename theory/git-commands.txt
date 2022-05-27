@@ -32,3 +32,10 @@ Git Commands
 	
 	- git bisect 
 		- to discover the commit that has introduced a bug in the code
+		
+	- To squash (merge) last three commmits 
+		git reset --soft HEAD~3 &&
+		git commit
+		
+		To update the commit message, 
+			git commit --edit -m"$(git log --format=%B --reverse HEAD..HEAD@{1})"
