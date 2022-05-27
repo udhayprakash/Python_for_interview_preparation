@@ -34,6 +34,7 @@ assert solution([6, 0, -1, 10]) == 11
 assert solution([13, 10, 8, 4, 10]) == 6
 assert solution([10, 12, 9, 6, 8, 12]) == 6
 assert solution([455, 460, 465, 451, 414, 415, 441]) == 27
+assert solution([1, 5, 1, 3, 7, 3]) == 6
 print(
     solution(
         [
