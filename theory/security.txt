@@ -15,6 +15,17 @@ TLS vs mTLS
 
 SQL injection atack
 
+Cross-Site Scripting(XSS)
+	- In XSS, malicious scripts are injected into trusted websites
+	- XSS attack occurs when an attacker uses a web application to send malicious code, 
+	  in browser side script, to different user. 
+	- XSS attacks are two types: stored and reflected 
+		1) In Stored (Persistent or Type-I) XSS Attacks, injected script is permananetly 
+		stored on the target servers such as in a database, in a message forum, 
+		visitor log, comment field, etc. 
+		The victim then retrieves the malicious script from server when it requests 
+		stored information. 
+		   
 	xss
 	XSS if you fill in a search field for example, and that variable is used
 on the page somewhere, you could type in "bullshit."

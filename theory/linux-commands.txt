@@ -156,3 +156,13 @@ To increase limit on number of Maximum Files was reached, as a root user,
 	 sysctl -w fs.file-max=100000
 
 	To persist these changes after reboot, edit /etc/sysctl.conf and add this parameter there
+
+
+Iptables 
+	- its firewall that allows system administrators to manage incoming and outgoing traffic 
+	  via a set of configurable table rules. 
+	- Iptables uses a set of tables which have chains that contain set of built-in or user 
+	  defined rules.
+
+To List Disks on Linux using lsblk
+	$ lsblk

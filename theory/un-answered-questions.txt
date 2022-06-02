@@ -1,9 +1,9 @@
 Python
-======
+------
 	extend multiple abstract clases, in python
 
 	args and kwargs
-	sorted(d, key=d.get, reverse=True)
+	sorted(d, key-d.get, reverse-True)
 
 	local vs global vs non-local
 	--main---
@@ -29,7 +29,7 @@ Python
 
 
 Pandas
-======
+------
 	pandas - merge, concat and join
 	How do I get a list of all the duplicate items using pandas in python?
 	statictical modelling
@@ -43,21 +43,21 @@ Pandas
 	https://saralgyaan.com/posts/category/pandas/
 
 Flask
-======
+------
 	flask - before and after request ,  blueprints
 
 Django
-=======
+-------
 	how to exclude certain fields from django migrations
 
 spark
-=======
+-------
 	rdd vs dataframe vs dataset
 	spark dataframe vs pandas dataframe
 	spark architecture
 
 AWS Cloud
-==========
+----------
 	sns vs sqs
 	Amazon Aurora
 	aws lambda scale horiontally and vertically in console
@@ -75,7 +75,7 @@ AWS Cloud
 	aws Services worked with boto3
 
 Databases
-==========
+----------
 	sql to get duplicate records employee table
 
 	rank () function -- top 3 in each group
@@ -104,42 +104,42 @@ Databases
 	sql : rank vs dense_rank
 
 Web Servers
-============
+------------
 	nginx vs apache - https://www.javatpoint.com/difference-between-apache-and-nginx
 	nginx
 
 Architecture
-============
+------------
 	microservices architecture vs monolithic architecture
 	concurrency - preemptive and nonpreemptive scheduling
 	thread stack
 	DB Design - write-heavy & read-heavy
 
 datawarehousing
-================
+----------------
 	fact tables - types and examples
 	dimensional tables
 	OLTP and OLAP environment.
 
 
 Situation-based
-================
+----------------
 	time when you missed the project deadline
 	when requirement is not clear
 	pull requst review checks
 	cross-functional requirements
 
 Linux
-=====
+-----
 	linux iptables
 	cgroups in linux
 
 Tools
-======
+------
 	elasticSearch / Solr
 
 Javascript Questions
-====================
+--------------------
 	1) Javascript prototyping
 	2) local storage vs session storage
 	3) data attribute in html
@@ -157,6 +157,9 @@ Javascript Questions
 	call,  apply  vs bind in javascript
 	pure function
 
+
+security
+	- zero day vs CVE
 
 materialized view vs non materialized view
 https://www.webforefront.com/django/setuprelationshipsdjangomodels.html

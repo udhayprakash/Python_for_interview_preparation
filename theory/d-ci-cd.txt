@@ -124,6 +124,10 @@ Scrum Emergency Procedure: (do only as much as necessary)
 	- Abort the Sprint and replan.
 	- Inform management how the emergency affects release dates.
 
+three amigos session
+	- Meeting between product owner, developer, and quality tester
+	- To get clarity on scope of the project
+	- It should be done before the sprint planning, for next sprint.
 
 SDLC
 ======
@@ -147,5 +151,17 @@ what are you looking in th new work?
 - In long term, i want to be architect. I am making every step towards that journey
 
 - In terms of work, it is almost match of what am doing now and your expectations
-- I am to prove myself initially, and learn to add value to the project
-- I want to be helpful, to more people, with my work
+- I am to prove myself initially , and learn to add value to the project
+- I want to be helpful , to more people, with my work
+
+
+DDD
+	- Domain Driven Development
+	- software development philosophy centered around the domain, or sphere of
+	  knowledge, of those that use it.
+	- DDD is an effective way to write clear, testable code, and provides principles
+	  and patterns to solve difficult problems.
+	- DDD gets everybody using the same language.
+
+Lazy Loading
+	- I

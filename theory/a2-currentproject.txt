@@ -99,5 +99,14 @@ Current project - Mortgage analytics
 	  enhancements.
 
 
+Current project - RealEstate
+------------------------------
+	- CBRE works in Real-Estate market
+	- I am part of the planning department.
+	- Our team is responsible for giving the prediction, for better planning
+	- We collect data from different sources like climate info, crop yield, agriculture growth,
+	  geographic and geological informations
+
+
 Current Project - Medical Research Analytics
 ---------------------------------------------

@@ -195,6 +195,14 @@
 			  multiple non-clustered index in a table.
 			- In non-clustered index, index contains the pointer to data.
 			- slow and requires more memory for operations
+
+	- physical index vs logical index
+		- physical index is the actual indexing structure as it is stored on disk.
+		- logical index is a reference to a physical index.
+
+		- When we create a primary key, secondary key, foreign key, or unique constraint, the
+		  database server ensures referential integrity by creating a logical index for the constraint.
+
 	- Sharding
 		- It is a technique that splits data into separate rows and columns held on separate database
 		server instances in order to distribute the traffic load.
@@ -347,7 +355,8 @@
 	- SQL performance Tuning
 		1. Use EXISTS instead of IN to check the existence of data.
 		2. Avoid * in the SELECT statement. Give the name of the columns which you require.
-		3. Choose appropriate Data Type. E.g. To store strings use varchar in place of text data type. Use text data type, whenever you need to store large data (more than 8000 characters).
+		3. Choose appropriate Data Type. E.g. To store strings use varchar in place of text data type. Use text data type,
+		   whenever you need to store large data (more than 8000 characters).
 		4. Avoid nchar and nvarchar if possible since both the data types take just double memory as char and varchar.
 		5. Avoid NULL in fixed-length field. In case of requirement of NULL, use variable-length (varchar) field that takes less space for NULL.
 		6. Avoid Having Clause. Having clause is required if you further wish to filter the result of an aggregations.
