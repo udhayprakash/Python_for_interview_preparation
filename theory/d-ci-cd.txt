@@ -28,45 +28,57 @@ CI/CD
 - https://www.xenonstack.com/blog/continuous-integration-and-delivery
 
 Development Process
-	System design
-	Data flow design
-	DataBase design
-	Creating jira, by speaking with stakeholders
+-------------------
+System design
+Data flow design
+DataBase design
+Creating jira, by speaking with stakeholders
+Implement, commit code, build and test
+Release code at end of sprint
+Demoing the new features to clients/Stackholders
 
 
 Code Flow
-	Step 1 : we will create a branch for each jira
-		Under the feature branch, we will start developing
-		We will follow TDD - Test driven development
-				Unittest  mocks or pytest fixtures for mocking the 3rd party resources or REST APIs
-				Use mypy for testing the annotations and types
-				For linting, i used pylint and autopep8 for reformatting code for PEP8 guidienesles
+----------
+- First, we will reach out to the clients/stackholders and gather the requirement.
+- Then, we create JIRAs correspondingly, in the backend.
+- During the Sprint planning, we discuss with all the stackholders to prioritise
+  the JIRAs for the sprint.
+- Then, for each of the JIRAs given, we will create a branch
+  Under the feature branch, we will start developing
+  We will follow TDD - Test driven development
+	Unittest mocks or pytest fixtures for mocking the 3rd party resources or REST APIs
+	Use mypy for testing the annotations and types
+	For linting, i used pylint and autopep8 for reformatting code for PEP8 guidienesles
 
-		We need to ensure all existing and new  test cases are running
-		Then, push the code
-		Then, CI/CD proces will run
-		If all correct, then we can give pull request
+	We need to ensure all existing and new test cases are running
+	Then, push the code
+	Then, CI/CD proces will run
+	If all correct, then we can give pull request
 
-	Step 3: two  approvals needed; team will review the code; if any changes i will
-	Address them;
-	Else they will approve; i will merge the code
+- Then, two  approvals needed; team will review the code; if any changes i will
+  Address them;
+  Else they will approve; i will merge the code
+  Then, code goes to next branch
 
-	The, code goes to next branch
+- We are with python; we add release tag and push the code
+  Python don't have build, so next step is deployment.
 
-	We are with python; we add release tag and push the code
-	Python don't have build, so next step is deployment.
-
-We will follow all Agile ceremonies
-We will sit with the clients for requirement gathering
-Then, place the jiras in the backlog
-
-During the sprint planning, we will discuss on want among them to take, check for any dependencies and get all needed things.
-At the end of the sprint, we will have sprint review and retrospective meetings
-
-We give utmost importance to these review feedbacks, and try to improve this continuous process
+Agile Methodology
+-----------------
+- We will follow all Agile ceremonies
+- We will sit with the clients for requirement gathering
+  Then, place the jiras in the backlog
+- During the sprint planning, we will discuss on want among them to take,
+  check for any dependencies and get all needed things.
+- At the end of the sprint, we will have sprint review
+  and retrospective meetings
+- We give utmost importance to these review feedbacks,
+  and try to improve this continuous process
 
 
 Sprint Burndown Chart
+---------------------
 	- is a graphic representation that shows the rate at which work is completed and
 	  how much work remains to be done.
 	- it shows Team progress towards the Sprint Goal, not in terms of time spent but
@@ -114,18 +126,18 @@ Scrum Emergency Procedure: (do only as much as necessary)
 
 three amigos session
 	- Meeting between product owner, developer, and quality tester
-	- To get clarity on scope of the project 
-	- It should be done before the sprint planning, for next sprint. 
+	- To get clarity on scope of the project
+	- It should be done before the sprint planning, for next sprint.
 
 SDLC
 ======
 	Requirement gathering
 	Sprint planning
-	In sprint , witing code and test case, we do tdd – test driven develop,emt
+	In sprint, witing code and test case, we do TDD – test driven develop,emt
 	Build procss – CI/CD - Jenkins
 	Pull request. Two approvals
 	cod e merges to dev
-	End of sprint, all new code to push to realse branch
+	End of sprint, all new code to push to release branch
 	===and demo
 
 
@@ -143,16 +155,19 @@ what are you looking in th new work?
 - I want to be helpful , to more people, with my work
 
 
-DDD 
-	- Domain Driven Development 
-	- software development philosophy centered around the domain, or sphere of 
+DDD
+	- Domain Driven Development
+	- software development philosophy centered around the domain, or sphere of
 	  knowledge, of those that use it.
 	- DDD is an effective way to write clear, testable code, and provides principles
 	  and patterns to solve difficult problems.
 	- DDD gets everybody using the same language.
 
-
 blue-green deployment
 	- A deployment strategy in which you create two separate, but identical environments. 
 	- One environment (blue) is running the current application version and one environment
       (green) is running the new application version.
+
+=======
+Lazy Loading
+	- I

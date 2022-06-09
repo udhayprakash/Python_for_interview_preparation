@@ -13,6 +13,19 @@ Docker
 - Commands
 	1. `docker ps`  # current containers
 	2. `docker run` # create and start the container
+			-it 			flags provide an interface for us to type commands into.
+			--name 			flag is used to give a nice, memorable name to the container.
+							You can name it anything, such as "i-love-potato".
+			--network=host 	setting gives the container access to your computer's network.
+							This is very useful when writing MicroPython code that interacts
+							with your home network or with the internet.
+			--mount 		flag allows us to share a specific folder on our computer with
+							the container.
+							In this case, I am mounting my folder named Code into the
+							container's /home folder, so that I can run my code from there.
+			--entrypoint 	flag specifies which command to run when the container starts.
+							I want to run the bash shell right away so that I can type in commands.
+
 	3. `docker create` # create container
 	4. `dokcer exec` # to run commnads in container for once
 	5. `docker stop [container ID]` # terminate the container and save it's state by commit it
@@ -33,6 +46,7 @@ Docker
 
 			Example:
 			docker build -t vieux/apache:2.0
+
 
 - docker.yaml
 
@@ -73,6 +87,11 @@ Ref: https://hasura.io/blog/how-to-write-dockerfiles-for-python-web-apps-6d17384
 		- Ingress traffic is composed of all the data communications and network traffic originating from external networks and destined for a node in the host network. Ingress traffic can be any form of traffic whose source lies in an external network and whose destination resides inside the host network.
 
 	- TODO: https://head-first-kubernetes.github.io/
+
+	- secrets vs configMaps
+		- Secrets  are used for storing secret like API keys, credentials, etc
+		- ConfigMaps are used for storing not-secret configuration data
+
 
 Terraform commands
 	refresh -> to get the current state of infrastructure

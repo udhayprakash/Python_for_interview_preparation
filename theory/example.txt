@@ -1,0 +1,24 @@
+import time
+from mock import patch
+
+class MyTestCase(...):
+
+     @patch('time.sleep', return_value=None)
+     def my_test(self, patched_time_sleep):
+          time.sleep(666)  # Should be instant
+
+===
+import pytest
+
+@pytest.fixture
+def sleepless(monkeypatch):
+
+    def sleep(seconds):
+        pass
+
+    monkeypatch.setattr(time, 'sleep', sleep)
+
+import time
+
+def test_sleep(sleepless):
+    time.sleep(60)

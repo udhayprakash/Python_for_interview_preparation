@@ -222,6 +222,7 @@
 
 				def process_view(self, request, view_func, view_args, view_kwargs):
 					logger.info(f"Running {view_func.__name__} view")
+		- JSON Error middleware - https://rednafi.github.io/reflections/return-json-error-payload-instead-of-html-text-in-drf.html
 
     - Django ORM - object relational mapper
     	- I will use ORM for small queries
@@ -306,11 +307,13 @@
     		pip3 install virtualenv;
     		virtualenv -p python3 env1;
 
+Django Ref blogs/tutorials
+	- https://djangotricks.blogspot.com/
 
 
 Flask
 	- Sqlachemy with Alembic for database migrations
 
 
-TODO 
+TODO
 	- Django forms - https://justdjango.com/blog/dynamic-forms-in-django-htmx

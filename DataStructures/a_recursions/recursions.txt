@@ -1,0 +1,94 @@
+Recursions
+ - Recursion is a programming technique in which a call to a function results
+       in another call to that same function.
+    - Iteration is calling an object, and moving over it.
+
+pseudo-code:
+-------------
+def funcName(<input paramaters>):
+    <some condition check for termination>
+    <some logic>
+    return funcName(<input parameters>)
+
+intialization
+while condition
+    logic
+    increment/decrement
+
+
+Any  function  which  calls  itself  is  called recursive.  A  recursive  method  solves  a  problem  bycalling a copy of itself to work on a smaller problem. This is called the recursion step. Therecursion step can result in many more such recursive calls.
+
+Three Laws of Recursion:
+------------------------
+    1. A recursive algorithm must have a base case.
+    2. A recursive algorithm must change its state and move toward the base case.
+    3. A recursive algorithm must call itself, recursively.
+
+
+Recursion vs Iteration
+----------------------
+- Recursion
+    - Terminates when a base case is reached
+    - Each recursive call requires extra space on
+      the stack frame ( memory)
+    - If we get infinite recursion, the program
+      may run out of memory and result in stack
+      overflow.
+    - Solutions to some problems are easier to
+      formulate recursively.
+
+- Iteration
+    - Terminates when a condition is proven
+      to be false.
+    - Each iteration does not require extra space.
+    - An infinite loop could loop forever since
+      there is no extra memory being created.
+    - Iterative solutions to a problem may not
+      always be as obvious as a recursive solution.
+
+- For some problems, ther are no obvious iterative algorithms.
+- Generallu, iterative solutions are more efficient
+  that recursive solutions(due to overhead of function calls).
+
+Example algorithms of Recursion
+- Fibonacci Series, Factorial Finding
+- Merge Sort, Quick Sort
+- BInary Search
+- Tree Traversals and may Tree problems
+    - InOrder, PreOrder, PostOrder
+- Graph Traversals:
+    - DFS - Depth First Search
+    - BFS - Breadth First Search
+- Dynamic Programming examples
+- Divise and Conquer algorithms
+- Towers of Hanoi
+- Backtracking algorithms
+
+Problems:
+1) Towers of Hanoi
+2) Given an array, check whether array is in
+   sorted order with recursion.
+
+Backtracking
+-------------
+- its a form of recursion.
+- its a improvement of brute force approach.
+- sometimes the best algorithm for a problem
+is to try all possibilities.
+- Tools: algorithm for generating basic objects as
+    - binary strings - 2^n possibilities for n-bit string
+    - permutations   - n!
+    - combinations   - n!/r!(n -r)!
+    - general strings- k-ary strings of length n has k^n possibilities
+- Backtracking speeds the exhaustive search by pruning.
+
+Example algorithms of Backtracking
+- Binary Strings: generating all binary strings
+- Generating k-ary strings
+- N-Queens Problem
+- The Knapsack Probllem
+- Generalized Strings
+- Hamiltonian Cycles
+- Graph Coloring Problem
+
+ref: https://www.geeksforgeeks.org/backtracking-algorithms/

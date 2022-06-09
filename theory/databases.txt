@@ -49,6 +49,12 @@
 		CALL		: Call a PL/SQL or JAVA subprogram.
 		EXPLAIN PLAN: It describes the access path to data.
 
+	- Order of Execution
+		- From, WHere, Group By, Having, Select, Order By, Limit
+
+	- Order in Commands
+		- Select, From , JOIN(ON), Where, Group BY, Having, Order By, Limit
+
 	- Normalization
 		- process of organizing the columns, tables of a database to minimize the
 			redundancy of data. Normalization involves in dividing large tables
@@ -189,14 +195,14 @@
 			  multiple non-clustered index in a table.
 			- In non-clustered index, index contains the pointer to data.
 			- slow and requires more memory for operations
-	
-	- physical index vs logical index 
-		- physical index is the actual indexing structure as it is stored on disk. 
-		- logical index is a reference to a physical index. 
-		
+
+	- physical index vs logical index
+		- physical index is the actual indexing structure as it is stored on disk.
+		- logical index is a reference to a physical index.
+
 		- When we create a primary key, secondary key, foreign key, or unique constraint, the
 		  database server ensures referential integrity by creating a logical index for the constraint.
-	
+
 	- Sharding
 		- It is a technique that splits data into separate rows and columns held on separate database
 		server instances in order to distribute the traffic load.
@@ -209,11 +215,20 @@
 		- Unlike regular aggregate functions, window functions retuns single aggregated value for each row.
 		- There are 3 types of window functions
 			- Aggregate window functions - SUM(), MAX(), MIN(), AVG(), COUNT()
-			- Ranking Window Functions - RANK(), DENSE_RANK(), ROW_NUMBER(), NTILE()
-					ROW_NUMBER() -- 1,2,3,4,5 (different rank no. to same value)
-					RANK() 		 -- 1,2,2,4,5 (same rank no. to same value but next rank is skipped)
-					DENSE_RANK() -- 1,2,2,3,4 (same rank no. to same value but no skip in rank no.)
-			- Value Window Functions - LAG(), LEAD(), FIRST_VALUE(), LAST_VALUE()
+			- Analytical window functions
+				- Ranking Window Functions - RANK(), DENSE_RANK(), ROW_NUMBER(), NTILE()
+						ROW_NUMBER() -- 1,2,3,4,5 (different rank no. to same value)
+						RANK() 		 -- 1,2,2,4,5 (same rank no. to same value but next rank is skipped)
+						DENSE_RANK() -- 1,2,2,3,4 (same rank no. to same value but no skip in rank no.)
+
+						ROW_NUMBER()
+							- generates incremental row number dynamically, for each row, based on given order
+								Ex: ROW_NUMBER() OVER (ORDER BY marks) as row_num
+							- If partition by clause is added, the sequencing will be for each of the partition
+								Ex: ROW_NUMBER() OVER (PARTITION BY dept_name ORDER BY marks) as row_num
+
+
+				- Value Window Functions - LAG(), LEAD(), FIRST_VALUE(), LAST_VALUE()
 
 	- SQL constraints
 		NOT NULL 	 # Ensures a column cannot have a NULL value

@@ -1,7 +1,9 @@
 Python
-======
+------
+	extend multiple abstract clases, in python
+
 	args and kwargs
-	sorted(d, key=d.get, reverse=True)
+	sorted(d, key-d.get, reverse-True)
 
 	local vs global vs non-local
 	--main---
@@ -24,13 +26,13 @@ Python
 	https://hackersandslackers.com/extract-data-from-complex-json-python/
 	instance vs classmethods vs staticmethod
 		when to use each
-
-		When we cerate a car class
+		When we create a car class
 		And we needd to give chase number to each car instance
 
 
 Pandas
-======
+------
+	pandas - merge, concat and join
 	How do I get a list of all the duplicate items using pandas in python?
 	statictical modelling
 	numpy dimension broadcast
@@ -43,30 +45,39 @@ Pandas
 	https://saralgyaan.com/posts/category/pandas/
 
 Flask
-======
+------
 	flask - before and after request ,  blueprints
 
 Django
-=======
+-------
 	how to exclude certain fields from django migrations
 
 spark
-=======
+-------
 	rdd vs dataframe vs dataset
 	spark dataframe vs pandas dataframe
 	spark architecture
 
 AWS Cloud
-==========
+----------
 	sns vs sqs
 	Amazon Aurora
 	aws lambda scale horiontally and vertically in console
 	aws lambda - event and context objects
 	aws glue dynamic frame
-
+	aws kms vs secrets manager
+	rds to dynamodb migration
+	AWS Step functions usage
+	ec2 vs lambda
+	Using Lambda with Amazon SQS
+	Configuring a queue to trigger an AWS Lambda function (console)
+	aws s3 life cycle
+	s3 object storage classes
+	boto3 client vs resource
+	aws Services worked with boto3
 
 Databases
-==========
+----------
 	sql to get duplicate records employee table
 
 	rank () function -- top 3 in each group
@@ -92,44 +103,45 @@ Databases
 	replications of databases
 	common table expression in sql
 	cons of normalization
+	sql : rank vs dense_rank
 
 Web Servers
-============
+------------
 	nginx vs apache - https://www.javatpoint.com/difference-between-apache-and-nginx
 	nginx
 
 Architecture
-============
+------------
 	microservices architecture vs monolithic architecture
 	concurrency - preemptive and nonpreemptive scheduling
 	thread stack
 	DB Design - write-heavy & read-heavy
 
 datawarehousing
-================
+----------------
 	fact tables - types and examples
 	dimensional tables
 	OLTP and OLAP environment.
 
 
 Situation-based
-================
+----------------
 	time when you missed the project deadline
 	when requirement is not clear
 	pull requst review checks
 	cross-functional requirements
 
 Linux
-=====
+-----
 	linux iptables
 	cgroups in linux
 
 Tools
-======
+------
 	elasticSearch / Solr
 
 Javascript Questions
-====================
+--------------------
 	1) Javascript prototyping
 	2) local storage vs session storage
 	3) data attribute in html
@@ -148,7 +160,7 @@ Javascript Questions
 	pure function
 
 
-security 
+security
 	- zero day vs CVE
 
 materialized view vs non materialized view
@@ -156,19 +168,15 @@ https://www.webforefront.com/django/setuprelationshipsdjangomodels.html
 
 
 docker optimize image size
+docker life cycle
+	8.  `docker save` to save the running container as image
+
 git braNCHING strategies
-
-
-
 
 Big Team vs Small Team
 	With big team, we can good number of ppl to reach for an help , or sharing thought
 
 	Both has advantages and limitations
-
-
-
-
 
 
 what you leanred recently

@@ -6,7 +6,7 @@ I am a Full-Stack Python Developer, with all years of experience,
 IN Backend, I worked on creating standalone scripts for automation, scheduled jobs,
 ETL jobs and data pipelines; and RESTful APIs and web applications.
 
-IN FRONTEND, I worked on creating dashboards/graphs/charts using d3.js library,
+IN FRONTEND, I worked on creating dashboards/graphs/charts using d3.js or high charts libraries,
 and tables using ag-grid. Also, worked on JavaScript, jQuery, and react.
 
 In databases,
@@ -24,7 +24,8 @@ In Caching,
 	I worked with Redis
 
 In scheduling,
-	I worked with celery. I did integrations with my django application for periodic jobs
+	I worked with celery.
+	I did integrations with my django application for periodic jobs
 
 In Public Cloud, I am mostly associated with AWS Cloud.
 	In AWS Cloud, I worked with
@@ -41,8 +42,6 @@ In Public Cloud, I am mostly associated with AWS Cloud.
 		Server-less Architectures with
 			- AWS Lambda - with either time-triggered or event triggered
 			- AWS API Gateway with http-triggered
-			- For long running jobs beyond 15min, as AWS lambda has limitation,
-			  i use Step Functions
 
 		For oauth, i worked with aws cognito
 		- Also, worked with SQS, SNS and SES
@@ -60,8 +59,9 @@ In Golang, I created microservices and ETL jobs,
 	Learning the GRPC
 
 REASON FOR CHANGE -
-	CONTRACT COMPLETED. NO more SCOPE FOR EXTENSION. SO, Looking for the change.
-But It is a very interesting project.
+	CONTRACT COMPLETED. NO more SCOPE FOR EXTENSION.
+	SO, Looking for a change.
+	But It is a very interesting project.
 
 
 how do you learn new technologies, and trends
@@ -79,13 +79,13 @@ Questions to Interviewers
   - May I know about the project, and the technical stack like the tools used?
   - What are you expecting from me, for this role? What can be the day-to-day activities?
 
-  - What is the volume of data, which we will be working with, on a daily basis.
+  - What is the volume of data, which we will be working, on a daily basis.
     some approximate numbers of records?
-  - What kind of data do we work with, and what are our data sources ?
+  - What kind of data do we work with, and what are our data sources?
   - Were we using any custom frameworks in our project? If so, can you help with the details?
 
   - Are we using agile methodology?  And how about the sprint cycle duration?
-  - Can i know about the work culture of our company? And Any learning opportunities here?
+  - Can I know about the work culture of our company? And Any learning opportunities here?
 
   - What were the next steps in the interview process?
     And how many more rounds of interviews can I expect?
@@ -119,8 +119,6 @@ company expenses
 -----------------
 	Green Dollar Expense -- busines from external vendors like AWS Cloud
 	Blue Dollar Expense  -- business between LOBs, in same organization
-
-
 
 ================================================================================
 We have Built micro services for different use cases with Rest APIs using aws api gateway and Lambda and

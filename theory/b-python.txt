@@ -70,7 +70,7 @@ Python Questions
 	  intersection, etc are needed.
 	- Tuple is suitable when there need to be immutability
 
-hashable
+- hashable
 	- An object is hashable if it has a hash value which never changes during its lifetime
 
 - List vs Tuple
@@ -83,8 +83,8 @@ hashable
 			2. variable sized block for the data.
 	- Tuples is that they use less memory where lists use more memory
 	- USAGE:
-	List is used when we need to make changes in code, say like adding values while loop .
-	Tuple is used when we wont change something in the code
+		List is used when we need to make changes in code, say adding values while loop .
+		Tuple is used when we wont change something in the code
 
 - append vs extend
 	- both adding elements in last of list
@@ -105,6 +105,12 @@ hashable
 	- IN array, we need to have all elements of same type.
 	- whenever i have to store all elements of same type, as arrays are more performant than lists.
 
+- range vs xrange
+	- xrange of python2 , is renamed as range in python 3
+	- range in python2 results a list, whereas in python 3, range results in range object.
+	- range takes three arguments - start number, stopNumber and step ;
+	  then, will return the sequence for those values
+
 - Pickling
 	- Pickling means Python object to flat file conversion
 	- unpickling means flat file to python object conversion
@@ -113,59 +119,65 @@ hashable
 	- we use it when we need to pass python object to other language processes, and vice versa.
 
 - lambda function
-	- one liner
+	- one liner function, mainly useful for evaluating a single expression that is
+	  supposed to be evaluated only once.
 	- SYNTAX is lambda arguments: expression
-	- We need not define complete function. We can use instantly for the purpose.
-	- I use it when working with higher order function like map(), filter(), zip() and reduce()
+	- We need not define a complete function. We can use it instantly for the purpose.
+	- It can be passed as a parameter to a higher-order function, like filter(),
+	  map(), and reduce().
 	- example
 		- if we have to increment all values in a list by one,
 				map(lambda x:x + 1, range(10))
+	- And, coming to the con side,
+		- It can’t perform multiple expressions.
+		- It can easily become cumbersome, for example when it includes an if-elif-…-else cycle.
+		- It can’t contain any variable assignments (e.g., lambda x: x=0 will throw a SyntaxError).
+		- We can’t provide a docstring to a lambda function.
 
-- enumerate 
+- enumerate
 	- Its a build-in function, mainly used when iterating over any iterable,
-	  to get the loop index. 
-	- Ex: 
+	  to get the loop index.
+	- Ex:
 			for loop_index, num in enumerate([1, 2, 3, 4]:
 				print(loop_index, num
 
 List comprehension
 	- rewriting the for loop in single line.
-	- As it creates a code object, it will be slighty faster. 
-	- But, comprehensions will reduce the readability of code. 
-	- Based on the braces we store with, comprehensions include 
-		- list comprehension 
-		- set comprehension 
-		- dictionary comprehension 
-		- Tuple comprehension is called generator expression 
+	- As it creates a code object, it will be slighty faster.
+	- But, comprehensions will reduce the readability of code.
+	- Based on the braces we store with, comprehensions include
+		- list comprehension
+		- set comprehension
+		- dictionary comprehension
+		- Tuple comprehension is called generator expression
 
+*args **kwargs
+	- They are used for creating variadic functions.
+	- *args will enable a function to take zero or any number of arguments.
+	  It will store all the values in a tuple
 
-*args **kwargs 
-	- They are used for creating variadic functions. 
-	- *args will enable a function to take zero or any number of arguments. 
-	  It will store all the values in a tuple 
-	  
-	- **kwargs will enable the function to take any number of keyword arguments. 
+	- **kwargs will enable the function to take any number of keyword arguments.
 	  It will store all values in a dictionary.
 	  Ex: func(a=1, b=2, c=3)  will create a dict {'a': 1, 'b': 2, 'c': 3}
-	
 
-constructor 
-	- its the method, which will be called, automatically, when we 
-	  instantiate the class instance 
-	  __init__() is the method for the same 
-	  
-destructor 
-	- its the method, which will be called, automatically, when we 
-	  delete an instance, or at the end of scope of the instance. 
+
+constructor
+	- its the method, which will be called, automatically, when we
+	  instantiate the class instance
+	  __init__() is the method for the same
+
+destructor
+	- its the method, which will be called, automatically, when we
+	  delete an instance, or at the end of scope of the instance.
 	  __del__() is the method for the same
-	  
 
-overloading vs overwriting 
-	- If we define two functions/methods with same name, but different no. of arguments, 
-	  then, if we can call both functions/methods individually, it is called Overloading. 
-	  
+
+overloading vs overwriting
+	- If we define two functions/methods with same name, but different no. of arguments,
+	  then, if we can call both functions/methods individually, it is called Overloading.
+
 	- Python doesnt support overloading, but only overwriting is supported
-	- Overwriting means among the defined two functions, as both have same name, 
+	- Overwriting means among the defined two functions, as both have same name,
 	  the latest defined function/method will overwrite others
 
 
@@ -214,28 +226,34 @@ overloading vs overwriting
 						functionality to the user.
 
 		3) INHERITANCE:
-				- For better code resusability, common code we write in one class, 
-				  and inherint in other classes 
-				  
-				- python supports single, multiple and multi-level inheritance, 
+				- python supports single, multiple and multi-level inheritance, using MRO (Method Resolution Order)
+						single ---> one parent & one child
+						multiple --> two parents & one child
+						multi-level -->  parent1 => child ==> subChild
+				- Method Resolution Order is the order in which base classes are searched for a member during lookup.
+			hybrid & hierarchial
+		4) POLYMORPHISM: It is an ability of object to behave in multiple form.
+				- For better code resusability, common code we write in one class,
+				  and inherint in other classes
+
+				- python supports single, multiple and multi-level inheritance,
 				  using MRO (Method Resolution Order)
-				  
-				- Python supports all three types of inheritances 
+
+				- Python supports all three types of inheritances
 					(1) single ---> one parent & one child
 					(2)	multiple --> two parents & one child
 					(3)	multi-level -->  parent1 => child ==> subChild
-				
-				- Method Resolution Order is the order in which base classes are searched 
+
+				- Method Resolution Order is the order in which base classes are searched
 				  for a member during lookup.
 
-		4) POLYMORPHISM: It is an ability of an object to behave in multiple form.
 			Ex: + operator, It will work differently in different contexts
 						addition operation between integers
 						List concatenation operator between lists
 						Tuple concatenation operator between tuples
 
-self 
-	- Its the placeholder for the instance being passed to the class 
+self
+	- Its the placeholder for the instance being passed to the class
 
 
 class variables vs instance variables
@@ -248,10 +266,9 @@ class variables vs instance variables
 	- Instance variables of each instance, will be isolated
 	  from that of other instances.
 
-
-Abstract Classes 
-	- These are called as blueprint for other classes 
-	- These classes are used for inheritance only, and not for creating instances. 
+Abstract Classes
+	- These are called as blueprint for other classes
+	- These classes are used for inheritance only, and not for creating instances.
 
 
 - python 2 to 3
@@ -305,7 +322,6 @@ Abstract Classes
 
 		- PEP8 - don't use both return & yield in same function
 
-
 		def grepper_gen():
 			yield "add"
 			yield "grepper"
@@ -342,19 +358,19 @@ Abstract Classes
 	- It will create pairs to the minimum size, among the iterables;
 	  and discard asymmetric size values.
 
-- Reduce 
-	- It will iterate on a single iterable with the given function 
-	- It will take a function and work with every two consecutive elements in that iterable 
-	- Finally, returns a single value as result. 
-	-  Ex: for calculating factorial of a number, etc. 
+- Reduce
+	- It will iterate on a single iterable with the given function
+	- It will take a function and work with every two consecutive elements in that iterable
+	- Finally, returns a single value as result.
+	-  Ex: for calculating factorial of a number, etc.
 	- Its a build-in function in python2, whereas in python 3, it is part of functools module
- 
-- pass, continue and break 
-	- pass is like a TODO. It does nothing, except to hold the syntax 
-	- say we need to have a class, or a condition, but want to write logic in future, 
-	  we use "pass" to retain the syntax. 
-	  
-	- continue will skip the current loop, whereas 
+
+- pass, continue and break
+	- pass is like a TODO. It does nothing, except to hold the syntax
+	- say we need to have a class, or a condition, but want to write logic in future,
+	  we use "pass" to retain the syntax.
+
+	- continue will skip the current loop, whereas
 	  break will stop the entire loop
 
 - Threading vs Asyncio
@@ -393,7 +409,7 @@ process vs thread
 
 concurrency vs parallelism
  - “Concurrency is about dealing with lots of things at once.
-    Parallelism is about doing lots of things at once” – Rob Pike
+    Parallelism is about doing lots of things at once”
 
 - cooperative multitasking
 	- Whenever a thread begins sleeping or awaiting network I/O, there is a chance for
@@ -457,8 +473,8 @@ Non-Automic Operations
 	- will allow you to allocate and release resources precisely when you want to.
 	- Examples include when working with
 		- file operations, database or socket connections, etc.
-	- They implement the "finally" block once we come out of the context manager indentation. 
-	
+	- They implement the "finally" block once we come out of the context manager indentation.
+
 	- we can do with the 'with' keyword, like
 
 		with open('file_name.txt', 'r') as fh:
@@ -466,7 +482,7 @@ Non-Automic Operations
 
 	- we need not close the file handler. Once it comes out of the context indentation,
 	  it will automatically close
-I	- we can create custom context managers, using the dunder methods, 
+I	- we can create custom context managers, using the dunder methods,
       __enter__() and __exit__().
 	- I remember using it to track the file operations.
 

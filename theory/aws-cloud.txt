@@ -1,12 +1,3 @@
-- boto3 is built on top of botocore
-	- client is for lower-level interactions
-	- resource for higher-level object oriented abstractions
-	- waiters are polling the status of specific resource
-		- say, when creating ec2 instance, waiting till it reaches "Running" state
-	- collections indicate a group of resources such as a group of s3 objects
-	  in a bucket, or a group of SQS queues
-		- It helps to perform some action on those groups
-
 - Lambda layer
 	- It is an archive containing additional code, such as libraries, dependencies, or
 	  even custom runtimes.
@@ -121,6 +112,18 @@ Amazon Simple Queue Service (Amazon SQS)
 - AWS Glue
 	- https://docs.aws.amazon.com/glue/latest/dg/add-job.html
 	- https://docs.aws.amazon.com/glue/latest/dg/workflows_overview.html
+	- AWS Glue connectors
+		- Amazon S3
+		- JDBC
+			- Amazon Redshift
+			- Amazon Relational Database Service (Amazon RDS)
+		- Amazon DocumentDB
+		- DynamoDB
+		- Kafka
+		- Amazon Kinesis
+		- MongoDB
+		- Network (designates a connection to a data source within an
+					Amazon Virtual Private Cloud environment (Amazon VPC))
 
 - ETL Jobs
 	- I have created ETLs jobs like say,
@@ -283,3 +286,31 @@ Cloud Formation
 		Fn::Split
 		Fn::Sub
 		Fn::Transform
+
+
+boto3
+=======
+- boto3 is built on top of botocore
+	- client is for lower-level interactions
+	- resource for higher-level object oriented abstractions
+	- waiters are polling the status of specific resource
+		- say, when creating ec2 instance, waiting till it reaches "Running" state
+	- collections indicate a group of resources such as a group of s3 objects
+	  in a bucket, or a group of SQS queues
+		- It helps to perform some action on those groups
+
+- List files in s3 bucket
+	import boto3
+	s3 = boto3.resource('s3')
+
+	## Bucket to use
+	bucket = s3.Bucket('my-bucket')
+
+	## List objects within a given prefix
+	for obj in bucket.objects.filter(Delimiter='/', Prefix='fruit/'):
+		print(obj.key)
+
+	Output:
+
+		fruit/apple.txt
+		fruit/banana.txt
