@@ -151,5 +151,8 @@ DDD
 	  and patterns to solve difficult problems.
 	- DDD gets everybody using the same language.
 
-Lazy Loading 
-	- I
+
+blue-green deployment
+	- A deployment strategy in which you create two separate, but identical environments. 
+	- One environment (blue) is running the current application version and one environment
+      (green) is running the new application version.

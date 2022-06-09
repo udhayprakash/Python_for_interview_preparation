@@ -385,10 +385,37 @@ Characteristics of MySQL:
 	- Data organization/refactoring (you can have disorganized data anywhere, but MySQL is better with tables that represent "types" or "components" and then combining them into queries -- this is called normalization).
 	- MySQL (and relational databases) are more well suited for arbitrary datasets and requirements common in AGILE software projects.
 
+	- Two db engines 
+		- MyISAM - My Indexed Sequential Access Method
+			- used for web, data warehousing and other analytic environments
+	- InnoDB vs MyISAM 
+		- InnoDB has row-level locking; MyISAM only has full table level locking 
+		- InnoDB supports transactions, means we can commit and rollback
+		  MyISAM is faster to read 
+		- InnoDB supports foreign keys and relationship constraints(referential integrity), 
+		  where as MyISAM doesnt support. 
+		- InnoDB supports caching both data and indexes, but doesnt support full-text search. 
+		  MyISAM is only meant for indexes, and full-text search.
+		- InnoDB supports transaction logs and data recovery on failure; whereas MyISAM doesnt.
+	
 Characteristics of Cassandra:
 	- Speed: For simple retrieval of large documents. However, it will require multiple queries for highly relational data – and "by default" these queries may not be consistent (and the dataset can change between these queries).
 	- Availability: The opposite of "consistency". Data is always available, regardless of being 100% "correct".[1]
 	- Optional fields (wide columns): This CAN be done in MySQL with meta tables etc., but it's for-free and by-default in Cassandra.
+
+Lazy Loading 
+	- it is the practice of delaying load or initialization of resources or objects until
+	  they're actually needed to improve performance ans save system resources. 
+	- Advantages include, 
+		- Reduced initial load times 
+		- Bandwidth conservation 
+		- System resource conservation 
+
+Eager Loading 
+	- it is the preloading more than needed. 
+
+
+SQL Alchemy Loading - https://docs.sqlalchemy.org/en/14/orm/loading_relationships.html
 
 - Logical DB Design Tools
 	1) Visual Paradigm ERD Tools

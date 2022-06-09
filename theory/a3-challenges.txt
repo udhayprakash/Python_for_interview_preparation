@@ -93,7 +93,7 @@ Biggest Failures
 Innovation - Process Improvement
 ================================
 	- This is when i am working on one new product.
-	  Generally, we are in initial alpha/beta stages, we will focus more on adding new features.
+	  Generally, we are in the initial alpha/beta stages, we will focus more on adding new features.
 	  Resolving bugs will be done, but in a slow process.
 	  In that project, we followed the 2-week sprint. so, If any enhancement/bug is coming after the
 	  start of new sprint, we placed them in backlog; and pulled only in the coming sprint.

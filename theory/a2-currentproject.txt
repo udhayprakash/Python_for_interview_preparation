@@ -9,6 +9,14 @@ my responsibilities here include
 	- finally, the cleansed and transformed data will be exposed as an API, for both
 		UI consumption and for app to app communication
 
+
+In Machine Learning,
+	I worked with a Linear regression algorithm, using the scikit-learn module.
+	The use-case is that there was an archive database.
+	We need to do future predictions based on these past values.
+
+	I created a model and also exposed it via  a flask application, for further training.
+
 In terms of technical stack,
 	Our application server is in a EC2 instance, and celery workers are running
 	on another server.
@@ -27,13 +35,6 @@ In terms of technical stack,
     Cache       : Redis
     Queuing     : RabbitMQ
     Scheduler   : Celery
-
-In Machine Learning,
-	I worked with a Linear regression algorithm, using the scikit-learn module.
-	The use-case is that there was an archive database.
-	We need to do future predictions based on these past values.
-
-	I created a model and also exposed it via  a flask application, for further training.
 
 ======================================================
 In AWS cloud, my roles involve,

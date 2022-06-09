@@ -261,3 +261,25 @@ AWS Limits
 		   memory range is from 128 to 3008 MB
 		   maximum execution timeout for a function is 15 minutes
 		   3000 concurrent request at time. If exceeded, requsts will throttle until lambda scales by 500 per minute
+
+
+Cloud Formation
+===============
+- intrinsic function
+	- built-in functions that enable you to assign values to properties that are only available
+	  at runtime. 
+	- we can use intrinsic functions in templates, to assign values to properties that are not 
+	  available until runtime.
+	- Example 
+		Fn::Base64
+		Fn::Cidr
+		Condition functions
+		Fn::FindInMap
+		Fn::GetAtt
+		Fn::GetAZs
+		Fn::ImportValue
+		Fn::Join
+		Fn::Select
+		Fn::Split
+		Fn::Sub
+		Fn::Transform

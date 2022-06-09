@@ -6,6 +6,7 @@ Python
 	local vs global vs non-local
 	--main---
 	is possible indexing in dict
+	copy vs deepcopy 
 
 	___new__      birth
 	__init__       name
@@ -16,6 +17,7 @@ Python
 	pytest request fixture
 	python descriptor protocol
 	python __get__
+	pytest parellel
 
 	multithreading vs multiprocessing
 	handling-hash-collisions-in-python
@@ -170,3 +172,26 @@ Big Team vs Small Team
 
 
 what you leanred recently
+
+
+-----------------
+AWS Lambda Alias
+
+Loading secrets to aws lambda 
+Alb vs api gateway
+https://dashbird.io/blog/aws-api-gateway-vs-application-load-balancer/
+
+https://github.com/ultrajson/ultrajson
+
+https://realpython.com/lessons/python-mock-object-library-overview/
+https://jerry-git.github.io/learn-python3/notebooks/intermediate/html/pytest_fixtures.html
+
+unittest dummy vs stub python
+https://martinfowler.com/articles/mocksArentStubs.html
+https://martinfowler.com/tags/test%20categories.html
+
+https://stackoverflow.com/questions/11360858/what-is-the-eafp-principle-in-python
+https://www.scylladb.com/glossary/eventual-consistency/
+https://github.com/MichaelCade/90DaysOfDevOps/tree/main/Days/Go
+https://towardsdatascience.com/solid-coding-in-python-1281392a6a94
+https://codeshare.io/0g4lmN
