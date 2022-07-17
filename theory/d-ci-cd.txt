@@ -89,7 +89,7 @@ Sprint Burndown Chart
 
 
 Development Tools
-==================
+------------------
 	for code Management - Bitbucket, Github
 	for Issue Tracking  - Jira, CA Rally
 	for CI/CD           - Jenkins
@@ -133,7 +133,7 @@ three amigos session
 	- It should be done before the sprint planning, for next sprint.
 
 SDLC
-======
+------
 	Requirement gathering
 	Sprint planning
 	In sprint, witing code and test case, we do TDD – test driven develop,emt
@@ -141,7 +141,7 @@ SDLC
 	Pull request. Two approvals
 	cod e merges to dev
 	End of sprint, all new code to push to release branch
-	===and demo
+	---and demo
 
 
 what are you looking in th new work?
@@ -166,5 +166,11 @@ DDD
 	  and patterns to solve difficult problems.
 	- DDD gets everybody using the same language.
 
+blue-green deployment
+	- A deployment strategy in which you create two separate, but identical environments.
+	- One environment (blue) is running the current application version and one environment
+      (green) is running the new application version.
+
+-------
 Lazy Loading
 	- I

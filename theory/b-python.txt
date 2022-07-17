@@ -30,7 +30,7 @@ Files i worked with
 	- CSV, .dat files, tsv files with pandas
 
 Python Questions
-=================
+-----------------
 - Basic Data Types - Int, Float, Str, None, bool
 - Built-in Data Structures - List, Tuple, set, Dictionary
 
@@ -514,6 +514,22 @@ unittesting
 			setup instance method 	-- executes at the start of each test case
 			tearDown instance method – executes at end of each test case
 
+	- According to Martin Fowler, creator of unit tests,
+		- Dummy objects
+			are passed around but never actually used.
+			Usually they are just used to fill parameter lists.
+		- Fake objects
+			actually have working implementations, but usually take some shortcut which
+			makes them not suitable for production (an in memory database is a good example).
+		- Stubs
+			provide canned answers to calls made during the test, usually not responding
+			at all to anything outside what's programmed in for the test.
+			Stubs may also record information about calls, such as an email gateway stub
+			that remembers the messages it 'sent', or maybe only how many messages it 'sent'.
+		- Mocks
+			are what we are talking about here: objects pre-programmed with expectations
+			which form a specification of the calls they are expected to receive.
+
 
 - name mangling
 	- python supports Public, private and protected variables/methods/functions
@@ -591,6 +607,7 @@ Heap vs stack
 	- Stack memory is faster than heap memory.
 
 Metaclasses
+-----------
 	- A metaclass is the class of a class.
 	- A class defines how an instance of the class (i.e. an object) behaves
 		while a metaclass defines how a class behaves. A class is an instance of a metaclass.

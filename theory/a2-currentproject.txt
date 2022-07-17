@@ -10,11 +10,11 @@ my responsibilities here include
 		UI consumption and for app to app communication
 
 In Machine Learning,
-	I worked with a Linear regression algorithm, using the sk-learn module.
+	I worked with a Linear regression algorithm, using the scikit-learn module.
 	The use-case is that there was an archive database.
 	We need to do future predictions based on these past values.
 
-	I created a model and also exposed it via a flask application, for further training.
+	I created a model and also exposed it via  a flask application, for further training.
 
 In terms of technical stack,
 	Our application server is in a EC2 instance, and celery workers are running
@@ -39,7 +39,7 @@ In terms of team,
 	In backend, apart from me, there were two junior developers
 	In frontend, two developers were present
 	And we have a couple of data scientists, who will architect the dataflows
-======================================================
+------------------------------------------------------
 In AWS cloud, my roles involve,
 	I will create the architecture,
 	We will implement using the cloud formation templates
@@ -58,7 +58,7 @@ Day-to-day activities
 		the, you know, the standup like I will start working on my JIRAs.
 	- We prioritize based on the situation and sometimes, i will take manager’s decision
 
-========================================================================================
+----------------------------------------------------------------------------------------
 In terms of the technical stack,
 	we have a web application written in Django, with frontend as React
 	This web application is a monolithic architecture
@@ -101,6 +101,6 @@ Current project - Mortgage analytics
 	- we have mortgage products.
 	- I am here, part of the R&D team, doing research on these products and their
 	  enhancements.
-!1
+
 Current Project - Medical Research Analytics
 ---------------------------------------------
