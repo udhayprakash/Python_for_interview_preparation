@@ -34,13 +34,6 @@ Python Questions
 - Basic Data Types - Int, Float, Str, None, bool
 - Built-in Data Structures - List, Tuple, set, Dictionary
 
-- Mutable objects
-	- supports inplace changes
-	- list, set, dict
-- Immutable objects
-	- doesnt support inplace changes
-	- tuple, string, frozenset
-
 - List
 	- Mutable object - it is editable. we can add , remove any element in it.
 	- indexed and retains the order of initialization
@@ -214,43 +207,33 @@ overloading vs overwriting
 		- It gives us the scalability in code to adapt any requirement changes.
 
  	- There are 4 principles:
-		1) ENCAPSULATION - with public , protected and private variables/methods
+		1) ENCAPSULATION - with public, protected and private variables/methods
 				public variable -- it a variable is starting with no underscore
 				protected variable -- if it is starting with SINGLE underscore
 				private variable -- if it is starting  with TWO underscores
-					du
+
 			We can access all variables  of all classes irrespective of public or private or protected.
 			This name mangling is to avoid accidental override
 
-		2) ABSTRACTION: It is a process of hiding implementation details and showing only
-						functionality to the user.
+		2) ABSTRACTION:
+			- It is a process of hiding implementation details and showing only functionality to the user.
 
 		3) INHERITANCE:
-				- python supports single, multiple and multi-level inheritance, using MRO (Method Resolution Order)
-						single ---> one parent & one child
-						multiple --> two parents & one child
-						multi-level -->  parent1 => child ==> subChild
-				- Method Resolution Order is the order in which base classes are searched for a member during lookup.
-			hybrid & hierarchial
+			- python supports single, multiple and multi-level inheritance, using MRO (Method Resolution Order)
+					single ---> one parent & one child
+					multiple --> two parents & one child
+					multi-level -->  parent1 => child ==> subChild
+			- Method Resolution Order is the order in which base classes are searched for a member during lookup.
+			  hybrid & hierarchical
+
 		4) POLYMORPHISM: It is an ability of object to behave in multiple form.
-				- For better code resusability, common code we write in one class,
-				  and inherint in other classes
-
-				- python supports single, multiple and multi-level inheritance,
-				  using MRO (Method Resolution Order)
-
-				- Python supports all three types of inheritances
-					(1) single ---> one parent & one child
-					(2)	multiple --> two parents & one child
-					(3)	multi-level -->  parent1 => child ==> subChild
-
-				- Method Resolution Order is the order in which base classes are searched
-				  for a member during lookup.
+			- For better code resusability, common code we write in one class,
+				and inherint in other classes
 
 			Ex: + operator, It will work differently in different contexts
-						addition operation between integers
-						List concatenation operator between lists
-						Tuple concatenation operator between tuples
+					addition operation between integers
+					List concatenation operator between lists
+					Tuple concatenation operator between tuples
 
 self
 	- Its the placeholder for the instance being passed to the class
@@ -270,14 +253,14 @@ Abstract Classes
 	- These are called as blueprint for other classes
 	- These classes are used for inheritance only, and not for creating instances.
 
+- Difference between python2 and python3
+	- Default encoding is ASCII in python2, whereas it  is UTF-8 in python3
+	- There were both old & new style classes in python2, whereas in python3, we have only new style classes.
+	- IN python2, range, map, filter will return list; where these are iterators in python3.
 
 - python 2 to 3
 	- I used python built-in module, lib2to3 , for migrating from python2 to python3.
 	- Wrote code with six module to write compatible code, for both python2 and 3, during migrating phase.
-	- Difference between python2 and python3
-		- Default encoding is ASCII in python2, whereas it  is UTF-8 in python3
-		- There were both old & new style classes in python2, whereas in python3, we have only new style classes.
-		- IN python2, range, map, filter will return list; where these are iterators in python3.
 	- Challenges during conversion
 		- In python2, we can compare string and int; We cant do the same with python3
 			- I wrote wrapper to handle it
@@ -377,7 +360,7 @@ Abstract Classes
 	Threading
 		- In threading, OS actually knows about each thread and can interrupt it at
 			any time to start running a different thread.
-		- It is Pre-Emptive Multitasking
+		- It is Preemptive Multitasking
 		- code in the thread doesn't need to do anything to make the switch.
 		- difficult as OS can pause/resume thread "AT ANY TIME"
 	Asyncio
@@ -607,7 +590,103 @@ Heap vs stack
 	  When heap memory is full, it throws java.lang.OutOfMemoryError: Java Heap Space error.
 	- Stack memory is faster than heap memory.
 
-High Performance Computing , in python
+Metaclasses
+	- A metaclass is the class of a class.
+	- A class defines how an instance of the class (i.e. an object) behaves
+		while a metaclass defines how a class behaves. A class is an instance of a metaclass.
+
+	While in Python you can use arbitrary callables for metaclasses, the better approach is
+	to make it an actual class itself.
+	type is the usual metaclass in Python.
+	type is itself a class, and it is its own type.
+	You won't be able to recreate something like type purely in Python, but Python cheats
+	a little. To create your own metaclass in Python you really just want to subclass type.
+
+	A metaclass is most commonly used as a class-factory. When you create an object
+	by calling the class, Python creates a new class (when it executes the 'class' statement)
+	by calling the metaclass.
+	Combined with the normal __init__ and __new__ methods, metaclasses therefore allow you to
+	do 'extra things' when creating a class, like registering the new class with some registry or replace the class with something else entirely.
+
+	When the class statement is executed, Python first executes the body of the class statement as a normal block of code. The resulting namespace (a dict) holds the attributes of the class-to-be. The metaclass is determined by looking at the baseclasses of the class-to-be (metaclasses are inherited), at the __metaclass__ attribute of the class-to-be (if any) or the __metaclass__ global variable. The metaclass is then called with the name, bases and attributes of the class to instantiate it.
+
+	However, metaclasses actually define the type of a class, not just a factory for it, so you can do much more with them. You can, for instance, define normal methods on the metaclass. These metaclass-methods are like classmethods in that they can be called on the class without an instance, but they are also not like classmethods in that they cannot be called on an instance of the class. type.__subclasses__() is an example of a method on the type metaclass. You can also define the normal 'magic' methods, like __add__, __iter__ and __getattr__, to implement or change how the class behaves.
+
+	Here's an aggregated example of the bits and pieces:
+
+	def make_hook(f):
+		"""Decorator to turn 'foo' method into '__foo__'"""
+		f.is_hook = 1
+		return f
+
+	class MyType(type):
+		def __new__(mcls, name, bases, attrs):
+
+			if name.startswith('None'):
+				return None
+
+			# Go over attributes and see if they should be renamed.
+			newattrs = {}
+			for attrname, attrvalue in attrs.iteritems():
+				if getattr(attrvalue, 'is_hook', 0):
+					newattrs['__%s__' % attrname] = attrvalue
+				else:
+					newattrs[attrname] = attrvalue
+
+			return super(MyType, mcls).__new__(mcls, name, bases, newattrs)
+
+		def __init__(self, name, bases, attrs):
+			super(MyType, self).__init__(name, bases, attrs)
+
+			# classregistry.register(self, self.interfaces)
+			print "Would register class %s now." % self
+
+		def __add__(self, other):
+			class AutoClass(self, other):
+				pass
+			return AutoClass
+			# Alternatively, to autogenerate the classname as well as the class:
+			# return type(self.__name__ + other.__name__, (self, other), {})
+
+		def unregister(self):
+			# classregistry.unregister(self)
+			print "Would unregister class %s now." % self
+
+	class MyObject:
+		__metaclass__ = MyType
+
+
+	class NoneSample(MyObject):
+		pass
+
+	# Will print "NoneType None"
+	print type(NoneSample), repr(NoneSample)
+
+	class Example(MyObject):
+		def __init__(self, value):
+			self.value = value
+		@make_hook
+		def add(self, other):
+			return self.__class__(self.value + other.value)
+
+	# Will unregister the class
+	Example.unregister()
+
+	inst = Example(10)
+	# Will fail with an AttributeError
+	#inst.unregister()
+
+	print inst + inst
+	class Sibling(MyObject):
+		pass
+
+	ExampleSibling = Example + Sibling
+	# ExampleSibling is now a subclass of both Example and Sibling (with no
+	# content of its own) although it will believe it's called 'AutoClass'
+	print ExampleSibling
+	print ExampleSibling.__mro__
+
+High Performance Computing, in python
 	- Dask
 		- for distributed computing.
 		- facilitates running many computations at the same time, either on a single machine or on many separate computers (cluster).
@@ -641,6 +720,11 @@ Pandas
 	- When index is unique, pandas use a hashtable to map key to value O(1).
 	- When index is non-unique and sorted, pandas use binary search O(logN),
 	  when index is random ordered pandas need to check all the keys in the index O(N).
+
+- join vs merge
+	- join() is used to combine two DataFrames on the index but not on columns
+	- merge() is primarily used to specify the columns you wanted to join on, this also supports
+	joining on indexes and combination of index and columns.
 
 - find differences between two dataframes
 	df1=pd.DataFrame({'A':[1,2,3,3],'B':[2,3,4,4]})

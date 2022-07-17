@@ -10,7 +10,7 @@
 			GET  - to retrieve one or more records
 			POST - to create record
 			PUT  - to update an existing record
-			PATCH- to update a column in existing record
+			PATCH- to update a specific column in existing record
 			DELETE- to delete a record
 
 			HEAD - response identical to GET, but without response body
@@ -35,7 +35,31 @@
 		- path params are used to identify a specific resource or resources,
 		  while query parameters are used to sort/filter those resources.
 
-- API Authentication
+REST vs SOAP
+=============
+RESTful supports JSON, XML,
+	SOAP supports only XML
+REST is faster than SOAP based web services
+	SOAP is more secure
+REST allows a greater variety of data formats,
+	SOAP only allows XML.
+
+1) SOAP
+	- Communication happens using XML only
+	- Request is sent to SOAP methods
+	- Documentation is in WSDL (Wizdal)
+	- Heavy, more secure, more stable
+	- getting less popular
+2) REST API
+	- Communication happens using Json, XML
+	- Requests are sent to API methods/urls using
+	- Communication happens in HTTP(Internet)
+	- Lightweight, stable
+	- Easy to develop and automate
+	- very popular
+
+API Authentication
+===================
 	1) HTTP Authentication
 		- Basic HTTP Auth
 			- where we send credentails to server, in http header. so less secure.

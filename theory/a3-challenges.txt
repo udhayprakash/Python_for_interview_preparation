@@ -87,12 +87,12 @@ Biggest Failures
 		- Thinking of edge cases before moving to production
 			- Using Monkey patching, and dynamically modifying classes/functions at runtime
 			  to see the effect
-		- Overall, i learned to do local setup using 'localstack' for working with those, without
+		- Overall, I learned to do local setup using 'localstack' for working with those, without
 		  even going to AWs Cloud.
 
 Innovation - Process Improvement
 ================================
-	- This is when i am working on one new product.
+	- This is when I am working on one new product.
 	  Generally, we are in initial alpha/beta stages, we will focus more on adding new features.
 	  Resolving bugs will be done, but in a slow process.
 	  In that project, we followed the 2-week sprint. so, If any enhancement/bug is coming after the
@@ -128,7 +128,6 @@ Managing Tight deadlines
 		2) Once you have committed to a deadline, always meet it.
 		3) Planning and time management are key.
 		4) Concentration is the key to meeting deadlines and delivering good work.
-
 
 
 What tech stack would you use?

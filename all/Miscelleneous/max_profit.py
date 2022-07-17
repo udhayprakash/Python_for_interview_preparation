@@ -1,9 +1,10 @@
 def solution(prices):
     m = 0
     for i in range(0, len(prices)):
-        for j in range (i + 1, len(prices)):
+        for j in range(i + 1, len(prices)):
             m = max(m, prices[j] - prices[i])
     return m
+
 
 def solution(prices):
     buy, m = 0, 0
@@ -13,21 +14,22 @@ def solution(prices):
         m = max(m, profit)
     return m
 
+
 def solution(prices):
     m = 0
-    for i in range(0, len(prices)-1):
-        buy, sell = prices[i], max(prices[i+1:])
-        m = max(m, sell-buy)
+    for i in range(0, len(prices) - 1):
+        buy, sell = prices[i], max(prices[i + 1 :])
+        m = max(m, sell - buy)
     return m
 
 
 def solution(prices):
-      max_profit = 0
-      min_stock = float('inf')
-      for price in prices:
-         max_profit = max(max_profit, price - min_stock)
-         min_stock = min(min_stock, price)
-      return max_profit
+    max_profit = 0
+    min_stock = float("inf")
+    for price in prices:
+        max_profit = max(max_profit, price - min_stock)
+        min_stock = min(min_stock, price)
+    return max_profit
 
 
 assert solution([6, 0, -1, 10]) == 11

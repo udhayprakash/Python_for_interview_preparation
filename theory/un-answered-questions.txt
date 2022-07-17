@@ -178,3 +178,102 @@ Big Team vs Small Team
 
 
 what you leanred recently
+
+
+-----
+Creating
+Framework to choose – django rest framework or flask_restplus
+AUthentication mechanism
+Oauth
+JSon web token
+Django based token authentication
+Web based session authentication
+Authorization
+Role based
+Or policy based
+Designing the endpoints
+Dataset to expose and method involved
+
+
+copy vs deep copy
+
+Concurrency
+-------------
+rest idempotent
+
+http status codes
+rest api throttling
+------
+recent feature that you have built, try to show the feature in action and answer the following questions:
+
+What feature did you need to implement?
+Technically, from a high level how did you implement this? How long did it take?
+What were some initial challenges or things that you needed to think about?
+How did you overcome these challenges?
+
+----------
+how to motivate
+SQLAlchemy - Traditional and Declarative mapping
+
+How to you ask suggestions from the clients
+
+solid design principles explanation
+
+
+functional programming in python
+
+
+Asyncio vs multithreading vs multiprocessing
+Summary
+Concurrency Type	Features
+Multiprocessing		Multiple processes, high CPU utilization.
+Threading			Single process, multiple threads, pre-emptive multitasking, OS decides task switching.
+AsyncIO				Single process, single thread, cooperative multitasking, tasks cooperatively decide switching.
+
+
+requirement gathering  process
+
+a= 1
+d1 = {a: 'sad'}
+
+a = 2
+d1[a]
+
+How to manage conflicts
+
+- namespaces
+	LEGB - Local, Enclosed, Global, Builtin scopes
+
+Lst comprehension
+	[i for i in range(10)]
+	Last value is i is 9
+	Outside if you print(i)
+
+Local scope – anothing defined in function
+
+Global – at the script level
+
+staticmethod vs classmethod
+
+c:\windows\system32\imcontroller.infinstaller.exe -uninstall
+
+-------
+empId, dept , sal
+1		11
+
+
+Add row  number, and delete if dups, with the row_number
+=====================
+Internal product teams
+
+That is into insurance related analytics
+
+Here, ww get the personal profiling of the people
+	Say , we will get the heart rate, bp, liek that medical measurements
+
+We wil profile them and
+
+It is flask application
+Mongodb is database
+
+They have no sql database – django doesnt work with it

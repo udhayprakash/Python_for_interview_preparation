@@ -13,7 +13,10 @@ CI/CD
 		3. code coverage check -- whether it is greater than 90% or not
 		4. Static code analysis with flake8 and SonarQube
 		5. security scanning using Veracode
-		As there is no build step in python, next step is deployment
+
+	Packaging
+		I create a setup.py file , where  will add all the dist utils things for creating a wheel file
+		One this wheel file is created , next step is deployment
 
 	Current project, it is with containers
 		We use docker.yaml for containzation

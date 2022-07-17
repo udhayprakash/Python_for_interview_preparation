@@ -227,7 +227,6 @@
 							- If partition by clause is added, the sequencing will be for each of the partition
 								Ex: ROW_NUMBER() OVER (PARTITION BY dept_name ORDER BY marks) as row_num
 
-
 				- Value Window Functions - LAG(), LEAD(), FIRST_VALUE(), LAST_VALUE()
 
 	- SQL constraints
@@ -405,6 +404,13 @@ Characteristics of Cassandra:
 	- Availability: The opposite of "consistency". Data is always available, regardless of being 100% "correct".[1]
 	- Optional fields (wide columns): This CAN be done in MySQL with meta tables etc., but it's for-free and by-default in Cassandra.
 
+GraphQL
+- resolver
+	- It is a function that's responsible for populating the data for a single field in your schema.
+	- It can populate that data in any way you define, such as by fetching data from a back-end
+	  database or a third-party API.
+
+
 - Logical DB Design Tools
 	1) Visual Paradigm ERD Tools
 	2) Vertabelo
@@ -443,3 +449,14 @@ DB Design Books
 	Designing Data-Intensive Applications (O’Reilly)
 	Streaming Systems (O’Reilly)
 	Clean Code
+
+
+CAP Theorem
+===========
+Consistency        : Every read receives the most recent write or an error
+Availability       : Every request receives a (non-error) response, without the guarantee that it contains the most recent write
+Partition tolerance: The system continues to operate despite an arbitrary number of messages being dropped (or delayed) by the network between nodes
+
+- When a network partition failure happens should we decide to
+	- Cancel the operation and thus decrease the availability but ensure consistency
+	- Proceed with the operation and thus provide availability but risk inconsistency

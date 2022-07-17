@@ -27,15 +27,15 @@ Git Commands
 
 		(Feature branch context) When to Rebase: Pull and rebase if there are changes on target branch.
 
-	- To remove unstage files, 
+	- To remove unstage files,
 		git reset HEAD -- path/to/file
-	
-	- git bisect 
+
+	- git bisect
 		- to discover the commit that has introduced a bug in the code
-		
-	- To squash (merge) last three commmits 
+
+	- To squash (merge) last three commmits
 		git reset --soft HEAD~3 &&
 		git commit
-		
-		To update the commit message, 
+
+		To update the commit message,
 			git commit --edit -m"$(git log --format=%B --reverse HEAD..HEAD@{1})"

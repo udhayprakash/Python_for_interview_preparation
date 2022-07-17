@@ -12,7 +12,6 @@ worked with multiple ETL jobs.
 
 	5) MYSQL db ->  aws kinesis stream -> aws lambda → MYSQL db NEW
 
-
 Also, used the AWS GLue jobs for transformation of around 50k records.
 I configured the glue data catalogue to pick the specific columns AND  perform operations
 	Within the python code, i connected with the pyspark for some transformations, etc

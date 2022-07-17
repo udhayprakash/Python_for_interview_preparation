@@ -1,3 +1,8 @@
+cloud computing services:
+1)Infrastructure-as-a-Service (IaaS),
+2)Platforms-as-a-Service (PaaS), and
+3)Software-as-a-Service (SaaS)
+
 - boto3 is built on top of botocore
 	- client is for lower-level interactions
 	- resource for higher-level object oriented abstractions
@@ -19,6 +24,9 @@
 	- Split complex processes into separate functions to save money and gain speed.
 	- When possible, execute code in parallel.
 	- Reusing connections with Keep-Alive.
+
+- Lambda Cold Start
+	- https://www.simform.com/blog/lambda-cold-starts/
 
 - AWS Lambda Advantages
 	- Reduced Cost of Execution
@@ -142,6 +150,13 @@ Amazon Simple Queue Service (Amazon SQS)
 			aws lambda and from there
 			it can make AWS Athena queries on top of s3 buckets
 			and reply that response in JSON
+
+- RDS Proxy
+	-RDS Proxy acts as an intermediary between your application and an RDS database.
+	- RDS Proxy establishes and manages the necessary connection pools to your database
+	  so that your application creates fewer database connections.
+	- It connection pooling necessary for scaling many simultaneous connections
+	  created by concurrent Lambda functions.
 
 - dead letter queue
 	- A dead-letter queue is an Amazon SQS queue that an Amazon SNS subscription can
@@ -292,3 +307,25 @@ boto3
 
 		fruit/apple.txt
 		fruit/banana.txt
+
+s3 classification
+===
+1) s3 standard
+		- for frequently accessed data
+2) s3 Intelligent-Tiering
+		- for automatic cost savings for data with unknown or changing access patterns
+3) s3 Standard-IA  (Infrequent Access)
+		- for less frequently accessed data
+4) s3 One Zone-IA
+		- for less frequently accessed data
+5) s3 Glacier Instant Retrieval
+		- for archive data that needs immediate access
+6) s3 Glacier Flexible Retrieval(formerly S3 Glacier)
+		- for rarely accessed long-term data that does not require immediate access
+7) s3 Glacier Deep Archive
+		- for long-term archive and digital preservation with retrieval in hours at the lowest cost storage in the cloud
+8) s3 Output
+		- storage class to store your S3 data on premises, when we cant store data in AWS any complience
+
+Once an S3 Lifecycle policy is set, your data will automatically transfer to a different storage class
+without any changes to your application.

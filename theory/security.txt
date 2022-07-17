@@ -17,15 +17,15 @@ SQL injection atack
 
 Cross-Site Scripting(XSS)
 	- In XSS, malicious scripts are injected into trusted websites
-	- XSS attack occurs when an attacker uses a web application to send malicious code, 
-	  in browser side script, to different user. 
-	- XSS attacks are two types: stored and reflected 
-		1) In Stored (Persistent or Type-I) XSS Attacks, injected script is permananetly 
-		stored on the target servers such as in a database, in a message forum, 
-		visitor log, comment field, etc. 
-		The victim then retrieves the malicious script from server when it requests 
-		stored information. 
-		   
+	- XSS attack occurs when an attacker uses a web application to send malicious code,
+	  in browser side script, to different user.
+	- XSS attacks are two types: stored and reflected
+		1) In Stored (Persistent or Type-I) XSS Attacks, injected script is permananetly
+		stored on the target servers such as in a database, in a message forum,
+		visitor log, comment field, etc.
+		The victim then retrieves the malicious script from server when it requests
+		stored information.
+
 	xss
 	XSS if you fill in a search field for example, and that variable is used
 on the page somewhere, you could type in "bullshit."
@@ -40,3 +40,105 @@ Cache-control
       requests and server responses.
 	- Policies include how a resource is cached, where it's cached and its maximum
 	age before expiring (i.e., time to live)
+
+
+======
+dorks
+	- google.com
+
+Servers
+	- shodan.io
+	- censys.io
+	- onyphe.io
+	- ivre.rocks
+
+Mail addresses
+	- hunter.io
+
+Attack Surface
+	- fullhunt.io
+	- binaryedge.io
+
+Thread Intelligence
+	- socradar.io
+	- pulsedive.com
+	- viz.greynoise.io
+
+certificate search
+	- crt.sh
+
+Vulnerabilities
+	- vulners.com
+
+Source code
+	- publicwww.com
+
+OSINT
+	- intelx.com
+
+WiFi Networks
+	- wigle.net
+
+ssL certificate checker
+	- https://www.ssllabs.com/ssltest/index.html
+
+Operating Systems for Pentesting
+→ Kali Linux
+→ Parrot Security
+→ BackBox
+→ BlackArch
+→ DEFT Linux
+→ Bugtraq
+→ ArchStrike
+→ Demon Linux
+→ Cyborg Hawk
+
+Bug Bounty Tools
+→Amass
+→Sublister
+→Gauplus
+→HTTPX
+→Gf tool
+→Kxss
+→Sqlmap
+→Commix
+→Tplmap
+→HYDRA
+→John the ripper
+→Burpsuite
+→Arjun
+→Paramspider
+→NoSQLmap
+→NMAP
+→Nikto
+→FFUF
+→403-Bypass
+→Gobuster
+→Seclists
+→Hash-identifier
+→XSSMAP
+→Smuggler
+→SSRFmap
+→Gmapsapiscanner
+→Qsreplace
+→exiftool
+→XSRFProbe
+→XXE Exploiter
+→Rush
+→Rustscan
+→LFISuite
+→Wapiti
+→Nuclei
+
+Google Chrome extensions for Hacking
+	- Shodan
+	- Robtex swiss knife army Internet tool
+	- Hunter (for getting email addresses)
+	- XSS Rays
+	- HOOKISH
+	- Mailenvelope
+
+
+Instant Screen sharing web Applications
+- Gruveo
+- talky.io

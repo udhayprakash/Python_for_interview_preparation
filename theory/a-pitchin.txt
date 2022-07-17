@@ -25,7 +25,7 @@ In Caching,
 
 In scheduling,
 	I worked with celery.
-	I did integrations with my django application for periodic jobs
+	I did integrations with django applications for periodic jobs
 
 In Public Cloud, I am mostly associated with AWS Cloud.
 	In AWS Cloud, I worked with
@@ -79,7 +79,7 @@ Questions to Interviewers
   - May I know about the project, and the technical stack like the tools used?
   - What are you expecting from me, for this role? What can be the day-to-day activities?
 
-  - What is the volume of data, which we will be working, on a daily basis.
+  - What is the volume of data, which we will be working on, on a daily basis.
     some approximate numbers of records?
   - What kind of data do we work with, and what are our data sources?
   - Were we using any custom frameworks in our project? If so, can you help with the details?

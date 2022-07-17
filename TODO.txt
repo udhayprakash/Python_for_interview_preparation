@@ -62,3 +62,352 @@ https://pirple.thinkific.com/courses/take/frontend-fundamentals/lessons/5932519-
 
 couresera
     https://www.coursera.org/learn/python-text-mining/lecture/sVe8B/regular-expressions
+
+
+----------------
+netflix
+	The great hack
+	social dilemma
+
+secure coding OWASP best practices
+	- Input Validation
+	- Output Encoding
+	- Error Handling
+---------------------------------------------------------------------------------
+Given a list of periods, merge all the overlapping periods to produce a list that has only mutually exclusive periods.
+
+Example 1:
+
+Periods: [[1,4], [2,5], [7,9]]
+Output: [[1,5], [7,9]]
+Explanation: Since the first two periods [1,4] and [2,5] overlap, we merged them into
+one [1,5].
+------------------------------------------------------------------------
+A - [-100, -75, 10, 25, 31, 50, 200]
+find triplets whose sum is 0
+--------------------------------------
+# Function to find the maximum sum of a contiguous subarray
+# in a given integer array
+# Example: A - [-2, 1, -3, 4, -1, 2, 1, -5, 4], Maximum sum is 4 -1 + 2 + 1 - 6
+# Example: B - [-8, -3, -6, -2, -5, -4], Maximum is -2
+---------------------------------------------------------------------------------
+number to string
+	str1 = "324234342343242342343242"
+	str2 = "234684763989878798798798"
+
+	result = "558919106333121141142040"
+
+do without int() builtin function
+
+
+	import string
+	import math
+	res= 'outp4ut Thi1s 3an st%ring i2s'.split()
+	sorted(res, key = lambda word: find_num(word))
+
+	(digit, specialChar)
+	def find_num(word):
+		digit = re.findall('\d',word )
+		if digit:
+			return (digit, '')
+		else:
+			return (math.Inf, )
+		return int(digit) if digit else math.Inf
+---------------------------------------------------------------------------------
+/*
+Given an array of integers. A maximum tree building on this array is:
+
+* The root is the maximum number in the array.
+* The left subtree is the maximum tree constructed from the left subarray of the maximum number.
+* The right subtree is the maximum tree constructed from the right subarray of the maximum number.
+
+Construct the maximum tree by the given array and output its root node.
+
+Example:
+Input: [2,4,1,8,5,3]
+Output:
+      8
+    /   \
+   4     5
+  / \     \
+ 2   1     3
+*/
+
+
+class Node:
+    def __init__(self, val, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+def myfunc(arr, root=None):
+    if not arr: return root
+    maxVal = max(arr)
+    maxValIndex = arr.find(maxVal)
+    root = Node(maxVal)
+
+    leftArr = arr[:maxValIndex]
+    root.left = myfunc(leftArr, root)
+
+    rightArr = arr[maxValIndex+1:]
+    root.right = myfunc(rightArr, root)
+
+    return root
+
+
+================
+/*
+Given an array of integers. A maximum tree building on this array is:
+
+* The root is the maximum number in the array.
+* The left subtree is the maximum tree constructed from the left subarray of the maximum number.
+* The right subtree is the maximum tree constructed from the right subarray of the maximum number.
+
+Construct the maximum tree by the given array and output its root node.
+
+Example:
+Input: [2,4,1,8,5,3]
+Output:
+      8
+    /   \
+   4     5
+  / \     \
+ 2   1     3
+*/
+
+Input: [2,4,4,1,8,8,5,3]
+Output:
+
+         8
+       /   \
+      8     5
+     / \     \
+    4   1     3
+   /
+  4
+ /
+2
+
+
+class Node:
+    def __init__(self, val, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+def myfunc(arr, root=None):  #O(n)
+    if not arr: return root
+    #arr = list(set(arr))  # removes all dups
+    maxVal = max(arr)   #O(n)
+    maxValIndex = arr.rfind(maxVal)  #O(n)
+
+    root = Node(maxVal)
+
+    leftArr = arr[:maxValIndex]
+    root.left = myfunc(leftArr, root)
+
+    rightArr = arr[maxValIndex+1:]
+    root.right = myfunc(rightArr, root)
+
+    return root
+
+
+======================
+def insert(root, newVal):
+	if newVal < root.Val:
+		if root.left is not None:
+			insert(root.left, newVal)
+		else:
+			root.left = Node(newVal)
+	else:
+		if root.right is not None:
+			insert(root.right, newVal)
+		else:
+			root.right = Node(newVal)
+
+
+==================
+/*
+Given an array of integers. A maximum tree building on this array is:
+
+* The root is the maximum number in the array.
+* The left subtree is the maximum tree constructed from the left subarray of the maximum number.
+* The right subtree is the maximum tree constructed from the right subarray of the maximum number.
+
+Construct the maximum tree by the given array and output its root node.
+
+Example:
+Input: [2,4,1,8,5,3]
+Output:
+      8
+    /   \
+   4     5
+  / \     \
+ 2   1     3
+*/
+
+Input: [2,4,4,1,8,8,5,3]
+Output:
+
+         8
+       /   \
+      8     5
+     / \     \
+    4   1     3
+   /
+  4
+ /
+2
+
+
+class Node:
+    def __init__(self, val, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+def myfunc(arr, root=None):  #O(n)
+    if not arr: return root
+    #arr = list(set(arr))  # removes all dups
+    maxVal = max(arr)   #O(n)
+    maxValIndex = arr.rfind(maxVal)  #O(n)
+
+    root = Node(maxVal)
+
+    leftArr = arr[:maxValIndex]
+    root.left = myfunc(leftArr, root)
+
+    rightArr = arr[maxValIndex+1:]
+    root.right = myfunc(rightArr, root)
+
+    return root
+
+
+
+
+Given the root of the previous maximum tree, if we want append a new value to the end of the input array,
+how to insert the new value to the tree?
+
+Example:
+Input: [2,4,1,8,5,3] + 6 = [2,4,1,8,5,3,6]
+Output:
+      8
+    /   \
+   4     6
+  / \   /
+ 2   1 5
+        \
+         3
+
+def insert(root, newVal):
+    if newVal < root.Val:
+        if root.left is not None:
+            insert(root.left,newVal)
+        else:
+            root.left = Node(newVal)
+    elif newVal > root.Val and newVal > root.left:
+        _root = Node(newVal)
+        _root.left = root.left
+        _root.right = root
+    else:
+        if root.right is not None:
+            insert(root.right, newVal)
+        else:
+            root.right = Node(newVal)
+------------------------
+from django.http import HttpResponse, JsonResponse
+from django.views.generic import View
+from django.utils import timezone
+from datetime import timedelta
+from .models import Animal, Species
+from django.core import serializers
+
+
+class AnimalPopulationView(View):
+
+    def get(self, request):
+        unique_animals_count = Animal.objects.values_list('name').distinct().count()
+        return HttpResponse(int(unique_animals_count))
+        # return HttpResponse([f'{unique_animals_count}'], status=200)
+
+        # data = serializers.serialize('json', f'{unique_animals_count}')
+        # return HttpResponse(data, mimetype="application/json")
+
+
+class AnimalView(View):
+
+    def get(self, request):
+        animal_name = request.GET.get('animal')
+        data = list(Animal.objects.filter(name=animal_name).values())
+        if not data:
+            return JsonResponse({}, status=404)
+        return JsonResponse(data, status=200)
+
+    def post(self, request):
+        animal_name = request.POST
+        return JsonResponse({}, status=201)
+
+
+class HungryAnimalsView(View):
+
+    def get(self, request):
+        time_threshold = timezone.now() - timedelta(days=2)
+        hungry_animals = Animal.objects.filter(last_feed_time__lt=time_threshold).values_list('name').distinct().count()
+        return HttpResponse(hungry_animals)
+
+
+class FeedAnimalView(View):
+
+    def post(self, request):
+        return HttpResponse(status=201)
+
+
+-------------------
+import random, string
+from datetime import datetime, timedelta
+import time
+
+SECONDS=86400
+DAYS=15
+
+def generate_message():
+    today = datetime.now()
+    random_date = random.randrange(DAYS)
+    random_second = random.randrange(SECONDS)
+    random_date = today - timedelta(days=random_date, seconds=random_second)
+
+    patient_id = 'AK'+''.join(random.choices(string.digits, k=3))
+    codes = ['Z1231','I10','Z0000','','']
+    message = "|".join((patient_id, str(random_date)))
+    message = "-".join((message,random.choice(codes)))
+    message = "_".join((message, str(random.randint(1000, 2000))))
+    time.sleep(0.05)
+    return message
+
+
+"""
+Akasa is receiving data from a healthcare provider that has information regarding the patient visit. Can you analyze the stream and create a dashboard that provides information regarding the codes assigned to each patient.
+
+
+| Patient ID   | Visit Date | ICD-10 Code | Cost |
+| ------------ | ---------- | ----------- | ---- |
+| AK123        | 03/01/2022 | Z0000       | $231 |
+| AK456        | 02/01/2022 | E119        | $123 |
+| AK654        | 01/01/2022 | J069        | $142 |
+
+As a followup, we would also like to know the frequency at which the certain codes are being listed. Can you create a function that returns a table that will show the frequency of codes created in the last 30 seconds.
+
+| ICD-10 Code | Count |
+| ----------- | ----- |
+| Z0000       | 12    |
+| E119        |  2    |
+| J069        |  2    |
+"""
+
+def solution():
+    loop_duration = datetime.now() + timedelta(seconds=10)
+    while datetime.now() < loop_duration:
+      print (generate_message())
+      # Enter solution here
+
+solution()

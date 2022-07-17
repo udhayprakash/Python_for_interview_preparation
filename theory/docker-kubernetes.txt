@@ -92,6 +92,15 @@ Ref: https://hasura.io/blog/how-to-write-dockerfiles-for-python-web-apps-6d17384
 		- Secrets  are used for storing secret like API keys, credentials, etc
 		- ConfigMaps are used for storing not-secret configuration data
 
+	- Ingress usecases
+		Providing externally reachable URLs for services.
+		Load balancing traffic.
+		Offering name-based virtual hosting.
+		Terminating SSL (secure sockets layer) or TLS (transport layer security)
+	- Ingress vs Load balancing
+		- load balancer distributes the requests among multiple backend services (of same type)
+		  whereas ingress is more like an API gateway (reverse proxy) which routes the request
+		  to a specific backend service based on, for instance, the URL.
 
 Terraform commands
 	refresh -> to get the current state of infrastructure
