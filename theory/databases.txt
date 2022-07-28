@@ -381,6 +381,13 @@
 	24. Avoid use of Non-correlated Scalar Sub Query. Use this query as a separate query instead of part of the main query and store the output in a variable, which can be referred to in the main query or later part of the batch.
 	25. Avoid Multi-statement Table Valued Functions (TVFs). Multi-statement TVFs are more costly than inline TVFs.
 
+- SQL performance of inserts
+	1) Remove all triggers and constraints on the table
+	2) Remove all indexes, except for those needed by the insert
+	3) Ensure your clustered index is such that new records will always be inserted at the end of the table
+	 (an identity column will do just fine). This prevents page splits (where SQL Server must move data around because an existing page is full)
+	4) Set the fill factor to 0 or 100 (they are equivalent) so that no space in the table is left empty, reducing the number of pages that the data is spread across.
+	5) Change the recovery model of the database to Simple, reducing the overhead for the transaction log.
 
 - rank vs dense rank
 	views vs materialized views

@@ -893,3 +893,158 @@ So, i prefer F-strings among all.
 big data
 	mapper - producer
 	reduce - receiver
+
+Python Programming
+==================
+1) Give some examples of data types in python?
+Ans)Basic Data types 			- Int, Float, String, None, Bool
+	Built-in Data Structures 	- List, Tuple, Set, Dictionary
+
+2) What is the difference between a list and a tuple?
+Ans)List is mutable object, means we can edit the object like append, delete, ..
+	where as tuple is immutable
+	Tuples are faster than lists
+		- Tuples are stored in a single block of memory. Tuples are immutable so,
+		It doesn't require extra space to store new objects.
+		- Lists are allocated in two blocks:
+			1. fixed one with all the Python object information, and
+			2. variable sized block for the data.
+	- USAGE:
+		List is used when we need to make changes in code, say adding values while loop .
+		Tuple is used when we wont change something in the code
+
+3) When is it a good idea to use a dictionary
+Ans)Dictionary is good when there are more reads than writes.
+	For reading a key in dict, it is O(1) as keys are unique (hashed and stored).
+
+4) What is a lambda function and why would you use it
+Ans)It is a one liner function, mainly useful for evaluating a single expression that is supposed to be evaluated only once.
+	- SYNTAX is lambda arguments: expression
+	- We need not define a complete function. We can use it instantly for the purpose.
+	- It can be passed as a parameter to a higher-order function, like filter(),
+	map(), and reduce().
+	- example
+		- if we have to increment all values in a list by one,
+				map(lambda x:x + 1, range(10))
+	- And, coming to the con side,
+		- It can’t perform multiple expressions.
+		- It can easily become cumbersome, for example when it includes an if-elif-else cycle.
+		- It can’t contain any variable assignments (e.g., lambda x: x=0 will throw a SyntaxError).
+		- We can’t provide a docstring to a lambda function.
+
+5) How to get the last character in a string
+Ans) Using the negative index, we can get.
+	Ex:word = "Hello"
+		last_char = word[-1]
+
+6) What structure do you use to handle an exception (bonus: when does an else block get executed)?
+Ans)In Python, exception handling has FOUR blocks. Else and Finally blocks were optional.
+	1) Try --- executed every time
+	2) Except--- executed when there is exception in try block, check if it can handle break code if it cant
+	3) Else--- executed when no exception in try block
+	4) Finally-- executed every time— irrespective of failure, it is like for file closing, etc ….
+
+7) What is the difference between a class and an object?
+Ans)The instances of class are called objects.
+	Class defines the properties and behavior of its instances.
+	We can create instances from all classes, except the abstract classes.
+
+8) How would you break apart a comma-delimited list, then put it back together?
+Ans) Hoping the question is comma-delimited string. if so,
+	Ex: mystr = "a,b,c,d,1,2"
+		chars = mystr.split(',') # splits the string to list of chars
+		joined = ','.join(chars) # joining the list of strings, to a single string, with again comma as the delimiter
+
+9) How to denote a comment in python?
+Ans) Unlike many languages (like java, c++, ...), python dont have multiple comments, as it is an interpreter based language,
+where only one line of code is processed by the interpreter each time. Python has only line comments, with # (hash/pound) operator.
+It will have its effect from the place it is defined, till the end of that line. This operator will be treated as ordinary character,
+if it is part of any string.
+
+10) When would you use the keyword self?
+Ans)self acts as a placeholder of the instance, being passed to the class.
+	It is not a python keyword, but PEP 8 recommends using it.
+
+Networking( only answer this if you have experience in this area)
+======================================================================
+1) Give me an example of a layer 4 protocol
+Ans) In the OSI model, layer 4 protocol example include
+		UDP - User Datagram Protocol
+		TCP - Transmission Control Protocol
+
+2) Give me an example of a layer 7 protocol
+Ans)Layer 7 protocol examples include
+		HTTP - HyperText Transfer Protocol - for internet communication
+		SMTP - Simple Mail Transfer Protocol - for email communication
+
+3) There are two parts of an HTTP request the headers and body, what are some examples of headers found in an HTTP request
+Ans) A typical HTTP request header contains,
+		HTTP Method, URL and HTTP version
+		Host 		- server FQDN name
+		User-Agent 	- Source (browser or program based) of the request
+		Accept 		- What types of data is accepted
+		Accept-Language - language of communication
+		Accept-Encoding - Types of encoding supported
+		Connection	 - connection type - keep-alive or closed
+		Cache-Control- If cache present, the age of cache. If default, max-age=0
+
+4) What is the difference between HTTP and HTTPS?
+Ans)HTTP with encryption is called HTTPS.
+	HTTPS uses TLS (earlier SSL) to encrypt normal HTTP requests and responses.
+	So, HTTPS is more secure than HTTP.
+
+5) What tool can be used to snoop on network traffic reaching the local machine
+Ans) WireShark, TCPDump and WinDump are the most commonly used sniffing tools.
+	I worked with wireshark, which gives the .pcap files. I analyzed them programmatically to pull insights.
+
+6) Describe the steps of a TLS handshake (advanced)
+Ans) TLS came as a replacement for SSL.
+	SSL - Secure Sockets Layer
+	TLS - Transport Layer Security
+
+	During the TLS handshake, the client and server together will decide on the TLS version, the cipher which suits both.
+	Authenticate the identity of the server via the server's public key and the SSL certificate authority's digital signature.
+	Generate session keys in order to use symmetric encryption after the handshake is complete
+
+	The RSA key exchange algorithm is the most common way for the TLS handshake.
+	In RSA Key exchange,
+		1) Client initiates handshake by sending a hello message, containing
+			TLS version the client supports
+			cipher suites supported
+			string of random bytes, called client random
+		2) Server replies with message containing
+			the server's SSL certificate,
+			the server's chosen cipher suite,
+			another string of random bytes, called server random
+		3) Client verifies the server's SSL certificate with certificate authority that issued it.
+		4) Once verified, the client sends one more random string of bytes, called premaster secret.
+		 This premaster secret is encrypted with a public key(which it got from SSL certificate)
+		 and can only be decrypted with a private key by the server.
+		5) The server decrypts the premaster secret with its private key
+		6) Both client and server generate session keys from the client random, server random and the premaster secret.
+		 Both results should be the same.
+		7) Client sends a "finished" message that is encrypted with a session key.
+		8) Server sends a "finished" message encrypted with a session key.
+		9) The handshake is completed, and communication continues using the session keys.
+
+
+Communication/Process
+======================
+1) Describe your understanding of the scrum process
+Ans) It is a project management system. There are two types:
+	a) Agile scrum methodology works on incremental development.
+			There will be sprint planning, where we plan what to do in the next sprint
+			We have a sprint for 2 weeks, in general.
+			We have daily standup calls, where we discuss the progress of these jiras, and any blockers.
+			At the end of the sprint, we have sprint reviews and retrospective calls.
+	b) Kanban
+			It is suitable for bug management , mainly.
+			Each ticket has a specific weightage and it will go as per this SLA.
+
+2) What is your communication style when chatting on slack
+Ans) I will try to explain the point, to avoid ambiguity. For Example, If i am struggling with a problem
+	a) I will try to precisely explain the problem
+	b) Then, I will list out the different ways of addressing the problem, and corresponding results/failures.
+	c) If i have any thoughts, i will ask to suggest among them.
+
+	When someone replies, we will proceed, point-to-point reply

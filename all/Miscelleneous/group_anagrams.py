@@ -14,35 +14,35 @@ Expected Output => [["bat"],["nat","tan"],["ate","eat","tea"]]
 #         groups[word_sorted].append(word) # O(1)
 #     return list(groups.values()) # O(n)
 
+
 def word_sort(wd):  # O(nlogn)
-    return ''.join(sorted(wd))
+    return "".join(sorted(wd))
 
 
 def word_hash(wd):  # O(n)
     char_freq = {}
-    for eachChr in wd:   #O(n)
+    for eachChr in wd:  # O(n)
         char_freq.setdefault(eachChr, 0)
         char_freq[eachChr] += 1
     return hash(frozenset(char_freq.items()))  # O(n)
 
-def group_anagrams(input, choice='hash'):
-    choices = {
-        'hash': word_hash, 
-        'sort': word_sort
-    }
+
+def group_anagrams(input, choice="hash"):
+    choices = {"hash": word_hash, "sort": word_sort}
     user_func = choices.get(choice)
-    if not user_func: raise Exception(f'Undefined choice:{choice}')
+    if not user_func:
+        raise Exception(f"Undefined choice:{choice}")
 
     groups = {}
     for word in input:  # O(n)
-        wrd_hash = user_func(word) 
+        wrd_hash = user_func(word)
         groups.setdefault(wrd_hash, [])
-        groups[wrd_hash].append(word)  #O(1)
+        groups[wrd_hash].append(word)  # O(1)
     return list(groups.values())
 
 
-input = ["eat","tea","tan","ate","nat","bat"]
-grouped_result = group_anagrams(input, 'foo')
+input = ["eat", "tea", "tan", "ate", "nat", "bat"]
+grouped_result = group_anagrams(input, "foo")
 
 for group in grouped_result:
     for word in group:

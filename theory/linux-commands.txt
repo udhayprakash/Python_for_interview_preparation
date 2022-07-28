@@ -665,3 +665,57 @@ Linux
         - namei
             - To check permissions of each directory to a file
             - $ namei -l /path/to/file.txt
+
+Logs
+	For system logs,
+		/var/log/syslog	in Debian family
+		/var/log/messages in Redhat family
+
+	For authorization logs(successful/failed logins and authentication processes),
+		/var/log/auth.log in Debian family
+		/var/log/secure in Redhat family
+
+	/var/log/boot.log: .
+	/var/log/maillog or var/log/mail.log: is for mail server logs, handy for postfix, smtpd, or email-related services info running on your server.
+	/var/log/kern: keeps in Kernel logs and warning info. Also useful to fix problems with custom kernels.
+	/var/log/dmesg: a repository for device driver messages. Use dmesg to see messages in this file.
+	/var/log/faillog: records info on failed logins. Hence, handy for examining potential security breaches like login credential hacks and brute-force attacks.
+	/var/log/cron: keeps a record of Crond-related messages (cron jobs). Like when the cron daemon started a job.
+	/var/log/daemon.log: keeps track of running background services but doesn’t represent them graphically.
+	/var/log/btmp: keeps a note of all failed login attempts.
+	/var/log/utmp: current login state by user.
+	/var/log/wtmp: record of each login/logout.
+	/var/log/lastlog: holds every user’s last login. A binary file you can read via lastlog command.
+	/var/log/yum.log: holds data on any package installations that used the yum command. So you can check if all went well.
+	/var/log/httpd/: a directory containing error_log and access_log files of the Apache httpd daemon. Every error that httpd comes across is kept in the error_log file. Think of memory problems and other system-related errors. access_log logs all requests which come in via HTTP.
+	/var/log/mysqld.log or /var/log/mysql.log : MySQL log file that records every debug, failure and success message, including starting, stopping and restarting of MySQL daemon mysqld. The system decides on the directory. RedHat, CentOS, Fedora, and other RedHat-based systems use /var/log/mariadb/mariadb.log. However, Debian/Ubuntu use /var/log/mysql/error.log directory.
+	/var/log/pureftp.log: monitors for FTP connections using the pureftp process. Find data on every connection, FTP login, and authentication failure here.
+	/var/log/spooler: Usually contains nothing, except rare messages from USENET.
+	/var/log/xferlog: keeps FTP file transfer sessions. Includes info like file names and user-initiated FTP transfers.
+
+Systems/Linux
+=============
+1) How to show the process table
+Ans)Process table is maintained by OS, for helping , mainly, in scheduling and context switching.
+	Each row in it contains process information such as process name, state, priority, registers and semaphores, etc.
+	Also, an entry to the page table, if the OS supports paging.
+	ps command will give details of all processes.  
+
+2) What tool can be used to search and replace a string in a file
+Ans)sed is the tool for search and replace.
+	Ex: sed -i 's/existing_string/new_string/g' file_name.txt
+		It replaces all occurrences of "existing_string" with "new_string", in the file file_name.txt.
+
+
+3) How to determine which process is listening on a specific port
+Ans)Netstat is the tool, for checking the process level details.
+	The specific command is
+		netstat -anpe | grep "1234" | grep "LISTEN"
+
+4) How to list open files
+Ans)lsof is a tool, which can help in the file descriptor information.
+	To show the opened files, by a specific process,
+		sudo lsof -p PROCESS_NUMBER
+
+5) Where are logs typically found
+Ans)In Linux, all the logs are generally stored in /var/log

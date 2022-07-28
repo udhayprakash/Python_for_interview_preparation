@@ -35,6 +35,150 @@ Dr. Evil could just type in some script ij the search field right?
 <p>Your search for 'flowers <script>evil_script()</script>
 
 
+Injection
+	Injection flaws happen when an attacker sends invalid data to the web application with
+	intention to make it do something that the application was not designed/programmerd.
+
+	Injection vulnerabilities are often found in SQL, LDAP, XPATH, or NOSQL queries,
+	OS commands, XML parsers, SMTP headers, expression languages and ORM queries.
+
+	Anything that accepts parameters as input can potentially be vulnerable to a code injection attack.
+
+	Prevention
+		paramterize the queries
+		using stored procdures
+		escape special characters
+		validating user input
+		limiting privileges
+		disabling shell and any other fuctonalities you dont need
+
+Broken Authentication
+- It refers to logic issues that occur on application authentication's mechanism, like
+	bad session management prone to username enumeration
+- causes and attack types:
+	- weak session management
+	- credential stuffing
+	- brite force
+	- forgotten password
+	- no multi-factor authentication
+	- session dont expire
+	- weak passwords
+- prevention
+	- use good authentication libraris
+	- use MFA
+	- Enforce strong passwords
+	- Detect and prevent brut force or stuffing attacks
+
+- When attack surface of project grows faster that it should, we should review
+	- privilege level of the credentials used to run the application
+	- Network address space from which th program is addressable
+	- Privilege level of users using the application
+
+Sensitive Data Exposure
+- Examples
+	- credentials
+	- credit card numbers
+	- social security numbers
+	- medical information
+	- personally identifiable information (PII)
+	- other personal information
+- Root causes
+	- Clear-text data transfer
+	- Unencrypted storage
+	- Weak crypto or keys
+- Prevention
+	- Dont store data unless we need to
+	- Encrypt at rest and in transit
+	- Use string crypto
+
+- even encrypted data can be broken due to weak
+	- key generation process
+	- key management process
+	- Algorithm usage
+	- Protocol usage
+	- cipher usage
+	- password hashing storage techiniques
+
+Broken Access Control
+- examples
+	- Access to hosting control/adinitrative panel
+	- access to a server via FTP/SFTP/SSH
+	- access to a website's administrative panel
+	- access to other applications on your server
+	- access to a database
+- attackers can exploit authorization flaws to
+	- access unauthorized functionality and/or data
+	- view senstive files
+	- change access rights
+- Exaples of brokn access scenarios
+	- Access hidden pages
+		http:/site.com/admin/user-management
+	- view other people's data
+		http://site.com/user?id=7
+	- Elevate to an administrative account
+	- Modifying cookies or JWT tokens
+- Prevention
+	- Implement access control
+	- Deny access by default
+	- Disable web server directory listing
+	- User proven code or libraries
+	- Log access control failurs and alert
+	- rate limit access to resources
+
+Security Misconfiguration
+- Examples
+	- Unnecessary features enabled
+	- Default accounts not removd
+	- Error messages expose sensitive information
+	- Unpatched flaws
+	- Default configurations
+	- Unused pages
+	- Unprotected files and directories
+	- Unnecessary services
+- Misconfiguration can happen at any level of an application stack, including:
+	- Network services
+	- platform
+	- web server
+	- application server
+	- database
+	- framework
+	- custom code pre-installed virtual machines
+	- containers
+	- storage
+- Prevention
+	- Have a repeatable build process or gold master
+	- Disable all unused services
+	- use tools to review settings
+	- an automated process to verify the effectiveness of configurations and settings in all environments
+
+Cross-Site Scripting (XSS)
+- XSS attacks consist of injecting malicious client-side scripts into a website and using the website as a propagation method.
+	- Three forms of XSS
+	- Reflected XSS
+	- Stored XSS
+	- DOM XSS
+- Typical XSS attacks include session stealing, account takeover, MFA bypass, DIV replacement or defacement (such as trojan login DIVs),
+	attacks against the user's browser such as malicious software downloads, key logging, and other client side attacks.
+-prevention
+	- Filter input on arrival
+	- Use appropriate response headers
+	- Encode all user-suppilied data to render it safe
+	- use templating framworks that assemble HTML safely
+	- Enabling a content security policy
+
+Insufficient Logging and Monitoring
+- Insufficient logging and monitoring can increase damange of a websit compromise.
+-Logs are important for
+	- Detecting incidents
+	- Forensic analysis
+	- Unconvering the sequence of events leading to a cybersecurity breach, such as
+		- Attack method used to breach the defenses
+		- what attcker did once they acquired access to the network, and
+		- where the attack originated from.
+
+
+
+
 Cache-control
 	- It is an HTTP header used to specify browser caching policies in both client
       requests and server responses.
