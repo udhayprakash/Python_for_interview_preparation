@@ -496,3 +496,11 @@ Partition tolerance: The system continues to operate despite an arbitrary number
 - When a network partition failure happens should we decide to
 	- Cancel the operation and thus decrease the availability but ensure consistency
 	- Proceed with the operation and thus provide availability but risk inconsistency
+
+DB Partitioning
+===============
+- Partitioning is the db process where very large tables are divided into multiple smaller parts.
+- This helps in maintenance of large tables and to reduce overall response time to read/load data for particular SQL operations.
+- They are of TWO types
+	1) Vertical DB partitioning
+	- Vertical partitioning splits a table into two or more tables containing different columns:

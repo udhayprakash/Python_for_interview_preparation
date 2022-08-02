@@ -10,7 +10,7 @@ For example:
 """
 
 
-def longsubstr(somestring: str) -> int:
+def longest_substring(somestring: str) -> int:
     largestSubStrLen = 0
     substr = ""
     for each_chr in somestring:  # O(n^2)
@@ -27,7 +27,7 @@ def longsubstr(somestring: str) -> int:
     return largestSubStrLen
 
 
-assert longsubstr("abcadef") == 4  # 'bcadef'
-assert longsubstr("abccba") == 3  # 'abc'
-assert longsubstr("abcd") == 4  # 'abcd'
-assert longsubstr("abcdefgha") == 8  # 'abcdefgh'
+assert longest_substring("abcadef") == 4  # 'bcadef'
+assert longest_substring("abccba") == 3  # 'abc'
+assert longest_substring("abcd") == 4  # 'abcd'
+assert longest_substring("abcdefgha") == 8  # 'abcdefgh'

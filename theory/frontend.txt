@@ -47,3 +47,59 @@ tsconfig.json
 	  },
 	  "include": ["src"]
 	}
+JavaScript Hoisting
+	refers to the process whereby the interpreter appears to move the
+	declaration of functions, variables or classes to the top of their
+	scope, prior to execution of the code.
+	Hoisting allows functions to be safely used in code before they are declared.
+
+==================
+angular
+=========
+AngularJS lifecycle hooks
+	Angular gives us 8 hooks to allow us to tap into the lifecycle
+	of our components and trigger actions at specific points in the lifecycle.
+
+	1. ngOnChanges
+	2. ngOnInit
+	3. ngDoCheck
+	4. ngAfterContentInit
+	5. ngAfterContentChecked
+	6. ngAfterViewInit
+	7. ngAfterViewChecked
+	8. ngOnDestroy
+
+
+Data binding in AngularJS
+	is the synchronization between the model and the view.
+	When data in the model changes, the view reflects the change, and
+	when data in the view changes, the model is updated as well.
+
+
+two-way data binding in Angular is
+	used to display information to the end user and allows the end user
+	to make changes to the underlying data using the UI.
+	This makes a two-way connection between the view (the template) and
+	the component class. This is similar to the two-way binding in WPF.
+
+
+String Interpolation
+	in Angular 8 is a one-way data-binding technique that
+	is used to transfer the data from a TypeScript code to an HTML template (view).
+	It uses the template expression in double curly braces to display the data
+	from the component to the view.
+
+promises
+	to execute asynchronous functions that use callbacks,
+	while emitting and completing (resolving or rejecting) one value
+	at a time.
+	When using an Angular Promise, you are enabled to emit a single event from the API
+
+
+
+Dependency injection
+	is basically providing the objects that an object needs
+	(its dependencies) instead of having it construct them itself.
+
+	It's a very useful technique for testing, since it allows dependencies
+	to be mocked or stubbed out.

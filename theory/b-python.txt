@@ -111,6 +111,13 @@ Python Questions
 	- Other serialization formats are json, yaml, ...
 	- we use it when we need to pass python object to other language processes, and vice versa.
 
+	json.dumps for converting python string to JSON string
+	json.dump  for converting python string to JSON file
+
+	json.loads for loading JSON string to python string
+	json.load  for loading JSON string to python file
+
+
 - lambda function
 	- one liner function, mainly useful for evaluating a single expression that is
 	  supposed to be evaluated only once.

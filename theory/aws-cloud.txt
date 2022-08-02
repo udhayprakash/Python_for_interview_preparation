@@ -108,6 +108,31 @@ Amazon Simple Queue Service (Amazon SQS)
 				  --invocation-type Event --cli-binary-format raw-in-base64-out \
 						  --payload '{ "key": "value" }' response.json
 
+
+AWS Lambda Context properties
+
+	function_name 			– The name of the Lambda function.
+	function_version 		– The version of the function.
+	invoked_function_arn 	– The Amazon Resource Name (ARN) that's used to invoke the function.
+								Indicates if the invoker specified a version number or alias.
+	memory_limit_in_mb 		– The amount of memory that's allocated for the function.
+	aws_request_id 			– The identifier of the invocation request.
+	log_group_name 			– The log group for the function.
+	log_stream_name 		– The log stream for the function instance.
+
+	identity – (mobile apps) Information about the Amazon Cognito identity that authorized the request.
+		cognito_identity_id 	– The authenticated Amazon Cognito identity.
+		cognito_identity_pool_id– The Amazon Cognito identity pool that authorized the invocation.
+
+	client_context – (mobile apps) Client context that's provided to Lambda by the client application.
+		client.installation_id
+		client.app_title
+		client.app_version_name
+		client.app_version_code
+		client.app_package_name
+		custom – A dict of custom values set by the mobile client application.
+		env – A dict of environment information provided by the AWS SDK.
+
 - AWS Lambda Vs Glue
 	- Lambda can use a number of different languages (Node.js, Python, Go, Java, etc.)
 	  whereas Glue can only execute jobs using Scala or Python code.
@@ -149,7 +174,7 @@ Amazon Simple Queue Service (Amazon SQS)
 - ETL Jobs
 	- I have created ETLs jobs like say,
 		Users can connect to an endpoint, from where request goes via
-			AWS Congnito for authentication , Then
+			AWS Cognito for authentication , Then
 			AWS API Gateway and then
 			aws lambda and from there
 			it can make AWS Athena queries on top of s3 buckets
@@ -168,80 +193,38 @@ Amazon Simple Queue Service (Amazon SQS)
 	- Messages that can't be delivered due to client errors or server errors are held
 	in the dead-letter queue for further analysis or reprocessing.
 
-AWS account security tools
---------------------------
+- AWS Redshift
+	- Materialized View
+		- It is similar to the db views for RDBMS
+		- useful for speeding up queries that are predictable and repeated.
+		- A materialized view contains a precomputed result set, based on an SQL query over one or more base tables.
+		- It returns the precomputed results from the materialized view, without having to access the base tables at all.
+	- Load CSV to Redshift
+		1) Create the schema on Amazon Redshift.
+		2) Load the CSV file to Amazon S3 bucket using AWS CLI or the web console.
+		3) Import the CSV file to Redshift using the COPY command.
+		4) Generate AWS Access and Secret Key in order to use the COPY command.
+	  - Also, we can autoload using a 3rd party tool, called Skyvia
 
-- AWS IAM (Identity & Access Management)
-	- Enables to create users and roles with permissions
-	  too specific resources
-	- Supports Multi-factor authentication & supports
-	  single sign-on (SSO)
+Amazon DynamoDB
+	is a fully managed proprietary NoSQL database
+	service that provides fast and predictable performance with seamless scalability.
+	It supports key-value and document data structures
+	DynamoDB allows users to create tables for your database to store
+	and retrieve any data volume and to support any request traffic level.
 
-- Amazon GuardDuty
-	- uses machine learning to look for malicious activity in AWS environment
-	- combines cloudTrail event logs, VPC flow logs, S3 event logs
-	  and DNS logs to continuouslt monitor and analyze all activity.
-	- identifies issues like privilege escalation, exposed credentials, and
-	  communication with malicious IP addresses and domains.
-	- detects when Ec2 instances are serving malware or mining bitcoin
+	LSI - allows you to perform a query on a single Hash-Key while using multiple different attributes to "filter" or restrict the query.
+	GSI - allows you to perform queries on multiple Hash-Keys in a table, but costs extra in throughput, as a result.
 
-	- Also, detects access pattern anomalies such as API calls
-	  in new regions, ...
-
-- Amazon Macie
-	- discovers and protects sensitive data stored in s3 buckets.
-	- like personally-identifiable information, or personal health information,
-	  through discovery jobs.
-	- continously evaluates s3 buckets and alerts when bucket is
-	  unencrypted, is publicly accessible, or is shared with aws accounts
-	  outside the organization.
-
-- AWS config
-	- records and continuously evaluates your AWS resource configuration.
-	- keeping a historical record of all changes to your resources, which is useful for compliance with legal requirements and your organization’s policies.
-	- evaluates new and existing resources against rules that validate certain configurations.
-	- Config is configured per region, so it’s essential to enable AWS Config in all regions to ensure all resources are recorded, including in regions where you don’t expect to create resources.
-
-- AWS CloudTrail
-	- tracks all activity in AWS environment.
-	- It records all actions a user executes in the AWS console and all API calls as events.
-	- You can view and search these events to identify unexpected or unusual requests in your AWS environment.
-	- AWS CloudTrail Insights is an add-on to help identify unusual activity. It automatically analyzes your events and raises an event when it detects abnormal activity.
-	- CloudTrail is enabled by default in all AWS accounts
-
-- Security Hub
-	- combines information from all the above services in a central, unified view. It collects data from all security services from multiple AWS accounts and regions, making it easier to get a complete view of your AWS security posture.
-
-
-Application Security Tools
---------------------------
-- Amazon Inspector
-	- security assessment service for applications deployed on EC2.
-	- assessments include network access, common vulnerabilities and exposures (CVEs), Center for Internet Security (CIS) benchmarks, and common best practices such as disabling root login for SSH and validating system directory permissions on your EC2 instances.
-	- Based on agent application installed in EC2 VMs, Inspector
-	  generates a report with a detailed list of security findings prioritized by severity.
-	- Run Inspector as part of a gated check in deployment pipeline to assess your applications’ security before deploying to production.
-
-- AWS Shield
-	- fully-managed distributed denial-of-service (DDoS) protection service.
-	- enabled by default as a free standard service with protection against common DDoS attacks against your AWS environment.
-
-- AWS Web Application Firewall (WAF)
-	- monitors and protects applications and APIs built on services such as CloudFront, API Gateway, and AppSync.
-	- can block access to your endpoints based on different criteria such as the source IP address, the request’s origin country, values in headers and bodies, and more (i.e, you can enable rate limiting, only allowing a certain number of requests per IP
-
-- AWS Secrets Manager
-	- managed service where you can store and retrieve sensitive information such as database credentials, certificates, and tokens.
-	- Use fine-grained permissions to specify exact actions an entity can perform on the secrets, such as creating, updating, deleting, or retrieving secrets.
-	- Secrets Manager also supports automatic rotation for AWS services such as Amazon Relational Database Service (RDS).
-
+	DynamoDB Streams is a powerful service that you can combine with other AWS services to solve many similar issues.
+	When you enable DynamoDB Streams, it captures a time-ordered sequence of item-level modifications in a DynamoDB table and durably stores the information for up to 24 hours.
 
 Amazon Athena Workgroups are resource types, used to separate query execution and query
 history between Users, Teams, or Applications running under the same AWS account.
 Because Workgroups act as resources, you can use resource-based policies to control access
 to a Workgroup.
 
-i have experience migrating applications and data, from on-prem to cloud
+I have experience migrating applications and data, from on-prem to cloud
 
 AWS IAM
 -------
@@ -262,6 +245,19 @@ AWS IAM
 		  such as an IAM user, group, or role.
 		- Resource-based policies are permissions policies that you attach to a resource such
 		  as an Amazon S3 bucket or an IAM role trust policy.
+
+	- Identity-based policies are attached to an IAM user, group, or role.
+		- Identity-based policies can be managed or inline.
+	- Resource-based policies are attached to a resource.
+		- We can attach resource-based policies to
+			Amazon S3 buckets,
+			Amazon SQS queues,
+			VPC endpoints, and
+			AWS Key Management Service encryption keys.
+		- With resource-based policies, we can specify who has access to the resource and what actions they can perform on it.
+	- Resource-based policies Vs resource-level permissions
+		- We can attach resource-based policies directly to a resource
+		- Resource-level permissions refer to ability to use ARNs to specify individual resources in a policy.
 
 RDS vs DynamoDb
 ----------------
@@ -382,3 +378,70 @@ s3 classification
 
 Once an S3 Lifecycle policy is set, your data will automatically transfer to a different storage class
 without any changes to your application.
+
+AWS account security tools
+--------------------------
+
+- AWS IAM (Identity & Access Management)
+	- Enables to create users and roles with permissions
+	  too specific resources
+	- Supports Multi-factor authentication & supports
+	  single sign-on (SSO)
+
+- Amazon GuardDuty
+	- uses machine learning to look for malicious activity in AWS environment
+	- combines cloudTrail event logs, VPC flow logs, S3 event logs
+	  and DNS logs to continuouslt monitor and analyze all activity.
+	- identifies issues like privilege escalation, exposed credentials, and
+	  communication with malicious IP addresses and domains.
+	- detects when Ec2 instances are serving malware or mining bitcoin
+
+	- Also, detects access pattern anomalies such as API calls
+	  in new regions, ...
+
+- Amazon Macie
+	- discovers and protects sensitive data stored in s3 buckets.
+	- like personally-identifiable information, or personal health information,
+	  through discovery jobs.
+	- continously evaluates s3 buckets and alerts when bucket is
+	  unencrypted, is publicly accessible, or is shared with aws accounts
+	  outside the organization.
+
+- AWS config
+	- records and continuously evaluates your AWS resource configuration.
+	- keeping a historical record of all changes to your resources, which is useful for compliance with legal requirements and your organization’s policies.
+	- evaluates new and existing resources against rules that validate certain configurations.
+	- Config is configured per region, so it’s essential to enable AWS Config in all regions to ensure all resources are recorded, including in regions where you don’t expect to create resources.
+
+- AWS CloudTrail
+	- tracks all activity in AWS environment.
+	- It records all actions a user executes in the AWS console and all API calls as events.
+	- You can view and search these events to identify unexpected or unusual requests in your AWS environment.
+	- AWS CloudTrail Insights is an add-on to help identify unusual activity. It automatically analyzes your events and raises an event when it detects abnormal activity.
+	- CloudTrail is enabled by default in all AWS accounts
+
+- Security Hub
+	- combines information from all the above services in a central, unified view. It collects data from all security services from multiple AWS accounts and regions, making it easier to get a complete view of your AWS security posture.
+
+
+Application Security Tools
+--------------------------
+- Amazon Inspector
+	- security assessment service for applications deployed on EC2.
+	- assessments include network access, common vulnerabilities and exposures (CVEs), Center for Internet Security (CIS) benchmarks, and common best practices such as disabling root login for SSH and validating system directory permissions on your EC2 instances.
+	- Based on agent application installed in EC2 VMs, Inspector
+	  generates a report with a detailed list of security findings prioritized by severity.
+	- Run Inspector as part of a gated check in deployment pipeline to assess your applications’ security before deploying to production.
+
+- AWS Shield
+	- fully-managed distributed denial-of-service (DDoS) protection service.
+	- enabled by default as a free standard service with protection against common DDoS attacks against your AWS environment.
+
+- AWS Web Application Firewall (WAF)
+	- monitors and protects applications and APIs built on services such as CloudFront, API Gateway, and AppSync.
+	- can block access to your endpoints based on different criteria such as the source IP address, the request’s origin country, values in headers and bodies, and more (i.e, you can enable rate limiting, only allowing a certain number of requests per IP
+
+- AWS Secrets Manager
+	- managed service where you can store and retrieve sensitive information such as database credentials, certificates, and tokens.
+	- Use fine-grained permissions to specify exact actions an entity can perform on the secrets, such as creating, updating, deleting, or retrieving secrets.
+	- Secrets Manager also supports automatic rotation for AWS services such as Amazon Relational Database Service (RDS).
