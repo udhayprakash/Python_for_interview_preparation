@@ -363,6 +363,25 @@ Abstract Classes
 	- continue will skip the current loop, whereas
 	  break will stop the entire loop
 
+
+- GIL Problem
+	- GIL means Global Interpreter Lock
+	- Simply, it means "One thread runs Python, while others sleep or await I/O."
+	- In Cpython, as it goes with reference based assignment, if two threads are trying to update,
+	  say, the same list, it can lead to data races, and deadlock.
+	- To avoid deadlocks, it will lock a single thread, safely execute it, and release it.
+	- Due to this, we can't achieve concurrency with python, unlike other languages.
+	- Next solution is multiprocessing. But, it is resource exhaustive. And, the maximum limit
+	 on the processes which can be created, is limited to the system hardware limits.
+	- So, from python 3.6, with the advent of async and await keywords, I am using the asyncio
+	 based non-blocking execution.
+	- Here, within the single thread event loop, we will invoke all child threads; which is a solution
+	  to this GIL problem
+
+- Multiprocessing vs Multithreading
+	- Multithreading for IO-bound tasks. Multiprocessing for CPU-bound tasks.
+	- computationally-intensive tasks such as compression or hashing.
+
 - Threading vs Asyncio
 	Threading
 		- In threading, OS actually knows about each thread and can interrupt it at
@@ -374,6 +393,7 @@ Abstract Classes
 		- Cooperative Multitasking
 		- Tasks must cooperate by announcing when they are ready to be switched out.
 		- You always know where your task will be swapped out.
+		- Suitable for event-driven architectures
 
 process vs thread
 	- processes do not share memory and run on a single core.
@@ -440,24 +460,6 @@ Non-Automic Operations
 	L.append(L[-1])
 	L[i] = L[j]
 	D[x] = D[x] + 1
-
-- GIL Problem
-	- GIL means Global Interpreter Lock
-	- Simply, it means "One thread runs Python, while others sleep or await I/O."
-	- In Cpython, as it goes with reference based assignment, if two threads are trying to update,
-	  say, the same list, it can lead to data races, and deadlock.
-	- To avoid deadlocks, it will lock a single thread, safely execute it, and release it.
-	- Due to this, we can't achieve concurrency with python, unlike other languages.
-	- Next solution is multiprocessing. But, it is resource exhaustive. And, the maximum limit
-	 on the processes which can be created, is limited to the system hardware limits.
-	- So, from python 3.6, with the advent of async and await keywords, I am using the asyncio
-	 based non-blocking execution.
-	- Here, within the single thread event loop, we will invoke all child threads; which is a solution
-	  to this GIL problem
-
-- Multiprocessing vs Multithreading
-	- Multithreading for IO-bound tasks. Multiprocessing for CPU-bound tasks.
-	- computationally-intensive tasks such as compression or hashing.
 
 - context managers
 	- will allow you to allocate and release resources precisely when you want to.

@@ -4,7 +4,7 @@ CI/CD
 	- created a EC2 instance, installed Jenkins, added plugins like Filesystem Trigger,
       code Build plugin, http request plugin, ...
 	- I used bitbucket as the code repository.
-	- Gone to settings, and brought the webhook and integrated in the Jenkins.
+	- Gone to settings, and brought the webhook and integrated in into Jenkins.
 	- Now any git push to the bitbucket event will trigger the build process.
 	- And, in the code repository, I wrote the code in Groovy script.
 	- It involved 5 stages:
@@ -43,7 +43,7 @@ Demoing the new features to clients/Stakeholders
 
 Code Flow
 ----------
-- First, we will reach out to the clients/Stakeholders and gather the requirement.
+- First, we will reach out to the clients/Stakeholders and gather the requirements.
 - Then, we create JIRAs correspondingly, in the backend.
 - During the Sprint planning, we discuss with all the Stakeholders to prioritise
   the JIRAs for the sprint.
@@ -56,7 +56,7 @@ Code Flow
 
 	We need to ensure all existing and new test cases are running
 	Then, push the code
-	Then, CI/CD proces will run
+	Then, CI/CD process will run
 	If all correct, then we can give pull request
 
 - Then, two  approvals needed; team will review the code; if any changes i will
@@ -65,7 +65,7 @@ Code Flow
   Then, code goes to next branch
 
 - We are with python; we add release tag and push the code
-  Python don't have build, so next step is deployment.
+  Python doesn't have build, so next step is deployment.
 
 Agile Methodology
 -----------------

@@ -92,7 +92,7 @@ Biggest Failures
 
 Innovation - Process Improvement
 --------------------------------
-	- This is when i am working on one new product.
+	- This is when I am working on one new product.
 	  Generally, we are in the initial alpha/beta stages, we will focus more on adding new features.
 	  Resolving bugs will be done, but in a slow process.
 	  In that project, we followed the 2-week sprint. so, If any enhancement/bug is coming after the
@@ -102,7 +102,7 @@ Innovation - Process Improvement
 	  who raised the bugs, might have moved with different tool/process; or they lost interest.
 
 	  I noticed it by analysing the unique user hits to our portal. i could see with advertising, we
-	  could pull new users, but the retaining old/existing users became a challenge.
+	  could pull new users, but retaining the old/existing users became a challenge.
 
 	  To solve this problem, i proposed an idea, which i learned from one of the blogs.
 	  It is to combine both SCRUM and KANBAN.
@@ -116,7 +116,7 @@ Innovation - Process Improvement
 	  In this way, we can create new features as designed; yet address the bugs in timely manner based on
 	  their SLAs. It actually helped increase the daily unique-user hits to our portal.
 
-	  Initally my manager objected this idea, as we need to maintain two separate dashboards;
+	  Initially my manager objected this idea, as we need to maintain two separate dashboards;
 	  but i convinced him to experiment for a couple of sprints. Then, after seeing the success, he
 	  was very happy.
 
