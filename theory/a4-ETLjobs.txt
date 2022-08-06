@@ -12,6 +12,8 @@ worked with multiple ETL jobs.
 
 	5) MYSQL db ->  aws kinesis stream -> aws lambda → MYSQL db NEW
 
+	6) S3 bucket →  athena queries  → AWS lambda— > AWS API gateway –JSON-> powerBI
+
 Also, used the AWS GLue jobs for transformation of around 50k records.
 I configured the glue data catalogue to pick the specific columns AND  perform operations
 	Within the python code, i connected with the pyspark for some transformations, etc
@@ -21,7 +23,7 @@ Data Migration Strategy
 ------------------------
 We can take offsets from the db and transfer,
 	Say when i pulled there were 100 records
-	Say after active migration, we repoint to new db , so, no more data to old db.
+	Say after active migration, we repoint to new db, so, no more data to old db.
 
 	Say now there were 120 records count
 	Remaining small chunk (20 records), we will get after active migration

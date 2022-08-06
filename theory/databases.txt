@@ -393,6 +393,7 @@
 	views vs materialized views
 	slowly changing dimensions
 	stored procedures
+
 - User-defined Functions Vs Stored Procedures
 	- The function must return a value but in Stored Procedure it is optional. Even a procedure can return zero or n values.
 	- Functions can have only input parameters for it whereas Procedures can have input or output parameters.

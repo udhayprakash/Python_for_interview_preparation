@@ -73,10 +73,10 @@ how do you learn new technologies, and trends
 	  based on some articles
 	- sometimes, i will listen to some  tech related podcasts.
 
-----------
+-------------------------
 Questions to Interviewers
-----------
-  - May I know about the project, and the technical stack like the tools used?
+-------------------------
+  - May I know about the project, and the system architecture like the tools used, database, etc?
   - What are you expecting from me, for this role? What can be the day-to-day activities?
 
   - What is the volume of data, which we will be working on, on a daily basis.

@@ -104,6 +104,7 @@ Databases
 	common table expression in sql
 	cons of normalization
 	sql : rank vs dense_rank
+	transactional vs analytical db
 
 Web Servers
 ------------
