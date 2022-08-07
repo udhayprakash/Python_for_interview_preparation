@@ -3,6 +3,21 @@ cloud computing services:
 2)Platforms-as-a-Service (PaaS), and
 3)Software-as-a-Service (SaaS)
 
+EC2 Instance
+============
+Reserved Instances
+	– Reduce your Amazon EC2 costs by making a commitment to a consistent
+	instance configuration,including instance type and Region, for a term
+	of 1 or 3 years.
+Spot Instances
+	– Request unused EC2 instances, which can reduce your Amazon EC2
+	costs significantly.
+	- Types
+		- Regular spot pricing—instances can be terminated with 2 minutes notice.
+		- Defined duration—you can get a spot instance guaranteed to run for a
+		  period of 1-6 hours.
+		  The longer the defined duration, the lower the discount provided for the spot instance.
+
 - boto3 is built on top of botocore
 	- client is for lower-level interactions
 	- resource for higher-level object oriented abstractions
@@ -197,8 +212,10 @@ AWS Lambda Context properties
 	- Materialized View
 		- It is similar to the db views for RDBMS
 		- useful for speeding up queries that are predictable and repeated.
-		- A materialized view contains a precomputed result set, based on an SQL query over one or more base tables.
-		- It returns the precomputed results from the materialized view, without having to access the base tables at all.
+		- A materialized view contains a precomputed result set, based on an SQL query
+		over one or more base tables.
+		- It returns the precomputed results from the materialized view, without having
+		to access the base tables at all.
 	- Load CSV to Redshift
 		1) Create the schema on Amazon Redshift.
 		2) Load the CSV file to Amazon S3 bucket using AWS CLI or the web console.
@@ -206,18 +223,50 @@ AWS Lambda Context properties
 		4) Generate AWS Access and Secret Key in order to use the COPY command.
 	  - Also, we can autoload using a 3rd party tool, called Skyvia
 
-Amazon DynamoDB
+AWS DynamoDB
 	is a fully managed proprietary NoSQL database
 	service that provides fast and predictable performance with seamless scalability.
 	It supports key-value and document data structures
 	DynamoDB allows users to create tables for your database to store
 	and retrieve any data volume and to support any request traffic level.
 
-	LSI - allows you to perform a query on a single Hash-Key while using multiple different attributes to "filter" or restrict the query.
-	GSI - allows you to perform queries on multiple Hash-Keys in a table, but costs extra in throughput, as a result.
+	LSI - allows you to perform a query on a single Hash-Key while using multiple
+			different attributes to "filter" or restrict the query.
+	GSI - allows you to perform queries on multiple Hash-Keys in a table, but costs
+			extra in throughput, as a result.
 
-	DynamoDB Streams is a powerful service that you can combine with other AWS services to solve many similar issues.
-	When you enable DynamoDB Streams, it captures a time-ordered sequence of item-level modifications in a DynamoDB table and durably stores the information for up to 24 hours.
+	DynamoDB Streams is a powerful service that you can combine with other AWS services
+	to solve many similar issues.
+	When you enable DynamoDB Streams, it captures a time-ordered sequence of item-level
+	modifications in a DynamoDB table and durably stores the information for up to 24 hours.
+
+	projection Expressions
+		- When we use GetItem, Query or Scan, we get data with all item attributes, by default.
+		- To get only some specific attributes, we use projection expression.
+		- It is a string that identifies the attributes we want.
+
+AWS Athena
+	- Its a interactive query service for querying on S3 using standard SQL
+	- Performance Tuning Amazon Athena
+		1. Partition the data
+			- means, dividing the table into parts and keeping the related data together based on columns value like date, country, region, etc.
+			- As partitions act as virtual columns, it helps reduce the amount of data scanned per query, thereby improving performance.
+			- Also, we can specify filters on these patitions, similar to on columns, to refine the queries.
+
+		2. Bucket the data
+			- means, to bucket the data within a single partition. With bucketing,
+			we can specify one or more columns containing rows that we want to group together,
+			and put those rows into multiple buckets.
+			- This helps to query only the bucket that we need to read when the bucketed columns value is specified,
+			which can dramatically reduce the number of rows of data to read, which in turn reduces the cost of running the query.
+
+		3. Use compression
+			- using either BZIP2, DEFLATE, Gzip, LZ4, LZO, Snappy, Zlib, Zstd, etc for the compression
+			- compression the files reduces the file sizes, which reduces the data scanned from S3,
+			  resulting in lower cost of running queries. It , inturn, reduces the network traffic between Amazon s3 to Athena.
+
+		4. Optimize file size
+		5. Optimize columnar data store generation
 
 Amazon Athena Workgroups are resource types, used to separate query execution and query
 history between Users, Teams, or Applications running under the same AWS account.
@@ -225,6 +274,8 @@ Because Workgroups act as resources, you can use resource-based policies to cont
 to a Workgroup.
 
 I have experience migrating applications and data, from on-prem to cloud
+
+
 
 AWS IAM
 -------
@@ -378,6 +429,9 @@ s3 classification
 
 Once an S3 Lifecycle policy is set, your data will automatically transfer to a different storage class
 without any changes to your application.
+
+we can create life cycle rules to delete files from a specific folder, like
+	older than 30 days, etc
 
 AWS account security tools
 --------------------------
