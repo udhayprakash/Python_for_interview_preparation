@@ -23,7 +23,7 @@ Python Modules
 Frameworks
 	Django , flask, fastapi
 
-Files i worked with
+Files I worked with
 --------------------
 	- pdf files using modules like reportlab, pypdf2
 	- image files using tesserect, Pillow
@@ -86,7 +86,7 @@ Python Questions
 	- whereas extend works with iterable objects only, but adds in same dimension
 
 - List vs Dict
-	- list is suitable when order of element is preferred.
+	- list is suitable when the order of element is preferred.
 	- dict is suitable when there were more reads. dict has O(1) for search an element, as
 	  it stored each element uniquely with its hash.
 
@@ -435,7 +435,8 @@ concurrency vs parallelism
 	- If a thead loses GIL at any moment, we should ensure that code is thread safe.
 	- Many Python operations like sort(), ... are atomic.
 	- GIL wont switch in middle of automatic operations.
-	- EX: A thread cannot be interrupted in the middle of sorting, and other threads never see a partly sorted list, nor see stale data from before the list was sorted.
+	- EX: A thread cannot be interrupted in the middle of sorting, and other threads never
+	      see a partly sorted list, nor see stale data from before the list was sorted.
 
 	- Locks are needed to protect shared mutable state
 

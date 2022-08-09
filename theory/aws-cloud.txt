@@ -33,8 +33,10 @@ Spot Instances
 	- When you include a layer in a function, the contents are extracted to the /opt
 	  directory in the execution environment.
 
-	- For a Lambda function, there is a maximum of 5 layers and a maximum size for all layers of 250 MB (uncompressed).
-	  This maximum applies regardless of whether you are using an official AWS runtime or a custom runtime.
+	- For a Lambda function, there is a maximum of 5 layers and a maximum size
+	  for all layers of 250 MB (uncompressed).
+	  This maximum applies regardless of whether you are using an official AWS
+	  runtime or a custom runtime.
 	  The Application Security layer size is about 30 MB.
 
 - AWS Lambda Performance Optimizaton
@@ -309,6 +311,53 @@ AWS IAM
 	- Resource-based policies Vs resource-level permissions
 		- We can attach resource-based policies directly to a resource
 		- Resource-level permissions refer to ability to use ARNs to specify individual resources in a policy.
+
+	Identify Based Policies
+		Effect 	– whether to allow or deny the action(s)
+		Action 	– the API(s) the policy applied to requests on resources (‘*’ means wildcard)
+		Resource– Identifier of the resource(s) to which the policy applies.
+		          Resources are identified by an Amazon Resource Name (ARN), or by wildcard.
+
+			{
+				"Version": "2012-10-17",
+				"Statement": [
+					{
+						"Effect": "Allow",
+						"Action": [
+							"s3:Get*",
+							"s3:List*"
+						],
+						"Resource": "*"
+					}
+				]
+			}
+	Resource-based Policies
+		Resource-based policies grant permissions to the principal that is specified in the policy.
+		They specify who or what can invoke an API from a resource to which the policy is attached.
+		{
+		  "Version": "2012-10-17",
+		  "Id": "default",
+		  "Statement": [
+			{
+			  "Sid": "s3-event-cezary_for_lambda-s3",
+			  "Effect": "Allow",
+			  "Principal": {
+				"Service": "s3.amazonaws.com"
+			  },
+			  "Action": "lambda:InvokeFunction",
+			  "Resource": "arn:aws:lambda:eu-west-1:1234567890:function:lambda-s3",
+			  "Condition": {
+				"StringEquals": {
+				  "AWS:SourceAccount": "1234567890:"
+				},
+				"ArnLike": {
+				  "AWS:SourceArn": "arn:aws:s3:::test-bucket-cezary"
+				}
+			  }
+			}
+		  ]
+		}
+
 
 RDS vs DynamoDb
 ----------------

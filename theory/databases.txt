@@ -29,9 +29,22 @@
 		  as they support adhoc querying the data
 - ACID
 	- Atomicity
+		- There should not be any partially completed transaction;
+		- Either it should be completed applied or rolled back.
+
 	- Consistency
+		- characteristic that requires data updated via transactions to respect the other
+		  constraints or rules within the database systems to keep data in a consistent state
+
 	- Isolation
+		- Modification of one transactions, should not effect other transactions.
+		- parallel transactions are in reality isolated and seem to be performed sequentially.
+
 	- Durability
+		- persistence of committed transactions.
+		- Transactions and database modifications are not kept in volatile memory but
+		  are saved to permanent storage, such as disks.
+		- This prevents data loss during system failure, such as a power outage.
 
 - DDL commands
 	CREATE	: Create an object. ...
@@ -498,10 +511,20 @@ Partition tolerance: The system continues to operate despite an arbitrary number
 	- Cancel the operation and thus decrease the availability but ensure consistency
 	- Proceed with the operation and thus provide availability but risk inconsistency
 
+- It is impossible for distributed systems to guarantee consistency, availability and partition tolerance at same time.
+- Apache cassandra is an AP system; means availability and partition tolerance holds true,
+	but not for Consistency but this can further tuned via replication factor(how many copies of data) and consistency level (read and write).
+
 DB Partitioning
 ===============
 - Partitioning is the db process where very large tables are divided into multiple smaller parts.
+- It is done mainly for manageability, performance or availability reasons, or for load balancing
 - This helps in maintenance of large tables and to reduce overall response time to read/load data for particular SQL operations.
+- popular in distributed database management systems, where each partition may be spread over multiple nodes, with users at the node performing local transactions on the partition.
 - They are of TWO types
 	1) Vertical DB partitioning
-	- Vertical partitioning splits a table into two or more tables containing different columns:
+	- Vertical partitioning splits a table into two or more tables containing different columns
+	- To reduce access times, wide text or BLOB columns can be split to its own table.
+	- Another example is to restrict access to sensitive data e.g. passwords, salary information etc.
+	2) Horizontal partitioning involves putting different rows into different tables.
+	- A view with a union of these partitions, will provide complete view of all customers.
