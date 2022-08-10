@@ -39,3 +39,14 @@ Git Commands
 
 		To update the commit message,
 			git commit --edit -m"$(git log --format=%B --reverse HEAD..HEAD@{1})"
+
+
+Stashing
+	- To manage the temporary code, we can use git stashing
+		- For single stash,
+			git stash  --> will save current uncommitted changes
+			git stash pop --> will restore saved uncommitted changes
+
+			git stash save 'add: something' --> adds a tag for saved uncommitted changes, such that we can restore specifically
+			git stash list      --> will list all the saved stashes
+			git stash apply 0   --> will restore the 0th index stash

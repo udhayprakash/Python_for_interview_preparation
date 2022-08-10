@@ -263,3 +263,11 @@ Ans) DELETE n1 FROM names n1, names n2 WHERE n1.id > n2.id AND n1.name = n2.name
 
 	When full row duplicate,
 		add an id column virtually and delete all , but first in sequence
+=====================================================================================================
+Q) delete duplicate records
+Ans)
+	DELETE c1 FROM contacts c1
+	INNER JOIN contacts c2
+	WHERE
+		c1.id > c2.id AND
+		c1.email = c2.email;
