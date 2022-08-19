@@ -22,7 +22,7 @@ And dumped final results in either parquet for any further jobs, or to the db
 Data Migration Strategy
 ------------------------
 We can take offsets from the db and transfer,
-	Say when i pulled there were 100 records
+	Say when I pulled there were 100 records
 	Say after active migration, we repoint to new db, so, no more data to old db.
 
 	Say now there were 120 records count

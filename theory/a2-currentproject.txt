@@ -14,7 +14,7 @@ In Machine Learning,
 	The use-case is that there was an archive database.
 	We need to do future predictions based on these past values.
 
-	I created a model and also exposed it via  a flask application, for further training.
+	I created a model and also exposed it via a flask application, for further training.
 
 In terms of technical stack,
 	Our application server is in a EC2 instance, and celery workers are running

@@ -34,3 +34,49 @@ Scalability is the term we use to describe a system’s ability to cope with inc
 
 
 monolithic vs microservice
+In Monolithic,
+	All components are part of a single unit
+	Everything is developed, deployed and scaled as 1 unit
+	App must be written with 1 tech stack
+	Teams need to be careful to not affect each other's work
+	1 single artifact, so you must redeploy the entire application on each update
+
+	Challenges
+		- Application is too large and complex
+		- Parts are more tangledinto each other
+		- You can only scale the entire app, instead of a spedicfic service.
+		- Difficult if services need different dependency versions
+		- Release process takes longer
+		- On every change, the entire application needs to be tested
+		- Entire applcation needs to be built and deployed
+		- Bug in any modul can potentially bring down the entire application
+In Microservices,
+	Split applicaton into smaller, independent services
+	based on business functionalities
+	Apps should be Loosely coupled
+		Separation of concerns: means 1 service for 1 specific job
+		Self-contained & independent
+		Each microservice has its own version
+
+	Communication should be via API calls
+		Each service has its own API
+		They can talk to each other, by sending requests to the respectve  API endpoints
+		Communication can be THREE ways
+		1) In Synchronous communication,
+			means each service waits for the response from another service.
+
+		2) In asynchronous communication,
+			communication is via messages using a message broker like RabbitMQ, etc
+			common distribution patterns:
+				Publish/Subcribe (PubSub)
+				Point-to-Point messaging
+		3) In Communication in Kubernetes using service Mesh,
+			There will be a helper service which will take care of complete communication logic
+			So, we need not code this logic into microservices
+
+		Challenges
+			- Configure the communication between services
+			- More difficult to monitor with multiple instances of each service
+			  distributed across servers
+
+			In Kubernetes, serviceMesh, we can address both these challenges.

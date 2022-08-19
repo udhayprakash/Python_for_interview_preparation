@@ -89,6 +89,7 @@ Python Questions
 	- list is suitable when the order of element is preferred.
 	- dict is suitable when there were more reads. dict has O(1) for search an element, as
 	  it stored each element uniquely with its hash.
+	- Insertion time is less in list
 
 - List vs Array
 	- list is builtin data structure in python
@@ -176,9 +177,9 @@ overloading vs overwriting
 	- If we define two functions/methods with same name, but different no. of arguments,
 	  then, if we can call both functions/methods individually, it is called Overloading.
 
-	- Python doesnt support overloading, but only overwriting is supported
+	- Python does not support overloading, but only overwriting is supported
 	- Overwriting means among the defined two functions, as both have same name,
-	  the latest defined function/method will overwrite others
+	  the latest defined function/method will overwrite others.
 
 
 - range() vs xrange()
@@ -337,7 +338,8 @@ Abstract Classes
 		map(lambda x:x * 2, range(9))
 
 	- In python2, map will result a list, where as in python3, it will return an iterator
-	  object. Other higher order functions are Filter, Zip and Reduce
+	  object.
+	- Other higher order functions are Filter, Zip and Reduce
 
 - Filter
 	- This higher-order function will superimpose a function, on one or more iterables

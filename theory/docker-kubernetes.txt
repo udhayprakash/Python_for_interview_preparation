@@ -66,6 +66,20 @@ Docker
 	EXPOSE 8080
 	CMD [ "python", "server.py" ]
 
+- flask docker.yaml file
+
+	FROM python:3.8-slim-buster
+
+	WORKDIR /python-docker
+
+	COPY requirements.txt requirements.txt
+	RUN pip3 install -r requirements.txt
+
+	COPY . .
+
+	CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0"]
+
+
 - runnning docker container
 	$ cd python-docker
 	$ docker build -t python-docker-dev .
@@ -101,6 +115,22 @@ Ref: https://hasura.io/blog/how-to-write-dockerfiles-for-python-web-apps-6d17384
 		- load balancer distributes the requests among multiple backend services (of same type)
 		  whereas ingress is more like an API gateway (reverse proxy) which routes the request
 		  to a specific backend service based on, for instance, the URL.
+
+	- Deployment Strategies
+		1) Rolling deployment
+			—replaces pods running the old version of the application with the new version,
+			one by one, without downtime to the cluster.
+		2) Recreate
+			—terminates all the pods and replaces them with the new version.
+		3) Ramped slow rollout
+			—rolls out replicas of the new version, while in parallel, shutting down old replicas.
+		4) Best-effort controlled rollout—specifies
+			- a “max unavailable” parameter which indicates what percentage of existing pods can
+			be unavailable during the upgrade, enabling the rollout to happen much more quickly.
+		5) Canary deployment
+			— uses a progressive delivery approach, with one version of the application serving
+			most users, and another, newer version serving a small pool of test users.
+			- The test deployment is rolled out to more users if it is successful.
 
 Terraform commands
 	refresh -> to get the current state of infrastructure

@@ -14,7 +14,7 @@ challenges
 			○ I created custom alert to notify such things
 				§ I am reading CloudWatch logs  for doing these
 	I have written an AWS Lambda which will be time triggered, on periodic basis and check
-	for such logs and reports  via SNS - Simple notification service
+	for such logs and reports via SNS - Simple notification service
 
 - Coding Performance Related challenge
 	There is an ETL job, where there is a stream of XML records( which are valid SAP records).
