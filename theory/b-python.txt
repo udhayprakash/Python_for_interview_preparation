@@ -57,7 +57,8 @@ Python Questions
 	- ex: {1:2, 3:4, 5:6}
 
 - conclusions
-	- List is suitable when the order of storage is needed and/or if there were more writes.
+	- List is suitable when the order of storage is needed and/or
+	  if there were more writes.
 	- Dict suitable when there were more reads
 	- Set is suitable when unique values are needed and/or set operations like union,
 	  intersection, etc are needed.
@@ -202,11 +203,11 @@ overloading vs overwriting
 
 - try-exception blocks
 	1) Try   --- executed every time
-	2) Except--- executed when there is exception in try block
-				 , check if it can handle break code if it cant
+	2) Except--- executed when there is exception in try block,
+				 check if it can handle break code if it cant
 
 	3) Else  --- executed when no exception in try block
-	4) Finally-- exceutd everytime  — irrespective of failure  –
+	4) Finally-- executed every time  — irrespective of failure  –
 				 it is like for file closing, etc ….
 
 - OOP

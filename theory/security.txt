@@ -46,7 +46,7 @@ Injection
 
 	Prevention
 		paramterize the queries
-		using stored procdures
+		using stored procedures
 		escape special characters
 		validating user input
 		limiting privileges
