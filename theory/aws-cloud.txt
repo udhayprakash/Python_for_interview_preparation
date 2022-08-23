@@ -390,7 +390,7 @@ AWS Limits
 		   3000 concurrent request at time. If exceeded, requsts will throttle until lambda scales by 500 per minute
 
 
-Cloud Formation
+CloudFormation
 ===============
 - intrinsic function
 	- built-in functions that enable you to assign values to properties that are only available
@@ -410,6 +410,11 @@ Cloud Formation
 		Fn::Split
 		Fn::Sub
 		Fn::Transform
+
+Stack Vs Stackset CloudFormation
+- A stack set lets you create stacks in AWS accounts across AWS Regions by using a single AWS CloudFormation template.
+  A stack set's CloudFormation template defines all the resources in each stack.
+- A stack instance refers to a stack in a target account within an AWS Region and is associated with only one stack set.
 
 
 boto3

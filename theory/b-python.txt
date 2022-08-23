@@ -210,6 +210,9 @@ overloading vs overwriting
 	4) Finally-- executed every time  — irrespective of failure  –
 				 it is like for file closing, etc ….
 
+Debugging in python
+- Either using pdb or ipdb modules, or using breakpoint() function
+
 - OOP
 	- Object Oriented Programming
 		- I use Object-Oriented Programming and Design predominantly.
@@ -458,6 +461,11 @@ Atomic Operations
 	D[x] = y
 	D1.update(D2)
 	D.keys()
+
+PYTHONPATH
+- It is an environment variable that you set before running the Python interpreter.
+- PYTHONPATH, if it exists, should contain directories that should be searched for modules when using import.
+- If PYTHONPATH is set, Python will include the directories in sys.
 
 Non-Automic Operations
 	i = i+1
