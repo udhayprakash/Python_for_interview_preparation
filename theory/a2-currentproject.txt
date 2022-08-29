@@ -12,7 +12,7 @@ my responsibilities here include
 	50% time for coding
 	10% time for testing
 	10% time for code review
-	Remaining – client and Stackeholder discussions, agile ceremonies
+	Remaining – client and Stakeholder discussions, agile ceremonies
 
 In Machine Learning,
 	I worked with a Linear regression algorithm, using the scikit-learn module.

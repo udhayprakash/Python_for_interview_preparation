@@ -10,43 +10,43 @@ IN FRONTEND, I worked on creating dashboards/graphs/charts using d3.js or high c
 and tables using ag-grid. Also, worked on JavaScript, jQuery, and react.
 
 In databases,
-	In relational dB, I worked with MySQL, MS SQL, oracle dB and PostgreSQL.
-	In no-relational dB, I worked with MongoDB and Cassandra.
-	In data warehousing, I worked with Snowflake schema
+- In relational dB, I worked with MySQL, MS SQL, oracle dB and PostgreSQL.
+- In no-relational dB, I worked with MongoDB and Cassandra.
+- In data warehousing, I worked with Snowflake schema
 
 In Python,
-	- worked on creating web applications and RESTFUL APIs using Django/flask/FastAPI frameworks
-	- worked on creating process automation and integrating with infrastructure(Linux/windows) boxes
-	- worked on web scraping using beautiful soup
-	- created unit test, integration test for the source code, using unittest and pytest modules
+- worked on creating web applications and RESTFUL APIs using Django/flask/FastAPI frameworks
+- worked on creating process automation and integrating with infrastructure(Linux/windows) boxes
+- worked on web scraping using beautiful soup
+- created unit test, integration test for the source code, using unittest and pytest modules
 
 In Caching,
-	I worked with Redis
+- I worked with Redis
 
 In scheduling,
-	I worked with celery.
-	I did integrations with django applications for periodic jobs
+- I worked with celery.
+- I did integrations with django applications for periodic jobs
 
 In Public Cloud, I am mostly associated with AWS Cloud.
-	In AWS Cloud, I worked with
-		Server-based Architectures with
-			- EC2 Instances
-			- Elastic Load balancer
-			- Auto-Scaling
-			- Route53
+In AWS Cloud, I worked with
+	Server-based Architectures with
+		- EC2 Instances
+		- Elastic Load balancer
+		- Auto-Scaling
+		- Route53
 
-		for Storage,
-			- s3 bucket for file storage
-			- s3 Glacier for Archival Storage
+	for Storage,
+		- s3 bucket for file storage
+		- s3 Glacier for Archival Storage
 
-		Server-less Architectures with
-			- AWS Lambda - with either time-triggered or event triggered
-			- AWS API Gateway with http-triggered
+	Server-less Architectures with
+		- AWS Lambda - with either time-triggered or event triggered
+		- AWS API Gateway with http-triggered
 
-		For oauth, i worked with aws cognito
-		- Also, worked with SQS, SNS and SES
-		- And, EMR cluster for Pyspark
-		- for the ETLs, I worked with AWS Glue Jobs with DataCatalog and Pyspark
+	For oauth, i worked with aws cognito
+	- Also, worked with SQS, SNS and SES
+	- And, EMR cluster for Pyspark
+	- for the ETLs, I worked with AWS Glue Jobs with DataCatalog and Pyspark
 
 In current project, I created the CI/CD setup using Jenkins and Groovy script.
 
@@ -66,7 +66,7 @@ REASON FOR CHANGE -
 
 how do you learn new technologies, and trends
 --------------------------------------------
-	- i subscribed to various blogs and weekly newsletters
+	- I subscribed to various blogs and weekly newsletters
 	- Apart from them, i go through the stackoverflow questions and workplace stackoverflow
 	  questions, in my free time.
 	- And, part of enhancements or POCs, i research and read, and sometimes implement,

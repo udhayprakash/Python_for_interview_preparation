@@ -366,6 +366,19 @@
 		- However, until it does, data reads are still possible (even though they might
 		  not reflect the reality).
 
+
+
+
+
+Good database design is driven by several core principles:
+Minimize redundancy: To save resources, create an efficient database, and simplify how the database works, data redundancy is minimized and duplication is avoided.
+Protect accuracy: Your database should keep information accurate and reduce the likelihood of accidentally damaging information.
+Be accessible: The business intelligence systems that need reading and writing access should have it. Your database should provide access while also protecting data security.
+Meet expectations: Of course, you keep a database to fulfill a specific purpose—so the database design must successfully support your data processing expectations.
+
+
+
+
 - SQL performance Tuning
 	1. Use EXISTS instead of IN to check the existence of data.
 	2. Avoid * in the SELECT statement. Give the name of the columns which you require.

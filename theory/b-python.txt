@@ -4,7 +4,7 @@ Python Modules
 	Scikit-learn : for machine learning - I used for creating linear regression model
 	BeautifulSoap: for parsing html content. Used when I worked on web crawling/Scrapping
 	NumPy        : Advanced linear algebra and NumPy array operations
-	Matplotlib   : Visualization and data plotting in 2 or 3 dimensions.
+	Matplotlib   : Visualisation and data plotting in 2 or 3 dimensions.
 	IPython      : Increasing console interactivity.
 	Jupyter notebook: for interactively exploring the datasets and other functions
 	Pandas       : Data manipulation and analysis, mainly through dataframes and tables.
@@ -21,7 +21,7 @@ Python Modules
 		image files with Pillow and tesserect modules
 
 Frameworks
-	Django , flask, fastapi
+	Django, flask, fastapi
 
 Files I worked with
 --------------------
@@ -119,6 +119,10 @@ Python Questions
 	json.loads for loading JSON string to python string
 	json.load  for loading JSON string to python file
 
+Shallow vs Deep copy
+- It is used in mutable objects like lists and dictionaries.
+- Shallow copy is used for single dimension mutable objects
+- Deep copy is used for multiple dimension mutable objects
 
 - lambda function
 	- one liner function, mainly useful for evaluating a single expression that is

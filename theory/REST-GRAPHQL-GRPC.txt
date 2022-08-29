@@ -21,8 +21,10 @@
 
 		- response can be JSON or XML, atom, OData etc.
 
+		Idempotence - If something is idempotent, then no matter how many times you do it, the result will always be the same.
 		1. POST is NOT idempotent.
 		2. GET, PUT, DELETE, HEAD, OPTIONS and TRACE are idempotent.
+		Nulipotent- GET is so because nothing is added or changed, except logging.
 
 	- REST based vs RESTFUL
 		- REST based services follow some of the above principles and not all
@@ -34,6 +36,29 @@
 	- Best practice for RESTful API design is that
 		- path params are used to identify a specific resource or resources,
 		  while query parameters are used to sort/filter those resources.
+	- REST Design Patterns
+		1) Layered Architecture
+			- will improve system scalability and security
+			- When client and server doesnt know about any intermediaries, we can place
+			proxy or load balancer, and improve scalability.
+			Also, adding separate layer of security enhances system safety
+		2) Caching
+			- results in low server latency, increase in app speed and responsiveness
+		3) Stateless interactions
+			- results in enhanced performance, app reliability
+		4) Adding Common parameters to API, like
+			Filtering - to filter the payload size, by filtering on multiple fields
+				GET /users?age=30
+
+			Pagination - will help, ease the burden of overloading either client or server
+				- Also, previous and next page links can be provided in the link
+				GET /users?page=3&results_per_page=20
+
+			Sorting - will help to sort the payload based on one or more fields
+				GET /users?sort_by=first_name&order=asc
+
+
+
 
 REST vs SOAP
 =============

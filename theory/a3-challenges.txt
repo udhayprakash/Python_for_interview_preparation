@@ -76,19 +76,20 @@ Biggest Failures
 	  As the cloudwatch metrics and monitoring is not that active in those days, no emails triggered.
 
 	  But, luckily, we capped the AWS bill to some dollars. As the limit was reached, entire infra
-	  stopped.  We initially, thought it was some cyber attack. But it took sometime for us to
+	  stopped.  We initially thought it was some cyber attack. But it took sometime for us to
 	  analyze the billing to figure the issue.
 
 	  Then, we approached AWS with this case; After hearing, they waved-off the bill; But it is
 	  the biggest failure.
 
-	  Leasons learned here were
+	  Lessons learned here were
 		- no unit & integration tests -- means less reliability
 		- Thinking of edge cases before moving to production
 			- Using Monkey patching, and dynamically modifying classes/functions at runtime
 			  to see the effect
 		- Overall, I learned to do local setup using 'localstack' for working with those, without
 		  even going to AWs Cloud.
+
 
 Innovation - Process Improvement
 --------------------------------
@@ -138,3 +139,17 @@ What tech stack would you use?
 
 Use the STAR (Situation, Task, Action, Result) technique when
 answering example based questions
+
+
+What are you looking for in the new work?
+-----------------------------------
+- Good Work and  work culture
+- IN terms of work,
+	- Write coding, atleast 50%
+	- Design solutions
+	- Add tests to make the code reliable
+- In the long term, I want to be an architect. I am making every step towards that journey
+
+- In terms of work, it is almost match of what am doing now and your expectations
+- I am to prove myself initially , and learn to add value to the project
+- I want to be helpful , to more people, with my work

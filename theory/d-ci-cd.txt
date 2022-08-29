@@ -143,21 +143,6 @@ SDLC
 	End of sprint, all new code to push to release branch
 	---and demo
 
-
-what are you looking in th new work?
------------------------------------
-- Good Work and  work culture
-- IN terms of work,
-	- Write coding
-	- Design solutions
-	- Add tests to make the code reliable
-- In long term, i want to be architect. I am making every step towards that journey
-
-- In terms of work, it is almost match of what am doing now and your expectations
-- I am to prove myself initially , and learn to add value to the project
-- I want to be helpful , to more people, with my work
-
-
 DDD
 	- Domain Driven Development
 	- software development philosophy centered around the domain, or sphere of
