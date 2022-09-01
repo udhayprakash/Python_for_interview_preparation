@@ -4,7 +4,7 @@ CI/CD
 	- created a EC2 instance, installed Jenkins, added plugins like Filesystem Trigger,
       code Build plugin, http request plugin, ...
 	- I used bitbucket as the code repository.
-	- Gone to settings, and brought the webhook and integrated in into Jenkins.
+	- Gone to settings, and brought the webhook and integrated it into Jenkins.
 	- Now any git push to the bitbucket event will trigger the build process.
 	- And, in the code repository, I wrote the code in Groovy script.
 	- It involved 5 stages:
@@ -15,7 +15,7 @@ CI/CD
 		5. security scanning using Veracode
 
 	Packaging
-		I create a setup.py file , where  will add all the dist utils things for creating a wheel file
+		I create a setup.py file, where  will add all the dist utils things for creating a wheel file
 		One this wheel file is created , next step is deployment
 
 	Current project, it is with containers
@@ -82,10 +82,18 @@ Agile Methodology
 
 Sprint Burndown Chart
 ---------------------
-	- is a graphic representation that shows the rate at which work is completed and
-	  how much work remains to be done.
-	- it shows Team progress towards the Sprint Goal, not in terms of time spent but
-	  in terms of how much work remains.
+- is a graphic representation that shows the rate at which work is completed and
+  how much work remains to be done.
+- it shows Team progress towards the Sprint Goal, not in terms of time spent but
+  in terms of how much work remains.
+
+Relative estimation
+-------------------
+ It provides better estimates.
+ It works by estimating size first so you can relate this size to a task you have
+ completed previously.
+ Then you estimate how long the task will take to complete by making a relative
+ comparison to the time taken to complete this other task.
 
 
 Development Tools
@@ -128,9 +136,10 @@ Scrum Emergency Procedure: (do only as much as necessary)
 	- Inform management how the emergency affects release dates.
 
 three amigos session
+--------------------
 	- Meeting between product owner, developer, and quality tester
 	- To get clarity on scope of the project
-	- It should be done before the sprint planning, for next sprint.
+	- It should be done before the sprint planning, for the next sprint.
 
 SDLC
 ------

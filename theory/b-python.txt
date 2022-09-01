@@ -389,8 +389,9 @@ Abstract Classes
 	  to this GIL problem
 
 - Multiprocessing vs Multithreading
-	- Multithreading for IO-bound tasks. Multiprocessing for CPU-bound tasks.
-	- computationally-intensive tasks such as compression or hashing.
+	- Multithreading for IO-bound tasks.
+	- Multiprocessing for CPU-bound tasks.
+		- computationally-intensive tasks such as compression or hashing.
 
 - Threading vs Asyncio
 	Threading

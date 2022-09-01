@@ -55,13 +55,13 @@ In AWS cloud, my roles involve,
 
 Day-to-day activities
 --------------------
-	- on a daily basis,
-		Initially when I start I will check for any emails or alerts which we need to address.
-		So, and if I need to reach out any stakeholders I will reach out to them And then like I
-		started working on my JIRAs And after the stand up during the stand up like you know, so
-		we discuss on what are the pain points or any you know blockers Then finally, so after
-		the, you know, the standup like I will start working on my JIRAs.
-	- We prioritize based on the situation and sometimes, i will take manager’s decision
+- on a daily basis,
+	Initially when I start I will check for any emails or alerts which we need to address.
+	So, and if I need to reach out any stakeholders I will reach out to them And then like I
+	started working on my JIRAs And after the stand up during the stand up like you know, so
+	we discuss on what are the pain points or any you know blockers Then finally, so after
+	the, you know, the standup like I will start working on my JIRAs.
+- We prioritize based on the situation and sometimes, i will take manager’s decision
 
 ----------------------------------------------------------------------------------------
 In terms of the technical stack,
@@ -90,7 +90,7 @@ Current Project - Bank of America - Financial transactions analysis
 Current Project - T-Mobile
 -------------------------------
 	- I am part of a team which will create cellular propagation models.
-	- Means for call drop analysis
+	- Means for cellular call drop analysis
 
 
 Current Project - Fault-analysis project

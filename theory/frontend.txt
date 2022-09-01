@@ -95,7 +95,19 @@ promises
 	at a time.
 	When using an Angular Promise, you are enabled to emit a single event from the API
 
+promises vs observables
+	promises
+		are not lazy: execute immediately after creation.
+		Emit a single value at a time.
+		Are not cancellable.
+		Push errors to the child promises.
 
+	Observables
+		are lazy: they're not executed until we subscribe to them using the subscribe() method.
+		Emit multiple values over a period of time.
+		Have subscriptions that are cancellable using the unsubscribe() method, which stops the listener from receiving further values.
+		Deliver errors to the subscribers.
+		Provide the map for forEach, filter, reduce, retry, and retryWhen operators.
 
 Dependency injection
 	is basically providing the objects that an object needs
