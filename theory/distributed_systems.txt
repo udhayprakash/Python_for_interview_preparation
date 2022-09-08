@@ -80,3 +80,21 @@ In Microservices,
 			  distributed across servers
 
 			In Kubernetes, serviceMesh, we can address both these challenges.
+
+Redis Usecases
+---------------
+	Slow latest items listings in your home page
+	Leaderboards and related problems
+	Order by user votes and time
+	Implement expires on items
+	Counting stuff
+	Unique N items in a given amount of time
+	Real time analysis of what is happening, for stats, anti spam, or whatever
+	Pub/Sub
+	Queues
+	Caching
+
+Airflow
+	DAG means Directed Acyclic Graph.
+	is a collection of all the tasks you want to run, organized in a way that reflects their relationships and dependencies.
+	A DAG is defined in a Python script, which represents the DAGs structure (tasks and their dependencies) as code.

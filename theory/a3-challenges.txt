@@ -105,7 +105,7 @@ Innovation - Process Improvement
 	  I noticed it by analysing the unique user hits to our portal. i could see with advertising, we
 	  could pull new users, but retaining the old/existing users became a challenge.
 
-	  To solve this problem, i proposed an idea, which i learned from one of the blogs.
+	  To solve this problem, I proposed an idea, which i learned from one of the blogs.
 	  It is to combine both SCRUM and KANBAN.
 		  SCRUM --> for feature development
 		  KANBAN --> for bug management

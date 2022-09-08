@@ -1,3 +1,13 @@
+DB Experience
+=============
+- As a developer, I worked with all kinds of features, except managing the databases
+- In terms of features, I worked with
+	database design
+	creating tables and establishing relations
+	creating db triggers, db views, indexing,
+		SQL procs, etc
+
+
 - Modules worked with databases
 	- For ORM - Sqlalchemy, and for django - using django ORM
 	- Modules
@@ -367,16 +377,11 @@
 		  not reflect the reality).
 
 
-
-
-
 Good database design is driven by several core principles:
 Minimize redundancy: To save resources, create an efficient database, and simplify how the database works, data redundancy is minimized and duplication is avoided.
 Protect accuracy: Your database should keep information accurate and reduce the likelihood of accidentally damaging information.
 Be accessible: The business intelligence systems that need reading and writing access should have it. Your database should provide access while also protecting data security.
 Meet expectations: Of course, you keep a database to fulfill a specific purposeâ€”so the database design must successfully support your data processing expectations.
-
-
 
 
 - SQL performance Tuning
@@ -424,6 +429,7 @@ Meet expectations: Of course, you keep a database to fulfill a specific purposeâ
 	- The function must return a value but in Stored Procedure it is optional. Even a procedure can return zero or n values.
 	- Functions can have only input parameters for it whereas Procedures can have input or output parameters.
 	- Functions can be called from Procedure whereas Procedures cannot be called from a Function.
+
 - sql subquery properties
 	- A subquery should be placed within the right hand of the comparison operator, and
 	  a subquery cannot contain an ORDER BY clause.
@@ -497,6 +503,15 @@ SQL Alchemy Loading - https://docs.sqlalchemy.org/en/14/orm/loading_relationship
 
 	OLAP -- for  application
 	OLTP -- for warehouse
+
+	OLAP (online analytical processing) is a computing method that
+	enables users to easily and selectively extract and query data in
+	order to analyze it from different points of view.
+
+	By data storage mode, OLAP is three types:
+	1) MOLAP is a multi-dimensional storage mode
+	2) ROLAP is a relational mode of storage
+	3) HOLAP is a combination of multi-dimensional and relational elements.
 
 
 Q) How to get last day of previous month?

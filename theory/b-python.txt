@@ -729,24 +729,6 @@ Metaclasses
 	print ExampleSibling
 	print ExampleSibling.__mro__
 
-High Performance Computing, in python
-	- Dask
-		- for distributed computing.
-		- facilitates running many computations at the same time, either on a single machine or on many separate computers (cluster).
-		- Under the hood, Dask breaks a single large data processing job into many smaller tasks, which are then handled by numpy or pandas
-		- https://dask.org/
-	- Modin
-		- designed to parallelize pandas DataFrames by automatically distributing the
-		  computation across all of the system’s available CPU cores.
-		- Modin simply divides an existing DataFrame into different parts such that each part can be sent to a different CPU core. And to be more precise, Modin partitions the DataFrames across both rows and columns, which makes its parallel processing highly scalable for DataFrames of any size and shape.
-		- https://github.com/modin-project/modin
-	- vaex — 7k GitHub stars
-	- datatable — 1.5k GitHub stars
-	- cuDF — ~4.5k GitHub stars
-	- pyspark
-	- Koalas — ~3k GitHub stars
-	- polars — ~5k GitHub stars
-
 
 Numpy
 ------
@@ -755,6 +737,28 @@ Numpy
 
 Pandas
 ------
+In Pandas,
+	I worked on reading csv, excel spreadsheets,
+	parsing the content,
+	transformations like
+		added a new column based on some logic, or
+		creating new column based on other columns, or
+		cleansing activities like removing null rows, cleaning columns, etc
+
+	finally, dumping the resultant data into csv, excel or, even a db table.
+
+array vs list
+	array is homogeneous, means all values should be of same type.
+	List is heterogenous, means all values may or not may be of same type
+
+array vs dataframe
+	numpy arrays are either single or multiple dimensions
+	pandas has two things
+		1) Series is 1 dimensional
+		2) Dataframe is 2 dimensional
+
+	Indexing of numpy arrays are faster than that of dataframe.
+
 - loc vs iloc
 	- loc gets rows (or columns) with particular labels from the index.
 	- iloc gets rows (or columns) at particular positions in the index (so it only takes integers).
@@ -798,8 +802,25 @@ sqlContext.setConf("spark.sql.parquet.compression.codec.", "snappy")
 How to read large parquet file
 map and reduce in big data
 
+High Performance Computing, in python
+	- Dask
+		- for distributed computing.
+		- facilitates running many computations at the same time, either on a single machine or on many separate computers (cluster).
+		- Under the hood, Dask breaks a single large data processing job into many smaller tasks, which are then handled by numpy or pandas
+		- https://dask.org/
+	- Modin
+		- designed to parallelize pandas DataFrames by automatically distributing the
+		  computation across all of the system’s available CPU cores.
+		- Modin simply divides an existing DataFrame into different parts such that each part can be sent to a different CPU core. And to be more precise, Modin partitions the DataFrames across both rows and columns, which makes its parallel processing highly scalable for DataFrames of any size and shape.
+		- https://github.com/modin-project/modin
+	- vaex — 7k GitHub stars
+	- datatable — 1.5k GitHub stars
+	- cuDF — ~4.5k GitHub stars
+	- pyspark
+	- Koalas — ~3k GitHub stars
+	- polars — ~5k GitHub stars
 
-
+=======================================================================
 Q1) Describe truthy vs falsy
 Ans) Python supports boolean type: True, False
 

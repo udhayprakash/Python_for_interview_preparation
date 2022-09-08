@@ -73,6 +73,22 @@ how do you learn new technologies, and trends
 	  based on some articles
 	- sometimes, i will listen to some  tech related podcasts.
 
+When Programming started
+========================
+I am interested in playing online games.
+When I am in my graduation, hope you remember, angry birds
+became a big hit.
+
+I played different games, but this is simple.
+So, I thought of creating one.
+When researched, I found some code online.
+I, just, created clone for it. Added some changes, for fun.
+I worked with pygame, which is a python module.
+
+Then, when looking for job, as i have some knowledge in python,
+I looked for work in it, and landed as a python developer.
+That is my journey
+
 -------------------------
 Questions to Interviewers
 -------------------------

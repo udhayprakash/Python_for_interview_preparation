@@ -1,18 +1,20 @@
+ETL Jobs
+=========
 I have created ETL jobs with event-driven architecture
 worked with multiple ETL jobs.
 
-	1) s3 bucket -- > new file comes --> triggered lambda --> pandas dataframes process --> push to dB --
+1) s3 bucket -- > new file comes --> triggered lambda --> pandas dataframes process --> push to dB --
 
-	2) time triggered  ---> periodically, it will check for new data in the files and dump them together
-			say it may run for every 1 hr
-	3) http triggered -- > some one want to push data to out application
-			--- I exposed my lambda via API gateway --
+2) time triggered  ---> periodically, it will check for new data in the files and dump them together
+		say it may run for every 1 hr
+3) http triggered -- > some one want to push data to out application
+		--- I exposed my lambda via API gateway --
 
-	4) aws kinesis stream ---> SQS ---> event triggered ---> AWS lambda
+4) aws kinesis stream ---> SQS ---> event triggered ---> AWS lambda
 
-	5) MYSQL db ->  aws kinesis stream -> aws lambda → MYSQL db NEW
+5) MYSQL db ->  aws kinesis stream -> aws lambda → MYSQL db NEW
 
-	6) S3 bucket →  athena queries  → AWS lambda— > AWS API gateway –JSON-> powerBI
+6) S3 bucket →  athena queries  → AWS lambda— > AWS API gateway –JSON-> powerBI
 
 Also, used the AWS GLue jobs for transformation of around 50k records.
 I configured the glue data catalogue to pick the specific columns AND  perform operations
