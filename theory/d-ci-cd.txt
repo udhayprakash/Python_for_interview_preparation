@@ -95,6 +95,16 @@ Relative estimation
  Then you estimate how long the task will take to complete by making a relative
  comparison to the time taken to complete this other task.
 
+spiral vs agile
+---------------
+- spiral deals with risk handling, like various kinds of unanticipated risks but customer interaction is less.
+  spiral is needed in projects that are prone to various kind of risks that are difficult to anticipate
+  at the beginning of the project.
+  Also, proper documentation is required for spiral model.
+- Whereas agile is opposide to it, with
+	half-baked or no documentation
+	more customer interaction
+	incrimental developement
 
 Development Tools
 ------------------

@@ -27,6 +27,47 @@ Spot Instances
 	  in a bucket, or a group of SQS queues
 		- It helps to perform some action on those groups
 
+ec2 vs Lambda
+=============
+- Lambda is suitable for event-driven programming, whereas
+	EC2 is suitable for more tailored solutions
+- AWS EC2 is sutable for
+	- hosting web sites
+	- developing and testing applications or complex environments
+	- high performance computing
+	- disaster recovery
+- And, Lambda is suitable for
+	- Automating tasks
+	- Processing objects uploaded to Amazon S3
+	- Real-time log analyzing
+	- Real-time filtering and transforming data
+
+Lambda
+=======
+- Lambda Triggers
+	API Gateway
+	AWS IoT
+	Alexa Skills Kit
+	Alexa Smart Home
+	Application Load Balancer
+	CloudFront
+	CloudWatch Events
+	CloudWatch Logs
+	CodeCommit
+	Cognito Sync Trigger
+	DynamoDB
+	Kinesis
+	S3
+	SNS
+	SQS
+
+- cold start lambda
+	- Lambda has better latency per request than EC2, but for first request, due to cold start,
+	it is significantly slower.
+	- To reduce this cold start, Earlier, i used to fire a dumy request periodically.
+	- Also, we can assign provisioned concurrency, which means keeping a certain number of
+	function containers ready for invocations.
+
 - Lambda layer
 	- It is an archive containing additional code, such as libraries, dependencies, or
 	  even custom runtimes.

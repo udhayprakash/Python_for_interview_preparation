@@ -34,6 +34,7 @@ Scalability is the term we use to describe a system’s ability to cope with inc
 
 
 monolithic vs microservice
+==========================
 In Monolithic,
 	All components are part of a single unit
 	Everything is developed, deployed and scaled as 1 unit
@@ -50,8 +51,9 @@ In Monolithic,
 		- On every change, the entire application needs to be tested
 		- Entire applcation needs to be built and deployed
 		- Bug in any modul can potentially bring down the entire application
+
 In Microservices,
-	Split applicaton into smaller, independent services
+	Split application into smaller, independent services
 	based on business functionalities
 	Apps should be Loosely coupled
 		Separation of concerns: means 1 service for 1 specific job
@@ -60,7 +62,7 @@ In Microservices,
 
 	Communication should be via API calls
 		Each service has its own API
-		They can talk to each other, by sending requests to the respectve  API endpoints
+		They can talk to each other, by sending requests to the respective  API endpoints
 		Communication can be THREE ways
 		1) In Synchronous communication,
 			means each service waits for the response from another service.
@@ -68,7 +70,7 @@ In Microservices,
 		2) In asynchronous communication,
 			communication is via messages using a message broker like RabbitMQ, etc
 			common distribution patterns:
-				Publish/Subcribe (PubSub)
+				Publish/Subscribe (PubSub)
 				Point-to-Point messaging
 		3) In Communication in Kubernetes using service Mesh,
 			There will be a helper service which will take care of complete communication logic

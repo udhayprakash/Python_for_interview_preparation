@@ -214,6 +214,18 @@ DB Experience
 	- functions can be called from stored procs; but cant call stored procs from functions.
 	- Transactions and DML commands can be executed on stored procs; but not with functions.
 
+- stored procedure vs db triggers
+	- Trigger is a procedure invoked automatically when certain db events(like create/delete record) occurs.
+	  Stored Procedure is a procedure that is explicitly invoked by either
+		- another client application
+		- or another stored procdure
+		- or another trigger procedure
+	- Also, Stored procedures can accept parameters  and can return values, whereas
+	  triggers can neither accept parameters nor return values.
+	- And, transaction statements cant be used inside a trigger; whereas transaction statements
+	  like begin transaction, commit transaction and rollback, can be used in stored procedures.
+
+
 - SubQuery properties
 	- A sub-query must be enclosed in the parenthesis.
 	- A sub-query must be put in the right hand of the comparison operator, and
@@ -306,6 +318,17 @@ DB Experience
 					connections that have referenced them have closed.
 	- Tempdb permanent tables (USE tempdb CREATE TABLE t) are visible to everyone, and are deleted
 					when the server is restarted.
+
+- CTE
+	- means Common Table Expressions
+	- It is a temporary named result set that can be referenced within a SELECT, INSERT, UPDATE or DELETE statements.
+	- CTEs can also be used as views.
+
+- DB view vs CTE
+	- CTE cannot be nested while Views can be nested.
+	- View once declared can be used for any number of times but CTE cannot be used.
+	It should be declared every time you want to use it.
+
 
 - DB View vs Materialized View
 	DB Views					Materialized DB Views

@@ -38,14 +38,21 @@ challenges
 	Finally, it resulted in optimization from 19.5 seconds, to 14 seconds, till just 5 seconds.
 	It is around 400 % optimization.
 
+
 Project/task you are proud of
 --------------------------------
-	- In Current project, we have data, to the tune of 18 millions records,
+	- In one project, we have data, to the tune of 18 millions records,
 	  for the daily data refresh, which can be either create or update.
 	- Earlier, all these daily ETL jobs, used to take around 3 hours.
 	- I refactored these scripts to complete the data refresh, in just 30 min
 	- I made use of async module, to concurrently run the jobs, which are not
 	  dependent on others
+
+	- With inspiration from AWS Step functions, I created a framework to work
+	  with these ETL jobs.
+	- we need to just feed this with a yaml file, with the microservice jobs named
+	 in sequential indendants, specifying the level, and also the dependencies.
+
 
 difficulties working with technologies and how did you resolved it?
 -------------------------------------------------------------------
@@ -66,29 +73,29 @@ I used docker for containerization and Kubernetes for orchestration of these pod
 
 Biggest Failures
 ----------------
-	- I worked on AWS lambda, when they were introduced, some 5 years back.
-	  At that test, there is no ecosystem for the local development, unittest, and mocking.
+- I worked on AWS lambda, when they were introduced, some 5 years back.
+  At that test, there is no ecosystem for the local development, unittest, and mocking.
 
-	  I used to write test cases for other code workflows; but not for the aws lambda code.
-	  In a particular Aws lambda, i created logic to do recursive calls, based on an environment
-	  variable. But, when another person accidentally changes the environment variable, and it
-	  when unnoticed, code called itself recursively and it spawn multiple aws lambda.
-	  As the cloudwatch metrics and monitoring is not that active in those days, no emails triggered.
+  I used to write test cases for other code workflows; but not for the aws lambda code.
+  In a particular Aws lambda, i created logic to do recursive calls, based on an environment
+  variable. But, when another person accidentally changes the environment variable, and it
+  when unnoticed, code called itself recursively and it spawn multiple aws lambda.
+  As the cloudwatch metrics and monitoring is not that active in those days, no emails triggered.
 
-	  But, luckily, we capped the AWS bill to some dollars. As the limit was reached, entire infra
-	  stopped.  We initially thought it was some cyber attack. But it took sometime for us to
-	  analyze the billing to figure the issue.
+  But, luckily, we capped the AWS bill to some dollars. As the limit was reached, entire infra
+  stopped.  We initially thought it was some cyber attack. But it took sometime for us to
+  analyze the billing to figure the issue.
 
-	  Then, we approached AWS with this case; After hearing, they waved-off the bill; But it is
-	  the biggest failure.
+  Then, we approached AWS with this case; After hearing, they waved-off the bill; But it is
+  the biggest failure.
 
-	  Lessons learned here were
-		- no unit & integration tests -- means less reliability
-		- Thinking of edge cases before moving to production
-			- Using Monkey patching, and dynamically modifying classes/functions at runtime
-			  to see the effect
-		- Overall, I learned to do local setup using 'localstack' for working with those, without
-		  even going to AWs Cloud.
+  Lessons learned here were
+	- no unit & integration tests -- means less reliability
+	- Thinking of edge cases before moving to production
+		- Using Monkey patching, and dynamically modifying classes/functions at runtime
+		  to see the effect
+	- Overall, I learned to do local setup using 'localstack' for working with those, without
+	  even going to AWS Cloud.
 
 
 Innovation - Process Improvement
@@ -98,7 +105,7 @@ Innovation - Process Improvement
 	  Resolving bugs will be done, but in a slow process.
 	  In that project, we followed the 2-week sprint. so, If any enhancement/bug is coming after the
 	  start of new sprint, we placed them in backlog; and pulled only in the coming sprint.
-	  DUe to this, in this case, when a bug is raised, it takes two weeks to start and another two-weeks
+	  Due to this, in this case, when a bug is raised, it takes two weeks to start and another two-weeks
 	  to work and release to production. So, literally, after one month. By that time, half of people
 	  who raised the bugs, might have moved with different tool/process; or they lost interest.
 
@@ -121,8 +128,19 @@ Innovation - Process Improvement
 	  but i convinced him to experiment for a couple of sprints. Then, after seeing the success, he
 	  was very happy.
 
+
 Managing Tight deadlines
 ------------------------
+	In that case,
+		As we need to do ,
+			I will pause the sprint,
+	Let all team members to work in pairs
+		Do code pairing to do fastly
+
+	Say , one pair done a work, othr pair will review it
+	Like this, we can work , in war room,
+	T get the things done
+
 	There was a time when the
 	Lessons Learned
 		1) Never commit to a deadline you know you cannot meet.

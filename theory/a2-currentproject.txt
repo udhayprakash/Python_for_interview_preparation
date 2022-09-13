@@ -14,6 +14,7 @@ my responsibilities here include
 	10% time for code review
 	Remaining – client and Stakeholder discussions, agile ceremonies
 
+
 In Machine Learning,
 	I worked with a Linear regression algorithm, using the scikit-learn module.
 	The use-case is that there was an archive database.
@@ -99,6 +100,15 @@ Current Project - Fault-analysis project
 
 	we sell vehicle spare parts, and some of the products will send back some
 	anonymous data back to our servers.
+
+Current Project - Customer Behavious Analytics project
+------------------------------------------
+	- I am part of customer behaviour analytics teams.
+	- If you come to our website, you will notice some cookies.
+	- These cookies will send the user-analytics data feeds, back to
+	  our databases.
+	- We analyse those offline data, and bring insights from them.
+	- These results will be used in different domains, within the organization.
 
 
 Current project - Mortgage analytics
