@@ -83,6 +83,29 @@ In Microservices,
 
 			In Kubernetes, serviceMesh, we can address both these challenges.
 
+serviceMesh
+	adds uniform networking capabilities across the stack in a way that is decoupled from application code
+	Service meshes extend a cluster manager like Kubernetes to offer
+		- observability metrics,
+		- service discovery,
+		- load balancing,
+		- IT operations monitoring, and
+		- failure recovery for microservices and containers.
+	In market, to the best of my knowledge, for serviceMesh, there were tools like
+		- Istio
+		- Linkerd
+		- Consul Connect
+		- Kuma
+		- Maesh
+		- ServiceComb-mesher
+		- Network Service Mesh (NSM)
+		- AWS App Mesh
+		- OpenShift Service Mesh by Red Hat
+
+	AWS App Mesh is the tool, I used for serviceMesh
+		AWS App Mesh makes it easy to run services by providing consistent visibility and network traffic controls, and helping you deliver secure services. App Mesh removes the need to update application code to change how monitoring data is collected or traffic is routed between services. App Mesh configures each service to export monitoring data and implements consistent communications control logic across your application.
+
+
 Redis Usecases
 ---------------
 	Slow latest items listings in your home page
