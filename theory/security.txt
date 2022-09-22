@@ -50,7 +50,7 @@ Injection
 		escape special characters
 		validating user input
 		limiting privileges
-		disabling shell and any other fuctonalities you dont need
+		disabling shell and any other functionalities you dont need
 
 Broken Authentication
 - It refers to logic issues that occur on application authentication's mechanism, like

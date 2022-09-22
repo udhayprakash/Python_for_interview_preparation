@@ -18,6 +18,15 @@ Spot Instances
 		  period of 1-6 hours.
 		  The longer the defined duration, the lower the discount provided for the spot instance.
 
+ec2 types
+1) General Purpose
+2) Compute Optimized
+3) Memory Optimized
+4) Accelerated Computing
+5) Storage Optimized
+6) Instance Features
+boto3
+=====
 - boto3 is built on top of botocore
 	- client is for lower-level interactions
 	- resource for higher-level object oriented abstractions

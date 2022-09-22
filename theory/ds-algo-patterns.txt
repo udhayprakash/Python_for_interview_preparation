@@ -37,7 +37,7 @@ Memory
 	- Single responsibility  - one method/function one job
 	- Open-closed principle  - open for extension, but closed for modification
 	- Liskov substitution	 - objects of a superclass shall be replaceable with objects of its subclass
-	- Interface Segregration - client should not be forced to depend on methods its does not use
+	- Interface Segregation - client should not be forced to depend on methods its does not use
 	- Dependency Inversion   - Depend on interface decouping
 				- against composition
 				- Not instantiating classes, which are not part of it

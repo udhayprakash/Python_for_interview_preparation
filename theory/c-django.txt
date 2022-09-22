@@ -19,293 +19,293 @@
 			- when full-fledged application is needed,
 			- when production-ready application is needed,
 
-	- Django MVC & MVT
-		- MVC - Model, View, Controller
-		- MVT - Model, View, Template
+- Django MVC & MVT
+	- MVC - Model, View, Controller
+	- MVT - Model, View, Template
 
-		- Model
-			- It handles the data representation & db schema
-			- It serves as interface to data stored in database itself, and also allows you to
-			  interact with your data without having to perturbed with all complexities of the
-			  underlying database.
-		- View
-			- It represents what you see from web application, or REST API.
-		- Controller
-			- URL dispatcher
+	- Model
+		- It handles the data representation & db schema
+		- It serves as interface to data stored in database itself, and also allows you to
+		  interact with your data without having to perturbed with all complexities of the
+		  underlying database.
+	- View
+		- It represents what you see from web application, or REST API.
+	- Controller
+		- URL dispatcher
 
-		- Template
+	- Template
 			- Presentation layer when working with web application
 
-    Django process flow
-    	Step 1: user will hit the endpoint in browser
-    	Step 2: It will go to project level  urls.py
-    	Step 3: It will go to application level urls.py
-    	Step 4: It will go to  application level views.py
-    	Step 5: it will run business logic & models.py; and response is in reverse direction
+Django process flow
+	Step 1: user will hit the endpoint in browser
+	Step 2: It will go to project level  urls.py
+	Step 3: It will go to application level urls.py
+	Step 4: It will go to  application level views.py
+	Step 5: it will run business logic & models.py; and response is in reverse direction
 
-    Django Project Structure
-    	Project
-    		Urls.py      ----------->  all project URLs routing
-    		Settings.py  ----------->  all dB settings and all with be here
-    		at App Level
-    			Urls.py
-    			Views.py  ----------->   business logic
-    			Models.py ----------->   dB table schemas
-    			Tests.py  ----------->   unit tests for the specific app related code
-    			admin.py  ----------->   It will be used for registering what models to be seen in admin page
+Django Project Structure
+	Project
+		Urls.py      ----------->  all project URLs routing
+		Settings.py  ----------->  all dB settings and all with be here
+		at App Level
+			Urls.py
+			Views.py  ----------->   business logic
+			Models.py ----------->   dB table schemas
+			Tests.py  ----------->   unit tests for the specific app related code
+			admin.py  ----------->   It will be used for registering what models to be seen in admin page
 
-	Django Project Working Procedure
-		Step 1: Creating the project, using the command
-					django-admin startproject projectName
+Django Project Working Procedure
+	Step 1: Creating the project, using the command
+				django-admin startproject projectName
 
-		Step 2: Creating the app, within project,
-					python manage.py startapp appname
+	Step 2: Creating the app, within project,
+				python manage.py startapp appname
 
-		Step 3: In settings.py file, in apps section, add the application name, to register.
+	Step 3: In settings.py file, in apps section, add the application name, to register.
 
-		Step 4: In app-level, models.py, we need to add the db table schemas as classes,
-		        and do makemigrations and migrate, to apply schema changes to the database.
+	Step 4: In app-level, models.py, we need to add the db table schemas as classes,
+			and do makemigrations and migrate, to apply schema changes to the database.
 
-		Step 5: In the app-level, views.py file, we need to write the business logic.
-				In app-level, create urls.py file, we need to link the views with the url endpoints
+	Step 5: In the app-level, views.py file, we need to write the business logic.
+			In app-level, create urls.py file, we need to link the views with the url endpoints
 
-		Step 6: Now, run the application, using the command
-					python manage.py runserver
-
-
-    Django Migrations
-    	- In Django project, in each app folder level, a folder named "migrations" will be present.
-    		In it, there will be python scripts like
-    			001__CHANGENAME_TIMESTAMP.py
-    			002__CHANGENAME_TIMESTAMP.py
-    		When we make changes in models.py file, and run "python manage.py makemigrations", these files
-    		will be created.
-
-    	Python manage.py makemigrations ----> Will create the migration files, in app/migrations folder
-    	Python manage.py migrate        ----> will Apply the migrations files, on to the database.
-    	Python manage.py showmigrations ----> will see the status of migrations, on to the database.
-
-    Django Serializers
-    	- Serializers allow complex data such as querysets and model instances to be converted to native
-    		Python datatypes that can then be easily rendered into JSON, XML or other content types.
-    	- Serializers also provide deserialization, allowing parsed data to be converted back into complex
-    		types, after first validating the incoming data.
-
-    		from rest_framework import serializers
-    		from .models import Product
-
-    		class ProductSerializers(serializers.ModelSerializer):
-    			class Meta:
-    				model = Product
-    				fields = '__all__'
-
-    Django Models
-    	- Under each app folder in Django project, we have models.py file.
-    	- It is the placeholder for the database schema for the app in that project.
-    	- Each class represents a DB table
-    	- Ex:
-			Class  MyTable(model.Model):
-				Col1 = models.CharFiled(max_length= 20)
-				Col2 = model.IntegerFiled(default=0)
-
-    Session Management
-    	- Django uses Django-sessions table to store the session related information
-    	- we can configure it
-
-    Django Authentication
-    	- Django supports session based authentication for the UI , means web applications
-    	- And, Token-based Authentication   -- for REST APIs
-    	- Also, I worked with JWT and OAuth for authentication
-
-    Django Middleware
-    	- Middleware is processes that acts between request and response execution
-		- each middleware carries a performance overhead for each request.
-
-		- CsrfViewMiddleware  	- ensures that the CSRF token is present and valid on form submissions.
-		- LocaleMiddleware 		- for language translations if you choose to internationalize your project.
-    	- GZipMiddleware 		- will compress the response
-    	- CommonMiddleware  	- handles a variety of Django settings to control certain aspects of your project.
-								  Ex: APPEND_SLASH setting will redirect a request like
-								              example.com/accounts to example.com/accounts/.
-		- SessionMiddleware     - manages the session state of a user.
-
-		- Other examples include SecurityMiddleware, SessionMiddleware, AuthenticationMiddleware.
-    	- I created a custom Middleware for counting the User requests and analytics on it.
-
-					   +--------- SecurityMiddleware --------------+
-					   |+-------- SessionMiddleware --------------+|
-					   ||+------- CommonMiddleware --------------+||
-					   |||+------ CsrfViewMiddleware -----------+|||
-					   ||||+----- AuthenticationMiddleware ----+||||
-					   |||||+---- MessageMiddleware ----------+|||||
-					   ||||||+--- XFrameOptionsMiddleware ---+||||||
-					   |||||||                               |||||||
-		HttpRequest =================> view function ==================> HttpResponse
-					   |||||||                               |||||||
+	Step 6: Now, run the application, using the command
+				python manage.py runserver
 
 
-    		class CountRequestsMiddleware:
+Django Migrations
+	- In Django project, in each app folder level, a folder named "migrations" will be present.
+		In it, there will be python scripts like
+			001__CHANGENAME_TIMESTAMP.py
+			002__CHANGENAME_TIMESTAMP.py
+		When we make changes in models.py file, and run "python manage.py makemigrations", these files
+		will be created.
 
-    			def __init__(self, get_response):
-    				self.get_response = get_response
-    				self.count_requests = 0
-    				self.count_exceptions = 0
+	Python manage.py makemigrations ----> Will create the migration files, in app/migrations folder
+	Python manage.py migrate        ----> will Apply the migrations files, on to the database.
+	Python manage.py showmigrations ----> will see the status of migrations, on to the database.
 
-    			def __call__(self, request, *args, **kwargs):
-    				self.count_requests += 1
-    				logger.info(f"Handled {self.count_requests} requests so far")
-    				return self.get_response(request)
+Django Serializers
+	- Serializers allow complex data such as querysets and model instances to be converted to native
+		Python datatypes that can then be easily rendered into JSON, XML or other content types.
+	- Serializers also provide deserialization, allowing parsed data to be converted back into complex
+		types, after first validating the incoming data.
 
-		- writing custom middleware; we can create middleware.py file
+		from rest_framework import serializers
+		from .models import Product
 
-				class AwesomeMiddleware:
-					def __init__(self, get_response):
-						self.get_response = get_response
+		class ProductSerializers(serializers.ModelSerializer):
+			class Meta:
+				model = Product
+				fields = '__all__'
 
-					def __call__(self, request):
-						return self.get_response(request)
+Django Models
+	- Under each app folder in Django project, we have models.py file.
+	- It is the placeholder for the database schema for the app in that project.
+	- Each class represents a DB table
+	- Ex:
+		Class  MyTable(model.Model):
+			Col1 = models.CharFiled(max_length= 20)
+			Col2 = model.IntegerFiled(default=0)
 
-		  After creating the middleware, you add it to your settings.
+Session Management
+	- Django uses Django-sessions table to store the session related information
+	- we can configure it
 
-				# project/settings.py
+Django Authentication
+	- Django supports session based authentication for the UI , means web applications
+	- And, Token-based Authentication   -- for REST APIs
+	- Also, I worked with JWT and OAuth for authentication
 
-				MIDDLEWARE = [
-					'django.middleware.security.SecurityMiddleware',
-					...,
-					'middleware.AwesomeMiddleware',
-				]
-		 - another middleware example,
-			import logging
-			import time
+Django Middleware
+	- Middleware is processes that acts between request and response execution
+	- each middleware carries a performance overhead for each request.
 
-			logger = logging.getLogger(__name__)
+	- CsrfViewMiddleware  	- ensures that the CSRF token is present and valid on form submissions.
+	- LocaleMiddleware 		- for language translations if you choose to internationalize your project.
+	- GZipMiddleware 		- will compress the response
+	- CommonMiddleware  	- handles a variety of Django settings to control certain aspects of your project.
+							  Ex: APPEND_SLASH setting will redirect a request like
+										  example.com/accounts to example.com/accounts/.
+	- SessionMiddleware     - manages the session state of a user.
 
+	- Other examples include SecurityMiddleware, SessionMiddleware, AuthenticationMiddleware.
+	- I created a custom Middleware for counting the User requests and analytics on it.
+
+				   +--------- SecurityMiddleware --------------+
+				   |+-------- SessionMiddleware --------------+|
+				   ||+------- CommonMiddleware --------------+||
+				   |||+------ CsrfViewMiddleware -----------+|||
+				   ||||+----- AuthenticationMiddleware ----+||||
+				   |||||+---- MessageMiddleware ----------+|||||
+				   ||||||+--- XFrameOptionsMiddleware ---+||||||
+				   |||||||                               |||||||
+	HttpRequest =================> view function ==================> HttpResponse
+				   |||||||                               |||||||
+
+
+		class CountRequestsMiddleware:
+
+			def __init__(self, get_response):
+				self.get_response = get_response
+				self.count_requests = 0
+				self.count_exceptions = 0
+
+			def __call__(self, request, *args, **kwargs):
+				self.count_requests += 1
+				logger.info(f"Handled {self.count_requests} requests so far")
+				return self.get_response(request)
+
+	- writing custom middleware; we can create middleware.py file
 
 			class AwesomeMiddleware:
 				def __init__(self, get_response):
 					self.get_response = get_response
 
 				def __call__(self, request):
-					before_timestamp = time.time()
-					logger.info(f"Tracking {before_timestamp}")
+					return self.get_response(request)
 
-					response = self.get_response(request)
+	  After creating the middleware, you add it to your settings.
 
-					after_timestamp = time.time()
-					delta = after_timestamp - before_timestamp
-					logger.info(f"Tracking {after_timestamp} for a delta of {delta}")
+			# project/settings.py
 
-					return response
+			MIDDLEWARE = [
+				'django.middleware.security.SecurityMiddleware',
+				...,
+				'middleware.AwesomeMiddleware',
+			]
+	 - another middleware example,
+		import logging
+		import time
 
-		- another example
-			import logging
-			import time
-
-			logger = logging.getLogger(__name__)
+		logger = logging.getLogger(__name__)
 
 
-			class AwesomeMiddleware:
-				def __init__(self, get_response):
-					self.get_response = get_response
+		class AwesomeMiddleware:
+			def __init__(self, get_response):
+				self.get_response = get_response
 
-				def __call__(self, request):
-					before_timestamp = time.time()
-					logger.info(f"Tracking {before_timestamp}")
+			def __call__(self, request):
+				before_timestamp = time.time()
+				logger.info(f"Tracking {before_timestamp}")
 
-					response = self.get_response(request)
+				response = self.get_response(request)
 
-					after_timestamp = time.time()
-					delta = after_timestamp - before_timestamp
-					logger.info(f"Tracking {after_timestamp} for a delta of {delta}")
+				after_timestamp = time.time()
+				delta = after_timestamp - before_timestamp
+				logger.info(f"Tracking {after_timestamp} for a delta of {delta}")
 
-					return response
+				return response
 
-				def process_view(self, request, view_func, view_args, view_kwargs):
-					logger.info(f"Running {view_func.__name__} view")
-		- JSON Error middleware - https://rednafi.github.io/reflections/return-json-error-payload-instead-of-html-text-in-drf.html
+	- another example
+		import logging
+		import time
 
-    - Django ORM - object relational mapper
-    	- I will use ORM for small queries
-    	- For large queries, I will use raw SQL code
-    	- It will be scalable, readable and fast to use when multiple joins are present .
-    	Optimizing ORM queries - https://schegel.net/posts/optimizing-django-orm-queries/
+		logger = logging.getLogger(__name__)
 
-		- select_related()
-			- "follows" foreign-key relationships, selecting additional related-object
-			   data when it executes its query.
-		- prefetch_related()
-			- does a separate lookup for each relationship, and does the "joining" in Python.
 
-	- Django Manager
-		- Manager is some kind of interface between application and the database.
-		- we can define custom base querysets, for the models.
+		class AwesomeMiddleware:
+			def __init__(self, get_response):
+				self.get_response = get_response
 
-	- Custom model field
-		from django.db import models
+			def __call__(self, request):
+				before_timestamp = time.time()
+				logger.info(f"Tracking {before_timestamp}")
 
-		class MyField(models.Field):
+				response = self.get_response(request)
 
-			description = "my field details"
+				after_timestamp = time.time()
+				delta = after_timestamp - before_timestamp
+				logger.info(f"Tracking {after_timestamp} for a delta of {delta}")
 
-			def __init__(self, *args, **kwargs):
-				kwargs['max_length'] = 50
-				super().__init__(*args, **kwargs)
+				return response
 
-		The Field.__init__() method takes the following parameters:
-			verbose_name, name, primary_key, max_length, unique, blank, null, db_index, etc
+			def process_view(self, request, view_func, view_args, view_kwargs):
+				logger.info(f"Running {view_func.__name__} view")
+	- JSON Error middleware - https://rednafi.github.io/reflections/return-json-error-payload-instead-of-html-text-in-drf.html
 
-    - Django ORM vs SQLAlchemy
+- Django ORM - object relational mapper
+	- I will use ORM for small queries
+	- For large queries, I will use raw SQL code
+	- It will be scalable, readable and fast to use when multiple joins are present .
+	Optimizing ORM queries - https://schegel.net/posts/optimizing-django-orm-queries/
 
-    - Multiple Databases in Django Project
+	- select_related()
+		- "follows" foreign-key relationships, selecting additional related-object
+		   data when it executes its query.
+	- prefetch_related()
+		- does a separate lookup for each relationship, and does the "joining" in Python.
 
-    	DATABASES = {
-    		'default': {
-    			'NAME': 'app_data',
-    			'ENGINE': 'django.db.backends.postgresql',
-    			'USER': 'postgres_user',
-    			'PASSWORD': 's3krit'
-    		},
-    		'users': {
-    			'NAME': 'user_data',
-    			'ENGINE': 'django.db.backends.mysql',
-    			'USER': 'mysql_user',
-    			'PASSWORD': 'priv4te'
-    		}
-    	}
+- Django Manager
+	- Manager is some kind of interface between application and the database.
+	- we can define custom base querysets, for the models.
 
-    	$ ./manage.py migrate --database=users
-    	$ ./manage.py migrate --database=customers
+- Custom model field
+	from django.db import models
 
-    - Django Cheatsheet
-    	https://cheatography.com/papousekp/cheat-sheets/django-class-based-views/
-    	https://cheatography.com/lewiseason/cheat-sheets/django-models/
+	class MyField(models.Field):
 
-    - Django Test Setup
+		description = "my field details"
 
-    	Django Settings.py
+		def __init__(self, *args, **kwargs):
+			kwargs['max_length'] = 50
+			super().__init__(*args, **kwargs)
 
-    		TEST_RUNNER = 'xmlrunner.extra.djangotestrunner.XMLTestRunner'
-    		TEST_OUTPUT_FILE_NAME = 'unit.xml'
+	The Field.__init__() method takes the following parameters:
+		verbose_name, name, primary_key, max_length, unique, blank, null, db_index, etc
 
-    	requirements.txt
-    		unittest-xml-reporting==3.0.2
+- Django ORM vs SQLAlchemy
 
-    	python_install.sh
+- Multiple Databases in Django Project
 
-    		#!/usr/bin/env bash
+	DATABASES = {
+		'default': {
+			'NAME': 'app_data',
+			'ENGINE': 'django.db.backends.postgresql',
+			'USER': 'postgres_user',
+			'PASSWORD': 's3krit'
+		},
+		'users': {
+			'NAME': 'user_data',
+			'ENGINE': 'django.db.backends.mysql',
+			'USER': 'mysql_user',
+			'PASSWORD': 'priv4te'
+		}
+	}
 
-    		sudo apt update
-    		sudo apt --yes install software-properties-common;
-    		sudo add-apt-repository ppa:deadsnakes/ppa;
-    		sudo apt update; sudo apt --yes install python3.7;
-    		sudo rm /usr/bin/python3;
-    		sudo ln -s /usr/bin/python3.7 /usr/bin/python3
-    		curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py;
-    		python3 get-pip.py --force-reinstall;
-    		sudo apt-get --yes install python3.7-dev;
-    		sudo apt-get --yes install libpq-dev;
-    		pip3 install virtualenv;
-    		virtualenv -p python3 env1;
+	$ ./manage.py migrate --database=users
+	$ ./manage.py migrate --database=customers
+
+- Django Cheatsheet
+	https://cheatography.com/papousekp/cheat-sheets/django-class-based-views/
+	https://cheatography.com/lewiseason/cheat-sheets/django-models/
+
+- Django Test Setup
+
+	Django Settings.py
+
+		TEST_RUNNER = 'xmlrunner.extra.djangotestrunner.XMLTestRunner'
+		TEST_OUTPUT_FILE_NAME = 'unit.xml'
+
+	requirements.txt
+		unittest-xml-reporting==3.0.2
+
+	python_install.sh
+
+		#!/usr/bin/env bash
+
+		sudo apt update
+		sudo apt --yes install software-properties-common;
+		sudo add-apt-repository ppa:deadsnakes/ppa;
+		sudo apt update; sudo apt --yes install python3.7;
+		sudo rm /usr/bin/python3;
+		sudo ln -s /usr/bin/python3.7 /usr/bin/python3
+		curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py;
+		python3 get-pip.py --force-reinstall;
+		sudo apt-get --yes install python3.7-dev;
+		sudo apt-get --yes install libpq-dev;
+		pip3 install virtualenv;
+		virtualenv -p python3 env1;
 
 Django Ref blogs/tutorials
 	- https://djangotricks.blogspot.com/

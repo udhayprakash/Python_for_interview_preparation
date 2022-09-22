@@ -17,7 +17,9 @@ DB Experience
 		- psycopg2 for working with postgres
 		- pymongo for working with MongoDB
 
+- SQL solutions - https://javarevisited.blogspot.com/2017/02/top-6-sql-query-interview-questions-and-answers.html#axzz7f7DekILS
 - https://www.interviewbit.com/sql-interview-questions
+
 - Relational Databases
 	- row oriented
 		- Eg: Mysql, postgre

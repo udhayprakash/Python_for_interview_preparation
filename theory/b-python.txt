@@ -797,6 +797,34 @@ multi index pandas
 - to read specific columns
 	df = pd.read_csv("sample_file.csv", usecols=col_list)
 
+Machine learning Models
+========================
+1) Supervised Learning
+	a) Regression
+		- Linear Regression
+			- Multiple Linear
+			- Polynomial
+		- Decision Tree
+		- Random Forest
+		- Neural Network
+
+	b) Classification
+		- Logistic Regression
+		- Support Vector Machine
+		- Naive Bayes
+		- Decision Tree, Random Forest, Neural Network
+
+2) Un-supervised Learning -> Patterns from input data without references to labeled outcomes
+	- Clustering ->
+		- K-means
+		- Hierarchical
+		- Mean shift
+		- Density based
+	- Dimensionality Reduction - process of reducing the dimension of your feature set
+		- Feature elimination
+		- Feature Extraction
+			- Principal Component Analysis
+
 spark
 pyspark bucketby vs partitionby
 pyspark compression parquet

@@ -43,7 +43,7 @@ Project/task you are proud of
 --------------------------------
 	- In one project, we have data, to the tune of 18 millions records,
 	  for the daily data refresh, which can be either create or update.
-	- Earlier, all these daily ETL jobs, used to take around 3 hours.
+	- Earlier, all these daily ETL jobs used to take around 3 hours.
 	- I refactored these scripts to complete the data refresh, in just 30 min
 	- I made use of async module, to concurrently run the jobs, which are not
 	  dependent on others
@@ -51,8 +51,8 @@ Project/task you are proud of
 	- With inspiration from AWS Step functions, I created a framework to work
 	  with these ETL jobs.
 	- we need to just feed this with a yaml file, with the microservice jobs named
-	 in sequential indendants, specifying the level, and also the dependencies.
-
+	 in sequential intendants, specifying the level, and also the dependencies.
+	- My framework will take these jons
 
 difficulties working with technologies and how did you resolved it?
 -------------------------------------------------------------------

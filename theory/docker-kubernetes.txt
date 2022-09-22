@@ -200,48 +200,50 @@ Docker
 Ref: https://hasura.io/blog/how-to-write-dockerfiles-for-python-web-apps-6d173842ae1d/
 
 - Kubernetes
-	- We used EKS in AWS
-	- Elastic kubernets service
-	- AWS has three: ECS, Fargate and EKS
-	- We used EKs as it is cloud agnostic
-	- Docker for creating containers
+=============
+- We used EKS in AWS
+- Elastic kubernets service
+- AWS has three: ECS, Fargate and EKS
+- We used EKs as it is cloud agnostic
+- Docker for creating containers
 
-	-  Ingress
-		- An object that allows access to your Kubernetes services from outside the Kubernetes cluster.
-		- we can configure access by creating a collection of rules that define which inbound connections reach which services.
-		- Ingress traffic is composed of all the data communications and network traffic originating from external networks and destined for a node in the host network. Ingress traffic can be any form of traffic whose source lies in an external network and whose destination resides inside the host network.
+-  Ingress
+	- An object that allows access to your Kubernetes services from outside the Kubernetes cluster.
+	- we can configure access by creating a collection of rules that define which inbound connections reach which services.
+	- Ingress traffic is composed of all the data communications and network traffic originating from external networks and destined for a node in the host network. Ingress traffic can be any form of traffic whose source lies in an external network and whose destination resides inside the host network.
 
-	- TODO: https://head-first-kubernetes.github.io/
+- TODO: https://head-first-kubernetes.github.io/
 
-	- secrets vs configMaps
-		- Secrets  are used for storing secret like API keys, credentials, etc
-		- ConfigMaps are used for storing not-secret configuration data
+- secrets vs configMaps
+	- Secrets  are used for storing secret like API keys, credentials, etc
+	- ConfigMaps are used for storing not-secret configuration data
 
-	- Ingress usecases
-		Providing externally reachable URLs for services.
-		Load balancing traffic.
-		Offering name-based virtual hosting.
-		Terminating SSL (secure sockets layer) or TLS (transport layer security)
-	- Ingress vs Load balancing
-		- load balancer distributes the requests among multiple backend services (of same type)
-		  whereas ingress is more like an API gateway (reverse proxy) which routes the request
-		  to a specific backend service based on, for instance, the URL.
+- Ingress usecases
+	Providing externally reachable URLs for services.
+	Load balancing traffic.
+	Offering name-based virtual hosting.
+	Terminating SSL (secure sockets layer) or TLS (transport layer security)
 
-	- Deployment Strategies
-		1) Rolling deployment
-			—replaces pods running the old version of the application with the new version,
-			one by one, without downtime to the cluster.
-		2) Recreate
-			—terminates all the pods and replaces them with the new version.
-		3) Ramped slow rollout
-			—rolls out replicas of the new version, while in parallel, shutting down old replicas.
-		4) Best-effort controlled rollout—specifies
-			- a “max unavailable” parameter which indicates what percentage of existing pods can
-			be unavailable during the upgrade, enabling the rollout to happen much more quickly.
-		5) Canary deployment
-			— uses a progressive delivery approach, with one version of the application serving
-			most users, and another, newer version serving a small pool of test users.
-			- The test deployment is rolled out to more users if it is successful.
+- Ingress vs Load balancing
+	- load balancer distributes the requests among multiple backend services (of same type)
+	  whereas ingress is more like an API gateway (reverse proxy) which routes the request
+	  to a specific backend service based on, for instance, the URL.
+
+- Deployment Strategies
+	1) Rolling deployment
+		—replaces pods running the old version of the application with the new version,
+		one by one, without downtime to the cluster.
+	2) Recreate
+		—terminates all the pods and replaces them with the new version.
+	3) Ramped slow rollout
+		—rolls out replicas of the new version, while in parallel, shutting down old replicas.
+	4) Best-effort controlled rollout—specifies
+		- a “max unavailable” parameter which indicates what percentage of existing pods can
+		be unavailable during the upgrade, enabling the rollout to happen much more quickly.
+	5) Canary deployment
+		— uses a progressive delivery approach, with one version of the application serving
+		most users, and another, newer version serving a small pool of test users.
+		- The test deployment is rolled out to more users if it is successful.
 
 Terraform commands
 	refresh -> to get the current state of infrastructure

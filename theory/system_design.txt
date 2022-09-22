@@ -1,0 +1,7 @@
+System Design Problems [Solved]
+1. Instagram- https://bit.ly/3BqamCL
+2. Youtube Design - https://bit.ly/3bbNnAN
+3. WhatsApp - https://bit.ly/3SbA9Eu
+4. Parking Lot - https://bit.ly/3eMUosX
+5. Library design- https://bit.ly/3SfwJQe
+6. URL Shortner - https://bit.ly/3dZoQ2G

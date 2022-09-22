@@ -87,9 +87,9 @@ API Authentication
 ===================
 	1) HTTP Authentication
 		- Basic HTTP Auth
-			- where we send credentails to server, in http header. so less secure.
+			- where we send credentials to server, in http header. so less secure.
 		- Bearer HTTP Auth
-			- where we send token to server. Eg: Authorization: Bearer <Token>
+			- where we send a token to the server. Eg: Authorization: Bearer <Token>
 		- JWT (Json Web Token)
 			- It gives user-level access
 			- Also, contains additional information like expiration date, user's uniqueID, ...
