@@ -603,3 +603,11 @@ Application Security Tools
 	- managed service where you can store and retrieve sensitive information such as database credentials, certificates, and tokens.
 	- Use fine-grained permissions to specify exact actions an entity can perform on the secrets, such as creating, updating, deleting, or retrieving secrets.
 	- Secrets Manager also supports automatic rotation for AWS services such as Amazon Relational Database Service (RDS).
+
+
+start/stop ec2 using cloudwatch logs
+=====================================
+- I set an CloudWatch alarm and once it is triggered, it will notify an SNS topic.
+- Then, this SNS topic will invoke a Lambda function, which can then start your EC2 instance.
+- Then, Created an AWS Lambda function that starts the EC2 instance.
+- And, configured the SNS topic to invoke your Lambda function when it receives messages.

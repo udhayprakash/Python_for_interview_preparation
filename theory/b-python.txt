@@ -825,6 +825,16 @@ Machine learning Models
 		- Feature Extraction
 			- Principal Component Analysis
 
+
+Precision
+	indicates the positive prediction made by the model
+	It refers to the number of true positives divided by total number of postive predictions
+
+
+Accurancy Vs precision
+	Accurancy tells how many times the ML model was correct overall
+	Precision is how good the model is at predicting a sepcific category
+
 spark
 pyspark bucketby vs partitionby
 pyspark compression parquet

@@ -85,6 +85,68 @@ Django Migrations
 	Python manage.py migrate        ----> will Apply the migrations files, on to the database.
 	Python manage.py showmigrations ----> will see the status of migrations, on to the database.
 
+Django signals
+	- They are the database triggers, pre_save, post_save, etc
+	- Django signals contain two parts: the senders and the receivers
+		- the sender is the one responsible to dispatch a signal, and
+		- the receiver is the one who will receive this signal and then do something.
+	- A receiver must be a function or an instance method which is to receive signals.
+	- A sender must either be a Python object, or None to receive events from any sender.
+	- The connection between the senders and the receivers is done through “signal dispatchers”,
+	  which are instances of Signal, via the connect method.
+	- So to receive a signal, you need to register a receiver function that gets called
+	  when the signal is sent by using the Signal.connect() method.
+
+	- Ex1 :
+	from django.contrib.auth.models import User
+	from django.db.models.signals import post_save
+
+	def save_profile(sender, instance, **kwargs):
+		instance.profile.save()
+
+	post_save.connect(save_profile, sender=User)
+
+	- Ex2 :
+	Another way to register a signal, is by using the @receiver decorator:
+
+	from django.contrib.auth.models import User
+	from django.db.models.signals import post_save
+	from django.dispatch import receiver
+
+	@receiver(post_save, sender=User)
+	def save_profile(sender, instance, **kwargs):
+		instance.profile.save()
+
+Django Hooks
+	- Hooks are the callables that you want to execute when a specified signal happened.
+
+	  # app/signals.py
+		from django.db.models.signals import post_save
+		from django.dispatch import receiver
+		from django.db import transaction
+		from .models import Book
+
+		@receiver(post_save, sender=Book)
+		def post_save_handler(sender, **kwargs):
+			book = kwargs.get(‘instance’, None)
+			created = kwargs.get(‘created’, False)
+			raw = kwargs.get(‘raw’, False)
+
+	- In signals.py, we will put all the hooks and signal declarations, and
+	  these signals are imported in the appconfig class ready method
+
+
+	  # myapp/apps.py
+		from django.apps import AppConfig
+		class MyAppConfig(AppConfig):
+		 name = “myapp”
+		 label = “myapp”
+		 verbose_name = “My App”
+		def ready(self):
+		 # importing signal handlers
+		 import myapp.signals
+
+
 Django Serializers
 	- Serializers allow complex data such as querysets and model instances to be converted to native
 		Python datatypes that can then be easily rendered into JSON, XML or other content types.
