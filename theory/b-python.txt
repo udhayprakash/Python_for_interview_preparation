@@ -2,7 +2,7 @@ Python Modules
 	Requests     : for consuming APIs
 	Re           : for regular expressions
 	Scikit-learn : for machine learning - I used for creating linear regression model
-	BeautifulSoap: for parsing html content. Used when I worked on web crawling/Scrapping
+	BeautifulSoap: for parsing html content. Used when I worked on web crawling/Scraping
 	NumPy        : Advanced linear algebra and NumPy array operations
 	Matplotlib   : Visualisation and data plotting in 2 or 3 dimensions.
 	IPython      : Increasing console interactivity.
@@ -771,10 +771,10 @@ array vs dataframe
 	- When index is non-unique and sorted, pandas use binary search O(logN),
 	  when index is random ordered pandas need to check all the keys in the index O(N).
 
-- join vs merge
-	- join() is used to combine two DataFrames on the index but not on columns
-	- merge() is primarily used to specify the columns you wanted to join on, this also supports
-	joining on indexes and combination of index and columns.
+	- join vs merge
+		- join() is used to combine two DataFrames on the index but not on columns
+		- merge() is primarily used to specify the columns you wanted to join on, this also supports
+		joining on indexes and combination of index and columns.
 
 - find differences between two dataframes
 	df1=pd.DataFrame({'A':[1,2,3,3],'B':[2,3,4,4]})
@@ -860,6 +860,57 @@ High Performance Computing, in python
 	- pyspark
 	- Koalas — ~3k GitHub stars
 	- polars — ~5k GitHub stars
+
+
+Hadoop
+======
+HDFS
+	- means Hadoop Distributed File System
+	- architecture - https://hadoop.apache.org/docs/r1.2.1/hdfs_design.html
+
+Hadoop Node types
+	1) NameNode
+		- It is main node of HDFS; also called master node.
+		- It stores meta data in RAM for quick access and track the files across hadoop cluster.
+		- If namenode fails, entire HDFC is inaccessible.
+		- Namenode tracks all information from files such as
+			- which file saved in cluster,
+			- access time of file,
+			- which user access a file on current time
+	2) Secondary Node
+		- It helps the primary namenode, and merges the namespaces.
+		- It stores data when primary namenode fails, and is used to restart the primary namenode.
+		- It requires huge memory for data storing
+		- It runs on different machines for memory management;
+		- Also, it is checking point of namenode
+	3) DataNode
+		- It stores actual data of HDFS; also called slave node.
+		- No data is affected, even if the data node is failed.
+		- As it stores actual data, it is configured with lot of disk space
+		- It perform read and write operations as per client request.
+		- And, Performance of DataNode are based on NameNode Instuctions.
+	4) Checkpoint Node
+	5) Backup Node
+	6) Job Tracker Node
+	7) Task Tracker Node
+
+namenode vs datanode
+ - NameNode is the master node in HDFS that manages the file system metadata while
+   DataNode is a slave node in HDFS that stores the actual data as instructed by the NameNode.
+
+Datanodes
+	- DataNodes are responsible for serving read and write requests from the file system's clients.
+	- DataNodes also perform block creation, deletion, and replication upon instruction from the NameNode.
+
+master vs datanode
+	- Data nodes store the data, and participate in the cluster's indexing and search capabilities, while
+	- master nodes are responsible for managing the cluster's activities and storing the cluster state, including the metadata.
+
+jobtracker vs tasktracker
+- JobTracker is the service within Hadoop that is responsible for taking client requests.
+- It assigns them to TaskTrackers on DataNodes where the data required is locally present.
+- If that is not possible, JobTracker tries to assign the tasks to TaskTrackers within the
+  same rack where the data is locally present.
 
 =======================================================================
 Q1) Describe truthy vs falsy

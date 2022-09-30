@@ -22,13 +22,14 @@ CI/CD
 		We use docker.yaml for containzation
 		And kubernetes.yaml for orchestration
 
-	- Also, worked with cloudformation.json templates for infra management .
+	- Also, worked with cloudformation.json templates for infra management.
 		 - Terraform is a very naive experience
 
 	- Code Flow process
 		- feature branch -(Pull requests)(once completed) - dev branch -(testers signoff)-> release branch -(signoff from client)- production branch
 
 - https://www.xenonstack.com/blog/continuous-integration-and-delivery
+
 
 Development Process
 -------------------

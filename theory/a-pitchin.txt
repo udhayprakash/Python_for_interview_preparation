@@ -48,7 +48,7 @@ In AWS Cloud, I worked with
 	- And, EMR cluster for Pyspark
 	- for the ETLs, I worked with AWS Glue Jobs with DataCatalog and Pyspark
 
-In current project, I created the CI/CD setup using Jenkins and Groovy script.
+Also, In the current project, I created the CI/CD setup using Jenkins and Groovy script.
 
 In Golang, I created microservices and ETL jobs,
 	Mainly using go concurrency.

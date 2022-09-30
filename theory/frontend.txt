@@ -115,3 +115,16 @@ Dependency injection
 
 	It's a very useful technique for testing, since it allows dependencies
 	to be mocked or stubbed out.
+==================
+React
+=========
+React component lifecycle
+	1) INITIALIZATION
+		- setup props and state
+	2) MOUNTING
+		- constructor->componentWillMount->render->componentDidMount//Birth
+	3) UPDATE
+		- shouldComponentUpdate
+			->componentWillUpdate ->render->componentDidUpdate //Growth
+	4) UNMOUNTING
+		- componentWillUnmount //Death
