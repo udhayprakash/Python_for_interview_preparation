@@ -1,3 +1,7 @@
+Merge Sort
+	Time complexity - O(n Log N)
+	space Complexity - O(n)
+
 DRY principle
 	- DRY means Do not  Repeat Yourself
 	- "Every piece of knowledge must have a single, unambiguous, authoritative

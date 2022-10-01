@@ -271,3 +271,20 @@ Ans)
 	WHERE
 		c1.id > c2.id AND
 		c1.email = c2.email;
+=====================================================================================================
+Q) Per total number of hours, by employee
+Employees
+    Employees.id
+    Employees.Name
+
+TimeSheet
+    TimeSheet.Id
+    Employee_id
+    Hours
+Ans)
+	Select e.name, SUM(t.Hours) as total_hours
+	from employees e
+	JOIN TimeSheet t on t.Employee_id = e.id
+	GROUP BY e.name
+	ORDER BY total_hours DESC
+=====================================================================================================

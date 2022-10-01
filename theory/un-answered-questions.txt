@@ -43,6 +43,24 @@ Pandas
 	https://www.shanelynn.ie/category/tutorials/
 	https://datatofish.com/convert-pandas-series-to-dataframe/
 	https://saralgyaan.com/posts/category/pandas/
+	df.compare(df2, keep_equal=True)
+
+	>>> pandas.concat([df1,df2]).drop_duplicates().reset_index(drop=True)
+	=========
+	Processing
+	Csv, excel , files
+
+	Filtering
+	And cleas ing the data
+
+	Hen tranformations
+
+	Like joining multiple columsn
+	Adding new columns basd conditions
+	Etc
+
+	df. pivot -- transpose and aggregate
+
 
 Flask
 ------

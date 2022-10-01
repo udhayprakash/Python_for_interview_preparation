@@ -123,6 +123,15 @@ Shallow vs Deep copy
 - It is used in mutable objects like lists and dictionaries.
 - Shallow copy is used for single dimension mutable objects
 - Deep copy is used for multiple dimension mutable objects
+- Reason:
+	when we do assignments of mutable objects, say like,
+		mylist2 = mylist1
+	Then, if we make changes of one of them, the others will also be affected.
+	So, we use copy module to safely copy.
+	Shallow copy or soft copy will also have leakages for multi-dimensional mutable objects.
+	so, conclusion is that
+		shallow/soft copy need to used for single dimension mutable objects, as it is faster.
+		Deep copy need for multi-dimensional mutable objects.
 
 - lambda function
 	- one liner function, mainly useful for evaluating a single expression that is
@@ -339,6 +348,11 @@ Abstract Classes
 	- I created custom decorators for calculating the time taken by functions, or
 	  like logging the events, etc
 
+- decorator wraps
+	- Decorators are the function which takes another functions as arguments.
+	- The docstrings of the orginal function which is being passed into decorator function will be lost.
+	- functools.wraps decorator on the inner function, of decorator, will help retain those docstrings.
+
 - Map
 	- Higher-order function, which is designed to work on other functions
 	- map will superimpose a function on one or more iterables
@@ -528,7 +542,12 @@ I	- we can create custom context managers, using the dunder methods,
 unittesting
 	- I used modules like unit test and pytest.
 	- Generally, we follow TDD - test driven development
-	- It means that first write the unit tests and then write logic to address them.
+	- It means that
+		- first I will write the code skeleton
+		- next, write the unit tests, and
+		- then, modify the code logic to address these test cases.
+		- Finally, when both the newly created and existing test cases, are successful,
+		  will commit the code.
 	- This way, we can assure that code is more reliable, handling all edge cases.
 	- Also, any further logic changes, will be integrable easily, as all test cases need to pass,
 	  before pushing the code
@@ -890,9 +909,27 @@ Hadoop Node types
 		- It perform read and write operations as per client request.
 		- And, Performance of DataNode are based on NameNode Instuctions.
 	4) Checkpoint Node
+		- It is designed to address the namenode drawbacks.
+		- It tracks the latest checkpoint directory that has same structure.
+		- It creates the checking point for NameNode namespace and downloads the edits and fsimage from NameNode and mering locally.
+		- The new image are uploaded to NameNode. After this uploads the result to NameNode.
 	5) Backup Node
+		- It provide the functions to Check Point but it interact with NameNode and it supports the online streaming of filesystems.
+		- In Backup Nodes namespace are available on main memory because it interact with primary node.
+		- It maintains up-to date file namespace for streaming process.
+		- Backup node having own memory so just save and copy the namespace from main memory.
 	6) Job Tracker Node
+		- Job Tracker node used to MapReduce jobs and it process runs on separate node.
+		- It receives the request for MapReduce from client.
+		- It Loacte the data when after talking of NameNode.
+		- Job tracked choose best TaskTracker for executes the task and it give slots to tasktracker for execute the task.
+		- It monitors the all TaskTrackers and give status report to Client.
+		- If Job Tracked failure MapReduce function does not executed and all functions are halted so Job Tracker is critical for MapReduce.
 	7) Task Tracker Node
+		- Task Tracker are runs on DataNode.
+		- TaskTrackers will be assigned Mapper and Reducer tasks to execute by JobTracker.
+		- If Task Tracker failure the job tracker assign the task for another node so MapReduce Task running successfully..
+
 
 namenode vs datanode
  - NameNode is the master node in HDFS that manages the file system metadata while

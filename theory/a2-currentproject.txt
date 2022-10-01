@@ -14,6 +14,13 @@ my responsibilities here include
 	10% time for code review
 	Remaining – client and Stakeholder discussions, agile ceremonies
 
+	When we started this project, we are just two members in the team.
+	I am part of initial design discussions, dataflow design, db design, creating JIRAs,
+	implementing, demoing the clients, and finally shipping of product.
+
+	we initially started on small POC, after approvals got budgets for team expansion,
+	and created an MVP product, and then stable releases.
+
 
 In Machine Learning,
 	I worked with a Linear regression algorithm, using the scikit-learn module.

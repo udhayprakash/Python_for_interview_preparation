@@ -611,3 +611,47 @@ start/stop ec2 using cloudwatch logs
 - Then, this SNS topic will invoke a Lambda function, which can then start your EC2 instance.
 - Then, Created an AWS Lambda function that starts the EC2 instance.
 - And, configured the SNS topic to invoke your Lambda function when it receives messages.
+
+
+
+Interview Questions Bank
+========================
+1. GUI is being called by a lot(millions of customers). You have a currency of lets say 100 requests per second and lets say your API response time should be less than a second and How do you build? what kind of API will you build ?and what's that model look like? just walk me through.
+
+Ans : prepare on the tools AWS route 53, APIs tuning for 100 session
+
+
+1a. What does the end point look like ?
+2b. Do you know the parameter type that passes to the API, what kind of parameters you'll let the user pass through the GUI? What kind of method will you use for API calling?
+Ans : customer ID , Get method
+
+
+2. What kind of layers that you will build in your Python for taking the calls from UI? What is exception handling? How do you maintain the concurrency of your API?
+
+Ans : {may be not 100% correct}---> research your own  correct answer
+API token authentication we will do.
+Parallel processing we will use to handle multiple requests.
+
+2a. How do you handle parallel processing?
+Ans : used a multi multi-processing library of Python.---> research your own  correct answer
+        2a.a : what is a multi multi-processing library.
+        2a.b : So how does "multiprocessing"  work ? You get a request for your end point and how would that multiprocessing library keep track of all that until you respond back to the UI ?
+        2a.c: What happens if a thread (defect) gets stuck, what kind of exception you'll catch.
+2a.d How about the query? You have a lot of records per customer that you need to query and then process right, so,how do you get the response quick? and what kind of querying that you use in your API?(because you can go and query and then filter the records and then you need less than a second response time,so how do you do that)?
+Ans : --> research your own  correct answer
+
+3. I have an array , an array will have both Positive and Negative numbers and if I want to get the closest 2 numbers of zero (ex: [3,7],13,19) and how do you get and what's the pseudo code that you write?
+
+4. Do you have any experience in AWS ? What are the services hands on experience do you have ? (ex : EC2 , Lambda)
+4.a : If I want to write lambda what is the start point for lambda ?
+4.b : how do you invoke the lambda ? Where does the lambda start? What's that method name?
+Ans : https://docs.aws.amazon.com/lambda/latest/dg/lambda-invocation.html --> research your own  correct answer
+
+5. How long can you run Lambda ? What's the time limit for Lambda?
+Ans : 15 minutes is the limit --> research your own  correct answer
+
+6. If I want to invoke a lambda, let's say you wanted to pull the files from S3 and you are getting an issue, let's say 403 forbidden. What kind of issue could that be ? How do you debug that, what's your resolution?
+7. If I am on the Linux box and want to write a python code to download some S3 files and do some processing and then upload files to S3, How do you write a script using python to do that CLI ratcheting.
+
+ans : there is a library called bolt23, use access token/Ws --> research your own  correct answer
+        7a. I still got the access forbidden/ what could have been the issue/lets say access token is good.

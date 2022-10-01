@@ -1,0 +1,8 @@
+Go Mocking
+	Gomock
+		- It is the most common and popular mocking framework to mock interfaces.
+	Go Sqlmock
+		- DATA-DOG sqlmock is one of the common frameworks to mock Golang’s SQL.
+	Testify
+		- This library is also a great alternative to mock objects and HTTP activities.
+		- I use this library for its great assertion tool.

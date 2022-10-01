@@ -5,3 +5,101 @@ System Design Problems [Solved]
 4. Parking Lot - https://bit.ly/3eMUosX
 5. Library design- https://bit.ly/3SfwJQe
 6. URL Shortner - https://bit.ly/3dZoQ2G
+
+
+CHess Board
+===========
+# n games, n players - each game - 2 players
+Interested in entities, their relationships and data structures
+# ========================================================
+entities
+    - users
+        - admin
+        - players
+
+Databases
+    UserTable
+        id, name, email, role, overall_stats
+    boards
+        id, started_at, player1(FK), player2(FK), end_at, result
+    UserProfile
+        id, user_id(FK), board_id(FK),
+
+
+Features
+    - functinal
+        - single player , with computer
+        - two-playrs game
+        - concurrently, multiple boards,
+        - game history
+        - Mobile app
+    - non-functional
+        - scalable
+
+
+app svr - django
+react + react-native
+
+check board Entities
+    - soldier
+    - king
+    - Queeen
+    - Elephant
+    - Horse
+    - boardpostion
+        - Matrix  8* 8
+            - rows - A-F
+            - columns - 0 though 7
+
+
+p1_k = King()
+p2_k - King()
+
+[
+    [],
+    [],
+    [],
+    [   ],
+    [p1_s        ],
+  7  [p1_e, p1_h, p ....... ],
+]
+
+0 ... 7
+0 ... 7
+0 ... 7
+0 ... 7
+0 ... 7
+0 ... 7
+
+class Entity(absstarct)
+    df __move
+
+    def _-validate
+
+class Elephant(Entity):
+    def __init__(self)
+        self.currpos
+
+
+    def __move(self,)
+        self.currpos is updated
+    def __validation(self, newpos):
+        vertical
+            nothing in middle
+            not 1 step near king of oppo
+        horizonal
+            notihgb in middle
+            not 1 step nea king of oppo
+
+
+
+
+class BOard(Elephant, Horse, Soldier)
+    def __init
+        self.board = list f lists of all None
+
+    def action(self, player, entity, newpos):
+        pass
+
+		validation
+        update the chessboard

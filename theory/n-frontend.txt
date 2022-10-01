@@ -95,6 +95,15 @@ promises
 	at a time.
 	When using an Angular Promise, you are enabled to emit a single event from the API
 
+promise vs callbacks
+	A callback function is passed as an argument to another function whereas
+	Promise is something that is achieved or completed in the future.
+	In JavaScript, a promise is an object and we use the promise constructor to initialize a promise.
+
+	we, generally, pass a callback into a function that would then get called upon
+	completion in order to get the result of something.
+	In promises, however, you attach callbacks on the returned promise object.
+
 promises vs observables
 	promises
 		are not lazy: execute immediately after creation.

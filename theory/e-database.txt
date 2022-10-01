@@ -17,6 +17,21 @@ DB Experience
 		- psycopg2 for working with postgres
 		- pymongo for working with MongoDB
 
+- ORM
+	- means Object Relational Mapper
+	- ORMS will help in performing db queries and manipulations using Object Oriented way.
+	- Means writing quries in programming language, like python, instead of in raw SQL.
+	- Advantages
+		- Less code, so more productivity and easier maintenance.
+		- Database type agnostic, means later we can change db from, say, mysql to MS-SQL, and
+		  the written ORM will work.
+		- Sanitization of queries, mainly, helps in avoiding security issues like SQL injection attacks.
+
+	- Disadvantages
+		- It involves some learnings, for each ORM.
+		- ORMs will be difficult to read and maintain when we have, say, like 5 or more tables in JOIN
+		- Also, for large queries, it is be slower too.
+
 - SQL solutions - https://javarevisited.blogspot.com/2017/02/top-6-sql-query-interview-questions-and-answers.html#axzz7f7DekILS
 - https://www.interviewbit.com/sql-interview-questions
 
@@ -81,6 +96,7 @@ DB Experience
 
 
 - SQL JOINs
+	- https://insightoriel.com/what-is-join-in-sql/
 	- Four types -  left, right, inner, and outer.
 	- (INNER) JOIN 		 : Returns records that have matching values in both tables.
 	- LEFT (OUTER) JOIN  : Returns all records from the left table, and the matched
@@ -325,6 +341,19 @@ DB Experience
 	- means Common Table Expressions
 	- It is a temporary named result set that can be referenced within a SELECT, INSERT, UPDATE or DELETE statements.
 	- CTEs can also be used as views.
+	- CTE's members cannot use the clauses of keywords like Distinct, Group By, Having, Top,
+	  Joins limiting by this type of the queries that can be created and reducing their complexity.
+
+	-Example
+		WITH
+		odd_num_cte (id, n) AS
+		(
+			SELECT 1, 1
+			UNION ALL
+			SELECT id+1, n+2 from odd_num_cte where id < 5
+		)
+		SELECT * FROM odd_num_cte;
+
 
 - DB view vs CTE
 	- CTE cannot be nested while Views can be nested.
@@ -484,7 +513,9 @@ Characteristics of Cassandra:
 	- Availability: The opposite of "consistency". Data is always available, regardless of being 100% "correct".[1]
 	- Optional fields (wide columns): This CAN be done in MySQL with meta tables etc., but it's for-free and by-default in Cassandra.
 
-Postgresql data types
+Postgresql
+==========
+data types
 	Boolean
 	Character Types [ such as char, varchar, and text]
 	Numeric Types [ such as integer and floating-point number]
@@ -495,6 +526,8 @@ Postgresql data types
 	hstore [ stores key-value pair]
 	Special Types [ such as network address and geometric data]
 
+INITCAP()
+	make the first letter of each word uppercase and the rest of the letters lowercase.
 
 GraphQL
 - resolver
@@ -535,6 +568,7 @@ SQL Alchemy Loading - https://docs.sqlalchemy.org/en/14/orm/loading_relationship
 	15) ERD Plus
 
 - Data Warehouse
+	- https://aws.amazon.com/data-warehouse/
 	- single, complete and consistent store of data obtained from
 	  a variety of different sources made available to end users
 
@@ -593,3 +627,7 @@ DB Partitioning
 	- Another example is to restrict access to sensitive data e.g. passwords, salary information etc.
 	2) Horizontal partitioning involves putting different rows into different tables.
 	- A view with a union of these partitions, will provide complete view of all customers.
+
+
+
+https://learnsql.com/
