@@ -1,3 +1,6 @@
+import copy
+from pprint import pp
+
 payload = {
     "DOB": "-",
     "age": 25,
@@ -5,10 +8,9 @@ payload = {
     "hobbies": ["running", "coding", "-"],
     "name": {"first": "Robert", "last": "Smith", "middle": ""},
 }
-import copy
-from pprint import pprint
 
-pprint(payload)
+
+pp(payload)
 
 payload1 = copy.deepcopy(payload)
 
@@ -24,4 +26,4 @@ for key, value in payload.items():
                 del payload1[key][skey]
 
 print()
-pprint(payload1)
+pp(payload1)
