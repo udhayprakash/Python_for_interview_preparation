@@ -261,8 +261,9 @@ Debugging in python
 					Tuple concatenation operator between tuples
 
 self
+	- It is the first argument in instance methods.
 	- Its the placeholder for the instance being passed to the class
-
+	- It is not a keyword, but PEP 8 recommends as everyone is using, for uniformity
 
 class variables vs instance variables
 	- Class variable is used to work with class methods
@@ -273,6 +274,16 @@ class variables vs instance variables
 	  Then, We can track using the class variables
 	- Instance variables of each instance, will be isolated
 	  from that of other instances.
+
+class method vs static method
+	- Methods are of three types
+		1) Instance Methods have self as first argument, and use instance variables/methods in it.
+		2) Class Methods have cls as first argument, and use class variables/methods in it.
+		3) Static Methods use neither class nor instance variables/methods. It is like a utility method.
+
+funtion vs method
+	- methods are defined in a namespace of a class; so associated with that class.
+	- functions are defined independently
 
 Abstract Classes
 	- These are called as blueprint for other classes
@@ -409,6 +420,13 @@ Abstract Classes
 	- Multithreading for IO-bound tasks.
 	- Multiprocessing for CPU-bound tasks.
 		- computationally-intensive tasks such as compression or hashing.
+
+- Asyncio
+	- Asyncio allows us to run IO-bound tasks asynchronously to increase the performance of our program.
+	- Common IO-bound tasks include, like,
+		- calls to a database,
+		- reading and writing files to disk, and
+		- sending and receiving HTTP requests.
 
 - Threading vs Asyncio
 	Threading
@@ -595,6 +613,82 @@ unittesting
 			  __iter__ and __next__ are used for creating Iterator objects
 			  __str__ and __repr__ are used for string representation of the instances
 
+		-----------------------------------------------------------------------------
+		Dunder method	Usage
+		-----------------------------------------------------------------------------
+		__init__			Initialise object
+		__new__				Create object
+		__del__				Destroy object
+		__repr__			Compute “official” string representation / repr(obj)
+		__str__				Pretty print object / str(obj) / print(obj)
+		__bytes__			bytes(obj)
+		__format__			Custom string formatting
+		__lt__				obj < ...
+		__le__				obj <= ...
+		__eq__				obj == ...
+		__ne__				obj != ...
+		__gt__				obj > ...
+		__ge__				obj >= ...
+		__hash__			hash(obj) / object as dictionary key
+		__bool__			bool(obj) / define Truthy/Falsy value of object
+		__getattr__			Fallback for attribute access
+		__getattribute__	Implement attribute access: obj.name
+		__setattr__			Set attribute values: obj.name = value
+		__delattr__			Delete attribute: del obj.name
+		__dir__				dir(obj)
+		__get__				Attribute access in descriptor
+		__set__				Set attribute in descriptor
+		__delete__			Attribute deletion in descriptor
+		__init_subclass__	Initialise subclass
+		__set_name__		Owner class assignment callback
+		__instancecheck__	isinstance(obj, ...)
+		__subclasscheck__	issubclass(obj, ...)
+		__class_getitem__	Emulate generic types
+		__call__			Emulate callables / obj(*args, **kwargs)
+		__len__				len(obj)
+		__length_hint__		Estimate length for optimisation purposes
+		__getitem__			Access obj[key]
+		__setitem__			obj[key] = ... or `obj[]
+		__delitem__			del obj[key]
+		__missing__			Handle missing keys in dict subclasses
+		__iter__			iter(obj) / for ... in obj (iterating over)
+		__reversed__		reverse(obj)
+		__contains__		... in obj (membership test)
+		__add__				obj + ...
+		__radd__			... + obj
+		__iadd__			obj += ...
+		__sub__				obj - ...
+		__mul__				obj * ...
+		__matmul__       	obj @ ...
+		__truediv__       	obj / ...
+		__floordiv__       	obj // ...
+		__mod__       		obj % ...
+		__divmod__			divmod(obj, ...)
+		__pow__       		obj ** ...
+		__lshift__       	obj << ...
+		__rshift__       	obj >> ...
+		__and__       		obj & ...
+		__xor__       		obj ^ ...
+		__or__       		obj | ...
+		__neg__				-obj (unary)
+		__pos__				+obj (unary)
+		__abs__				abs(obj)
+		__invert__			~obj (unary)
+		__complex__			complex(obj)
+		__int__				int(obj)
+		__float__			float(obj)
+		__index__			Losslessly convert to integer
+		__round__			round(obj)
+		__trunc__			math.trunc(obj)
+		__floor__			math.floor(obj)
+		__ceil__			math.ceil(obj)
+		__enter__			with obj (enter context manager)
+		__exit__			with obj (exit context manager)
+		__await__			Implement awaitable objects
+		__aiter__			aiter(obj)
+		__anext__			anext(obj)
+		__aenter__			async with obj (enter async context manager)
+		__aexit__			async with obj (exit async context manager)
 
 - Monkey patching is replacing a function/method/class by another at runtime,
    for testing purpses, fixing a bug or otherwise changing behaviour.
@@ -653,6 +747,36 @@ Heap vs stack
 	- When stack memory is full, Java runtime throws java.lang.StackOverFlowError
 	  When heap memory is full, it throws java.lang.OutOfMemoryError: Java Heap Space error.
 	- Stack memory is faster than heap memory.
+
+Python secure coding best practices
+===================================
+	1) Always sanitize external data
+		- to avoid injctions, cross-side scripting, or Denial of Service(DoS) attacks
+	2) Scan your code
+		- linting with flake8, etc
+		- scanning with bandit, etc
+	3) Be careful when downloading packages
+		- To avoid typesquatting (mean malicious packages with similar name of legitimate packages)
+	4) Review your dependency licenses
+	5) Do not use the system standard version of Python
+	6) Use Python’s capability for virtual environments
+	7) Set DEBUG = False in production
+	8) Be careful with string formatting
+	9) (De)serialize very cautiously
+		- using SafeLoader option, instead of Loader, when loading json, yaml, pickle, etc.
+		- This prevents loading of custom classes but supports standard types like hashes and arrays.
+	10)Use Python type annotations
+		- as it will prevent most of runtime errors.
+
+
+Loops - Performance
+===================
+In General, there are three types of loops
+	1) while loop will always evaluates the condition first
+	2) do/while loop will always execute the code in the do{} block first and then evaluate the condition.
+	3) for loop allows to initiate a counter variable, a check condition, and a way to increment your counter all in one line.
+
+	while is faster, as for loop need to compute the limits, before starting the loop.
 
 Metaclasses
 -----------
@@ -801,6 +925,28 @@ array vs dataframe
 
 	pd.concat([df1,df2]).drop_duplicates(keep=False)
 
+- Load only the top n rows
+    df = pd.read_csv("IMDB Dataset.csv", nrows=100)
+
+- Load n rows from the middle
+    df = pd.read_csv("IMDB Dataset.csv", skiprows=range(1,4), nrows=100)
+
+- Convert List to datetime
+    pd.to_datetime(pd.Series(s), format='%b_%d')
+    pd.to_datetime(pd.Series(s) + '_2015', format='%b_%d_%Y')
+
+- Setting a column as index
+    df = df.set_index("column")
+
+- To remove duplicate rows
+    based on all columns
+        df.drop_duplicates()
+    based on specific column
+        df.drop_duplicates(subset=['brand'])
+    To keep last occurrences,
+        df.drop_duplicates(subset=['brand', 'style'], keep='last')
+
+
 - dataframe to series
 - series to dataframe
 - uses of series
@@ -948,6 +1094,12 @@ jobtracker vs tasktracker
 - It assigns them to TaskTrackers on DataNodes where the data required is locally present.
 - If that is not possible, JobTracker tries to assign the tasks to TaskTrackers within the
   same rack where the data is locally present.
+
+HDFS vs NFs
+	- HDFS is a file system where data is distributed among many data nodes
+	  so, more reliability, when if one of those systems, was failed.
+	- NFS is file system or protocol which allows its clients to access file
+	  over the network. All data resides on a single machine. Not much reliable as HDFS.
 
 =======================================================================
 Q1) Describe truthy vs falsy
@@ -1224,3 +1376,7 @@ Ans) I will try to explain the point, to avoid ambiguity. For Example, If i am s
 	c) If i have any thoughts, i will ask to suggest among them.
 
 	When someone replies, we will proceed, point-to-point reply
+
+
+TODO
+	ML - https://alphasignal.ai/

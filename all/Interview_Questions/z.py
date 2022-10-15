@@ -1,4 +1,4 @@
-class Solution(object):
+class Solution:
     def candy(self, ratings):
         """
         :type ratings: List[int]

@@ -529,7 +529,81 @@ data types
 INITCAP()
 	make the first letter of each word uppercase and the rest of the letters lowercase.
 
+type Conversion
+	1) using CAST ( expression AS target_type );
+			CAST ('100' AS INTEGER);
+			CAST ('2015-01-01' AS DATE),
+			CAST ('01-OCT-2015' AS DATE);
+			CAST ('10.2' AS DOUBLE PRECISION);
+			CAST('true' AS BOOLEAN),
+			CAST('false' as BOOLEAN),
+			CAST('T' as BOOLEAN),
+			CAST('F' as BOOLEAN);
+
+	2) using expression::type
+			'100'::INTEGER,
+			'01-OCT-2015'::DATE;
+			'2019-06-15 14:30:20'::timestamp;
+			'15 minute'::interval,
+			'2 hour'::interval,
+			'1 day'::interval,
+			'2 week'::interval,
+			'3 month'::interval;
+
+TRIM
+	LTRIM() function removes all characters, spaces by default, from the beginning of a string.
+	RTRIM() function removes all characters, spaces by default, from the end of a string.
+	BTRIM function is the combination of the LTRIM() and RTRIM() functions.
+
+	Syntax:
+		TRIM(LEADING character FROM string); -- LTRIM(string,character)
+		TRIM(TRAILING character FROM string); -- RTRIM(string,character)
+		TRIM(BOTH character FROM string); -- BTRIM(string,character)
+
+	REGEX_REPLACE
+		SELECT REGEXP_REPLACE('enterprise 	', '\s+$', '');
+
+postgresql string functions - https://www.w3resource.com/PostgreSQL/introduction-to-postgresql-string-functions.php
+
+MongoDb
+=======
+	// Join in mongoDB
+
+	// Customer table
+	db.customer.insertMany(
+		[
+			{ "name": "Abhishek", "age": 50, "address": "f/403 anurag", productId: 1 },
+			{ "name": "raj", "age": 30, "address": "302 Neelmani", productId: 2 },
+			{ "name": "simran", "age": 70, "address": "rajkot", productId: 3 },
+			{ "name": "Dhruval", "age": 60, "address": "chennai", productId: 4 }
+		]
+	)
+
+	// Product table
+	db.product.insertMany(
+		[
+			{ "product_name": "Abhishek", prod_id: 2, "price": 300 },
+			{ "product_name": "raj", prod_id: 3, "price": 500 },
+			{ "product_name": "simran", prod_id: 1, "price": 400 },
+			{ "product_name": "Dhruval", prod_id: 4, "price": 1000 }
+		]
+	)
+
+	// Join using lookUp
+	db.customer.aggregate([
+		{
+			$lookup:
+			{
+				from: "product",
+				localField: "productId",
+				foreignField: "prod_id",
+				as: "productReference"
+			}
+		}
+	])
+
 GraphQL
+=======
 - resolver
 	- It is a function that's responsible for populating the data for a single field in your schema.
 	- It can populate that data in any way you define, such as by fetching data from a back-end
@@ -629,5 +703,10 @@ DB Partitioning
 	- A view with a union of these partitions, will provide complete view of all customers.
 
 
+TODO
+	https://learnsql.com/
 
-https://learnsql.com/
+	• Intro to SQL 			➤ https://lnkd.in/eq6_-KqX
+	• SQL Tutorial 			➤ https://lnkd.in/eSZAFVrJ
+	• SQL for Data Analysis ➤ https://lnkd.in/e6RMcn7g
+	• SQL Notes 			➤ https://lnkd.in/ejy_tqHz

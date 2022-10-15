@@ -99,7 +99,7 @@ def select_upsteps(seq):
     prev = None
     result = []
     for x in seq:
-        if prev == None or x > prev:
+        if prev is None or x > prev:
             result.append(x)
         prev = x
     return result

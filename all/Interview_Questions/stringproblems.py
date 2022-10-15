@@ -285,7 +285,7 @@ def int_to_english(n, idx=None):
         ("vigintillion", 64),
     )
     ns = str(n)
-    if idx == None:
+    if idx is None:
         idx = len(powers) - 1
     while True:
         d = powers[idx][1]

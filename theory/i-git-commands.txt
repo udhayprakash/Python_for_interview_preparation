@@ -40,6 +40,8 @@ Git Commands
 		To update the commit message,
 			git commit --edit -m"$(git log --format=%B --reverse HEAD..HEAD@{1})"
 
+	- "git blame" shows line by line `last` commit history of a file,
+			when and by whom the line was updated
 
 Stashing
 	- To manage the temporary code, we can use git stashing
@@ -50,3 +52,5 @@ Stashing
 			git stash save 'add: something' --> adds a tag for saved uncommitted changes, such that we can restore specifically
 			git stash list      --> will list all the saved stashes
 			git stash apply 0   --> will restore the 0th index stash
+
+https://ohshitgit.com/

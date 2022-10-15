@@ -16,7 +16,7 @@ Problem statement   : Average Journey Time
 from datetime import datetime
 
 
-class Transport(object):
+class Transport:
     def __init__(self) -> None:
         self.live_journeys = {}  # cardId: (startStn, startTime)
         self.journey_duration = {}  # sourcestn-dest_stn: duration

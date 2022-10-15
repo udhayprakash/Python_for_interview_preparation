@@ -77,7 +77,7 @@ Ans) Instance created within the "with" block is held to close it, once it is ou
 	the indentation block.
 	Popularly used with file handler, socker handler, db connection handler, ...
 
-	class MyOpen(object):
+	class MyOpen:
 		def __init__(self, filename, mode='r'):
 			self.filename = filename
 			self.mode = mode
@@ -94,8 +94,6 @@ Ans) Instance created within the "with" block is held to close it, once it is ou
 
 	with MyOpen('myfile.txt', 'w') as fh:
 		fh.write('some content')
-
-
 
 
 8.	Provide 3 different examples of python string formatting syntax.
@@ -146,7 +144,7 @@ Ans)
 
 11.	How do you call a parent class method?
 Ans)
-	class Parent(object):
+	class Parent:
 		def p_method(self):
 			print('p-method')
 	class Child(Parent): # Inheritance

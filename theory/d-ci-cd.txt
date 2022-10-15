@@ -81,6 +81,11 @@ Agile Methodology
   and try to improve this continuous process
 
 
+Agile vs scrum
+==============
+- Agile is a philosophy, whereas scrum is a type of agile methodology.
+
+
 Sprint Burndown Chart
 ---------------------
 - is a graphic representation that shows the rate at which work is completed and

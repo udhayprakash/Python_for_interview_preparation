@@ -65,13 +65,27 @@ REASON FOR CHANGE -
 
 
 how do you learn new technologies, and trends
---------------------------------------------
+=============================================
 	- I subscribed to various blogs and weekly newsletters
 	- Apart from them, i go through the stackoverflow questions and workplace stackoverflow
 	  questions, in my free time.
 	- And, part of enhancements or POCs, i research and read, and sometimes implement,
 	  based on some articles
 	- sometimes, i will listen to some  tech related podcasts.
+
+Python Podcasts
+================
+	- TalkPython.fm
+
+Python Books
+=============
+Learning Python by Mark Lutz
+Python Distilled by David Beazley
+
+People in Python community
+==========================
+	- Sam Lau and Philip Guo, who build the pythontutor and pandastutor websites
+
 
 When Programming started
 ========================
@@ -105,6 +119,8 @@ Questions to Interviewers
 
   - What were the next steps in the interview process?
     And how many more rounds of interviews can I expect?
+		Thank you for the time, and I want to conclude that I am expert in Python,
+		And I am ready to extent and learn new skills, if needed
 
   - Will there be an opportunity to reach out to the clients, either for requirement
     gathering and/or for demoing the end solution?

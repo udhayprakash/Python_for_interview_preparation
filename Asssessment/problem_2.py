@@ -4,7 +4,7 @@ from typing import Any
 # Case 1
 
 
-class Person(object):
+class Person:
     """This class Instance can be pickled"""
 
     def __init__(self, name) -> None:
@@ -19,7 +19,7 @@ print("\npickle.dumps(p1):", pickle.dumps(p1))
 
 
 # Case 2  - PROBLEM
-class Person(object):
+class Person:
     """This class Instance can NOT be pickled"""
 
     def __init__(self, name) -> None:
@@ -37,7 +37,7 @@ except TypeError as ex:
 
 
 # Case 3 - SOLUTION
-class Person(object):
+class Person:
     """This class Instance can NOT be pickled"""
 
     def __init__(self, name) -> None:

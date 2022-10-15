@@ -86,6 +86,8 @@ Django Migrations
 	Python manage.py showmigrations ----> will see the status of migrations, on to the database.
 	python manage.py sqlmigrate <appname> <migration number eg. 0001 or 0004>
 									----> will display the SQL statements for a specific migration of the app.
+	python manage.py migrate --prune option allows deleting nonexistent migrations from the django_migrations table.
+
 
 Django signals
 	- They are the database triggers, pre_save, post_save, etc

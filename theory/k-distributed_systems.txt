@@ -83,6 +83,8 @@ In Microservices,
 
 			In Kubernetes, serviceMesh, we can address both these challenges.
 
+	ref - https://microservices.io/patterns/microservices.html
+
 serviceMesh
 	adds uniform networking capabilities across the stack in a way that is decoupled from application code
 	Service meshes extend a cluster manager like Kubernetes to offer

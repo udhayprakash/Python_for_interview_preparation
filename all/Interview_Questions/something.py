@@ -8,14 +8,14 @@ def test(x):
 
 print(test(100))
 
-# class A(object):
+# class A:
 #     def __init__(self):
 #         print('A')
 #         super(A, self).__init__()
 #         print('<A>')
 
 
-# class B(object):
+# class B:
 #     def __init__(self):
 #         print('B')
 #         super(B, self).__init__()

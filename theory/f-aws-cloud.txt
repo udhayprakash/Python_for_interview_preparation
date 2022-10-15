@@ -25,6 +25,7 @@ ec2 types
 4) Accelerated Computing
 5) Storage Optimized
 6) Instance Features
+
 boto3
 =====
 - boto3 is built on top of botocore
@@ -88,6 +89,9 @@ Lambda
 	  This maximum applies regardless of whether you are using an official AWS
 	  runtime or a custom runtime.
 	  The Application Security layer size is about 30 MB.
+
+- chalice framework
+	- local development setup for working with AWS Lambdas
 
 - AWS Lambda Performance Optimizaton
 	- increasing RAM => faster execution => same price.
@@ -612,7 +616,11 @@ start/stop ec2 using cloudwatch logs
 - Then, Created an AWS Lambda function that starts the EC2 instance.
 - And, configured the SNS topic to invoke your Lambda function when it receives messages.
 
-
+AWS Local Zones
+===============
+- a new type of infrastructure that places compute, storage, database and other services
+closer to end users and population centers so you can run applications that require single-digit
+mili second latency and meet data residency requirements, when an AWS Region is not close enough.
 
 Interview Questions Bank
 ========================

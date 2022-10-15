@@ -16,10 +16,33 @@ worked with multiple ETL jobs.
 
 6) S3 bucket →  athena queries  → AWS lambda— > AWS API gateway –JSON-> powerBI
 
-Also, used the AWS GLue jobs for transformation of around 50k records.
+Also, used the AWS Glue jobs for transformation of around 50k records.
 I configured the glue data catalogue to pick the specific columns AND  perform operations
 	Within the python code, i connected with the pyspark for some transformations, etc
 And dumped final results in either parquet for any further jobs, or to the db
+
+ETL best practices
+===================
+1) Extract necessary data only
+	- Data profiling and cleansing, to remove duplicate and unnecessary data.
+
+1) Using Logging and Monitoring; we can store details like
+	- The timing of each data extraction
+	- The time for each extraction
+	- The number of rows inserted, changed, or deleted during each extraction
+	- The transcripts of any system or validation errors
+2) Use Pre-Built Integrations for Seamless Pipeline Building
+	- as most ETL tools like Informatica, AWS glue, ... has prebuilt integrations
+	  that move data from source to destination, will little or no code.
+3) Choose the Right ETL Tool for You; selection of specific tool, depends on
+	- Data sources and targets/destinations, in the project
+	- Business initiatives, the data integration pipeline, need to serve.
+	- THen, ease of use, or superior monitoring and logging capabilities to help resolve performance issues faster.
+	- Also,
+		- ETL tool cost, and value add to the business.
+		- Pricing model - some offer by number of data connectors, others with data volume.
+		- Customer Service/support
+
 
 Data Migration Strategy
 ------------------------
