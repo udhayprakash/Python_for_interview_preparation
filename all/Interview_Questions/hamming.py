@@ -60,8 +60,7 @@ def hamming_it():
             ),
         )
     )
-    for x in i:
-        yield x
+    yield from i
 
 
 if __name__ == "__main__":

@@ -21,7 +21,6 @@ my responsibilities here include
 	we initially started on small POC, after approvals got budgets for team expansion,
 	and created an MVP product, and then stable releases.
 
-
 In Machine Learning,
 	I worked with a Linear regression algorithm, using the scikit-learn module.
 	The use-case is that there was an archive database.
@@ -116,6 +115,7 @@ Current Project - Fault-analysis project
 
 	we sell vehicle spare parts, and some of the products will send back some
 	anonymous data back to our servers.
+
 
 Current Project - Customer Behavious Analytics project
 ------------------------------------------

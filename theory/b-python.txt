@@ -1008,6 +1008,10 @@ sqlContext.setConf("spark.sql.parquet.compression.codec.", "snappy")
 How to read large parquet file
 map and reduce in big data
 
+pandas vs pyspark
+=================
+- Pandas run operations on a single machine whereas PySpark runs on multiple machines.
+
 High Performance Computing, in python
 	- Dask
 		- for distributed computing.

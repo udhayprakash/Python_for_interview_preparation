@@ -2,10 +2,10 @@
 """
 Purpose:
 """
-from pprint import pprint
+from pprint import pp
 
 
-class Solution(object):
+class Solution:
     def numOffices(self, grid):
         result = 0
         for x in range(len(grid[0])):
@@ -63,7 +63,7 @@ if __name__ == "__main__":
         ["0", "0", "1", "0", "0"],
         ["0", "0", "0", "1", "1"],
     ]
-    pprint(matrix)
+    pp(matrix)
     assert sol.numOffices(matrix) == 3
     print()
     matrix = [
@@ -72,5 +72,5 @@ if __name__ == "__main__":
         ["1", "0", "0", "0", "0"],
         ["1", "1", "1", "0", "1"],
     ]
-    pprint(matrix)
+    pp(matrix)
     assert sol.numOffices(matrix) == 2

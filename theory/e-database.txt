@@ -622,6 +622,17 @@ Eager Loading
 	- it is the preloading more than needed.
 
 
+Neo4j vs mongoDB
+================
+- Primary database model is Graph DBMS for Neo4j; where as it is document store for MongoDB
+- Unlike MongoDB, Neo4j has foreign keys
+- MongoDB supports Map Reduce method, whereas Neo4j wil not
+- MongoDB data is schema free; whereas schema is optional in Neo4j
+- Neo4j doesnt support SQL queries; whereas MongoDB supports standard SQL queries to Read-Only SQL queries
+  via the MongoDB Connector for BI
+- Neo4j doesnt support Partitioning; whereas MongodB supports sharding partitionining methods.
+
+
 SQL Alchemy Loading - https://docs.sqlalchemy.org/en/14/orm/loading_relationships.html
 
 - Logical DB Design Tools

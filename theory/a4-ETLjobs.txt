@@ -21,6 +21,10 @@ I configured the glue data catalogue to pick the specific columns AND  perform o
 	Within the python code, i connected with the pyspark for some transformations, etc
 And dumped final results in either parquet for any further jobs, or to the db
 
+
+Funnel is the ETL tool, to pull the social media data, to a csv
+GCP DataFusion
+
 ETL best practices
 ===================
 1) Extract necessary data only

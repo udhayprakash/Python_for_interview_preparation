@@ -5,7 +5,7 @@ palindrome or not, without using Python builtins
 """
 
 
-def is_palindrome(number):
+def is_number_palindrome(number):
     temp = number
     rev = 0
     while number > 0:
@@ -16,5 +16,5 @@ def is_palindrome(number):
 
 
 if __name__ == "__main__":
-    assert is_palindrome(123) is False
-    assert is_palindrome(121) is True
+    assert is_number_palindrome(123) is False
+    assert is_number_palindrome(121) is True

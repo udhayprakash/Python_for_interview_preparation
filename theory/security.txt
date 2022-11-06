@@ -1,3 +1,7 @@
+secure coding best practice
+	-  never to "extract archives from untrusted sources without prior inspection" due to the directory traversal issue.
+	   using unsanitized tarfile.extract() or the built-in defaults of tarfile.extractall()
+
 Authentication
 	- JWT, Oauth, SAML, SSO, Token based
 

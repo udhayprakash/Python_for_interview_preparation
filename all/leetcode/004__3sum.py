@@ -5,7 +5,7 @@ Purpose: https://leetcode.com/problems/3sum/
 import time
 
 
-class Solution(object):
+class Solution:
     def threeSum(self, nums):
         """
         :type nums: List[int]

@@ -71,13 +71,6 @@ Lambda
 	SNS
 	SQS
 
-- cold start lambda
-	- Lambda has better latency per request than EC2, but for first request, due to cold start,
-	it is significantly slower.
-	- To reduce this cold start, Earlier, i used to fire a dumy request periodically.
-	- Also, we can assign provisioned concurrency, which means keeping a certain number of
-	function containers ready for invocations.
-
 - Lambda layer
 	- It is an archive containing additional code, such as libraries, dependencies, or
 	  even custom runtimes.
@@ -102,6 +95,11 @@ Lambda
 
 - Lambda Cold Start
 	- https://www.simform.com/blog/lambda-cold-starts/
+	- Lambda has better latency per request than EC2, but for first request, due to cold start,
+	it is significantly slower.
+	- To reduce this cold start, Earlier, i used to fire a dumy request periodically.
+	- Also, we can assign provisioned concurrency, which means keeping a certain number of
+	function containers ready for invocations.
 
 - AWS Lambda Advantages
 	- Reduced Cost of Execution
@@ -332,12 +330,10 @@ to a Workgroup.
 I have experience migrating applications and data, from on-prem to cloud
 
 
-
 AWS IAM
 -------
 	- IAM roles define the set of permissions for making AWS service request
 	- IAM policies define the permissions that you will require.
-
 
 	- Admin or root user for the account can create IAM identities.
 	- An IAM identity provides access to an AWS account.

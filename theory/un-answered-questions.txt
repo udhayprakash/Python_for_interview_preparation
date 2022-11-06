@@ -123,6 +123,11 @@ Databases
 	cons of normalization
 	sql : rank vs dense_rank
 	transactional vs analytical db
+	filtered index, coreslated vs non-correlated subquery, groupby vs partition
+	optimizttics concurrency - retain latest update
+	pessimistic concurrency
+	consistent hashing databass
+	executive pools
 
 Web Servers
 ------------
@@ -158,6 +163,10 @@ Linux
 Tools
 ------
 	elasticSearch / Solr
+
+CI/CD
+-------
+	scripted vs declarative jenkins pipelines
 
 Javascript Questions
 --------------------

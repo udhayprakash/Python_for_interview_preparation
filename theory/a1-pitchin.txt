@@ -122,6 +122,8 @@ Questions to Interviewers
 		Thank you for the time, and I want to conclude that I am expert in Python,
 		And I am ready to extent and learn new skills, if needed
 
+  - What metrics are of paramount importance in day-to-day work due diligence?
+
   - Will there be an opportunity to reach out to the clients, either for requirement
     gathering and/or for demoing the end solution?
   - How do you help your team grow professionally?

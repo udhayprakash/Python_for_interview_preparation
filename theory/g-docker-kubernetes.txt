@@ -207,6 +207,26 @@ Ref: https://hasura.io/blog/how-to-write-dockerfiles-for-python-web-apps-6d17384
 - We used EKs as it is cloud agnostic
 - Docker for creating containers
 
+Pods
+	- They are the smallest unit of deployment & can contain more than 1 containers.
+
+Namespace
+	- Its an abstraction that allows to divide a cluster into multiple scoped "Virtual Clusters".
+
+Deployment
+	- Object that can contain applications and run multiple replicas.
+
+Services
+	- Abstraction to expose an app as a service(like microservice), Load balancing traffic.
+
+Persistent Volume (PV)
+	- A storage volume that can be attached to pod.
+	- can be created either by administrator( static provisioning) or create on the fly(dynamic provisioning) via storage class.
+
+Persistent Volume Claims(PVC)
+	- A request for storage by a user. PVC consumes PV resource.
+
+
 -  Ingress
 	- An object that allows access to your Kubernetes services from outside the Kubernetes cluster.
 	- we can configure access by creating a collection of rules that define which inbound connections reach which services.

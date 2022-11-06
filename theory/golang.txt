@@ -1,3 +1,12 @@
+In Golang, I created microservices and ETL jobs,
+	Mainly using go concurrency.
+	Used Gokit for microservices implementation,
+	and Cobra package for creating command line utilities.
+	GORM - for working with the databases
+	BDD with ginko framework
+	Learning the GRPC
+
+
 Go Mocking
 	Gomock
 		- It is the most common and popular mocking framework to mock interfaces.
@@ -6,3 +15,80 @@ Go Mocking
 	Testify
 		- This library is also a great alternative to mock objects and HTTP activities.
 		- I use this library for its great assertion tool.
+
+
+
+
+========================
+Q1)  Please summarize your work experience.?
+Ans) Its been 8 years since i am in the industry,i have started my carrer as an infrastructure engineer later
+	i transitioned into DevOps engineer In My current project i am working as an aws devops engineer So
+	we have a legacy application on on premise so we are migrating it to the cloud that is aws and modernizing it with the microservices my roles and responsibilities in that project are Creating Repo's that are required for the project DevelopingCICD pipelines Developing Docker files and creating images out of it and hosting them on ECS clusters And Developing lambda functions using python to automate the worlflow provisioning the infrastructure and prettymuch on devops stuff like troubleshooting the issues and fixing them
+
+Q2) Tell us about a recent project that you worked on that you are most proud of.?
+Ans) Using terraform to build infrastructure on GCP and AWS. Finally, we created application
+	specific custom scripts in Ansible/Puppet to read deployment status and report back to developer teams
+	automatically through different means of communication. We kicked off the build and deployment steps
+	by integrating code check-in web hooks and after successful build, utilize Docker and Ansible to
+	automatically pick up system image to be deployed and produce post production analysis.
+
+Q3) How do you keep up with trends in your industry?
+Ans)1. Follow leading digital blogs
+	2. Subscribe to popular industry magazines 3. Take advantage of trainings and webinars.
+
+Q4) How would your previous managers and co-workers describe your work?
+Ans)My coworkers would describe me as an organized, thoughtful person who works well under pressure.
+	My colleagues regularly comment on my positive attitude and problem-solving abilities,I always
+	work to manage my time effectively so that I can help others with last-minute projects and
+	spend extra time reviewing my work for accuracy.
+
+
+So basically, my overall experience will be very much aligned with your job description.
+So I have done like in Golang web development work I have done agile as I've created some micro services.
+I mean, using the gorilla mux router, I have done a lot of APS Okay, and, and this Docker and Kubernetes
+ is part of our development work. So we used to create some scripts and we used to deploy our build
+ the goal application into the Kubernetes environment. Okay, so I used to work on the shell script
+ file where it will automatically create the Docker images and it will just push it to the
+ corresponding repositories and using Kubernetes or hell we used to deploy them in clusters.
+
+we have a GRPC requirement in one of my projects. So what I did there is like, I created one
+protocol file, and I have mentioned what are the methods which I have to invoke in my program.
+So using the proto file, I actually generated the stock files and usable files. Then I just
+create a lip service to call this G RPC server as well. As a client program, we have created.
+So in this method, what we exactly knew just we had like, Gateway type we have developed it.
+So it is like when input request comes, I mean, suppose if it is HTTP, and we used to,
+we used our gateway to convert it to HTTP two g RPC kind of thing. Or from G RPC to HTTP,
+or G RPC G RPC redirection kind of what we have done there. So when I get the input request
+ from HTTP, I used to get all our query parameters, and based on the requirement I used to
+ map it to the My protobuf, entity user, or whatever kind of details there are just need
+ to map it one. And then again, I was just sending it over to the gRPC server. And
+ similarly when it is from G RPC to HTTP from G RPC, the client or receives the data,
+ then I used to convert it back into the HTTP. You're pushing the data older.
+ So that that product like I have done complete end to end using G RPC.
+
+
+
+
+
+Please List AWS services you have used, what for, and why. Focus on more challenging and compelling services (for instance, S3 and EC2 are less interesting, EKS is more interesting).
+I worked on AWS and Devops cloud environment. Has worked on various aspects of AWS and has good knowledge of many services provided by AWS like EC2, Elastic Beanstalk, S3, Lambda, DynamoDB, ElastiCache, Redshift, Identity and Access Management (IAM), AppFlow, Relational Database Service, Elastic Block Store, Key Management Service (KMS), Auto Scaling. Hosted backup website using Route 53DNS Failover and S3 Website Hosting. Managing multiple AWS instances, assigning the security groups, Elastic Load Balancer and AMls.Optimized billing cost by Provisioning Reserved EC2 instances for Production, Scheduled Reserved Instances and Spot Instances for Testing.
+Have experience in managing Kubernetes services such as Elastic Kubernetes service (EKS) & Azure Kubernetes (AK5)Deployed application which is containerized using Docker onto a Kubernetes cluster which is managed by Amazon Elastic Container Service for Kubernetes (EKS Configured 'Kubect/' to interact with Kubernetes infrastructure and used AWS Cloud Formation Templates (CFT) to launch a cluster of worker nodes on Amazon EC2 instances.
+Created number of Elastic Load Balancers to distribute the incoming traffic between the EC2 instances and configured auto-scaling groups to automatically spin up / shutdown the EC2 instances as per the incoming traffic and also Wrote Modules in Terraform to trigger highly available EC2 Instances on AWS Cloud Platform. Wrote new plugins to support new functionality in Terraform and integrated Jenkins pipeline with Terraform for Continuous Deployment
+Performed POC on using the ECS and to convert the current infra or application code into containers using ECS service and verified that there is a lot of cost savings than the current model and implemented in the project level.
+
+For the above, with Azure (if experienced).
+List technologies used for CI/CD systems you have implemented.
+I've utilized different CI/CD tool like Azure DevOps, Jenkins and furthermore working POC on Bamboo.
+Environment, utilizing Kubernetes and Docker for the runtime environment for the CI/CD system to build and test and deploy
+For the above, please list interoperability considerations that must be considered. In other works, how can these different solutions be configured to work together reliably and security. Are you familiar with how they work together at a low/implementation level?
+I have executed procedures and apparatuses on Elasticsearch, CI/CD time periods for changes, change disappointment rate, organization recurrence, and normal recuperation time.
+I've executed methods and devices on Grafana by making the dashboards for CI/Disc lead time for changes, change disappointment rate, organization recurrence, mean opportunity to recuperation,
+
+Please list how you have used Terraform and/or Ansible. Again, more challenging uses are more compelling.
+Please list Kubernetes services you have used and why. Please start with the most ambitious cases that best illustrate your capabilities.
+which is a automation tool, where I've worked with various modules like linux, windows, aws. I used to wright ansible playbooks, and furthermore utilized ansible jobs. I used to get to ansible world also
+Experience in Kubernetes:
+Used Kubernetes to deploy scale, load balance, scale and manage docker containers with multiple name spaced versions. Deployed application which is containerized using Docker onto a Kubernetes cluster which is managed by Amazon Elastic Container Service for Kubernetes (EKS)Worked like on cloud based, for example,  Kubernetes , eks, aws, on prem cluster. Worked with OpenShift platform in managing Docker containers and Kubernetes Clusters and also building/maintaining Docker container clusters managed by Kubernetes Linux, Bash, GIT, Docker, on Azure. Utilized Kubernetes and Docker for the runtime environment of the CI/CD system to build, test deploy. comming to kubernetes I've worked as developer where I used to wright HELM diagrams and furthermore have written kubernetes manifest record utilizing customise to deploy the microservices into Kubernetes cluster,
+Kubernetes services:
+Our Current circumstance: we use Trafeik 2x for DNS, we use connect ID as side vehicle compartment for transportation the logs measurements, follows and discernibleness. We use namespace security. I worked both ITOps and TechOps groups fas a creation support. I made various dashboards including execution dashboards for cautioning and functional dashboards for the subtleties.
+Implemented cluster services using Docker and  Kubernetes services to manage local deployments in kubernetes by building a self-hosted kubernetes cluster using Jenkins CI/CD pipeline and also Implemented HTTPS Ingress controller and use TLS certificate on AKS to provide reverse proxy, configurable traffic routing for individual Kubernetes services.

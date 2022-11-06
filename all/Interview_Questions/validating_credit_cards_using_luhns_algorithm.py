@@ -1,18 +1,17 @@
-# -*- coding: utf-8 -*-
 """
 Python script to check validity of credit card numbers
 
 Generating check digit:
 
 Lets assume you have a number given below:
-3 – 7 – 5 – 6 – 2 – 1 – 9 – 8 – 6 – 7 – X
+3 - 7 - 5 - 6 - 2 - 1 - 9 - 8 - 6 - 7 - X
 X is the check digit.
 Now starting from the right most digit i.e. check digit, double the every second digit.
 New number will be:
-3 – 14 – 5 – 12 – 2 – 2 – 9 – 16 – 6 – 14 – X
+3 - 14 - 5 - 12 - 2 - 2 - 9 - 16 - 6 - 14 - X
 Now if double of a digit is more then 9, add the digits.
 So the number will become:
-3 – 5 – 5 – 3 – 2 – 2 – 9 – 7 – 6 – 5 – X
+3 - 5 - 5 - 3 - 2 - 2 - 9 - 7 - 6 - 5 - X
 Now add all digits.
 47 + X
 Multiply the non-check part by 9.
