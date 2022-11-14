@@ -67,10 +67,8 @@ REASON FOR CHANGE -
 how do you learn new technologies, and trends
 =============================================
 	- I subscribed to various blogs and weekly newsletters
-	- Apart from them, i go through the stackoverflow questions and workplace stackoverflow
-	  questions, in my free time.
-	- And, part of enhancements or POCs, i research and read, and sometimes implement,
-	  based on some articles
+	- Apart from them, i go through the stackoverflow questions and workplace stackoverflow questions, in my free time.
+	- And, part of enhancements or POCs, i research and read, and sometimes implement, based on some articles
 	- sometimes, i will listen to some  tech related podcasts.
 
 Python Podcasts
@@ -119,6 +117,8 @@ Questions to Interviewers
 
   - What were the next steps in the interview process?
     And how many more rounds of interviews can I expect?
+
+	CONCLUSION:
 		Thank you for the time, and I want to conclude that I am expert in Python,
 		And I am ready to extent and learn new skills, if needed
 

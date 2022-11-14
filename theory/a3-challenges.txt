@@ -54,6 +54,7 @@ Project/task you are proud of
 	 in sequential intendants, specifying the level, and also the dependencies.
 	- My framework will take these jons
 
+
 difficulties working with technologies and how did you resolved it?
 -------------------------------------------------------------------
 I implemented multiple scripts in AWS lambda.

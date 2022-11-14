@@ -476,7 +476,6 @@ Meet expectations: Of course, you keep a database to fulfill a specific purposeâ
 
 - rank vs dense rank
 	views vs materialized views
-	slowly changing dimensions
 	stored procedures
 
 - User-defined Functions Vs Stored Procedures
@@ -668,6 +667,75 @@ SQL Alchemy Loading - https://docs.sqlalchemy.org/en/14/orm/loading_relationship
 	1) MOLAP is a multi-dimensional storage mode
 	2) ROLAP is a relational mode of storage
 	3) HOLAP is a combination of multi-dimensional and relational elements.
+
+star schema (or) dimension modelling
+	-  fact tables are used to record a business event and dimension tables are used to record the attributes of business items(eg user, item tables in an e-commerce app).
+	- For example, in an e-commerce website, a fact table would contain information about orders, such as when the order was placed, the items in that order, who placed that order, etc. The dimension tables would be an item table (containing item id, item price, size, etc) and an user table (containing user id, user name, user address etc).
+
+slowly changing dimensions
+
+
+- Fact Table
+	- A fact table is a primary table in a dimensional model.
+	- A Fact Table contains
+		1) Measurements/facts
+		2) Foreign key to dimension table
+
+
+- Dimension Table
+	- A dimension table contains dimensions of a fact.
+	- They are joined to fact table via a foreign key.
+	- Dimension tables are de-normalized tables.
+	- The Dimension Attributes are the various columns in a dimension table
+	- Dimensions offers descriptive characteristics of the facts with the help of their attributes
+	- No set limit set for given for number of dimensions
+	- The dimension can also contain one or more hierarchical relationships
+
+- Fact table vs Dimension table
+	- Fact table contains measurements, metrics, and facts about a business process, while the
+	  Dimension table is a companion to the fact table, which contains descriptive attributes to be used as query constraining.
+	- Fact table is located at the center of a star or snowflake schema, whereas the
+	  Dimension table is located at the edges of the star or snowflake schema.
+	- Fact table is defined by its grain or most atomic level, whereas a Dimension table
+	  should be wordy, descriptive, complete, and of assured quality.
+	- Fact table helps to store report labels, whereas Dimension table contains detailed data.
+	- Fact table does not contain a hierarchy, whereas the Dimension table contains hierarchies.
+
+- Fact Table Types
+	1) Additive		->  Measures should be added to all dimensions.
+	2) Semi-Additive->	In this type of facts, measures may be added to some dimensions and not with others.
+	3) Non-Additive	->	It stores some basic unit of measurement of a business process.
+	                    Some real-world examples include sales, phone calls, and orders.
+
+- Dimension Table Types
+	1) Conformed Dimensions
+		- Conformed dimensions is the very fact to which it relates.
+		- This dimension is used in more than one-star schema or Datamart.
+	2) Outrigger Dimensions
+		- A dimension may have a reference to another dimension table.
+		- These secondary dimensions called outrigger dimensions.
+		- This kind of Dimensions should be used carefully.
+	3) Shrunken Rollup Dimensions
+		- Shrunken Rollup dimensions are a subdivision of rows and columns of a base dimension.
+		- These kinds of dimensions are useful for developing aggregated fact tables.
+	4) Dimension-to-Dimension Table Joins
+		- Dimensions may have references to other dimensions.
+		- However, these relationships can be modeled with outrigger dimensions.
+	5) Role-Playing Dimensions
+		- A single physical dimension helps to reference multiple times in a fact table as each reference linking to a logically distinct role for the dimension.
+	6) Junk Dimensions
+		- It a collection of random transactional codes, flags or text attributes.
+		- It may not logically belong to any specific dimension.
+	7) Degenerate Dimensions
+		- Degenerate dimension is without corresponding dimension. It is used in the transaction and collecting snapshot fact tables.
+		- This kind of dimension does not have its dimension as it is derived from the fact table.
+	8) Swappable Dimensions
+		- They are used when the same fact table is paired with different versions of the same dimension.
+	9) Step Dimensions
+		- Sequential processes, like web page events, mostly have a separate row in a fact table for every step in a process. It tells where the specific step should be used in the overall session.
+
+DataMart vs DataWarehouse Vs DataBase vs Operational DataStore
+	- https://www.zuar.com/blog/data-mart-vs-data-warehouse-vs-database-vs-data-lake/
 
 
 Q) How to get last day of previous month?

@@ -29,8 +29,7 @@ In Machine Learning,
 	I created a model and also exposed it via a flask application, for further training.
 
 In terms of technical stack,
-	Our application server is in a EC2 instance, and celery workers are running
-	on another server.
+	Our application server is in a EC2 instance, and celery workers are running on another server.
 	Both are in multiple regions for DR (disaster recovery) strategy.
 
 	Which is behind the autoscaling and inturn, behind the Route53
@@ -117,7 +116,7 @@ Current Project - Fault-analysis project
 	anonymous data back to our servers.
 
 
-Current Project - Customer Behavious Analytics project
+Current Project - Customer Behaviour Analytics project
 ------------------------------------------
 	- I am part of customer behaviour analytics teams.
 	- If you come to our website, you will notice some cookies.

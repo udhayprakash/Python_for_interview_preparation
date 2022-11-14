@@ -302,6 +302,20 @@ Django Middleware
 	- prefetch_related()
 		- does a separate lookup for each relationship, and does the "joining" in Python.
 
+	- Model Inheritance
+		class Vehicle(models.Model):
+			title = models.CharField(...)
+			Name = models.CharField(....)
+
+			class Meta:
+				 abstract = True
+
+		class Car(Vehicle):
+			color = models.CharField()
+
+		class Bike(Vehicle):
+			feul_average = models.IntegerField(...)
+
 - Django Manager
 	- Manager is some kind of interface between application and the database.
 	- we can define custom base querysets, for the models.
@@ -383,3 +397,4 @@ Flask
 
 TODO
 	- Django forms - https://justdjango.com/blog/dynamic-forms-in-django-htmx
+	- Django Cacheing - https://blog.sentry.io/2022/10/24/django-performance-improvements-part-4-caching-in-django-applications/

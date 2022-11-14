@@ -169,502 +169,503 @@ To List Disks on Linux using lsblk
 
 
 Linux
-    - Linux has all components like kernel, shells, GUIs, system utilities and application programs.
-    - Linux os ( Red Hat, Fedora, Ubuntu, Debian, ...)
-    - Unix OS (Solaris, HP Unix,). Solaris is the Linux of Sun Microsystems.
-    - 3 parts
-        1. Kernel:
-            - Linux Kernel is low-level system software.
-            - It is used to manage the hardware resources for the users.
-            - It provides an interface for user-level interaction.
-            - It acts as a bridge between software and hardware.
-            - If Software requests the hardware, then kernel delivers the data between software and hardware.
-            - responsible for all major activities of the Linux operating system.
-            - Linux Kernel is considered as free and open-source software that is
-              capable of managing hardware resources for the users.
-            - It consists of various modules and interacts directly with the underlying hardware.
+- Linux has all components like kernel, shells, GUIs, system utilities and application programs.
+- Linux os ( Red Hat, Fedora, Ubuntu, Debian, ...)
+- Unix OS (Solaris, HP Unix,). Solaris is the Linux of Sun Microsystems.
+- 3 parts
+	1. Kernel:
+		- Linux Kernel is low-level system software.
+		- It is used to manage the hardware resources for the users.
+		- It provides an interface for user-level interaction.
+		- It acts as a bridge between software and hardware.
+		- If Software requests the hardware, then kernel delivers the data between software and hardware.
+		- responsible for all major activities of the Linux operating system.
+		- Linux Kernel is considered as free and open-source software that is
+		  capable of managing hardware resources for the users.
+		- It consists of various modules and interacts directly with the underlying hardware.
 
-        2. System Library:
-            - Most of the functionalities of the operating system are implemented by
-              System Libraries.
-            - These act as a special function using which application programs accesses
-              Kernel’s features.
+	2. System Library:
+		- Most of the functionalities of the operating system are implemented by
+		  System Libraries.
+		- These act as a special function using which application programs accesses
+		  Kernel’s features.
 
-        3. System Utility:
-            - These programs are responsible for performing specialized, individual-level tasks.
-    - Files
-        - Maximum length of file in linux is 255 characters.
-        - inode
-            - unique name given to each file, by the operating system.
-        - File Permissions
-            - There are 3 types of permissions in Linux OS that are given below:
-                - Read: User can read the file and list the directory.
-                - Write: User can write new files in the directory .
-                - Execute: User can access and run the file in a directory.
-            - chmod - System administrator or file owner can grant permissions using chmod command
-                - two modes: Symbolic Mode and Absolute Mode
-                - Two Modes:
-                    1. Symbolic Mode
-                        - SYNTAX: chmod <target>(+/-/=)<permission> <filename>
-                        - '+' for adding permission
-                        - '-' for denying permission
-                        - target
-                            - u: user
-                            - g: group
-                            - o: other
-                            - a: all
-                        - permissions
-                            - r: read
-                            - w: write
-                            - x: execute
-                        - $ chmod u=rwx,g=rx,o=r filename
-                            - user can read/write/execute; group can read/execute; other can read.
-                    2. Absolute Mode
-                        - $ chmod <permission> filename
-                        - The Absolute mode follows octal representation.
-                            - The leftmost digit is for the user,
-                            - the middle digit is for the user group and
-                            - the rightmost digit is for all.
-                            - 1: execute
-                            - 2: write
-                            - 4: read
-                        - $ chmod u=rwx,g=rx,o=r filename
-                          rwx - 4+2+1 = 7
-                          rx  - 4+1   = 5
-                          r   - 4     = 4
-                          $ chmod 754 filename
-
-
+	3. System Utility:
+		- These programs are responsible for performing specialized, individual-level tasks.
+- Files
+	- Maximum length of file in linux is 255 characters.
+	- inode
+		- unique name given to each file, by the operating system.
+	- File Permissions
+		- There are 3 types of permissions in Linux OS that are given below:
+			- Read: User can read the file and list the directory.
+			- Write: User can write new files in the directory .
+			- Execute: User can access and run the file in a directory.
+		- chmod - System administrator or file owner can grant permissions using chmod command
+			- two modes: Symbolic Mode and Absolute Mode
+			- Two Modes:
+				1. Symbolic Mode
+					- SYNTAX: chmod <target>(+/-/=)<permission> <filename>
+					- '+' for adding permission
+					- '-' for denying permission
+					- target
+						- u: user
+						- g: group
+						- o: other
+						- a: all
+					- permissions
+						- r: read
+						- w: write
+						- x: execute
+					- $ chmod u=rwx,g=rx,o=r filename
+						- user can read/write/execute; group can read/execute; other can read.
+				2. Absolute Mode
+					- $ chmod <permission> filename
+					- The Absolute mode follows octal representation.
+						- The leftmost digit is for the user,
+						- the middle digit is for the user group and
+						- the rightmost digit is for all.
+						- 1: execute
+						- 2: write
+						- 4: read
+					- $ chmod u=rwx,g=rx,o=r filename
+					  rwx - 4+2+1 = 7
+					  rx  - 4+1   = 5
+					  r   - 4     = 4
+					  $ chmod 754 filename
 
 
-        - File Systems
-            - supports multiple file systems
-                - LINUX - Ext, Ext2, Ext3, Ext4, JFS, XFS, btrfs, ufs, FAT, autofs, devpts, ntfs and swap.
-                - UNIX  - jfs, gpfs, hfs, etc.
-        - Redirections
-            - There are basically three streams available in which input and output of the Linux environment are distributed.
-                - Input Redirection : ‘<’ symbol is used for input redirection and is numbered as (0). Thus it is denoted as STDIN(0).
-                - Output Redirection: ‘>’ symbol is used for output redirection and is numbered as (1). Thus it is denoted as STDOUT(1).
-                - Error Redirection : It is denoted as STDERR(2).
 
-                - ‘>’ overwrites the existing content of the file or creates a new file.
-                - ‘>>’ appends the new content to the end of the file or creates a new file.
-    - LILO(LInux LOader)
-        - boot loader for Linux, used to load the Linux operating system into the main memory
-         to begin its operations.
-        - Bootloader here is a small program that manages a dual boot.
-        - LILO resides in MBR (Master Boot Record).
-        - Advantage: it allows the fast bootup of Linux when installing in the MBR.
-        - Limitation: it is not possible for all computers to tolerate modification of MBR.
-    - Swap space
-        - amount of physical memory that is allocated for use by Linux to hold some
-          concurrent running programs temporarily.
-        - This condition usually occurs when RAM does not have enough memory to support
-          all concurrent running programs.
-        - This memory management involves the swapping of memory to and from physical storage.
-    - Daemons
-        - background process which accepts the requests for service from other computers, most of the
-          operating systems use daemons in other forms.
-    - root account
-        - It is like a system administrator account.
-        - It provides you full control of the system.
-        - root account serves as the default account whenever Linux is installed.
-        - You can create and maintain user accounts, assign different permission for each
-          account, etc.
-        - uses
-            - Create user accounts
-            - Maintain user accounts
-            - Assign different permissions to each account created and so on.
-    - shell
-        - It is an interpreter in Linux.
-        - Shell is a computer program which acts as an interface between the user and the kernel.
-        - Users can communicate with the kernel by writing programs, commands and scripts on the shell.
-        - It accepts human-readable commands and converts them into the kernel understandable language.
-        - The most commonly used shells in Linux are bash, csh(C shell), ksh(K Shell), Tcsh.
-            C Shell (csh)                   : It is like C syntax and provides spelling checking and job control.
-            Korn Shell (ksh)                : Is a high-level programming language shell.
-            Z Shell (Zsh)                   : It provides some unique nature like it observes login/logout watching, file name generating, startup files, closing comments.
-            Bourne Again Shell (bash)       : It is the default to Linux distributions.
-            Friendly Interactive Shell (Fish): It provides web-based configuration,  auto-suggestions, etc.
-        - internal commands
-            - commands which are built in the shells
-        - In Unix, Bourne Shell & in Linux, Bash
-        - BASH(Bourne Again SHell)
-            - replacement to the original Bourne shell, written by Steve Bourne.
-            - written by Brian Fox
-            - Bash vs DoS
-                - BASH commands are case sensitive while DOS commands are not case sensitive.
-                - DOS follows a convention in naming files.
-                    In BASH, 8 character file name is followed by a dot and 3 characters for the extension.
-                    DOS doesn't follow such convention.
-    - processes
-        - process id
-            - unique id identified by os, for eachg process
-        - process states
-            Ready                   : The process is created and is ready to run
-            Running                 : The process is being executed
-            Blocked or wait         : Process is waiting for input from the user
-            Terminated or Completed : Process completed execution, or was terminated by the Operating System
-            Zombie                  : Process terminated, but the information still exists in the process table.
-        - Process Management System Calls in Linux
-            - The System Calls to manage the process are:
-                fork ()     : Used to create a new process
-                exec()      : Execute a new program
-                wait()      : Wait until the process finishes execution
-                exit()      : Exit from the process
-            - And the System Calls used to get Process ID are:
-                getpid()    :- get the unique process id of the process
-                getppid()   :- get the parent process unique id
-    - CLI (Command Line Interface)
-        - Interface that allows users to type declarative commands to instruct the computer
-          to perform operations.
-    - partitions
-        - Minimum two disk partitions are required to install Linux.
-            1. first is used as the local file system where all the files are stored.
-               This includes files of the OS, files of applications and services, and files of the user.
-            2. second is used as Swap Space which acts as an extended memory for RAM.
-        - /stc partition - stores the system configuration files in Linux system
-    - services
-        - Samba service is used to connect Linux machines to Microsoft network resources
-          by providing Microsoft SMB support.
-        - Cron
-            - allows the user to schedule tasks to be executed every minute.
-            - Tasks can be scheduled by any normal user and are basically used when tasks
-              have to be completed/executed at a particular hour or minute.
-            - It is ideal for servers
-            - Cron expects the system to be running 24x7.
-        - Anacron
-            - allows the user to schedule tasks to be run either on a specific date or the first available cycle after the date.
-            - can be used only by super users and is used when a task has to be executed irrespective of hour or minute.
-            - It is ideal for desktops and laptops
-            - Anacron does not expects the system to be running 24x7.
-    - Mount Points
-        - SoftMount
-            - If the client fails to connect the server, it gives an error report and
-              closes the connection
-        - Hard mount
-            - If the client fails to access the server, the connection hangs; and once
-              the system is up, it again accesses the server.
-    - Vi Editor
-        - 3 types of modes in vi Editor:
-            - Regular mode or command mode
-            - Insertion mode or edit mode
-            - Replacement mode or Ex-mode
-        - commands
-            - :wq saves the current work and exits the VI.
-            - :q! exits the VI without saving current work.
-            - x deletes a current character.
-            - dd deletes the current line.
-    - commands
-        - Get Total memory used by Linux
-            1. Free command:
-                - To display the free, used and swap memory available in the system
-                $ free –m
-                    the option ‘m' displays all the data in MBs.
-            2. /proc/meminfo:
-                $ cat /proc/meminfo
-            3. vmstat:
-                This command basically lays out the memory usage statistics.
-                $ vmstat –s
-            4. top:
-                This command determines the total memory usage as well as also monitors the
-                RAM usage.
-                $ top
-            5. htop:
-                This command also displays memory usage along with other details.
-                $ htop
-        - user management commands
-                last,
-                chage,
-                chsh,
-                lsof,
-                chown,
-                chmod,
-                useradd,
-                userdel,
-                newusers etc.
-        - file related
-            - head: Displays the beginning of the file
-            - tail: Displays the last part of the file
-            - cat : Concatenate files and print on the standard output.
-            - more: Displays the content in pager form and is used to view the text in the terminal window
-                    one page or screen at a time.
-            - less: Displays the content in pager form and allows backward and single line movement.
-        - Directory related
-            - sort
-                - sort the entries in a text file in ascending order
-                    - $ sort sample.txt
-            - cd
-                cd~: Brings you to the home directory
-                cd-: Brings you to the previous directory
-                .  : Bring you to the parent directory
-                cd/: Takes you to the entire system’s root directory
-            - ls [options] [file|dir]
 
-                option flags
-                    -a  to list all files, along with hidden files
-                    -F	add one char of */=>@| to enteries
-                    -i	list files with their inode index number
-                    -l  list with long format - show permissions
-                    -h  list readable file sizes (KB, ...)
-                    -s  list file sizes in KB
-                    -r  list in reverse order
-                    -R  list recursively directory tree
-                    -t  sort by time & date
-                    -X  sort by extension name
-                    -S	 lists files with their size and sorts the list by file size
+	- File Systems
+		- supports multiple file systems
+			- LINUX - Ext, Ext2, Ext3, Ext4, JFS, XFS, btrfs, ufs, FAT, autofs, devpts, ntfs and swap.
+			- UNIX  - jfs, gpfs, hfs, etc.
+	- Redirections
+		- There are basically three streams available in which input and output of the Linux environment are distributed.
+			- Input Redirection : ‘<’ symbol is used for input redirection and is numbered as (0). Thus it is denoted as STDIN(0).
+			- Output Redirection: ‘>’ symbol is used for output redirection and is numbered as (1). Thus it is denoted as STDOUT(1).
+			- Error Redirection : It is denoted as STDERR(2).
 
-                $ ls /   		List root directory
-                $ ls ..  		List parent directory
-                $ ls ~	 		List user's home directory (e.g: /home/user)
-                $ ls *	 		List all subdirectories
-                $ ls *.txt		List only text files with wildcard
-                $ ls > out.txt	ls redirection to output file
-                $ ls -d */		List directories only:
-                $ ls -d $PWD/*	List files and directories with full path
-                $ ls --version  Check version of ls command.
-                $ ls -l /tmp    List files of the directory '/tmp'
-                $ ls -ld /tmp/  displays information of /tmp directory
-                $ ls -n 		display UID and GID of files and directories
-                - To shows files by size, biggest file will be displayed last,
-                    $ ls - lSr
-            - cat [options] file1 [file2...]
-                to display the content of text files and
-                to combine several files to one file.
-                The cat command does not accept directories.
+			- ‘>’ overwrites the existing content of the file or creates a new file.
+			- ‘>>’ appends the new content to the end of the file or creates a new file.
+- LILO(LInux LOader)
+	- boot loader for Linux, used to load the Linux operating system into the main memory
+	 to begin its operations.
+	- Bootloader here is a small program that manages a dual boot.
+	- LILO resides in MBR (Master Boot Record).
+	- Advantage: it allows the fast bootup of Linux when installing in the MBR.
+	- Limitation: it is not possible for all computers to tolerate modification of MBR.
+- Swap space
+	- amount of physical memory that is allocated for use by Linux to hold some
+	  concurrent running programs temporarily.
+	- This condition usually occurs when RAM does not have enough memory to support
+	  all concurrent running programs.
+	- This memory management involves the swapping of memory to and from physical storage.
+- Daemons
+	- background process which accepts the requests for service from other computers, most of the
+	  operating systems use daemons in other forms.
+- root account
+	- It is like a system administrator account.
+	- It provides you full control of the system.
+	- root account serves as the default account whenever Linux is installed.
+	- You can create and maintain user accounts, assign different permission for each
+	  account, etc.
+	- uses
+		- Create user accounts
+		- Maintain user accounts
+		- Assign different permissions to each account created and so on.
+- shell
+	- It is an interpreter in Linux.
+	- Shell is a computer program which acts as an interface between the user and the kernel.
+	- Users can communicate with the kernel by writing programs, commands and scripts on the shell.
+	- It accepts human-readable commands and converts them into the kernel understandable language.
+	- The most commonly used shells in Linux are bash, csh(C shell), ksh(K Shell), Tcsh.
+		C Shell (csh)                   : It is like C syntax and provides spelling checking and job control.
+		Korn Shell (ksh)                : Is a high-level programming language shell.
+		Z Shell (Zsh)                   : It provides some unique nature like it observes login/logout watching, file name generating, startup files, closing comments.
+		Bourne Again Shell (bash)       : It is the default to Linux distributions.
+		Friendly Interactive Shell (Fish): It provides web-based configuration,  auto-suggestions, etc.
+	- internal commands
+		- commands which are built in the shells
+	- In Unix, Bourne Shell & in Linux, Bash
+	- BASH(Bourne Again SHell)
+		- replacement to the original Bourne shell, written by Steve Bourne.
+		- written by Brian Fox
+		- Bash vs DoS
+			- BASH commands are case sensitive while DOS commands are not case sensitive.
+			- DOS follows a convention in naming files.
+				In BASH, 8 character file name is followed by a dot and 3 characters for the extension.
+				DOS doesn't follow such convention.
+- processes
+	- process id
+		- unique id identified by os, for eachg process
+	- process states
+		Ready                   : The process is created and is ready to run
+		Running                 : The process is being executed
+		Blocked or wait         : Process is waiting for input from the user
+		Terminated or Completed : Process completed execution, or was terminated by the Operating System
+		Zombie                  : Process terminated, but the information still exists in the process table.
+	- Process Management System Calls in Linux
+		- The System Calls to manage the process are:
+			fork ()     : Used to create a new process
+			exec()      : Execute a new program
+			wait()      : Wait until the process finishes execution
+			exit()      : Exit from the process
+		- And the System Calls used to get Process ID are:
+			getpid()    :- get the unique process id of the process
+			getppid()   :- get the parent process unique id
+- CLI (Command Line Interface)
+	- Interface that allows users to type declarative commands to instruct the computer
+	  to perform operations.
+- partitions
+	- Minimum two disk partitions are required to install Linux.
+		1. first is used as the local file system where all the files are stored.
+		   This includes files of the OS, files of applications and services, and files of the user.
+		2. second is used as Swap Space which acts as an extended memory for RAM.
+	- /stc partition - stores the system configuration files in Linux system
+- services
+	- Samba service is used to connect Linux machines to Microsoft network resources
+	  by providing Microsoft SMB support.
+	- Cron
+		- allows the user to schedule tasks to be executed every minute.
+		- Tasks can be scheduled by any normal user and are basically used when tasks
+		  have to be completed/executed at a particular hour or minute.
+		- It is ideal for servers
+		- Cron expects the system to be running 24x7.
+	- Anacron
+		- allows the user to schedule tasks to be run either on a specific date or the first available cycle after the date.
+		- can be used only by super users and is used when a task has to be executed irrespective of hour or minute.
+		- It is ideal for desktops and laptops
+		- Anacron does not expects the system to be running 24x7.
+- Mount Points
+	- SoftMount
+		- If the client fails to connect the server, it gives an error report and
+		  closes the connection
+	- Hard mount
+		- If the client fails to access the server, the connection hangs; and once
+		  the system is up, it again accesses the server.
+- Vi Editor
+	- 3 types of modes in vi Editor:
+		- Regular mode or command mode
+		- Insertion mode or edit mode
+		- Replacement mode or Ex-mode
+	- commands
+		- :wq saves the current work and exits the VI.
+		- :q! exits the VI without saving current work.
+		- x deletes a current character.
+		- dd deletes the current line.
+- commands
+	- Get Total memory used by Linux
+		1. Free command:
+			- To display the free, used and swap memory available in the system
+			$ free –m
+				the option ‘m' displays all the data in MBs.
+		2. /proc/meminfo:
+			$ cat /proc/meminfo
+		3. vmstat:
+			This command basically lays out the memory usage statistics.
+			$ vmstat –s
+		4. top:
+			This command determines the total memory usage as well as also monitors the
+			RAM usage.
+			$ top
+		5. htop:
+			This command also displays memory usage along with other details.
+			$ htop
+	- user management commands
+			last,
+			chage,
+			chsh,
+			lsof,
+			chown,
+			chmod,
+			useradd,
+			userdel,
+			newusers etc.
+	- file related
+		- head: Displays the beginning of the file
+		- tail: Displays the last part of the file
+		- cat : Concatenate files and print on the standard output.
+		- more: Displays the content in pager form and is used to view the text in the terminal window
+				one page or screen at a time.
+		- less: Displays the content in pager form and allows backward and single line movement.
+	- Directory related
+		- sort
+			- sort the entries in a text file in ascending order
+				- $ sort sample.txt
+		- cd
+			cd~: Brings you to the home directory
+			cd-: Brings you to the previous directory
+			.  : Bring you to the parent directory
+			cd/: Takes you to the entire system’s root directory
+		- ls [options] [file|dir]
 
-                $ cat -b	add line numbers to non blank lines
-                $ cat -n	add line numbers to all lines
-                $ cat -s	squeeze blank lines to one line
-                $ cat -E	show $ at the end of line
-                $ cat -T	show ^I instead of tabs
+			option flags
+				-a  to list all files, along with hidden files
+				-F	add one char of */=>@| to enteries
+				-i	list files with their inode index number
+				-l  list with long format - show permissions
+				-h  list readable file sizes (KB, ...)
+				-s  list file sizes in KB
+				-r  list in reverse order
+				-R  list recursively directory tree
+				-t  sort by time & date
+				-X  sort by extension name
+				-S	 lists files with their size and sorts the list by file size
 
-                $ cat list1.txt
-                    milk
-                    bread
-                    apples
+			$ ls /   		List root directory
+			$ ls ..  		List parent directory
+			$ ls ~	 		List user's home directory (e.g: /home/user)
+			$ ls *	 		List all subdirectories
+			$ ls *.txt		List only text files with wildcard
+			$ ls > out.txt	ls redirection to output file
+			$ ls -d */		List directories only:
+			$ ls -d $PWD/*	List files and directories with full path
+			$ ls --version  Check version of ls command.
+			$ ls -l /tmp    List files of the directory '/tmp'
+			$ ls -ld /tmp/  displays information of /tmp directory
+			$ ls -n 		display UID and GID of files and directories
+			- To shows files by size, biggest file will be displayed last,
+				$ ls - lSr
+		- cat [options] file1 [file2...]
+			to display the content of text files and
+			to combine several files to one file.
+			The cat command does not accept directories.
 
-                $ cat list2.txt
-                    house
-                    car
+			$ cat -b	add line numbers to non blank lines
+			$ cat -n	add line numbers to all lines
+			$ cat -s	squeeze blank lines to one line
+			$ cat -E	show $ at the end of line
+			$ cat -T	show ^I instead of tabs
 
-                $ cat list1.txt list2.txt
-                    milk
-                    bread
-                    apples
+			$ cat list1.txt
+				milk
+				bread
+				apples
 
-                    house
-                    car
+			$ cat list2.txt
+				house
+				car
 
-                Combine 2 text files to another file
-                $ cat list1.txt list2.txt > todo.txt
-            - cp
-                - To copy a file
-                $ cp <source> <destination>
-                $ cp questions.txt /new/linux /linux/interview
-            - mv
-                - To rename a file
-                $ mv <oldname> <newname>
-            - rm
-                - To delete a file
-                    $ rm <oldname>
-                - To delete all files in current directory that contains the word 'linux'
-                    $ for i in *linux*; do rm $i; done
-            - rmdir
-                $ rmdir <directory name>
-            - rm -rf
-                $ rm -rf <directory name>
-                - should be used carefully because it will delete all the data without any warnings.
-            - locate
-                - To find path to the file
-                $ locate sample.txt
-            - diff
-                - To find text differences between two files
-                $ diff abc.conf xyz.conf
-            - touch
-                - used to create a text file without opening it.
-                $ touch <filename>
-                $ touch sample.txt
-            - tar
-                - command is used to extract or create an archived file.
-                - To extract files from an archived file,
-                    - $ tar -xvzf sample.tar.gz
-                - To create an archive of all files in current directory,
-                    - $ tar -cvzf filename.tar.gz
-                - FLAGS
-                    c: create archive
-                    x: extract
-                    v: verbose
-                    f: file
-                - To list content of tar.gz file
-                    - $ tar tf file.tgz
-                - To extract only one file in tar.gz file,
-                    - $ tar xf file.tgz filename
-            - zcat
-                - To see content of compressed file with extension .z,
-                    - $ zcat sample.z
-            - xclip
-                - To copy text to the clipboard
-                    - $ cat file.txt | xclip -selection clipboard
-            - find
-                - To find files using names
-                    $ find -name "MyCProgram.c"
-                - To find files using names, ignoring case
-                    $ find -iname "MyCProgram.c"
-                - Limit Search To Specific Directory Level Using mindepth and maxdepth
-                    - To try find the word 'passwd' in all files, from root directory level
-                        $ find / -name passwd
-                    - Find the passwd file under root and one level down. (i.e root — level 1, and one sub-directory — level 2)
-                        $ find -maxdepth 2 -name passwd
-                    - Find the passwd file under root and two levels down. (i.e root — level 1, and two sub-directories — level 2 and 3 )
-                        $ find -maxdepth 3 -name passwd
-                    - Find the password file between sub-directory level 2 and 4.
-                        $ find -mindepth 3 -maxdepth 5 -name passwd
-                - Find files based on file type
-                    - Find only the socket files
-                        $ find . -type s
-                    - Find all directories
-                        $ find . -type d
-                    - Find only the normal files
-                        $ find . -type f
-                    - Find all the hidden files
-                        $ find . -type f -name ".*"
-                    - Find all the hidden directories
-                        $ find -type d -name ".*"
-                - Find files by size
-                    - NOTE:  – means less than the give size,
-                             + means more than the given size, and
-                             no symbol means exact given size.
-                    - Find files bigger than the given size
-                        $ find ~ -size +100M
-                    - Find files smaller than the given size
-                        $ find ~ -size -100M
-                    - Find files that matches the exact given size
-                        $ find ~ -size 100M
-                    - To remove big archive(.zip) files, exceeding 100MB,
-                        $ find / -type f -name *.zip -size +100M -exec rm -i {} \;"
-                    - Find TOP 5 big files
-                        $ find . -type f -exec ls -s {} \; | sort -n -r | head -5
-                    - Find TOP 5 small files
-                        $ find . -type f -exec ls -s {} \; | sort -n  | head -5
+			$ cat list1.txt list2.txt
+				milk
+				bread
+				apples
 
-                - Find all empty files
-                    -
-                        $ find ~ -empty
-                    - List all the empty files only in your home directory.
-                        $ find . -maxdepth 1 -empty
-                    - List only the non-hidden empty files only in the current directory.
-                        $ find . -maxdepth 1 -empty -not -name ".*"
+				house
+				car
 
-                - Find files based on permissions
-                    - Find files with exact permissions,
-                        $ find . -perm -g=r -type f -exec ls -l {} \;
-                    - Find files which has read permission only to group.
-                        $ find . -perm g=r -type f -exec ls -l {} \;
-                    - Find files which has read permission only to group [ search by octal ]
-                        $ find . -perm 040 -type f -exec ls -l {} \;
-                - Find files based on inode number
-                    $ find -inum 16187430
+			Combine 2 text files to another file
+			$ cat list1.txt list2.txt > todo.txt
+		- cp
+			- To copy a file
+			$ cp <source> <destination>
+			$ cp questions.txt /new/linux /linux/interview
+		- mv
+			- To rename a file
+			$ mv <oldname> <newname>
+		- rm
+			- To delete a file
+				$ rm <oldname>
+			- To delete all files in current directory that contains the word 'linux'
+				$ for i in *linux*; do rm $i; done
+		- rmdir
+			$ rmdir <directory name>
+		- rm -rf
+			$ rm -rf <directory name>
+			- should be used carefully because it will delete all the data without any warnings.
+		- locate
+			- To find path to the file
+			$ locate sample.txt
+		- diff
+			- To find text differences between two files
+			$ diff abc.conf xyz.conf
+		- touch
+			- used to create a text file without opening it.
+			$ touch <filename>
+			$ touch sample.txt
+		- tar
+			- command is used to extract or create an archived file.
+			- To extract files from an archived file,
+				- $ tar -xvzf sample.tar.gz
+			- To create an archive of all files in current directory,
+				- $ tar -cvzf filename.tar.gz
+			- FLAGS
+				c: create archive
+				x: extract
+				v: verbose
+				f: file
+			- To list content of tar.gz file
+				- $ tar tf file.tgz
+			- To extract only one file in tar.gz file,
+				- $ tar xf file.tgz filename
+		- zcat
+			- To see content of compressed file with extension .z,
+				- $ zcat sample.z
+		- xclip
+			- To copy text to the clipboard
+				- $ cat file.txt | xclip -selection clipboard
+		- find
+			- To find files using names
+				$ find -name "MyCProgram.c"
+			- To find files using names, ignoring case
+				$ find -iname "MyCProgram.c"
+			- Limit Search To Specific Directory Level Using mindepth and maxdepth
+				- To try find the word 'passwd' in all files, from root directory level
+					$ find / -name passwd
+				- Find the passwd file under root and one level down. (i.e root — level 1, and one sub-directory — level 2)
+					$ find -maxdepth 2 -name passwd
+				- Find the passwd file under root and two levels down. (i.e root — level 1, and two sub-directories — level 2 and 3 )
+					$ find -maxdepth 3 -name passwd
+				- Find the password file between sub-directory level 2 and 4.
+					$ find -mindepth 3 -maxdepth 5 -name passwd
+			- Find files based on file type
+				- Find only the socket files
+					$ find . -type s
+				- Find all directories
+					$ find . -type d
+				- Find only the normal files
+					$ find . -type f
+				- Find all the hidden files
+					$ find . -type f -name ".*"
+				- Find all the hidden directories
+					$ find -type d -name ".*"
+			- Find files by size
+				- NOTE:  – means less than the give size,
+						 + means more than the given size, and
+						 no symbol means exact given size.
+				- Find files bigger than the given size
+					$ find ~ -size +100M
+				- Find files smaller than the given size
+					$ find ~ -size -100M
+				- Find files that matches the exact given size
+					$ find ~ -size 100M
+				- To remove big archive(.zip) files, exceeding 100MB,
+					$ find / -type f -name *.zip -size +100M -exec rm -i {} \;"
+				- Find TOP 5 big files
+					$ find . -type f -exec ls -s {} \; | sort -n -r | head -5
+				- Find TOP 5 small files
+					$ find . -type f -exec ls -s {} \; | sort -n  | head -5
 
-        - grep
-            - stands for "global regular expression print"
-            - used for matching a regular expression against text in a file.
-            - This command performs pattern-based searching and only the matching lines are displayed as output.
-            - It makes use of options and parameters that are specified along with the command line.
-            - SYNTAX:
-                grep [options] pattern [files]
-            - $ grep -c "linux" interview.txt
-            - $ cat linux.txt | grep ^a
-                - lists all lines which start with 'a'.
-            - $ cat linux.txt | grep n
-                - lists all lines which have 'n' in it.
-            - $ grep -l this demo_*
-                - Display only the file names which matches the given pattern
-            - When you want do find out how many lines matches the pattern
-                $ grep -c this demo_file
-                  3
-            - When you want do find out how many lines that does not match the pattern
-                $ grep -v -c this demo_file
-                  4
-            - Show Only matched strings
-                $ grep -o "is.*line" demo_file
-                    is line is the 1st lower case line
-                    is line
-                    is is the last line
-            - Show line number while displaying the output
-                $ grep -n "go" demo_text
-                    5: * e - go to the end of the current word.
-                    6: * E - go to the end of the current WORD.
-                    7: * b - go to the previous (before) word.
-                    8: * B - go to the previous (before) WORD.
-                    9: * w - go to the next word.
-                    10: * W - go to the next WORD.
+			- Find all empty files
+				-
+					$ find ~ -empty
+				- List all the empty files only in your home directory.
+					$ find . -maxdepth 1 -empty
+				- List only the non-hidden empty files only in the current directory.
+					$ find . -maxdepth 1 -empty -not -name ".*"
 
-        - Network troubleshooting commands
-            Hostname    : To view the hostname (domain and IP address) of the machine and to set the hostname.
-            Ping        : To check if the remote server is reachable or not.
-            ifconfig    : To display and manipulate route and network interfaces. It displays network configuration.
-            netstat     : It displays network connections, routing tables, interface statistics.
-                          ‘ss’ is the replacement of netstat command which is used to get more information.
-            Traceroute  : It is a network troubleshooting utility that is used to find the number of hops required for a particular packet to reach the destination.
-            Tracepath   : It is the same as traceroute with a difference that it does not require root privileges.
-            Dig         : This command is used to query the DNS name servers for any task related to the DNS lookup.
-            nslookup    : To find DNS related query.
-            Route       : It shows the details of the route table and manipulates the IP routing table.
-            mtr         : This command combines ping and track path into a single command.
-            Ifplugstatus: This command tells us whether the network cable is plugged in or not.
-        - process related
-            $ ps        : To list all processes
-            $ kill 3849 : To terminate process with process id 3849
-            # lsof      : To know which file is opened by which process.
-        - mount
-            - To see list of mounted devices
-                $ mount -l
-            - To show free inodes on mounted filesystems,
-                $ df -l
-            - To show free space on mounted filesystems,
-                $ df -h
-            - To show disks partitions sizes and types (run as root).
-                $ fdisk -l
-            - To retrieve more detailed information about which files use the disk space in a directory,
-                $ du -sh
-        - Scheduling Tasks
-            - cron
-                - used to repeatedly schedule a task at a specific time.
-                - SYNTAX : <minute> <hour> <day> <month> <weekday> <command>
-                - EXAMPLE: 0 16 * * 0 <command>
-            - at
-                - used to schedule a task only once at the specified time.
-                - $ echo "shutdown now" | at -m 18:00
-        - export
-            - used to set and reload the environment variables.
-            - $ export JAVA_HOME = /home/user/Java/bin
-        - env
-            - To list all environment variables
-        - service
-            - To check if a service is running
-                - $ service <servicename> status
-            - To check the status of all the services
-                - $ service --status-all
-            - To start a service,
-                - $ service <servicename> start
-            - To stop a service,
-                - $ service <servicename> stop
-        - timeout
-            - To run a command for a limited time,
-                - $ timeout 10s ./script.sh
-        - /usr/bin/time
-            - to check resource usage:
-                - $ /usr/bin/time -v ls
-        - inotifywait
-            - To run a command, everytime a file is modified,
-                - $ while inotifywait -e close_write document.tex
-                    do
-                    make
-                    done
-        - namei
-            - To check permissions of each directory to a file
-            - $ namei -l /path/to/file.txt
+			- Find files based on permissions
+				- Find files with exact permissions,
+					$ find . -perm -g=r -type f -exec ls -l {} \;
+				- Find files which has read permission only to group.
+					$ find . -perm g=r -type f -exec ls -l {} \;
+				- Find files which has read permission only to group [ search by octal ]
+					$ find . -perm 040 -type f -exec ls -l {} \;
+			- Find files based on inode number
+				$ find -inum 16187430
+
+	- grep
+		- stands for "global regular expression print"
+		- used for matching a regular expression against text in a file.
+		- This command performs pattern-based searching and only the matching lines are displayed as output.
+		- It makes use of options and parameters that are specified along with the command line.
+		- SYNTAX:
+			grep [options] pattern [files]
+		- $ grep -c "linux" interview.txt
+		- $ cat linux.txt | grep ^a
+			- lists all lines which start with 'a'.
+		- $ cat linux.txt | grep n
+			- lists all lines which have 'n' in it.
+		- $ grep -l this demo_*
+			- Display only the file names which matches the given pattern
+		- When you want do find out how many lines matches the pattern
+			$ grep -c this demo_file
+			  3
+		- When you want do find out how many lines that does not match the pattern
+			$ grep -v -c this demo_file
+			  4
+		- Show Only matched strings
+			$ grep -o "is.*line" demo_file
+				is line is the 1st lower case line
+				is line
+				is is the last line
+		- Show line number while displaying the output
+			$ grep -n "go" demo_text
+				5: * e - go to the end of the current word.
+				6: * E - go to the end of the current WORD.
+				7: * b - go to the previous (before) word.
+				8: * B - go to the previous (before) WORD.
+				9: * w - go to the next word.
+				10: * W - go to the next WORD.
+
+	- Network troubleshooting commands
+		Hostname    : To view the hostname (domain and IP address) of the machine and to set the hostname.
+		Ping        : To check if the remote server is reachable or not.
+		ifconfig    : To display and manipulate route and network interfaces. It displays network configuration.
+		netstat     : It displays network connections, routing tables, interface statistics.
+					  ‘ss’ is the replacement of netstat command which is used to get more information.
+		Traceroute  : It is a network troubleshooting utility that is used to find the number of hops required for a particular packet to reach the destination.
+		Tracepath   : It is the same as traceroute with a difference that it does not require root privileges.
+		Dig         : This command is used to query the DNS name servers for any task related to the DNS lookup.
+		nslookup    : To find DNS related query.
+		Route       : It shows the details of the route table and manipulates the IP routing table.
+		mtr         : This command combines ping and track path into a single command.
+		Ifplugstatus: This command tells us whether the network cable is plugged in or not.
+
+	- process related
+		$ ps        : To list all processes
+		$ kill 3849 : To terminate process with process id 3849
+		# lsof      : To know which file is opened by which process.
+	- mount
+		- To see list of mounted devices
+			$ mount -l
+		- To show free inodes on mounted filesystems,
+			$ df -l
+		- To show free space on mounted filesystems,
+			$ df -h
+		- To show disks partitions sizes and types (run as root).
+			$ fdisk -l
+		- To retrieve more detailed information about which files use the disk space in a directory,
+			$ du -sh
+	- Scheduling Tasks
+		- cron
+			- used to repeatedly schedule a task at a specific time.
+			- SYNTAX : <minute> <hour> <day> <month> <weekday> <command>
+			- EXAMPLE: 0 16 * * 0 <command>
+		- at
+			- used to schedule a task only once at the specified time.
+			- $ echo "shutdown now" | at -m 18:00
+	- export
+		- used to set and reload the environment variables.
+		- $ export JAVA_HOME = /home/user/Java/bin
+	- env
+		- To list all environment variables
+	- service
+		- To check if a service is running
+			- $ service <servicename> status
+		- To check the status of all the services
+			- $ service --status-all
+		- To start a service,
+			- $ service <servicename> start
+		- To stop a service,
+			- $ service <servicename> stop
+	- timeout
+		- To run a command for a limited time,
+			- $ timeout 10s ./script.sh
+	- /usr/bin/time
+		- to check resource usage:
+			- $ /usr/bin/time -v ls
+	- inotifywait
+		- To run a command, everytime a file is modified,
+			- $ while inotifywait -e close_write document.tex
+				do
+				make
+				done
+	- namei
+		- To check permissions of each directory to a file
+		- $ namei -l /path/to/file.txt
 
 Logs
 	For system logs,
@@ -719,3 +720,88 @@ Ans)lsof is a tool, which can help in the file descriptor information.
 
 5) Where are logs typically found
 Ans)In Linux, all the logs are generally stored in /var/log
+
+
+==============================================
+grep
+	- it allows to search patterns in files
+	- Zgrep for Gzip files
+	- SYNTAX: grep <pattern> file.log
+	- options:
+		- n : Number of lines that matches
+		- i : case insensitive
+		- v : Invert matches
+		- E : extended regex
+		- c : Count number of matches
+		- l : find filenames that matches the pattern
+Ngrep
+	- It is used for analying network packets
+	- SYNTAX: ngrep -I file.pcap
+	- options:
+		- d : specify network interface
+		- i : case insensitive
+		- x : print in alternate hexdump
+		- t : print timestamp
+		- I : Read pcap file
+
+CUT
+	- It is used to parse fields from delimited logs
+	- SYNTAX: cut -d "." -f 2 file.log
+	- options
+		- d : use the field delimiter
+		- f : field numbers
+		- c : specifies characters' position
+
+Sed
+	- means Stream Editor
+	- Itis used to replace strings in a file
+	- SYNTAX: sed s/regex/replace/g
+	- options
+		- s : search
+		- g : replace
+		- d : delete
+		- w : append to file
+		- e : execute command
+		- n : suppress output
+
+sort
+	- it is used to sort a file
+	- SYNTAX: sort foo.txt
+	- options
+		- o : output to file
+		- r : reverse order
+		- n : Numerical sort
+		- k : sort by column
+		- c : check if ordered
+		- u : sort and remove
+		- f : ignore case
+		- h : human sort
+
+uniq
+	- It is used to extract uniqye occurrences
+	- SYNTAX: uni foo.txt
+	- options
+		- c : count the number of duplicates
+		- d : print duplicates
+		- i : case insensitive
+
+diff
+	- It is used to display differences in files by comparing line by line
+	- SYNTAX: diff foo.log bar.log
+	- options
+		- a : add
+		- c : change
+		- d : delete
+		- # : Line numbers
+		- < : File 1
+		- > : File 2
+
+Awk
+	- It is programming language used to manipulate data
+	- SYNTAX: awk {print $2} foo.log
+	- Example
+		- To print first column with separator "."
+			$awk -F '{print $1}' /etc/password
+
+		- Extract uniq value from two files
+			$awk 'FNR=NR {a[$0]++; next}  l($0 in a)' f1.txt f2.txt

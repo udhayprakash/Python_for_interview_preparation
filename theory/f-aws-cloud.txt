@@ -240,6 +240,20 @@ AWS Lambda Context properties
 		- Network (designates a connection to a data source within an
 					Amazon Virtual Private Cloud environment (Amazon VPC))
 
+	- Glue Limitations
+		- AWS Glue cannot support the conventional relational database systems. It can only support structured databases.
+		- AWS Glue is a managed ETL service for Apache Spark. And it is not a full-fledged ETL service like Talend, Xplexty, etc.
+		  So, it will take more work for customizations
+		- AWS Glue requires you to test the changes in the live environment. It does not provide the test environment to analyze the repercussions of a change.
+		- glue jobs will take long time for
+			- large datasets
+			- Non-uniform distribution of data in the datasets
+			- Uneven distribution of tasks across the executors
+			- Resource under-provisioning
+			- solution:
+				we should enable metrics and continous logging;
+				Also, troubleshooting using spark UI
+
 - ETL Jobs
 	- I have created ETLs jobs like say,
 		Users can connect to an endpoint, from where request goes via
