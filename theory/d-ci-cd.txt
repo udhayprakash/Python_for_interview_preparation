@@ -46,8 +46,7 @@ Code Flow
 ----------
 - First, we will reach out to the clients/Stakeholders and gather the requirements.
 - Then, we create JIRAs correspondingly, in the backend.
-- During the Sprint planning, we discuss with all the Stakeholders to prioritise
-  the JIRAs for the sprint.
+- During the Sprint planning, we discuss with all the Stakeholders to prioritise the JIRAs for the sprint.
 - Then, for each of the JIRAs given, we will create a branch
   Under the feature branch, we will start developing
   We will follow TDD - Test driven development

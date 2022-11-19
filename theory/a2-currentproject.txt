@@ -4,10 +4,8 @@ We have a couple of data scientists, who will drive this data analytics process.
 my responsibilities here include
 	- data gathering from both internal and external data sources
 		- including REST APIs, SOAP interfaces, GRAPHQL, and internal databases
-	- also, writing scripts for etl jobs, data transformations, and for the
-	  business logic
-	- finally, the cleansed and transformed data will be exposed as an API, for both
-		UI consumption and for app to app communication
+	- also, writing scripts for etl jobs, data transformations, and for the business logic
+	- finally, the cleansed and transformed data will be exposed as an API, for both UI consumption and for app to app communication
 
 	50% time for coding
 	10% time for testing

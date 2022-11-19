@@ -29,6 +29,16 @@ Files I worked with
 	- image files using tesserect, Pillow
 	- CSV, .dat files, tsv files with pandas
 
+Python Importance
+	- simple syntax, and english like language
+	- readable by, even, non-programmers
+	- Suporst 3 programming paradigms
+		- Aspect oriented
+		- Functional oriented, and
+		- Object oriented
+	- Open sources and has a lot of modules, ranging from astronomy, till biotechnology
+	- With python 3.11, it is even faster
+
 Python Questions
 -----------------
 - Basic Data Types - Int, Float, Str, None, bool
@@ -341,11 +351,8 @@ Abstract Classes
 
 		- PEP8 - don't use both return & yield in same function
 
-		def grepper_gen():
-			yield "add"
-			yield "grepper"
-			yield "answer"
-		grepper = grepper_gen()
+	- what happens if return is placed in generator?
+	- Ans) It wont throw error. But when all values were iterated from it, for the last iteration, the return value will come as stop iteration exception message.
 
 - Iterator
 	- Any python iterable object can be converted to an intertor using iter() protocol
@@ -1216,10 +1223,23 @@ Ans)  String formattings in python
 		we can write as
 			print(f"{language =}"
 
-Finally, among the three (old-style, new-style with format() and f-strings), the
-F-string based formatting with take the least amount of time.
+	Finally, among the three (old-style, new-style with format() and f-strings), the
+	F-string based formatting with take the least amount of time.
 
-So, i prefer F-strings among all.
+	So, i prefer F-strings among all.
+
+Q5) How to cache data in Python
+Ans) It can be done in 3 ways
+	 1) Using cache, like
+			- functool.lru_cache
+			- Memcache
+			- or, redis cache
+	 2) Using sessions  if is a web application
+	 3) Using the database, for persistence
+
+    Also,
+		We can import in the __init__.py file in package level and import
+		It will be there for the entire session
 
 
 big data
@@ -1381,6 +1401,25 @@ Ans) I will try to explain the point, to avoid ambiguity. For Example, If i am s
 
 	When someone replies, we will proceed, point-to-point reply
 
+To get only duplicate numbers, in a list
+	list1 = [2, 1, 4, 2, 1, 2]
+	uniques = set()
+	dups = []
+	for num in list1:
+		if num in uniques:
+			dups.append(num)
+		else:
+			uniques.add(num)
+
+	print(dups)
+
+highest - lowest, rearranging a number
+
+	num = 213
+	integers = list(str(num))
+	highest = int(''.join(sorted(integers, reverse=True)))
+	smallest = int("".join(sorted(integers)))
+	print(highest - smallest)
 
 TODO
 	ML - https://alphasignal.ai/

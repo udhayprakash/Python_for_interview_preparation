@@ -172,3 +172,9 @@ What are you looking for in the new work?
 - In terms of work, it is almost match of what am doing now and your expectations
 - I am to prove myself initially , and learn to add value to the project
 - I want to be helpful , to more people, with my work
+
+skills needed by developers
+	- Patience , when debugging or troubleshooting
+	- Persistence, when resolving some issues
+	- Networking and communicating will all
+	- being Pro-active

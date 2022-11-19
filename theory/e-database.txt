@@ -737,6 +737,16 @@ slowly changing dimensions
 DataMart vs DataWarehouse Vs DataBase vs Operational DataStore
 	- https://www.zuar.com/blog/data-mart-vs-data-warehouse-vs-database-vs-data-lake/
 
+Data warehouse vs DataMart
+	- data warehouses are built to serve as the central store of data for the entire business,
+	- data mart fulfills the request of a specific division or business function.
+
+	- In terms of range,
+		- a data mart is limited to a single focus for one line of business;
+		- a data warehouse is typically enterprise-wide and ranges across multiple areas.
+	- And, in terms of sources,
+		- a data mart includes data from just a few sources;
+		- a data warehouse stores data from multiple sources.
 
 Q) How to get last day of previous month?
 
