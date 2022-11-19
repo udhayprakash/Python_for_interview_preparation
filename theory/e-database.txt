@@ -1,12 +1,18 @@
 DB Experience
 =============
+- I didnt work on database administration, but with development work only
 - As a developer, I worked with all kinds of features, except managing the databases
 - In terms of features, I worked with
 	database design
 	creating tables and establishing relations
-	creating db triggers, db views, indexing,
-		SQL procs, etc
+	creating db triggers, db views, indexing, SQL procs, etc
 
+Data Sources
+	- both internal and external to the organization
+	- worked wih REST API, both paginated and streaming API
+		- as part of connecting with them, worked on Authentication mechanisms like Oauth, JWT, etc.
+	- Also, connected with internal database; and graphQL too.
+	- Also, in terms of file formats, worked with structured (like csv, tsv, parquet, json, ..), unstructured and semi-structured files.
 
 - Modules worked with databases
 	- For ORM - Sqlalchemy, and for django - using django ORM
@@ -130,6 +136,8 @@ DB Experience
 		matches in the right table.
 		Left joins can increase the number of rows in the left table if there are multiple
 		matches in the right table.
+	- cartesian product - select * from employees, departments
+
 
 - Normalization
 	- process of organizing the columns, tables of a database to minimize the

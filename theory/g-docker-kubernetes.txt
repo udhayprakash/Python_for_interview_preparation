@@ -271,4 +271,11 @@ Terraform commands
 	apply   -> execute the plan
 	destroy -> destroy the resources/infrastructure
 
+Heroku
+	# deploy to Heroku
+	git push heroku main
+
+	# Procfile
+	web: mercury run 0.0.0.0:$PORT
+
 TODO - https://github.com/sunnybhambhani/kubernetes

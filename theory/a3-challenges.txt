@@ -138,7 +138,7 @@ Managing Tight deadlines
 	Let all team members to work in pairs
 		Do code pairing to do fastly
 
-	Say , one pair done a work, othr pair will review it
+	Say, one pair done a work, othr pair will review it
 	Like this, we can work , in war room,
 	T get the things done
 
@@ -149,6 +149,23 @@ Managing Tight deadlines
 		3) Planning and time management are key.
 		4) Concentration is the key to meeting deadlines and delivering good work.
 
+
+Learning New tool
+----------------------
+- Initially, I will check the docs. Though i may not understand everything, but atleast, i will get a glance of what is what.
+- Then, i will check with team members
+	- Most importantly, i will learn what not to do. Because, i dont want to be counter-productive.
+	- Then, Understand the roles in project and will get the approvals to access the code, and related dev tools.
+	- Then, clone the code, get the development setup done and play on it.
+	- I will learn module wise, by first going through  the unit tests, which will give a fair idea of assumptions and constraints, in the project.
+	- THen, slowly , i will do end-to-end
+- In that way, in each iteration, i will learn
+- Then, i will try to add any new test cases, which i felt were not added; Also any additional comments or doc stings too.
+
+
+
+And any specific Role based access,
+And responsibilities involved
 
 What tech stack would you use?
 - Why did you choose that architecture over another?

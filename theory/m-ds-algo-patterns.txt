@@ -175,3 +175,8 @@ AOT - Compile TypeScript during build phase.
 	No need to deploy the compiler (Half of Angular size).
 	More secure, original source not disclosed.
 	Suitable for production builds.
+
+BFS vs DFS
+	- BFS stands for Breadth First Search.
+	- DFS stands for Depth First Search.
+	- BFS uses Queue to find the shortest path. DFS uses Stack to find the shortest path.

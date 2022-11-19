@@ -138,5 +138,17 @@ Current project - RealEstate
 	- We collect data from different sources like climate info, crop yield, agriculture growth,
 	  geographic and geological informations
 
-Current Project - Medical Research Analytics
+Current Project - Infra Automation
 ---------------------------------------------
+	- project is boto3 Tagging based Resource billing and Analytics
+
+	- We are part of the infrastructure management team, within this company.
+	- Our job is to management the infrastrure, within the organization.
+	- we will grant access to cloud resources to the teams, and charge for the same, from their projects.
+
+	- In the process, to optimise the biling and better manage, we need to uniquely recognize the resources.
+	- For that, I wrote boto 3 scripts to scan all existing resources and add tags to them.
+	- Similarly, based on Event hub, automatically added tags for newly creating resources too.
+	- We have different types of tags, like user, team, etc, to different kinds of analytics
+
+ 	- Now, based on these tags, do different sets of analytics and give insights based on them.
