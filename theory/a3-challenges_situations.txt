@@ -1,5 +1,7 @@
 challenges
 ----------
+Use the STAR (Situation, Task, Action, Result) technique when answering example based questions
+
 - Permissions related production issue challenge
 	In current project, there is a Data pipeline
 		- If a file is created in s3 bucket, AWS lambda will be triggered and we can
@@ -28,8 +30,7 @@ challenges
 	To add some math, say on average I get 10 XMLs per minute and each takes 19 seconds. For one minute book of work, I need to spend 190 seconds, or 3 minutes. Or, for one day of work, I need to process for 3 days.
 
 	When using the cProfiler, I understood that it is taking more time at the xml to dictionary conversion.
-	As i used xmltodict python module for this conversion, I gone to code base of that module, pulled the
-	exact code responsible for this conversion, and added to my code. Also, refactored my script further, which
+	As i used xmltodict python module for this conversion, I gone to code base of that module, pulled the exact code responsible for this conversion, and added to my code. Also, refactored my script further, which
 	resulted in optimization from 19 seconds to 14 seconds.
 
 	Still when seen in cProfiler, I found that it is taking time at the XML to dictionary conversion only.
@@ -162,8 +163,6 @@ Learning New tool
 - In that way, in each iteration, i will learn
 - Then, i will try to add any new test cases, which i felt were not added; Also any additional comments or doc stings too.
 
-
-
 And any specific Role based access,
 And responsibilities involved
 
@@ -172,9 +171,6 @@ What tech stack would you use?
 - What challenges did you face and how did you overcome them?
 - How would you scale and optimize a given design?
 - If you led the project what would you have done differently?
-
-Use the STAR (Situation, Task, Action, Result) technique when
-answering example based questions
 
 
 What are you looking for in the new work?
@@ -190,8 +186,107 @@ What are you looking for in the new work?
 - I am to prove myself initially , and learn to add value to the project
 - I want to be helpful , to more people, with my work
 
+expectations from full stack developer
+======================================
+	To do frontend
+
+	Backend
+
+	And have db knowledge
+	Db design
+
+	Data flow design
+
+	Cachesing to reduce burden on db
+
+	CI/CD  process flow
+
+	Monitoring
+
+
 skills needed by developers
 	- Patience , when debugging or troubleshooting
 	- Persistence, when resolving some issues
 	- Networking and communicating will all
-	- being Pro-active
+	- being Pro-active, in chasing clients for requirement gatherings, or filling the gaps in requirements
+
+
+conflicts(workplace disagreements) with Collegues
+------------------------
+- Very rare, but sometimes will happen
+
+- From all these years of experince, I can say that conflicts will be of two types.
+	1) At the personal level, or personal motives
+		- If so, manager and HR team, were there to deal with them.
+	2) At the professional level
+		- These should be dealed differently.
+		- First, if we can analyse the root cause of the problem, it is easy to resolve it.
+		- Mainy, Issues can be like
+			- someone‘s ideas are being ignored
+			- Or mistrust/misunderstanding
+			- Or miscommunication, etc
+		- Also, workplace disagreements often erupt when people experience an absence of relatedness
+
+		- As a prevention, the best practices, i follow is
+			- writing clearly, about the events and
+			- communicating and getting consent from team members, and not bypassing them.
+			- scheduling agenda meetings, before reaching out to stackholders, on what to speak.
+
+		- Also, one should develop the patience and empathy, to think about
+			- others actions,
+			- thought process, which might have triggered, those actions.
+			- What could be avoid such understanding/miscommunication
+			- What could be best practice, to avoid such things again.
+
+
+mentoring, juniors
+------------------
+- Frankly, I never wore the hat of a lead. But, helped and/or got help from any team members.
+- We will try to help others, if they were struck
+
+- Main problems with the junior developers are like
+	- They may be confused with the requirement understanding, or
+	- confused/struct in programming language, dev setup, or configurations related issues, or
+
+- I will give them clarity on anything, if they were confused.
+- Ensure that they are learning from their mistakes.
+
+- Will encourage them, to share new thoughts.
+	- demystify the pros and cons, by discussions, and let them take the decisions, based on them.
+
+- Also, We do weekly functionality based knowledge sharings sessions, where everyone need to share
+	- Learnings of the week, either project related, outside, or even, at personal/fun related.
+
+- I believe that sharing is caring
+	- So, whenever, I learned something new, or
+	  addressed some complex problem, or
+	  discovered something, which is useful to other, I will share to all.
+
+New developers
+---------------
+- Initially
+	Will help in dev setup
+	Will give read only access
+	Caution on what NOT to do.
+	And ask them to freely make their hands dirty
+		Then, they dont have any fear
+
+- Once, team is confident, i will give desied permission
+- And slowly let me involve in each process and integrate them to day-to-day work
+
+
+Urgent Production issue fix
+============================
+- First, I will inform the team.
+- Then with manager consent, I will acknowledge the stackdholders
+- Then, I  will debug step by step, I found root cause quickly, okay.
+- Else,
+	- We will divide the work among the team members to find the root cause
+	- We wll divide the parts and identify the issue(s)
+	- Once, we fond the issue, we need to replicate locally.
+- Finally, identify the quickfix or rollback
+	- Do the changes, push code, associate servicenow ticket, and handle it.
+
+- create a JIRA for completely addressing the issue, place in backlog,
+  and prioritise in next sprint planning, based on severity.
+- document and inform the stackholdes of entire process, involved.

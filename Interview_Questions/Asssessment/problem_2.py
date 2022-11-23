@@ -44,7 +44,7 @@ class Person:
         self.name = name
 
     def __getattribute__(self, name: str) -> Any:
-        return super(Person, self).__getattribute__(name)
+        return super().__getattribute__(name)
 
 
 p1 = Person("Russum")

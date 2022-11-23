@@ -1,0 +1,9 @@
+Food Trade
+	- Hunger index by country
+	- Food trade surplus/deficit by country
+	- Free trade for food
+	- food security
+	- top Grocery chains, by country
+
+PII - person identification information
+PHI - person health information

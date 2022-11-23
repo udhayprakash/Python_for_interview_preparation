@@ -17,6 +17,10 @@ Go Mocking
 		- I use this library for its great assertion tool.
 
 
+go test -bench=”BenchmarkContains” -run=^# -benchtime=10000x
+go buid tags - https://www.digitalocean.com/community/tutorials/customizing-go-binaries-with-build-tags
+https://techinterviewhandbook.org/algorithms/binary/
+https://www.db-fiddle.com/f/eaQG8H4yqY9hnQBZjzJgz/101
 
 
 ========================

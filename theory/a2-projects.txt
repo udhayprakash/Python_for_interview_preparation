@@ -138,7 +138,18 @@ Current project - RealEstate
 	- We collect data from different sources like climate info, crop yield, agriculture growth,
 	  geographic and geological informations
 
-Current Project - Infra Automation
+Current Project - MetaData Analytics
+------------------------------------
+	- We are part of the R&D team.
+	- We have access to the data lake, which has all the meta data of the products and their events.
+
+	- Objective of this project is
+		- We will group the problems and give
+		- This output will help in next versions
+
+	- Stakeholders are internal product	Owners of this
+
+Current Project - Infra Automation - 1 click automation -- AWS CLOUD automation
 ---------------------------------------------
 	- project is boto3 Tagging based Resource billing and Analytics
 
@@ -150,5 +161,44 @@ Current Project - Infra Automation
 	- For that, I wrote boto 3 scripts to scan all existing resources and add tags to them.
 	- Similarly, based on Event hub, automatically added tags for newly creating resources too.
 	- We have different types of tags, like user, team, etc, to different kinds of analytics
+ 	- Now, based on these tags, do different sets of analytics and give insights based on them, like
+		- billing
+		- cost optimization
+		- rule/access violations and/or potential violations
+		- security audits, etc
 
- 	- Now, based on these tags, do different sets of analytics and give insights based on them.
+Current Project - Data Engineering
+----------------------------------
+	- It is to build a data pipeline.
+	- The data source is the aws s3.
+	- The spark inside the aws databricks extracts the data from aws s3.
+	- Then, creates the dataframe and does the actual data cleansing, tranformations, deduplication.
+	- Then, the final data will be pushed to aws Snowflake datawarehouse.
+
+	- The primary tech stack is : Python, Pyspark, SQL, AWS, Airflow
+
+	- I have experience on building the both batch and streaming the data pipelines.
+	- I am running spark job in EMR cluster scheduled through oozie scheduler . Basically this job is reading csv files based on file schema.
+	- Creating shell scripts to process the raw data, loading data to AWS S3 and Redshift databases.
+	- Also wrote spark scala API’s. Automating the jobs in Hadoop and Linux using Autosys tool.
+
+	- Sqooping data from relational databases like Oracle to hdfs/hive and vice versa.
+	- experience with hadoop ecosystem and bigdata related distributories.
+	- Used Hadoop tools like
+		- hdfs for storage,
+		- mapreduce to process data in backend,
+		- hadoop data warehouse as hive, in order to export and import data from different rdbms written the sqoop scripts.
+
+project documentation
+=====================
+- There are two types of documenatation, I do.
+1) Active documentation
+	- It is shared with all stack holders.
+	- It is needed as part of the process, for the code review, and further, for signoff, from stackholders, for code production release.
+2) Pasive documentation
+	- I create for project source code maintenance.
+	- I write both comments and docstrings.
+	- Use pydoc module, for creating documentation from these docstrings
+
+
+TODO - Steganography with python

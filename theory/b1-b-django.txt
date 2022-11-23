@@ -387,6 +387,11 @@ Django Middleware
 		pip3 install virtualenv;
 		virtualenv -p python3 env1;
 
+django modules
+- django-debug-toolbar for analyzing or removing duplicate db calls
+- drf-nested-routers for URL routing management
+- django-extensions  for utilities like db shell, etc.
+
 Django Ref blogs/tutorials
 	- https://djangotricks.blogspot.com/
 

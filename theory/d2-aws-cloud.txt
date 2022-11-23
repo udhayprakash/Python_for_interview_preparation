@@ -480,6 +480,10 @@ Stack Vs Stackset CloudFormation
   A stack set's CloudFormation template defines all the resources in each stack.
 - A stack instance refers to a stack in a target account within an AWS Region and is associated with only one stack set.
 
+- cloudformation limits
+	The new per template limits for the maximum number of resources is 500 (previously 200), parameters is 200
+	(previously 60), mappings is 200 (previously 100), and outputs is 200 (previously 60).
+	CloudFormation allows you to model and provision cloud resources as code in a safe, predictable, and scalable manner.
 
 boto3
 ------

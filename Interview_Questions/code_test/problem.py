@@ -22,7 +22,7 @@ Minimum value of F(0), F(1), F(2), F(3) is F(3) = 16
 """
 
 
-class Solution(object):
+class Solution:
     def max_n_min_rotation(self, A):
         """
         :type A: List[int]

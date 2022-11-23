@@ -137,3 +137,7 @@ React component lifecycle
 			->componentWillUpdate ->render->componentDidUpdate //Growth
 	4) UNMOUNTING
 		- componentWillUnmount //Death
+
+
+
+aggrid usage case

@@ -1,46 +1,59 @@
-Python Modules
-	Requests     : for consuming APIs
-	Re           : for regular expressions
-	Scikit-learn : for machine learning - I used for creating linear regression model
-	BeautifulSoap: for parsing html content. Used when I worked on web crawling/Scraping
-	NumPy        : Advanced linear algebra and NumPy array operations
-	Matplotlib   : Visualisation and data plotting in 2 or 3 dimensions.
-	IPython      : Increasing console interactivity.
-	Jupyter notebook: for interactively exploring the datasets and other functions
-	Pandas       : Data manipulation and analysis, mainly through dataframes and tables.
-	boto3        : For connecting and managing AWS Cloud resources
-	paramiko	 : for connecting to linux machines
-	fabric		 : for connecting to windows machines
+Python Importance
+=================
+- simple syntax, and english like language
+- readable by, even, non-programmers
+- Supports 3 programming paradigms
+	- Aspect oriented - like how is write sequentially, and
+	- Functional oriented, and
+	- Object oriented
+- Though we may not create classes, all time, but is called object oriented programming, as all variables/functions are treated as objects, in Python.
+- Open sources and has a lot of modules, ranging from astronomy, till biotechnology
+- With python 3.11, it is even faster
 
-	file system modules like
-		csv files with csv and pandas modules
-		json files with json and pandas modules
-		yaml files with pyyaml module
-		Excel files with openpyxl, Xlsxwriter, xlrd and pandas modules
-		pdf files  with reportlab, pypdf2 modules
-		image files with Pillow and tesserect modules
+python 2 vs 3
+=============
+- In python2, default encoding is ascii, whereas in Python 3, default is utf-8
+- In python2, dictionaries are unordered, whereas from python 3.6, dictionaries will retain the assigned order.
+- Python 2 suports both old style classes and new style classes when inheriting object; whereas python3 supports only new-style classes.
+- In python2, range, map, filter will return list; where these are iterators in python3.
+- For range,
+	In python 2,
+		- range will give list of integers
+		- xrange will give a xrange object, which will give values only when iterated.
+	- In python3,
+		- xrange is renamed as range.
+		- so, it results in range data type, with lazy or on-demand loading
+
+Python Modules
+===============
+Requests     : for consuming APIs
+Re           : for regular expressions
+Scikit-learn : for machine learning - I used for creating linear regression model
+BeautifulSoap: for parsing html content. Used when I worked on web crawling/Scraping
+NumPy        : Advanced linear algebra and NumPy array operations
+Matplotlib   : Visualisation and data plotting in 2 or 3 dimensions.
+IPython      : Increasing console interactivity.
+Jupyter notebook: for interactively exploring the datasets and other functions
+Pandas       : Data manipulation and analysis, mainly through dataframes and tables.
+boto3        : For connecting and managing AWS Cloud resources
+paramiko	 : for connecting to linux machines
+fabric		 : for connecting to windows machines
+
+file system modules like
+	csv files with csv and pandas modules
+	json files with json and pandas modules
+	yaml files with pyyaml module
+	Excel files with openpyxl, Xlsxwriter, xlrd and pandas modules
+	pdf files  with reportlab, pypdf2 modules
+	image files with Pillow and tesserect modules
 
 Frameworks
-	Django, flask, fastapi
-
-Files I worked with
---------------------
-	- pdf files using modules like reportlab, pypdf2
-	- image files using tesserect, Pillow
-	- CSV, .dat files, tsv files with pandas
-
-Python Importance
-	- simple syntax, and english like language
-	- readable by, even, non-programmers
-	- Suporst 3 programming paradigms
-		- Aspect oriented
-		- Functional oriented, and
-		- Object oriented
-	- Open sources and has a lot of modules, ranging from astronomy, till biotechnology
-	- With python 3.11, it is even faster
+==========
+- For web development and REST APIs - Django, flask, fastapi
+- For data analytics & t
 
 Python Questions
------------------
+================
 - Basic Data Types - Int, Float, Str, None, bool
 - Built-in Data Structures - List, Tuple, set, Dictionary
 
@@ -102,16 +115,12 @@ Python Questions
 	  it stored each element uniquely with its hash.
 	- Insertion time is less in list
 
-- List vs Array
-	- list is builtin data structure in python
-	- we can either have all elements of same type, or different type
-
-	- array is available from numpy
-	- IN array, we need to have all elements of same type.
-	- whenever i have to store all elements of same type, as arrays are more performant than lists.
+- list.sort vs sorted
+	- List.sort – will do inplace sorting. So, changes will be made on the list itself.
+	- sorted() function will created a new sorted list. So, existing list will not change.
 
 - range vs xrange
-	- xrange of python2 , is renamed as range in python 3
+	- xrange of python2, is renamed as range in python 3
 	- range in python2 results a list, whereas in python 3, range results in range object.
 	- range takes three arguments - start number, stopNumber and step ;
 	  then, will return the sequence for those values
@@ -129,19 +138,18 @@ Python Questions
 	json.loads for loading JSON string to python string
 	json.load  for loading JSON string to python file
 
-Shallow vs Deep copy
-- It is used in mutable objects like lists and dictionaries.
-- Shallow copy is used for single dimension mutable objects
-- Deep copy is used for multiple dimension mutable objects
-- Reason:
-	when we do assignments of mutable objects, say like,
-		mylist2 = mylist1
-	Then, if we make changes of one of them, the others will also be affected.
-	So, we use copy module to safely copy.
-	Shallow copy or soft copy will also have leakages for multi-dimensional mutable objects.
-	so, conclusion is that
-		shallow/soft copy need to used for single dimension mutable objects, as it is faster.
-		Deep copy need for multi-dimensional mutable objects.
+- Shallow vs Deep copy
+	- Shallow copy is used for single dimension mutable objects
+	- Deep copy is used for multiple dimension mutable objects
+	- Reason:
+		when we do assignments of mutable objects, say like,
+			mylist2 = mylist1
+		Then, if we make changes of one of them, the others will also be affected.
+		So, we use copy module to safely copy.
+		Shallow copy or soft copy will also have leakages for multi-dimensional mutable objects.
+		so, conclusion is that
+			shallow/soft copy need to used for single dimension mutable objects, as it is faster.
+			Deep copy need for multi-dimensional mutable objects.
 
 - lambda function
 	- one liner function, mainly useful for evaluating a single expression that is
@@ -167,16 +175,16 @@ Shallow vs Deep copy
 				print(loop_index, num
 
 List comprehension
-	- rewriting the for loop in single line.
-	- As it creates a code object, it will be slighty faster.
-	- But, comprehensions will reduce the readability of code.
+	- rewriting the for loop in a single line.
+	- As it creates a code object, it will be slightly faster.
+	- But, comprehension will reduce the readability of code.
 	- Based on the braces we store with, comprehensions include
 		- list comprehension
 		- set comprehension
 		- dictionary comprehension
 		- Tuple comprehension is called generator expression
 
-*args **kwargs
+*args vs **kwargs
 	- They are used for creating variadic functions.
 	- *args will enable a function to take zero or any number of arguments.
 	  It will store all the values in a tuple
@@ -205,6 +213,11 @@ overloading vs overwriting
 	- Overwriting means among the defined two functions, as both have same name,
 	  the latest defined function/method will overwrite others.
 
+subprocess popen vs run
+	- with subprocess.run and os.system, we can run any command, and get result as
+		0 if command executed successfully
+		1 if command FAILED
+	- with subprocess.popen, we can capture both output and error
 
 - range() vs xrange()
 	- In python 2,
@@ -233,8 +246,8 @@ overloading vs overwriting
 	4) Finally-- executed every time  — irrespective of failure  –
 				 it is like for file closing, etc ….
 
-Debugging in python
-- Either using pdb or ipdb modules, or using breakpoint() function
+- Debugging in python
+	- Either using pdb or ipdb modules, or using breakpoint() function
 
 - OOP
 	- Object Oriented Programming
@@ -270,12 +283,12 @@ Debugging in python
 					List concatenation operator between lists
 					Tuple concatenation operator between tuples
 
-self
+- self
 	- It is the first argument in instance methods.
 	- Its the placeholder for the instance being passed to the class
 	- It is not a keyword, but PEP 8 recommends as everyone is using, for uniformity
 
-class variables vs instance variables
+- class variables vs instance variables
 	- Class variable is used to work with class methods
 	- Instance variables are just associated with instance methods
 
@@ -285,33 +298,24 @@ class variables vs instance variables
 	- Instance variables of each instance, will be isolated
 	  from that of other instances.
 
-class method vs static method
+- class method vs static method
 	- Methods are of three types
 		1) Instance Methods have self as first argument, and use instance variables/methods in it.
 		2) Class Methods have cls as first argument, and use class variables/methods in it.
 		3) Static Methods use neither class nor instance variables/methods. It is like a utility method.
 
-funtion vs method
+	- cls is not keyword yet, but recently self is declared as keyword in python 3.11.
+	  - yet, it is best practice to use only them, by PEP8
+
+	- staticmethods are mainly used for utiity functions
+
+- function vs method
 	- methods are defined in a namespace of a class; so associated with that class.
 	- functions are defined independently
 
-Abstract Classes
+- Abstract Classes
 	- These are called as blueprint for other classes
 	- These classes are used for inheritance only, and not for creating instances.
-
-- Difference between python2 and python3
-	- Default encoding is ASCII in python2, whereas it  is UTF-8 in python3
-	- There were both old & new style classes in python2, whereas in python3, we have only new style classes.
-	- IN python2, range, map, filter will return list; where these are iterators in python3.
-
-- python 2 to 3
-	- I used python built-in module, lib2to3 , for migrating from python2 to python3.
-	- Wrote code with six module to write compatible code, for both python2 and 3, during migrating phase.
-	- Challenges during conversion
-		- In python2, we can compare string and int; We cant do the same with python3
-			- I wrote wrapper to handle it
-		- DEPENDENCY MANAGEMENT is another difficult thing, as some modules are either not available in python3,
-			or the latest features are not available in python3 modules.
 
 - Virtual environment
 	- It is like a container, for isolating the project dependencies
@@ -365,6 +369,8 @@ Abstract Classes
 	- built-in decorators are classmethod, staticmethod and property
 	- I created custom decorators for calculating the time taken by functions, or
 	  like logging the events, etc
+	Advantage - better code reusability
+	No performance change, as same code lines will execute
 
 - decorator wraps
 	- Decorators are the function which takes another functions as arguments.
@@ -510,9 +516,9 @@ Atomic Operations
 	D.keys()
 
 PYTHONPATH
-- It is an environment variable that you set before running the Python interpreter.
-- PYTHONPATH, if it exists, should contain directories that should be searched for modules when using import.
-- If PYTHONPATH is set, Python will include the directories in sys.
+	- It is an environment variable that you set before running the Python interpreter.
+	- PYTHONPATH, if it exists, should contain directories that should be searched for modules when using import.
+	- If PYTHONPATH is set, Python will include the directories in sys.
 
 Non-Automic Operations
 	i = i+1
@@ -558,14 +564,20 @@ I	- we can create custom context managers, using the dunder methods,
 
 - call by value vs call by reference
 	- python supports both call by value and call by reference.
-		- For immutables, it is call by values
-			- by default, means changes within the function were not reflected outside
-			- in variables are defined as global, local changes cAN be reflected outside
-			  - that is in that case, it is call by reference
-		- For immutables , if you define as global,  – it is be call by reference
 
-unittesting
+	- call by value means changes within functions, on variables, should not reflect outside.
+	- call by reference means changes with functions, on variables, should REFLECT outside.
+
+	- For immutables,
+		- By default, it is call by value.
+		- To make as call by reference, we need to define as global variables, to reflect local changes, outside.
+	- For mutables,
+		- By default, it is call by reference.
+		- To avoid local changes, from reflecting outside, we need to do changes on copied objects.
+
+- unittesting
 	- I used modules like unit test and pytest.
+
 	- Generally, we follow TDD - test driven development
 	- It means that
 		- first I will write the code skeleton
@@ -586,6 +598,20 @@ unittesting
 
 			setup instance method 	-- executes at the start of each test case
 			tearDown instance method – executes at end of each test case
+
+	- Unittesting vs integration testing
+		- In unit testing, we mock the interactions will 3rd party REST APIs, or databases,
+		  as the primary focus is to test our source code.
+		- In integration testing, as the primary objective is to test end-to-end functionality,
+		  there wont be any mockings.
+
+	- Overall, I worked with
+		- Unit testing – with unittest mocking or pytest fixture, for mocking 3rd party REST APIs or db interactions
+		- Integration testing - to test the end to end flow
+		- Regression testing - or load testing to check the load bearing capability
+			- used Jmeter scripts for the same.
+		- API testing with postman & its automation with newman scipts
+		- Functional testing With selenium. Wrote python scripts using pyselenium module
 
 	- According to Martin Fowler, creator of unit tests,
 		- Dummy objects
@@ -700,6 +726,11 @@ unittesting
 - Monkey patching is replacing a function/method/class by another at runtime,
    for testing purpses, fixing a bug or otherwise changing behaviour.
 
+	Usage:
+		monkeytype run <file>.py  dumps function call traces into SQLite databse
+		monkeytype stub <module>.py outputs preview of annotated code
+		monkeytype apply <module>.py applies the annotated code to the file
+
 - namespaces
 	LEGB - Local, Enclosed, Global, Builtin scopes
 
@@ -725,9 +756,12 @@ unittesting
 		- Avoid trailing white-spaces
 
 - Memory Management in python
-	- Python has automatic memory management.
+	- Python has automatic memory management, based on garbage collector.
+	- cpython uses reference counting to detect inaccessible objects, and another mechanism to collect reference cycles,
+	  periodically executing a cycle detection algorithm which looks for inaccessible cycles and deletes the objects involved.
 	- We have a garbage collector, which will check for any unreferenced objects
 	  on a periodically, for each CPU clock cycle, and it will delete them.
+
 	- Reference count is the number of references to an object.
 	  When the reference count of an object drops to zero, it is deallocated.
 
@@ -739,21 +773,31 @@ unittesting
 	  the heap.
 
 Heap vs stack
-	- Whenever an object is created, it’s always stored in the Heap space, and stack
-	memory contains the reference to it.
-	- Stack memory only contains local primitive variables and reference variables
-	to objects in heap space.
-	- Objects stored in the heap are globally accessible whereas stack memory can’t
-	be accessed by other threads.
-	- Memory management in stack is done in LIFO manner whereas it’s more complex in
-	Heap memory because it’s used globally.
-	- Stack memory is short-lived whereas heap memory lives from the start till the
-	end of application execution.
-	- Heap memory is used by all the parts of the application, stack memory is used
-	only by one thread of execution.
-	- When stack memory is full, Java runtime throws java.lang.StackOverFlowError
-	  When heap memory is full, it throws java.lang.OutOfMemoryError: Java Heap Space error.
-	- Stack memory is faster than heap memory.
+- Whenever an object is created, it’s always stored in the Heap space, and stack memory contains the reference to it.
+- Stack memory only contains local primitive variables and reference variables to objects in heap space.
+- Objects stored in the heap are globally accessible whereas stack memory can’t be accessed by other threads.
+- Memory management in stack is done in LIFO manner whereas it’s more complex in Heap memory because it’s used globally.
+- Stack memory is short-lived whereas heap memory lives from the start till the	end of application execution.
+- Heap memory is used by all the parts of the application, stack memory is used	only by one thread of execution.
+- When stack memory is full, Java runtime throws java.lang.StackOverFlowError
+  When heap memory is full, it throws java.lang.OutOfMemoryError: Java Heap Space error.
+- Stack memory is faster than heap memory.
+
+global variables in python
+- I will Enum for storing the global variables.
+- I will segrgate them based on the usage.
+- will store them in __init__.py file, and load at the package level.
+
+
+python 2 to 3 conversion
+========================
+- I used python built-in module, lib2to3 , for migrating from python2 to python3.
+- Wrote code with six module to write compatible code, for both python2 and 3, during migrating phase.
+- Challenges during conversion
+	- In python2, we can compare string and int; We cant do the same with python3
+		- I wrote wrapper to handle it
+	- DEPENDENCY MANAGEMENT is another difficult thing, as some modules are either not available in python3,
+		or the latest features are not available in python3 modules.
 
 Python secure coding best practices
 ===================================
@@ -888,6 +932,16 @@ Numpy
 - How are numpy and pandas related
 - numpy arrays
 
+array vs list
+	- List
+		- list is builtin data structure in python
+		- we can either have all elements of same type, or different type
+	- array
+		- array is available from numpy
+		- IN array, we need to have all elements of same type.
+
+	- whenever I have to store all elements of same type, as arrays are more performant than lists, I prefer to use them.
+
 Pandas
 ------
 In Pandas,
@@ -900,9 +954,9 @@ In Pandas,
 
 	finally, dumping the resultant data into csv, excel or, even a db table.
 
-array vs list
-	array is homogeneous, meaning all values should be of same type.
-	List is heterogenous, means all values may or not may be of same type
+- Data structures, supported by pandas
+	- Series - for one-dimensional data
+	- dataframe - for two dimensional data
 
 array vs dataframe
 	numpy arrays are either single or multiple dimensions

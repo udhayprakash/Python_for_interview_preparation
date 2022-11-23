@@ -29,9 +29,18 @@ Python
 		When we create a car class
 		And we needd to give chase number to each car instance
 
+testing
+-------
+	A/B testing
+	REST API testing tools/ frameworks
 
 Pandas
 ------
+	pandas df  colc is cola else colb
+
+	numpy arrsy vs series pd
+	uniques Names colC
+
 	pandas - merge, concat and join
 	How do I get a list of all the duplicate items using pandas in python?
 	statictical modelling
@@ -69,15 +78,23 @@ Flask
 Django
 -------
 	how to exclude certain fields from django migrations
+	Django inheritance
+	Django static folder setup
 
 spark
 -------
 	rdd vs dataframe vs dataset
 	spark dataframe vs pandas dataframe
 	spark architecture
+	spark architecture
+
 
 AWS Cloud
 ----------
+	condion based access s3 bucket IAM
+	IAM trust polycies
+	aws batch vs lambda time
+
 	sns vs sqs
 	Amazon Aurora
 	aws lambda scale horiontally and vertically in console
@@ -85,6 +102,9 @@ AWS Cloud
 	aws glue dynamic frame
 	aws kms vs secrets manager
 	rds to dynamodb migration
+		dynamodb global tables
+		DynamoDB Scan vs Query
+
 	AWS Step functions usage
 	ec2 vs lambda
 	Using Lambda with Amazon SQS
@@ -187,6 +207,9 @@ Javascript Questions
 	call,  apply  vs bind in javascript
 	pure function
 
+ETL
+----
+	ETL transformations examples
 
 security
 	- zero day vs CVE
@@ -196,6 +219,7 @@ https://www.webforefront.com/django/setuprelationshipsdjangomodels.html
 
 
 docker optimize image size
+docker log checks
 docker life cycle
 	8.  `docker save` to save the running container as image
 
@@ -210,28 +234,27 @@ Big Team vs Small Team
 what you leanred recently
 
 -----
-Creating
-Framework to choose – django rest framework or flask_restplus
-AUthentication mechanism
-Oauth
-JSon web token
-Django based token authentication
-Web based session authentication
-Authorization
-Role based
-Or policy based
-Designing the endpoints
-Dataset to expose and method involved
+Green (or scratch/new) Development Processing
 
-
-copy vs deep copy
+	Creating
+	Framework to choose – django rest framework or flask_restplus
+	AUthentication mechanism
+	Oauth
+	JSon web token
+	Django based token authentication
+	Web based session authentication
+	Authorization
+	Role based
+	Or policy based
+	Designing the endpoints
+	Dataset to expose and method involved
 
 Concurrency
 -------------
-rest idempotent
+	http status codes
+	rest api throttling
+	REST API Payload Design
 
-http status codes
-rest api throttling
 ------
 recent feature that you have built, try to show the feature in action and answer the following questions:
 
@@ -311,6 +334,9 @@ They have no sql database – django doesnt work with it
 AWS Lambda Alias
 
 Loading secrets to aws lambda
+
+lambda idempotent
+
 Alb vs api gateway
 https://dashbird.io/blog/aws-api-gateway-vs-application-load-balancer/
 
@@ -330,4 +356,8 @@ https://towardsdatascience.com/solid-coding-in-python-1281392a6a94
 https://codeshare.io/0g4lmN
 
 
-mentoring experience
+Cname vs Alias
+
+tools
+	DataDog, Testrail,
+	Looker, Code climate, Lucid chart, Stoplight, Build Kite

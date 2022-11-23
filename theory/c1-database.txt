@@ -410,6 +410,7 @@ Data Sources
 		are table based			| are document, key-value,
 								| graph or wide-column stores.
 - SQL vs no-SQL
+	- Mainly sql has schema, where as nosql doesnt have it.
 	- SQL
 		- Data is stored in tables with mutable but pre-defined Columns. Records are stored
 		  as Rows in these tables.
