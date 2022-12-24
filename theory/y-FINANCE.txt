@@ -16,3 +16,20 @@ Shares in a limited company
 	2) Non-voting shares.
 	3) Preference shares.
 	4) Redeemable shares.
+
+
+VAR
+	- Value at Risk (VaR) is a statistic that is used in risk management to predict the greatest possible losses over a specific time frame.
+	- VAR is determined by three variables:
+		1) period,
+		2) confidence level, and
+		3) the size of the possible loss.
+	- There are three methods of calculating Value at Risk (VaR) including
+		1) the historical method,
+		2) the variance-covariance method, and
+		3) the Monte Carlo simulation.
+
+	- WHY VAR
+		- It will address questions like:
+			1) What can I expect to lose in dollars with a 95% or 99% level of confidence next month?
+			2) What is the maximum percentage I can expect to lose with 95% or 99% confidence over the next year?
