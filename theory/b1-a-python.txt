@@ -383,8 +383,7 @@ subprocess popen vs run
 	- say, we want to get double of all values in a list
 		map(lambda x:x * 2, range(9))
 
-	- In python2, map will result a list, where as in python3, it will return an iterator
-	  object.
+	- In python2, map will result a list, where as in python3, it will return an iterator object.
 	- Other higher order functions are Filter, Zip and Reduce
 
 - Filter
@@ -722,6 +721,18 @@ I	- we can create custom context managers, using the dunder methods,
 		__anext__			anext(obj)
 		__aenter__			async with obj (enter async context manager)
 		__aexit__			async with obj (exit async context manager)
+
+- logging
+
+  log levels
+	Debug
+	Info
+	Warning
+	Error
+	Critical
+
+  log levels can be set either in basic config, or in the log object.
+
 
 - Monkey patching is replacing a function/method/class by another at runtime,
    for testing purpses, fixing a bug or otherwise changing behaviour.
@@ -1370,6 +1381,14 @@ if it is part of any string.
 10) When would you use the keyword self?
 Ans)self acts as a placeholder of the instance, being passed to the class.
 	It is not a python keyword, but PEP 8 recommends using it.
+
+11) previous month last date
+Ans)
+	from datetime import date, timedelta
+
+	curr_month_first_date = date.today().replace(day=1)
+	last_month_last_date = curr_month_first_date - timedelta(days=1)
+	print(last_month_last_date)
 
 Networking( only answer this if you have experience in this area)
 ======================================================================

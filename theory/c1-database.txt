@@ -370,13 +370,13 @@ Data Sources
 
 
 - DB View vs Materialized View
-	DB Views					Materialized DB Views
+	DB Views															Materialized DB Views
 	------------------------------------------------------------------------------------------------------
-	Virtual table and doesn’t occupy any storage space	Copies of data are stored in the memory
+	Virtual table and doesn’t occupy any storage space					Copies of data are stored in the memory
 	It will have up to date data in it as it is executed at run-time	Needs to be refreshed every time when it is used as it has compiled data
-	Executed when a query is run n view using SELECT	Executed and records are stored in the database
-	Data access is slower	 Faster data access because data is directly accessed from physical location
-	Generally, used to restrict data from database	Generally, used in data warehousing
+	Executed when a query is run n view using SELECT					Executed and records are stored in the database
+	Data access is slower	 											Faster data access because data is directly accessed from physical location
+	Generally, used to restrict data from database						Generally, used in data warehousing
 
 - DB Triggers
 	- they are kind of stored procedures, which reacts to certain actions we make in db.
@@ -439,12 +439,17 @@ Data Sources
 		- However, until it does, data reads are still possible (even though they might
 		  not reflect the reality).
 
-
-Good database design is driven by several core principles:
-Minimize redundancy: To save resources, create an efficient database, and simplify how the database works, data redundancy is minimized and duplication is avoided.
-Protect accuracy: Your database should keep information accurate and reduce the likelihood of accidentally damaging information.
-Be accessible: The business intelligence systems that need reading and writing access should have it. Your database should provide access while also protecting data security.
-Meet expectations: Of course, you keep a database to fulfill a specific purpose—so the database design must successfully support your data processing expectations.
+Database Design Principles
+- Good database design is driven by several core principles:
+	1) Minimize redundancy
+		- To save resources, create an efficient database, and simplify how the database works, data redundancy is minimized and duplication is avoided.
+	2) Protect accuracy
+		- Your database should keep information accurate and reduce the likelihood of accidentally damaging information.
+	3) Be accessible
+		- The business intelligence systems that need reading and writing access should have it.
+		- Your database should provide access while also protecting data security.
+	4) Meet expectations
+		- Of course, you keep a database to fulfill a specific purpose—so the database design must successfully support your data processing expectations.
 
 
 - SQL performance Tuning
@@ -610,6 +615,32 @@ MongoDb
 		}
 	])
 
+sharding vs replication
+	- Replication is duplication of dataset, whereas sharding is patitioning of dataset, into parts.
+	- Sharding helps in horizontal scaling of data writes by partitioning data across multiple servers using a shard key.
+	  Replication helps with horizontal scaling of reads, but data may not be latest, on all copies.
+	- Replication helps in increasing data availability; acts as backup, incase primary node fails.
+
+	- Full-time replication will add burden on network, and takes more time, if dataset is large.
+
+Data Replication Types
+	1) Full table replication
+	2) Transactional replication
+	3) Snapshot replication
+	4) Merge replication
+	5) Key-based incremental replication
+
+replication vs backup
+	- backup means maintaining historic state record; adds versioning.
+	- replication will update the existing data, on an ongoing basis.
+
+Sharding Types
+	1) key(or Hash) based sharding
+	2) Range based sharding
+	3) Directory based sharding
+
+	https://segwitz.com/what-is-database-sharding/
+
 GraphQL
 =======
 - resolver
@@ -679,7 +710,8 @@ SQL Alchemy Loading - https://docs.sqlalchemy.org/en/14/orm/loading_relationship
 
 star schema (or) dimension modelling
 	-  fact tables are used to record a business event and dimension tables are used to record the attributes of business items(eg user, item tables in an e-commerce app).
-	- For example, in an e-commerce website, a fact table would contain information about orders, such as when the order was placed, the items in that order, who placed that order, etc. The dimension tables would be an item table (containing item id, item price, size, etc) and an user table (containing user id, user name, user address etc).
+	- For example, in an e-commerce website, a fact table would contain information about orders, such as when the order was placed, the items in that order, who placed that order, etc.
+	The dimension tables would be an item table (containing item id, item price, size, etc) and an user table (containing user id, user name, user address etc).
 
 slowly changing dimensions
 

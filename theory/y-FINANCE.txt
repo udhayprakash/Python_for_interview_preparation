@@ -1,3 +1,18 @@
 Debt vs Equity
 ==============
  - "Debt" involves borrowing money to be repaid, plus interest, while "equity" involves raising money by selling interests in the company
+
+
+preferred shares
+	- Preference shares/stock, are shares of a company's stock with dividends that are paid out to shareholders before common stock dividends are issued.
+	- If the company enters bankruptcy, preferred stockholders are entitled to be paid from company assets before common stockholders.
+
+Common shares
+	- Common shares are issued to business owners and other investors as proof of the money they have paid into a company.
+	- Of all shareholders, common shareholders have the least claim on a company's assets.
+
+Shares in a limited company
+	1) Ordinary shares.
+	2) Non-voting shares.
+	3) Preference shares.
+	4) Redeemable shares.

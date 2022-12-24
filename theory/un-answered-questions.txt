@@ -361,3 +361,9 @@ Cname vs Alias
 tools
 	DataDog, Testrail,
 	Looker, Code climate, Lucid chart, Stoplight, Build Kite
+
+
+python vs node.js slow
+vertical app level microservices
+horisontal microservices
+mongodb
