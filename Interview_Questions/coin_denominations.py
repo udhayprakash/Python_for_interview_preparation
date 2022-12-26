@@ -1,4 +1,6 @@
-from audioop import reverse
+"""
+Problem:
+"""
 
 
 def find_denominations(num, coins):
@@ -19,5 +21,8 @@ def find_denominations(num, coins):
     return total_value == num, denominations
 
 
-for i in range(15):
-    print(i, find_denominations(i, [10, 5, 2]))
+# for i in range(15):
+#     print(i, find_denominations(i, [10, 5, 2]))
+
+
+# print(find_denominations(25, [11, 9, 7, 5, 1]))
