@@ -39,21 +39,21 @@ Use the STAR (Situation, Task, Action, Result) technique when answering example 
 	Finally, it resulted in optimization from 19.5 seconds, to 14 seconds, till just 5 seconds.
 	It is around 400 % optimization.
 
+	conclusions:
+		1. Everytime, I will try to better optimize the resources, I mean, I will be proactive in the betterment of the project.
+		2. I will follow the due process, follow-up with my team and manager, if i got a worthful idea.
+
 
 Project/task you are proud of
 --------------------------------
-	- In one project, we have data, to the tune of 18 millions records,
-	  for the daily data refresh, which can be either create or update.
+	- In one project, we have data, to the tune of 18 millions records, for the daily data refresh, which can be either create or update.
 	- Earlier, all these daily ETL jobs used to take around 3 hours.
 	- I refactored these scripts to complete the data refresh, in just 30 min
-	- I made use of async module, to concurrently run the jobs, which are not
-	  dependent on others
+	- I made use of async module, to concurrently run the jobs, which are not dependent on others
 
-	- With inspiration from AWS Step functions, I created a framework to work
-	  with these ETL jobs.
-	- we need to just feed this with a yaml file, with the microservice jobs named
-	 in sequential intendants, specifying the level, and also the dependencies.
-	- My framework will take these jons
+	- With inspiration from AWS Step functions, I created a framework to work with these ETL jobs.
+	- we need to just feed this with a yaml file, with the microservice jobs named in sequential intendants, specifying the level, and also the dependencies.
+	- My framework will take these jobs, create a data structure in such a way that
 
 
 difficulties working with technologies and how did you resolved it?
