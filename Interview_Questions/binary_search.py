@@ -54,3 +54,22 @@ while targetElementFound is not True:
 ##Iteration 2; beginningIndex: 5; endingIndex: 8
 ##Iteration 3; beginningIndex: 7; endingIndex: 8
 ##Element 8 found at index 7.
+
+
+def binary_search(num, mylist):
+    """binary search O(log n)"""
+    if not mylist:
+        return False
+
+    mylist_len = len(mylist)
+    mid_index = mylist_len // 2
+
+    if mylist_len == 1:
+        return True if mylist[0] == num else False
+
+    if num == mylist[mid_index]:
+        return True
+    elif num > mylist[mid_index]:
+        return binary_search(num, mylist[mid_index:])
+    else:
+        return binary_search(num, mylist[:mid_index])

@@ -32,30 +32,10 @@ For sorting files:
 	gzip               ==> same as bzip2 but compresses files    || Ex: gzip file
 							with a gz extension.
 
-Getting help:
--------------
-	man [command]      ==> show the manual of the command        || Ex: ls man
-	[command] --help   ==> similar to man but ouputs in terminal || Ex: pwd --help
-	apropos [word]     ==> search for the word in description    || Ex: aprpos list
-						   of all commands
-
-More advanced:
---------------
-	reboot             ==> reboot the system                     || Ex: reboot
-	which [command]    ==> ouputs the location of the command    || Ex: which ls
-	su [username]      ==> impersonate as the specified user     || Ex: su root
-	id				   ==> print user and group information 	 || Ex: id
-	hostname		   ==> display or seta computer`s hostname   || Ex: hostname
-	host			   ==> to get the host DNS details	         || Ex: host
-	uname -a           ==> show  all the information of the OS   || Ex: uname -a
-	exit               ==> exit the current user or the terminal || Ex: exit
-	shutdown -P +min   ==> shutdowns the system        			 || Ex: shutdown -P
-
 Networking:
 --------------
-	ifconfig           ==> lists all the network interfaces on   || Ex: ifconfig
-						   your machine
-	ss/netstat         ==> displays network connections for TCP, || Ex: netstat
+	ifconfig           ==> lists all the network interfaces on machine  || Ex: ifconfig
+	ss/netstat         ==> displays network connections for TCP, 		|| Ex: netstat
 						   routing tables, and a number of
 						   network interface and network
 						   protocol statistic
@@ -65,13 +45,15 @@ Networking:
 	mtr                ==> it is mix of ping and traceroute. It
 	                       provides info on intermediate hosts &
 						   responsiveness.
-	dig				   ==> to get DNS records associated with a
-	                       domain name
+	dig				   ==> to get DNS records associated with a domain name
 	nslookup           ==> similar to dig
 	nc                 ==> utility to debug TCP/UDP sockets
-	telnet			   ==> to test remote connectivity on ports
+						   Also, called netcat. To make TCP connections manually
+	socat			   ==> proxy a TCP socket to a unix domain socket, plus more
+	telnet			   ==> to test remote connectivity on ports; like ssh, but insecure
 	route              ==> to get all route table information
 	arp 			   ==> to view and manage arp cache
+	whois 			   ==> to check whether the domain is registered
 	curl			   ==> make any HTTP request you want
 	httpie			   ==> like curl, syntax is easier (like http get, http post, etc)
 	wget			   ==> to download files
@@ -105,12 +87,26 @@ System Administration:
   systemctl 		 ==> mangae all the background running   || Ex: sudo systemctl disable ssh
   						 services (daemons)
   journalctl 		 ==> see all the logs for systemctl		 || journalctl -xe
+  sysctl		     ==> configure Linux kernel's network stack
 
-Important Files:
-----------------
-  /etc/passwd     ==> stores information of all the users	 || cat /etc/passwd
-  /etc/shadow     ==> stores the hashed version of every 	 || cat /etc/passwd
-					user`s password
+Getting help:
+-------------
+	man [command]      ==> show the manual of the command        || Ex: ls man
+	[command] --help   ==> similar to man but ouputs in terminal || Ex: pwd --help
+	apropos [word]     ==> search for the word in description    || Ex: aprpos list
+						   of all commands
+
+More advanced:
+--------------
+	reboot             ==> reboot the system                     || Ex: reboot
+	which [command]    ==> ouputs the location of the command    || Ex: which ls
+	su [username]      ==> impersonate as the specified user     || Ex: su root
+	id				   ==> print user and group information 	 || Ex: id
+	hostname		   ==> display or seta computer`s hostname   || Ex: hostname
+	host			   ==> to get the host DNS details	         || Ex: host
+	uname -a           ==> show  all the information of the OS   || Ex: uname -a
+	exit               ==> exit the current user or the terminal || Ex: exit
+	shutdown -P +min   ==> shutdowns the system        			 || Ex: shutdown -P
 
 
 ps(Process Status)==> displays currently-running processes   || Ex: ps
@@ -118,54 +114,15 @@ ss(Socket Status) ==> used to dump socket statistics and	 || Ex: ss
 					  displays information
 
 
-
-chmod +rwx filename to add permissions.
-chmod -rwx directoryname to remove permissions.
-chmod +x filename to allow executable permissions.
-chmod -wx filename to take out write and executable permissions.
-
-copy files
-	cp -v my_file.txt my_file2.txt my_file3.txt /new_directory
-
-copy directory of files
-	cp -a /source/. /dest/
-
-	The -a option is an improved recursive option, that preserve all file attributes, and also preserve symlinks.
-
-
-disk space check
-	du -h
-	df -H
-
-
-
-LIMITS
-======
-- open Files Max limit
-	cat /proc/sys/fs/file-max
-
-
-ulimit -n  	–> It will display number of open files limit
-ulimit -c 	–> It display the size of core file
-umilit -u 	–> It will display the maximum user process limit for the logged in user.
-ulimit -f 	–> It will display the maximum file size that the user can have.
-umilit -m 	–> It will display the maximum memory size for logged in user.
-ulimit -v 	–> It will display the maximum memory size limit
-
-ulimit -Hn 	-> It wil display hard limit for number of open file for logged in user
-ulimit -Sn 	-> It wil display soft limit for number of open file for logged in user
-
-To increase limit on number of Maximum Files was reached, as a root user,
-	 sysctl -w fs.file-max=100000
-
-	To persist these changes after reboot, edit /etc/sysctl.conf and add this parameter there
-
-
 Iptables
+	- To setup firewalls and NAT
 	- its firewall that allows system administrators to manage incoming and outgoing traffic
 	  via a set of configurable table rules.
 	- Iptables uses a set of tables which have chains that contain set of built-in or user
 	  defined rules.
+
+nftables
+	- new version of iptables
 
 To List Disks on Linux using lsblk
 	$ lsblk
@@ -195,55 +152,62 @@ Linux
 
 	3. System Utility:
 		- These programs are responsible for performing specialized, individual-level tasks.
+
 - Files
-	- Maximum length of file in linux is 255 characters.
-	- inode
-		- unique name given to each file, by the operating system.
-	- File Permissions
-		- There are 3 types of permissions in Linux OS that are given below:
-			- Read: User can read the file and list the directory.
-			- Write: User can write new files in the directory .
-			- Execute: User can access and run the file in a directory.
-		- chmod - System administrator or file owner can grant permissions using chmod command
-			- two modes: Symbolic Mode and Absolute Mode
-			- Two Modes:
-				1. Symbolic Mode
-					- SYNTAX: chmod <target>(+/-/=)<permission> <filename>
-					- '+' for adding permission
-					- '-' for denying permission
-					- target
-						- u: user
-						- g: group
-						- o: other
-						- a: all
-					- permissions
-						- r: read
-						- w: write
-						- x: execute
-					- $ chmod u=rwx,g=rx,o=r filename
-						- user can read/write/execute; group can read/execute; other can read.
-				2. Absolute Mode
-					- $ chmod <permission> filename
-					- The Absolute mode follows octal representation.
-						- The leftmost digit is for the user,
-						- the middle digit is for the user group and
-						- the rightmost digit is for all.
-						- 1: execute
-						- 2: write
-						- 4: read
-					- $ chmod u=rwx,g=rx,o=r filename
-					  rwx - 4+2+1 = 7
-					  rx  - 4+1   = 5
-					  r   - 4     = 4
-					  $ chmod 754 filename
+========
+- Maximum length of file in linux is 255 characters.
+- inode
+	- unique name given to each file, by the operating system.
 
+- File Permissions
+	- There are 3 types of permissions in Linux OS that are given below:
+		- Read: User can read the file and list the directory.
+		- Write: User can write new files in the directory .
+		- Execute: User can access and run the file in a directory.
+	- chmod - System administrator or file owner can grant permissions using chmod command
+		- two modes: Symbolic Mode and Absolute Mode
+		- Two Modes:
+			1. Symbolic Mode
+				- SYNTAX: chmod <target>(+/-/=)<permission> <filename>
+				- '+' for adding permission
+				- '-' for denying permission
+				- target
+					- u: user
+					- g: group
+					- o: other
+					- a: all
+				- permissions
+					- r: read
+					- w: write
+					- x: execute
+				- $ chmod u=rwx,g=rx,o=r filename
+					- user can read/write/execute; group can read/execute; other can read.
+			2. Absolute Mode
+				- $ chmod <permission> filename
+				- The Absolute mode follows octal representation.
+					- The leftmost digit is for the user,
+					- the middle digit is for the user group and
+					- the rightmost digit is for all.
+					- 1: execute
+					- 2: write
+					- 4: read
+				- $ chmod u=rwx,g=rx,o=r filename
+				  rwx - 4+2+1 = 7
+				  rx  - 4+1   = 5
+				  r   - 4     = 4
+				  $ chmod 754 filename
 
+	chmod +rwx filename to add permissions.
+	chmod -rwx directoryname to remove permissions.
+	chmod +x filename to allow executable permissions.
+	chmod -wx filename to take out write and executable permissions.
 
 
 	- File Systems
 		- supports multiple file systems
 			- LINUX - Ext, Ext2, Ext3, Ext4, JFS, XFS, btrfs, ufs, FAT, autofs, devpts, ntfs and swap.
 			- UNIX  - jfs, gpfs, hfs, etc.
+
 	- Redirections
 		- There are basically three streams available in which input and output of the Linux environment are distributed.
 			- Input Redirection : ‘<’ symbol is used for input redirection and is numbered as (0). Thus it is denoted as STDIN(0).
@@ -252,6 +216,29 @@ Linux
 
 			- ‘>’ overwrites the existing content of the file or creates a new file.
 			- ‘>>’ appends the new content to the end of the file or creates a new file.
+
+
+Important Files:
+----------------
+  /etc/passwd     ==> stores information of all the users	 || cat /etc/passwd
+  /etc/shadow     ==> stores the hashed version of every 	 || cat /etc/passwd
+					user`s password
+
+copy
+-----
+	copy files
+		cp -v my_file.txt my_file2.txt my_file3.txt /new_directory
+
+	copy directory of files
+		cp -a /source/. /dest/
+
+		The -a option is an improved recursive option, that preserve all file attributes, and also preserve symlinks.
+
+	scp 		- to copy files over a ssh connection
+	rsync		- to copy only changed files ( works over SSH)
+
+	ftp/sftp	- copy files. sftp copies over SSH
+
 - LILO(LInux LOader)
 	- boot loader for Linux, used to load the Linux operating system into the main memory
 	 to begin its operations.
@@ -259,6 +246,7 @@ Linux
 	- LILO resides in MBR (Master Boot Record).
 	- Advantage: it allows the fast bootup of Linux when installing in the MBR.
 	- Limitation: it is not possible for all computers to tolerate modification of MBR.
+
 - Swap space
 	- amount of physical memory that is allocated for use by Linux to hold some
 	  concurrent running programs temporarily.
@@ -279,27 +267,31 @@ Linux
 		- Maintain user accounts
 		- Assign different permissions to each account created and so on.
 - shell
-	- It is an interpreter in Linux.
-	- Shell is a computer program which acts as an interface between the user and the kernel.
-	- Users can communicate with the kernel by writing programs, commands and scripts on the shell.
-	- It accepts human-readable commands and converts them into the kernel understandable language.
-	- The most commonly used shells in Linux are bash, csh(C shell), ksh(K Shell), Tcsh.
-		C Shell (csh)                   : It is like C syntax and provides spelling checking and job control.
-		Korn Shell (ksh)                : Is a high-level programming language shell.
-		Z Shell (Zsh)                   : It provides some unique nature like it observes login/logout watching, file name generating, startup files, closing comments.
-		Bourne Again Shell (bash)       : It is the default to Linux distributions.
-		Friendly Interactive Shell (Fish): It provides web-based configuration,  auto-suggestions, etc.
-	- internal commands
-		- commands which are built in the shells
-	- In Unix, Bourne Shell & in Linux, Bash
-	- BASH(Bourne Again SHell)
-		- replacement to the original Bourne shell, written by Steve Bourne.
-		- written by Brian Fox
-		- Bash vs DoS
-			- BASH commands are case sensitive while DOS commands are not case sensitive.
-			- DOS follows a convention in naming files.
-				In BASH, 8 character file name is followed by a dot and 3 characters for the extension.
-				DOS doesn't follow such convention.
+========
+- It is an interpreter in Linux.
+- Shell is a computer program which acts as an interface between the user and the kernel.
+- Users can communicate with the kernel by writing programs, commands and scripts on the shell.
+- It accepts human-readable commands and converts them into the kernel understandable language.
+- The most commonly used shells in Linux are bash, csh(C shell), ksh(K Shell), Tcsh.
+	C Shell (csh)                   : It is like C syntax and provides spelling checking and job control.
+	Korn Shell (ksh)                : Is a high-level programming language shell.
+	Z Shell (Zsh)                   : It provides some unique nature like it observes login/logout watching, file name generating, startup files, closing comments.
+	Bourne Again Shell (bash)       : It is the default to Linux distributions.
+	Friendly Interactive Shell (Fish): It provides web-based configuration,  auto-suggestions, etc.
+- internal commands
+	- commands which are built in the shells
+- In Unix, Bourne Shell & in Linux, Bash
+- BASH(Bourne Again SHell)
+	- replacement to the original Bourne shell, written by Steve Bourne.
+	- written by Brian Fox
+	- Bash vs DoS
+		- BASH commands are case sensitive while DOS commands are not case sensitive.
+		- DOS follows a convention in naming files.
+			In BASH, 8 character file name is followed by a dot and 3 characters for the extension.
+			DOS doesn't follow such convention.
+
+- ssh - secure shell
+
 - processes
 	- process id
 		- unique id identified by os, for eachg process
@@ -358,6 +350,7 @@ Linux
 		- :q! exits the VI without saving current work.
 		- x deletes a current character.
 		- dd deletes the current line.
+
 - commands
 	- Get Total memory used by Linux
 		1. Free command:
@@ -604,18 +597,25 @@ Linux
 				10: * W - go to the next WORD.
 
 	- Network troubleshooting commands
-		Hostname    : To view the hostname (domain and IP address) of the machine and to set the hostname.
-		Ping        : To check if the remote server is reachable or not.
+		hostname    : To view the hostname (domain and IP address) of the machine and to set the hostname.
+		ping        : To check if the remote server is reachable or not.
+		hping3		: To construct any TCP packet, as we want
 		ifconfig    : To display and manipulate route and network interfaces. It displays network configuration.
 		netstat     : It displays network connections, routing tables, interface statistics.
 					  ‘ss’ is the replacement of netstat command which is used to get more information.
-		Traceroute  : It is a network troubleshooting utility that is used to find the number of hops required for a particular packet to reach the destination.
-		Tracepath   : It is the same as traceroute with a difference that it does not require root privileges.
-		Dig         : This command is used to query the DNS name servers for any task related to the DNS lookup.
-		nslookup    : To find DNS related query.
-		Route       : It shows the details of the route table and manipulates the IP routing table.
+					  netstat/ss/lsof/fuser
+		traceroute  : It is a network troubleshooting utility that is used to find the number of hops required for a particular packet to reach the destination.
+		tracepath   : It is the same as traceroute with a difference that it does not require root privileges.
 		mtr         : This command combines ping and track path into a single command.
-		Ifplugstatus: This command tells us whether the network cable is plugged in or not.
+		tcptraceroute: use TCP cpakets instead of ICMP to traceroute
+
+		dig         : This command is used to query the DNS name servers for any task related to the DNS lookup.
+		nslookup    : To find DNS related query.
+		route       : It shows the details of the route table and manipulates the IP routing table.
+		ifplugstatus: This command tells us whether the network cable is plugged in or not.
+		ip			: replaces ifconfig, route, and more features
+		ethtool		: manage physical ethernet connections + network cards
+		iw/iwconfig	: manage wireless network settings ( to see speed/frequency, etc)
 
 	- process related
 		$ ps        : To list all processes
@@ -626,12 +626,13 @@ Linux
 			$ mount -l
 		- To show free inodes on mounted filesystems,
 			$ df -l
-		- To show free space on mounted filesystems,
+		- To show free space on mounted filesystems/ disk space check,
 			$ df -h
 		- To show disks partitions sizes and types (run as root).
 			$ fdisk -l
 		- To retrieve more detailed information about which files use the disk space in a directory,
 			$ du -sh
+
 	- Scheduling Tasks
 		- cron
 			- used to repeatedly schedule a task at a specific time.
@@ -737,15 +738,6 @@ grep
 		- E : extended regex
 		- c : Count number of matches
 		- l : find filenames that matches the pattern
-Ngrep
-	- It is used for analying network packets
-	- SYNTAX: ngrep -I file.pcap
-	- options:
-		- d : specify network interface
-		- i : case insensitive
-		- x : print in alternate hexdump
-		- t : print timestamp
-		- I : Read pcap file
 
 CUT
 	- It is used to parse fields from delimited logs
@@ -808,3 +800,88 @@ Awk
 
 		- Extract uniq value from two files
 			$awk 'FNR=NR {a[$0]++; next}  l($0 in a)' f1.txt f2.txt
+
+Ngrep
+	- It is the grep for network
+	- It is used for analying network packets
+	- SYNTAX: ngrep -I file.pcap
+	- options:
+		- d : specify network interface
+		- i : case insensitive
+		- x : print in alternate hexdump
+		- t : print timestamp
+		- I : Read pcap file
+
+tcpdump
+	- to analyze packet traffic, on a specific port
+	- Like, shows all packets on port, say, 80
+
+wireshark
+	- To analyze the packets traffic, in a GUI.
+
+tshark
+	- command-line super powerful packet analysis
+
+tcpflow
+	- capture & assemble TCP streams
+
+mitmproxy
+	- spy on SSL connections, your program is making
+
+nmap
+	- tool to scan the network ports
+
+zenmap
+	- GUI for nmap
+
+p0f
+	- identify OS of hosts connecting to you
+
+openvpn
+	- one kind of vpn
+
+wireguard
+	- a newer VPN
+
+openssl
+	- do literally anything with SSL certificates
+
+stunnel
+	- make a SSL proxy for an insecure server
+
+iptraf/nethogs/iftop/ntop
+	- see what's using bandwidth
+
+ab/nload/iperf
+	- benchmarking tools
+
+python -m simpleHTTPServer
+	- serves files from a directory
+
+ipcalc
+	- tool to easily see what 13.21.2.3/25 means
+
+nsenter
+	- enter a container process's network namespace
+
+
+LIMITS
+======
+- open Files Max limit
+	cat /proc/sys/fs/file-max
+
+
+	ulimit -n  	–> It will display number of open files limit
+	ulimit -c 	–> It display the size of core file
+	umilit -u 	–> It will display the maximum user process limit for the logged in user.
+	ulimit -f 	–> It will display the maximum file size that the user can have.
+	umilit -m 	–> It will display the maximum memory size for logged in user.
+	ulimit -v 	–> It will display the maximum memory size limit
+
+	ulimit -Hn 	-> It wil display hard limit for number of open file for logged in user
+	ulimit -Sn 	-> It wil display soft limit for number of open file for logged in user
+
+	To increase limit on number of Maximum Files was reached, as a root user,
+		 sysctl -w fs.file-max=100000
+
+		To persist these changes after reboot, edit /etc/sysctl.conf and add this parameter there
