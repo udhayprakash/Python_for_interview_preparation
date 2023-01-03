@@ -72,6 +72,9 @@ Networking:
 	telnet			   ==> to test remote connectivity on ports
 	route              ==> to get all route table information
 	arp 			   ==> to view and manage arp cache
+	curl			   ==> make any HTTP request you want
+	httpie			   ==> like curl, syntax is easier (like http get, http post, etc)
+	wget			   ==> to download files
 
 
 For listing hardware:

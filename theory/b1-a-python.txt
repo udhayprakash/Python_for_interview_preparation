@@ -109,6 +109,16 @@ Python Questions
 	- it will add at the end as it is
 	- whereas extend works with iterable objects only, but adds in same dimension
 
+- Slicing
+	- slicing works on any iterable and indexable object, like list, tuple, str, etc.
+	- syntax is in square braces,
+			[startIndex, endIndex, step]
+	- It will result in all elements from startIndex, till the endIndex, on counts of the given step
+	- Default
+		step is +1
+		startIndex is 0
+		endIndex is end of length
+
 - List vs Dict
 	- list is suitable when the order of element is preferred.
 	- dict is suitable when there were more reads. dict has O(1) for search an element, as

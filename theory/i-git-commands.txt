@@ -1,49 +1,50 @@
 Git Commands
-	- git commit vs git push?
-		git commit  - puts your changes into your local repo,
-		git push    - sends your changes to the remote location.
+============
+- git commit vs git push?
+	git commit  - puts your changes into your local repo,
+	git push    - sends your changes to the remote location.
 
-	- git fetch vs git pull?
+- git fetch vs git pull?
 
-		git pull pulls down from a remote and instantly merges.
-		git fetch is similar to pull but doesn't merge.
+	git pull pulls down from a remote and instantly merges.
+	git fetch is similar to pull but doesn't merge.
 
-		git fetch - tells your local git to retrieve the latest meta-data info from the original
-						(yet doesn't do any file transferring. It's more like just checking to see if
-						there are any changes available).
-		git pull  - does git fetch AND brings (copy) those changes from the remote repository.
+	git fetch - tells your local git to retrieve the latest meta-data info from the original
+					(yet doesn't do any file transferring. It's more like just checking to see if
+					there are any changes available).
+	git pull  - does git fetch AND brings (copy) those changes from the remote repository.
 
-	- Git merge vs git rebase
+- Git merge vs git rebase
 
-		Git rebase and merge both integrate changes from one branch into another.
-		Git rebase moves a feature branch into a master. Git merge adds a new commit, preserving the history.
+	Git rebase and merge both integrate changes from one branch into another.
+	Git rebase moves a feature branch into a master. Git merge adds a new commit, preserving the history.
 
-		Merge: Moves changes from a branch to another and creates a merge commit.
-		History is preserved.
-			(Feature branch context) When to Merge: Merge if target branch has no changes.
+	Merge: Moves changes from a branch to another and creates a merge commit.
+	History is preserved.
+		(Feature branch context) When to Merge: Merge if target branch has no changes.
 
-		Rebase: Moves changes from a branch to another but alters the history by moving
-		the origin branch's starting point. It does not create a merge commit.
+	Rebase: Moves changes from a branch to another but alters the history by moving
+	the origin branch's starting point. It does not create a merge commit.
 
-		(Feature branch context) When to Rebase: Pull and rebase if there are changes on target branch.
+	(Feature branch context) When to Rebase: Pull and rebase if there are changes on target branch.
 
-	- To remove unstage files,
-		git reset HEAD -- path/to/file
+- To remove unstage files,
+	git reset HEAD -- path/to/file
 
-	- git bisect
-		- to discover the commit that has introduced a bug in the code
+- git bisect
+	- to discover the commit that has introduced a bug in the code
 
-	- To squash (merge) last three commmits
-		git reset --soft HEAD~3 &&
-		git commit
+- To squash (merge) last three commmits
+	git reset --soft HEAD~3 &&
+	git commit
 
-		To update the commit message,
-			git commit --edit -m"$(git log --format=%B --reverse HEAD..HEAD@{1})"
+	To update the commit message,
+		git commit --edit -m"$(git log --format=%B --reverse HEAD..HEAD@{1})"
 
-	- "git blame" shows line by line `last` commit history of a file,
-			when and by whom the line was updated
+- "git blame" shows line by line `last` commit history of a file,
+		when and by whom the line was updated
 
-Stashing
+- Stashing
 	- To manage the temporary code, we can use git stashing
 		- For single stash,
 			git stash  --> will save current uncommitted changes
@@ -52,5 +53,57 @@ Stashing
 			git stash save 'add: something' --> adds a tag for saved uncommitted changes, such that we can restore specifically
 			git stash list      --> will list all the saved stashes
 			git stash apply 0   --> will restore the 0th index stash
+
+
+- Git configuration
+	git config --global user.name "Your name"
+	git config --global user.email "user@domain.com"
+
+- Starting a project
+	git init [project name]
+	git clone [project url]
+
+- Removing file from directory
+	git rm [file]
+
+- Status of working directory
+	git status
+
+- Add a file to the staging area
+	git add [file]
+
+- Discard changes in working directory
+	git checkout -- [file]
+
+- commit to local
+	git commit
+
+- Revert the repository
+	git reset [file]
+
+- List all local branches
+	git branch -a
+
+- Fetch changes from remote and merge current branch with its upstream
+	git pull [remote]
+
+- Join specified [FROM NAME] branch
+	git merge [FROM NAME]
+
+- Create new branch
+	git branch [branch_name]
+
+- Push local changes to the remote
+	git push [--tags] [remote]
+
+- Remove selected branch
+	git branch -d [name]
+
+- Fetch changes from the remote
+	git fetch [remote]
+
+- Switch current branch to specified branch
+	git checkout [-b] [branch_name]
+
 
 https://ohshitgit.com/

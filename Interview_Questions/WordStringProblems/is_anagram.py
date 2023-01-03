@@ -8,6 +8,22 @@ def is_anagram(str1, str2):
     return str1_count == str2_count
 
 
+def is_anagram(str1, str2):
+    str1_dict = {}
+    for ch in str1:
+        str1_dict.setdefault(ch, 0)
+        str1_dict[ch] += 1
+    for ch in str2:
+        freq = str1_dict.get(ch, 0)
+        if not freq:
+            return False
+        str1_dict[ch] -= 1
+    for ch, frq in str1_dict.items():
+        if frq != 0:
+            return False
+    return True
+
+
 assert is_anagram("abcd", "cdab") is True
 assert is_anagram("aabfffr", "afbfraf") is True
 
