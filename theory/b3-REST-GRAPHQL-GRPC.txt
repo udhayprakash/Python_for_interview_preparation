@@ -59,7 +59,6 @@
 
 
 
-
 REST vs SOAP
 =============
 RESTful supports JSON, XML,
@@ -275,3 +274,9 @@ HTTP Status Codes
 		508 Loop Detected (WebDAV)
 		510 Not Extended
 		511 Network Authentication Required
+
+
+401 vs 403
+
+	401 Unauthorized is the status code to return when the client provides no credentials or invalid credentials.
+	403 Forbidden is the status code to return when a client has valid credentials but not enough privileges to perform an action on a resource.

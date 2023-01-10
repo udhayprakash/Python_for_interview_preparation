@@ -7,3 +7,6 @@ In production, instead of app.run, we use
 
 Production app
 	- https://www.toptal.com/flask/flask-production-recipes
+
+Flask
+	- Sqlachemy with Alembic for database migrations

@@ -52,3 +52,9 @@ I will check the os.stat  – it will tell the last modified and created date fo
 I will report the same – i can sent a email notification using SES - simple email service
 ,
 Befre that i will retry
+
+compliances
+------------
+HIPPA
+	I have some experience sometime back with HIPPA compliance, which is related to the medical field.
+	We used to work by masking the PII information, in the database, as part of the compliance

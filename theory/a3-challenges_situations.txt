@@ -27,11 +27,12 @@ Use the STAR (Situation, Task, Action, Result) technique when answering example 
 		d) dump that to database
 	It's a simple ETL job. So, as per design, I created unit and integration tests and then were working.
 	When I did performance testing, I found that it took 19.5 seconds for this entire microservice.
-	To add some math, say on average I get 10 XMLs per minute and each takes 19 seconds. For one minute book of work, I need to spend 190 seconds, or 3 minutes. Or, for one day of work, I need to process for 3 days.
+	To add some math, say on average I get 10 XMLs per minute and each takes 19 seconds.
+	For one minute book of work, I need to spend 190 seconds, or 3 minutes. Or, for one day of work, I need to process for 3 days.
 
 	When using the cProfiler, I understood that it is taking more time at the xml to dictionary conversion.
-	As i used xmltodict python module for this conversion, I gone to code base of that module, pulled the exact code responsible for this conversion, and added to my code. Also, refactored my script further, which
-	resulted in optimization from 19 seconds to 14 seconds.
+	As i used xmltodict python module for this conversion, I gone to code base of that module, pulled the exact code responsible for this conversion, and added to my code.
+	Also, refactored my script further, which resulted in optimization from 19 seconds to 14 seconds.
 
 	Still when seen in cProfiler, I found that it is taking time at the XML to dictionary conversion only.
 	With further analysis, I understood that each XML has around 70-85 tags, but I am using only 20 among them.
@@ -41,7 +42,7 @@ Use the STAR (Situation, Task, Action, Result) technique when answering example 
 
 	conclusions:
 		1. Everytime, I will try to better optimize the resources, I mean, I will be proactive in the betterment of the project.
-		2. I will follow the due process, follow-up with my team and manager, if i got a worthful idea.
+		2. I will follow the due process, follow-up with my team and manager, if i got a worthwhile idea.
 
 
 Project/task you are proud of

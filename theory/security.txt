@@ -32,11 +32,11 @@ Cross-Site Scripting(XSS)
 
 	xss
 	XSS if you fill in a search field for example, and that variable is used
-on the page somewhere, you could type in "bullshit."
-"bullstit" appears in the markup. If the idiot that wrote the code doesn't
-filter, limit, or otherwise sanitize that value. You could have a problem...
-Dr. Evil could just type in some script ij the search field right?
-<p>Your search for 'flowers <script>evil_script()</script>
+		on the page somewhere, you could type in "bullshit."
+		"bullstit" appears in the markup. If the idiot that wrote the code doesn't
+		filter, limit, or otherwise sanitize that value. You could have a problem...
+		Dr. Evil could just type in some script ij the search field right?
+		<p>Your search for 'flowers <script>evil_script()</script>
 
 
 Injection
@@ -55,6 +55,7 @@ Injection
 		validating user input
 		limiting privileges
 		disabling shell and any other functionalities you dont need
+
 
 Broken Authentication
 - It refers to logic issues that occur on application authentication's mechanism, like
@@ -179,7 +180,6 @@ Insufficient Logging and Monitoring
 		- Attack method used to breach the defenses
 		- what attcker did once they acquired access to the network, and
 		- where the attack originated from.
-
 
 
 

@@ -1,86 +1,92 @@
 - Django vs Flask
-	- Django is Full-fledged framework within builtin features like ORM, Session
-	  management, Token management, Middleware, etc
-	- Flask is mini-framework, where we can create an application server in just 10
-      lines of code.
-	- Django has built-in ORM, whereas in flask, we need to use the sqlalchemy ORM.
-	- Django comes with Django Template language, whereas in flask, we need to use
-	  jinja2 templates.
-	- Flask supports both sql and no-sql databases, whereas django is suitable for
-	  only relational databases.
-	- By default, django comes with batteries to be production ready, whereas in flask, we need to know
-	  what all need to be added, to our application.
-	- Conclusions
-		- flask is suitable
-			- when no-sql database is of choice, or
-			- when small utility application is needed, or
-			- when we need quick development
-		- Django is suitable
-			- when full-fledged application is needed,
-			- when production-ready application is needed,
+------------------
+- Django is Full-fledged framework within builtin features like ORM, Session
+  management, Token management, Middleware, etc
+- Flask is mini-framework, where we can create an application server in just 10
+  lines of code.
+- Django has built-in ORM, whereas in flask, we need to use the sqlalchemy ORM.
+- Django comes with Django Template language, whereas in flask, we need to use
+  jinja2 templates.
+- Flask supports both sql and no-sql databases, whereas django is suitable for
+  only relational databases.
+- By default, django comes with batteries to be production ready, whereas in flask, we need to know
+  what all need to be added, to our application.
+- Conclusions
+	- flask is suitable
+		- when no-sql database is of choice, or
+		- when small utility application is needed, or
+		- when we need quick development
+	- Django is suitable
+		- when full-fledged application is needed,
+		- when production-ready application is needed,
 
 - Django MVC & MVT
-	- MVC - Model, View, Controller
-	- MVT - Model, View, Template
+-------------------
+- MVC - Model, View, Controller
+- MVT - Model, View, Template
 
-	- Model
-		- It handles the data representation & db schema
-		- It serves as interface to data stored in database itself, and also allows you to
-		  interact with your data without having to perturbed with all complexities of the
-		  underlying database.
-	- View
-		- It represents what you see from web application, or REST API.
-	- Controller
-		- URL dispatcher
+- Model
+	- It handles the data representation & db schema
+	- It serves as interface to data stored in database itself, and also allows you to
+	  interact with your data without having to perturbed with all complexities of the
+	  underlying database.
+- View
+	- It represents what you see from web application, or REST API.
+- Controller
+	- URL dispatcher
 
-	- Template
-			- Presentation layer when working with web application
+- Template
+		- Presentation layer when working with web application
 
 Django process flow
-	Step 1: user will hit the endpoint in browser
-	Step 2: It will go to project level  urls.py
-	Step 3: It will go to application level urls.py
-	Step 4: It will go to  application level views.py
-	Step 5: it will run business logic & models.py; and response is in reverse direction
+--------------------
+Step 1: user will hit the endpoint in browser
+Step 2: It will go to project level  urls.py
+Step 3: It will go to application level urls.py
+Step 4: It will go to  application level views.py
+Step 5: it will run business logic & models.py; and response is in reverse direction
 
-Django Project Structure
-	Project
-		Urls.py      ----------->  all project URLs routing
-		Settings.py  ----------->  all dB settings and all with be here
-		at App Level
-			Urls.py
-			Views.py  ----------->   business logic
-			Models.py ----------->   dB table schemas
-			Tests.py  ----------->   unit tests for the specific app related code
-			admin.py  ----------->   It will be used for registering what models to be seen in admin page
+- Django Project Structure
+-------------------------
+Project
+	Urls.py      ----------->  all project URLs routing
+	Settings.py  ----------->  all dB settings and all with be here
+	at App Level
+		Urls.py   -----------> this app level urls.py will route endpoints, to app views.py
+		Views.py  ----------->   business logic
+		Models.py ----------->   dB table schemas
+		Tests.py  ----------->   unit tests for the specific app related code
+		admin.py  ----------->   It will be used for registering what models to be seen in admin page
 
-Django Project Working Procedure
-	Step 1: Creating the project, using the command
-				django-admin startproject projectName
+- Django Project Working Procedure
+---------------------------------
+Step 1: Creating the project, using the command
+			django-admin startproject projectName
 
-	Step 2: Creating the app, within project,
-				python manage.py startapp appname
+Step 2: Creating the app, within project,
+			python manage.py startapp appname
 
-	Step 3: In settings.py file, in apps section, add the application name, to register.
+Step 3: In settings.py file, in apps section, add the application name, to register.
 
-	Step 4: In app-level, models.py, we need to add the db table schemas as classes,
-			and do makemigrations and migrate, to apply schema changes to the database.
+Step 4: In app-level, models.py, we need to add the db table schemas as classes,
+		and do makemigrations and migrate, to apply schema changes to the database.
 
-	Step 5: In the app-level, views.py file, we need to write the business logic.
-			In app-level, create urls.py file, we need to link the views with the url endpoints
+Step 5: In the app-level, views.py file, we need to write the business logic.
+		In app-level, create urls.py file, we need to link the views with the url endpoints
 
-	Step 6: Now, run the application, using the command
-				python manage.py runserver
+Step 6: Now, run the application, using the command
+			python manage.py runserver
 
 
 Django Migrations
-	- In Django project, in each app folder level, a folder named "migrations" will be present.
-		In it, there will be python scripts like
-			001__CHANGENAME_TIMESTAMP.py
-			002__CHANGENAME_TIMESTAMP.py
-		When we make changes in models.py file, and run "python manage.py makemigrations", these files
-		will be created.
-
+-----------------
+- In Django project, in each app folder level, a folder named "migrations" will be present.
+	In it, there will be python scripts like
+		001__CHANGENAME_TIMESTAMP.py
+		002__CHANGENAME_TIMESTAMP.py
+	When we make changes in models.py file, and run "python manage.py makemigrations", these files
+	will be created.
+- commands
 	Python manage.py makemigrations ----> Will create the migration files, in app/migrations folder
 	Python manage.py migrate        ----> will Apply the migrations files, on to the database.
 	Python manage.py showmigrations ----> will see the status of migrations, on to the database.
@@ -88,20 +94,24 @@ Django Migrations
 									----> will display the SQL statements for a specific migration of the app.
 	python manage.py migrate --prune option allows deleting nonexistent migrations from the django_migrations table.
 
+- For rollbacking migrations, we need to identify the last migration to which we want to revert and use its migration file name as migration target
+	python manage.py migrate my_app_name target_migration
 
-Django signals
-	- They are the database triggers, pre_save, post_save, etc
-	- Django signals contain two parts: the senders and the receivers
-		- the sender is the one responsible to dispatch a signal, and
-		- the receiver is the one who will receive this signal and then do something.
-	- A receiver must be a function or an instance method which is to receive signals.
-	- A sender must either be a Python object, or None to receive events from any sender.
-	- The connection between the senders and the receivers is done through “signal dispatchers”,
-	  which are instances of Signal, via the connect method.
-	- So to receive a signal, you need to register a receiver function that gets called
-	  when the signal is sent by using the Signal.connect() method.
 
-	- Ex1 :
+- Django signals
+-----------------
+- They are the database triggers, pre_save, post_save, etc
+- Django signals contain two parts: the senders and the receivers
+	- the sender is the one responsible to dispatch a signal, and
+	- the receiver is the one who will receive this signal and then do something.
+- A receiver must be a function or an instance method which is to receive signals.
+- A sender must either be a Python object, or None to receive events from any sender.
+- The connection between the senders and the receivers is done through “signal dispatchers”,
+  which are instances of Signal, via the connect method.
+- So to receive a signal, you need to register a receiver function that gets called
+  when the signal is sent by using the Signal.connect() method.
+
+- Ex1 :
 	from django.contrib.auth.models import User
 	from django.db.models.signals import post_save
 
@@ -110,7 +120,7 @@ Django signals
 
 	post_save.connect(save_profile, sender=User)
 
-	- Ex2 :
+- Ex2 :
 	Another way to register a signal, is by using the @receiver decorator:
 
 	from django.contrib.auth.models import User
@@ -121,8 +131,9 @@ Django signals
 	def save_profile(sender, instance, **kwargs):
 		instance.profile.save()
 
-Django Hooks
-	- Hooks are the callables that you want to execute when a specified signal happened.
+- Django Hooks
+---------------
+- Hooks are the callables that you want to execute when a specified signal happened.
 
 	  # app/signals.py
 		from django.db.models.signals import post_save
@@ -136,9 +147,8 @@ Django Hooks
 			created = kwargs.get(‘created’, False)
 			raw = kwargs.get(‘raw’, False)
 
-	- In signals.py, we will put all the hooks and signal declarations, and
-	  these signals are imported in the appconfig class ready method
-
+- In signals.py, we will put all the hooks and signal declarations, and
+  these signals are imported in the appconfig class ready method
 
 	  # myapp/apps.py
 		from django.apps import AppConfig
@@ -151,41 +161,46 @@ Django Hooks
 		 import myapp.signals
 
 
-Django Serializers
-	- Serializers allow complex data such as querysets and model instances to be converted to native
-		Python datatypes that can then be easily rendered into JSON, XML or other content types.
-	- Serializers also provide deserialization, allowing parsed data to be converted back into complex
-		types, after first validating the incoming data.
+- Django Serializers
+--------------------
+- Serializers allow complex data such as querysets and model instances to be converted to native
+	Python datatypes that can then be easily rendered into JSON, XML or other content types.
+- Serializers also provide deserialization, allowing parsed data to be converted back into complex
+	types, after first validating the incoming data.
 
-		from rest_framework import serializers
-		from .models import Product
+	from rest_framework import serializers
+	from .models import Product
 
-		class ProductSerializers(serializers.ModelSerializer):
-			class Meta:
-				model = Product
-				fields = '__all__'
+	class ProductSerializers(serializers.ModelSerializer):
+		class Meta:
+			model = Product
+			fields = '__all__'
 
-Django Models
-	- Under each app folder in Django project, we have models.py file.
-	- It is the placeholder for the database schema for the app in that project.
-	- Each class represents a DB table
-	- Ex:
-		Class  MyTable(model.Model):
-			Col1 = models.CharFiled(max_length= 20)
-			Col2 = model.IntegerFiled(default=0)
+- Django Models
+--------------
+- Under each app folder in Django project, we have models.py file.
+- It is the placeholder for the database schema for the app in that project.
+- Each class represents a DB table
+- Ex:
+	Class  MyTable(model.Model):
+		Col1 = models.CharFiled(max_length= 20)
+		Col2 = model.IntegerFiled(default=0)
 
-Session Management
+- Session Management
+-------------------
 	- Django uses Django-sessions table to store the session related information
 	- we can configure it
 
-Django Authentication
+- Django Authentication
+----------------------
 	- Django supports session based authentication for the UI , means web applications
 	- And, Token-based Authentication   -- for REST APIs
 	- Also, I worked with JWT and OAuth for authentication
 
-Django Middleware
-	- Middleware is processes that acts between request and response execution
-	- each middleware carries a performance overhead for each request.
+- Django Middleware
+--------------------
+- Middleware is processes that acts between request and response execution
+- each middleware carries a performance overhead for each request.
 
 	- CsrfViewMiddleware  	- ensures that the CSRF token is present and valid on form submissions.
 	- LocaleMiddleware 		- for language translations if you choose to internationalize your project.
@@ -290,31 +305,52 @@ Django Middleware
 				logger.info(f"Running {view_func.__name__} view")
 	- JSON Error middleware - https://rednafi.github.io/reflections/return-json-error-payload-instead-of-html-text-in-drf.html
 
-- Django ORM - object relational mapper
-	- I will use ORM for small queries
-	- For large queries, I will use raw SQL code
-	- It will be scalable, readable and fast to use when multiple joins are present .
-	Optimizing ORM queries - https://schegel.net/posts/optimizing-django-orm-queries/
 
+- Django ORM - object relational mapper
+---------------------------------------
+- I will use ORM for small queries
+- For large queries, I will use raw SQL code. Because, it will be scalable, readable and fast to use when multiple joins are present.
+- primary key
+	can be addressed either with id (if defined a column with id), or pk (in general)
+	To get the primary key field name, the ORM query is
+		TableName._meta.pk.name
+
+- get_or_create query will result in two values: object and an bool value(true/false), whether object is already created or not.
+
+
+	EmpObj, created = Employee.objects.get_or_create(
+		first_name='John',
+		last_name='Lennon',
+		defaults={'joinigDate': date(2023, 04, 8)},
+	)
+
+	# get_or_create() didn't have to create an object.
+	>>> created
+	False
+
+- select_related vs prefetch_related
 	- select_related()
 		- "follows" foreign-key relationships, selecting additional related-object
 		   data when it executes its query.
 	- prefetch_related()
 		- does a separate lookup for each relationship, and does the "joining" in Python.
 
-	- Model Inheritance
-		class Vehicle(models.Model):
-			title = models.CharField(...)
-			Name = models.CharField(....)
+- Optimizing ORM queries - https://schegel.net/posts/optimizing-django-orm-queries/
 
-			class Meta:
-				 abstract = True
 
-		class Car(Vehicle):
-			color = models.CharField()
+- Model Inheritance
+	class Vehicle(models.Model):
+		title = models.CharField(...)
+		Name = models.CharField(....)
 
-		class Bike(Vehicle):
-			feul_average = models.IntegerField(...)
+		class Meta:
+			 abstract = True
+
+	class Car(Vehicle):
+		color = models.CharField()
+
+	class Bike(Vehicle):
+		feul_average = models.IntegerField(...)
 
 - Django Manager
 	- Manager is some kind of interface between application and the database.
@@ -387,17 +423,14 @@ Django Middleware
 		pip3 install virtualenv;
 		virtualenv -p python3 env1;
 
-django modules
-- django-debug-toolbar for analyzing or removing duplicate db calls
-- drf-nested-routers for URL routing management
-- django-extensions  for utilities like db shell, etc.
+- django modules
+--------------
+	- django-debug-toolbar for analyzing or removing duplicate db calls
+	- drf-nested-routers for URL routing management
+	- django-extensions  for utilities like db shell, etc.
 
 Django Ref blogs/tutorials
 	- https://djangotricks.blogspot.com/
-
-
-Flask
-	- Sqlachemy with Alembic for database migrations
 
 
 TODO

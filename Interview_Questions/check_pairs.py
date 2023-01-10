@@ -1,9 +1,9 @@
 #!/usr/bin/python
 """
-Purpose: Given an array of integers, create
-paits of them, such that every pair consists
-of equal numbers. Each array elements may belong
-to one pair only. Is it possible to use all integers?
+Purpose: Given an array of integers, create pairs of them,
+such that every pair consists of equal numbers.
+Each array elements may belong to one pair only.
+Is it possible to use all integers?
 
 """
 

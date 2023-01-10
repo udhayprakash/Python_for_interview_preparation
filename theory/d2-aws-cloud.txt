@@ -547,13 +547,11 @@ s3 classification
 7) s3 Glacier Deep Archive
 		- for long-term archive and digital preservation with retrieval in hours at the lowest cost storage in the cloud
 8) s3 Output
-		- storage class to store your S3 data on premises, when we cant store data in AWS any complience
+		- storage class to store your S3 data on premises, when we cant store data in AWS any compliance
 
-Once an S3 Lifecycle policy is set, your data will automatically transfer to a different storage class
-without any changes to your application.
+Once an S3 Lifecycle policy is set, your data will automatically transfer to a different storage class without any changes to your application.
 
-we can create life cycle rules to delete files from a specific folder, like
-	older than 30 days, etc
+we can create life cycle rules to delete files from a specific folder, like older than 30 days, etc
 
 AWS account security tools
 --------------------------

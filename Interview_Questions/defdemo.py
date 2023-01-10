@@ -28,20 +28,8 @@ print(factorial(100))
 # The docstring is automatically placed in object under name __doc__
 print(factorial.__doc__)
 
-# Note that def is a statement just like any other, so that the previous
-# function calls would not have worked before the def was executed. In a
-# sense, def is really an assignment that assigns the function name to a
-# function object, as opposed to a string or an integer. The function names
-# are variables, just like any other variables, and could be later be
-# assigned to point some place else.
 
-f = factorial  # copy a reference to the function object
-result = f(30)  # make an actual function call
-print(result)  # 265252859812191058636308480000000
-
-
-# All right, that out of the way, let's write some more functions that
-# operate on lists. First, find the largest element in the list. We do
+# find the largest element in the list. We do
 # this by iterating over the elements of the list
 
 
@@ -222,30 +210,6 @@ def bar(x=val):
 
 
 print("foo() equals %d, bar() equals %d" % (foo(), bar()))  # 42 99
-
-
-# Fizzbuzz is a game where you try to list the numbers from start to end
-# but so that if a number is divisible by 3, you say "fizz", and if a
-# number is divisible by 5, you say "buzz", and if by both 3 and 5, you
-# say "fizzbuzz".
-
-
-def fizzbuzz_translate(n):
-    """Convert positive integer n to its fizzbuzz representation.
-    n -- The positive integer to convert.
-    """
-    if n % 5 == 0 and n % 3 == 0:
-        return "fizzbuzz"
-    elif n % 5 == 0:
-        return "buzz"
-    elif n % 3 == 0:
-        return "fizz"
-    else:
-        return str(n)
-
-
-print("Let's play a game of fizzbuzz from 1 to 100.")
-print(", ".join([fizzbuzz_translate(y) for y in range(1, 101)]))
 
 
 # Next, let us write a function that evaluates a polynomial, given in

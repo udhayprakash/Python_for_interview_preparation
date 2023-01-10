@@ -985,7 +985,7 @@ array vs dataframe
 		1) Series is 1 dimensional
 		2) Dataframe is 2 dimensional
 
-	Indexing of numpy arrays are faster than that of dataframe.
+	Indexing of numpy arrays is faster than that of dataframe.
 
 - loc vs iloc
 	- loc gets rows (or columns) with particular labels from the index.
@@ -1002,8 +1002,8 @@ array vs dataframe
 		joining on indexes and combination of index and columns.
 
 - find differences between two dataframes
-	df1=pd.DataFrame({'A':[1,2,3,3],'B':[2,3,4,4]})
-	df2=pd.DataFrame({'A':[1],'B':[2]})
+	df1 = pd.DataFrame({'A':[1,2,3,3],'B':[2,3,4,4]})
+	df2 = pd.DataFrame({'A':[1],'B':[2]})
 
 	pd.concat([df1,df2]).drop_duplicates(keep=False)
 
@@ -1043,6 +1043,15 @@ multi index pandas
 
 - to read specific columns
 	df = pd.read_csv("sample_file.csv", usecols=col_list)
+
+
+Recently, i started working on Polar , which is faster than pandas,
+Also supports concurrency too.
+
+Polar syntax is similar to pandas and pyspark, yet it is written in RUST,
+So, is extremely fast and support concurrency
+
+
 
 Machine learning Models
 ========================
