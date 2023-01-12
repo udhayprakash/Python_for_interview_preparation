@@ -13,11 +13,9 @@ my responsibilities here include
 	Remaining – client and Stakeholder discussions, agile ceremonies
 
 	When we started this project, we were just two members in the team.
-	I am part of initial design discussions, dataflow design, db design, creating JIRAs,
-	implementing, demoing the clients, and finally shipping of product.
+	I am part of initial design discussions, dataflow design, db design, creating JIRAs, implementing, demoing the clients, and finally shipping of product.
 
-	we initially started on small POC, after approvals got budgets for team expansion,
-	and created an MVP product, and then stable releases.
+	we initially started on small POC, after approvals got budgets for team expansion, and created an MVP product, and then stable releases.
 
 In Machine Learning,
 	I worked with a Linear regression algorithm, using the scikit-learn module.
@@ -72,7 +70,7 @@ Day-to-day activities
 	Initially when I start I will check for any emails or alerts which we need to address.
 	So, and if I need to reach out any stakeholders I will reach out to them,
 	and then like I started working on my JIRAs And after the stand up during the stand up like you know, so
-	we discuss on what are the pain points or any you know blockers.
+	we discuss, what are the pain points or any you know blockers.
 	Then finally, so after the, you know, the standup like I will start working on my JIRAs.
 - We prioritize based on the situation and sometimes, i will take manager’s decision
 

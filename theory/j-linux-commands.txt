@@ -363,8 +363,7 @@ copy
 			This command basically lays out the memory usage statistics.
 			$ vmstat –s
 		4. top:
-			This command determines the total memory usage as well as also monitors the
-			RAM usage.
+			This command determines the total memory usage as well as also monitors the RAM usage.
 			$ top
 		5. htop:
 			This command also displays memory usage along with other details.

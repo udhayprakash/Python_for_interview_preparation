@@ -79,6 +79,22 @@ Agile Methodology
 - We give utmost importance to these review feedbacks,
   and try to improve this continuous process
 
+Agile Methodology Disadvantages
+-------------------------------
+- Fragmented output
+	Incremental delivery may help bring products to market faster, but it’s also a big disadvantage of Agile methodology. That’s because when teams work on each component in different cycles, the complete output often becomes very fragmented rather than one cohesive unit.
+
+- Poor resource planning
+	Because Agile is based on the idea that teams won’t know what their end result (or even a few cycles of delivery down the line) will look like from day one, it’s challenging to predict efforts like cost, time and resources required at the beginning of a project (and this challenge becomes more pronounced as projects get bigger and more complex).
+
+- Limited documentation
+	In Agile, documentation happens throughout a project, and often “just in time” for building the output, not at the beginning. As a result, it becomes less detailed and often falls to the back burner.
+
+- No finite end
+	The fact that Agile requires minimal planning at the beginning makes it easy to get sidetracked delivering new, unexpected functionality. Additionally, it means that projects have no finite end, as there is never a clear vision of what the “final product” looks like.
+
+- Difficult measurement
+	Since Agile delivers in increments, tracking progress requires you to look across cycles. And the “see-as-you-go” nature means you can’t set many KPIs at the start of the project. That long game makes measuring progress difficult.
 
 Agile vs scrum
 ==============

@@ -206,14 +206,14 @@ expectations from full stack developer
 
 
 skills needed by developers
-	- Patience , when debugging or troubleshooting
+	- Patience, when debugging or troubleshooting
 	- Persistence, when resolving some issues
 	- Networking and communicating will all
 	- being Pro-active, in chasing clients for requirement gatherings, or filling the gaps in requirements
 
 
 conflicts(workplace disagreements) with Collegues
-------------------------
+------------------------------------
 - Very rare, but sometimes will happen
 
 - From all these years of experince, I can say that conflicts will be of two types.

@@ -24,6 +24,16 @@ python 2 vs 3
 		- xrange is renamed as range.
 		- so, it results in range data type, with lazy or on-demand loading
 
+python 2 to 3 conversion
+========================
+- I used python built-in module, lib2to3 , for migrating from python2 to python3.
+- Wrote code with six module to write compatible code, for both python2 and 3, during migrating phase.
+- Challenges during conversion
+	- In python2, we can compare string and int; We cant do the same with python3
+		- I wrote wrapper to handle it
+	- DEPENDENCY MANAGEMENT is another difficult thing, as some modules are either not available in python3,
+		or the latest features are not available in python3 modules.
+
 Python Modules
 ===============
 Requests     : for consuming APIs
@@ -810,15 +820,7 @@ global variables in python
 - will store them in __init__.py file, and load at the package level.
 
 
-python 2 to 3 conversion
-========================
-- I used python built-in module, lib2to3 , for migrating from python2 to python3.
-- Wrote code with six module to write compatible code, for both python2 and 3, during migrating phase.
-- Challenges during conversion
-	- In python2, we can compare string and int; We cant do the same with python3
-		- I wrote wrapper to handle it
-	- DEPENDENCY MANAGEMENT is another difficult thing, as some modules are either not available in python3,
-		or the latest features are not available in python3 modules.
+
 
 Python secure coding best practices
 ===================================
@@ -1195,6 +1197,12 @@ HDFS vs NFs
 	  so, more reliability, when if one of those systems, was failed.
 	- NFS is file system or protocol which allows its clients to access file
 	  over the network. All data resides on a single machine. Not much reliable as HDFS.
+
+Ansible
+-------
+- import vs include
+	All import statements are pre-processed at the time playbooks are parsed.
+	All include statements are processed as they are encountered during the execution of the playbook.
 
 =======================================================================
 Q1) Describe truthy vs falsy

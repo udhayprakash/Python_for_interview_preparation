@@ -117,6 +117,9 @@ Questions to Interviewers
   - What kind of data do we work with, and what are our data sources?
   - Were we using any custom/in-house frameworks/tools in our project? If so, can you help with the details?
 
+  - What metrics are of paramount importance in day-to-day work due diligence?
+  - within the first 3-4 months of hire, what are the pain-points you would like me to tackle?
+
   - Are we using agile methodology?  And how about the sprint cycle duration?
   - Can I know about the work culture of our company? And Any learning opportunities here?
 
@@ -127,12 +130,10 @@ Questions to Interviewers
 		Thank you for the time, and I want to conclude that I am expert in Python,
 		And I am ready to extent and learn new skills, if needed
 
-  - within the first 3-4 months of hire, what are the pain-points you would like me to tackle?
   - what does a successful person look like on your team?
   - As I'm understanding the current landscape of your environment, what is your vision of future innovation
     and or new technologies you want to bring within the next 2-4 years, and why so?
 
-  - What metrics are of paramount importance in day-to-day work due diligence?
 
   - Will there be an opportunity to reach out to the clients, either for requirement
     gathering and/or for demoing the end solution?
