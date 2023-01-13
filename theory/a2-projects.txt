@@ -15,7 +15,9 @@ my responsibilities here include
 	When we started this project, we were just two members in the team.
 	I am part of initial design discussions, dataflow design, db design, creating JIRAs, implementing, demoing the clients, and finally shipping of product.
 
-	we initially started on small POC, after approvals got budgets for team expansion, and created an MVP product, and then stable releases.
+	We initially started on small POC, after approvals got budgets for team expansion, and created an MVP product, and then stable releases.
+
+	Docker.yaml → Jenkins CI/CD → containers  -> AWs ECR →  aws code pipeline → AWS EKS → kubernetes.yaml → orchestrate the pods
 
 In Machine Learning,
 	I worked with a Linear regression algorithm, using the scikit-learn module.
@@ -114,7 +116,7 @@ Current Project - Fault-analysis project
 
 Current Project - Customer Behaviour Analytics project
 ------------------------------------------
-	- I am part of customer behaviour analytics teams.
+	- I am part of the customer behaviour analytics team.
 	- If you come to our website, you will notice some cookies.
 	- These cookies will send the user-analytics data feeds, back to
 	  our databases.
@@ -151,10 +153,10 @@ Current Project - Infra Automation - 1 click automation -- AWS CLOUD automation
 	- project is boto3 Tagging based Resource billing and Analytics
 
 	- We are part of the infrastructure management team, within this company.
-	- Our job is to management the infrastructure, within the organization.
+	- Our job is to managem the infrastructure, within the organization.
 	- we will grant access to cloud resources to the teams, and charge for the same, from their projects.
 
-	- In the process, to optimise the biling and better manage, we need to uniquely recognize the resources.
+	- In the process, to optimise the billing and better manage, we need to uniquely recognize the resources.
 	- For that, I wrote boto 3 scripts to scan all existing resources and add tags to them.
 	- Similarly, based on Event hub, automatically added tags for newly creating resources too.
 	- We have different types of tags, like user, team, etc, to different kinds of analytics

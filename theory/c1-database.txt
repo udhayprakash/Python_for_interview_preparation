@@ -105,10 +105,8 @@ Data Sources
 	- https://insightoriel.com/what-is-join-in-sql/
 	- Four types -  left, right, inner, and outer.
 	- (INNER) JOIN 		 : Returns records that have matching values in both tables.
-	- LEFT (OUTER) JOIN  : Returns all records from the left table, and the matched
-						   records from the right table.
-	- RIGHT (OUTER) JOIN : Returns all records from the right table, and the matched
-						   records from the left table.
+	- LEFT (OUTER) JOIN  : Returns all records from the left table, and the matched records from the right table.
+	- RIGHT (OUTER) JOIN : Returns all records from the right table, and the matched records from the left table.
 	- CROSS JOIN 		 : there is no ON clause here. All rows from the first table
 						   are combined with all rows from the second table.
 

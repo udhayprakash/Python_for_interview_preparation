@@ -3,8 +3,7 @@ After listening to the conversation, I am more confident to say that, “I am be
 
 INTRODUCTION:
 -------------
-I am a Full-Stack Python Developer, with all years of experience,
- with around 80% into Backend work and 20% into the frontend.
+I am a Full-Stack Python Developer, with all years of experience, with around 80% into Backend work and 20% into the frontend.
 
 IN Backend, I worked on creating standalone scripts for automation, scheduled jobs,
 ETL jobs and data pipelines; and RESTful APIs and web applications.
