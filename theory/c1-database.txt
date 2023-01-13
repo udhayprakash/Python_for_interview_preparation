@@ -224,7 +224,7 @@ Data Sources
 		- Unique key identifies a each row in the table uniquely.
 		- Unique key allows null values.
 
-- stored procedure vs Functions
+- Stored procedure vs Functions
 	- procedure allows SELECT as well as DML(INSERT/UPDATE/DELETE) statement in it
 	  whereas Function allows only SELECT statement in it.
 	- Procedures cannot be utilized in a SELECT statement whereas Function can be
@@ -238,7 +238,7 @@ Data Sources
 	- functions can be called from stored procs; but cant call stored procs from functions.
 	- Transactions and DML commands can be executed on stored procs; but not with functions.
 
-- stored procedure vs db triggers
+- Stored procedure vs DB triggers
 	- Trigger is a procedure invoked automatically when certain db events(like create/delete record) occurs.
 	  Stored Procedure is a procedure that is explicitly invoked by either
 		- another client application
@@ -248,7 +248,6 @@ Data Sources
 	  triggers can neither accept parameters nor return values.
 	- And, transaction statements cant be used inside a trigger; whereas transaction statements
 	  like begin transaction, commit transaction and rollback, can be used in stored procedures.
-
 
 - SubQuery properties
 	- A sub-query must be enclosed in the parenthesis.
@@ -368,13 +367,13 @@ Data Sources
 
 
 - DB View vs Materialized View
-	DB Views															Materialized DB Views
+	DB Views														|Materialized DB Views
 	------------------------------------------------------------------------------------------------------
-	Virtual table and doesn’t occupy any storage space					Copies of data are stored in the memory
-	It will have up to date data in it as it is executed at run-time	Needs to be refreshed every time when it is used as it has compiled data
-	Executed when a query is run n view using SELECT					Executed and records are stored in the database
-	Data access is slower	 											Faster data access because data is directly accessed from physical location
-	Generally, used to restrict data from database						Generally, used in data warehousing
+	Virtual table and doesn’t occupy any storage space				|Copies of data are stored in the memory
+	It will have up to date data in it as it is executed at run-time|Needs to be refreshed every time when it is used as it has compiled data
+	Executed when a query is run n view using SELECT				|Executed and records are stored in the database
+	Data access is slower	 										|Faster data access because data is directly accessed from physical location
+	Generally, used to restrict data from database					|Generally, used in data warehousing
 
 - DB Triggers
 	- they are kind of stored procedures, which reacts to certain actions we make in db.
@@ -398,6 +397,7 @@ Data Sources
 	- cheatography.com/zeineb-and-kawther/cheat-sheets/mongodb/
 
 		SQL						|    NoSQL
+		------------------------------------------------
 		  relational			| non-relational
 								|
 		use structured query	| NoSQL databases have

@@ -138,7 +138,7 @@ Managing Tight deadlines
 	Let all team members to work in pairs
 		Do code pairing to do fastly
 
-	Say, one pair done a work, othr pair will review it
+	Say, one pair done a work, other pair will review it
 	Like this, we can work , in war room,
 	T get the things done
 
