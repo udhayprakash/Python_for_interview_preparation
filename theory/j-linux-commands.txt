@@ -670,6 +670,8 @@ copy
 		- To check permissions of each directory to a file
 		- $ namei -l /path/to/file.txt
 
+	- To track peak memory usage,
+		/usr/bin/time -v myscript.py
 Logs
 	For system logs,
 		/var/log/syslog	in Debian family
