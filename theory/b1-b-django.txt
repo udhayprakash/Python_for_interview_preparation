@@ -86,6 +86,7 @@ Django Migrations
 		002__CHANGENAME_TIMESTAMP.py
 	When we make changes in models.py file, and run "python manage.py makemigrations", these files
 	will be created.
+
 - commands
 	Python manage.py makemigrations ----> Will create the migration files, in app/migrations folder
 	Python manage.py migrate        ----> will Apply the migrations files, on to the database.

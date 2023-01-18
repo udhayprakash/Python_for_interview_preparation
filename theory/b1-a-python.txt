@@ -68,7 +68,7 @@ Python Questions
 - Built-in Data Structures - List, Tuple, set, Dictionary
 
 - List
-	- Mutable object - it is editable. we can add , remove any element in it.
+	- Mutable object - it is editable. we can add, remove any element in it.
 	- indexed and retains the order of initialization
 	- will retain duplicates and can store any data type
 

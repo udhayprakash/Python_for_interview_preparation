@@ -7,7 +7,7 @@ my responsibilities here include
 	- also, writing scripts for ETL jobs, data transformations, and for the business logic
 	- finally, the cleansed and transformed data will be exposed as an API, for both UI consumption and for app to app communication
 
-	50% time for coding
+	60% time for coding
 	10% time for testing
 	10% time for code review
 	Remaining – client and Stakeholder discussions, agile ceremonies

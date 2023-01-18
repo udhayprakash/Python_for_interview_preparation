@@ -203,6 +203,14 @@ Data Sources
 	- Truncate faster than both DELETE & DROP
 	- Rollback is not possible with Truncate
 
+- HAVING
+	Having clause in SQL is used to filter records in combination with the GROUP BY clause.
+	Select department_id, Min (Salary) From Employees Group By Department_id Having MIN (salary) < 3500;
+
+- WHERE
+	where clause cannot filter aggregated records. HAVING is a column operation.
+
+
 - Union vs Union all
 	- Union set operator removes duplicate records. Whereas union all does not.
 	- Union operator sorts the data in ascending order. union all does not.

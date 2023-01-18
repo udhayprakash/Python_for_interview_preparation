@@ -439,9 +439,7 @@ RDS vs DynamoDb
 SNS vs SQS
 ==========
 SNS - sends messages to the subscriber using push mechanism and no need of pull.
-SQS - it is a message queue service used by distributed applications to exchange
-		messages through a polling model, and can be used to decouple sending and
-		receiving components.
+SQS - it is a message queue service used by distributed applications to exchange messages through a polling model, and can be used to decouple sending and 		receiving components.
 
 
 AWS Limits

@@ -108,55 +108,52 @@ That is my journey
 -------------------------
 Questions to Interviewers
 -------------------------
-  - May I know about the project, and the system architecture like the tools used, database, etc?
-  - What are you expecting from me, for this role? What can be the day-to-day activities?
+- May I know about the project, and the system architecture like the tools used, database, etc?
+- What are you expecting from me, for this role? What can be the day-to-day activities?
 
-  - What is the volume of data, which we will be working on, on a daily basis.
-    some approximate numbers of records?
-  - What kind of data do we work with, and what are our data sources?
-  - Were we using any custom/in-house frameworks/tools in our project? If so, can you help with the details?
+- What is the volume of data, which we will be working on, on a daily basis. some approximate numbers of records?
+- What kind of data do we work with, and what are our data sources?
+- Were we using any custom/in-house frameworks/tools in our project? If so, can you help with the details?
 
-  - What metrics are of paramount importance in day-to-day work due diligence?
-  - within the first 3-4 months of hire, what are the pain-points you would like me to tackle?
+- What metrics are of paramount importance in day-to-day work due diligence?
+- within the first 3-4 months of hire, what are the pain-points you would like me to tackle?
 
-  - Are we using agile methodology?  And how about the sprint cycle duration?
-  - Can I know about the work culture of our company? And Any learning opportunities here?
+- Are we using agile methodology?  And how about the sprint cycle duration?
+- Can I know about the work culture of our company? And Any learning opportunities here?
 
-  - What were the next steps in the interview process?
-    And how many more rounds of interviews can I expect?
+- What were the next steps in the interview process? And how many more rounds of interviews can I expect?
 
-	CONCLUSION:
-		Thank you for the time, and I want to conclude that I am expert in Python,
-		And I am ready to extent and learn new skills, if needed
+CONCLUSION:
+	Thank you for the time, and I want to conclude that I am expert in Python, and I am ready to extent and learn new skills, if needed
 
-  - what does a successful person look like on your team?
-  - As I'm understanding the current landscape of your environment, what is your vision of future innovation
-    and or new technologies you want to bring within the next 2-4 years, and why so?
+- what does a successful person look like on your team?
+- As I'm understanding the current landscape of your environment, what is your vision of future innovation
+and or new technologies you want to bring within the next 2-4 years, and why so?
 
 
-  - Will there be an opportunity to reach out to the clients, either for requirement
-    gathering and/or for demoing the end solution?
-  - How do you help your team grow professionally?
-  - What are the challenges of this position?
-  - Have I answered all your questions?
-  - Do you have any hesitations about my qualifications?
-  - What is the biggest challenge your company is facing today?
-  - What do you enjoy most about working in this company?
-  - Whats are the characteristics of someone who would succeed in this role?
-  - What metrics or goals will my performance be evaluated against?
-  - What are the most immediate projects that need to be addressed?
-  - Can you describe a typical day or week in the job?
-  - What will be the process of getting up to speed? In our team, we use confluence
-    and teams' channels to collaborate? How do they collaborate and maintain documentation?
-  - What will be the area that you want this role to be focusses?
-  - Do you expect the main responsibilities for this position to change in the next
-    six months to a year?
-  - What are the current goals that the company is focussed on, and how does this team work
-    to support hitting those goals?
-  - Who will i report to directly?
-  - What are the common career paths in this department?
-  - Is there anything else i can provide you with that would be helpful?
-  - What's one of the most interesting projects or opportunities that you've worked on?
+- Will there be an opportunity to reach out to the clients, either for requirement
+gathering and/or for demoing the end solution?
+- How do you help your team grow professionally?
+- What are the challenges of this position?
+- Have I answered all your questions?
+- Do you have any hesitations about my qualifications?
+- What is the biggest challenge your company is facing today?
+- What do you enjoy most about working in this company?
+- Whats are the characteristics of someone who would succeed in this role?
+- What metrics or goals will my performance be evaluated against?
+- What are the most immediate projects that need to be addressed?
+- Can you describe a typical day or week in the job?
+- What will be the process of getting up to speed? In our team, we use confluence
+and teams' channels to collaborate? How do they collaborate and maintain documentation?
+- What will be the area that you want this role to be focusses?
+- Do you expect the main responsibilities for this position to change in the next
+six months to a year?
+- What are the current goals that the company is focussed on, and how does this team work
+to support hitting those goals?
+- Who will i report to directly?
+- What are the common career paths in this department?
+- Is there anything else i can provide you with that would be helpful?
+- What's one of the most interesting projects or opportunities that you've worked on?
 
 
 company expenses
