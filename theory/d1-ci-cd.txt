@@ -141,6 +141,7 @@ Development Tools
 	Infrastructure Monitoring 	- AWS X-ray + AWS Cloudwatch
 	application Monitoring 		- worked with tools like Dynatrace, appDynamics and Datadog
 
+	for data visualization - python based matplotlib/seaborn, PowerBI
 
 how to resolve conflicts
 ------------------------

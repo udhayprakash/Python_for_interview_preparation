@@ -130,7 +130,7 @@ Python Questions
 		endIndex is end of length
 
 - List vs Dict
-	- list is suitable when the order of element is preferred.
+	- list is suitable when the order of elements is preferred.
 	- dict is suitable when there were more reads. dict has O(1) for search an element, as
 	  it stored each element uniquely with its hash.
 	- Insertion time is less in list

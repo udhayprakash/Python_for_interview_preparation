@@ -65,6 +65,10 @@ REASON FOR CHANGE -
 	SO, Looking for a change.
 	But It is a very interesting project.
 
+	Recently, our company made a policy change to make work from office mandatory.
+	I is becoming difficult to commute daily to office, and manage my recently born baby boy.
+	Also, my spouse is worried about any potential covid outbreak again.
+	So, I am looking for remote role, as i did the same from outbreak of COVID onwards.
 
 Rate yourself
 
@@ -117,6 +121,7 @@ Questions to Interviewers
 
 - What metrics are of paramount importance in day-to-day work due diligence?
 - within the first 3-4 months of hire, what are the pain-points you would like me to tackle?
+- what does a successful person look like on your team?
 
 - Are we using agile methodology?  And how about the sprint cycle duration?
 - Can I know about the work culture of our company? And Any learning opportunities here?
@@ -126,7 +131,6 @@ Questions to Interviewers
 CONCLUSION:
 	Thank you for the time, and I want to conclude that I am expert in Python, and I am ready to extent and learn new skills, if needed
 
-- what does a successful person look like on your team?
 - As I'm understanding the current landscape of your environment, what is your vision of future innovation
 and or new technologies you want to bring within the next 2-4 years, and why so?
 

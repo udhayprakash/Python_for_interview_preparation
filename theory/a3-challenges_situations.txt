@@ -166,10 +166,10 @@ And any specific Role based access,
 And responsibilities involved
 
 What tech stack would you use?
-- Why did you choose that architecture over another?
-- What challenges did you face and how did you overcome them?
-- How would you scale and optimize a given design?
-- If you led the project what would you have done differently?
+	- Why did you choose that architecture over another?
+	- What challenges did you face and how did you overcome them?
+	- How would you scale and optimize a given design?
+	- If you led the project what would you have done differently?
 
 
 What are you looking for in the new work?
