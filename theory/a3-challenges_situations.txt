@@ -44,6 +44,12 @@ Use the STAR (Situation, Task, Action, Result) technique when answering example 
 		1. Everytime, I will try to better optimize the resources, I mean, I will be proactive in the betterment of the project.
 		2. I will follow the due process, follow-up with my team and manager, if i get a worthwhile idea.
 
+- Long Run process ( Django web application)
+	- In current project, we created a dashboard for data analytics results.
+	- Users can also initiate some customized reports. Once they request, it will take some time for response and creating and downloading the CSV file.
+	- Over a period of time, as more complex reports and large processing is needed, those user requests used to be timed-out.
+	- But, in the backend, they were successfully getting processed.
+	- Upon investigation, I found that
 
 Project/task you are proud of
 --------------------------------
@@ -237,15 +243,14 @@ conflicts(workplace disagreements) with Collegues
 			- What could be avoid such understanding/miscommunication
 			- What could be best practice, to avoid such things again.
 
-
-mentoring, juniors
+Mentoring, juniors
 ------------------
 - Frankly, I never wore the hat of a lead. But, helped and/or got help from any team members.
 - We will try to help others, if they were struck
 
 - Main problems with the junior developers are like
 	- They may be confused with the requirement understanding, or
-	- confused/struct in programming language, dev setup, or configurations related issues, or
+	- confused/struct in programming language, dev setup, or configurations related issues.
 
 - I will give them clarity on anything, if they were confused.
 - Ensure that they are learning from their mistakes.

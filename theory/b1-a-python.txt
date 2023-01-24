@@ -269,39 +269,38 @@ subprocess popen vs run
 - Debugging in python
 	- Either using pdb or ipdb modules, or using breakpoint() function
 
-- OOP
-	- Object Oriented Programming
-		- I use Object-Oriented Programming and Design predominantly.
-		- It gives us the scalability in code to adapt any requirement changes.
+- Object Oriented Programming
+	- I use Object-Oriented Programming and Design predominantly.
+	- It gives us the scalability in code to adapt any requirement changes.
 
- 	- There are 4 principles:
-		1) ENCAPSULATION - with public, protected and private variables/methods
-				public variable -- it a variable is starting with no underscore
-				protected variable -- if it is starting with SINGLE underscore
-				private variable -- if it is starting  with TWO underscores
+	- There are 4 principles:
+	1) ENCAPSULATION - with public, protected and private variables/methods
+			public variable -- it a variable is starting with no underscore
+			protected variable -- if it is starting with SINGLE underscore
+			private variable -- if it is starting  with TWO underscores
 
-			We can access all variables  of all classes irrespective of public or private or protected.
-			This name mangling is to avoid accidental override
+		We can access all variables  of all classes irrespective of public or private or protected.
+		This name mangling is to avoid accidental override
 
-		2) ABSTRACTION:
-			- It is a process of hiding implementation details and showing only functionality to the user.
+	2) ABSTRACTION:
+		- It is a process of hiding implementation details and showing only functionality to the user.
 
-		3) INHERITANCE:
-			- python supports single, multiple and multi-level inheritance, using MRO (Method Resolution Order)
-					single ---> one parent & one child
-					multiple --> two parents & one child
-					multi-level -->  parent1 => child ==> subChild
-			- Method Resolution Order is the order in which base classes are searched for a member during lookup.
-			  hybrid & hierarchical
+	3) INHERITANCE:
+		- python supports single, multiple and multi-level inheritance, using MRO (Method Resolution Order)
+				single ---> one parent & one child
+				multiple --> two parents & one child
+				multi-level -->  parent1 => child ==> subChild
+		- Method Resolution Order is the order in which base classes are searched for a member during lookup.
+		  hybrid & hierarchical
 
-		4) POLYMORPHISM: It is an ability of object to behave in multiple form.
-			- For better code resusability, common code we write in one class,
-				and inherint in other classes
+	4) POLYMORPHISM: It is an ability of object to behave in multiple form.
+		- For better code resusability, common code we write in one class, and inherint in other classes.
+		- Python supp
 
-			Ex: + operator, It will work differently in different contexts
-					addition operation between integers
-					List concatenation operator between lists
-					Tuple concatenation operator between tuples
+		Ex: + operator, It will work differently in different contexts
+				addition operation between integers
+				List concatenation operator between lists
+				Tuple concatenation operator between tuples
 
 - self
 	- It is the first argument in instance methods.
@@ -648,6 +647,21 @@ I	- we can create custom context managers, using the dunder methods,
 			are what we are talking about here: objects pre-programmed with expectations
 			which form a specification of the calls they are expected to receive.
 
+- descriptors
+	Descriptors are used to transform access object properties into call descriptor methods.
+	The __get__() method is called when the attribute is accessed for reading.
+	The __set__() method is called when the attribute is assigned a value.
+	The __delete__() method is called when the attribute is deleted.
+
+	Descriptors are typically used to define properties in a class, but they can also be used to define methods.
+
+	USECASE:
+	Consider an email attribute. Verification of the correct email format is necessary before assigning a value to that attribute. This descriptor allows email to be processed through a regular expression and its format validated before assigning it to an attribute.
+
+
+__getattribute__ vs__getattr__
+	__getattribute__ will intercept EVERY attribute lookup, doesn’t matter if the attribute exists or not.
+
 
 - name mangling
 	- python supports Public, private and protected variables/methods/functions
@@ -664,6 +678,7 @@ I	- we can create custom context managers, using the dunder methods,
 			  __enter__ and __exit__ are used for creating custom context managers
 			  __iter__ and __next__ are used for creating Iterator objects
 			  __str__ and __repr__ are used for string representation of the instances
+
 
 		-----------------------------------------------------------------------------
 		Dunder method	Usage
