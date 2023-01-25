@@ -10,3 +10,13 @@ Production app
 
 Flask
 	- Sqlachemy with Alembic for database migrations
+
+
+Flask vs FastAPI
+	- Compared to flask, fastapi comes with builtin features like
+		- automatic documentation
+		- By default, error message will be in JSON format
+		- Asynchronous support and ASGI implementation
+
+	Recently flask also started async support.
+	Also, flask has a large community support.

@@ -231,6 +231,7 @@ Data Sources
 	- Unique Key:
 		- Unique key identifies a each row in the table uniquely.
 		- Unique key allows null values.
+		- composite unique key is a unique key made up of a combination of columns
 
 - Stored procedure vs Functions
 	- procedure allows SELECT as well as DML(INSERT/UPDATE/DELETE) statement in it

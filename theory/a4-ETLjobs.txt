@@ -4,6 +4,7 @@ I have created ETL jobs with event-driven architecture
 worked with multiple ETL jobs.
 
 1) s3 bucket -- > new file comes --> triggered lambda --> pandas dataframes process --> push to dB --
+	Say in the S3 bucket, whenever a new file is created/pushed, that event will trigger the
 
 2) time triggered  ---> periodically, it will check for new data in the files and dump them together
 		say it may run for every 1 hr

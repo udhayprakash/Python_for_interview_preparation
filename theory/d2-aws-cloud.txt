@@ -37,6 +37,11 @@ boto3
 	  in a bucket, or a group of SQS queues
 		- It helps to perform some action on those groups
 
+	- upload file to s3 bucket
+		import boto3
+		s3 = boto3.resource('s3')
+		s3.meta.client.upload_file('/tmp/hello.txt', 'mybucket', 'hello.txt')
+
 ec2 vs Lambda
 =============
 - Lambda is suitable for event-driven programming, whereas
@@ -673,3 +678,15 @@ Ans : 15 minutes is the limit --> research your own  correct answer
 
 ans : there is a library called bolt23, use access token/Ws --> research your own  correct answer
         7a. I still got the access forbidden/ what could have been the issue/lets say access token is good.
+
+
+Azure Cloud tools
+	Azure functions
+
+	Azure cognitive search
+	Azure delta watcher
+	Azure VMs
+	Azure database – mainly the
+	powerBI connectivity pipeline
+
+	Worked with python module - azure-python-sqk
