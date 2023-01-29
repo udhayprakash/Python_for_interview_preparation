@@ -173,6 +173,35 @@ three amigos session
 	- To get clarity on scope of the project
 	- It should be done before the sprint planning, for the next sprint.
 
+code review/feedbacks
+---------------------
+- Earlier, I used to leave code review comments for the lintings; but now as latest projects were set with pre-commit hooks,
+  by the time, code is committed, PEP8 guidelines were followed.
+- Now, I will check for any logic suggestions like
+	- If someone wrote a logic in O(n^2), and it can be better done, in say O(N),
+	- Or, If there is ambiguity in the code comments and/or variable namings, i would suggest.
+- Also, I follow the CEDAR feedback model, which has 5 steps:
+	1. Context:
+		The first thing to do is Put things in Context.
+		Who is being “affected”, How things are going, What was happening, etc.
+
+	2. Examples:
+		Then, describe Examples of what should be Improved.
+		Situations in which a Behavior or an Action were reprehensible.
+
+	3. Diagnosis:
+		Clearly Explain what the Problem was and Why.
+		Don’t assume that it is obvious: Highlight the Issue repeatedly.
+
+	4. Actions:
+		Define Actions or Routines to improve Behavior or Performance.
+		An Easy guideline that everyone could follow.
+
+	5. Review:
+		Organize regular meetings to Track Progress.
+		Once a week first, then once a month an then Quarterly, for example.
+
+
 SDLC
 ------
 	Requirement gathering

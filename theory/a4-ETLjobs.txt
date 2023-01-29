@@ -1,10 +1,8 @@
 ETL Jobs
 =========
-I have created ETL jobs with event-driven architecture
-worked with multiple ETL jobs.
-
-1) s3 bucket -- > new file comes --> triggered lambda --> pandas dataframes process --> push to dB --
-	Say in the S3 bucket, whenever a new file is created/pushed, that event will trigger the
+I have the experience in creating ETL jobs with event-driven architecture, like
+1) In a s3 bucket, when a new file comes, that event will trigger a lambda, which parses that csv file content,
+	and transforms using pandas dataframes, and finally push the resultant information, into AWS RDS, using RDS Proxy.
 
 2) time triggered  ---> periodically, it will check for new data in the files and dump them together
 		say it may run for every 1 hr
@@ -26,6 +24,7 @@ s3 -> AWS Athena -> QuickSight
 
 Funnel is the ETL tool, to pull the social media data, to a csv
 GCP DataFusion
+
 
 ETL best practices
 ===================

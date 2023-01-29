@@ -28,6 +28,42 @@ Git Commands
 
 	(Feature branch context) When to Rebase: Pull and rebase if there are changes on target branch.
 
+- git remote vs git clone
+
+	git remote add just creates an entry in your git config that specifies a name for a particular URL.
+	You must have an existing git repo to use this.
+	git clone creates a new git repository by copying an existing one located at the URI you specify
+
+- git revert
+
+	Makes a reverse-commit.
+	- It is a forward-moving undo operation that offers a safe method of undoing changes.
+	- Instead of deleting or orphaning commits in the commit history, a revert will create a new commit that inverses the changes specified.
+
+	git revert commit-hash does not alter your commit history but makes a new commit that reverts the changes that were committed as part of the commit.
+
+	# Reset the index and working tree to the desired tree
+	# Ensure you have no uncommitted changes that you want to keep
+	git reset --hard 56e05fced
+
+	# Move the branch pointer back to the previous HEAD
+	git reset --soft HEAD@{1}
+
+	git commit -m "Reverting to the state of the project at f414f31"
+
+- undo previous commit
+	# Checkout a new temp branch based on one history commit
+	# (command to get history commit hashes: git log --oneline)
+	git checkout <last_known_good_commit_hash>
+
+	# Delete the original develop branch
+	git branch -D develop
+	# Create a new develop branch based on the temp branch
+	git checkout -b develop
+
+	# Force update the remote with the new branch
+	git push -f origin develop
+
 - To remove unstage files,
 	git reset HEAD -- path/to/file
 
@@ -80,6 +116,11 @@ Git Commands
 
 - Revert the repository
 	git reset [file]
+
+	git reset also has three options
+		--hard - Both the Worktree and the Index match the files in the new commit you moved to
+		--mixed (default) - Worktree remains as it was before you ran git reset and Index matches the files in the new commit you moved to
+		--soft - Worktree and Index both remain as they were before you ran git reset
 
 - List all local branches
 	git branch -a

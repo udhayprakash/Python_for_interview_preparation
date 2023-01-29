@@ -349,7 +349,7 @@ to a Workgroup.
 I have experience migrating applications and data, from on-prem to cloud
 
 
-AWS IAM
+- IAM
 -------
 	- IAM roles define the set of permissions for making AWS service request
 	- IAM policies define the permissions that you will require.
@@ -427,6 +427,10 @@ AWS IAM
 		  ]
 		}
 
+- s3 policy vs IAM policy
+	- Bucket policies are similar to IAM user policies.
+	- They're written in the same JSON syntax and can be used to provide granular permissions on S3 resources.
+	- The main difference from IAM user policies is that bucket policies are attached to an S3 resource directly rather than to an IAM user.
 
 RDS vs DynamoDb
 ----------------
@@ -559,7 +563,7 @@ we can create life cycle rules to delete files from a specific folder, like olde
 AWS account security tools
 --------------------------
 
-- AWS IAM (Identity & Access Management)
+- IAM (Identity & Access Management)
 	- Enables to create users and roles with permissions
 	  too specific resources
 	- Supports Multi-factor authentication & supports

@@ -11,155 +11,161 @@ Docker
 	- Debugging capabilities
 
 - Commands
-	1. `docker ps`  # current containers
-	2. `docker run` # create and start the container
-			-it 			flags provide an interface for us to type commands into.
-			--name 			flag is used to give a nice, memorable name to the container.
-							You can name it anything, such as "i-love-potato".
-			--network=host 	setting gives the container access to your computer's network.
-							This is very useful when writing MicroPython code that interacts
-							with your home network or with the internet.
-			--mount 		flag allows us to share a specific folder on our computer with
-							the container.
-							In this case, I am mounting my folder named Code into the
-							container's /home folder, so that I can run my code from there.
-			--entrypoint 	flag specifies which command to run when the container starts.
-							I want to run the bash shell right away so that I can type in commands.
+----------
+1. `docker ps`  # current containers
+2. `docker run` # create and start the container
+		-it 			flags provide an interface for us to type commands into.
+		--name 			flag is used to give a nice, memorable name to the container.
+						You can name it anything, such as "i-love-potato".
+		--network=host 	setting gives the container access to your computer's network.
+						This is very useful when writing MicroPython code that interacts
+						with your home network or with the internet.
+		--mount 		flag allows us to share a specific folder on our computer with
+						the container.
+						In this case, I am mounting my folder named Code into the
+						container's /home folder, so that I can run my code from there.
+		--entrypoint 	flag specifies which command to run when the container starts.
+						I want to run the bash shell right away so that I can type in commands.
 
-	3. `docker create` # create container
-	4. `dokcer exec` # to run commnads in container for once
-	5. `docker stop [container ID]` # terminate the container and save it's state by commit it
-	6. `docker rm [container ID]` # remove container
-	7. `docker inspect [container ID]` # Get more info about running container
-	___
-	7. `docker images` # list the images
-	8. `docker push` # push your image to docker repo
-	9. `docker pull` # download an image from docker repo
-	10. `docker commit` # create an image from container
-	11. `docker rmi` # remove image
-	___
-	12. `docker volume` # create a docker volume
-	13. `docker network` # create a docker network
-	14. `docker build` # build a new image from dockerfile
+3. `docker create` # create container
+4. `dokcer exec` # to run commnads in container for once
+5. `docker stop [container ID]` # terminate the container and save it's state by commit it
+6. `docker rm [container ID]` # remove container
+7. `docker inspect [container ID]` # Get more info about running container
+___
+7. `docker images` # list the images
+8. `docker push` # push your image to docker repo
+9. `docker pull` # download an image from docker repo
+10. `docker commit` # create an image from container
+11. `docker rmi` # remove image
+___
+12. `docker volume` # create a docker volume
+13. `docker network` # create a docker network
+14. `docker build` # build a new image from dockerfile
 
-			docker build -t imageName:imageTag pathToDockerfileDirectory/
+		docker build -t imageName:imageTag pathToDockerfileDirectory/
 
-			Example:
-			docker build -t vieux/apache:2.0
+		Example:
+		docker build -t vieux/apache:2.0
+15. docker checkpoint create  - creates a new checkpoint
+16. docker checkpoint ls  - lists existing checkpoints
+17. docker checkpoint rm  - deletes an existing checkpoint
 
 - docker best practices
-	1) image size
-		- smaller images consume less disk space, can be downloaded(& extracted) faster,
-		  and thus reduce the container start time.
+------------------------
+1) image size
+	- smaller images consume less disk space, can be downloaded(& extracted) faster,
+	  and thus reduce the container start time.
 
-	2) Use .dockerignore files
-		- It is similar to the git ignore files.
-		- To avoid accidentally copying unnecessary files into the image.
-
-
-	3) SQUASH Image layers
-		- docker-squash is a Python-based tool that squashes the last N layers of an image to a single layer.
-		- It is similar to the git squash.
-		- After squashing the affected layers, the deleted intermediate files and folders are not part of the squashed layer anymore.
-
-	4) Choosing a suitable base image
-		- alphine images are very size-optimized(~3MB), by default.
-		  But as alphine uses musl instead of much common glibc C-library, sometimes
-		  compatibility issues will araise
-		- Else, will try choosing linux images with slim tag
-		  (e.g. from ~40 MB to ~20 MB in case of Debian).
-		- But, if we choose security focused linux images, like distroless, it will be
-			- harder to debug running containers, and
-			- having a rather steep learning curve to customise them
-
-	5) Multi-stage builds
-		- we can split the build process to two(or more) separate images
-			1) A "build image" into which we install all packages and compilers, and do the compilation
-				- it will contain extra things like
-					- the package manager, which is needed to install packages, but not needed for running application
-					- cache that package manager downloaded dependencies, which are not need for running application
-					- tools which are needed for compiling binaries after installation, but not needed afterwards.
-			2) A "run image" into which we only copy application code and other compiled libraries,
-			  which we copy from "build image" to "run image".
-
-	6) consolidating the RUN commands
-		- Actually, each RUN command adds a new layer to the image, which contains the changed files and folders.
-		- These layers are “additive”, using an overlay-type file system.
-		- However, deleting files only marks these files as deleted – no disk space is reclaimed!
-		- Instead, we are combine all the run commands with two amperscents (&&) symbols.
-		- Eg:
-			INSTEAD OF
-				FROM debian:latest
-				WORKDIR /app
-				RUN git clone https://some.project.git
-				RUN cd project
-				RUN make
-				RUN mv ./binary /usr/bin/
-				RUN cd .. && rm -rf project
-
-			THIS CAN BE USED
-				FROM debian:latest
-				WORKDIR /app
-				RUN git clone https://some.project.git && \
-				  cd project && \
-				  make && \
-				  mv ./binary /usr/bin/ && \
-				  cd .. && rm -rf project
-
-	7) Save space when installing dependencies
-		- Disable (or clean) the cache of the package manager
-		- We can instruct the package manager to install, as fewer additional dependencies as possible, explicitly
-			- like avoid weak dependency links, etc
-		For Debian/Ubuntu:
-			apt-get install -y --no-install-recommends <list of package names to install> && <optional: do something with packages> && apt-get clean && rm -rf /var/lib/apt/lists/*
-			This ensures that no recommended packages are installed, and that the cache is cleared at the end.
-		For RPM-based systems, like RHEL:
-			dnf -y install --setopt=install_weak_deps=False <list of package names to install> && <optional: do something with packages> && dnf clean all
-			The “dnf clean all” command ensures that all caches are deleted.
-		For Python (pip):
-			pip install --no-cache-dir <list of package names to install>
-			The --no-cache-dir argument ensures that no cache is created to begin with.
-		For Node.js (npm):
-			npm ci && npm cache clean --force
-			The “npm ci” command (docs) is more efficient and clean than “npm install“. The second command cleans out the NPM cache.
-
-	8) Avoid superfluous chowns
-		- with chowns, if some statements in dockerfile modifies a file in build
-		container, in anyway, a whole new copy of that file is stored in new layer.
-		- So, instead of, say,
-
-				COPY code .
-				RUN chown -R youruser code
-
-		  you should do
-
-				COPY --chown=youruser code .
-		- This will perform the chown as part of the COPY, ensuring that only one instance of the files is created.
+2) Use .dockerignore files
+	- It is similar to the git ignore files.
+	- To avoid accidentally copying unnecessary files into the image.
 
 
-	9) Use the docker-slim tool
-		- docker-slim is a tool that reduces the image size, by starting a temporary container of the image,
-		and figuring out (via static + dynamic analyses) which files are really used by  application in that container.
-		- docker-slim then builds a new single-layer image that contains only those files and folders that were actually used.
-		- Advantages
-			- results in smaller images; sometimes, even smaller than alphine images
-			- High image security, because all tools like shell, curl, package managers, etc, are removed, unless
-			  application uses them.
-			- Also, helps dealing with many (unoptimized) RUN statements
-		- Disadvantages
-			- sometimes applications will be lazy loading/calling.
-				Then docker-slim will throw many of the files, which it thinks as unused.
-			    Say our application works in multi-language, and we have translation files.
-				Those files will be used, only when some work comes in that language.
-				docker-slim thinks they are not used and deletes.
+3) SQUASH Image layers
+	- docker-squash is a Python-based tool that squashes the last N layers of an image to a single layer.
+	- It is similar to the git squash.
+	- After squashing the affected layers, the deleted intermediate files and folders are not part of the squashed layer anymore.
 
-		- To handle this disadvantage, we need to tweak it via
-			- Explicit "preserve path" lists, that contain path to files and folders that are definitely needed.
-			- Dynamic probes, which are HTTP requests or shell command calls that docker-slim makes to application,
-			  to force it to lazy load dependencies, ex: native libraries.
+4) Choosing a suitable base image
+	- alphine images are very size-optimized(~3MB), by default.
+	  But as alphine uses musl instead of much common glibc C-library, sometimes
+	  compatibility issues will araise
+	- Else, will try choosing linux images with slim tag
+	  (e.g. from ~40 MB to ~20 MB in case of Debian).
+	- But, if we choose security focused linux images, like distroless, it will be
+		- harder to debug running containers, and
+		- having a rather steep learning curve to customise them
+
+5) Multi-stage builds
+	- we can split the build process to two(or more) separate images
+		1) A "build image" into which we install all packages and compilers, and do the compilation
+			- it will contain extra things like
+				- the package manager, which is needed to install packages, but not needed for running application
+				- cache that package manager downloaded dependencies, which are not need for running application
+				- tools which are needed for compiling binaries after installation, but not needed afterwards.
+		2) A "run image" into which we only copy application code and other compiled libraries,
+		  which we copy from "build image" to "run image".
+
+6) consolidating the RUN commands
+	- Actually, each RUN command adds a new layer to the image, which contains the changed files and folders.
+	- These layers are “additive”, using an overlay-type file system.
+	- However, deleting files only marks these files as deleted – no disk space is reclaimed!
+	- Instead, we are combine all the run commands with two amperscents (&&) symbols.
+	- Eg:
+		INSTEAD OF
+			FROM debian:latest
+			WORKDIR /app
+			RUN git clone https://some.project.git
+			RUN cd project
+			RUN make
+			RUN mv ./binary /usr/bin/
+			RUN cd .. && rm -rf project
+
+		THIS CAN BE USED
+			FROM debian:latest
+			WORKDIR /app
+			RUN git clone https://some.project.git && \
+			  cd project && \
+			  make && \
+			  mv ./binary /usr/bin/ && \
+			  cd .. && rm -rf project
+
+7) Save space when installing dependencies
+	- Disable (or clean) the cache of the package manager
+	- We can instruct the package manager to install, as fewer additional dependencies as possible, explicitly
+		- like avoid weak dependency links, etc
+	For Debian/Ubuntu:
+		apt-get install -y --no-install-recommends <list of package names to install> && <optional: do something with packages> && apt-get clean && rm -rf /var/lib/apt/lists/*
+		This ensures that no recommended packages are installed, and that the cache is cleared at the end.
+	For RPM-based systems, like RHEL:
+		dnf -y install --setopt=install_weak_deps=False <list of package names to install> && <optional: do something with packages> && dnf clean all
+		The “dnf clean all” command ensures that all caches are deleted.
+	For Python (pip):
+		pip install --no-cache-dir <list of package names to install>
+		The --no-cache-dir argument ensures that no cache is created to begin with.
+	For Node.js (npm):
+		npm ci && npm cache clean --force
+		The “npm ci” command (docs) is more efficient and clean than “npm install“. The second command cleans out the NPM cache.
+
+8) Avoid superfluous chowns
+	- with chowns, if some statements in dockerfile modifies a file in build
+	container, in anyway, a whole new copy of that file is stored in new layer.
+	- So, instead of, say,
+
+			COPY code .
+			RUN chown -R youruser code
+
+	  you should do
+
+			COPY --chown=youruser code .
+	- This will perform the chown as part of the COPY, ensuring that only one instance of the files is created.
+
+
+9) Use the docker-slim tool
+	- docker-slim is a tool that reduces the image size, by starting a temporary container of the image,
+	and figuring out (via static + dynamic analyses) which files are really used by  application in that container.
+	- docker-slim then builds a new single-layer image that contains only those files and folders that were actually used.
+	- Advantages
+		- results in smaller images; sometimes, even smaller than alphine images
+		- High image security, because all tools like shell, curl, package managers, etc, are removed, unless
+		  application uses them.
+		- Also, helps dealing with many (unoptimized) RUN statements
+	- Disadvantages
+		- sometimes applications will be lazy loading/calling.
+			Then docker-slim will throw many of the files, which it thinks as unused.
+			Say our application works in multi-language, and we have translation files.
+			Those files will be used, only when some work comes in that language.
+			docker-slim thinks they are not used and deletes.
+
+	- To handle this disadvantage, we need to tweak it via
+		- Explicit "preserve path" lists, that contain path to files and folders that are definitely needed.
+		- Dynamic probes, which are HTTP requests or shell command calls that docker-slim makes to application,
+		  to force it to lazy load dependencies, ex: native libraries.
 
 
 - docker.yaml
+--------------
 
 	FROM python:3.6
 

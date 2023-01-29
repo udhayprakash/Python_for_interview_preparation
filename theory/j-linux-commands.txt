@@ -220,9 +220,16 @@ Linux
 
 Important Files:
 ----------------
-  /etc/passwd     ==> stores information of all the users	 || cat /etc/passwd
-  /etc/shadow     ==> stores the hashed version of every 	 || cat /etc/passwd
-					user`s password
+  /etc/passwd     ==> stores information of all the users
+					Each line represents an individual user account and contains seven fields, separated by colons(:)
+						1) Username or login name
+						2) Encrypted password
+						3) UserID
+						4) GroupID
+						5) User Description
+						6) User's home directory
+						7) User's login shell
+  /etc/shadow     ==> stores the hashed version of every user`s password
 
 copy
 -----
