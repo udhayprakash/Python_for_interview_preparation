@@ -7,3 +7,18 @@ Food Trade
 
 PII - person identification information
 PHI - person health information
+
+
+data wrangling
+	It is the Iterative process of :
+	- Exploring data (Examine data for possible use case)
+	- Transforming data (Structuring, normalizing, cleaning, enriching the data)
+	- Validating data (Verifying quality, consistency and security of data )
+	- Publishing data for meaningful analysis (Delivering wrangled result for next iterative process in the loop / downstreamed project needs)
+
+	- Stages
+		- Discovering, Structuring, Cleaning, Enriching, Validating, and Publishing data
+
+data wrangling vs cleaning?
+	- Data cleaning focuses on removing erroneous data from your data set.
+	- Whereas, data-wrangling focuses on changing the data format by translating "raw" data into a more usable form.

@@ -105,6 +105,14 @@ Agile vs scrum
 - Agile is a philosophy, whereas scrum is a type of agile methodology.
 
 
+Sprint Metrics Planning
+----------------
+	- For story points, We go with "ok planning" model, where we will
+		1) first discuss about the issues to work, followed by that,
+		2) everyone in the team will give individual Fibonacci estimate,
+		3) Finally, we will mark the average number as story points
+
+
 Sprint Burndown Chart
 ---------------------
 - Is a graphic representation that shows the rate at which work is completed and how much work remains to be done.
