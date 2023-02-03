@@ -65,19 +65,19 @@ Project/task you are proud of
 
 difficulties working with technologies and how did you resolved it?
 -------------------------------------------------------------------
-I implemented multiple scripts in AWS lambda.
-But lambda functions have problem with both time of execution and amount of memory consumption.
-Precisely, as we cant run a lambda function beyond 15 minutes, I rewrote the code, to split each
-functionality and coordinated them with AWS Step Functions.
-It is a promising solutions, as we can only coordinate the lambda functions to run either sequentially,
-or parallelly, but also we can feed result of one to the another.
-But, this kind of work distribution is not easy in all the cases.
+	I implemented multiple scripts in AWS lambda.
+	But lambda functions have problem with both time of execution and amount of memory consumption.
+	Precisely, as we cant run a lambda function beyond 15 minutes, I rewrote the code, to split each
+	functionality and coordinated them with AWS Step Functions.
+	It is a promising solutions, as we can only coordinate the lambda functions to run either sequentially,
+	or parallelly, but also we can feed result of one to the another.
+	But, this kind of work distribution is not easy in all the cases.
 
-So, I explored and got to know about the container based architecture.
-I got to know that there were no limits on execution time and/or memory consumption.
-So, I implemented new scripts AWS using AWS ECR (Elastic Container Registry)
-and EKS (Elastic Kubernetes Service).
-I used docker for containerization and Kubernetes for orchestration of these pods.
+	So, I explored and got to know about the container based architecture.
+	I got to know that there were no limits on execution time and/or memory consumption.
+	So, I implemented new scripts AWS using AWS ECR (Elastic Container Registry)
+	and EKS (Elastic Kubernetes Service).
+	I used docker for containerization and Kubernetes for orchestration of these pods.
 
 
 Biggest Failures

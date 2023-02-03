@@ -153,7 +153,7 @@ Current Project - Infra Automation - 1 click automation -- AWS CLOUD automation
 	- project is boto3 Tagging based Resource billing and Analytics
 
 	- We are part of the infrastructure management team, within this company.
-	- Our job is to managem the infrastructure, within the organization.
+	- Our job is to manage the infrastructure, within the organization.
 	- we will grant access to cloud resources to the teams, and charge for the same, from their projects.
 
 	- In the process, to optimise the billing and better manage, we need to uniquely recognize the resources.
