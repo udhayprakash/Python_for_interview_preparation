@@ -256,9 +256,9 @@ Mentoring, juniors
 - Ensure that they are learning from their mistakes.
 
 - Will encourage them, to share new thoughts.
-	- demystify the pros and cons, by discussions, and let them take the decisions, based on them.
+	- demystify the pros and cons, by discussions, and let them make the decisions, based on them.
 
-- Also, We do weekly functionality based knowledge sharings sessions, where everyone need to share
+- Also, We do weekly functionality based knowledge sharing sessions, where everyone need to share
 	- Learnings of the week, either project related, outside, or even, at personal/fun related.
 
 - I believe that sharing is caring
@@ -273,9 +273,9 @@ New developers
 	Will give read only access
 	Caution on what NOT to do.
 	And ask them to freely make their hands dirty
-		Then, they dont have any fear
+		Then, they don't have any fear
 
-- Once, team is confident, i will give desied permission
+- Once, team is confident, I will give desired permission
 - And slowly let me involve in each process and integrate them to day-to-day work
 
 

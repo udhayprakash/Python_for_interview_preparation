@@ -52,16 +52,16 @@ Code Flow
   We will follow TDD - Test driven development
 	Unittest mocks or pytest fixtures for mocking the 3rd party resources or REST APIs
 	Use mypy for testing the annotations and types
-	For linting, i used pylint and autopep8 for reformatting code for PEP8 guidienesles
+	For linting, i used pylint and autopep8 for reformatting code for PEP8 guidelines.
 
 	We need to ensure all existing and new test cases are running
 	Then, push the code
 	Then, CI/CD process will run
 	If all correct, then we can give pull request
 
-- Then, two  approvals needed; team will review the code; if any changes i will
+- Then, two  approvals needed; team will review the code; if any changes I will
   Address them;
-  Else they will approve; i will merge the code
+  Else they will approve; I will merge the code
   Then, code goes to next branch
 
 - We are with python; we add release tag and push the code
@@ -99,6 +99,7 @@ Agile Methodology Disadvantages
 	Since Agile delivers in increments, tracking progress requires you to look across cycles.
 	And the “see-as-you-go” nature means you can’t set many KPIs at the start of the project.
 	That long game makes measuring progress difficult.
+
 
 Agile vs scrum
 --------------
@@ -150,6 +151,7 @@ Development Tools
 	application Monitoring 		- worked with tools like Dynatrace, appDynamics and Datadog
 
 	for data visualization - python based matplotlib/seaborn, PowerBI
+
 
 how to resolve conflicts
 ------------------------
@@ -233,7 +235,3 @@ blue-green deployment
 	- A deployment strategy in which you create two separate, but identical environments.
 	- One environment (blue) is running the current application version and one environment
       (green) is running the new application version.
-
--------
-Lazy Loading
-	- I

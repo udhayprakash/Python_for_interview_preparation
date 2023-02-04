@@ -76,8 +76,8 @@ how do you learn new technologies, and trends
 =============================================
 	- I subscribed to various blogs and weekly newsletters
 	- Apart from them, i go through the stackoverflow questions and workplace stackoverflow questions, in my free time.
-	- And, part of enhancements or POCs, i research and read, and sometimes implement, based on some articles
-	- sometimes, i will listen to some  tech related podcasts.
+	- And, part of enhancements or POCs, I research and read, and sometimes implement, based on some articles
+	- sometimes, I will listen to some tech related podcasts.
 
 Python Podcasts
 ================
@@ -124,12 +124,15 @@ Questions to Interviewers
 - what does a successful person look like on your team?
 
 - Are we using agile methodology?  And how about the sprint cycle duration?
-- Can I know about the work culture of our company? And Any learning opportunities here?
+- Can I know about the work culture of our company? And Any learning opportunities here? How do you help your team grow professionally?
+
 
 - What were the next steps in the interview process? And how many more rounds of interviews can I expect?
 
 CONCLUSION:
-	Thank you for the time, and I want to conclude that I am expert in Python, and I am ready to extent and learn new skills, if needed
+	Thank you for the time, and I want to conclude that I am expert in Python.
+	I have experience working in both Green-field and Blue-Green Deployments.
+	And I am ready to extend and learn new skills, if needed.
 
 - As I'm understanding the current landscape of your environment, what is your vision of future innovation
 and or new technologies you want to bring within the next 2-4 years, and why so?
@@ -137,8 +140,6 @@ and or new technologies you want to bring within the next 2-4 years, and why so?
 
 - Will there be an opportunity to reach out to the clients, either for requirement
 gathering and/or for demoing the end solution?
-- How do you help your team grow professionally?
-- What are the challenges of this position?
 - Have I answered all your questions?
 - Do you have any hesitations about my qualifications?
 - What is the biggest challenge your company is facing today?
@@ -156,7 +157,7 @@ six months to a year?
 to support hitting those goals?
 - Who will i report to directly?
 - What are the common career paths in this department?
-- Is there anything else i can provide you with that would be helpful?
+- Is there anything else I can provide you with that would be helpful?
 - What's one of the most interesting projects or opportunities that you've worked on?
 
 
