@@ -533,6 +533,12 @@ Characteristics of Cassandra:
 	- Availability: The opposite of "consistency". Data is always available, regardless of being 100% "correct".[1]
 	- Optional fields (wide columns): This CAN be done in MySQL with meta tables etc., but it's for-free and by-default in Cassandra.
 
+Tombstones in Cassandra:
+	- In cassandra, deleted data is not immediately purged from the disk.
+	- Instead, Cassandra writes a marker value, called Tombstone, to indicate that data has been deleted.
+	- The tombstone is necessary, as distributed data stores use eventual consistency, where only a subset of nodes where the data is stored must respond before an operation is considered to be successful.
+	- The grace period for a tombstone is set by the property gc_grace_seconds. Its default value is ten days.
+
 Postgresql
 ==========
 data types

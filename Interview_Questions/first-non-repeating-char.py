@@ -26,6 +26,10 @@ assert first_non_rep_char("acdefacdefu") == "u"
 assert first_non_rep_char("acdefacdef") == ""
 assert first_non_rep_char("") == ""
 
+assert first_non_rep_char("TimesforTimes") == "f"
+assert first_non_rep_char("TimesQuiz") == "T"
+assert first_non_rep_char("aaa") == ""
+
 
 def first_non_rep_char_position(givenStr):
     if not givenStr:
