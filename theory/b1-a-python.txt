@@ -508,6 +508,12 @@ concurrency vs parallelism
 	  15 milliseconds(set via sys.setswitchinterval()) in Python 3, then it gives up
 	  the GIL and another thread may run.
 
+- Thread Pooling
+	- Assiging a bunch of threads, and reusing them, instead of creating a new thread.
+	- The pool is responsible for a fixed number of threads.
+		- It controls when the threads are created, such as just-in-time when they are needed.
+		- It also controls what threads should do when they are not being used, such as making them wait without consuming computational resources.
+
 - Thread Safety
 	- If a thead loses GIL at any moment, we should ensure that code is thread safe.
 	- Many Python operations like sort(), ... are atomic.
@@ -979,6 +985,11 @@ array vs list
 		- IN array, we need to have all elements of same type.
 
 	- whenever I have to store all elements of same type, as arrays are more performant than lists, I prefer to use them.
+
+numpy vs pandas
+	numpy is mostly suitable for numerical data computations, whereas
+	pandas is suitable for tabular data processing.
+
 
 Pandas
 ------

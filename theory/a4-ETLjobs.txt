@@ -17,7 +17,7 @@ I have the experience in creating ETL jobs with event-driven architecture, like
 
 Also, used the AWS Glue jobs for transformation of around 50k records.
 I configured the glue data catalogue to pick the specific columns AND  perform operations
-	Within the python code, i connected with the pyspark for some transformations, etc
+	Within the python code, I connected with the pyspark for some transformations, etc
 And dumped final results in either parquet for any further jobs, or to the db
 
 s3 -> AWS Athena -> QuickSight
@@ -58,8 +58,8 @@ We can take offsets from the db and transfer,
 	Say now there were 120 records count
 	Remaining small chunk (20 records), we will get after active migration
 
-	I know, i will make hold of offset when pull the data
-	I mean, i will count the no of records at that time, when i am pulling
+	I know, I will make hold of offset when pull the data
+	I mean, I will count the no of records at that time, when I am pulling
 
 Slowly Changing Dimensions
 ---------------------------

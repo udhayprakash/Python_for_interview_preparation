@@ -61,7 +61,13 @@ Project/task you are proud of
 	- With inspiration from AWS Step functions, I created a framework to work with these ETL jobs.
 	- we need to just feed this with a yaml file, with the microservice jobs named in sequential intendants, specifying the level, and also the dependencies.
 	- My framework will take these jobs, create a data structure in such a way that
-
+		- most dependent jobs will execute first, followed by less dependant jobs, and lastly the least dependent jobs.
+		- And, the intermediate data is stored in pickle file.
+		- In this way, if something is commonly needed by multiple jobs, instead of rehitting and repeating the process,
+		I can reuse the already generated data from these pickle file.
+	- Due to all this, all solved multiple jobs.
+		1. Reduced the redundant ETL transactions
+		2. Increased the isolation of problem, so, easy
 
 difficulties working with technologies and how did you resolved it?
 -------------------------------------------------------------------
@@ -213,7 +219,7 @@ skills needed by developers
 	- Patience, when debugging or troubleshooting
 	- Persistence, when resolving some issues
 	- Networking and communicating will all
-	- being Pro-active, in chasing clients for requirement gatherings, or filling the gaps in requirements
+	- being Proactive, in chasing clients for requirement gatherings, or filling the gaps in requirements
 
 
 conflicts(workplace disagreements) with Collegues
@@ -243,7 +249,8 @@ conflicts(workplace disagreements) with Collegues
 			- What could be avoid such understanding/miscommunication
 			- What could be best practice, to avoid such things again.
 
-Mentoring, juniors
+
+Mentoring, Juniors
 ------------------
 - Frankly, I never wore the hat of a lead. But, helped and/or got help from any team members.
 - We will try to help others, if they were struck
@@ -265,6 +272,7 @@ Mentoring, juniors
 	- So, whenever, I learned something new, or
 	  addressed some complex problem, or
 	  discovered something, which is useful to other, I will share to all.
+
 
 New developers
 ---------------

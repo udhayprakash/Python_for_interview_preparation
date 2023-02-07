@@ -119,11 +119,13 @@ Sprint Burndown Chart
 - Is a graphic representation that shows the rate at which work is completed and how much work remains to be done.
 - It shows Team progress towards the Sprint Goal, not in terms of time spent but in terms of how much work remains.
 
+
 Relative estimation
 -------------------
 - It provides better estimates.
 - It works by estimating size first so you can relate this size to a task you have completed previously.
 - Then you estimate how long the task will take to complete by making a relative comparison to the time taken to complete this other task.
+
 
 spiral vs agile
 ---------------
@@ -135,6 +137,7 @@ spiral vs agile
 	half-baked or no documentation
 	more customer interaction
 	incrimental developement
+
 
 Development Tools
 ------------------
@@ -182,6 +185,7 @@ three amigos session
 	- Meeting between product owner, developer, and quality tester
 	- To get clarity on scope of the project
 	- It should be done before the sprint planning, for the next sprint.
+
 
 code review/feedbacks
 ---------------------

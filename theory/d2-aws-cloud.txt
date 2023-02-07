@@ -57,8 +57,17 @@ ec2 vs Lambda
 	- Real-time log analyzing
 	- Real-time filtering and transforming data
 
+
 Lambda
 =======
+IN AWS Lambda,
+1) I worked on creating event-triggered jobs, by configuring s3 bucket events like new file creation, file update/deletion, etc.
+2) Also, configured lambda to run with AWS Event bridge, based events too.
+3) And, worked on creating time-triggered jobs.
+4) And, worked with Step functions, for integrating multiple jobs.
+5) Within lambdas, I used boto3 to connect with any AWS resource;
+   and AWS RDS proxy for RDS database integrations.
+
 - Lambda Triggers
 	API Gateway
 	AWS IoT
