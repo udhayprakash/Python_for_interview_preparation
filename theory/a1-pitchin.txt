@@ -134,7 +134,7 @@ Questions to Interviewers
 
 CONCLUSION:
 	Thank you for the time, and I want to conclude that I am an expert in Python.
-	I have experience working in both Green-field and Blue-Green Deployments.
+	I have experience working in both Green-field and Blue-Green Developments.
 	Experience in both backend and frontend, data wrangling and ETLs
 	And I am ready to extend and learn new skills, if needed.
 
