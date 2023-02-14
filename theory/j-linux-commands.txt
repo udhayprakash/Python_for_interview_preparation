@@ -359,326 +359,333 @@ copy
 		- dd deletes the current line.
 
 - commands
-	- Get Total memory used by Linux
-		1. Free command:
-			- To display the free, used and swap memory available in the system
-			$ free –m
-				the option ‘m' displays all the data in MBs.
-		2. /proc/meminfo:
-			$ cat /proc/meminfo
-		3. vmstat:
-			This command basically lays out the memory usage statistics.
-			$ vmstat –s
-		4. top:
-			This command determines the total memory usage as well as also monitors the RAM usage.
-			$ top
-		5. htop:
-			This command also displays memory usage along with other details.
-			$ htop
-	- user management commands
-			last,
-			chage,
-			chsh,
-			lsof,
-			chown,
-			chmod,
-			useradd,
-			userdel,
-			newusers etc.
-	- file related
-		- head: Displays the beginning of the file
-		- tail: Displays the last part of the file
-		- cat : Concatenate files and print on the standard output.
-		- more: Displays the content in pager form and is used to view the text in the terminal window
-				one page or screen at a time.
-		- less: Displays the content in pager form and allows backward and single line movement.
-	- Directory related
-		- sort
-			- sort the entries in a text file in ascending order
-				- $ sort sample.txt
-		- cd
-			cd~: Brings you to the home directory
-			cd-: Brings you to the previous directory
-			.  : Bring you to the parent directory
-			cd/: Takes you to the entire system’s root directory
-		- ls [options] [file|dir]
+===========
+- Get Total memory used by Linux
+	1. Free command:
+		- To display the free, used and swap memory available in the system
+		$ free –m
+			the option ‘m' displays all the data in MBs.
+	2. /proc/meminfo:
+		$ cat /proc/meminfo
+	3. vmstat:
+		This command basically lays out the memory usage statistics.
+		$ vmstat –s
+	4. top:
+		This command determines the total memory usage as well as also monitors the RAM usage.
+		$ top
+	5. htop:
+		This command also displays memory usage along with other details.
+		$ htop
+- user management commands
+		last,
+		chage,
+		chsh,
+		lsof,
+		chown,
+		chmod,
+		useradd,
+		userdel,
+		newusers etc.
 
-			option flags
-				-a  to list all files, along with hidden files
-				-F	add one char of */=>@| to enteries
-				-i	list files with their inode index number
-				-l  list with long format - show permissions
-				-h  list readable file sizes (KB, ...)
-				-s  list file sizes in KB
-				-r  list in reverse order
-				-R  list recursively directory tree
-				-t  sort by time & date
-				-X  sort by extension name
-				-S	 lists files with their size and sorts the list by file size
+- file related
+	- head: Displays the beginning of the file
+	- tail: Displays the last part of the file
+	- cat : Concatenate files and print on the standard output.
+	- more: Displays the content in pager form and is used to view the text in the terminal window
+			one page or screen at a time.
+	- less: Displays the content in pager form and allows backward and single line movement.
 
-			$ ls /   		List root directory
-			$ ls ..  		List parent directory
-			$ ls ~	 		List user's home directory (e.g: /home/user)
-			$ ls *	 		List all subdirectories
-			$ ls *.txt		List only text files with wildcard
-			$ ls > out.txt	ls redirection to output file
-			$ ls -d */		List directories only:
-			$ ls -d $PWD/*	List files and directories with full path
-			$ ls --version  Check version of ls command.
-			$ ls -l /tmp    List files of the directory '/tmp'
-			$ ls -ld /tmp/  displays information of /tmp directory
-			$ ls -n 		display UID and GID of files and directories
-			- To shows files by size, biggest file will be displayed last,
-				$ ls - lSr
-		- cat [options] file1 [file2...]
-			to display the content of text files and
-			to combine several files to one file.
-			The cat command does not accept directories.
+- Directory related commands
+----------------------------
+- sort
+	- sort the entries in a text file in ascending order
+		- $ sort sample.txt
+- cd
+	cd~: Brings you to the home directory
+	cd-: Brings you to the previous directory
+	.  : Bring you to the parent directory
+	cd/: Takes you to the entire system’s root directory
+- ls [options] [file|dir]
 
-			$ cat -b	add line numbers to non blank lines
-			$ cat -n	add line numbers to all lines
-			$ cat -s	squeeze blank lines to one line
-			$ cat -E	show $ at the end of line
-			$ cat -T	show ^I instead of tabs
+	option flags
+		-a  to list all files, along with hidden files
+		-F	add one char of */=>@| to enteries
+		-i	list files with their inode index number
+		-l  list with long format - show permissions
+		-h  list readable file sizes (KB, ...)
+		-s  list file sizes in KB
+		-r  list in reverse order
+		-R  list recursively directory tree
+		-t  sort by time & date
+		-X  sort by extension name
+		-S	 lists files with their size and sorts the list by file size
 
-			$ cat list1.txt
-				milk
-				bread
-				apples
+	$ ls /   		List root directory
+	$ ls ..  		List parent directory
+	$ ls ~	 		List user's home directory (e.g: /home/user)
+	$ ls *	 		List all subdirectories
+	$ ls *.txt		List only text files with wildcard
+	$ ls > out.txt	ls redirection to output file
+	$ ls -d */		List directories only:
+	$ ls -d $PWD/*	List files and directories with full path
+	$ ls --version  Check version of ls command.
+	$ ls -l /tmp    List files of the directory '/tmp'
+	$ ls -ld /tmp/  displays information of /tmp directory
+	$ ls -n 		display UID and GID of files and directories
+	- To shows files by size, biggest file will be displayed last,
+		$ ls - lSr
+- cat [options] file1 [file2...]
+	to display the content of text files and
+	to combine several files to one file.
+	The cat command does not accept directories.
 
-			$ cat list2.txt
-				house
-				car
+	$ cat -b	add line numbers to non blank lines
+	$ cat -n	add line numbers to all lines
+	$ cat -s	squeeze blank lines to one line
+	$ cat -E	show $ at the end of line
+	$ cat -T	show ^I instead of tabs
 
-			$ cat list1.txt list2.txt
-				milk
-				bread
-				apples
+	$ cat list1.txt
+		milk
+		bread
+		apples
 
-				house
-				car
+	$ cat list2.txt
+		house
+		car
 
-			Combine 2 text files to another file
-			$ cat list1.txt list2.txt > todo.txt
-		- cp
-			- To copy a file
-			$ cp <source> <destination>
-			$ cp questions.txt /new/linux /linux/interview
-		- mv
-			- To rename a file
-			$ mv <oldname> <newname>
-		- rm
-			- To delete a file
-				$ rm <oldname>
-			- To delete all files in current directory that contains the word 'linux'
-				$ for i in *linux*; do rm $i; done
-		- rmdir
-			$ rmdir <directory name>
-		- rm -rf
-			$ rm -rf <directory name>
-			- should be used carefully because it will delete all the data without any warnings.
-		- locate
-			- To find path to the file
-			$ locate sample.txt
-		- diff
-			- To find text differences between two files
-			$ diff abc.conf xyz.conf
-		- touch
-			- used to create a text file without opening it.
-			$ touch <filename>
-			$ touch sample.txt
-		- tar
-			- command is used to extract or create an archived file.
-			- To extract files from an archived file,
-				- $ tar -xvzf sample.tar.gz
-			- To create an archive of all files in current directory,
-				- $ tar -cvzf filename.tar.gz
-			- FLAGS
-				c: create archive
-				x: extract
-				v: verbose
-				f: file
-			- To list content of tar.gz file
-				- $ tar tf file.tgz
-			- To extract only one file in tar.gz file,
-				- $ tar xf file.tgz filename
-		- zcat
-			- To see content of compressed file with extension .z,
-				- $ zcat sample.z
-		- xclip
-			- To copy text to the clipboard
-				- $ cat file.txt | xclip -selection clipboard
-		- find
-			- To find files using names
-				$ find -name "MyCProgram.c"
-			- To find files using names, ignoring case
-				$ find -iname "MyCProgram.c"
-			- Limit Search To Specific Directory Level Using mindepth and maxdepth
-				- To try find the word 'passwd' in all files, from root directory level
-					$ find / -name passwd
-				- Find the passwd file under root and one level down. (i.e root — level 1, and one sub-directory — level 2)
-					$ find -maxdepth 2 -name passwd
-				- Find the passwd file under root and two levels down. (i.e root — level 1, and two sub-directories — level 2 and 3 )
-					$ find -maxdepth 3 -name passwd
-				- Find the password file between sub-directory level 2 and 4.
-					$ find -mindepth 3 -maxdepth 5 -name passwd
-			- Find files based on file type
-				- Find only the socket files
-					$ find . -type s
-				- Find all directories
-					$ find . -type d
-				- Find only the normal files
-					$ find . -type f
-				- Find all the hidden files
-					$ find . -type f -name ".*"
-				- Find all the hidden directories
-					$ find -type d -name ".*"
-			- Find files by size
-				- NOTE:  – means less than the give size,
-						 + means more than the given size, and
-						 no symbol means exact given size.
-				- Find files bigger than the given size
-					$ find ~ -size +100M
-				- Find files smaller than the given size
-					$ find ~ -size -100M
-				- Find files that matches the exact given size
-					$ find ~ -size 100M
-				- To remove big archive(.zip) files, exceeding 100MB,
-					$ find / -type f -name *.zip -size +100M -exec rm -i {} \;"
-				- Find TOP 5 big files
-					$ find . -type f -exec ls -s {} \; | sort -n -r | head -5
-				- Find TOP 5 small files
-					$ find . -type f -exec ls -s {} \; | sort -n  | head -5
+	$ cat list1.txt list2.txt
+		milk
+		bread
+		apples
 
-			- Find all empty files
-				-
-					$ find ~ -empty
-				- List all the empty files only in your home directory.
-					$ find . -maxdepth 1 -empty
-				- List only the non-hidden empty files only in the current directory.
-					$ find . -maxdepth 1 -empty -not -name ".*"
+		house
+		car
 
-			- Find files based on permissions
-				- Find files with exact permissions,
-					$ find . -perm -g=r -type f -exec ls -l {} \;
-				- Find files which has read permission only to group.
-					$ find . -perm g=r -type f -exec ls -l {} \;
-				- Find files which has read permission only to group [ search by octal ]
-					$ find . -perm 040 -type f -exec ls -l {} \;
-			- Find files based on inode number
-				$ find -inum 16187430
+	Combine 2 text files to another file
+	$ cat list1.txt list2.txt > todo.txt
+- cp
+	- To copy a file
+	$ cp <source> <destination>
+	$ cp questions.txt /new/linux /linux/interview
+- mv
+	- To rename a file
+	$ mv <oldname> <newname>
+- rm
+	- To delete a file
+		$ rm <oldname>
+	- To delete all files in current directory that contains the word 'linux'
+		$ for i in *linux*; do rm $i; done
+- rmdir
+	$ rmdir <directory name>
+- rm -rf
+	$ rm -rf <directory name>
+	- should be used carefully because it will delete all the data without any warnings.
+- locate
+	- To find path to the file
+	$ locate sample.txt
+- diff
+	- To find text differences between two files
+	$ diff abc.conf xyz.conf
+- touch
+	- used to create a text file without opening it.
+	$ touch <filename>
+	$ touch sample.txt
+- tar
+	- command is used to extract or create an archived file.
+	- To extract files from an archived file,
+		- $ tar -xvzf sample.tar.gz
+	- To create an archive of all files in current directory,
+		- $ tar -cvzf filename.tar.gz
+	- FLAGS
+		c: create archive
+		x: extract
+		v: verbose
+		f: file
+	- To list content of tar.gz file
+		- $ tar tf file.tgz
+	- To extract only one file in tar.gz file,
+		- $ tar xf file.tgz filename
+- zcat
+	- To see content of compressed file with extension .z,
+		- $ zcat sample.z
+- xclip
+	- To copy text to the clipboard
+		- $ cat file.txt | xclip -selection clipboard
+- find
+	- To find files using names
+		$ find -name "MyCProgram.c"
+	- To find files using names, ignoring case
+		$ find -iname "MyCProgram.c"
+	- Limit Search To Specific Directory Level Using mindepth and maxdepth
+		- To try find the word 'passwd' in all files, from root directory level
+			$ find / -name passwd
+		- Find the passwd file under root and one level down. (i.e root — level 1, and one sub-directory — level 2)
+			$ find -maxdepth 2 -name passwd
+		- Find the passwd file under root and two levels down. (i.e root — level 1, and two sub-directories — level 2 and 3 )
+			$ find -maxdepth 3 -name passwd
+		- Find the password file between sub-directory level 2 and 4.
+			$ find -mindepth 3 -maxdepth 5 -name passwd
+	- Find files based on file type
+		- Find only the socket files
+			$ find . -type s
+		- Find all directories
+			$ find . -type d
+		- Find only the normal files
+			$ find . -type f
+		- Find all the hidden files
+			$ find . -type f -name ".*"
+		- Find all the hidden directories
+			$ find -type d -name ".*"
+	- Find files by size
+		- NOTE:  – means less than the give size,
+				 + means more than the given size, and
+				 no symbol means exact given size.
+		- Find files bigger than the given size
+			$ find ~ -size +100M
+		- Find files smaller than the given size
+			$ find ~ -size -100M
+		- Find files that matches the exact given size
+			$ find ~ -size 100M
+		- To remove big archive(.zip) files, exceeding 100MB,
+			$ find / -type f -name *.zip -size +100M -exec rm -i {} \;"
+		- Find TOP 5 big files
+			$ find . -type f -exec ls -s {} \; | sort -n -r | head -5
+		- Find TOP 5 small files
+			$ find . -type f -exec ls -s {} \; | sort -n  | head -5
 
-	- grep
-		- stands for "global regular expression print"
-		- used for matching a regular expression against text in a file.
-		- This command performs pattern-based searching and only the matching lines are displayed as output.
-		- It makes use of options and parameters that are specified along with the command line.
-		- SYNTAX:
-			grep [options] pattern [files]
-		- $ grep -c "linux" interview.txt
-		- $ cat linux.txt | grep ^a
-			- lists all lines which start with 'a'.
-		- $ cat linux.txt | grep n
-			- lists all lines which have 'n' in it.
-		- $ grep -l this demo_*
-			- Display only the file names which matches the given pattern
-		- When you want do find out how many lines matches the pattern
-			$ grep -c this demo_file
-			  3
-		- When you want do find out how many lines that does not match the pattern
-			$ grep -v -c this demo_file
-			  4
-		- Show Only matched strings
-			$ grep -o "is.*line" demo_file
-				is line is the 1st lower case line
-				is line
-				is is the last line
-		- Show line number while displaying the output
-			$ grep -n "go" demo_text
-				5: * e - go to the end of the current word.
-				6: * E - go to the end of the current WORD.
-				7: * b - go to the previous (before) word.
-				8: * B - go to the previous (before) WORD.
-				9: * w - go to the next word.
-				10: * W - go to the next WORD.
+	- Find all empty files
+		-
+			$ find ~ -empty
+		- List all the empty files only in your home directory.
+			$ find . -maxdepth 1 -empty
+		- List only the non-hidden empty files only in the current directory.
+			$ find . -maxdepth 1 -empty -not -name ".*"
 
-	- Network troubleshooting commands
-		hostname    : To view the hostname (domain and IP address) of the machine and to set the hostname.
-		ping        : To check if the remote server is reachable or not.
-		hping3		: To construct any TCP packet, as we want
-		ifconfig    : To display and manipulate route and network interfaces. It displays network configuration.
-		netstat     : It displays network connections, routing tables, interface statistics.
-					  ‘ss’ is the replacement of netstat command which is used to get more information.
-					  netstat/ss/lsof/fuser
-		traceroute  : It is a network troubleshooting utility that is used to find the number of hops required for a particular packet to reach the destination.
-		tracepath   : It is the same as traceroute with a difference that it does not require root privileges.
-		mtr         : This command combines ping and track path into a single command.
-		tcptraceroute: use TCP cpakets instead of ICMP to traceroute
+	- Find files based on permissions
+		- Find files with exact permissions,
+			$ find . -perm -g=r -type f -exec ls -l {} \;
+		- Find files which has read permission only to group.
+			$ find . -perm g=r -type f -exec ls -l {} \;
+		- Find files which has read permission only to group [ search by octal ]
+			$ find . -perm 040 -type f -exec ls -l {} \;
+	- Find files based on inode number
+		$ find -inum 16187430
 
-		dig         : This command is used to query the DNS name servers for any task related to the DNS lookup.
-		nslookup    : To find DNS related query.
-		route       : It shows the details of the route table and manipulates the IP routing table.
-		ifplugstatus: This command tells us whether the network cable is plugged in or not.
-		ip			: replaces ifconfig, route, and more features
-		ethtool		: manage physical ethernet connections + network cards
-		iw/iwconfig	: manage wireless network settings ( to see speed/frequency, etc)
+- grep
+	- stands for "global regular expression print"
+	- used for matching a regular expression against text in a file.
+	- This command performs pattern-based searching and only the matching lines are displayed as output.
+	- It makes use of options and parameters that are specified along with the command line.
+	- SYNTAX:
+		grep [options] pattern [files]
+	- $ grep -c "linux" interview.txt
+	- $ cat linux.txt | grep ^a
+		- lists all lines which start with 'a'.
+	- $ cat linux.txt | grep n
+		- lists all lines which have 'n' in it.
+	- $ grep -l this demo_*
+		- Display only the file names which matches the given pattern
+	- When you want do find out how many lines matches the pattern
+		$ grep -c this demo_file
+		  3
+	- When you want do find out how many lines that does not match the pattern
+		$ grep -v -c this demo_file
+		  4
+	- Show Only matched strings
+		$ grep -o "is.*line" demo_file
+			is line is the 1st lower case line
+			is line
+			is is the last line
+	- Show line number while displaying the output
+		$ grep -n "go" demo_text
+			5: * e - go to the end of the current word.
+			6: * E - go to the end of the current WORD.
+			7: * b - go to the previous (before) word.
+			8: * B - go to the previous (before) WORD.
+			9: * w - go to the next word.
+			10: * W - go to the next WORD.
 
-	- process related
-		$ ps        : To list all processes
-		$ kill 3849 : To terminate process with process id 3849
-		# lsof      : To know which file is opened by which process.
-	- mount
-		- To see list of mounted devices
-			$ mount -l
-		- To show free inodes on mounted filesystems,
-			$ df -l
-		- To show free space on mounted filesystems/ disk space check,
-			$ df -h
-		- To show disks partitions sizes and types (run as root).
-			$ fdisk -l
-		- To retrieve more detailed information about which files use the disk space in a directory,
-			$ du -sh
+- Network troubleshooting commands
+-----------------------------------
+	hostname    : To view the hostname (domain and IP address) of the machine and to set the hostname.
+	ping        : To check if the remote server is reachable or not.
+	hping3		: To construct any TCP packet, as we want
+	ifconfig    : To display and manipulate route and network interfaces. It displays network configuration.
+	netstat     : It displays network connections, routing tables, interface statistics.
+				  ‘ss’ is the replacement of netstat command which is used to get more information.
+				  netstat/ss/lsof/fuser
+	traceroute  : It is a network troubleshooting utility that is used to find the number of hops required for a particular packet to reach the destination.
+	tracepath   : It is the same as traceroute with a difference that it does not require root privileges.
+	mtr         : This command combines ping and track path into a single command.
+	tcptraceroute: use TCP cpakets instead of ICMP to traceroute
 
-	- Scheduling Tasks
-		- cron
-			- used to repeatedly schedule a task at a specific time.
-			- SYNTAX : <minute> <hour> <day> <month> <weekday> <command>
-			- EXAMPLE: 0 16 * * 0 <command>
-		- at
-			- used to schedule a task only once at the specified time.
-			- $ echo "shutdown now" | at -m 18:00
-	- export
-		- used to set and reload the environment variables.
-		- $ export JAVA_HOME = /home/user/Java/bin
-	- env
-		- To list all environment variables
-	- service
-		- To check if a service is running
-			- $ service <servicename> status
-		- To check the status of all the services
-			- $ service --status-all
-		- To start a service,
-			- $ service <servicename> start
-		- To stop a service,
-			- $ service <servicename> stop
-	- timeout
-		- To run a command for a limited time,
-			- $ timeout 10s ./script.sh
-	- /usr/bin/time
-		- to check resource usage:
-			- $ /usr/bin/time -v ls
-	- inotifywait
-		- To run a command, everytime a file is modified,
-			- $ while inotifywait -e close_write document.tex
-				do
-				make
-				done
-	- namei
-		- To check permissions of each directory to a file
-		- $ namei -l /path/to/file.txt
+	dig         : This command is used to query the DNS name servers for any task related to the DNS lookup.
+	nslookup    : To find DNS related query.
+	route       : It shows the details of the route table and manipulates the IP routing table.
+	ifplugstatus: This command tells us whether the network cable is plugged in or not.
+	ip			: replaces ifconfig, route, and more features
+	ethtool		: manage physical ethernet connections + network cards
+	iw/iwconfig	: manage wireless network settings ( to see speed/frequency, etc)
 
-	- To track peak memory usage,
-		/usr/bin/time -v myscript.py
+- process related
+	$ ps        : To list all processes
+	$ kill 3849 : To terminate process with process id 3849
+	# lsof      : To know which file is opened by which process.
+
+- mount
+	- To see list of mounted devices
+		$ mount -l
+	- To show free inodes on mounted filesystems,
+		$ df -l
+	- To show free space on mounted filesystems/ disk space check,
+		$ df -h
+	- To show disks partitions sizes and types (run as root).
+		$ fdisk -l
+	- To retrieve more detailed information about which files use the disk space in a directory,
+		$ du -sh
+
+- Scheduling Tasks
+	- cron
+		- used to repeatedly schedule a task at a specific time.
+		- SYNTAX : <minute> <hour> <day> <month> <weekday> <command>
+		- EXAMPLE: 0 16 * * 0 <command>
+	- at
+		- used to schedule a task only once at the specified time.
+		- $ echo "shutdown now" | at -m 18:00
+- export
+	- used to set and reload the environment variables.
+	- $ export JAVA_HOME = /home/user/Java/bin
+- env
+	- To list all environment variables
+- service
+	- To check if a service is running
+		- $ service <servicename> status
+	- To check the status of all the services
+		- $ service --status-all
+	- To start a service,
+		- $ service <servicename> start
+	- To stop a service,
+		- $ service <servicename> stop
+- timeout
+	- To run a command for a limited time,
+		- $ timeout 10s ./script.sh
+- /usr/bin/time
+	- to check resource usage:
+		- $ /usr/bin/time -v ls
+- inotifywait
+	- To run a command, everytime a file is modified,
+		- $ while inotifywait -e close_write document.tex
+			do
+			make
+			done
+- namei
+	- To check permissions of each directory to a file
+	- $ namei -l /path/to/file.txt
+
+- To track peak memory usage,
+	/usr/bin/time -v myscript.py
+
 Logs
 	For system logs,
 		/var/log/syslog	in Debian family
@@ -705,6 +712,7 @@ Logs
 	/var/log/pureftp.log: monitors for FTP connections using the pureftp process. Find data on every connection, FTP login, and authentication failure here.
 	/var/log/spooler: Usually contains nothing, except rare messages from USENET.
 	/var/log/xferlog: keeps FTP file transfer sessions. Includes info like file names and user-initiated FTP transfers.
+
 
 Systems/Linux
 =============

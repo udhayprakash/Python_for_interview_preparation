@@ -1,0 +1,50 @@
+SUBMITTAL QUESTIONS:
+===================
+PYTHON EXPERIENCE 4 YEARS MINIMUM AND AT HIGH LEVEL OF APPLICATIONS SIDE (500 characters max)
+
+	I am a Full-Stack Python Developer, mostly worked in backend (REST APIs, microservices, ETLs, etc)
+	IN Backend, I worked on creating standalone scripts for automation, scheduled jobs, ETL jobs and
+	data pipelines; and RESTful APIs and web applications.
+
+	In Python,
+	- worked on creating web applications and RESTFUL APIs using Django/flask/FastAPI frameworks
+	- worked on creating process automation and integrating with infrastructure(Linux/windows) boxes
+	- worked on web scraping using beautiful soup
+	- created unit test, integration test for the source code, using unittest and pytest modules
+
+
+MESSAGING TECHNOLOGIES: KAFKA STRONGLY PREFERRED  (500 characters max)
+	I worked with Messages services like RabbitMQ, AWS Kinesis and Apache Kafka.
+	I have the experience with suscribing to the kafka topics, and consuming the streaming data, as part
+	of my ETLs.
+	Also worked with confluent kafka too.
+
+DATA: MYSQL, AWS RDS  (500 characters max)
+	In relational dB, I worked with MySQL, MS SQL, oracle dB and PostgreSQL; and in no-relational
+	databases, I worked with MongoDB and Cassandra.
+
+	Recently project is with MySQL as database, on AWS RDS. I used it for both interagtions with my django project
+	and the AWS Lambda services. I used the RDS Proxy when making integrations from AWS Lambda to RDS.
+
+SERVICE-ORIENTED ARCHITECTURE: GRAPHQL, REST  (500 characters max)
+	I have the experience in both creating and consuming REST APIs and GraphQL.
+	For consuming REST APIs, i used urllib3, requests, httpx; and to asynchronously consume, used the aiohttp module.
+	For creating REST APIs, I used frameworks like Django, Flask, FastAPI, etc.
+	For creating GraphQL, along side the REST APIs, I worked with integrations like
+	Ariadne when working with Flask and graphene, when working with Django frameworks.
+
+CONTAINERIZATION AND ORCHESTRATION: DOCKER, KUBERNETES, ARGO CD  (500 characters max)
+	I used docker for containerization and kubernetes for orchestration.
+	I have the experience writing docker.yaml files for creating containers.
+	Locally, my dev setup is done with miniKube. Have the experience in doing a POC on
+	AWS Fargate, AWS ECS and AWS KMS. In  current project, I am using AWS KMS for orchestration of the pods.
+
+ADDITIONAL INFORMATION YOU WOULD LIKE THE EMPLOYER TO KNOW (OPTIONAL)  (500 characters max)
+	Also, worked with cacheing Technologies like Redis, Memcache, ElastiSearch, etc.
+	Recently, I started learning Golang, for rewriting some microservices, for better concurrency needs.
+
+
+==========
+4) Provide a short description of your work with data integration tools & include number of years.
+
+5) Provide a short summary of your scripting experience and how it was used.

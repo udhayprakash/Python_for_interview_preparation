@@ -31,7 +31,7 @@ Use the STAR (Situation, Task, Action, Result) technique when answering example 
 	For one minute book of work, I need to spend 190 seconds, or 3 minutes. Or, for one day of work, I need to process for 3 days.
 
 	When using the cProfiler, I understood that it is taking more time at the xml to dictionary conversion.
-	As i used xmltodict python module for this conversion, I gone to code base of that module, pulled the exact code responsible for this conversion, and added to my code.
+	As I used xmltodict python module for this conversion, I went to code base of that module, pulled the exact code responsible for this conversion, and added to my code.
 	Also, refactored my script further, which resulted in optimization from 19 seconds to 14 seconds.
 
 	Still when seen in cProfiler, I found that it is taking time at the XML to dictionary conversion only.
@@ -45,11 +45,13 @@ Use the STAR (Situation, Task, Action, Result) technique when answering example 
 		2. I will follow the due process, follow-up with my team and manager, if i get a worthwhile idea.
 
 - Long Run process ( Django web application)
-	- In current project, we created a dashboard for data analytics results.
+	- In our current project, we created a dashboard for data analytics results.
 	- Users can also initiate some customized reports. Once they request, it will take some time for response and creating and downloading the CSV file.
 	- Over a period of time, as more complex reports and large processing is needed, those user requests used to be timed-out.
 	- But, in the backend, they were successfully getting processed.
-	- Upon investigation, I found that
+	- Upon investigation, I found that a solution to this problem
+	- I created a distrubuted setup where all the frontend hit will create a celery job, instead of directly executing.
+		1. user will
 
 Project/task you are proud of
 --------------------------------

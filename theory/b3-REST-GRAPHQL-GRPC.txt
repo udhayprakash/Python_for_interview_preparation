@@ -103,6 +103,51 @@ API Authentication
 
 		openID - facebook, google, twitter, etc
 
+OAuth
+======
+	OAuth is an open-standard authorization protocol or framework that provides applications the ability for “secure designated access.”
+	OAuth doesn’t share password data but instead uses authorization tokens to prove an identity between consumers and service providers.
+
+	OAuth is about authorization and not authentication. Authorization is asking for permission to do stuff. Authentication is about proving you are the correct person because you know things. OAuth doesn’t pass authentication data between consumers and service providers – but instead acts as an authorization token of sorts.
+
+	OAuth transaction has THREE parts - the user, the consumer, and the service provider.
+
+	Ex: If user wants to access a website using Oauth Provider, like facebook.
+
+	Step 1: User will come to the website, click on facebook login.
+	Step 2: The application will redirect the user, to facebook for authorization.
+	Step 3: Facebook, which is the Oauth provider, will validate the user, and the website too.
+		Means Invalid user cant access the website.
+		Also, user is protected from accessing a Phising Website( which is similar to Original Website)
+
+		Finally, after validation, Oauth provider will reply token, with some expiry time.
+	Step 4: So, from then, user will access the website using that token, for the given time.
+
+OAuth vs OAuth2
+===============
+	OAuth 2.0 is a complete redesign from OAuth 1.0, and the two are not compatible.
+	OAuth 1.0 is deprecated now.
+
+	OAuth 2.0 is faster and easier to implement.
+	OAuth 1.0 used complicated cryptographic requirements, only supported three flows, and did not scale.
+
+	OAuth 2.0 has six flows for different types of applications and requirements and enables signed secrets over HTTPS.
+	OAuth tokens no longer need to be encrypted on the endpoints in 2.0 since they are encrypted in transit.
+
+
+SAML
+====
+	SAML means Security Assertion Markup Language
+	It is an alternative federated authentication standard that many enterprises use for Single-Sign On (SSO).
+	SAML enables enterprises to monitor who has access to corporate resources.
+
+SAML vs OAuth
+=============
+	SAML uses XML to pass messages, and OAuth uses JSON.
+	OAuth uses API calls extensively, so, suitable for mobile applications, modern web applications, game consoles, and Internet of Things (IoT) devices.
+	Whereas SAML drops a session cookie in a browser that allows a user to access certain web pages - great for short-lived web pages.
+
+
 OAuth vs JWT
 ============
 	- OAuth 2.0 defines a protocol, i.e. specifies how tokens are transferred,

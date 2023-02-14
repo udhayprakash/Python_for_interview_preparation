@@ -154,7 +154,7 @@ Development Tools
 	application Monitoring 		- worked with tools like Dynatrace, appDynamics and Datadog
 
 	for data visualization - python based matplotlib/seaborn, PowerBI
-
+	for db design
 
 how to resolve conflicts
 ------------------------
@@ -189,8 +189,8 @@ three amigos session
 
 code review/feedbacks
 ---------------------
-- Earlier, I used to leave code review comments for the lintings; but now as latest projects were set with pre-commit hooks,
-  by the time, code is committed, PEP8 guidelines were followed.
+- Earlier, I used to leave code review comments for the lintings.
+- But now as latest projects were set with pre-commit hooks, by the time, code is committed, PEP8 guidelines were followed.
 - Now, I will check for any logic suggestions like
 	- If someone wrote a logic in O(n^2), and it can be better done, in say O(N),
 	- Or, If there is ambiguity in the code comments and/or variable namings, i would suggest.

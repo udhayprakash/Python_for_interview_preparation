@@ -196,3 +196,22 @@ Built new connections to databases like ORE, Snowflake, Redshift, and Teradata f
 incorporated everything in a python library to make the DA's life easier.
 
 Rewrote the Teradata SQL queries to Amazon Snowflake as part of database migration.
+===========================================================================================================
+I have 6+ years of experience in the IT industry as a Python developer.
+Currently working with Capital one we mainly focus on providing a better customer experience.
+I played the role of both a python developer & frontend developer.
+
+Hands-on experience in Python and front-end technologies, HTML, CSS, JS, Angular, Bootstrap, React Js,
+Node.js and AWS, databases like PostgreSQL, Teradata, MySQL, Dynamo DB
+
+
+My responsibilities included building key services such as data scraping from various sources and
+creating a browser extension using python. I also make sure to work in a TDD environment, where I
+write test cases for each service I developed.
+
+In terms of APIs, I was involved in building multiple endpoints to scale our application and we
+used AWS API Gateway to handle API requests and responses. To analyze our user data, I used the
+pandas and NumPy libraries, and we used AWS Glue to extract data from our S3 data lake and create metadata.
+
+Additionally, we used AWS Quick Sight for real-time metrics and data visualization.
+All of this allowed us to quickly analyze customer data and provide relevant recommendations to our credit card holders.
