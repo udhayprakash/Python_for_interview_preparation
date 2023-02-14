@@ -45,6 +45,3 @@ ADDITIONAL INFORMATION YOU WOULD LIKE THE EMPLOYER TO KNOW (OPTIONAL)  (500 char
 
 
 ==========
-4) Provide a short description of your work with data integration tools & include number of years.
-
-5) Provide a short summary of your scripting experience and how it was used.

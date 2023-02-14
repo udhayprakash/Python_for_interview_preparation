@@ -96,6 +96,16 @@ People in Python community
 	- Sam Lau and Philip Guo, who built the pythontutor and pandastutor websites
 
 
+Learning new language
+======================
+	I'm very much interested in learning a new language.
+	One receent example I would like to quote is
+	There is an old legacy application, from which we were given access to get information, within a specific window of time.
+	So, I tried using python muti-threading/multi-processing combination, but I wasnt satisfied with the outcome.
+	When researched, I found that Go language is better suitable for concurrent microservice calls, and worked on it.
+
+	With this I want to say like you I'm pretty much flexible enough to learn a new language and adapt.
+
 When Programming started
 ========================
 I am interested in playing online games.

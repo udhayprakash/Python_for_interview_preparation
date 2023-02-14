@@ -1,3 +1,5 @@
+reason for go?
+
 In Golang, I created microservices and ETL jobs,
 	Mainly using go concurrency.
 	Used Gokit for microservices implementation,

@@ -97,6 +97,11 @@ Python Questions
 	  intersection, etc are needed.
 	- Tuple is suitable when there need to be immutability
 
+- mutable vs immutable
+	Any object that supports changes on itself, is mutable object; else an immutable object.
+	Examples of mutable objects include list, set, dictionary
+	Examples of immutable objects include tuple, frozenset, basic data types, class with __slot__ defined
+
 - hashable
 	- An object is hashable if it has a hash value which never changes during its lifetime
 

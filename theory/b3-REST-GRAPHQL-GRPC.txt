@@ -82,6 +82,13 @@ REST allows a greater variety of data formats,
 	- Easy to develop and automate
 	- very popular
 
+Authentication vs authorisation
+================================
+	- Authentication is validating the user.
+	- Authorization is Validating the role of valid user.
+	- Simple Analogy is that in the company office only employees (means valid people) can enter.
+		But only few people can access secured rooms.
+
 API Authentication
 ===================
 	1) HTTP Authentication
