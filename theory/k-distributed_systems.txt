@@ -125,3 +125,41 @@ Airflow
 	DAG means Directed Acyclic Graph.
 	is a collection of all the tasks you want to run, organized in a way that reflects their relationships and dependencies.
 	A DAG is defined in a Python script, which represents the DAGs structure (tasks and their dependencies) as code.
+
+
+message queue vs kafka
+----------------------
+	- We can consider queue systems like Messag queue for:
+		- Exactly once delivery, and to participate into two phase commit transaction
+		- Recall messages in queue are kept until consumer(s) got them.
+		- Asynchronous request / reply communication: the semantic of the communication is for one component to ask a second command to do something on its data.
+			This is a command pattern with delay on the response.
+
+	- We can Consider streaming system, like Kafka, as pub/sub and persistence system for:
+		- Publish events as immutable facts of what happened in an application
+		- Get continuous visibility of the data Streams
+		- Keep data once consumed, for future consumers, for replay-ability
+		- Scale horizontally the message consumption
+
+- Messaging
+---------
+	- Messages transport a payload and messages are persisted until consumed.
+	- Message consumers are typically directly targeted and related to the producer who cares that the message has been delivered and processed.
+
+- Events
+---------
+	- Events are persisted as a replayable stream history.
+	- Event consumers are not tied to the producer.
+	- An event is a record of something that has happened and so can't be changed. (Like a history, immutable and cant be changed)
+
+- Event Driven Architecture (EDA)
+-------------------------
+	- It is a software design that reacts to changes of state (events) and transmits these events using a decoupled architecture.
+	? Decoupled Architecture Patterns
+		- Publish-Subscribe (Pub-Sub) Pattern
+			- Here, producer publishes the event and subscriber watches for events, but neither are dependent on the other.
+
+- Event Sourcing vs Event Streaming
+----------------------------------
+	- While event streams promote more accessible communication between systems,
+	  event sourcing provides event history by storing new events in an append-only log.

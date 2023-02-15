@@ -18,9 +18,13 @@ In databases,
 
 In Python,
 - worked on creating web applications and RESTFUL APIs using Django/flask/FastAPI frameworks
-- worked on creating process automation and integrating with infrastructure(Linux/windows) boxes
-- worked on web scraping using beautiful soup
-- created unit test, integration test for the source code, using unittest and pytest modules
+- Also, worked on creating process automation and integrating with infrastructure(Linux/windows) boxes.
+- Apart from these, I also worked on data gathering from
+	1) structured datasources like REST APIs (internal or external), databases, etc.
+	2) unstructured datasources like web scraping using beautiful soup
+	3) Also, worked on structured, semi-structured or unstructured file types like csv, excel, json, yaml, parquet, etc.
+- As part of projects, I followed TDD (test driven development).
+	So, created unit tests and integration tests for the source code, using either unittest or pytest modules.
 
 In Caching,
 - I worked with Redis

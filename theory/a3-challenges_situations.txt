@@ -50,7 +50,7 @@ Use the STAR (Situation, Task, Action, Result) technique when answering example 
 	- Over a period of time, as more complex reports and large processing is needed, those user requests used to be timed-out.
 	- But, in the backend, they were successfully getting processed.
 	- Upon investigation, I found that a solution to this problem
-	- I created a distrubuted setup where all the frontend hit will create a celery job, instead of directly executing.
+	- I created a distributed setup where all the frontend hit will create a celery job, instead of directly executing.
 		1. user will
 
 Project/task you are proud of

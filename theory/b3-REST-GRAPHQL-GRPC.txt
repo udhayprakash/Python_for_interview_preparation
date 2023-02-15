@@ -130,6 +130,8 @@ OAuth
 		Finally, after validation, Oauth provider will reply token, with some expiry time.
 	Step 4: So, from then, user will access the website using that token, for the given time.
 
+	OAuth Servers can choose their token format; but mostly JSON Web Token (JWT) is choosen.
+
 OAuth vs OAuth2
 ===============
 	OAuth 2.0 is a complete redesign from OAuth 1.0, and the two are not compatible.
@@ -332,3 +334,20 @@ HTTP Status Codes
 
 	401 Unauthorized is the status code to return when the client provides no credentials or invalid credentials.
 	403 Forbidden is the status code to return when a client has valid credentials but not enough privileges to perform an action on a resource.
+
+cookie
+	- cookies have three primary purposes
+		1) Tracking
+			- Tracking builds statistics about the user, and this data can be used for AD personalization.
+		2) Session Management
+			- Cookies store data from sites so that when you return, your changes are kept.
+			- Ex: Items you put into a shopping cart, or login information.
+		3) Personalization
+			- Cookies can also retain data on user preferences such as languages, themes, location, and layout.
+
+	- How cookies work
+		- Step 1: Server sets cookies by adding a set-cookie header to the HTTP response
+				This set-cookie value allows a server to identify each unique client user.
+		- Step 2: Then, client's browser attaches a cookie header with the value sent by the server in set-cookie.
+
+		- This process repeats for every request, till session time-out.
