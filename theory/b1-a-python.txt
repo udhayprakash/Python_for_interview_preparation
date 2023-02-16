@@ -328,7 +328,7 @@ subprocess popen vs run
 		2) Class Methods have cls as first argument, and use class variables/methods in it.
 		3) Static Methods use neither class nor instance variables/methods. It is like a utility method.
 
-	- cls is not keyword yet, but recently self is declared as keyword in python 3.11.
+	- cls is not keyword yet, but recently self is declared as a keyword in python 3.11.
 	  - yet, it is best practice to use only them, by PEP8
 
 	- staticmethods are mainly used for utiity functions
@@ -878,6 +878,10 @@ In General, there are three types of loops
 
 	while is faster, as for loop need to compute the limits, before starting the loop.
 
+- Pythonpath
+--------------
+	- It is a special environment variable that tells Python interpreter about where to find various libraries and applications.
+
 Metaclasses
 -----------
 	- A metaclass is the class of a class.
@@ -1078,7 +1082,7 @@ multi index pandas
 	df = pd.read_csv("sample_file.csv", usecols=col_list)
 
 
-Recently, i started working on Polar , which is faster than pandas,
+Recently, I started working on Polar, which is faster than pandas,
 Also supports concurrency too.
 
 Polar syntax is similar to pandas and pyspark, yet it is written in RUST,
