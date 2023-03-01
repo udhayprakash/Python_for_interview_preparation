@@ -49,7 +49,7 @@ In AWS Cloud, I worked with
 		- AWS Lambda - with either time-triggered or event triggered
 		- AWS API Gateway with http-triggered
 
-	For oauth, i worked with aws cognito
+	For oauth, I worked with aws cognito
 	- Also, worked with SQS, SNS and SES
 	- And, EMR cluster for Pyspark
 	- for the ETLs, I worked with AWS Glue Jobs with DataCatalog and Pyspark

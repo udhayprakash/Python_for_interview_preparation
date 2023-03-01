@@ -33,3 +33,20 @@ VAR
 		- It will address questions like:
 			1) What can I expect to lose in dollars with a 95% or 99% level of confidence next month?
 			2) What is the maximum percentage I can expect to lose with 95% or 99% confidence over the next year?
+
+Risk-Adjusted Return (RAR)
+	- calculates the returns earned, relative to the volatility.
+	- A steadier return means low volatility and hence a high RAR
+
+	- Formula is
+		RAR = CAGR (Compounded Annual Growth Rate) Return on portfolio / Volatility (Standard deviation of returns)
+
+	- For example you will be happier to see a cricketer who scored 50, 50, 60, 40, 50 in 5 is innings in a row rather
+	  than one who scores 0, 200, 0, 0, 50 - even though both have the same average.
+
+Gain to Pain ratio:
+	- This captures the pain (or the drawdowns) lived through to get the returns.
+	- It is defined as the sum of all monthly returns (positive and negative) divided by the sum of the quantum of all monthly negative returns/ drawdowns.
+
+	- Formula is
+		Gain to Pain Ratio = Total Returns/ Absolute value of negative returns

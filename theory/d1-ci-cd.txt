@@ -30,6 +30,18 @@ CI/CD
 
 - https://www.xenonstack.com/blog/continuous-integration-and-delivery
 
+SDLC
+----
+- It means Software Development Life Cycle
+- SDLC defines the phases in building of software or application.
+	o Project Planning
+	o Requirement Gathering (Gathering information used to plan project, Identifying risks)
+	o Design (How the application will be built)
+	o Coding (developing) (Based on requirements, developers will write the application)
+	o Testing
+	o Production (deployment)(Releasing product)
+	o Maintenance (Making sure product is stable, looking at customer report on bugs and fixing it)
+
 
 Development Process
 -------------------
@@ -76,6 +88,12 @@ Agile Methodology
 - During the sprint planning, we will discuss on want among them to take, check for any dependencies and get all needed things.
 - At the end of the sprint, we will have sprint review and retrospective meetings
 - We give utmost importance to these review feedbacks, and try to improve this continuous process
+
+Agile
+------
+- Agile is an iterative approach to project management and software development that helps teams deliver value to their customers faster and with fewer headaches.
+- The three C's of Agile are  Card, Conversation and Confirmation.
+- Means first create stories, discuss on them, and deliver them.
 
 
 Agile Methodology Disadvantages
@@ -155,6 +173,7 @@ Development Tools
 
 	for data visualization - python based matplotlib/seaborn, PowerBI
 	for db design
+
 
 how to resolve conflicts
 ------------------------

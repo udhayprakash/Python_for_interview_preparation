@@ -42,7 +42,7 @@ Use the STAR (Situation, Task, Action, Result) technique when answering example 
 
 	conclusions:
 		1. Everytime, I will try to better optimize the resources, I mean, I will be proactive in the betterment of the project.
-		2. I will follow the due process, follow-up with my team and manager, if i get a worthwhile idea.
+		2. I will follow the due process, follow-up with my team and manager, if I get a worthwhile idea.
 
 - Long Run process ( Django web application)
 	- In our current project, we created a dashboard for data analytics results.
@@ -63,7 +63,7 @@ Project/task you are proud of
 	- With inspiration from AWS Step functions, I created a framework to work with these ETL jobs.
 	- we need to just feed this with a yaml file, with the microservice jobs named in sequential intendants, specifying the level, and also the dependencies.
 	- My framework will take these jobs, create a data structure in such a way that
-		- most dependent jobs will execute first, followed by less dependant jobs, and lastly the least dependent jobs.
+		- most dependent jobs will execute first, followed by less dependent jobs, and lastly the least dependent jobs.
 		- And, the intermediate data is stored in pickle file.
 		- In this way, if something is commonly needed by multiple jobs, instead of rehitting and repeating the process,
 		I can reuse the already generated data from these pickle file.
@@ -261,10 +261,10 @@ Mentoring, Juniors
 	- They may be confused with the requirement understanding, or
 	- confused/struct in programming language, dev setup, or configurations related issues.
 
-- I will give them clarity on anything, if they were confused.
+- I will give them clarity on anything, if they are confused.
 - Ensure that they are learning from their mistakes.
 
-- Will encourage them, to share new thoughts.
+- Will encourage them to share new thoughts.
 	- demystify the pros and cons, by discussions, and let them make the decisions, based on them.
 
 - Also, We do weekly functionality based knowledge sharing sessions, where everyone need to share
@@ -273,7 +273,7 @@ Mentoring, Juniors
 - I believe that sharing is caring
 	- So, whenever, I learned something new, or
 	  addressed some complex problem, or
-	  discovered something, which is useful to other, I will share to all.
+	  discovered something, which is useful to others, I will share to all.
 
 
 New developers

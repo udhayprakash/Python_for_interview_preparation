@@ -152,7 +152,7 @@ Data Sources
 		Relationships must be created between the new tables and their predecessors
 		through the use of foreign keys.
 	- Third Normal Form:
-		First it should meet the requirements of second normal form.
+		First it should meet the requirements of the second normal form.
 		Remove columns that are not depending upon the primary key.
 		- Most databases will be Third Normal Form
 	- Fourth Normal Form:
@@ -748,6 +748,16 @@ star schema (or) dimension modelling
 	The dimension tables would be an item table (containing item id, item price, size, etc) and an user table (containing user id, user name, user address etc).
 
 slowly changing dimensions
+
+- star schema vs snowflake schema
+	- Snowflake Schema is an extension of a Star Schema, and it adds additional dimensions.
+	- In a star schema, only single join defines the relationship between the fact table and any dimension tables.
+	  whereas Star schema contains a fact table surrounded by dimension tables.
+	- Snowflake schema is surrounded by dimension table which are in turn surrounded by dimension table.
+	- A snowflake schema requires many joins to fetch the data.
+	- Comparing Star vs Snowflake schema, Start schema has simple DB design, while Snowflake schema has very complex DB design.
+
+	- https://www.guru99.com/star-snowflake-data-warehousing.html
 
 
 - Fact Table

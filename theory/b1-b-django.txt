@@ -72,6 +72,30 @@ Step 6: Now, run the application, using the command
 			python manage.py runserver
 
 
+- function based views vs class based views
+-------------------------------------------
+- Function based views are simple and mostly used for custom functionality. 
+	Pros
+		- explicit code, easy to read, and straightforward usage of decorators.
+	Cons
+		- Hard to extend and reuse the code.
+		- We need to write explicitly for handling all HTTP methods via conditional branching.
+- Class Based Views makes use of builtin classes for any kind.
+	Pros
+		1) Code reuseability 
+			— A view class can be inherited by another view class and modified for a different use case.
+		2) DRY( Don't repeat yourself) principle
+			— Means class based views help in reducing code duplication
+		3) We can extend the Code using Mixins, for any further customizations 
+		4) Availability of a lot of kinds of Built-in generic class-based views
+		5) Code structuring — A class based view helps to respond different http request with different class instance methods instead of conditional branching statements inside a single function based view.
+
+	Cons
+		- Harder to read, as each class based view has specific way of writing.
+		- Implicit code flow
+		- Use of view decorators require extra import, or method override
+
+
 Django Migrations
 -----------------
 - In Django project, in each app folder level, a folder named "migrations" will be present.
@@ -170,6 +194,12 @@ Django Migrations
 		class Meta:
 			model = Product
 			fields = '__all__'
+
+- serializer vs model serializer
+	- The ModelSerializer class is the same as a regular Serializer class, except that: 
+		- It will automatically generate a set of fields for you, based on the model.
+		- It will automatically generate validators for the serializer, such as unique_together validators. 
+		- It includes simple default implementations of .create() and .update().
 
 - Django Models
 --------------

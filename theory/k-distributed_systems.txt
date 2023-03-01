@@ -141,6 +141,23 @@ message queue vs kafka
 		- Keep data once consumed, for future consumers, for replay-ability
 		- Scale horizontally the message consumption
 
+- Message brokers
+------------------
+	- They have publishers, message brokers and consumers
+	- A message broker delivers information like messages (or events) from a producer to a consumer.
+	- When consumers safely process the message, they send an acknowledgment back to the broker.
+	- The broker will then safely remove the message.
+	- Message brokers typically allow for intelligent routing.
+	- The logic to route messages based on rules can be configured within the broker itself.
+
+- Event-streaming brokers
+-------------------------
+	- An event-streaming broker also supports the delivery of events from publisher applications to consumers.
+	- The main difference is that streaming brokers do not remove acknowledged messages.
+	- Streaming brokers allow you to replay events as needed.
+	- Event-streaming brokers support high-volume throughput, but in order to do this, they often do not support intelligent routing within the broker.
+	- Intelligent message routing is normally delegated to client-side applications.
+
 - Messaging
 ---------
 	- Messages transport a payload and messages are persisted until consumed.

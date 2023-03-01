@@ -279,7 +279,10 @@ subprocess popen vs run
 	- It gives us the scalability in code to adapt any requirement changes.
 
 	- There are 4 principles:
-	1) ENCAPSULATION - with public, protected and private variables/methods
+	1) ENCAPSULATION 
+		- Encapsulation is used to restrict access to methods and variables.
+		- In encapsulation, code and data are wrapped together within a single unit from being modified by accident.
+		- with public, protected and private variables/methods
 			public variable -- it a variable is starting with no underscore
 			protected variable -- if it is starting with SINGLE underscore
 			private variable -- if it is starting  with TWO underscores
@@ -434,6 +437,9 @@ subprocess popen vs run
 	- continue will skip the current loop, whereas
 	  break will stop the entire loop
 
+- race condition
+	- A race condition occurs when two or more threads can access shared data and they try to change it at the same time.
+	- Because the thread scheduling algorithm can swap between threads at any time, you don't know the order in which the threads will attempt to access the shared data.
 
 - GIL Problem
 	- GIL means Global Interpreter Lock
@@ -614,9 +620,21 @@ I	- we can create custom context managers, using the dunder methods,
 		- then, modify the code logic to address these test cases.
 		- Finally, when both the newly created and existing test cases, are successful,
 		  will commit the code.
-	- This way, we can assure that code is more reliable, handling all edge cases.
+	- This way, we can ensure that code is more reliable, handling all edge cases.
 	- Also, any further logic changes, will be integrable easily, as all test cases need to pass,
 	  before pushing the code
+
+
+
+
+
+Initially time taking 
+
+
+But subsequently , it will be fast – 
+As code is more reliable.. No r less bugs 
+
+
 
 	In Unittesting, for each test suite, there will be
 		a pair of class methods, called setup and tearDown
@@ -846,6 +864,22 @@ global variables in python
 - will store them in __init__.py file, and load at the package level.
 
 
+- static class vs singleton
+---------------------------
+
+------------------------------------------------------------------------------------------------------
+Singleton Pattern														Static Class
+------------------------------------------------------------------------------------------------------
+1) Singleton is a design pattern.										Static classes are basically a way of grouping classes together in Java.
+2) Memory is allocated once the object is created.						Memory is allocated immediately after any of the class members is accessed.
+3) Singleton implementation can either have static members or instance members.	Static classes can contain static members only.
+4) It can implement any other interface or base class is required.		It cannot implement the interface or any other base class.
+5) Singleton classes can be used as a method parameter.	Static class cannot be used as a method parameter. 
+6) Singleton pattern uses Heap memory.	Static classes use stack memory.
+7) It works within the scope of Garbage Collector as it uses Heap memory.	Out of scope for Garbage Collector as it uses stack memory.
+8) It supports Dependency Injection (DI) implementation as Singleton follows OOPS concepts.	It cannot implement Dependency Injection (DI) as DI is Interface-driven.
+9) Singleton is an architectural pattern and not a language feature.	Static is a language feature and not an Architectural pattern.
+10) Disposal of objects is possible.									It cannot dispose of the static class as there is no instance created.
 
 
 Python secure coding best practices
@@ -1127,6 +1161,9 @@ Precision
 Accurancy Vs precision
 	Accurancy tells how many times the ML model was correct overall
 	Precision is how good the model is at predicting a sepcific category
+
+- pyspark
+========
 
 spark
 pyspark bucketby vs partitionby
