@@ -244,34 +244,34 @@ AWS Lambda Context properties
 
 - AWS Glue
 	- Its a serverless Data integration ETL tool.
-	- We can do all data integraton works, starting from 
+	- We can do all data integraton works, starting from
 		- data discovery
 		- data preparation and EDA - Exploratory data analysis
 		- ETLs,
 		- cleansing
 		- transforming
 		- and finally, centrally cataloging.
-	
-	- data flow 
+
+	- data flow
 		Data sources -> Crawler	-> Data Catalog
 		1) Crawlers run classifiers ( either builtin, or custom classifiers)
 		2) connects to the data sources, and infer the data schemas
 		3) Extracts meta data and store in Data Catalog.
-	
+
 	- AWS Glue DataBrew
 		- Its a visual data preparation tool to manually clean and normalize data, without writing code.
-		- There were many ready-made transformations to automate data preparation tasks, such as 
-			- filtering anomalies, 
-			- converting data to standard formats, and 
+		- There were many ready-made transformations to automate data preparation tasks, such as
+			- filtering anomalies,
+			- converting data to standard formats, and
 			- correcting invalid values, etc.
-	
-	
+
+
 	- Data catalog
 		- Each Data Catalog is a highly scalable collection of tables organized into databases.
 		- Its one place to store and find metadata to keep track of data schema changes.
 		- Each AWS account has one AWS Glue Data Catalog per AWS Region.
 		- A table is metadata representation of a collection of structured or semi-structured data stored in sources such as Amazon RDS, etc.
-	
+
 	- https://docs.aws.amazon.com/glue/latest/dg/add-job.html
 	- https://docs.aws.amazon.com/glue/latest/dg/workflows_overview.html
 	- AWS Glue connectors
@@ -392,7 +392,7 @@ I have experience migrating applications and data, from on-prem to cloud
 
 - AutoScaling
 --------------
-	- autoscaling can be done 
+	- autoscaling can be done
 		1) Manually, in the console
 		2) Dynamic Scaling
 			- Dynamic scaling scales the capacity of Auto Scaling group as traffic changes occur.
@@ -403,18 +403,18 @@ I have experience migrating applications and data, from on-prem to cloud
 					- Increase and decrease the current capacity of the group based on a set of scaling adjustments, known as step adjustments, that vary based on the size of the alarm breach.
 				c) Simple Scaling
 					- Increase and decrease the current capacity of the group based on a single scaling adjustment, with a cooldown period between each scaling activity.
-	
+
 		3) Predictive Scaling
 			- scaling, in advance, based on daily and weekly patterns in traffic flows.
-			- Mostly predictive scaling is suitable when we have 
+			- Mostly predictive scaling is suitable when we have
 				- Cyclical traffic, such as high use of resources during regular business hours and low use of resources during evenings and weekends
 				- Recurring on-and-off workload patterns, such as batch processing, testing, or periodic data analysis
 				- Applications that take a long time to initialize, causing a noticeable latency impact on application performance during scale-out events
 
 		4) Scheduled Scaling
 			- Scaling based on the created scheduled actions, for specific date and timestamp.
-		
-	- Autoscaling can be done both for 
+
+	- Autoscaling can be done both for
 		- EC2 instances, based on CPU load
 		- Aurora databases, based on CPU utilization on Aurora replicas
 - IAM
@@ -535,12 +535,12 @@ CloudFormation
 - We can manage all the resources, configurations, relation between then and persmission, in a code.
 
 - CloudFormation Templates
-	- A CloudFormation template consists of 6 sections 
+	- A CloudFormation template consists of 6 sections
 		– Description, for writing any project related comments describing it.
 		– Parameters, for passing values to template at stack creation time, using "Ref" intrinsic function.
 		– Mappings
 		– Conditions
-		– Resources and 
+		– Resources and
 		– Outputs.
 	- Only the Resources section is required.
 	- sample template
@@ -569,9 +569,9 @@ CloudFormation
 				}
 
 			}
-			
+
 	- ref - https://www.xtivia.com/blog/introduction-aws-cloudformation-templates/
-	
+
 - CloudFormation parameters
 	- Templates can be customized using parameters.
 	- Each time we create or update the stack, parameters help us in giving template custom values at runtime.

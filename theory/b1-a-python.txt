@@ -279,7 +279,7 @@ subprocess popen vs run
 	- It gives us the scalability in code to adapt any requirement changes.
 
 	- There are 4 principles:
-	1) ENCAPSULATION 
+	1) ENCAPSULATION
 		- Encapsulation is used to restrict access to methods and variables.
 		- In encapsulation, code and data are wrapped together within a single unit from being modified by accident.
 		- with public, protected and private variables/methods
@@ -628,11 +628,11 @@ I	- we can create custom context managers, using the dunder methods,
 
 
 
-Initially time taking 
+Initially time taking
 
 
-But subsequently , it will be fast – 
-As code is more reliable.. No r less bugs 
+But subsequently , it will be fast –
+As code is more reliable.. No r less bugs
 
 
 
@@ -874,7 +874,7 @@ Singleton Pattern														Static Class
 2) Memory is allocated once the object is created.						Memory is allocated immediately after any of the class members is accessed.
 3) Singleton implementation can either have static members or instance members.	Static classes can contain static members only.
 4) It can implement any other interface or base class is required.		It cannot implement the interface or any other base class.
-5) Singleton classes can be used as a method parameter.	Static class cannot be used as a method parameter. 
+5) Singleton classes can be used as a method parameter.	Static class cannot be used as a method parameter.
 6) Singleton pattern uses Heap memory.	Static classes use stack memory.
 7) It works within the scope of Garbage Collector as it uses Heap memory.	Out of scope for Garbage Collector as it uses stack memory.
 8) It supports Dependency Injection (DI) implementation as Singleton follows OOPS concepts.	It cannot implement Dependency Injection (DI) as DI is Interface-driven.

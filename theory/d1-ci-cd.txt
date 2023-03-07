@@ -258,3 +258,7 @@ blue-green deployment
 	- A deployment strategy in which you create two separate, but identical environments.
 	- One environment (blue) is running the current application version and one environment
       (green) is running the new application version.
+
+- stack trace
+	- It is a report that provides information about program subroutines.
+	- It is commonly used for certain kinds of debugging, where a stack trace can help software engineers figure out where a problem lies or how various subroutines work together during execution.

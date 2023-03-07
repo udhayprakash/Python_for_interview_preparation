@@ -147,14 +147,14 @@ Innovation - Process Improvement
 Managing Tight deadlines
 ------------------------
 	In that case,
-		As we need to do ,
+		As we need to do,
 			I will pause the sprint,
 	Let all team members to work in pairs
 		Do code pairing to do fastly
 
 	Say, one pair done a work, other pair will review it
-	Like this, we can work , in war room,
-	T get the things done
+	Like this, we can work, in war room,
+	To get the things done
 
 	There was a time when the
 	Lessons Learned
@@ -167,14 +167,14 @@ Managing Tight deadlines
 Learning New tool
 ----------------------
 - Initially, I will check the docs. Though i may not understand everything, but atleast, i will get a glance of what is what.
-- Then, i will check with team members
-	- Most importantly, i will learn what not to do. Because, i dont want to be counter-productive.
+- Then, I will check with team members
+	- Most importantly, I will learn what not to do. Because, I dont want to be counter-productive.
 	- Then, Understand the roles in project and will get the approvals to access the code, and related dev tools.
 	- Then, clone the code, get the development setup done and play on it.
-	- I will learn module wise, by first going through  the unit tests, which will give a fair idea of assumptions and constraints, in the project.
-	- THen, slowly , i will do end-to-end
-- In that way, in each iteration, i will learn
-- Then, i will try to add any new test cases, which i felt were not added; Also any additional comments or doc stings too.
+	- I will learn module wise, by first going through the unit tests, which will give a fair idea of assumptions and constraints, in the project.
+	- Then, slowly, I will do end-to-end
+- In that way, in each iteration, I will learn
+- Then, I will try to add any new test cases, which I felt were not added; Also any additional comments or doc stings too.
 
 And any specific Role based access,
 And responsibilities involved
@@ -197,7 +197,7 @@ What are you looking for in the new work?
 
 - In terms of work, it is almost match of what am doing now and your expectations
 - I am to prove myself initially , and learn to add value to the project
-- I want to be helpful , to more people, with my work
+- I want to be helpful, to more people, with my work
 
 expectations from full stack developer
 ======================================
@@ -240,7 +240,7 @@ conflicts(workplace disagreements) with Collegues
 			- Or miscommunication, etc
 		- Also, workplace disagreements often erupt when people experience an absence of relatedness
 
-		- As a prevention, the best practices, i follow is
+		- As a prevention, the best practices, I follow is
 			- writing clearly, about the events and
 			- communicating and getting consent from team members, and not bypassing them.
 			- scheduling agenda meetings, before reaching out to stackholders, on what to speak.
