@@ -1,0 +1,19 @@
+Terraform
+==========
+
+
+main.tf 	Main configuration file containing resource definition
+variables.tf 	contains variable declaration
+outputs.tf 		contains outputs from resources
+provider.tf 	contains provider definition
+terraform.tfvars	contains all environment variables
+
+variable types - string, number, bool, any, list, map, set, object, tuple
+	list -- has all elements of same type
+	tuple - has elements of multiple types
+
+Variable definition preference
+	1) Environment variables
+	2) terraform.tfvars
+	3) *.auto.tfvars( alphabetical order)
+	4) -var or --var-file (command line flags)

@@ -30,6 +30,60 @@ CI/CD
 
 - https://www.xenonstack.com/blog/continuous-integration-and-delivery
 
+
+- scripted vs declarative pipelines
+	- A Jenkinsfile can be written using two types of syntax
+		1) Declarative and
+		2) Scripted.
+	- Declarative pipelines break down stages into individual stages that can contain multiple steps.
+	- Scripted pipelines use Groovy code and references to the Jenkins pipeline DSL within the stage elements without the need for steps.
+
+	- Declarative pipelines use the same execution engine as scripted pipelines, but they add a number of new benefits.
+	  They are
+		- easier to learn,
+		- have richer syntax,
+		- provide syntax checking, and
+		- are easily restartable using the “Restart from stage” functionality
+
+	- Declarative Pipelines follow "pipeline-as-code" principle.
+		- It will contain blocks like
+			pipeline – contains the whole pipeline
+				agent – defines the machine that will handle this pipeline
+				stages – declares the stages of the pipeline
+					steps – small operations inside a particular stage
+
+	- Declarative Example:
+			pipeline {
+				agent any
+				stages {
+					stage('Hello World') {
+						steps {
+							sh 'echo Hello World'
+						}
+					}
+				}
+			}
+	- Scripted Example:
+			node {
+				stage('Hello world') {
+					sh 'echo Hello World'
+				}
+			}
+
+- Jenkins Multibranch Pipeline
+	- A multibranch job is simply a folder of pipeline jobs.
+	- For every branch in repo, Jenkins will create a folder.
+	- So instead of creating a pipeline job for each of the branches we have in a git repository, we can use a multibranch job.
+
+- blue/green deployment vs canary release
+	- A blue/green deployment is a deployment strategy in which you create two separate, but identical environments.
+		- One environment (blue) is running the current application version and one environment (green) is running the new application version
+
+	- A canary release is an early build of an application. Splitting stable and development branches is a widespread strategy in the open-source world.
+		- Many projects use an odd/even numbering scheme to separate stable from the non-stable version.
+
+
+
 SDLC
 ----
 - It means Software Development Life Cycle

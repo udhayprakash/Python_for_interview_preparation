@@ -154,6 +154,86 @@ React component lifecycle
 	4) UNMOUNTING
 		- componentWillUnmount //Death
 
+
+
+- react functional components vs class components
+	- A functional component is just a plain JavaScript function which accepts props as an argument and returns a React element.
+	- A class component requires to extend from React. Component and create a render function which returns a React element.
+
+	- Class components are used as container components to handle state management and wrap child components.
+	- Functional components generally are just used for display purposes - these components call functions from parent components to handle user interactions or state updates.
+
+// note: useState, useEffect, and Component can also be imported directly
+// functional: `import React, { useState }, { useEffect } from "react";
+// class: `import React, { Component } from "react";`
+
+// FUNCTIONAL COMPONENT
+	import React from "react";
+
+	// props are passed as parameter
+	const FunctionalComponent = (props) => {
+
+	  // equal to constructor on handling state
+	  const [count, setCount] = React.useState(0);
+
+	  // equal to componentDidMount()
+	  React.useEffect(() => {
+		console.log("Hello");
+	  }, []);
+
+	  // equal to componentWillUnmount()
+	  React.useEffect(() => {
+		return () => {
+		  console.log("Bye");
+		};
+	  }, []);
+
+	  return (
+		<div>
+		  <h1>Hello, {props.name}</h1>
+		  <p>count: {count}</p>
+		  <button onClick={() => setCount(count + 1)}>Click</button>
+		</div>
+	  );
+	};
+
+// CLASS COMPONENT
+	import React from "react";
+
+	// component can also be imported directly
+	class ClassComponent extends React.Component {
+
+	  // sometimes using this.state = {...} directly may work
+	  constructor(props) {
+		super(props);
+		this.state = {
+		  count: 0
+		};
+	  }
+
+	  componentDidMount() {
+		console.log("Hello");
+	  }
+
+	  componentWillUnmount() {
+		console.log("Bye");
+	  }
+
+	  render() {
+		const { name } = this.props;
+		return (
+		  <div>
+			<h1>Hello, { name }</h1>
+			<p>count: {this.state.count} times</p>
+			<button onClick={() => this.setState({ count: this.state.count + 1 })}>
+			  Click
+			</button>
+		  </div>
+		);
+	 }
+	}
+
+
 create react app
 	1) Install TypeScript globally
 		npm install -g typescript

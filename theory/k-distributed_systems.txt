@@ -188,6 +188,10 @@ message queue vs kafka
 - LIMITATIONS include
 	- No debugging, performance, complex data structures and control flow. Complex data structures. Many network automation tasks require complex data structures. One of the first things I considered when learning Ansible was to use it to perform network discovery.
 
+- Ansible Playbook
+	- It is a like a blueprint of automation tasks.
+	- These tasks can range from installations, to configurations.
+	- Ansible playbooks are executed on a set, group, or classification of hosts, which together make up an Ansible inventory.
 
 - Ansible Vault
 	- It is used to keep sensitive data such as passwords instead of placing it as plaintext in playbooks or roles.
@@ -209,3 +213,15 @@ message queue vs kafka
 		1) Global facts: These facts are accessible from every host in your inventory file.
 		2) Group facts: These facts are only accessible from a specific set of hosts or a host group.
 		3) Host facts: These facts are only accessible from a particular host.
+
+- Ansible callback plugin
+	- callback plugins help in adding additional behavior to ansible when responding to events.
+	- By default, callback plugins control most of the output that we see, when running command line programs,
+	  Also, we can use callback plugins to add additional output, integrate with other tools and marshal the events to a storage backend.
+	- Examples
+		- The log_plays callback is an example of how to record playbook events to a log file, and the mail callback sends email on playbook failures.
+		- The say callback responds with computer synthesized speech in relation to playbook events.
+
+Enabling callback plugins
+
+ref - https://www.middlewareinventory.com/blog/ansible-playbook-example/

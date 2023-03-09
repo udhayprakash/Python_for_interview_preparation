@@ -94,25 +94,20 @@ Biggest Failures
   At that test, there is no ecosystem for the local development, unittest, and mocking.
 
   I used to write test cases for other code workflows; but not for the aws lambda code.
-  In a particular Aws lambda, i created logic to do recursive calls, based on an environment
-  variable. But, when another person accidentally changes the environment variable, and it
-  when unnoticed, code called itself recursively and it spawn multiple aws lambda.
+  In a particular Aws lambda, I created logic to do recursive calls, based on an environment variable.
+  But, when another person accidentally changes the environment variable, and it when unnoticed, code called itself recursively and it spawn multiple aws lambda.
   As the cloudwatch metrics and monitoring is not that active in those days, no emails triggered.
 
-  But, luckily, we capped the AWS bill to some dollars. As the limit was reached, entire infra
-  stopped.  We initially thought it was some cyber attack. But it took sometime for us to
-  analyze the billing to figure the issue.
+  But, luckily, we capped the AWS bill to some dollars. As the limit was reached, entire infra stopped.
+  We initially thought it was some cyber attack. But it took sometime for us to analyze the billing to figure the issue.
 
-  Then, we approached AWS with this case; After hearing, they waved-off the bill; But it is
-  the biggest failure.
+  Then, we approached AWS with this case; After hearing, they waved-off the bill; But it is the biggest failure.
 
   Lessons learned here were
 	- no unit & integration tests -- means less reliability
 	- Thinking of edge cases before moving to production
-		- Using Monkey patching, and dynamically modifying classes/functions at runtime
-		  to see the effect
-	- Overall, I learned to do local setup using 'localstack' for working with those, without
-	  even going to AWS Cloud.
+		- Using Monkey patching, and dynamically modifying classes/functions at runtime to see the effect
+	- Overall, I learned to do local setup using 'localstack' for working with those, without even going to AWS Cloud.
 
 
 Innovation - Process Improvement

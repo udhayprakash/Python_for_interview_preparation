@@ -123,6 +123,17 @@ Data Sources
 				SELECT * FROM t1
 				RIGHT JOIN t2 ON t1.id = t2.id
 				WHERE t1.id IS NULL
+	- SELF JOIN
+		- self join is like both inner join of same table, with same table with different alias
+		- Assume a table contain all employees and their manager information.
+		- Then, we can use this self join to get the employees and their manager names
+			Employee table  has three columns - id, name, manager_id
+
+			SELECT
+				e.name as employee_name,
+				m.name as manager_name
+			FROM employee e
+			INNER JOIN employee m  ON e.id = m.id
 
 	- number of records in each JOIN
 		TableA - 10 rows
@@ -130,10 +141,8 @@ Data Sources
 
 		CROSS JOIN -- 10 * 20 = 200 rows
 
-		Left joins can increase the number of rows in the left table if there are multiple
-		matches in the right table.
-		Left joins can increase the number of rows in the left table if there are multiple
-		matches in the right table.
+		Left joins can increase the number of rows in the left table if there are multiple matches in the right table.
+
 	- cartesian product - select * from employees, departments
 
 
@@ -482,6 +491,19 @@ Database Design Principles
 	23. Avoid prefix “sp_” with user defined stored procedure name because SQL server first search the user defined procedure in the master database and after that in the current session database.
 	24. Avoid use of Non-correlated Scalar Sub Query. Use this query as a separate query instead of part of the main query and store the output in a variable, which can be referred to in the main query or later part of the batch.
 	25. Avoid Multi-statement Table Valued Functions (TVFs). Multi-statement TVFs are more costly than inline TVFs.
+	26. optimize MYSQL field type and sizes,
+		eg. use INT instead of VARCHAR if data can be presented with numbers,
+		    use SMALL INT instead of BIG INT, etc.
+		In case we need to have VARCHAR, then use as small as possible length of each field,
+	27. MYSQL partitioning can be implemented with some kind of partitioning scheme,
+		e.g. new partition is created by CRONJOB every day at "night" when server utilization is at minimum,
+			or when you reach another 50k INSERTs or so
+		(by the way, also some extra effort will be needed for UPDATE/DELETE operations on different partitions),
+
+	28. caching is another very simple and effective approach, for repeatedly queried results
+	29. in-memory database can be used alongside tradtional SQL DBs to get often-needed data:
+		simple key-value pair style could be enough: Redis, Memcached, VoltDB, MemSQL are just some of them. Also, MYSQL also knows in-memory engine,
+
 
 - SQL performance of inserts
 	1) Remove all triggers and constraints on the table
@@ -747,7 +769,26 @@ star schema (or) dimension modelling
 	- For example, in an e-commerce website, a fact table would contain information about orders, such as when the order was placed, the items in that order, who placed that order, etc.
 	The dimension tables would be an item table (containing item id, item price, size, etc) and an user table (containing user id, user name, user address etc).
 
-slowly changing dimensions
+- slowly changing dimensions
+	- It is a dimension that stores and manages both current and historical data over time, in a data warehouse.
+	- It helps in tracking the history of dimension records.
+	- Types
+		- Type 0 SCD – The Fixed Method.
+		- Type 1 SCD – Overwriting the old value by new values.
+		- Type 2 SCD – Creating a new additional record by row versioning.
+						means current record is marked as inactive, and latest record is marked open/active
+		- Type 3 SCD – Adding a new column to show the previous value.
+						means new column will store the previous existing value, for that column, in the record.
+		- Type 4 SCD – Using historical table.
+						means, the dimension table has the latest value while its history is maintained in a separate table.
+		- Type 6 SCD - A combination of Type 1, 2 & 3 are used to track changes in dimension.
+		              Type 6 is adopted in scenarios where multiple parts of a record are slowly changing dimensions, but using multiple implementations of a single type could lead to issues with rapid inflation of table size.
+
+
+- SCD vs CDC ( sowly changing dimensions vs change data capture
+	- SCD is ideal for organizations that must maintain a record of all changes to the data flowing through their systems.
+	- And CDC is ideal if the business process requires only that the changed data arrive in to the target.
+
 
 - star schema vs snowflake schema
 	- Snowflake Schema is an extension of a Star Schema, and it adds additional dimensions.

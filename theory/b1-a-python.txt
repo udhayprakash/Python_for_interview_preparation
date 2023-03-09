@@ -248,6 +248,7 @@ subprocess popen vs run
 	- In python 2,
 		- range will give list of integers
 		- xrange will give a xrange object, which will give values only when iterated.
+		- Means, xrange is lazy loading object.
 	- In python3, xrange is renamed as range.
 
 - copy vs deepcopy
