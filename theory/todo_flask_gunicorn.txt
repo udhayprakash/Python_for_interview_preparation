@@ -1,0 +1,79 @@
+create linux server
+create new user for running flask app
+	adduser USERNAME
+	usermod -aG sudo USERNAME # to give sudo prviliegesnt o the user
+	vim /etc/ssh/sshd_config
+
+		set PasswordAuthentication YES
+	systemctl  restart sshd
+
+	ssh USERNAME@IPADDDRESS
+
+	Git clone the repository https://github.com/tonyflo/flask-app-demo
+
+	python3 -m venv ~/env/teton
+	source /env/teton/bin/activate
+	pip install flask gunicorn
+	vim wsgi.py
+
+		from peak import app
+		if __name__ == '__main__':
+		app.run()
+
+Run the Gunicorn
+		gunicorn --bind 0.0.0.0:5000 wsgi:app
+
+	deactivate
+
+creating a service such that even if flask app fails, we can restart
+	sudo vim /etc/systemd/system/peak.service
+
+[Unit]
+Description=Gunicorn instance to serve peak Flask app
+After=network.target
+
+[Service]
+User=USERNAME
+Group=www-data
+WorkingDirectory=/home/USERNAME/hike
+Environment="PATH=/home.USERNAME/env/teton/bin"
+ExecStart=/home/tony/env/teton/bin/gunicorn --workers 3 --bind unix:peak.sock -m 007 wsgi:app
+
+[Install]
+WantedBy=multi-user.target
+
+
+
+sudo systemctl start peak
+
+sudo systemctl daemon-reload
+sudo systemctl start peak
+sudo systemctl enable peak
+sudo systemctl status peak
+
+sudo apt-get install nginx
+sudo vim /etc/nginx/sites-available/peak.conf
+	server{
+	listen 80;
+	server_name tonyboni.com www.tonyboni.com;
+
+	location / {
+		include proxy_params;
+		proxy_pass http://unix:/home/USERNAME/hike/peak.sock;
+
+	}
+
+	}
+
+
+Now, we need to create simlink, to publish those changes
+	sudo ln -s /etc/nginx/sites-available/peak.conf /etc/nginx/sites-enabled/
+sudo nginx -t
+sudo systemctl restart nginx
+sudo ufw status
+sudo ufw delete allow 5000
+sudo ufw allow "Nginx Full" # It will allow posts 22,
+sudo tail /var/log/nginx/error.log
+sudo chmod 775 /home/tony
+
+ref - https://www.youtube.com/watch?v=KWIIPKbdxD0

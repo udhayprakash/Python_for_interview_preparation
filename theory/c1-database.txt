@@ -402,6 +402,16 @@ Data Sources
 		- Logon triggers reacts to LOGON events
 	ref: https://www.sqlshack.com/learn-sql-sql-triggers/
 
+- SYSDATE vs CURRENT_DATE
+	- SYSDATE returns the current date and time set for the operating system of the database server.
+	- CURRENT_DATE returns the current date in the session time zone.
+
+- SYSDATE vs NOW
+	- SYSDATE() returns the time at which it executes.
+	- NOW() returns a constant time that indicates the time at which the statement began to execute.
+	- Example - Within a stored routine or trigger, NOW() returns the time at which the routine or triggering statement began to execute.
+
+
 - row-store vs column-store
 	- row store
 		- easy to add/modify a record
@@ -526,6 +536,18 @@ Database Design Principles
 	- A subquery should be placed within the right hand of the comparison operator, and
 	  a subquery cannot contain an ORDER BY clause.
 	- A query can contain more than one sub-queries.
+
+- SQL Queries
+	SELECT SYSDATE();								-- 2021-07-13 06:12
+	SELECT DATE_ADD(SYSDATE(), INTERVAL 1 DAY);		-- 2021-07-14 06:12
+	SELECT DATE_ADD(SYSDATE(), INTERVAL -1 DAY);	-- 2021-07-12 06:12
+	SELECT DATE(SYSDATE());							-- 2021-07-13 00:00
+
+	SELECT DATE_SUB("2017-06-15", INTERVAL 10 DAY);
+
+	SELECT DATE_ADD(CURDATE(), INTERVAL 1 DAY) AS tomorrow_date;
+	SELECT DATE_SUB(CURDATE(), INTERVAL 2 MONTH) AS date_two_months_ago;
+
 
 Characteristics of MySQL:
 	- Database locking (MUCH easier for financial transactions)
@@ -925,3 +947,15 @@ TODO
 	• SQL Tutorial 			➤ https://lnkd.in/eSZAFVrJ
 	• SQL for Data Analysis ➤ https://lnkd.in/e6RMcn7g
 	• SQL Notes 			➤ https://lnkd.in/ejy_tqHz
+
+	https://learnsql.com/blog/
+
+	https://www.sqlshack.com/sql-lag-function-overview-and-examples/
+
+	http://sqlfiddle.com/
+	https://sqltest.net/
+	https://learn.microsoft.com/en-us/sql/t-sql/functions/functions?view=sql-server-ver16
+	https://datalemur.com/
+
+	https://dbfiddle.uk/
+	https://database.guide/

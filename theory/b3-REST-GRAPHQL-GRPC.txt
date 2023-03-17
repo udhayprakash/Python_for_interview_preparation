@@ -1,86 +1,92 @@
 - REST
-	- REST stands for REpresentational State Transfer
-	- It's principles are:
-		- It should be stateless
-		- It should access all the resources from the server using only URI
-		- It does not have inbuilt encryption
-		- It does not have session
-		- It uses one and only one protocol - HTTP
-		- For CRUD operations, it should use HTTP methods like
-			GET  - to retrieve one or more records
-			POST - to create record
-			PUT  - to update an existing record
-			PATCH- to update a specific column in existing record
-			DELETE- to delete a record
+---------
+- REST stands for REpresentational State Transfer
+- It's principles are:
+	- It should be stateless
+	- It should access all the resources from the server using only URI
+	- It does not have inbuilt encryption
+	- It does not have session
+	- It uses one and only one protocol - HTTP
+	- For CRUD operations, it should use HTTP methods like
+		GET  - to retrieve one or more records
+		POST - to create record
+		PUT  - to update an existing record
+		PATCH- to update a specific column in existing record
+		DELETE- to delete a record
 
-			HEAD - response identical to GET, but without response body
-			CONNECT- establishes a tunnel to server identifier by the target resource
-			OPTIONS- used to describe the communication options for the target resource.
-			TRACE- performs a message loop-back test along the path to the target resource.
-			PATCH- used to apply partial modifications to a resource
+		HEAD - response identical to GET, but without response body
+		CONNECT- establishes a tunnel to server identifier by the target resource
+		OPTIONS- used to describe the communication options for the target resource.
+		TRACE- performs a message loop-back test along the path to the target resource.
+		PATCH- used to apply partial modifications to a resource
 
-		- response can be JSON or XML, atom, OData etc.
+	- response can be JSON or XML, atom, OData etc.
 
-		Idempotence - If something is idempotent, then no matter how many times you do it, the result will always be the same.
-		1. POST is NOT idempotent.
-		2. GET, PUT, DELETE, HEAD, OPTIONS and TRACE are idempotent.
-		Nulipotent- GET is so because nothing is added or changed, except logging.
+	Idempotence - If something is idempotent, then no matter how many times you do it, the result will always be the same.
+	1. POST is NOT idempotent.
+	2. GET, PUT, DELETE, HEAD, OPTIONS and TRACE are idempotent.
+	Nulipotent- GET is so because nothing is added or changed, except logging.
 
-	- REST based vs RESTFUL
-		- REST based services follow some of the above principles and not all
-		- RESTFUL services means it follows all the above principles.
-	- Richardson-maturity-model
-		- to know level of RESTful your API is.
-		- https://developers.redhat.com/blog/2017/09/13/know-how-restful-your-api-is-an-overview-of-the-richardson-maturity-model
+- REST based vs RESTFUL
+	- REST based services follow some of the above principles and not all
+	- RESTFUL services means it follows all the above principles.
+- Richardson-maturity-model
+	- to know level of RESTful your API is.
+	- https://developers.redhat.com/blog/2017/09/13/know-how-restful-your-api-is-an-overview-of-the-richardson-maturity-model
 
-	- Best practice for RESTful API design is that
-		- path params are used to identify a specific resource or resources,
-		  while query parameters are used to sort/filter those resources.
-	- REST Design Patterns
-		1) Layered Architecture
-			- will improve system scalability and security
-			- When client and server doesnt know about any intermediaries, we can place
-			proxy or load balancer, and improve scalability.
-			Also, adding separate layer of security enhances system safety
-		2) Caching
-			- results in low server latency, increase in app speed and responsiveness
-		3) Stateless interactions
-			- results in enhanced performance, app reliability
-		4) Adding Common parameters to API, like
-			Filtering - to filter the payload size, by filtering on multiple fields
-				GET /users?age=30
+- Best practice for RESTful API design is that
+	- path params are used to identify a specific resource or resources,
+	  while query parameters are used to sort/filter those resources.
 
-			Pagination - will help, ease the burden of overloading either client or server
-				- Also, previous and next page links can be provided in the link
-				GET /users?page=3&results_per_page=20
+- REST Design Patterns
+	1) Layered Architecture
+		- will improve system scalability and security
+		- When client and server doesnt know about any intermediaries, we can place
+		proxy or load balancer, and improve scalability.
+		Also, adding separate layer of security enhances system safety
+	2) Caching
+		- results in low server latency, increase in app speed and responsiveness
+	3) Stateless interactions
+		- results in enhanced performance, app reliability
+	4) Adding Common parameters to API, like
+		Filtering - to filter the payload size, by filtering on multiple fields
+			GET /users?age=30
 
-			Sorting - will help to sort the payload based on one or more fields
-				GET /users?sort_by=first_name&order=asc
+		Pagination - will help, ease the burden of overloading either client or server
+			- Also, previous and next page links can be provided in the link
+			GET /users?page=3&results_per_page=20
 
+		Sorting - will help to sort the payload based on one or more fields
+			GET /users?sort_by=first_name&order=asc
+
+API documentation tools
+=======================
+	- Swagger was used for most of the time.
+	- Earlier used RAML (RESTful API Modeling Language)
 
 
 REST vs SOAP
 =============
-RESTful supports JSON, XML,
-	SOAP supports only XML
-REST is faster than SOAP based web services
-	SOAP is more secure
-REST allows a greater variety of data formats,
-	SOAP only allows XML.
+	RESTful supports JSON, XML,
+		SOAP supports only XML
+	REST is faster than SOAP based web services
+		SOAP is more secure
+	REST allows a greater variety of data formats,
+		SOAP only allows XML.
 
-1) SOAP
-	- Communication happens using XML only
-	- Request is sent to SOAP methods
-	- Documentation is in WSDL (Wizdal)
-	- Heavy, more secure, more stable
-	- getting less popular
-2) REST API
-	- Communication happens using Json, XML
-	- Requests are sent to API methods/urls using
-	- Communication happens in HTTP(Internet)
-	- Lightweight, stable
-	- Easy to develop and automate
-	- very popular
+	1) SOAP
+		- Communication happens using XML only
+		- Request is sent to SOAP methods
+		- Documentation is in WSDL (Wizdal)
+		- Heavy, more secure, more stable
+		- getting less popular
+	2) REST API
+		- Communication happens using Json, XML
+		- Requests are sent to API methods/urls using
+		- Communication happens in HTTP(Internet)
+		- Lightweight, stable
+		- Easy to develop and automate
+		- very popular
 
 Authentication vs authorisation
 ================================

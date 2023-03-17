@@ -70,20 +70,22 @@ IN AWS Lambda,
 
 - Lambda Triggers
 	API Gateway
-	AWS IoT
-	Alexa Skills Kit
-	Alexa Smart Home
 	Application Load Balancer
 	CloudFront
 	CloudWatch Events
 	CloudWatch Logs
-	CodeCommit
-	Cognito Sync Trigger
 	DynamoDB
 	Kinesis
 	S3
 	SNS
 	SQS
+	AWS IoT
+	Alexa Skills Kit
+	Alexa Smart Home
+	CodeCommit
+	Cognito Sync Trigger
+
+	- scheduled trigger with rate() function, we can trigger lambda, for every 5min, 1min, etc
 
 - Lambda layer
 	- It is an archive containing additional code, such as libraries, dependencies, or
@@ -527,6 +529,7 @@ AWS Limits
 		   memory range is from 128 to 3008 MB
 		   maximum execution timeout for a function is 15 minutes
 		   3000 concurrent request at time. If exceeded, requsts will throttle until lambda scales by 500 per minute
+	We can have max 255 gateway endpoints per VPC.
 
 
 CloudFormation

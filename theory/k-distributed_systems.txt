@@ -193,6 +193,15 @@ message queue vs kafka
 	- These tasks can range from installations, to configurations.
 	- Ansible playbooks are executed on a set, group, or classification of hosts, which together make up an Ansible inventory.
 
+- Ansible Tower
+	- It is a web-based UI that provides a dashboard with status summaries of all the hosts,
+		allows quick deployments, and
+		monitors all configurations.
+	- Also, the tower allows us to share the SSH credentials without exposing them,
+	- logs all the jobs, manage inventories graphically and syncs them with a wide variety of cloud providers.
+	- It also has REST API, for integrations; I used in one of the projects
+
+
 - Ansible Vault
 	- It is used to keep sensitive data such as passwords instead of placing it as plaintext in playbooks or roles.
 	- Any structured data file or any single value inside the YAML file can be encrypted by Ansible.

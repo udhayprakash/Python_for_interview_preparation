@@ -17,7 +17,7 @@ my responsibilities here include
 
 	We initially started on small POC, after approvals got budgets for team expansion, and created an MVP product, and then stable releases.
 
-	Docker.yaml → Jenkins CI/CD → containers  -> AWs ECR →  aws code pipeline → AWS EKS → kubernetes.yaml → orchestrate the pods
+	Docker.yaml → Jenkins CI/CD → containers  -> AWS ECR →  aws code pipeline → AWS EKS → kubernetes.yaml → orchestrate the pods
 
 In Machine Learning,
 	I worked with a Linear regression algorithm, using the scikit-learn module.
