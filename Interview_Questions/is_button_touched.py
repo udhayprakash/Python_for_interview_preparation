@@ -16,7 +16,7 @@ def get_distance(point_1, point_2):
 
 def getTouchedButtons(touchPos, buttonsPos):
     button_list = []
-    for (index, button) in enumerate(buttonsPos):
+    for index, button in enumerate(buttonsPos):
         if check_if_button_touched(
             touchPos[0], touchPos[1], button[0], button[1], button[2], button[3]
         ):

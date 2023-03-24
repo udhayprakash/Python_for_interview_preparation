@@ -44,7 +44,6 @@ def busiestTime(entries):
     maxPopulationTimestamp = (0, 0)
 
     for entry in entries:
-
         previousTimestamp = currentTimestamp
         currentTimestamp = entry["timestamp"]
 

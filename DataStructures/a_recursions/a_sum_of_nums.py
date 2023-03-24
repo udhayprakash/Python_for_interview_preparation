@@ -3,6 +3,8 @@
 Purpose:
 Example 1: Calculating sum of a list of numbers
 """
+
+
 # Method 1 : conventional implementation
 def sum_of_list(num_list):
     summation = 0

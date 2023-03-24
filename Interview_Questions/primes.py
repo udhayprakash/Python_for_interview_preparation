@@ -44,6 +44,7 @@ def __expand_primes(n):
 
 # The public functions for the user code that imports this module.
 
+
 # Determine if the parameter integer n is a prime number.
 def is_prime(n):
     # Negative numbers, zero and one are not prime numbers.

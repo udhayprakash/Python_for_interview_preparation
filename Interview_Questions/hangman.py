@@ -60,7 +60,6 @@ def main():
 
             # starting the game
             while True:
-
                 print("Guess a letter:")
                 letter = input()
 

@@ -34,13 +34,11 @@ def showLog():
 
 
 if __name__ == "__main__":
-
     choice = -1
 
     print("1. Record\n2. Get Last\n3. Show log\n4. Exit")
 
     while True:
-
         choice = int(input("\nEnter your choice:").strip())
 
         if choice == 1:

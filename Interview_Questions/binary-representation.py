@@ -25,7 +25,6 @@ def binaryRepresentation(n):
         return "invalid input"
     result = []
     for i in range(n + 1):  # n+1, as range will not include last value in boundary
-
         if not (i in binaryNumMap):
             binaryNumMap[i] = integerToBinary(i).count("1")
 

@@ -96,7 +96,7 @@ def roman_encode(n):
     if n < 1:
         raise ValueError("Romans did not have zero or negative numbers")
     result = ""
-    for (v, s) in symbols_encode:
+    for v, s in symbols_encode:
         while v <= n:  # same symbol can be used several times
             result += s
             n -= v

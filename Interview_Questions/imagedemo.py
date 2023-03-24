@@ -6,6 +6,7 @@ from scipy import misc, ndimage
 # (h, w) for grayscale images, and (h, w, 3) for RGB images. Also
 # showcase some handy functions from scipy.ndimage submodule.
 
+
 # In image processing, convolution with a tactically chosen kernel
 # matrix can achieve all kinds of effects.
 def convolve(img, kernel):

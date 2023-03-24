@@ -17,7 +17,6 @@ class QueueTwoStacks:
 
     def dequeue(self):
         if len(self.out_stack) == 0:
-
             # Move items from in_stack to out_stack, reversing order
             while len(self.in_stack) > 0:
                 newest_in_stack_item = self.in_stack.pop()

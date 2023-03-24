@@ -40,7 +40,6 @@ def get_words(input_nums, key_map):
 
 
 if __name__ == "__main__":
-
     """
     +-----+-----+-----+
     |  1  |  2  |  3  |

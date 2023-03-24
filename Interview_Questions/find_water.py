@@ -1,5 +1,4 @@
 def findWater(arr, n):
-
     # left[i] contains height of tallest bar to the
     # left of i'th bar including itself
     left = [0] * n

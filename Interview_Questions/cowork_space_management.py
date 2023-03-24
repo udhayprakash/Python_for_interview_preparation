@@ -26,7 +26,6 @@ class Solution:
         result = 0
 
         def markIsland(grid, x, y, visited):
-
             if x < 0 or x > grid.length - 1 or y < 0 or y > grid[x].length - 1:
                 return
 

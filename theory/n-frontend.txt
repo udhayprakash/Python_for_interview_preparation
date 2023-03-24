@@ -134,11 +134,15 @@ promises vs observables
 		Provide the map for forEach, filter, reduce, retry, and retryWhen operators.
 
 Dependency injection
-	is basically providing the objects that an object needs
-	(its dependencies) instead of having it construct them itself.
+	is basically providing the objects that an object needs (its dependencies) instead of having it construct them itself.
 
-	It's a very useful technique for testing, since it allows dependencies
-	to be mocked or stubbed out.
+	It's a very useful technique for testing, since it allows dependencies to be mocked or stubbed out.
+
+scope hierarchy
+	Means each view has its own $scope (which is a child of the root scope), so whatever variables one view controller sets on its $scope variable, those variables are invisible to other controllers.
+
+$scope vs scope
+	in case of dependency injection the scope object is received as $scope while in case of non-dependency injection scope object is received as scope or with any name.
 
 ==================
 React

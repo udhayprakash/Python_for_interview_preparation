@@ -1,11 +1,11 @@
 # Python3 program to construct tree using inorder
 # and postorder traversals
 
+
 # A binary tree node has data, pointer to left
 # child and a pointer to right child
 class Node:
     def __init__(self, x):
-
         self.data = x
         self.left = None
         self.right = None
@@ -20,7 +20,6 @@ class Node:
 
 
 def buildUtil(inn, post, innStrt, innEnd):
-
     global mp, index
 
     # Base case
@@ -54,7 +53,6 @@ def buildUtil(inn, post, innStrt, innEnd):
 
 
 def buildTree(inn, post, lenn):
-
     global index
 
     # Store indexes of all items so that we
@@ -71,7 +69,6 @@ def buildTree(inn, post, lenn):
 
 
 def preOrder(node):
-
     if node == None:
         return
 
@@ -82,7 +79,6 @@ def preOrder(node):
 
 # Driver Code
 if __name__ == "__main__":
-
     inn = [4, 8, 2, 5, 1, 6, 3, 7]
     post = [8, 4, 5, 2, 6, 7, 3, 1]
     n = len(inn)

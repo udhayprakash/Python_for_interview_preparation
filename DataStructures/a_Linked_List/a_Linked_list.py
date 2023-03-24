@@ -5,33 +5,92 @@ Purpose: Implementing Linked List
 
 
 class Node:
-    def __init__(self, val, _next=None):
-        self.data = val
+    def __init__(self, data, _next=None) -> None:
+        self.data = data
         self.next = _next
 
-    def __str__(self):
-        print(f"data:{self.data} next:{self.next}")
+    def __str__(self) -> None:
+        return f"[data:{self.data} next:{self.next}]"
 
     __repr__ = __str__
 
 
 class SingleLinkedList:
-    def __init__(self):
-        self.nodes = []
+    def __init__(self) -> None:
+        self.head = None
 
-    def insert_tail(self, _val):
-        new_node = Node(_val)
-        if self.nodes:
-            self.nodes[-1].next = id(new_node)
-        self.nodes.append(new_node)
+    def insert_first(self, data):
+        new_node = Node(data)
+        new_node.next = self.head
+        self.head = new_node
 
-    def __str__(self):
-        result = ""
-        for each_node in self.nodes:
-            result += str(each_node) + "\n"
-        return result
+    def insert_last(self, data):
+        new_node = Node(data)
+        if self.head is None:
+            self.head = new_node
+            return
+        curr = self.head
+        while curr.next:
+            curr = curr.next
+        curr.next = new_node
 
-    __repr__ = __str__
+    def print(self):
+        # print(self.head)
+        values = []
+        curr_node = self.head
+        while curr_node:
+            values.append(curr_node.data)
+            curr_node = curr_node.next
+        print(values)
+
+    def reverse(self):
+        values = []
+        curr_node = self.head
+        while curr_node:
+            values.insert(0, curr_node.data)
+            curr_node = curr_node.next
+        print(values)
+
+    def delete_node(self, expected_data):
+        if self.head is None:
+            return
+        prev_node, curr_node = None, self.head
+        while curr_node:
+            if curr_node.data == expected_data:
+                print(prev_node, "--->", curr_node)
+                print(curr_node.data, expected_data, "\n\n")
+                if curr_node.next is None:
+                    break
+                prev_node, curr_node = (
+                    curr_node,
+                    curr_node.next.next,
+                )  # TODO - if last node, delete
+            prev_node, curr_node = curr_node, curr_node.next
+
+            # curr_node = curr_node.next
+            # first, middle , last
+            # firt -
+            #   if prev_node is None:
+            #     prev_node, curr_node = None, self.head.next
+            #     continue
+            #   prev_node.next = curr_node.next if curr_node.next else None
+            #   curr_node = curr_node.next
+
+
+names = SingleLinkedList()
+names.insert_first("Andrew")
+names.insert_last("Zoomanzi")
+names.insert_last("Yalk")
+names.insert_last("Xxx")
+names.insert_first("Bob")
+names.insert_last("Watson")
+names.print()
+print("==========================")
+names.delete_node("Xxx")
+names.delete_node("Andrew")
+print("==========================")
+names.print()
+names.reverse()
 
 
 # if __name__ == '__main__':

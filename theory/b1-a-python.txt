@@ -486,12 +486,16 @@ subprocess popen vs run
 
 process vs thread
 	- processes do not share memory and run on a single core.
-	  They are better for compute-intensive tasks that do not have to communicate
-	  with each other.
+	  They are better for compute-intensive tasks that do not have to communicate with each other.
 	- threads share memory.
 	  In Python, due to the Global Interpreter Lock (GIL), two threads cannot operate
 	  at the same time in the same program.
 	  As a result, only some operations can be run in parallel using threads.
+
+	- A process is just an instance of an executing program.
+		A thread, on the other hand, is like a mini process.
+	Each process typically has 1 thread of control, but in several situations, it is beneficial to have multiple threads of control in the same process.
+
 
 - thread vs process
 	-------------------------------------------------------------------------------------------
@@ -505,6 +509,8 @@ process vs thread
 	  more expensive.
 	- Processes don’t share memory with other   | Threads share memory with other threads of the same process.
 	  processes.
+
+
 
 concurrency vs parallelism
  - “Concurrency is about dealing with lots of things at once.

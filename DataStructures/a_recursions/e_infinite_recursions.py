@@ -20,6 +20,7 @@ print(f"{sys.getrecursionlimit() =}")  # 1000
 
 no_of_recursions = 0
 
+
 # Infinite Loop
 def loop(no_of_recursions):
     no_of_recursions += 1

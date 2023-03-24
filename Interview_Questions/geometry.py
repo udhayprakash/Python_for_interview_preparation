@@ -168,7 +168,7 @@ def __cross_ray(x, y, x0, y0, x1, y1):
 
 def point_inside_polygon(poly, p):
     (x, y), (x1, y1), total = p, poly[-1], 0
-    for (x0, y0) in poly:
+    for x0, y0 in poly:
         if (x0, y0) == (x, y):
             return 2
         if line_segment_intersect((x0, y0), (x1, y1), (x, y), (x, y)):

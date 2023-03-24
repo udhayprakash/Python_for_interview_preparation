@@ -146,7 +146,7 @@ def knight_tour(n=8, sx=1, sy=1):
             # The tour must be closed to be considered success.
             return (sx - cx, sy - cy) in moves
         visited.add((cx, cy))
-        for (nx, ny) in neighbours(cx, cy):
+        for nx, ny in neighbours(cx, cy):
             if generate_tour(nx, ny):
                 return True
         # Undo the current move

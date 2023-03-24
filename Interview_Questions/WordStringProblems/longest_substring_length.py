@@ -23,10 +23,8 @@ def longest_substr_len(my_string: str) -> bool:
     start = 0
 
     for end in range(len(my_string)):
-
         # Checking if we have already seen the element or not
         if my_string[end] in seen:
-
             # If we have seen the number, move the start pointer
             # to position after the last occurrence
             start = max(start, seen[my_string[end]] + 1)

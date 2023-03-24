@@ -21,6 +21,7 @@ def nth_hamming(n):
 
 # Another (slow) version by combining lazy iterators recursively.
 
+
 # Merge the results of two sorted iterators into sorted sequence.
 # For simplicity, this assumes that both iterators are infinite.
 def iterator_merge(i1, i2):

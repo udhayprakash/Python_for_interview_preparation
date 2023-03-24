@@ -47,7 +47,6 @@ def isPalindrome(num):
     # print(dequeue)
 
     for _ in range(digitCount // 2):
-
         if dequeue.dequeueFront() != dequeue.dequeueBack():
             return False
 

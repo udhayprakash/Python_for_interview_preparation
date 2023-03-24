@@ -48,7 +48,6 @@ def mergeLists(llist1, llist2):
 
 
 if __name__ == "__main__":
-
     llist1_count = int(input("Enter the number of element to be in linked list 1: "))
 
     llist1 = SinglyLinkedList()

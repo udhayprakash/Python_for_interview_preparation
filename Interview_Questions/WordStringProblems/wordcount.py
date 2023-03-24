@@ -41,7 +41,7 @@ with open("warandpeace.txt", encoding="utf-8") as wap:
         # Lowercase everything and remove the trailing linebreak character.
         line = line.lower()[:-1]
         # Remove the contractions (see above).
-        for (orig, repl) in replacements:
+        for orig, repl in replacements:
             line = line.replace(orig, repl)
         # Remove whatever other possessives might remain.
         line = re.sub(r"'s\b", "", line)  # Raw strings are handy for regexes.

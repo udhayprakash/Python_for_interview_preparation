@@ -70,6 +70,14 @@ CI/CD
 				}
 			}
 
+- Declarative pipelines Features
+	1) Declarative syntax: pipelines are defined using a simple and structured syntax that is easy to read and understand.
+	2) Easy pipeline visualization: pipelines are automatically visualized in the Jenkins UI, making it easy to understand the pipeline flow and status.
+	3) Stage-based execution: pipelines are defined in stages, with each stage containing one or more steps. This makes it easy to define and manage complex pipelines.
+	4) Integration with Jenkins plugins: declarative pipelines can easily integrate with Jenkins plugins, making it easy to extend the functionality of the pipeline.
+	5) Reusable pipeline code: pipelines can be defined as reusable templates, making it easy to define and maintain a consistent pipeline structure across multiple projects.
+
+
 - Jenkins Multibranch Pipeline
 	- A multibranch job is simply a folder of pipeline jobs.
 	- For every branch in repo, Jenkins will create a folder.

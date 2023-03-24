@@ -279,6 +279,8 @@ Data Sources
 
 - COALESCE
 	- it will return the first non-null value, in the column
+	- Also, We can use it to replace null values in a join with some default value
+		COALESCE(field, 'default')
 
 - Cursor
 	- Used when application logic need to work with one row at a time, rather than entire result at once.
@@ -382,6 +384,11 @@ Data Sources
 	- CTE cannot be nested while Views can be nested.
 	- View once declared can be used for any number of times but CTE cannot be used.
 	It should be declared every time you want to use it.
+
+- In-memory data structure store databases
+	- They are well-suited for applications that require fast access to frequently accessed data and low latency data processing.
+	- They can provide high performance and scalability for applications that need to handle large volumes of data and support real-time data processing.
+	- Ex: Redis, Memcached, Apache Ignite, Aerospike
 
 
 - DB View vs Materialized View
@@ -959,3 +966,8 @@ TODO
 
 	https://dbfiddle.uk/
 	https://database.guide/
+	https://www.databasestar.com/sql-cheat-sheets/
+	https://www.stratascratch.com/
+
+	https://dev.mysql.com/doc/refman/8.0/en/tutorial.html
+	https://www.linkedin.com/events/sqlfordataanalytics-datascience7040893287821426688/comments/

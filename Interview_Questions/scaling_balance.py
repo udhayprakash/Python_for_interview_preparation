@@ -44,7 +44,7 @@ def scaling_balance(arr):
     # 1 + 3 = 4 != 5
     # 1 + 4 = 5 MATCH!!!
     # 1 + 6 = NO MATCH!
-    for (counter, item) in enumerate(weights):
+    for counter, item in enumerate(weights):
         for additionItem in weights[counter:]:
             if item + additionItem == init_weight:
                 if balance_key_init:

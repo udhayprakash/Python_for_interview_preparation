@@ -145,7 +145,6 @@ IN AWS Lambda,
 		- Self-managed Apache Kafka
 
 
-Amazon Simple Queue Service (Amazon SQS)
 - AWS Lambda Examples
 	- say, for Returning a message
 
@@ -319,11 +318,6 @@ AWS Lambda Context properties
 	- It connection pooling necessary for scaling many simultaneous connections
 	  created by concurrent Lambda functions.
 
-- dead letter queue
-	- A dead-letter queue is an Amazon SQS queue that an Amazon SNS subscription can
-	target for messages that can't be delivered to subscribers successfully.
-	- Messages that can't be delivered due to client errors or server errors are held
-	in the dead-letter queue for further analysis or reprocessing.
 
 - AWS Redshift
 	- Materialized View
@@ -502,6 +496,10 @@ I have experience migrating applications and data, from on-prem to cloud
 	- They're written in the same JSON syntax and can be used to provide granular permissions on S3 resources.
 	- The main difference from IAM user policies is that bucket policies are attached to an S3 resource directly rather than to an IAM user.
 
+- Tagging
+	- SNS, SQS cant be tagged.
+	- We can use tag editor to manage tags, but only to limited resources.
+
 RDS vs DynamoDb
 ----------------
 - Amazon RDS is relational, whereas DynamoDB is a NoSQL database engine.
@@ -519,6 +517,26 @@ SNS vs SQS
 ==========
 SNS - sends messages to the subscriber using push mechanism and no need of pull.
 SQS - it is a message queue service used by distributed applications to exchange messages through a polling model, and can be used to decouple sending and 		receiving components.
+
+
+- sqs
+	- Amazon SQS supports two types of queues:
+		1) standard queues
+			- The standard queue type provides high throughput, best-effort ordering, and at-least-once delivery of messages.
+			- This means that messages can be delivered out of order and may be duplicated, but it ensures that every message will be delivered at least once.
+		2) FIFO queues
+			- The FIFO queue type provides both ordering and deduplication of messages.
+			- It guarantees that messages are processed exactly once and in the order they are sent.
+			- However, it has lower throughput compared to standard queues and higher costs.
+
+
+
+- dead letter queue
+	- A dead-letter queue is an Amazon SQS queue that an Amazon SNS subscription can
+	target for messages that can't be delivered to subscribers successfully.
+	- Messages that can't be delivered due to client errors or server errors are held
+	in the dead-letter queue for further analysis or reprocessing.
+
 
 
 AWS Limits

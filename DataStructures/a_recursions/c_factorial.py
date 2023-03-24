@@ -29,6 +29,7 @@ print(f"{factorial_iteration(5)  =}")
 print(f"{factorial_iteration(22) =}")
 # print(f'{factorial_iteration(12345) =}')
 
+
 # Method 4 - using recursions
 def factorial_rec(num):
     print(f"{recursion_number =}")

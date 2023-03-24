@@ -288,3 +288,40 @@ Ans)
 	GROUP BY e.name
 	ORDER BY total_hours DESC
 =====================================================================================================
+Q) Table contains ages of people. Generate SQL query to classify less than 13 as child, 13 till 20 as teens, 20 till 60 as adult
+   and greater than 60 as OLD.
+
+Ans)
+
+	SELECT
+		age,
+		CASE
+			WHEN age < 13 THEN 'Child'
+			WHEN age >= 13 AND age < 20 THEN 'Teen'
+			WHEN age >= 20 AND age < 60 THEN 'Adult'
+			ELSE 'Old'
+		END AS age_category
+	FROM people;
+=====================================================================================================
+Q) if there are two tables, write query to get the records not present in tableA but present in tableB,
+   and vice-versa. Also, combine all those records
+
+   Table1 has two columns: c1, c2
+   Table2 has two columns: c1, c2
+
+Ans)
+
+	SELECT *
+	FROM table1
+	LEFT JOIN table2 ON table1.column1 = table2.column1
+	WHERE table2.column1 IS NULL;
+
+	UNION
+
+	SELECT *
+	FROM table2
+	LEFT JOIN table1 ON table1.column1 = table2.column1
+	WHERE table1.column1 IS NULL;
+
+	Union removes duplicates, where Union All wont.
+=====================================================================================================
