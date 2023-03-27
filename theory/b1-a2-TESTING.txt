@@ -8,8 +8,6 @@
 	- API testing with postman & its automation with newman scipts
 	- Functional testing With selenium. Wrote python scripts using pyselenium module
 
-- I used modules like unit test and pytest.
-
 - Generally, we follow TDD - test driven development
 - It means that
 	- first I will write the code skeleton
@@ -21,11 +19,18 @@
 - Also, any further logic changes, will be integrable easily, as all test cases need to pass,
   before pushing the code
 
+- Advantages of Unit testing
+	It helps you to detect bugs early in the development cycle
+	It helps you to write better programs
+	It syncs easily with other testing methods and tools
+	It will have many fewer bugs
+	It is easier to modify in future with very less consequence
 
-- Problem
+- Disadvantages/Problems with unit testing
 	Initially time taking
 	But subsequently, it will be fast, after each Iteration
 	As code is more reliable, very less chances of code related production issues.
+
 
 In Unittesting, for each test suite, there will be
 	a pair of class methods, called setup and tearDown
@@ -66,3 +71,7 @@ In Unittesting, for each test suite, there will be
 	- Mocks
 		are what we are talking about here: objects pre-programmed with expectations
 		which form a specification of the calls they are expected to receive.
+
+- stubs vs mocks
+	- A Stub is used to fill in some dependency required for unit test to run correctly.
+	- A Mock is a fake object which runs the tests where we put assert.

@@ -245,6 +245,7 @@ copy
 	rsync		- to copy only changed files ( works over SSH)
 
 	ftp/sftp	- copy files. sftp copies over SSH
+				- copy files from one server, to the another server
 
 - LILO(LInux LOader)
 	- boot loader for Linux, used to load the Linux operating system into the main memory

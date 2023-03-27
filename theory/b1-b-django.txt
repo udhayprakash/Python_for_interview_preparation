@@ -353,12 +353,83 @@ Django Migrations
 	>>> created
 	False
 
+- N+1 problem
+	- This problem occurs in ORMs.
+	- The problem occurs when you have a query that loads a set of objects, and then each object requires an additional query to load its associated data.
+	  If you have N objects, this can result in N + 1 queries being executed against the database, where the first query retrieves the N objects, and then one additional query is executed for each of the N objects to retrieve the associated data.
+	- It means larger the value of N, the more queries will be executed, the larger the performance impact.
+
+	- In Django, we can use the select_related and prefetch_related methods to address the N+1 problem and improve the performance of your database queries.
+
+	- Problem
+		if there are two models, Author and Book, where each Book is associated with an Author, and we want to retrieve all the books and the associated authors:
+
+			books = Book.objects.all()
+			for book in books:
+				author = book.author  # This line triggers an additional query to load the associated author
+
+	- Solution
+
+			books = Book.objects.select_related('author').all()
+			for book in books:
+				author = book.author  # This line does not trigger an additional query
+
+	- Problem
+		if there are two models, Category and Product, where each Product can belong to multiple categories.
+		we want to retrieve all the products and the associated categories:
+
+			products = Product.objects.all()
+			for product in products:
+				categories = product.categories.all()  # This line triggers an additional query to load the associated categories
+
+	- Solution
+
+			products = Product.objects.prefetch_related('categories').all()
+			for product in products:
+				categories = product.categories.all()  # This line does not trigger an additional query
+
+
 - select_related vs prefetch_related
-	- select_related()
-		- "follows" foreign-key relationships, selecting additional related-object
-		   data when it executes its query.
-	- prefetch_related()
+	- select_related
+		- "follows" foreign-key relationships, selecting additional related-object data when it executes its query.
+	- prefetch_related
 		- does a separate lookup for each relationship, and does the "joining" in Python.
+
+	- select_related is used to retrieve related objects using a SQL join, which reduces the number of queries executed against the database.
+	- prefetch_related is used to retrieve related objects using separate queries, but it does so in a more efficient way than executing separate queries for each object.
+
+- null=True vs blank=True
+	- null=True affects the database schema and allows the field to have no value,
+	  while blank=True affects the Django forms and allows the field to be left blank by the user.
+
+	- It's possible to set both options on a field if we want to allow both empty values and blank form submissions.
+
+- Django ORM Exceptions
+	1) DoesNotExist
+		- Raised when a query does not return any results for a specific model instance.
+		- To address this exception, we can use a try-except block to catch the exception and handle it appropriately, such as redirecting the user to a custom error page or displaying a helpful message.
+
+	2) MultipleObjectsReturned
+		- Raised when a query returns multiple results for a specific model instance when only one is expected.
+		- To address this exception, we can use a more specific query to retrieve a single object, such as filtering on a unique field or using the first() method instead of get().
+		- Alternatively, we can handle the exception by catching it in your code and taking appropriate action, such as raising a custom error or returning a default value.
+
+	3) FieldError
+		- Raised when a field name is invalid or a query contains an invalid field.
+		- To address this exception, we should check your code for typos or syntax errors in your query or field names, and make sure that we're using the correct syntax for querying related models and fields.
+
+	4) ValidationError
+		- Raised when a model instance fails validation (e.g. due to invalid data or missing required fields).
+		- To address this exception, we should ensure that your code validates user input and model instances before saving them to the database, and handle validation errors by displaying appropriate error messages to the user.
+
+	5) IntegrityError
+		- Raised when a database constraint is violated (e.g. unique constraint or foreign key constraint).
+		- To address this exception, we should ensure that your code checks for and handles database constraints appropriately, such as by catching and handling constraint violations or displaying helpful error messages to the user.
+
+	6) OperationalError
+		- Raised when a database operation fails due to a connection issue or other database error.
+		- To address this exception, we should ensure that your code handles database connection issues and retries failed operations when possible, or displays helpful error messages to the user when a database operation fails.
+
 
 - Optimizing ORM queries - https://schegel.net/posts/optimizing-django-orm-queries/
 
@@ -453,6 +524,42 @@ Django Migrations
 	- django-debug-toolbar for analyzing or removing duplicate db calls
 	- drf-nested-routers for URL routing management
 	- django-extensions  for utilities like db shell, etc.
+
+
+- drf renderers
+	- JSONRenderer
+	- BrowsableAPIRenderer
+	- TemplateHTMLRenderer
+	- AdminRenderer
+	- HTMLFormRenderer
+	- I also created a customer PlainTextRenderer
+
+- drf permissions
+	- persmissions help to restrict access to views or endpoints in an API.
+	- we need to define permissions_classes class variabe in views, to use them.
+	- Types
+		1) IsAuthenticated:
+			- Allows access to authenticated users only.
+			- Unauthenticated users will receive a 401 Unauthorized response.
+
+		2) IsAdminUser:
+			- Allows access to admin users only.
+			- Non-admin users will receive a 403 Forbidden response.
+
+		3) AllowAny:
+			- Allows access to all users, authenticated or not.
+
+		4) IsAuthenticatedOrReadOnly:
+			- Allows access to authenticated users for all HTTP methods except POST, PUT, and DELETE, which are restricted to authenticated users only.
+
+		5) DjangoModelPermissions:
+			- Allows access to users with specific model permissions defined in Django's permission system.
+			- For example, a user with the view permission for a particular model will be able to access views or endpoints that use this permission.
+
+		6) DjangoObjectPermissions:
+			- Allows access to users with specific object-level permissions defined in Django's permission system.
+			- This permission requires that the model in question has a corresponding permission set up in Django's permission system.
+
 
 Django Ref blogs/tutorials
 	- https://djangotricks.blogspot.com/

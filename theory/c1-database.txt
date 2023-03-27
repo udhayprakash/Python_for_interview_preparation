@@ -22,7 +22,7 @@ Data Sources
 		- cx_oracle for working with Oracle db
 		- psycopg2 for working with postgres
 		- pymongo for working with MongoDB
-
+		-
 - ORM
 	- means Object Relational Mapper
 	- ORMS will help in performing db queries and manipulations using Object Oriented way.
@@ -342,6 +342,23 @@ Data Sources
 
 			- Value Window Functions - LAG(), LEAD(), FIRST_VALUE(), LAST_VALUE()
 
+- Partition tables
+===================
+	- Partitioning tables is a way to divide a large table into smaller, more manageable pieces.
+	- This can improve query performance by reducing the amount of data that needs to be scanned.
+	- To partition a table in PostgreSQL, you can use the CREATE TABLE command with the PARTITION BY clause.
+	- This clause specifies the partitioning method and the partition key
+
+	- Partition types
+		1) Range partitioning: partitions are defined based on a range of values for the partition key.
+		2) Hash partitioning: partitions are determined based on a hash function applied to the partition key.
+		3) List partitioning: partitions are defined based on a list of values for the partition key.
+
+	- considerations when partitioning tables
+		- Make sure your partition key is carefully chosen, as it will determine the efficiency of partitioning.
+		- Be aware of potential data skew, where some partitions are much larger than others.
+		- Be careful when performing operations that affect multiple partitions, such as altering the partition key or merging partitions, as these can cause deadlocks.
+
 - SQL constraints
 	NOT NULL 	 # Ensures a column cannot have a NULL value
 	UNIQUE 		 # Ensures all values in a column are unique
@@ -408,6 +425,22 @@ Data Sources
 		- DDL (data definition language) triggers react to  CREATE, ALTER, and DROP
 		- Logon triggers reacts to LOGON events
 	ref: https://www.sqlshack.com/learn-sql-sql-triggers/
+
+- bridge table
+	- A bridge table is used to connect two or more tables that have a many-to-many relationship.
+	- It typically contains foreign keys to the primary keys of the other tables, and each row in the table represents a relationship between the data in those tables.
+	- The bridge table is used to establish a many-to-many relationship between the tables, and allows queries to be performed that involve both sets of data.
+
+- transaction table
+	- A transaction table is used to record individual transactions or events that occur within a system.
+	- Each row in the transaction table represents a single transaction or event, and typically includes information about the date and time of the transaction, the user who initiated the transaction, and any data that was modified as part of the transaction.
+	- It is used in systems that require auditing or tracking of changes to data.
+
+- N+1 problem
+	- This problem occurs in ORMs.
+	- The problem occurs when you have a query that loads a set of objects, and then each object requires an additional query to load its associated data.
+	  If you have N objects, this can result in N+1 queries being executed against the database, where the first query retrieves the N objects, and then one additional query is executed for each of the N objects to retrieve the associated data.
+	- In Django, we can use the select_related and prefetch_related methods to address the N+1 problem and improve the performance of your database queries.
 
 - SYSDATE vs CURRENT_DATE
 	- SYSDATE returns the current date and time set for the operating system of the database server.
@@ -971,3 +1004,6 @@ TODO
 
 	https://dev.mysql.com/doc/refman/8.0/en/tutorial.html
 	https://www.linkedin.com/events/sqlfordataanalytics-datascience7040893287821426688/comments/
+
+	https://www.databasestar.com/learn-sql/
+	https://www.kaggle.com/learn/intro-to-sql

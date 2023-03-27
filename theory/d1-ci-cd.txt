@@ -324,3 +324,25 @@ blue-green deployment
 - stack trace
 	- It is a report that provides information about program subroutines.
 	- It is commonly used for certain kinds of debugging, where a stack trace can help software engineers figure out where a problem lies or how various subroutines work together during execution.
+
+
+How to debug code defect  give troubleshooting process, tell for python coding
+=====================
+	1) Use print statements: Use print statements in your code to print out variables or objects at various stages of your program to identify where the issue may be occurring.
+
+	2) Use a debugger: Python has a built-in debugger called pdb that allows you to step through your code line by line and see the values of variables at each step. You can start the debugger by adding import pdb; pdb.set_trace() to the line where you want to start debugging.
+
+	3) Check variable values: Check the values of variables in your code to see if they're what you expect them to be. You can use print statements or the debugger to do this.
+
+	4) Review error messages: Read the error messages that Python provides when your program crashes or throws an exception. They can often provide useful information on where the issue may be occurring.
+
+	5) Divide and conquer: If you're having trouble identifying the root cause of the issue, try to isolate the problem by commenting out or removing sections of your code until the problem disappears. This can help you narrow down where the issue is occurring.
+	6) Use a linter: A linter is a tool that analyzes your code for potential errors and coding style issues. Use a Python linter like pylint or flake8 to help identify potential issues in your code.
+
+	7) Check for typos: Check your code for typos, missing or extra characters, or other simple mistakes that could be causing the issue.
+
+	8) Check the flow of control: Make sure that the flow of control in your program is correct. Check loops, conditionals, and function calls to make sure they're behaving as expected.
+
+	9) Review documentation: Check the documentation for the libraries, modules, and functions you're using to make sure you're using them correctly. Pay attention to function arguments, return values, and any special behaviors.
+
+	10) Ask for help: If you're still having trouble identifying the issue, reach out to other developers or online forums for help. Sometimes a fresh pair of eyes can help spot

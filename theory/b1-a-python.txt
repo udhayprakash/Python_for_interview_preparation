@@ -275,7 +275,7 @@ subprocess popen vs run
 - Debugging in python
 	- Either using pdb or ipdb modules, or using breakpoint() function
 
-- Object Oriented Programming
+- oop (object Oriented Programming)
 	- I use Object-Oriented Programming and Design predominantly.
 	- It gives us the scalability in code to adapt any requirement changes.
 
@@ -292,7 +292,8 @@ subprocess popen vs run
 		This name mangling is to avoid accidental override
 
 	2) ABSTRACTION:
-		- It is a process of hiding implementation details and showing only functionality to the user.
+		- It is defined as a process of hiding implementation details and showing only functionality to the user.
+		- It is defined as a process of handling complexity by hiding unnecessary information from the user.
 
 	3) INHERITANCE:
 		- python supports single, multiple and multi-level inheritance, using MRO (Method Resolution Order)
@@ -511,7 +512,6 @@ process vs thread
 	  processes.
 
 
-
 concurrency vs parallelism
  - “Concurrency is about dealing with lots of things at once.
     Parallelism is about doing lots of things at once”
@@ -651,7 +651,6 @@ __getattribute__ vs__getattr__
 			  __enter__ and __exit__ are used for creating custom context managers
 			  __iter__ and __next__ are used for creating Iterator objects
 			  __str__ and __repr__ are used for string representation of the instances
-
 
 		-----------------------------------------------------------------------------
 		Dunder method	Usage
@@ -965,8 +964,8 @@ Metaclasses
 	ExampleSibling = Example + Sibling
 	# ExampleSibling is now a subclass of both Example and Sibling (with no
 	# content of its own) although it will believe it's called 'AutoClass'
-	print ExampleSibling
-	print ExampleSibling.__mro__
+	print(ExampleSibling
+	print(ExampleSibling.__mro__)
 
 
 Numpy
@@ -1119,20 +1118,43 @@ Accurancy Vs precision
 
 - pyspark
 ========
+	spark
+	pyspark bucketby vs partitionby
+	pyspark compression parquet
+	spark splittable compression
+	sqlContext.setConf("spark.sql.parquet.compression.codec.", "snappy")
+	How to read large parquet file
+	map and reduce in big data
 
-spark
-pyspark bucketby vs partitionby
-pyspark compression parquet
-spark splittable compression
-sqlContext.setConf("spark.sql.parquet.compression.codec.", "snappy")
-How to read large parquet file
-map and reduce in big data
+- pandas vs pyspark
+------------------
+	- Pandas run operations on a single machine whereas PySpark runs on multiple machines.
+	- Pandas is best suited for small to medium-sized datasets that can fit into memory on a single machine, while PySpark is designed for large-scale data processing on distributed clusters.
+	- Pandas provides a wide range of functions for data manipulation and analysis, while PySpark provides a more powerful set of APIs for distributed computing,
 
-pandas vs pyspark
-=================
-- Pandas run operations on a single machine whereas PySpark runs on multiple machines.
+- RDD vs dataframe spark
+-----------------------
+	- RDDs are a low-level data structure with a more flexible schema,
+	  while DataFrame is a higher-level data structure with a fixed schema and more efficient processing.
+	- DataFrame is generally the preferred data structure in Apache Spark for most data processing tasks, as it provides better performance and a more intuitive API.
+	- In terms of
+		1) Data Representation:
+			- RDD is a lower-level data structure that represents data as an immutable, fault-tolerant collection of elements that can be processed in parallel across a cluster.
+			- DataFrame is a higher-level data structure that represents data in a tabular format with named columns, similar to a relational database table.
 
-High Performance Computing, in python
+		2) Schema:
+			- RDDs do not have a fixed schema, which means that each record in an RDD can have a different structure.
+			- DataFrame has a fixed schema that defines the data types and names of columns, which enables more efficient processing of data.
+
+		3) APIs:
+			- RDD provides a low-level API that exposes transformations and actions to perform distributed computing on the data.
+			- DataFrame provides a higher-level API that includes built-in operations for filtering, grouping, joining, and aggregating data, making it easier to work with structured data.
+
+		4) Performance:
+			- DataFrame is more optimized for query optimization, making it faster and more efficient than RDD for most data processing operations.
+			- RDD can be more performant for certain types of operations, such as iterative algorithms or data processing with complex data structures.
+
+- High Performance Computing, in python
 	- Dask
 		- for distributed computing.
 		- facilitates running many computations at the same time, either on a single machine or on many separate computers (cluster).

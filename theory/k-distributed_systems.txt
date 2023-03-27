@@ -32,6 +32,24 @@ Scalability is the term we use to describe a system’s ability to cope with inc
  response time is what the client sees: besides the actual time to process the request (the service time), it includes network delays and queueing delays. Latency is the duration that a request is waiting to be handled—during which it is latent, awaiting service [
 
 
+- Service Oriented Architecture (SOA)
+--------------------------------------
+	- It is an approach to software design and development that focuses on creating modular and reusable components, or services, that can be shared and combined to create more complex applications.
+	- All services will be loosely coupled, so
+		- can be developed and maintained independently
+		- and it enables interoperability between different platforms and programming languages.
+	- SOA is often used in large-scale enterprise applications to break down systems into smaller, modular services.
+	- SOA is supported by a variety of technologies and standards, such as web services, RESTful APIs, and XML and JSON data formats.
+
+	- ADVANTAGES
+		- Interoperability, Loose coupling, Abstraction, Granularity
+	- LIMITAIONS
+		- Increasing interdependencies
+		- Single point of failure
+		- Limited scalability
+
+	- Microservices can address these limitations.
+	- Microservices are a type of service-oriented architecture that emphasizes small, independent services that work together to form a larger application.
 
 monolithic vs microservice
 ==========================
