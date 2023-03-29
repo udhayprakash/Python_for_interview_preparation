@@ -159,8 +159,14 @@ React component lifecycle
 		- componentWillUnmount //Death
 
 
-When we want to implement Redux in the React, we also need three things: save store state in React. get the state in React component. dispatch action in React component.
+	When we want to implement Redux in the React, we also need three things:
+		1) save store state in React.
+		2) get the state in React component.
+		3) dispatch action in React component.
 
+- Memory Leak in react-app
+	- It can be result of not cancelling subscriptions made when a component was mounted before the component gets unmounted.
+	- These subscriptions could be a DOM event listener, a websocket subscription, or even a request to an API.
 
 - react functional components vs class components
 	- A functional component is just a plain JavaScript function which accepts props as an argument and returns a React element.

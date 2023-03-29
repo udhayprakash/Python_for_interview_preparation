@@ -49,6 +49,8 @@ In AWS Cloud, I worked with
 		- AWS Lambda - with either time-triggered or event triggered
 		- AWS API Gateway with http-triggered
 
+		AWS Event Scheduler for scheduling the lambda
+
 	For oauth, I worked with aws cognito
 	- Also, worked with SQS, SNS and SES
 	- And, EMR cluster for Pyspark

@@ -758,6 +758,17 @@ MongoDb query optimization/Optimize Query Performance
 	4) Use $hint to Select a Particular Index.
 	5) Limit the Number of Query Results to Reduce Network Demand.
 
+DB2
+====
+	ibm_db to connect to DB2
+
+	import ibm_db
+	conn = ibm_db.connect("database","username","password")
+
+	conn = ibm_db.connect("DATABASE=name;HOSTNAME=host;PORT=60000;PROTOCOL=TCPIP;UID=username;
+                PWD=password;", "", "")
+
+	Ref: https://www.ibm.com/docs/en/db2/11.5?topic=db-connecting-database-server
 
 GraphQL
 =======

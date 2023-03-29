@@ -465,6 +465,13 @@ subprocess popen vs run
 	- Multiprocessing for CPU-bound tasks.
 		- computationally-intensive tasks such as compression or hashing.
 
+- Multithreading in Python
+	- I Used multithreading module for it.
+
+	- first, create all the threads
+	- then, start all these threads
+	- Finally, join all these threads, such that it will ensure to go to next step, after all were done.
+
 - Asyncio
 	- Asyncio allows us to run IO-bound tasks asynchronously to increase the performance of our program.
 	- Common IO-bound tasks include, like,
@@ -510,6 +517,17 @@ process vs thread
 	  more expensive.
 	- Processes don’t share memory with other   | Threads share memory with other threads of the same process.
 	  processes.
+
+- thread life cycle
+	- Every thread will have FIVE stages.
+		1) New - when thread is created, and yet to start
+		2) Active  - when invoked with start() method
+					- within it, there are two substates
+						a) runnable - Means it is about to run, when thread scheduler gives time.
+						b) running - Means when thread gets CPU, it will run, and then moves to runnable state again.
+		3) Blocked / Waiting - when ever thread is inactive for sometime, temporarily
+		4) Timed Waiting - means sometimes, waiting for leads to starvation; say to prioritize another thread.
+		5) Terminated - Either when thread finighes its job, or abnormal termination like unhandled exception, etc.
 
 
 concurrency vs parallelism
