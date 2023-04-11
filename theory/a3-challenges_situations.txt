@@ -4,11 +4,9 @@ Use the STAR (Situation, Task, Action, Result) technique when answering example 
 
 - Permissions related production issue challenge
 	In current project, there is a Data pipeline
-		- If a file is created in s3 bucket, AWS lambda will be triggered and we can
-		  dump to another s3 bucket or to the database.
+		- If a file is created in s3 bucket, AWS lambda will be triggered and we can dump to another s3 bucket or to the database.
 		- I created one in that way
-		- But problem is that in production, due to sudden change in permission, in
-		  one of the intermediate buckets, the process was stopped in middle I am
+		- But problem is that in production, due to sudden change in permission, in one of the intermediate buckets, the process was stopped in middle I am
 		  not aware of this issue because I am configured to report only if there are issues.
 		- This is a production issue.
 		- After this, I learned best practice
@@ -51,7 +49,8 @@ Use the STAR (Situation, Task, Action, Result) technique when answering example 
 	- But, in the backend, they were successfully getting processed.
 	- Upon investigation, I found that a solution to this problem
 	- I created a distributed setup where all the frontend hit will create a celery job, instead of directly executing.
-		1. user will
+		1. user will pass to celery and return clery id
+		2. Subsequently , users  can come and poll with that id  to knw the status
 
 Project/task you are proud of
 --------------------------------
@@ -158,7 +157,6 @@ Managing Tight deadlines
 		3) Planning and time management are key.
 		4) Concentration is the key to meeting deadlines and delivering good work.
 
-
 Learning New tool
 ----------------------
 - Initially, I will check the docs. Though i may not understand everything, but atleast, i will get a glance of what is what.
@@ -246,7 +244,6 @@ conflicts(workplace disagreements) with Collegues
 			- What could be avoid such understanding/miscommunication
 			- What could be best practice, to avoid such things again.
 
-
 Mentoring, Juniors
 ------------------
 - Frankly, I never wore the hat of a lead. But, helped and/or got help from any team members.
@@ -288,7 +285,7 @@ Urgent Production issue fix
 ============================
 - First, I will inform the team.
 - Then with manager consent, I will acknowledge the stackdholders
-- Then, I  will debug step by step, I found root cause quickly, okay.
+- Then, I will debug step by step, I found root cause quickly, okay.
 - Else,
 	- We will divide the work among the team members to find the root cause
 	- We wll divide the parts and identify the issue(s)
@@ -299,3 +296,8 @@ Urgent Production issue fix
 - create a JIRA for completely addressing the issue, place in backlog,
   and prioritise in next sprint planning, based on severity.
 - document and inform the stackholdes of entire process, involved.
+
+
+
+TODO
+	- How did  you debug coding problem

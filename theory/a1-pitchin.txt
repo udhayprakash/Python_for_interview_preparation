@@ -101,7 +101,6 @@ People in Python community
 ==========================
 	- Sam Lau and Philip Guo, who built the pythontutor and pandastutor websites
 
-
 Learning new language
 ======================
 	I'm very much interested in learning a new language.
@@ -136,10 +135,10 @@ Questions to Interviewers
 
 - What is the volume of data, which we will be working on, on a daily basis. some approximate numbers of records?
 - What kind of data do we work with, and what are our data sources?
-- Were we using any custom/in-house frameworks/tools in our project? If so, can you help with the details?
+- Were we using any custom/in-house frameworks/tools in our project? If so, can you help with the details? (like your own databases, etc..)
 
 - within the first 3-4 months of hire, what are the pain-points you would like me to tackle?
-
+- In next 3-6 months, what were your major priorities, towards this project?
 - Hope we are using agile methodology!  And how about the sprint cycle duration?
 - Can I know about the work culture of our company?
 
@@ -151,9 +150,10 @@ CONCLUSION:
 	Experience in both backend and frontend, data wrangling and ETLs
 	And I am ready to extend and learn new skills, if needed.
 
+	Have experience in working on financial products, best practices to follow. So, I can be productive, with minimal training.
+
 - As I'm understanding the current landscape of your environment, what is your vision of future innovation
 and or new technologies you want to bring within the next 2-4 years, and why so?
-
 
 - Will there be an opportunity to reach out to the clients, either for requirement gathering and/or for demoing the end solution?
 - Have I answered all your questions?

@@ -1002,9 +1002,15 @@ array vs list
 	- whenever I have to store all elements of same type, as arrays are more performant than lists, I prefer to use them.
 
 numpy vs pandas
-	numpy is mostly suitable for numerical data computations, whereas
+	- numpy is mostly suitable for numerical data computations, whereas
 	pandas is suitable for tabular data processing.
 
+	- Numpy is a library that helps you do math with the data, like adding or subtracting numbers.
+	Pandas is a library that helps you organize data, like putting it into tables.
+
+- Vectorization
+	- Vectorization is the technique of implementing (NumPy) array operations on a dataset.
+	In the background, it applies the operations to all the elements of an array or series in one go
 
 Pandas
 ------

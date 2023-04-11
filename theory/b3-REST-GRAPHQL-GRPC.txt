@@ -30,6 +30,7 @@
 - REST based vs RESTFUL
 	- REST based services follow some of the above principles and not all
 	- RESTFUL services means it follows all the above principles.
+
 - Richardson-maturity-model
 	- to know level of RESTful your API is.
 	- https://developers.redhat.com/blog/2017/09/13/know-how-restful-your-api-is-an-overview-of-the-richardson-maturity-model
@@ -37,6 +38,21 @@
 - Best practice for RESTful API design is that
 	- path params are used to identify a specific resource or resources,
 	  while query parameters are used to sort/filter those resources.
+	- We shouldn’t use verbs in our endpoint paths. Instead, we should use the nouns which represent the entity that the endpoint that we’re retrieving or manipulating as the pathname.
+	- Use logical nesting on endpoints
+		-  If one object can contain another object, you should design the endpoint to reflect that.
+		- say, there were articles, and comments for each article, then use "/articles/:articleId/comments"
+		- also, suppose to return the author of particular comments, we can use /articles/:articleId/comments/:commentId/author
+	- Handle errors gracefully and return standard error codes
+	- Allowing filtering, sorting, and pagination
+		- /employees?lastName=Smith&age=30
+		- http://example.com/articles?sort=+author,-datepublished
+			- + means ascending and - means descending
+			-  author’s name in alphabetical order
+			- datepublished from most recent to least recent
+	- Cache data to improve performance, using  Redis or in-memory caching
+	- Versioning our APIs, like /v1/, /v2/, etc.
+
 
 - REST Design Patterns
 	1) Layered Architecture
@@ -64,6 +80,11 @@ API documentation tools
 	- Swagger was used for most of the time.
 	- Earlier used RAML (RESTful API Modeling Language)
 
+CORS
+=====
+	- CORS means Cross-origin resource sharing
+	- Its a security mechanism that blocks web pages from accessing resources from a different domain, by default.
+	- It enables the browser to check with the server and receive permission to access the requested resource based on the security policy configured on the server.
 
 REST vs SOAP
 =============

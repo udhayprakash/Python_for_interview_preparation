@@ -90,8 +90,6 @@ CI/CD
 	- A canary release is an early build of an application. Splitting stable and development branches is a widespread strategy in the open-source world.
 		- Many projects use an odd/even numbering scheme to separate stable from the non-stable version.
 
-
-
 SDLC
 ----
 - It means Software Development Life Cycle
@@ -224,7 +222,6 @@ Development Tools
 	for code Management - Bitbucket, Github
 	for Issue Tracking  - Jira, CA Rally
 	for CI/CD           - Jenkins
-	for monitoring      - Dynatrace
 	for log management  - Splunk and Sumo-logic
 
 	for local development - Intellij, Visual Studio Code

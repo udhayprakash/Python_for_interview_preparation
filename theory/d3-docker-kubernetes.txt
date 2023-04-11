@@ -10,7 +10,7 @@ Docker
 	- Developer productivity
 	- Debugging capabilities
 
-- Commands
+- docker Commands
 ----------
 1. `docker ps`  # current containers
 2. `docker run` # create and start the container
@@ -204,6 +204,54 @@ ___
 
 
 Ref: https://hasura.io/blog/how-to-write-dockerfiles-for-python-web-apps-6d173842ae1d/
+
+- docker compose commands
+==========================
+docker-compose up 	# create and start containers
+docker-compose up -d # create and start containers, in detached mode
+docker-compose down 	# stop and remove containers, networks, images and volumes
+docker-compose logs		# view output from containers
+docker-compose restart	# Restart all services
+docker-compose pull 	# Pull all image services
+docker-compose build	# Build all image services
+docker-compose config 	# validate and view the composite file
+docker-compose scale <service_name>=<replica> 	# Scale special services
+docker-compose top		# Display the running processes
+docker-compose run -rm -p 2022:22 web bash	# start web service and runs bash as its command, remove old container.
+
+- docker-service
+================
+docker service create <options> <image> <command> # create new service
+docker service inspect --pretty <service_name>		# Display detailed information services
+docker service ls 									# List services
+docker service ps 									# List the tasks of services
+docker service scale <service_name>=<replica>		# Scale special services
+docker service update <service_name>=<replica>		# Update special services
+
+- docker stack
+===============
+docker stack ls 									# List all running applications on this docker host
+docker stack deploy -c <compositefile> <appname>	# Run the specified compose file
+docker stack services <appname>						# List the services associated with an app
+docker stack ps <appname>							# List the running containers associated with an app
+docker stack rm <appname>							# Tear down an application
+
+-docker machine
+===============
+docker-machine create --driver virtualbox myvm1			# Create a VM (Mac, Win7, Linux)
+docker-machine create -d hyperv --hyperv-virtual- switch "myswitch" myvm1 	# Win10
+docker-machine env myvm1								# View basic information about your node
+docker-machine ssh myvm1 "docker node ls"				# List the nodes in your swarm
+docker-machine ssh myvm1 "docker node inspect <nodeID>" # Inspect a node
+docker-machine ssh myvm1 "docker swarm join-token -q worker"  # View join token
+docker-machine ssh myvm1								# Open an SSH session with the VM; type "exit" to end
+docker-machine ssh myvm2 "docker swarm leave"			# Make the worker leave the swarm
+docker-machine ssh myvm1 "docker swarm leave -f"		# Make master leave, kill swarm
+docker-machine start myvm1								# Start a VM that is currently not running
+docker-machine stop $(docker-machine ls					# Stop all running VMs
+docker-machine rm $(docker-machine ls -q)				# Delete all VMs and their disk images
+docker-machine scp docker-compose.yml myvm1:~ 			# Copy file to node's home dir
+docker-machine ssh myvm1 'docker stack deploy -c <file> <app>"	# Deploy an app
 
 - Kubernetes
 =============

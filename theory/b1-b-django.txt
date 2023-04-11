@@ -5,7 +5,7 @@
 - Django has built-in ORM, whereas in flask, we need to use the sqlalchemy ORM.
 - Django comes with Django Template language, whereas in flask, we need to use jinja2 templates.
 - Flask supports both sql and no-sql databases, whereas django is suitable for only relational databases.
-- By default, django comes with batteries to be production ready, whereas in flask, we need to know what all need to be added, to our application.
+- By default, django comes with batteries to be production ready, whereas in flask, we need to know what all needs to be added to our application.
 - Conclusions
 	- flask is suitable
 		- when no-sql database is of choice, or
@@ -114,7 +114,7 @@ Django Migrations
 	python manage.py migrate --prune option allows deleting nonexistent migrations from the django_migrations table.
 
 - For rollbacking migrations, we need to identify the last migration to which we want to revert and use its migration file name as migration target
-	python manage.py migrate my_app_name target_migration
+	python manage.py migrate app_name target_migration
 
 
 - Django signals

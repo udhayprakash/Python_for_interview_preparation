@@ -7,6 +7,26 @@ JavaScript
 	4 === 4 also resuts true, but
 	4 === '4' results in false, as one is int and other is string type.
 
+- assigned-by-value vs assigned-by-reference
+	On variable assignment,
+		the scalar primitive values (Number, String, Boolean, undefined, null, Symbol) are assigned-by-value and
+		the compound values (Object, Array) are assigned-by-reference
+
+
+			var b = 10; // scalar
+			var c = b;
+			b++;
+			console.log(b,c);
+
+			>> 11 10
+
+			var x = {}; // compound
+			var y = x;
+			x.abc = 10;
+			console.log(x.abc, y.abc);
+
+			>> 10 10
+
 setInterval function
 	It is a window function method that calls given function at specified intervals (say in milliseconds),
 	until clearInterval() function is called, or the window is closed.

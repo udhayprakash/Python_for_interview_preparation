@@ -143,7 +143,7 @@ Current Project - MetaData Analytics
 	- We have access to the data lake, which has all the meta data of the products and their events.
 
 	- Objective of this project is
-		- We will group the problems and give
+		- We will group the problems and cluster them and associated to the products.
 		- This output will help in next versions
 
 	- Stakeholders are internal product	Owners of this
@@ -157,7 +157,7 @@ Current Project - Infra Automation - 1 click automation -- AWS CLOUD automation
 	- project is boto3 Tagging based Resource billing and Analytics
 
 	- We are part of the infrastructure management team, within this company.
-	- Our job is to manage the infrastructure, within the organization.
+	- Our job is to manage the infrastructure within the organization.
 	- we will grant access to cloud resources to the teams, and charge for the same, from their projects.
 
 	- In the process, to optimise the billing and better manage, we need to uniquely recognize the resources.
