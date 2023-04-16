@@ -18,9 +18,7 @@ def check_braces_balance(expression):
             if (not braces_found) or braces_found[-1] != braces[each_chr]:
                 return False
             braces_found.pop()
-    if braces_found:
-        return False
-    return True
+    return len(braces_found) == 0
 
 
 if __name__ == "__main__":

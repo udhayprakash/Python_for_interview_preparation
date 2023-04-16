@@ -184,6 +184,8 @@ React component lifecycle
 		2) get the state in React component.
 		3) dispatch action in React component.
 
+If a component's behavior is dependent on its state, it can be termed a stateful component.
+
 - Memory Leak in react-app
 	- It can be result of not cancelling subscriptions made when a component was mounted before the component gets unmounted.
 	- These subscriptions could be a DOM event listener, a websocket subscription, or even a request to an API.

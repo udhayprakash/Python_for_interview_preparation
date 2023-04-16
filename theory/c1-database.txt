@@ -5,7 +5,8 @@ DB Experience
 - In terms of features, I worked with
 	database design
 	creating tables and establishing relations
-	creating db triggers, db views, indexing, SQL procs, etc
+	creating db triggers, db views, SQL procs, etc
+	Also, Performance optimization, Indexing
 
 Data Sources
 	- both internal and external to the organization

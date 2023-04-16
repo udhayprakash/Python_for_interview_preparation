@@ -30,7 +30,6 @@ CI/CD
 
 - https://www.xenonstack.com/blog/continuous-integration-and-delivery
 
-
 - scripted vs declarative pipelines
 	- A Jenkinsfile can be written using two types of syntax
 		1) Declarative and
@@ -76,7 +75,6 @@ CI/CD
 	3) Stage-based execution: pipelines are defined in stages, with each stage containing one or more steps. This makes it easy to define and manage complex pipelines.
 	4) Integration with Jenkins plugins: declarative pipelines can easily integrate with Jenkins plugins, making it easy to extend the functionality of the pipeline.
 	5) Reusable pipeline code: pipelines can be defined as reusable templates, making it easy to define and maintain a consistent pipeline structure across multiple projects.
-
 
 - Jenkins Multibranch Pipeline
 	- A multibranch job is simply a folder of pipeline jobs.

@@ -8,7 +8,6 @@ Python Importance
 	- Object oriented
 - Though we may not create classes, all time, but is called object oriented programming, as all variables/functions are treated as objects, in Python.
 - Open sources and has a lot of modules, ranging from astronomy, till biotechnology
-- With python 3.11, it is even faster
 
 python 2 vs 3
 =============
@@ -1177,6 +1176,17 @@ Accurancy Vs precision
 		4) Performance:
 			- DataFrame is more optimized for query optimization, making it faster and more efficient than RDD for most data processing operations.
 			- RDD can be more performant for certain types of operations, such as iterative algorithms or data processing with complex data structures.
+
+- parquet vs deltalake
+	- parquet cant handle the slowly changing dimensions, say scd2, which delta lake, we can do better
+	- Example, we want to track the address of a person, and if name, address were the only columns,
+	   we will loose the history, everytime, we update. so, we need to have start and end date against each row.
+
+	   name, address, startDate, endDate
+	   ram,   121	, 21-02-2000, 31-05-2010
+	   ram,   121	, 31-05-2010, NULL
+
+
 
 - High Performance Computing, in python
 	- Dask

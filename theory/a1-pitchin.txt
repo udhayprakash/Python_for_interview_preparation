@@ -120,7 +120,7 @@ became a big hit.
 I played different games, but this is simple.
 So, I thought of creating one.
 When researched, I found some code online.
-I, just, created clone for it. Added some changes, for fun.
+I just created a clone for it. Added some changes, for fun.
 I worked with pygame, which is a python module.
 
 Then, when looking for job, as i have some knowledge in python,
