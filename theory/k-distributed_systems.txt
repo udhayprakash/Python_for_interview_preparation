@@ -62,7 +62,7 @@ In Monolithic,
 
 	Challenges
 		- Application is too large and complex
-		- Parts are more tangledinto each other
+		- Parts are more tangled into each other
 		- You can only scale the entire app, instead of a spedicfic service.
 		- Difficult if services need different dependency versions
 		- Release process takes longer

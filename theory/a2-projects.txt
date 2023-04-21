@@ -148,6 +148,20 @@ Current Project - MetaData Analytics
 
 	- Stakeholders are internal product	Owners of this
 
+Current Project - Retail Web application
+-----------------------------
+	The project involved building a web application that allowed customers to browse through the company's product catalogue, place orders, and make payments. Additionally, the application provided an administrative interface for the company's staff to manage product inventory, process orders, and generate reports.
+
+	To build the application, I used the Django web framework, which allowed me to quick prototype and develop the application's core features. I also used various third-party packages, such as stripe for payment processing and celery for background task processing.
+
+	The application had several key features, including a search function that allowed customers to search for produycst based on keywords or categories. The application also had a recommendation engine that suggested similar products to customers based on their browsing and purchase history.
+
+	One of the challenges of the project was optimizing the application's performance to handle high traffic during peak periods. To achieve this, I implemented caching mechanisms, optimized database queries, and used load balancing techniques.
+
+	Another important aspect of the project was ensuring the security of the application. I implemented various security measures, such as data encryption, secure login authentication, and input validation to prevent SQL injection and other types of attacks.
+
+	Overall, the project was a success, and the company was able to increase its online sales and improve customer satisfaction. It was a great opportunity to apply my python development skills to a real-world business problem and make a tangible impact.
+
 Current Project - Healthcare
 -----------------------------
 

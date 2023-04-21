@@ -162,26 +162,11 @@ Python Questions
 	json.loads for loading JSON string to python string
 	json.load  for loading JSON string to python file
 
-- Shallow vs Deep copy
-	- Shallow copy is used for single dimension mutable objects
-	- Deep copy is used for multiple dimension mutable objects
-	- Reason:
-		when we do assignments of mutable objects, say like,
-			mylist2 = mylist1
-		Then, if we make changes of one of them, the others will also be affected.
-		So, we use copy module to safely copy.
-		Shallow copy or soft copy will also have leakages for multi-dimensional mutable objects.
-		so, conclusion is that
-			shallow/soft copy need to used for single dimension mutable objects, as it is faster.
-			Deep copy need for multi-dimensional mutable objects.
-
 - lambda function
-	- one liner function, mainly useful for evaluating a single expression that is
-	  supposed to be evaluated only once.
+	- one liner function, mainly useful for evaluating a single expression that is supposed to be evaluated only once.
 	- SYNTAX is lambda arguments: expression
 	- We need not define a complete function. We can use it instantly for the purpose.
-	- It can be passed as a parameter to a higher-order function, like filter(),
-	  map(), and reduce().
+	- It can be passed as a parameter to a higher-order function, like filter(), map(), and reduce().
 	- example
 		- if we have to increment all values in a list by one,
 				map(lambda x:x + 1, range(10))
@@ -194,11 +179,11 @@ Python Questions
 - enumerate
 	- Its a build-in function, mainly used when iterating over any iterable,
 	  to get the loop index.
-	- Ex:
-			for loop_index, num in enumerate([1, 2, 3, 4]:
-				print(loop_index, num
+	 - ex: say we are looping with for loop, over a string, and we need loop index too,
+			for index, char in mystr:
+				print(index, char)
 
-List comprehension
+- List comprehension
 	- rewriting the for loop in a single line.
 	- As it creates a code object, it will be slightly faster.
 	- But, comprehension will reduce the readability of code.
@@ -208,7 +193,7 @@ List comprehension
 		- dictionary comprehension
 		- Tuple comprehension is called generator expression
 
-*args vs **kwargs
+- *args vs **kwargs(args vs kwargs)
 	- They are used for creating variadic functions.
 	- *args will enable a function to take zero or any number of arguments.
 	  It will store all the values in a tuple
@@ -250,17 +235,26 @@ subprocess popen vs run
 		- Means, xrange is lazy loading object.
 	- In python3, xrange is renamed as range.
 
-- copy vs deepcopy
+- copy vs deepcopy / Shallow vs Deep copy
 	- This problem occurs in mutable objects i.e., list, dictionary
 	- when working with mutables, when we assign a
 			list1 = list2
-		it will not create new object
-		it
-		both wil refer to the same object
-		so, if you change in one list, it will reflect in others
-		to avoid, we go with copy
-		using
-		copy -- module
+		It will not create new object, but both will refer to the same object.
+		So, if you change in one list, it will reflect in others too.
+		To avoid this leakage, I used copy module
+
+	- Shallow copy is used for single dimension mutable objects
+	- Deep copy is used for multiple dimension mutable objects
+
+	- Reason:
+		when we do assignments of mutable objects, say like,
+			mylist2 = mylist1
+		Then, if we make changes of one of them, the others will also be affected.
+		So, we use copy module to safely copy.
+		Shallow copy or soft copy will also have leakages for multi-dimensional mutable objects.
+		so, conclusion is that
+			shallow/soft copy need to used for single dimension mutable objects, as it is faster.
+			Deep copy need for multi-dimensional mutable objects.
 
 - try-exception blocks
 	1) Try   --- executed every time

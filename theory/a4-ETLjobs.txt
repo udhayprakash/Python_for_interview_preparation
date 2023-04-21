@@ -132,6 +132,18 @@ Slowly Changing Dimensions
 		- We store the history in a historical_column as in type 3.
 
 
-Data Quality Checks
-	- is there numeric data
-	-
+Data Pipeline
+--------------
+	Let me quickly explain the recent data pipeline, which we have built.
+
+	The data source is the AWS s3. The spark inside the AWS data bricks extracts the data from AWS s3 and creates the data frame and does the actual data cleansing, transformations, deduplication, and standardization.
+	Then the final data will be pushed to the AWS redshift data warehouse.
+
+	We have used airflow to orchestrate the data pipelines. Here I was involved in building the DAG and tasks using the operators that airflow provides and dependencies between the tasks. The monitor will be pretty good in airflow. We can see the tree view, graph view, and
+	logs for each task independently so that we can debug things quickly if anything goes wrong. And also, we can configure the alerting framework.
+	so that it will send alerts for each failure.
+
+	For this entire pipeline, we have integrated CICD using Jenkins. Jenkins job builds the egg files with the code base and uploads these egg files into
+	data bricks file system and create the data bricks jobs in the data bricks using notebook tasks and these egg dependencies.
+
+	Let me quickly explain the working environment. I was working in the agile environment, where we used to have sprint planning meetings, scrum calls, and retro meetings for every sprint. The sprint duration was 2 weeks. We used JIRA for the project management and Github for the version control

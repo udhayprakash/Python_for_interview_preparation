@@ -50,7 +50,7 @@ Use the STAR (Situation, Task, Action, Result) technique when answering example 
 	- Upon investigation, I found that a solution to this problem
 	- I created a distributed setup where all the frontend hit will create a celery job, instead of directly executing.
 		1. user will pass to celery and return clery id
-		2. Subsequently , users  can come and poll with that id  to knw the status
+		2. Subsequently, users  can come and poll with that id to know the status
 
 Project/task you are proud of
 --------------------------------

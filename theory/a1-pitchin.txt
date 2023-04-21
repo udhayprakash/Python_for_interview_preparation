@@ -56,7 +56,11 @@ In AWS Cloud, I worked with
 	- And, EMR cluster for Pyspark
 	- for the ETLs, I worked with AWS Glue Jobs with DataCatalog and Pyspark
 
-Also, In the current project, I created the CI/CD setup using Jenkins and Groovy script.
+Also, have experience in creating the CI/CD setup using Jenkins and Groovy script.
+
+And, I have experience in agile methodologies like Scrum, Kanban in facilitating agile ceremonies like daily
+standups,sprint reviews, plannings and restrospectives. I am familiar with Agile tools like Jira and skilled
+in working with cross-functional teams including Dev team, QA testers, and PM/PO's.
 
 In Golang, I created microservices and ETL jobs,
 	Mainly using go concurrency.
@@ -79,7 +83,7 @@ REASON FOR CHANGE -
 Rate yourself
 	For Python, I would say 9/10
 	For SQL, I would count as 8/10, I didnt work in managing databases, only as a developer
-
+			I did create db design, complex queries, joins, sql procs/functions/db triggers, etc
 
 how do you learn new technologies, and trends
 =============================================
@@ -228,3 +232,15 @@ pandas and NumPy libraries, and we used AWS Glue to extract data from our S3 dat
 
 Additionally, we used AWS Quick Sight for real-time metrics and data visualization.
 All of this allowed us to quickly analyze customer data and provide relevant recommendations to our credit card holders.
+
+================================================================================
+Intro
+I am experienced python developer with  years of hands-on experience in the field. I believe I have a deep understanding of Python's frameworks, its libraries , algorithms, and object oriented programming. I am well versed with developing web based applications using python, CSS, HTML, Json, and Javascript. My primary Tech stack is Python, PySpark, SQL, AWS and Airflow.
+
+I am also having good knowledge in writing subqueries, Stored Procedures, Triggers, cursors, and functions in mySQL and PostgreSQL database. I worked on Python ORM libraries including Django ORM, SQL Alchemy. I am comfortable with pythons IDE's like pycharm, Pystudio, Pydev, Pycharm, Sublime text and I have good knowledge on Jupyter notebook. I worked on building frameworks and automating workflows using python for automation testing. I have good knowledge in amazon web service concept like EMR and EC2 web services for processing big data. I have worked with docker for deploying the application inside software containers. I have experience in Microsoft data storage and Azure Data factory, Azure Data Lake Store (ADLS), AWS S#, EC2, Vault, Lambda, SQS and RDS.
+
+I have worked with python development using Numpy and Pandas in Python for data manipulation. I also have some hands on experience on some other libraries like matplotlib for charts and graphs, MySQLdb for database connectivity, Python-twitter, Pyside, Pickle, Panda's data frame, network, urllib2.
+
+I have worked on migrating on-prem ETLs from MS SQL server to Azure CLoud using Azure Data factory and Databricks. I am familiar with machine learning concepts like NLTK , OpenNLP and StanfordNLP for natural language processing and sentiment analysis. I am familiar with working on Unix and Linux Shell environments using command line. I also developed web applications using XML, Json and XSL for front end development.
+
+I am passionate about coding and enjoy keeping up-to-date with the latest technologies and trends in the industry. Believe my skills and experience make me a valuable addition to any team, and I look forward to sharing my knowledge and contributing to the success of your project.

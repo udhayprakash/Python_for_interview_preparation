@@ -4,7 +4,6 @@ In production, instead of app.run, we use
 	gunicorn --worker-class gevent --workers 8 --bind 0.0.0.0:5000 wsgi:app --max-requests 10000 --timeout 5 --keep-alive 5 --log-level info
 
 
-
 Production app
 	- https://www.toptal.com/flask/flask-production-recipes
 
@@ -20,3 +19,16 @@ Flask vs FastAPI
 
 	Recently flask also started async support.
 	Also, flask has a large community support.
+
+
+In Flask, 
+	I worked from as basic as a small flask app, to flask-restplus REST APIs.
+	
+	For Authentication, i worked with Flask-OIDC when working with SSO, to
+		Flask-JWT when working with JWT, and 
+		Flask-OAuthlib when working with Oauth
+		Flask-Social for integrating social media accounts such as Google, Facebook, Twitter, LinkedIn, etc.
+	
+	For Serialization, worked with Marshmallow
+	
+	For ORM, worked wih Sqlachemy
