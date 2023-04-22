@@ -244,3 +244,31 @@ I have worked with python development using Numpy and Pandas in Python for data 
 I have worked on migrating on-prem ETLs from MS SQL server to Azure CLoud using Azure Data factory and Databricks. I am familiar with machine learning concepts like NLTK , OpenNLP and StanfordNLP for natural language processing and sentiment analysis. I am familiar with working on Unix and Linux Shell environments using command line. I also developed web applications using XML, Json and XSL for front end development.
 
 I am passionate about coding and enjoy keeping up-to-date with the latest technologies and trends in the industry. Believe my skills and experience make me a valuable addition to any team, and I look forward to sharing my knowledge and contributing to the success of your project.
+================================================================================
+Data Engineering
+---------------
+I worked on
+	Data Gathering - using tools, and using python
+		Worked on both structured,  unstructured and semi-structured data
+
+		Worked with Both REST APIs and GraphQLs
+
+	Data Cleansing - worked with regular expressions
+	Data Transformations - Worked with Python Pandas
+
+	Data Visualization and Reporting -- with PowerBI and Python based modules
+
+Expert in SQL too
+
+In databases,
+- In relational dB, I worked with MySQL, MS SQL, oracle dB and PostgreSQL.
+- In no-relational dB, I worked with MongoDB and Cassandra.
+- In data warehousing, I worked with Snowflake schema
+
+
+1. -- data gather
+2. -- cleansing
+3. -- transformation
+4. -- dumping to db
+5. -- creating REST API
+6. -- finall consuming from powerBI

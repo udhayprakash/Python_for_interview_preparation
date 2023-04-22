@@ -1,28 +1,25 @@
 ## Data Structures
 
-1. Arrays
+### Non-Primitive Data Structures
 
-   - Arrays store elements of the same data type
+1. Linear
+   i) Arrays - Arrays store elements of the same data type
 
-2. Linked List
+   ii) Linked List - Single Linked List - Double Linked List - Circular Linked List
 
-   - Single Linked List
-   - Double Linked List
-   - Circular Linked List
+   iii) Stack - FIFO - Implementation using arrays - Implementation using Linked List
 
-3. Stack - FIFO
+   iv) Queue - LIFO - Linear Queue - Circular Queue - Priority Queue
 
-   - Implementation using arrays
-   - Implementation using Linked List
+   v) Dequeues
 
-4. Queue - LIFO
-   - Linear Queue
-   - Circular Queue
-   - Priority Queue
+2. Hierarchial
+   i) Trees
+   ii) Heaps
 
-Trees
-Tries
-Graphs
-Vectors
-Heaps
-Hashtables
+3. Unordered
+   i) Hash tables
+   ii) Sets
+   iii) Graphs
+   iv) Tries
+   v) Vectors

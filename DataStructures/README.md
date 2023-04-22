@@ -7,37 +7,38 @@ Computer memory is all filled with zeros and ones.
 As it is difficult to code with 0s & 1s, programming languages & compilers provide
 us with data types.
 
-                bits   - 0 , 1
-                nibble - 4 bits - 0101
-                byte   - 8 bits - 0101 0011
+    		bits   - 0 , 1
+    		nibble - 4 bits - 0101
+    		byte   - 8 bits - 0101 0011
 
 
-                int     - 2 bytes  - 16 bits
-                float   - 4 bytes  - 32 bits
-                char    - 1 byte
-           At top level, there are two types of data types:
-            1) System-defined data types (also called Primitive data types)
-                : int, float, char, double, bool, etc
-                : The number of bits allocated for each primitive data type depends on the
-                   programming languages, the compiler and the OS
-                : For the same primitive data type, different languages may use different
-                   sizes. Depending on the size of the data types, the total available values
-                   (domain) will also change.
-                  int - 2 bytes - 16 bits ->(-2^15 to 2^15 -1)-> -32,768 to 32,767
-                      - 4 bytes - 32 bits ->(-2^31 to 2^31 -1)-> -2,147,483,648 to -2,147,483,647
-            2) User-defined data types
-                : structures in C/C + + and classes in Java/python
+    		int     - 2 bytes  - 16 bits
+    		float   - 4 bytes  - 32 bits
+    		char    - 1 byte
 
-                    class MyClass:
-                        class_var1 = 123
-                        class_var2 = 123.123
-                        def __init__(self):
-                            pass
+       At top level, there are two types of data types:
+    	1) System-defined data types (also called Primitive data types)
+    		: int, float, char, double, bool, etc
+    		: The number of bits allocated for each primitive data type depends on the
+    		   programming languages, the compiler and the OS
+    		: For the same primitive data type, different languages may use different
+    		   sizes. Depending on the size of the data types, the total available values
+    		   (domain) will also change.
+    		  int - 2 bytes - 16 bits ->(-2^15 to 2^15 -1)-> -32,768 to 32,767
+    			  - 4 bytes - 32 bits ->(-2^31 to 2^31 -1)-> -2,147,483,648 to -2,147,483,647
+    	2) User-defined data types
+    		: structures in C/C + + and classes in Java/python
 
-                    struct newType{
-                        int data1;
-                        float data2;
-                    }
+    			class MyClass:
+    				class_var1 = 123
+    				class_var2 = 123.123
+    				def __init__(self):
+    					pass
+
+    			struct newType{
+    				int data1;
+    				float data2;
+    			}
 
 Data Structures:
 It is a particular way of storing and organizing data in a computer so that it can
@@ -109,20 +110,20 @@ The following are the common types of inputs.
 
 How to compare Algorithms - Parameters - Execution Times? - But, it depends on particular computer, so cant use it. - Number of statements executed? - Not a good measure, since the number of statements varies with the programming language as well as the style of the individual programmer
 
-                        n1 = 12
-                        n2 = 34
-                        n3 = n1 + n2
-                        print(n3)
+    			n1 = 12
+    			n2 = 34
+    			n3 = n1 + n2
+    			print(n3)
 
-                        n3 = 12 + 34
-                        print(n3)
+    			n3 = 12 + 34
+    			print(n3)
 
-                        print(12 + 34)
+    			print(12 + 34)
 
-        - Ideal Solution
-            -> we express the running time of a given algorithm as a function of the input
-               size n (i.e., f(n)) and compare these different functions corresponding to running times.
-            -> This kind of comparison is independent of machine time, programming style, etc
+    - Ideal Solution
+    	-> we express the running time of a given algorithm as a function of the input
+    	   size n (i.e., f(n)) and compare these different functions corresponding to running times.
+    	-> This kind of comparison is independent of machine time, programming style, etc
 
 Rate of Growth - The rate at which the running time increases as a function of input. - Ex1:
 TotalCost = cost_of_car + cost_of_bicyle

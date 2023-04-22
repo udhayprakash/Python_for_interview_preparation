@@ -52,6 +52,15 @@ Use the STAR (Situation, Task, Action, Result) technique when answering example 
 		1. user will pass to celery and return clery id
 		2. Subsequently, users  can come and poll with that id to know the status
 
+- Fixing a Critical Bug
+	- The most challenging situation I encountered at work was when I was tasked with fixing a critical bug in a production system with a tight deadline.
+	- The bug was causing issues with data integrity and was affecting multiple users.
+	- It was a challenging situation because there was a lot of pressure to resolve the issue quickly,
+	  while also ensuring that the fix was thoroughly tested and didn't introduce any new issues.
+	- To resolve the issue, I first conducted a thorough investigation to understand the root cause of the problem.
+	- I then implemented a fix that addressed the immediate issue, while also implementing additional tests to prevent the bug from recurring in the future.
+	- Finally, I worked closely with the testing team to ensure that the fix was properly tested before it was deployed to production.
+
 Project/task you are proud of
 --------------------------------
 	- In one project, we have data, to the tune of 18 millions records, for the daily data refresh, which can be either create or update.
@@ -178,6 +187,14 @@ What tech stack would you use?
 	- How would you scale and optimize a given design?
 	- If you led the project what would you have done differently?
 
+- Ideal process for delivering a solution to customers
+	- first gather requirements and thoroughly understand the problem that needs to be solved.
+	- I then work closely with the customer to design a solution that meets their needs,
+	  while also taking into account scalability, maintainability, and security considerations.
+	- Throughout the development process, I prioritize communication and ensure that the customer is kept informed of progress and any issues that arise.
+	- To ensure that the customer is delighted with the solution, I make sure to thoroughly test and debug the code, and provide comprehensive documentation to make it easy for the customer to use and maintain the solution.
+	- I also prioritize user experience and design, ensuring that the solution is intuitive and user-friendly.
+	- Finally, I am always open to feedback and willing to make changes to the solution as needed to ensure that the customer is completely satisfied.
 
 What are you looking for in the new work?
 -----------------------------------
@@ -210,11 +227,25 @@ expectations from full stack developer
 	Monitoring
 
 
-skills needed by developers
+- skills needed by developers
 	- Patience, when debugging or troubleshooting
 	- Persistence, when resolving some issues
 	- Networking and communicating will all
 	- being Proactive, in chasing clients for requirement gatherings, or filling the gaps in requirements
+
+- who is a good developer?
+	In my opinion, a good developer is someone who is
+		- passionate about their work, has a strong foundation in programming principles, and
+		- is able to learn and adapt quickly.
+	Good developers also have a focus on
+		- writing clean, maintainable code that is well-documented and tested.
+	Communication skills are also key, as developers often work in teams and need to be able to clearly explain their work and ideas.
+
+	On the other hand, a bad developer is someone who is
+		- not committed to their work,
+		- lacks a solid foundation in programming principles, and
+		- is not willing to learn and adapt to new technologies or methodologies.
+		- They may also be prone to writing sloppy, untested code and not taking responsibility for their mistakes.
 
 
 conflicts(workplace disagreements) with Collegues

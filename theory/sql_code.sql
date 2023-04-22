@@ -325,3 +325,11 @@ Ans)
 
 	Union removes duplicates, where Union All wont.
 =====================================================================================================
+Q) Find me all the books which are available in more than 50% of the languages?
+	books
+		- bookname char, lang char
+Ans)
+	select bookname
+	FROM books
+	GROUP BY bookname
+	HAVING (COUNT(DISTINCT lang) / COUNT(*))  > 0.5;
