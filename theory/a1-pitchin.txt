@@ -70,7 +70,8 @@ In Golang, I created microservices and ETL jobs,
 	BDD with ginko framework
 	Learning the GRPC
 
-REASON FOR CHANGE -
+REASON FOR CHANGE
+=================
 	CONTRACT COMPLETED. NO more SCOPE FOR EXTENSION.
 	SO, Looking for a change.
 	But It is a very interesting project.
@@ -81,6 +82,7 @@ REASON FOR CHANGE -
 	So, I am looking for remote role, as I did the same from outbreak of COVID onwards.
 
 Rate yourself
+=============
 	For Python, I would say 9/10
 	For SQL, I would count as 8/10, I didnt work in managing databases, only as a developer
 			I did create db design, complex queries, joins, sql procs/functions/db triggers, etc
@@ -118,8 +120,7 @@ Learning new language
 When Programming started
 ========================
 I am interested in playing online games.
-When I am in my graduation, hope you remember, angry birds
-became a big hit.
+When I am in my graduation, hope you remember, angry birds became a big hit.
 
 I played different games, but this is simple.
 So, I thought of creating one.
@@ -127,7 +128,7 @@ When researched, I found some code online.
 I just created a clone for it. Added some changes, for fun.
 I worked with pygame, which is a python module.
 
-Then, when looking for job, as i have some knowledge in python,
+Then, when looking for job, as I have some knowledge in python,
 I looked for work in it, and landed as a python developer.
 That is my journey
 

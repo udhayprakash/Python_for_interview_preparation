@@ -21,14 +21,14 @@ Flask vs FastAPI
 	Also, flask has a large community support.
 
 
-In Flask, 
+In Flask,
 	I worked from as basic as a small flask app, to flask-restplus REST APIs.
-	
+
 	For Authentication, i worked with Flask-OIDC when working with SSO, to
-		Flask-JWT when working with JWT, and 
+		Flask-JWT when working with JWT, and
 		Flask-OAuthlib when working with Oauth
 		Flask-Social for integrating social media accounts such as Google, Facebook, Twitter, LinkedIn, etc.
-	
+
 	For Serialization, worked with Marshmallow
-	
+
 	For ORM, worked wih Sqlachemy

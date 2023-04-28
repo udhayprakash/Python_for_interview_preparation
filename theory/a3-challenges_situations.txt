@@ -198,7 +198,7 @@ What tech stack would you use?
 
 What are you looking for in the new work?
 -----------------------------------
-- Good Work and  work culture
+- Good Work and work culture
 - IN terms of work,
 	- Write coding, atleast 50%
 	- Design solutions

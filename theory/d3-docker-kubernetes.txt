@@ -325,6 +325,12 @@ Terraform commands
 	apply   -> execute the plan
 	destroy -> destroy the resources/infrastructure
 
+Helm
+	I have experience working with Helm package manager for creating and managing Kubernetes clusters
+	I Used Helm charts to automate the deployment of my project kubernetes clusters, and dependencies.
+	I have first hand experience in writing the Helm YAML files.
+	Also, used Helm CLI commands for installing the charts and deploying infra.
+
 Heroku
 	# deploy to Heroku
 	git push heroku main

@@ -2,7 +2,7 @@ CI/CD
 	- it  means Continuous Integration/Continuous Deployment
 	- I worked with Jenkins
 	- created a EC2 instance, installed Jenkins, added plugins like Filesystem Trigger,
-      code Build plugin, http request plugin, ...
+	  code Build plugin, http request plugin, ...
 	- I used bitbucket as the code repository.
 	- Gone to settings, and brought the webhook and integrated it into Jenkins.
 	- Now any git push to the bitbucket event will trigger the build process.

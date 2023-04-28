@@ -3,6 +3,32 @@ cloud computing services:
 2)Platforms-as-a-Service (PaaS), and
 3)Software-as-a-Service (SaaS)
 
+AWS global vs Regional services
+===============================
+- AWS global services:
+	Amazon S3 (Simple Storage Service)
+	Amazon DynamoDB (NoSQL database)
+	Amazon EC2 (Elastic Compute Cloud)
+	Amazon VPC (Virtual Private Cloud)
+	Amazon Route 53 (DNS service)
+	AWS IAM (Identity and Access Management)
+	AWS CloudFront (Content Delivery Network)
+	AWS CloudTrail (Auditing and Compliance)
+	AWS Config (Configuration Management)
+	AWS CloudFormation (Infrastructure as Code)
+
+- AWS regional services:
+	Amazon RDS (Relational Database Service)
+	Amazon Elastic Beanstalk (Application Platform as a Service)
+	Amazon WorkSpaces (Desktop-as-a-Service)
+	AWS Lambda (Serverless computing)
+	Amazon Redshift (Data Warehousing)
+	Amazon Elasticache (In-memory caching)
+	Amazon EMR (Elastic MapReduce)
+	Amazon Kinesis (Real-time data processing)
+	AWS Glue (ETL service)
+	AWS Snowball (Data transfer service)
+
 EC2 Instance
 ============
 Reserved Instances
@@ -143,7 +169,6 @@ IN AWS Lambda,
 		- Amazon MQ
 		- Amazon Managed Streaming for Apache Kafka (Amazon MSK)
 		- Self-managed Apache Kafka
-
 
 - AWS Lambda Examples
 	- say, for Returning a message

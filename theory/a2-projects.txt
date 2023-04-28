@@ -88,8 +88,10 @@ In terms of the technical stack,
 
 Current Project - Fault-analysis for medical devices @ Medtronic
 -----------------------------------------------------------------
-	- We are into medical devices manufacturing and servicing
-	- we collect the anonymous data from medical devices, and store in mongodb
+	- We are into medical devices manufacturing and servicing.
+	- Medtronic's implantable devices are supported by an ecosystem of external-to-the-body devices,
+	  such as remote monitors and services that include programmers attached to HCPs(healthcare Providers) and hospital locations.
+	- we collect the anonymous data from these medical devices, and store in mongodb
 	- we do post-analysis on this archival data.
 
 

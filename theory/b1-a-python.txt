@@ -802,6 +802,7 @@ __getattribute__ vs__getattr__
 	  the heap.
 
 Heap vs stack
+--------------
 - Whenever an object is created, it’s always stored in the Heap space, and stack memory contains the reference to it.
 - Stack memory only contains local primitive variables and reference variables to objects in heap space.
 - Objects stored in the heap are globally accessible whereas stack memory can’t be accessed by other threads.

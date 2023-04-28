@@ -3,7 +3,7 @@
 fail_fast: false
 repos:
   - repo: https://github.com/pre-commit/mirrors-prettier
-    rev: v3.0.0-alpha.6
+    rev: v3.0.0-alpha.8-for-vscode
     hooks:
       - id: prettier
   - repo: https://github.com/asottile/pyupgrade
@@ -34,11 +34,6 @@ repos:
       - id: check-yaml
         args: [--allow-multiple-documents]
       - id: debug-statements
-        exclude: |
-          (?x)(
-              ^python3/05_Debugging/ |
-              ^python3/14_Code_Quality/python_2to3_ex.py
-          )
       - id: detect-aws-credentials
         args:
           - --allow-missing-credentials
@@ -58,10 +53,8 @@ repos:
     hooks:
       - id: black
         language_version: python3
-        exclude: python3/14_Code_Quality/python_2to3_ex.py
       - id: black-jupyter
         language_version: python3
-        exclude: python3/14_Code_Quality/python_2to3_ex.py
 
   # - repo: https://gitlab.com/pycqa/flake8
   #   rev: 3.9.2
