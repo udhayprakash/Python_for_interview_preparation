@@ -7,6 +7,7 @@
 		- used Jmeter scripts for the same.
 	- API testing with postman & its automation with newman scipts
 	- Functional testing With selenium. Wrote python scripts using pyselenium module
+	- Also, Behavior Driven Development(BDD) with Behave framework
 
 - Generally, we follow TDD - test driven development
 - It means that
@@ -46,7 +47,7 @@ In Unittesting, for each test suite, there will be
 	- In unit testing, we mock the interactions will 3rd party REST APIs, or databases,
 	  as the primary focus is to test our source code.
 	- In integration testing, as the primary objective is to test end-to-end functionality,
-	  there wont be any mockings.
+	  there won't be any mockings.
 
 - HappyPath testing
 	- It is a type of software testing that uses known input and produces an expected output

@@ -9,11 +9,11 @@ I have the experience in creating ETL jobs with event-driven architecture, like
 3) http triggered -- > some one want to push data to out application
 		--- I exposed my lambda via API gateway --
 
-4) aws kinesis stream ---> SQS ---> event triggered ---> AWS lambda
+4) MYSQL db ->  aws kinesis stream -> aws lambda → MYSQL db NEW
 
-5) MYSQL db ->  aws kinesis stream -> aws lambda → MYSQL db NEW
+5) S3 bucket →  athena queries  → AWS lambda— > AWS API gateway –JSON-> powerBI
 
-6) S3 bucket →  athena queries  → AWS lambda— > AWS API gateway –JSON-> powerBI
+6) aws kinesis stream ---> SQS ---> event triggered ---> AWS lambda
 
 Also, used the AWS Glue jobs for transformation of around 50k records.
 I configured the glue data catalogue to pick the specific columns AND  perform operations
@@ -25,6 +25,35 @@ s3 -> AWS Athena -> QuickSight
 Funnel is the ETL tool, to pull the social media data, to a csv
 GCP DataFusion
 
+ETL Job :: aws kinesis stream ---> SQS ---> event triggered ---> AWS lambda
+=================================================================
+	Step 1: Data is ingested into an Amazon Kinesis stream.
+		Data can be ingested into a Kinesis stream from a variety of sources, including:
+
+			a) Application logs:
+				- Kinesis can be used to collect application logs from web servers, databases, and other applications.
+			b) Sensor data:
+				- Kinesis can be used to collect sensor data from devices such as thermostats, security cameras, and fitness trackers.
+			c) Financial data:
+				- Kinesis can be used to collect financial data from stock tickers, market data feeds, and other sources.
+
+	Step 2: The data is then passed to an Amazon SQS queue.
+		Once the data is in a Kinesis stream, it can be passed to an SQS queue. SQS is a message queuing service that makes it easy to decouple applications and components.
+
+		For example, you could have an application that generates application logs. The application could write the logs to a Kinesis stream. Then, you could have another application that reads the logs from the Kinesis stream and passes them to an SQS queue. The second application could be a batch processing application that runs every night. This way, the first application can generate the logs as they are generated, and the second application can process the logs in batches at a time that is convenient for it.
+
+	Step 3: When a message arrives in the SQS queue, it triggers an AWS Lambda function.
+		When a message arrives in an SQS queue, it can trigger an AWS Lambda function. Lambda is a serverless computing platform that allows you to run code without provisioning or managing servers.
+
+		For example, you could have a Lambda function that reads messages from an SQS queue and writes them to a database. The Lambda function could also be used to perform data transformations, such as converting data from one format to another.
+
+	Step 4: The Lambda function can then process the data and take any necessary action.
+		The Lambda function can take any action that you need it to take.
+		For example, it could:
+
+			Write the data to a database.
+			Send an email notification.
+			Trigger another AWS service.
 
 ETL best practices
 ===================

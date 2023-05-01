@@ -27,7 +27,7 @@ In Machine Learning,
 	I created a model and also exposed it via a flask application, for further training.
 
 In terms of technical stack,
-	Our application server is in a EC2 instance, and celery workers are running on another server.
+	Our application server is in an EC2 instance, and celery workers are running on another server.
 	Both are in multiple regions for DR (disaster recovery) strategy.
 
 	Which is behind the autoscaling and inturn, behind the Route53

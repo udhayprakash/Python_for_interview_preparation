@@ -1,5 +1,5 @@
-reason for go?
-
+- reason for go?
+==============
 In Golang, I created microservices and ETL jobs,
 	Mainly using go concurrency.
 	Used Gokit for microservices implementation,
@@ -8,8 +8,52 @@ In Golang, I created microservices and ETL jobs,
 	BDD with ginko framework
 	Learning the GRPC
 
+- GOROOT vs GOPATH
+===================
+	- GOROOT environment variable specifies the location of the Go installation, while
+	- GOPATH environment variable specifies the location of your workspace where you store your Go projects and packages.
 
-Go Mocking
+- Go Data Structure
+===================
+	1) Array:
+		- An array is a fixed-size collection of elements of the same type.
+		- Arrays are indexed, so you can access elements by their index.
+	2) Slice:
+		- A slice is a dynamic-size collection of elements of the same type.
+		- Slices are created from arrays, and they share the underlying array's storage.
+	3) Map:
+		- A map is an unordered collection of key-value pairs.
+		- Maps are indexed by keys, which can be any type.
+	4) Struct:
+		- A struct is a collection of named fields of different types.
+		- Structs are similar to classes in object-oriented programming languages.
+	5) Pointer:
+		- A pointer is a variable that stores the address of another variable.
+		- Pointers are used to access the memory location of a variable.
+	6) Interface:
+		- An interface is a set of methods that a type must implement.
+		- Interfaces are used to decouple code from implementation details.
+
+- Another datastructures
+========================
+	1) Linked Lists:
+		- A collection of elements, each of which points to the next element in the list.
+		- Linked lists can be useful for building more complex data structures like trees and graphs.
+
+	2) Queues:
+		- A data structure that allows elements to be inserted at the back and removed from the front.
+		- Queues can be useful for building more complex data structures like stacks and trees.
+
+	3) Stacks:
+		- A data structure that allows elements to be inserted at the top and removed from the top.
+		- Stacks can be useful for building more complex data structures like trees and graphs.
+
+	4) Heaps:
+		- A binary tree structure where the parent node is always greater than its children nodes.
+		- Heaps can be useful for building more complex data structures like priority queues.
+
+- Go Mocking
+===========
 	Gomock
 		- It is the most common and popular mocking framework to mock interfaces.
 	Go Sqlmock

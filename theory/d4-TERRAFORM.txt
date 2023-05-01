@@ -1,12 +1,52 @@
+IaaC
+	- Infrastructure as a Code
+	- Provisioning infrastructure through software to achieve consistent and predictable deployments.
+	- Benifits
+		- Automated deployments
+		- Repeatable Processes
+		- Consistent environments
+		- Reusable Components
+		- Documented Architecture
 Terraform
-==========
+	- Infrastructure Automation tool
+	- open-source and vendor agnostic
+	- Terraform is declarative, Idempotent and consistent
+	- we can write in Hashicorp Configuration Language(HCL), or JSON
+	- Push based deployment; no agent needed.
+	- Has Provider Plugins for 3rd parties like AWS, AZure, etc in registry.terraform.io
 
+Terraform Object Types
+	- Providers
+		- provides information about the provider(like AWS) which we want to use
+	- Resources
+		- Each resource is associated with a provider, like EC2, s3, etc.
+	- Data Sources
+		- They are way to query about anything. they are also associated with providers
 
-main.tf 	Main configuration file containing resource definition
-variables.tf 	contains variable declaration
-outputs.tf 		contains outputs from resources
-provider.tf 	contains provider definition
-terraform.tfvars	contains all environment variables
+- Terraform follows block syntax
+	block_type "label" "name_label" {
+		key = "value"
+
+		nested_block {
+			key = "value"
+		}
+	}
+
+	resource "aws_instance" "web_server" {
+		name = "web-server"
+
+		ebs_volume {
+			size = 40
+		}
+	}
+
+Terraform Files
+================
+	main.tf 			Main configuration file containing resource definition
+	variables.tf 		contains variable declaration
+	outputs.tf 			contains outputs from resources
+	provider.tf 		contains provider definition
+	terraform.tfvars	contains all environment variables
 
 variable types - string, number, bool, any, list, map, set, object, tuple
 	list -- has all elements of same type

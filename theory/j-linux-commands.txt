@@ -298,6 +298,27 @@ copy
 			In BASH, 8 character file name is followed by a dot and 3 characters for the extension.
 			DOS doesn't follow such convention.
 
+- bash scripts
+	- To run the bash script in background, append ampersand (&) at the end.
+		./myscript.sh &
+	- bash script that takes two command line arguments and prints them to the console:
+			#!/bin/bash
+
+			# Get the first command line argument
+			arg1=$1
+
+			# Get the second command line argument
+			arg2=$2
+
+			# Print the arguments to the console
+			echo "Argument 1: $arg1"
+			echo "Argument 2: $arg2"
+	- $@ is a special parameter that expands to all the positional parameters passed to the script.
+			for arg in "$@"
+			do
+			  echo "$arg"
+			done
+
 - ssh - secure shell
 
 - processes

@@ -202,7 +202,6 @@ Python Questions
 	  It will store all values in a dictionary.
 	  Ex: func(a=1, b=2, c=3)  will create a dict {'a': 1, 'b': 2, 'c': 3}
 
-
 constructor
 	- its the method, which will be called, automatically, when we
 	  instantiate the class instance
@@ -267,6 +266,25 @@ subprocess popen vs run
 
 - Debugging in python
 	- Either using pdb or ipdb modules, or using breakpoint() function
+
+- error vs exception
+	- errors are fatal problems that cannot be handled by the program, while
+	- exceptions are non-fatal problems that can be handled by the program
+
+	- error
+		- An error is a problem that occurs at runtime and causes the program to terminate abnormally.
+		- Errors are typically caused by problems with
+			- system resources, such as memory allocation errors or file I/O errors, or
+			- by programming errors, such as dividing by zero or accessing an array out of bounds.
+		- Errors are usually fatal and cannot be handled by the program.
+
+	- exception
+		- is a problem that occurs at runtime, but can be handled by the program.
+		- Exceptions are typically caused by
+			- errors in program logic, such as attempting to open a file that does not exist, or
+			- by unexpected input or conditions.
+		- When an exception occurs, the program stops executing the current function and looks for an exception handler that can handle the exception.
+		- If no handler is found, the program terminates with an error.
 
 - oop (object Oriented Programming)
 	- I use Object-Oriented Programming and Design predominantly.
