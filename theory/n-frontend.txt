@@ -320,3 +320,20 @@ tsconfig.json
 
 
 aggrid usage case
+
+
+
+
+Solutions:
+==============
+	function binaryAddition(a, b) {
+	  // Convert binary strings to integers
+	  const num1 = parseInt(a, 2);
+	  const num2 = parseInt(b, 2);
+
+	  // Calculate the sum of the two numbers
+	  const sum = num1 + num2;
+
+	  // Convert the sum to binary string and return it
+	  return sum.toString(2);
+	}

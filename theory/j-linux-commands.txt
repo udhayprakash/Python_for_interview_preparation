@@ -1,4 +1,15 @@
-Linux Commands (Case Sensitive):
+Linux Experience
+=================
+- As a developer, I worked on shell scripts for running/managing my python scripts.
+- Also, worked on command-line tools like grep, sed for process/text analytics.
+- worked on
+	file management commands like mkdir, ls, tree, cat, head, tail, etc,
+	networkings commands like ifconfig, netstat, traceroute, etc.
+	process-level query commands like ps, top, htop, pgrep, kill, etc.
+
+
+Linux Commands
+==============
 
 Basic:
 ------

@@ -1294,6 +1294,19 @@ HDFS vs NFs
 	- NFS is file system or protocol which allows its clients to access file
 	  over the network. All data resides on a single machine. Not much reliable as HDFS.
 
+bucket vs HDFS
+---------------
+	Platform: Buckets are a storage service provided by Google Cloud Platform (GCP), while HDFS is a file system designed for the Apache Hadoop platform.
+	Architecture: Buckets are a single-tenant storage system, meaning that each bucket is owned and managed by a single GCP project or user. HDFS is a distributed file system designed to be used in a cluster of computers.
+	Data Replication: Buckets automatically replicate data across multiple data centers for redundancy and high availability, while HDFS stores data across multiple nodes in a cluster.
+	APIs: Buckets can be accessed using APIs such as REST APIs, Google Cloud SDK, or client libraries, while HDFS has its own APIs and protocols for accessing data.
+	Use Cases: Buckets are designed for storing unstructured data such as images, videos, logs, and other types of files, while HDFS is designed for storing and processing large data sets using distributed computing.
+
+	Scalability: Both Buckets and HDFS are designed to be highly scalable and able to handle large amounts of data. However, HDFS is typically used in large-scale distributed computing environments, which may make it more suitable for extremely large datasets.
+	Availability: Buckets automatically replicate data across multiple data centers for redundancy and high availability, which can make it more reliable than HDFS, which requires manual configuration for high availability.
+	Cost: The cost of using Buckets versus HDFS depends on the specific cloud provider and usage patterns. Generally, Buckets are priced based on the amount of data stored and data egress, while HDFS requires dedicated hardware and may have higher upfront costs.
+	Integration: Buckets are part of the Google Cloud Platform ecosystem and integrate with other GCP services such as BigQuery and Dataflow, which can make it easier to build and deploy data pipelines. HDFS, on the other hand, is typically used with Apache Hadoop and other open-source big data tools.
+
 Ansible
 -------
 - import vs include

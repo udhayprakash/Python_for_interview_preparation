@@ -333,3 +333,112 @@ Ans)
 	FROM books
 	GROUP BY bookname
 	HAVING (COUNT(DISTINCT lang) / COUNT(*))  > 0.5;
+=====================================================================================================
+﻿1. Employee History Query
+Two tables are provided that contains people's names, their current and previous employers. First determine the company or companies that have the highest number of people that were previously employed there. For all of the people who work at one of those companies currently, list the person's name and the name of their previous employer. Results should be in the form people.NAME companies.NAME. The order of the results is not important.
+▼Schema
+There are 2 tables: PEOPLE, COMPANIES.
+PEOPLE table
+	ID 				STRING ID of the person.
+	NAME 			STRING Name of the person.
+	DOJ 			DATE Date of Joining the current company.
+	PREV_COMPANY_ID STRING ID of the previous company.
+	CURR_COMPANY_ID STRING ID of the current company.
+
+COMPANIES table
+	ID STRING ID of the company.
+	NAME STRING Name of the company.
+
+Ans)
+
+	SELECT p.NAME, c.NAME
+	FROM PEOPLE p
+	JOIN COMPANIES c ON p.PREV_COMPANY_ID = c.ID
+	WHERE p.CURR_COMPANY_ID IN (
+	  SELECT c2.ID
+	  FROM COMPANIES c2
+	  WHERE c2.NAME = (SELECT c3.NAME FROM COMPANIES c3
+					   JOIN PEOPLE p2 ON c3.ID = p2.PREV_COMPANY_ID
+					   WHERE c3.NAME = (SELECT c4.NAME
+										FROM COMPANIES c4
+										JOIN PEOPLE p3 ON c4.ID = p3.PREV_COMPANY_ID
+										GROUP BY c4.NAME
+										ORDER BY COUNT(*) DESC
+										LIMIT 1)
+					   GROUP BY c3.NAME
+					   ORDER BY COUNT(*) DESC
+					   LIMIT 1)
+	)
+=====================================================================================================
+2. Orders Query
+
+Company X has a record of its customers and their orders.
+Find the customer(s) with the highest order price for orders placed within
+10 years of the first order (earliest order_date) in the database.
+Print the customer name and order price.
+If multiple records are returned, they can be in any order.
+
+▼Schema
+There are 2 tables: CUSTOMERS, ORDERS.
+
+CUSTOMERS
+	ID		STRING ID of the customer. This is the primary key.
+	NAME 	STRING Name of the customer.
+	ORDER_ID STRING ID of the customer's order.
+
+ORDERS
+	ID			STRING ID of the order.
+	PRICE		INTEGER Price of the order.
+	ORDER_DATE	DATE Date of the order.
+Ans)
+	SELECT c.NAME, o.PRICE
+	FROM CUSTOMERS c
+	JOIN ORDERS o ON c.ORDER_ID = o.ID
+	WHERE o.ORDER_DATE >= (
+	  SELECT MIN(ORDER_DATE)
+	  FROM ORDERS
+	) AND o.ORDER_DATE <= DATE_ADD((SELECT MIN(ORDER_DATE) FROM ORDERS), INTERVAL 10 YEAR)
+	ORDER BY o.PRICE DESC
+	LIMIT 1;
+=====================================================================================================
+Q) What will be the output of when we perform inner join, left outer join, right outer join, full outer join and cross join ob below given tables?
+Table1
+	Col_1
+	1
+	1
+	1
+
+Table2
+	Col_2
+	1
+	1
+	1
+Ans)
+
+Inner Join, Left Outer Join, Right Outer Join will give 3 row
+
+	Col_1	Col_2
+	1		1
+	1		1
+	1		1
+
+Full Outer Join: 3*3 = 9 rows
+	A full outer join returns all the records from both tables and matching records based on the join condition. Since both tables have the same value in their respective columns, the join will result in all 9 possible combinations of rows from both tables.
+
+	Col_1	Col_2
+	1		1
+	1		1
+	1		1
+	1		1
+	1		1
+	1		1
+	1		1
+	1		1
+	1		1
+
+Cross Join:
+	A cross join returns all possible combinations of rows between two tables. Since both tables have only one distinct value in their respective columns, the cross join will result in only one row.
+
+	Col_1	Col_2
+	1		1
+=====================================================================================================
