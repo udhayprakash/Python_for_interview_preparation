@@ -5,7 +5,7 @@
 	- Integration testing - to test the end to end flow
 	- Regression testing - or load testing to check the load bearing capability
 		- used Jmeter scripts for the same.
-	- API testing with postman & its automation with newman scipts
+	- API testing with postman & its automation with newman scripts
 	- Functional testing With selenium. Wrote python scripts using pyselenium module
 	- Also, Behavior Driven Development(BDD) with Behave framework
 
@@ -17,8 +17,7 @@
 	- Finally, when both the newly created and existing test cases, are successful,
 	  will commit the code.
 - This way, we can ensure that code is more reliable, handling all edge cases.
-- Also, any further logic changes, will be integrable easily, as all test cases need to pass,
-  before pushing the code
+- Also, any further logic changes, will be integrable easily, as all test cases need to pass, before pushing the code
 
 - Advantages of Unit testing
 	It helps you to detect bugs early in the development cycle

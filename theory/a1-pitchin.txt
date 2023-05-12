@@ -179,12 +179,10 @@ and or new technologies you want to bring within the next 2-4 years, and why so?
 - Is there anything else I can provide you with that would be helpful?
 - What's one of the most interesting projects or opportunities that you've worked on?
 
-
 company expenses
 -----------------
 	Green Dollar Expense -- busines from external vendors like AWS Cloud
 	Blue Dollar Expense  -- business between LOBs, in same organization
-
 ================================================================================
 We have Built micro services for different use cases with Rest APIs using aws api gateway and Lambda and
 integrated these APIs with several components to get, post, delete info from the database.

@@ -247,16 +247,15 @@ expectations from full stack developer
 		- is not willing to learn and adapt to new technologies or methodologies.
 		- They may also be prone to writing sloppy, untested code and not taking responsibility for their mistakes.
 
-
-conflicts(workplace disagreements) with Collegues
+conflicts(workplace disagreements) with Colleagues
 ------------------------------------
 - Very rare, but sometimes will happen
 
-- From all these years of experince, I can say that conflicts will be of two types.
+- From all these years of experience, I can say that conflicts will be of two types.
 	1) At the personal level, or personal motives
-		- If so, manager and HR team, were there to deal with them.
+		- If so, the manager and HR team were there to deal with them.
 	2) At the professional level
-		- These should be dealed differently.
+		- These should be dealt differently.
 		- First, if we can analyse the root cause of the problem, it is easy to resolve it.
 		- Mainy, Issues can be like
 			- someone‘s ideas are being ignored
@@ -297,7 +296,6 @@ Mentoring, Juniors
 	- So, whenever, I learned something new, or
 	  addressed some complex problem, or
 	  discovered something, which is useful to others, I will share to all.
-
 
 New developers
 ---------------

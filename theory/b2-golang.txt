@@ -13,6 +13,25 @@ In Golang, I created microservices and ETL jobs,
 	- GOROOT environment variable specifies the location of the Go installation, while
 	- GOPATH environment variable specifies the location of your workspace where you store your Go projects and packages.
 
+Concurrency Vs Parallelism
+==========================
+	- Concurrency is the ability to run multiple tasks at the same time.
+	- Parallelism is the ability to run multiple tasks at the same time on multiple CPU cores. Golang supports both concurrency and parallelism. However, it is important to note that concurrency does not always mean parallelism. In fact, in many cases, concurrency can be more efficient than parallelism.
+
+
+Goroutines
+============
+- Advantages
+	- They are lightweight and cheap to create.
+	- They can be scheduled to run on any available CPU core.
+	- They can be used to create complex concurrent programs that are easy to read and maintain.
+
+- Limitations
+	- They can be difficult to debug.
+	- They can be inefficient if they are not used correctly.
+	- They can be a source of race conditions.
+
+
 - Go Data Structure
 ===================
 	1) Array:
