@@ -341,3 +341,98 @@ How to debug code defect  give troubleshooting process, tell for python coding
 	9) Review documentation: Check the documentation for the libraries, modules, and functions you're using to make sure you're using them correctly. Pay attention to function arguments, return values, and any special behaviors.
 
 	10) Ask for help: If you're still having trouble identifying the issue, reach out to other developers or online forums for help. Sometimes a fresh pair of eyes can help spot
+
+
+
+Jenkins Q&APIs
+===============
+Jenkins
+========
+Q1) Tom wants to store the username and password for his database application in the jenkins pipeline. which option should he choose in this scenarios
+	a) system variables
+	b) credentials plugin
+	c) credentials should be managed inside the script
+	d) ssh plugin
+
+Ans) b) credentials plugin
+
+Q2) Jenkins tool has a "user content" mechanism, where jenkins administrators can place files inside that directory. Identify the directory name
+Ans) $JENKINS_HOME/userContent
+
+Q3) you have used the artifactory Jenkins plugin in a building job. After the execution of the build job, an artifact is created in the file form. which artifact file will be formed: tar file, jar fil, zip file or txt file
+Ans) zip file
+
+Q4) command to create a new image from a dockerfile while a pipeline is running
+Ans)
+		pipeline {
+		  agent any
+
+		  stages {
+			stage('Build') {
+			  steps {
+				script {
+				  def dockerfile = 'path/to/Dockerfile'
+				  def imageTag = 'myimage:latest'
+
+				  // Build the Docker image from the Dockerfile
+				  docker.build(imageTag, "-f ${dockerfile} .")
+				}
+			  }
+			}
+		  }
+		}
+
+Q5) what is the purpose of below code, In Jenkins CI/CD
+
+	logRotator {
+		 numToKeep 5
+	}
+
+	choose the correct option
+	a) To keep the last five builds
+	b) To run the program five times with intermediate values in each iteration
+	c) To rotate the first five builds
+	d) To update five builds
+
+Ans) a) To keep the last five builds
+
+
+Q6) The main configuration file consists of several directives that affect how nagios operates. Using the Nagios process and the CGIs, we can read the config file. From the given options, choose the sample main configuration file's path
+
+	choose the correct option
+	a) local/nagios/etc/resource.cfg
+	b) /usr/local/resource.cfg
+	c) /usr/local/nagios/etc
+	d) /usr/local/nagios/etc/resource.cfg
+
+Ans)  d) /usr/local/nagios/etc/resource.cfg
+
+Q7) Mean time to failure recovery and deployment frequency are the two important DevOps KPIs. Which is the third one?
+
+	choose the correct option
+	a) percentage of failed deployments
+	b) percentage deployments
+	c) value of failed deployments
+	d) fixed failed deployments
+
+Ans) a) percentage of failed deployments
+
+Q8) which option is used to add a submodule or another file to a playbook , allowing a code written once to be added to multiple playbooks?
+
+	choose the correct option
+	a) include
+	b) import
+	c) Export
+	d) Delay
+
+Ans) a) include
+
+Q9) which option helps in manually linking and orchestrating several containes running on multiple hosts created using docker?
+
+	choose the correct option
+	a) docker
+	b) docker master
+	c) kubernests
+	d) decryption plugin
+
+Ans) c) Kubernetes

@@ -123,20 +123,20 @@ Innovation - Process Improvement
 	- This is when I am working on one new product.
 	  Generally, we are in the initial alpha/beta stages, we will focus more on adding new features.
 	  Resolving bugs will be done, but in a slow process.
-	  In that project, we followed the 2-week sprint.
-	  so, If any enhancement/bug is coming after the start of new sprint, we placed them in backlog; and pulled only in the coming sprint.
+	  In this project, we followed the 2-week sprint.
+	  so, If any enhancement/bug is coming after the start of a new sprint, we placed them in backlog; and pulled only in the coming sprint.
 	  Due to this, in this case, when a bug is raised, it takes two weeks to start and another two-weeks to work and release to production.
-	  So, literally, after one month. By that time, half of people who raised the bugs, might have moved with different tool/process; or they lost interest.
+	  So, literally, after one month. By that time, half of the people who raised the bugs, might have moved with different tool/process; or they lost interest.
 
 	  I noticed it by analysing the unique user hits to our portal.
 	  I could see with advertising, we could pull new users, but retaining the old/existing users became a challenge.
 
-	  To solve this problem, I proposed an idea, which i learned from one of the blogs.
+	  To solve this problem, I proposed an idea, which I learned from one of the blogs.
 	  It is to combine both SCRUM and KANBAN.
 		  SCRUM --> for feature development
 		  KANBAN --> for bug management
 
-	  Idea is that in initial days, 80% time as dedicated for feature development, and 20 % of the time for bug management.
+	  Idea is that in initial days, 80% time was dedicated for feature development, and 20 % of the time for bug management.
 	  Over period of time, when product development is most completed, we reduce the time for feature development and give more to bug management.
 
 	  In this way, we can create new features as designed; yet address the bugs in timely manner based on their SLAs.
@@ -165,6 +165,7 @@ Managing Tight deadlines
 		2) Once you have committed to a deadline, always meet it.
 		3) Planning and time management are key.
 		4) Concentration is the key to meeting deadlines and delivering good work.
+
 
 Learning New tool
 ----------------------
@@ -266,7 +267,7 @@ conflicts(workplace disagreements) with Colleagues
 		- As a prevention, the best practices, I follow is
 			- writing clearly, about the events and
 			- communicating and getting consent from team members, and not bypassing them.
-			- scheduling agenda meetings, before reaching out to stackholders, on what to speak.
+			- scheduling agenda meetings, before reaching out to stakeholders, on what to speak.
 
 		- Also, one should develop the patience and empathy, to think about
 			- others actions,

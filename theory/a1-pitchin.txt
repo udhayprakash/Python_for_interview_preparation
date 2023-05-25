@@ -59,7 +59,7 @@ In AWS Cloud, I worked with
 Also, have experience in creating the CI/CD setup using Jenkins and Groovy script.
 
 And, I have experience in agile methodologies like Scrum, Kanban in facilitating agile ceremonies like daily
-standups,sprint reviews, plannings and restrospectives. I am familiar with Agile tools like Jira and skilled
+standups,sprint reviews, plannings and retrospectives. I am familiar with Agile tools like Jira and skilled
 in working with cross-functional teams including Dev team, QA testers, and PM/PO's.
 
 In Golang, I created microservices and ETL jobs,
@@ -142,8 +142,15 @@ Questions to Interviewers
 - What kind of data do we work with, and what are our data sources?
 - Were we using any custom/in-house frameworks/tools in our project? If so, can you help with the details? (like your own databases, etc..)
 
+- How is success defined in this role?
+- What do you like most about this company/team/project?
+- How would you describe the team?
+- What do the day to day responsibilities look like?
+- How will the project/work impact the company as a whole?
+- What is the overall vision for this team?
+
 - within the first 3-4 months of hire, what are the pain-points you would like me to tackle?
-- In next 3-6 months, what were your major priorities, towards this project?
+- In the next 3-6 months, what were your major priorities, towards this project?
 - Hope we are using agile methodology!  And how about the sprint cycle duration?
 - Can I know about the work culture of our company?
 
@@ -156,6 +163,8 @@ CONCLUSION:
 	And I am ready to extend and learn new skills, if needed.
 
 	Have experience in working on financial products, best practices to follow. So, I can be productive, with minimal training.
+
+
 
 - As I'm understanding the current landscape of your environment, what is your vision of future innovation
 and or new technologies you want to bring within the next 2-4 years, and why so?

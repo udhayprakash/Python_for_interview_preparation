@@ -58,17 +58,17 @@ In Monolithic,
 	Everything is developed, deployed and scaled as 1 unit
 	App must be written with 1 tech stack
 	Teams need to be careful to not affect each other's work
-	1 single artifact, so you must redeploy the entire application on each update
+	1 single artifact, so we must redeploy the entire application on each update
 
 	Challenges
 		- Application is too large and complex
 		- Parts are more tangled into each other
-		- You can only scale the entire app, instead of a spedicfic service.
+		- You can only scale the entire app, instead of a specific service.
 		- Difficult if services need different dependency versions
 		- Release process takes longer
 		- On every change, the entire application needs to be tested
 		- Entire applcation needs to be built and deployed
-		- Bug in any modul can potentially bring down the entire application
+		- Bug in any module can potentially bring down the entire application
 
 In Microservices,
 	Split application into smaller, independent services
@@ -80,7 +80,7 @@ In Microservices,
 
 	Communication should be via API calls
 		Each service has its own API
-		They can talk to each other, by sending requests to the respective  API endpoints
+		They can talk to each other, by sending requests to the respective API endpoints
 		Communication can be THREE ways
 		1) In Synchronous communication,
 			means each service waits for the response from another service.
