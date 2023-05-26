@@ -454,6 +454,16 @@ Data Sources
 	- NOW() returns a constant time that indicates the time at which the statement began to execute.
 	- Example - Within a stored routine or trigger, NOW() returns the time at which the routine or triggering statement began to execute.
 
+- order of sql queries/ SQL Query Order of Execution
+	1) FROM clause
+	2) WHERE
+	3) GROUP BY
+	4) HAVING
+	5) SELECT
+	6) DISTINCT
+	7) ORDER BY
+	8) LIMIT/OFFSET
+
 
 - row-store vs column-store
 	- row store
@@ -463,6 +473,17 @@ Data Sources
 		- only need to read in relevant data
 		- tuple writes require multiple accesses
 		- suitable for read-mostly, read-intensive, large repositories
+
+- SQL vs no-SQL
+	- Mainly sql has schema, where as nosql doesnt have it.
+	- SQL
+		- Data is stored in tables with mutable but pre-defined Columns. Records are stored as Rows in these tables.
+		- Implements the ACID database model, which basically means it favours consistency over availability.
+		- Scalability is mainly achieved by increasing the resources on the host, usually this means more cpu, memory, storage or network capacity(vertically scalable).
+	- NoSQL
+		- Data can be stored as documents, key-value pairs, tables and graphs.
+		- Implements the BASE database model, which basically means it favours availability over consistency.
+		- Scalability is mainly achieved by spreading datasets across multiple servers.(horizontally scalable)
 
 - MongoDB - https:
 	- cheatography.com/zeineb-and-kawther/cheat-sheets/mongodb/
@@ -478,16 +499,19 @@ Data Sources
 		are vertically scalable | are horizontally scalable.
 		are table based			| are document, key-value,
 								| graph or wide-column stores.
-- SQL vs no-SQL
-	- Mainly sql has schema, where as nosql doesnt have it.
-	- SQL
-		- Data is stored in tables with mutable but pre-defined Columns. Records are stored as Rows in these tables.
-		- Implements the ACID database model, which basically means it favours consistency over availability.
-		- Scalability is mainly achieved by increasing the resources on the host, usually this means more cpu, memory, storage or network capacity(vertically scalable).
-	- NoSQL
-		- Data can be stored as documents, key-value pairs, tables and graphs.
-		- Implements the BASE database model, which basically means it favours availability over consistency.
-		- Scalability is mainly achieved by spreading datasets across multiple servers.(horizontally scalable)
+
+	- joins in mongodb is with lookups
+		ex: If we have two collections: orders and customers, we can join as
+			db.orders.aggregate([
+			  {
+				$lookup: {
+				  from: "customers",
+				  localField: "customer_id",
+				  foreignField: "_id",
+				  as: "customer"
+				}
+			  }
+			])
 
 - BASE model
 	- Basically Available
