@@ -58,9 +58,7 @@ In AWS Cloud, I worked with
 
 Also, have experience in creating the CI/CD setup using Jenkins and Groovy script.
 
-And, I have experience in agile methodologies like Scrum, Kanban in facilitating agile ceremonies like daily
-standups,sprint reviews, plannings and retrospectives. I am familiar with Agile tools like Jira and skilled
-in working with cross-functional teams including Dev team, QA testers, and PM/PO's.
+And, I have experience in agile methodologies like Scrum, Kanban in facilitating agile ceremonies like daily standups,sprint reviews, plannings and retrospectives. I am familiar with Agile tools like Jira and skilled in working with cross-functional teams including Dev team, QA testers, and PM/PO's.
 
 In Golang, I created microservices and ETL jobs,
 	Mainly using go concurrency.

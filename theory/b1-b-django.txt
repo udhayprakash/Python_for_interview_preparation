@@ -334,11 +334,25 @@ Django Migrations
 - Django ORM - object relational mapper
 ---------------------------------------
 - I will use ORM for small queries
-- For large queries, I will use raw SQL code. Because, it will be scalable, readable and fast to use when multiple joins are present.
+- For large queries, I prefer to use raw SQL code. Because, it will be scalable, readable and fast to use when multiple joins are present.
+
 - primary key
 	can be addressed either with id (if defined a column with id), or pk (in general)
 	To get the primary key field name, the ORM query is
 		TableName._meta.pk.name
+
+- ORM relationships
+	A) One-to-One relationship:
+		- Each instance of one entity is linked to exactly one instance of another entity.
+		- It is usually represented by a unique identifier shared between the entities.
+
+	B) One-to-Many relationship:
+		- An entity instance is associated with multiple instances of another entity.
+		- It is represented by a foreign key in the "many" side pointing to the primary key of the "one" side.
+
+	C) Many-to-Many relationship:
+		- Multiple instances of one entity are connected to multiple instances of another entity.
+		- It is represented using an intermediate table that establishes the associations between the entities.
 
 - get_or_create query will result in two values: object and an bool value(true/false), whether object is already created or not.
 
@@ -446,7 +460,7 @@ Django Migrations
 		color = models.CharField()
 
 	class Bike(Vehicle):
-		feul_average = models.IntegerField(...)
+		fuel_average = models.IntegerField(...)
 
 - Django Manager
 	- Manager is some kind of interface between application and the database.

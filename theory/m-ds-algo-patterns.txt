@@ -180,3 +180,22 @@ BFS vs DFS
 	- BFS stands for Breadth First Search.
 	- DFS stands for Depth First Search.
 	- BFS uses Queue to find the shortest path. DFS uses Stack to find the shortest path.
+
+
+Data Structures
+===============
+- Array: A collection of elements stored in contiguous memory locations, accessed using an index.
+- Linked List: A sequence of nodes, where each node contains data and a reference to the next node in the sequence.
+- Stack: A Last-In-First-Out (LIFO) data structure that allows elements to be inserted and removed only from the top.
+- Queue: A First-In-First-Out (FIFO) data structure that allows elements to be inserted at the rear and removed from the front.
+- Hash Table: A data structure that uses a hash function to map keys to values, providing efficient insertion, deletion, and lookup operations.
+- Binary Tree: A tree-like data structure where each node has at most two children, referred to as the left child and the right child.
+- Heap: A specialized tree-based data structure that satisfies the heap property, which can be either a max heap or a min heap.
+- Graph: A collection of vertices (nodes) and edges (connections) that can represent various relationships between objects.
+- Trie: A tree-like data structure that stores a collection of strings, with each node representing a common prefix.
+- Hash Set: A collection of unique elements that provides efficient insertion, deletion, and lookup operations.
+- Hash Map: A key-value store that uses a hash function to map keys to values, offering efficient insertion, deletion, and lookup operations.
+- AVL Tree: A self-balancing binary search tree that maintains a balance factor to ensure logarithmic time complexity for operations.
+- B-tree: A self-balancing tree data structure that maintains sorted data and is commonly used in databases and file systems.
+- Red-Black Tree: A self-balancing binary search tree with additional properties that ensure balanced operations.
+- Priority Queue: A queue where each element has a priority associated with it, and the element with the highest priority is dequeued first.

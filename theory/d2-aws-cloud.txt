@@ -447,15 +447,13 @@ I have experience migrating applications and data, from on-prem to cloud
 	- An IAM identity provides access to an AWS account.
 	- user group is a collection of IAM users managed as a unit.
 	- IAM identity represents a user, and can be authenticated and then authorized to
-	  perform actions in AWS.
-	  Each IAM identity can be associated with one or more policies.
+	  perform actions in AWS. Each IAM identity can be associated with one or more policies.
 
+	- IAM groups have multiple users, under it; but multiple groups CANT be under another group.
 	- Policies determine what actions a user, role, or member of a user group can perform,
 	  on which AWS resources, and under what conditions.
-		- Identity-based policies are permissions policies that you attach to an IAM identity,
-		  such as an IAM user, group, or role.
-		- Resource-based policies are permissions policies that you attach to a resource such
-		  as an Amazon S3 bucket or an IAM role trust policy.
+		- Identity-based policies are permissions policies that you attach to an IAM identity, such as an IAM user, group, or role.
+		- Resource-based policies are permissions policies that you attach to a resource such as an Amazon S3 bucket or an IAM role trust policy.
 
 	- Identity-based policies are attached to an IAM user, group, or role.
 		- Identity-based policies can be managed or inline.
