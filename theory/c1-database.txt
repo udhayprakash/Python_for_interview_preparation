@@ -648,6 +648,11 @@ Tombstones in Cassandra:
 
 Postgresql
 ==========
+	- It is ACID compliant
+	- It supports Multi-Version Concurrency Control (MVCC)
+	- It supports user-defined data types
+	- Also, it supports audio, video, images and graphical data storage
+
 data types
 	Boolean
 	Character Types [ such as char, varchar, and text]

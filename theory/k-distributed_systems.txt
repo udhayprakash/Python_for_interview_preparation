@@ -1,5 +1,19 @@
 Redis
+	- REmote DIctionary Server
 	- data store that is also used as message queue
+	- NoSQl in-memory key-value data store
+	- data types supported
+		- strings, hashes, lists, sets,...
+	- data storage
+		- by default, in-memory; for fast read/write operations.
+		- Redis Database for data persistence
+			- point-in-time snapshots of a dataset at specified intervals
+	- USAGE:
+		- cache to stre frequently access data
+			- queried database results
+			- API responses
+			- session data in web applications, messaging/streamsing systems
+
 Apache Kafka
 	- message queues with database-like durability guarantees
 Elasticsearch/Solr

@@ -8,8 +8,7 @@ I am a Full-Stack Python Developer, with all years of experience, with around 80
 IN Backend, I worked on creating standalone scripts for automation, scheduled jobs,
 ETL jobs and data pipelines; and RESTful APIs and web applications.
 
-IN FRONTEND, I worked on creating dashboards/graphs/charts using d3.js or high charts libraries,
-and tables using ag-grid. Also, worked on JavaScript, jQuery, and react.
+IN FRONTEND, I worked on creating dashboards/graphs/charts using d3.js or high charts libraries, and tables using ag-grid. Also, worked on JavaScript, jQuery, and react.
 
 In databases,
 - In relational dB, I worked with MySQL, MS SQL, oracle dB and PostgreSQL.
