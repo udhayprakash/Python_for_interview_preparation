@@ -210,6 +210,37 @@ What are you looking for in the new work?
 - I am to prove myself initially , and learn to add value to the project
 - I want to be helpful, to more people, with my work
 
+
+How to deal with client dissatisfy with your work ?
+---------------------------------------------------
+	1) Stay calm and professional.
+		- It's important to stay calm and professional, even if the client is upset.
+		- Getting angry or defensive will only make the situation worse.
+	2) Listen to the client's concerns.
+		- The first step to resolving a problem is to understand what the problem is.
+		- Take the time to listen to the client's concerns and try to see things from their perspective.
+	3) Apologize for any inconvenience.
+		- Even if you don't think you did anything wrong, it's always a good idea to apologize for any inconvenience the client has experienced.
+		- This shows that you care about their satisfaction and that you're willing to take steps to make things right.
+	4) Offer a solution.
+		- Once you understand the client's concerns, you can offer a solution.
+		- This could involve fixing the problem, refunding the client's money, or offering them a discount on future work.
+	5) Follow up to make sure the client is satisfied.
+		- Once you've offered a solution, be sure to follow up with the client to make sure they're satisfied.
+		- This shows that you're committed to resolving the issue and that you care about their satisfaction.
+
+	In addition,
+	 - Be proactive
+		- We should not wait for the client to come to us with a complaint.
+		- If you know there's a problem, i will reach out to the client and let them know that we are working on a solution.
+	- Be transparent.
+		Keep the client updated on your progress and let them know what we're doing to resolve the issue.
+	- Be flexible.
+		Be willing to work with the client to find a solution that works for both of us.
+
+	- Be positive.
+		- Even though the situation may be difficult, it's important to stay positive and focused on resolving the issue.
+
 expectations from full stack developer
 ======================================
 	To do frontend

@@ -1,0 +1,81 @@
+Django
+======
+Q) His anger model is connected to multiple servers based upon the following code. Explain the role of select for update
+
+	db = self.queryset().select_for_update(nowait=True).get()
+
+	Choose the correct option
+	a) It will lock the rows until the end of the transaction
+	b) It will unlock the rows until the end of the transaction
+	c) It will update the database until the end of the transaction
+	d) It will update the rows until the end of the transaction
+
+Ans) a
+
+Q) In django, how can we offend a slash for a http request, which does not match any pattern in url conf
+
+Ans) APPEND_SLASH set to True
+
+Q) Several files are created for an application which is bigger size n to include reacts. Which of the given options is distinct for all the reducers in the given files? And what happens if the application scales to a different size
+
+	choose the current option
+	a) Reduce parameter is distinct and the render function can be created for scaling the application
+	b) Store parameter is distinct and an inheritance function can be created for scaling the application
+	c) State parameter is distinct and a helper function can be created for scaling the application
+	d) Action parameter is distinct and the application is not scalable
+
+Ans) c
+
+
+React
+======
+Q) In your application, the state depends on changes in props over time.  You need a method that returns an object and update the state, or a null to update nothing. This should be done just before the render method is called.  What should you use to solve this problem?
+
+	Choose the correct option
+	a) getDerivedStateFromProps()
+	b) shouldComponentUpdate()
+	c) constructor()
+	d) componentWillMount()
+
+Ans) a
+
+Q) A/ an __ is a container that holds your applications's global state
+	a) store
+	b) component
+	c) state
+	d) None
+
+Ans) a
+
+
+Jenkins
+=======
+Q) How can gradle dependency for Docker builds be specified
+	To choose a correct option
+	a) classpath('se.transmode.gradle:gradle-docker:1.2')
+	b) classpath('se.transmode.gradle:docker:1.2')
+	c) classpath('se.transmode.gradle:gradle:docker:1.2')
+	d) None of the options
+
+Ans) a
+
+docker
+======
+Q) Which docker command will you use to execute commands to a postgre sql docker container?
+	Choose the correct option
+
+	a) sudo docker command <container name> <command>
+	b) sudo docker execute <container name> <command>
+	c) sudo docker exec <container name> <command>
+	d) None of the options
+Ans) c
+
+Q) A developer has configured a restart policy for a container using the --restart flag. If the Docker container is topped manually the  --restart flag Value will restart the container. Restart policies are used to ensure that linked containers in the docker daemon Get restarted in the correct order. Which --restart Flag value must The developer use?
+
+	Choose the correct option
+	a) no
+	b) On failure
+	c) Always
+	d) Unless stopped
+
+Ans) c

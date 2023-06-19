@@ -27,6 +27,30 @@
 	2. GET, PUT, DELETE, HEAD, OPTIONS and TRACE are idempotent.
 	Nulipotent- GET is so because nothing is added or changed, except logging.
 
+- PATCH operations
+	add		: Adds a new value to the resource.
+	remove	: Removes a value from the resource.
+	replace	: Replaces the value of a property.
+	move	: Moves a property to a new location.
+	copy	: Copies a property to a new location.
+	test	: Tests whether a property has a particular value.
+
+- Header locations in REST API
+	- Request headers: Request headers are typically sent with the request, before the body of the request.
+		- Contains request information like
+			- type of content
+			- the caching policy, and
+			- the authentication credentials .
+	- Response headers: Response headers are sent with the response, after the body of the response.
+		- Contains response information like
+			- type of content,
+			- the caching policy, and
+			- the status code
+
+- REST API with large data
+	- Pagination as query parameter like page=1 and pagesize=100
+	- offset parameter specifies the number of records to skip before returning the response
+
 - REST based vs RESTFUL
 	- REST based services follow some of the above principles and not all
 	- RESTFUL services means it follows all the above principles.

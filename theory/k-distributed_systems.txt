@@ -95,6 +95,7 @@ In Microservices,
 	Communication should be via API calls
 		Each service has its own API
 		They can talk to each other, by sending requests to the respective API endpoints
+
 		Communication can be THREE ways
 		1) In Synchronous communication,
 			means each service waits for the response from another service.
@@ -105,8 +106,7 @@ In Microservices,
 				Publish/Subscribe (PubSub)
 				Point-to-Point messaging
 		3) In Communication in Kubernetes using service Mesh,
-			There will be a helper service which will take care of complete communication logic
-			So, we need not code this logic into microservices
+			There will be a helper service which will take care of complete communication logic. So, we need not code this logic into microservices
 
 		Challenges
 			- Configure the communication between services

@@ -181,6 +181,31 @@ Agile vs scrum
 --------------
 - Agile is a philosophy, whereas scrum is a type of agile methodology.
 
+Agile vs kanban
+---------------
+Feature			|Agile											| Kanban
+-------------------------------------------------------------------------------
+Focus			|Flexibility and change
+				| Flow and efficiency
+
+Work breakdown	|Projects are broken down into short sprints
+				| Work is not broken down into sprints
+
+Communication	|The team communicates frequently and openly
+				|The team communicates as needed
+
+Planning		|The team meets regularly to assess progress and make changes to the plan
+				| The team uses a visual board to track work as it moves through the process
+
+Documentation	|The team documents the project's requirements and progress
+				| The team does not document the project's requirements or progress
+
+Testing		|The team tests the project's features at the end of each sprint
+			| The team tests the project's features continuously
+
+Deployment		| The project is deployed at the end of each sprint
+				| The project is deployed continuously
+
 
 Sprint Metrics Planning
 ----------------

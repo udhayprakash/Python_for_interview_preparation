@@ -286,6 +286,14 @@ subprocess popen vs run
 		- When an exception occurs, the program stops executing the current function and looks for an exception handler that can handle the exception.
 		- If no handler is found, the program terminates with an error.
 
+- OOP analogy
+	1) Objects are like real-world things.
+	   For example, a car is an object. It has properties (e.g., color, make, model), and it can perform actions (e.g., drive, turn, stop).
+	2) Classes are like blueprints for objects.
+		They define the properties and actions that objects of that class can have. For example, the class "Car" would define the properties "color", "make", and "model", and the actions "drive", "turn", and "stop".
+	3) Inheritance is like a car being based on another car.
+		For example, a sports car is a type of car. It inherits all of the properties and actions of a car, but it also has its own unique properties and actions (e.g., a sports car might have a spoiler or a sunroof).
+
 - oop (object Oriented Programming)
 	- I use Object-Oriented Programming and Design predominantly.
 	- It gives us the scalability in code to adapt any requirement changes.
