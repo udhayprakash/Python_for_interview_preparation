@@ -27,6 +27,99 @@ Q) Several files are created for an application which is bigger size n to includ
 Ans) c
 
 
+AngularJS
+=========
+Q) So you are written a unit test in Angularjs using the Jasmine framework. The unit test is working as expected, apart from the following errors
+Cannot find the name "describe"
+Cannot find name "expect"
+
+Which code line can we add it to the unit test Snippet to avoid these errors
+
+	a) import 'jasmine';
+	b) import * from 'jasmine';
+	c) import {} from 'jasmine';
+	d) none of the options
+
+Ans) b
+
+Q) You have a span html element within the typescript template And you would like to render the number two within the element:
+<span></span>
+
+Which for the following template expressions would render the number 2?
+Note that there are multiple correct options to this question
+
+	Choose the correct option:
+	A) <span [content]="2"></span>
+	b) <span>1+ 1</span>
+	c) <span>{{2}}</span>
+	d) <span>{{1+ 1}}</span>
+
+Ans) c and d
+
+Q) You have authored a new typescript class That will be used by various components throughout your application
+
+	export class PostOffice {}
+
+	You want to ensure that this class can be injected through the constructor based dependency injections into the other classes in your angular js application
+
+	Which decorator should you use to indicate that this class can be used in angular js dependency injection
+
+	Choose the correct option
+		a) @injectable
+		b) @input
+		c) @Directive
+		d) @Component
+
+Ans) a
+
+Q) Why is it not advisable to boot **** **** angular JS application on an element with a directive that uses transclusions like ngif, nginclude and ngView?
+
+	Choose the correct option
+	a) It may injectors inaccessible from outside the
+	b) It leads to deferred bootstrapping of the angular application
+	c) These directives kill the digest cycle
+	d) None of the above
+Ans) a
+
+Q) You have created a script in your package.json file the trumps a lite Server named app-dev.
+	Which command line script will run the respective script in your package.json file?
+
+	Choose the correct option
+	a) npm app-dev
+	b) node app-dev
+	c) npm run app-dev
+	d) node run app-dev
+
+Ans) c
+
+Q) You have a top level class in typescript named TextExtractor that would like to make the available as a module
+
+	class TextExtractor {}
+
+	With accessor can you add to the class to make it available as a module
+
+	Choose the correct option
+	a) export
+	b) get
+	c) set
+	d) public
+	e) private
+
+Ans) a
+
+Q) You want to make an alex call to obtain the server data which methods will you use to create this in angular js
+
+	Note that there are multiple correct answers to this question
+
+	Choose the correct option
+	a) Factory method
+	b) Service method
+	c) Controller method
+
+Ans) a and b
+
+
+
 React
 ======
 Q) In your application, the state depends on changes in props over time.  You need a method that returns an object and update the state, or a null to update nothing. This should be done just before the render method is called.  What should you use to solve this problem?

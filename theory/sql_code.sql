@@ -184,7 +184,7 @@ JOIN participant P
  JOIN meeting M
  ON P.meeting_id = M.meeting_id
 
-================================================================================================
+=====================================================================================
 Order and Product tables
 	Order - order_date, order_id, product_id, customer_id, price
 	Product - product_id, product_name
@@ -202,14 +202,14 @@ Q) select products ordered by same customer more than once in the last 30 days
 	GROUP BY o.cutomer_id HAVING  Count(p.product_name) > 1
 	ORDER BY o.customer_id
 
-================================================================================================
+=====================================================================================
   prfid, dptid, sal
   1
 
   select  dptid,  max(sal) from mytable group by dptid order by depid
 
   select dptid, prfid, rank() over ( partition by deptid order by sal) from mytable
-===================================================================================================
+=====================================================================================
 SELECT
 	p.id, p.title, coalsce(SUM(r.number_of_tickets), 0)as reserved_tickets
 FROM plays p
@@ -217,11 +217,11 @@ LEFT JOIN reservations r ON p.id = r.play_id
 GROUP BY p.id, p.title
 ORDER BY reserved_tickets
 
-===================================================================================================
+=====================================================================================
 sql for order in ascending order by score column, but nulls should come first
 
 	ORDER BY score IS NULL DESC, score ASC
-===================================================================================================
+=====================================================================================
 sql for nth highest salary from employees table
 
 	SELECT FIRST_NAME , SALARY FROM
@@ -238,13 +238,13 @@ sql for nth highest salary from employees table
 
 	SELECT FIRST_NAME, SALARY FROM EMPLOYEES
 	WHERE SALARY = (SELECT DISTINCT SALARY FROM EMPLOYEES ORDER BY SALARY LIMIT 1 OFFSET 1)
-===================================================================================================
+=====================================================================================
 HackerRank: Value of Properties Owned
 
 	SELECT H.BUYER_ID, SUM(P.PRICE) AS TOTAL_WORTH FROM HOUSE H
 	JOIN PRICE P USING(HOUSE_ID)
 	GROUP BY H.BUYER_ID HAVING SUM(P.PRICE) > 100 AND COUNT(H.BUYER_ID) > 1;
-===================================================================================================
+=====================================================================================
 SELECT name, COUNT(sal) FROM users
 GROUP BY email
 HAVING COUNT(email) > 1
@@ -254,7 +254,7 @@ Select distinct salary from employee ORDER BY salary DESC limit 1 offset 1
 Select * from table where id in (Select id from table t1 GROUP BY id HAVING COUNT(Id) > 1)
 
 SELECT * FROM my_table WHERE created_at > DATE_SUB(NOW(), INTERVAL 1 DAY)
-===================================================================================================
+=====================================================================================
 Q) Display all the column values in a single row separated by comma in MySQL?
 Ans) select group_concat(Id)  from tableName GROUP BY tableName;
 
@@ -263,7 +263,7 @@ Ans) DELETE n1 FROM names n1, names n2 WHERE n1.id > n2.id AND n1.name = n2.name
 
 	When full row duplicate,
 		add an id column virtually and delete all , but first in sequence
-=====================================================================================================
+=====================================================================================
 Q) delete duplicate records
 Ans)
 	DELETE c1 FROM contacts c1
@@ -271,7 +271,7 @@ Ans)
 	WHERE
 		c1.id > c2.id AND
 		c1.email = c2.email;
-=====================================================================================================
+=====================================================================================
 Q) Per total number of hours, by employee
 Employees
     Employees.id
@@ -287,7 +287,7 @@ Ans)
 	JOIN TimeSheet t on t.Employee_id = e.id
 	GROUP BY e.name
 	ORDER BY total_hours DESC
-=====================================================================================================
+=====================================================================================
 Q) Table contains ages of people. Generate SQL query to classify less than 13 as child, 13 till 20 as teens, 20 till 60 as adult
    and greater than 60 as OLD.
 
@@ -302,7 +302,7 @@ Ans)
 			ELSE 'Old'
 		END AS age_category
 	FROM people;
-=====================================================================================================
+=====================================================================================
 Q) if there are two tables, write query to get the records not present in tableA but present in tableB,
    and vice-versa. Also, combine all those records
 
@@ -333,7 +333,7 @@ Ans)
 	FROM books
 	GROUP BY bookname
 	HAVING (COUNT(DISTINCT lang) / COUNT(*))  > 0.5;
-=====================================================================================================
+=====================================================================================
 ﻿1. Employee History Query
 Two tables are provided that contains people's names, their current and previous employers. First determine the company or companies that have the highest number of people that were previously employed there. For all of the people who work at one of those companies currently, list the person's name and the name of their previous employer. Results should be in the form people.NAME companies.NAME. The order of the results is not important.
 ▼Schema
@@ -369,7 +369,7 @@ Ans)
 					   ORDER BY COUNT(*) DESC
 					   LIMIT 1)
 	)
-=====================================================================================================
+=====================================================================================
 2. Orders Query
 
 Company X has a record of its customers and their orders.
@@ -400,7 +400,7 @@ Ans)
 	) AND o.ORDER_DATE <= DATE_ADD((SELECT MIN(ORDER_DATE) FROM ORDERS), INTERVAL 10 YEAR)
 	ORDER BY o.PRICE DESC
 	LIMIT 1;
-=====================================================================================================
+=====================================================================================
 Q) What will be the output of when we perform inner join, left outer join, right outer join, full outer join and cross join ob below given tables?
 Table1
 	Col_1
@@ -441,4 +441,23 @@ Cross Join:
 
 	Col_1	Col_2
 	1		1
-=====================================================================================================
+=====================================================================================
+Q) A table wth 3 columns id, name and age
+
+		id 	name 	age
+		1     a      21
+		2     b      23
+		3     c      33
+		4     d      34
+
+	Query to remove duplicate for entire row
+Ans)
+
+		DELETE FROM table_name
+		WHERE id IN (
+			SELECT id
+			FROM table_name
+			GROUP BY id, name, age
+			HAVING COUNT(*) > 1
+		);
+=====================================================================================

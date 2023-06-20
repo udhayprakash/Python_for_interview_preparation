@@ -288,13 +288,24 @@ Data Sources
 
 - Cursor
 	- Used when application logic need to work with one row at a time, rather than entire result at once.
+	- Can be used
+		- To iterate over a large number of records.
+		- To perform complex operations on a set of records.
+		- To process records in a specific order.
+	- Types
+		1) Forward-only cursors: can only be traversed in the forward direction.
+		2) Bidirectional cursors: can be traversed in both the forward and backward directions.
 	- Advatanges
-		- Cursors provide first few rows before the whoel result set is assembled.
+		- Cursors provide first few rows before the whole result set is assembled.
 		  so, better response time is achived, compared to traditional queries, without cursor.
 	- Limitations
 		- Uses more resource because each time you fetch a row from cursor, it results in
 		  a network roundtrip.
 		- Because of the round trips, performance and speed is slow
+	- Best Practices
+		- Use cursors only when necessary.
+		- Use the most efficient type of cursor for the task at hand.
+		- Close cursors when you are finished with them.
 
 	- Alternatively, we can use JOIN to retrieve the data much fastly
 

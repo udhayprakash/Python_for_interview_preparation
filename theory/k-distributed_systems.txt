@@ -16,8 +16,10 @@ Redis
 
 Apache Kafka
 	- message queues with database-like durability guarantees
+
 Elasticsearch/Solr
 	- full text search server
+
 Memcached
 	- for in-memory cache
 

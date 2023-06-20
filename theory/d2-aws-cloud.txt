@@ -404,40 +404,48 @@ AWS Athena
 		4. Optimize file size
 		5. Optimize columnar data store generation
 
-Amazon Athena Workgroups are resource types, used to separate query execution and query
-history between Users, Teams, or Applications running under the same AWS account.
-Because Workgroups act as resources, you can use resource-based policies to control access
-to a Workgroup.
+Amazon Athena Workgroups are resource types, used to separate query execution and query history between Users, Teams, or Applications running under the same AWS account.
+Because Workgroups act as resources, you can use resource-based policies to control access to a Workgroup.
 
 I have experience migrating applications and data, from on-prem to cloud
 
 - AutoScaling
 --------------
-	- autoscaling can be done
-		1) Manually, in the console
-		2) Dynamic Scaling
-			- Dynamic scaling scales the capacity of Auto Scaling group as traffic changes occur.
-			- dynamic scaling is of THREE types:
-				a) Target Tracking scaling
-					- Increase and decrease the current capacity of the group based on a Amazon CloudWatch metric and a target value.
-				b) Step Scaling
-					- Increase and decrease the current capacity of the group based on a set of scaling adjustments, known as step adjustments, that vary based on the size of the alarm breach.
-				c) Simple Scaling
-					- Increase and decrease the current capacity of the group based on a single scaling adjustment, with a cooldown period between each scaling activity.
+- Autoscaling helps in scaling up or down the resources, to adjust to fluctuating traffic or demand.
+- Autoscaling can be done both for
+	- EC2 instances, based on CPU load
+	- Aurora databases, based on CPU utilization on Aurora replicas
 
-		3) Predictive Scaling
-			- scaling, in advance, based on daily and weekly patterns in traffic flows.
-			- Mostly predictive scaling is suitable when we have
-				- Cyclical traffic, such as high use of resources during regular business hours and low use of resources during evenings and weekends
-				- Recurring on-and-off workload patterns, such as batch processing, testing, or periodic data analysis
-				- Applications that take a long time to initialize, causing a noticeable latency impact on application performance during scale-out events
+- Advantages
+	- Improved performance, Reduced Costs and Improved Reliability.
+- Limitations
+	a) Complexity: Autoscaling can be complex to implement and manage.
+	b) Overprovisioning: Autoscaling can lead to overprovisioning of resources, which can increase costs.
+	c) Downtime: Autoscaling can cause downtime during scaling events, which can impact your application's availability.
 
-		4) Scheduled Scaling
-			- Scaling based on the created scheduled actions, for specific date and timestamp.
+- autoscaling can be done
+	1) Manually, in the console
+	2) Dynamic Scaling
+		- Dynamic scaling scales the capacity of Auto Scaling group as traffic changes occur.
+		- dynamic scaling is of THREE types:
+			a) Target Tracking scaling
+				- Increase and decrease the current capacity of the group based on a Amazon CloudWatch metric and a target value.
+			b) Step Scaling
+				- Increase and decrease the current capacity of the group based on a set of scaling adjustments, known as step adjustments, that vary based on the size of the alarm breach.
+			c) Simple Scaling
+				- Increase and decrease the current capacity of the group based on a single scaling adjustment, with a cooldown period between each scaling activity.
 
-	- Autoscaling can be done both for
-		- EC2 instances, based on CPU load
-		- Aurora databases, based on CPU utilization on Aurora replicas
+	3) Predictive Scaling
+		- scaling, in advance, based on daily and weekly patterns in traffic flows.
+		- Mostly predictive scaling is suitable when we have
+			- Cyclical traffic, such as high use of resources during regular business hours and low use of resources during evenings and weekends
+			- Recurring on-and-off workload patterns, such as batch processing, testing, or periodic data analysis
+			- Applications that take a long time to initialize, causing a noticeable latency impact on application performance during scale-out events
+
+	4) Scheduled Scaling
+		- Scaling based on the created scheduled actions, for specific date and timestamp.
+
+
 - IAM
 -------
 	- IAM roles define the set of permissions for making AWS service request
@@ -551,7 +559,6 @@ SQS - it is a message queue service used by distributed applications to exchange
 			- The FIFO queue type provides both ordering and deduplication of messages.
 			- It guarantees that messages are processed exactly once and in the order they are sent.
 			- However, it has lower throughput compared to standard queues and higher costs.
-
 
 
 - dead letter queue
@@ -796,9 +803,39 @@ start/stop ec2 using cloudwatch logs
 
 AWS Local Zones
 ===============
-- a new type of infrastructure that places compute, storage, database and other services
-closer to end users and population centers so you can run applications that require single-digit
-mili second latency and meet data residency requirements, when an AWS Region is not close enough.
+- a new type of infrastructure that places compute, storage, database and other services closer to end users and population centers so you can run applications that require single-digit mili second latency and meet data residency requirements, when an AWS Region is not close enough.
+
+
+ALB vs ELB
+===========
+- ALB means application Load Balancer, whereas ELB means Elastic Load balancer
+- ALB is layer 7 whereas ELB is layer 4
+	- ALBs can route traffic based on the content of the request, while ELBs can only route traffic based on the IP address or port number of the request.
+
+- ALB supports AWS lambda integration, whereas ELB doesnt support
+	- means that ALBs can be used to offload some of the processing of requests to Lambda functions, which can improve the performance of your application.
+
+- ALBs support HTTP/2 and WebSockets, while ELBs only support HTTP/1.1.
+	- means that ALBs can handle more concurrent connections and can provide a better user experience for applications that use HTTP/2 or WebSockets.
+
+- ALBs are more expensive than ELBs.
+	- because ALBs offer more features and capabilities than ELBs
+
+- Sticky sessions (or)  session affinity
+========================================
+- It is a load balancing technique that ensures that all requests from a single user are routed to the same server.
+- This is done by storing a unique identifier for the user in a cookie, which is then sent with each request.
+- The load balancer can then use this identifier to route the request to the correct server.
+- Advantages
+	1) Improved performance: Sticky sessions can improve the performance of web applications by reducing the number of times that users have to send session information to the server.
+	2) Improved user experience: Sticky sessions can improve the user experience by ensuring that users are always routed to the same server, which can reduce latency and improve reliability.
+	3) Reduced load on servers: Sticky sessions can reduce the load on servers by ensuring that each server only handles requests from a single user.
+
+- Limitations
+	1) Increased server load: Sticky sessions can increase the load on servers if there are a large number of concurrent users.
+	2) Reduced scalability: Sticky sessions can make it difficult to scale an application, as the load balancer cannot distribute requests evenly across all servers.
+	3) Increased complexity: Sticky sessions can increase the complexity of an application, as the application must be able to handle requests from multiple servers.
+
 
 Interview Questions Bank
 ========================

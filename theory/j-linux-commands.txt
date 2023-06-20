@@ -934,3 +934,12 @@ LIMITS
 		 sysctl -w fs.file-max=100000
 
 		To persist these changes after reboot, edit /etc/sysctl.conf and add this parameter there
+
+
+Long running jobs
+------------------
+- using nohup (no hang up)
+
+	nohup ./myscript.sh &						# runs in background
+	nohup ./myscript.sh							# output is in nohup.out
+	nohup ./myscript.sh > myscript.log &		# output is in myscript.log

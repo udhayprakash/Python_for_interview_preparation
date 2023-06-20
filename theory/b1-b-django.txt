@@ -6,6 +6,7 @@
 - Django comes with Django Template language, whereas in flask, we need to use jinja2 templates.
 - Flask supports both sql and no-sql databases, whereas django is suitable for only relational databases.
 - By default, django comes with batteries to be production ready, whereas in flask, we need to know what all needs to be added to our application.
+
 - Conclusions
 	- flask is suitable
 		- when no-sql database is of choice, or
