@@ -1,5 +1,7 @@
 # Python_for_interview_preparation
 
+[![Udhay's GitHub activity graph](https://img.shields.io/github/commit-activity/m/udhayprakash/Python_for_interview_preparation?label=Commit%20Activity&logo=github&style=flat-square)](https://github.com/udhayprakash/Python_for_interview_preparation)
+
 Algorithms, Data structures and problem solving (for interview &amp; competitive programming)
 
 This repository contains a collection of Python scripts that can be useful for interview preparation or general programming practice. The scripts cover various topics, such as data structures, algorithms, and problem-solving techniques.
