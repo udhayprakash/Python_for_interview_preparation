@@ -125,6 +125,20 @@ Current Project - Customer Behaviour Analytics project
 	- We analyse those offline data, and bring insights from them.
 	- These results will be used in different domains, within the organization.
 
+Current Project - Customer Feedback messages Analyses
+-----------------------------------------------------
+	current project details with Customer feedback analysis.
+
+	Objective of the project is to analyse the customer feedback messages,
+	classify and summaries the problems, and report to the concerned department.
+
+	My responsibilities include
+		- Creating data pipelines for data tranformations of raw messages,
+		- then, created ML models and trained with this data.
+		- Finally, the prediction results were stored in database.
+
+		- Also, create Django web application, to dashboard the results
+		  and REST APIs for app-to-app communication.
 
 Current project - Mortgage analytics
 -----------------------------------

@@ -461,3 +461,18 @@ Ans)
 			HAVING COUNT(*) > 1
 		);
 =====================================================================================
+Q)
+Ans) UPDATE customers AS c1, customers AS c2
+SET
+    c1.first_name = c2.first_name,
+    c1.last_name = c2.last_name,
+    c1.age = c2.age,
+    c1.country = c2.country,
+
+	c2.first_name = c1.first_name,
+    c2.last_name = c1.last_name,
+    c2.age = c1.age,
+    c2.country = c1.country
+WHERE
+    c1.customer_id = 5 AND c2.customer_id = 2;
+=====================================================================================

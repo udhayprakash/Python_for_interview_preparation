@@ -14,6 +14,14 @@ Redis
 			- API responses
 			- session data in web applications, messaging/streamsing systems
 
+- Queues
+=========
+- ADVANTAGES
+	1) To decouple applications
+	2) To handle asynchronous processing
+	3) To provide fault tolerance
+	4) To improve performance
+
 Apache Kafka
 	- message queues with database-like durability guarantees
 

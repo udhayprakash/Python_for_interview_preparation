@@ -82,6 +82,17 @@ Goroutines
 		- I use this library for its great assertion tool.
 
 
+BenchMarking
+============
+    - Benchmarking is a way to measure the performance of the unit tests.
+    - It is useful for identifying potential performance bottlenecks in the code.
+
+    1) benchmarking function definition as
+            func BenchmarkXxx(*testing.B)
+    2) go test -bench
+        go test -cpu
+
+
 go test -bench=”BenchmarkContains” -run=^# -benchtime=10000x
 go buid tags - https://www.digitalocean.com/community/tutorials/customizing-go-binaries-with-build-tags
 https://techinterviewhandbook.org/algorithms/binary/

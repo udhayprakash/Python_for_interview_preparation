@@ -1446,7 +1446,25 @@ Ans) It can be done in 3 ways
 		We can import in the __init__.py file in package level and import
 		It will be there for the entire session
 
+1) Difference between JSON and XML data in REST API
+Ans) Worked mostly with JSON for REST APIs
+	REST APIs support both.
+	JSON object has a type, whereas XML data is typeless
 
+3) Difference between Git Add and Git Reset commands
+Ans) git add command will stage the give file/folders, for next commit.
+	 git reset command will undo the uncommited-yet-staged files/folders
+		In addition, to undo file changes too, we can use
+			git reset --hard
+
+
+5)Why use Django when compared with flask framework?
+Ans)flask is suitable when no-sql database is of choice, or when small utility application is needed, or when we need quick development
+	Django is suitable when full-fledged application is needed, or when production-ready application is needed,
+
+6) Difference between _init() and __str_() methods ?
+Ans) __init__() is constructor method
+	 __str__() is dunder method which is called which print() function is used to display class instance
 big data
 	mapper - producer
 	reduce - receiver
@@ -1592,6 +1610,10 @@ Ans) TLS came as a replacement for SSL.
 		8) Server sends a "finished" message encrypted with a session key.
 		9) The handshake is completed, and communication continues using the session keys.
 
+7) Difference between subnet and subnet mask
+Ans) subnet is part of larger network which is subdivided into smaller network segments, each with its own unique network address.
+	Subnet mask is used to determine which bits of the IP address identifies network part and which bits represent host part.
+	subnet mask is a 32 bit value, which we apply on any IP address.
 
 Communication/Process
 ======================

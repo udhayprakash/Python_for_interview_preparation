@@ -75,3 +75,17 @@ In Unittesting, for each test suite, there will be
 - stubs vs mocks
 	- A Stub is used to fill in some dependency required for unit test to run correctly.
 	- A Mock is a fake object which runs the tests where we put assert.
+
+
+- defect tracking tools can be used:
+
+	1) To track the status of bugs.
+		- Defect tracking tools can be used to track the status of bugs, including the date the bug was reported, the person who reported it, the steps to reproduce the bug, the severity of the bug, and the status of the bug (e.g., open, in progress, fixed).
+	2) To prioritize bugs.
+		- Defect tracking tools can be used to prioritize bugs based on their severity and impact. This helps to ensure that the most important bugs are fixed first.
+	3) To track the progress of bug fixes.
+		- Defect tracking tools can be used to track the progress of bug fixes. This helps to ensure that bugs are fixed in a timely manner.
+	4) To communicate with stakeholders.
+		- Defect tracking tools can be used to communicate with stakeholders about the status of bugs. This helps to keep stakeholders informed about the progress of bug fixes and to get their feedback.
+	5) To generate reports.
+		- Defect tracking tools can be used to generate reports about the status of bugs. This information can be used to improve the quality of software and to identify areas where improvement is needed.
