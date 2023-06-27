@@ -1,4 +1,6 @@
-#!/usr/bin/python3
+"""
+Problem: Get longest substring length
+"""
 
 
 def longest_substr_len(my_string: str) -> bool:

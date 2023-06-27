@@ -25,15 +25,12 @@ def longest_substring(somestring: str) -> int:
     substr = ""
     for each_chr in somestring:  # O(n^2)
         if each_chr in substr:
-            substr_len = len(substr)
-            if largestSubStrLen < substr_len:
-                largestSubStrLen = substr_len
+            largestSubStrLen = max(largestSubStrLen, len(substr))
             substr = ""
         substr += each_chr
+
     if substr:
-        substr_len = len(substr)
-        if largestSubStrLen < substr_len:
-            largestSubStrLen = substr_len
+        largestSubStrLen = max(largestSubStrLen, len(substr))
     return largestSubStrLen
 
 
@@ -43,15 +40,14 @@ def longest_substring(somestring: str) -> int:
     for ch in somestring:  # O(n)
         if ch in substr_chars:
             substr = "".join(substr_chars.keys())
-            if len(substr) > largestSubStrLen:
-                largestSubStrLen = len(substr)
+            largestSubStrLen = max(len(substr), largestSubStrLen)
             substr_chars.clear()
         substr_chars[ch] = 1
-    else:
-        if substr_chars:
-            substr = "".join(substr_chars.keys())
-            if len(substr) > largestSubStrLen:
-                largestSubStrLen = len(substr)
+
+    if substr_chars:
+        substr = "".join(substr_chars.keys())
+        largestSubStrLen = max(len(substr), largestSubStrLen)
+
     return largestSubStrLen
 
 
@@ -65,3 +61,9 @@ if __name__ == "__main__":
     assert longest_substring("abccba") == 3  # 'abc'
     assert longest_substring("abcd") == 4  # 'abcd'
     assert longest_substring("abcdefgha") == 8  # 'abcdefgh'
+
+    print(
+        longest_substring(
+            "amjMVRoQJWcusNZDMjgjUDOGNzwamdQpLOYTBgbwhiEIUPfjAmZJUNwChrWAcEBKYKtNNAFnXiZeUgAtRDveRAFaNSASYCaJbxFQZUgeLNcPQFoYwCYGDSoPrhZKXkpsREfHSuCbHKHnofNBNMHzMqLMwbneOcJbcSgnfgbVUSQbUveAUMTdoghwULyfkWEOOFWKFikcHAZDIiKdTrOXEYwCTdPODAcuYefLFdwrmJkSiztDQGKPKlgnP"
+        )
+    )
