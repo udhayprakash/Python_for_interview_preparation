@@ -1,0 +1,27 @@
+
+Business Analyst questions
+	data dictionary
+	data mapping documents
+	software requirement gathering
+	data reporting needs example medical
+	Attributes vs measures
+	KPI s
+	data lake vs datawarehouse
+	data warehouse models
+	star vs snowflake schema
+	BI deliverables
+	agile vs waterfall
+	operational vs analytical reporting
+	data cleansing in medical field in tools
+	tableue visualization tools
+	RACI Matrix
+	requirements traceability metrics
+	components within the BRDs
+	components within the FRDs
+	what are first steps as a business Analyst to work , once assigned a project
+	stackholder analysis grid
+	most important qualities of a business Analyst
+	post production phase rquirement process
+	change requirement process for software development
+	how to avoid scope creep
+	gap and impact analyses

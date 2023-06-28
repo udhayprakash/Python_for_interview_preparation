@@ -58,6 +58,16 @@ Also, have experience in creating the CI/CD setup using Jenkins and Groovy scrip
 
 And, I have experience in agile methodologies like Scrum, Kanban in facilitating agile ceremonies like daily standups,sprint reviews, plannings and retrospectives. I am familiar with Agile tools like Jira and skilled in working with cross-functional teams including Dev team, QA testers, and PM/PO's.
 
+I have experience in the entire data wrangling activities , from data source, transformations, cleansing and finally creating golden records
+
+In terms of Data Visualization, I worked with
+	Python modules like matplotlib, seaborn, plotly
+	Javascript libraries like d3.js and highcharts
+
+        PowerBI and Tablue
+Created charts, graphs, pie/ sunburn/ and interactive charts
+
+
 In Golang, I created microservices and ETL jobs,
 	Mainly using go concurrency.
 	Used Gokit for microservices implementation,
@@ -96,8 +106,8 @@ Python Podcasts
 
 Python Books
 =============
-Learning Python by Mark Lutz
-Python Distilled by David Beazley
+	Learning Python by Mark Lutz
+	Python Distilled by David Beazley
 
 People in Python community
 ==========================
@@ -115,74 +125,74 @@ Learning new language
 
 When Programming started
 ========================
-I am interested in playing online games.
-When I am in my graduation, hope you remember, angry birds became a big hit.
+	I am interested in playing online games.
+	When I am in my graduation, hope you remember, angry birds became a big hit.
 
-I played different games, but this is simple.
-So, I thought of creating one.
-When researched, I found some code online.
-I just created a clone for it. Added some changes, for fun.
-I worked with pygame, which is a python module.
+	I played different games, but this is simple.
+	So, I thought of creating one.
+	When researched, I found some code online.
+	I just created a clone for it. Added some changes, for fun.
+	I worked with pygame, which is a python module.
 
-Then, when looking for job, as I have some knowledge in python,
-I looked for work in it, and landed as a python developer.
-That is my journey
+	Then, when looking for job, as I have some knowledge in python,
+	I looked for work in it, and landed as a python developer.
+	That is my journey
 
 -------------------------
 Questions to Interviewers
 -------------------------
-- May I know about the project, and the system architecture like the tools used, database, etc?
-- What are you expecting from me, for this role? What can be the day-to-day activities? what does a successful person look like on your team?
+	- May I know about the project, and the system architecture like the tools used, database, etc?
+	- What are you expecting from me, for this role? What can be the day-to-day activities? what does a successful person look like on your team?
 
-- What is the volume of data, which we will be working on, on a daily basis. some approximate numbers of records?
-- What kind of data do we work with, and what are our data sources?
-- Were we using any custom/in-house frameworks/tools in our project? If so, can you help with the details? (like your own databases, etc..)
+	- What is the volume of data, which we will be working on, on a daily basis. some approximate numbers of records?
+	- What kind of data do we work with, and what are our data sources?
+	- Were we using any custom/in-house frameworks/tools in our project? If so, can you help with the details? (like your own databases, etc..)
 
-- How is success defined in this role?
-- What do you like most about this company/team/project?
-- How would you describe the team?
-- What do the day to day responsibilities look like?
-- How will the project/work impact the company as a whole?
-- What is the overall vision for this team?
+	- How is success defined in this role?
+	- What do you like most about this company/team/project?
+	- How would you describe the team?
+	- What do the day to day responsibilities look like?
+	- How will the project/work impact the company as a whole?
+	- What is the overall vision for this team?
 
-- within the first 3-4 months of hire, what are the pain-points you would like me to tackle?
-- In the next 3-6 months, what were your major priorities, towards this project?
-- Hope we are using agile methodology!  And how about the sprint cycle duration?
-- Can I know about the work culture of our company?
+	- within the first 3-4 months of hire, what are the pain-points you would like me to tackle?
+	- In the next 3-6 months, what were your major priorities, towards this project?
+	- Hope we are using agile methodology!  And how about the sprint cycle duration?
+	- Can I know about the work culture of our company?
 
-- What were the next steps in the interview process? And how many more rounds of interviews can I expect?
+	- What were the next steps in the interview process? And how many more rounds of interviews can I expect?
 
-CONCLUSION:
-	Thank you for the time, and I want to conclude that I am an expert in Python.
-	I have experience working in both Green-field and Blue-Green Developments.
-	Experience in both backend and frontend, data wrangling and ETLs
-	And I am ready to extend and learn new skills, if needed.
+	CONCLUSION:
+		Thank you for the time, and I want to conclude that I am an expert in Python.
+		I have experience working in both Green-field and Blue-Green Developments.
+		Experience in both backend and frontend, data wrangling and ETLs
+		And I am ready to extend and learn new skills, if needed.
 
-	Have experience in working on financial products, best practices to follow. So, I can be productive, with minimal training.
+		Have experience in working on financial products, best practices to follow. So, I can be productive, with minimal training.
 
 
 
-- As I'm understanding the current landscape of your environment, what is your vision of future innovation
-and or new technologies you want to bring within the next 2-4 years, and why so?
+	- As I'm understanding the current landscape of your environment, what is your vision of future innovation
+	and or new technologies you want to bring within the next 2-4 years, and why so?
 
-- Will there be an opportunity to reach out to the clients, either for requirement gathering and/or for demoing the end solution?
-- Have I answered all your questions?
-- Do you have any hesitations about my qualifications?
-- What is the biggest challenge your company is facing today?
-- What do you enjoy most about working in this company?
-- Whats are the characteristics of someone who would succeed in this role?
-- What metrics or goals will my performance be evaluated against?
-- What are the most immediate projects that need to be addressed?
-- Can you describe a typical day or week in the job?
-- What will be the process of getting up to speed?
-  In our team, we use confluence and teams' channels to collaborate? How do they collaborate and maintain documentation?
-- What will be the area that you want this role to be focusses?
-- Do you expect the main responsibilities for this position to change in the next six months to a year?
-- What are the current goals that the company is focussed on, and how does this team work to support hitting those goals?
-- Who will I report to directly?
-- What are the common career paths in this department?
-- Is there anything else I can provide you with that would be helpful?
-- What's one of the most interesting projects or opportunities that you've worked on?
+	- Will there be an opportunity to reach out to the clients, either for requirement gathering and/or for demoing the end solution?
+	- Have I answered all your questions?
+	- Do you have any hesitations about my qualifications?
+	- What is the biggest challenge your company is facing today?
+	- What do you enjoy most about working in this company?
+	- Whats are the characteristics of someone who would succeed in this role?
+	- What metrics or goals will my performance be evaluated against?
+	- What are the most immediate projects that need to be addressed?
+	- Can you describe a typical day or week in the job?
+	- What will be the process of getting up to speed?
+	  In our team, we use confluence and teams' channels to collaborate? How do they collaborate and maintain documentation?
+	- What will be the area that you want this role to be focusses?
+	- Do you expect the main responsibilities for this position to change in the next six months to a year?
+	- What are the current goals that the company is focussed on, and how does this team work to support hitting those goals?
+	- Who will I report to directly?
+	- What are the common career paths in this department?
+	- Is there anything else I can provide you with that would be helpful?
+	- What's one of the most interesting projects or opportunities that you've worked on?
 
 company expenses
 -----------------
@@ -258,6 +268,7 @@ I worked on
 		Worked with Both REST APIs and GraphQLs
 
 	Data Cleansing - worked with regular expressions
+	Data Validations, using greatexpectations
 	Data Transformations - Worked with Python Pandas
 
 	Data Visualization and Reporting -- with PowerBI and Python based modules

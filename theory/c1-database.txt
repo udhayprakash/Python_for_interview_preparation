@@ -239,8 +239,7 @@ Data Sources
 		- composite primary key
 			- combination of multiple columns, to make the primary key
 	- Foreign key:
-		- it is one or more columns whose values are based on the primary key values
-		from another table.
+		- it is one or more columns whose values are based on the primary key values from another table.
 	- Unique Key:
 		- Unique key identifies a each row in the table uniquely.
 		- Unique key allows null values.

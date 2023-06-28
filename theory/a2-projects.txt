@@ -76,7 +76,7 @@ Day-to-day activities
 	Then finally, so after the, you know, the standup like I will start working on my JIRAs.
 - We prioritize based on the situation and sometimes, i will take manager’s decision
 
-----------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
 In terms of the technical stack,
 	we have a web application written in Django, with frontend as React
 	This web application is a monolithic architecture
@@ -137,8 +137,7 @@ Current Project - Customer Feedback messages Analyses
 		- then, created ML models and trained with this data.
 		- Finally, the prediction results were stored in database.
 
-		- Also, create Django web application, to dashboard the results
-		  and REST APIs for app-to-app communication.
+		- Also, create Django web application, to dashboard the results and REST APIs for app-to-app communication.
 
 Current project - Mortgage analytics
 -----------------------------------
