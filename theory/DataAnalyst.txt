@@ -25,3 +25,11 @@ Business Analyst questions
 	change requirement process for software development
 	how to avoid scope creep
 	gap and impact analyses
+
+
+Data cleansing and transformation
+	- Format standardization
+	- Parsing data and breaking it down into separate attributes (e.g., full name into first name and last name)
+	- Data enrichment: bringing additional data from external sources
+	- Data deduplication: remove duplicates from data
+	- Data masking: sometimes you need to obfuscate data for security reasons

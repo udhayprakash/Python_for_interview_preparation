@@ -1,4 +1,3 @@
-#!/usr/bin/python
 """
 Purpose: Find the longest substring
     with each substring containing two unique characters,
