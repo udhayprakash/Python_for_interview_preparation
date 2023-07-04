@@ -27,7 +27,7 @@ Data Sources
 - ORM
 	- means Object Relational Mapper
 	- ORMS will help in performing db queries and manipulations using Object Oriented way.
-	- Means writing quries in programming language, like python, instead of in raw SQL.
+	- Means writing queries in programming language, like python, instead of in raw SQL.
 	- Advantages
 		- Less code, so more productivity and easier maintenance.
 		- Database type agnostic, means later we can change db from, say, mysql to MS-SQL, and
@@ -39,13 +39,28 @@ Data Sources
 		- ORMs will be difficult to read and maintain when we have, say, like 5 or more tables in JOIN
 		- Also, for large queries, it is be slower too.
 
+- SQL (Structured Query Language)
+	- It is a programming language used for managing and manipulating relational databases.
+	- It allows you to perform tasks such as creating, querying, updating, and deleting data in a database.
+	- SQL statements are written in a specific syntax, consisting of keywords, clauses, and expressions.
+
+
+- SQL Injection Attack
+	- Its a type of vulnerability where the attacker inserts a malicious SQL query, via web form or url parameter
+	- example is to add extra condition to existing queries, to succeed, like
+		`' OR 1=1 --`
+	  Means
+			select * from users WHERE username = '$username' and password = '$password'
+	  will become
+			select * from users WHERE username = '$username' and password = '$password' OR 1=1 --';
+
 
 - SQL solutions - https://javarevisited.blogspot.com/2017/02/top-6-sql-query-interview-questions-and-answers.html#axzz7f7DekILS
 - https://www.interviewbit.com/sql-interview-questions
 
 - Relational Databases
 	- row oriented
-		- Eg: Mysql, postgre
+		- Eg: Mysql, postgreSQL
 		- Organizes data records row by row
 		- these are write optimized
 		- suitable for OLTP (online transactional processing) style applications
@@ -61,12 +76,12 @@ Data Sources
 		  next to each other
 		- these are read-optimized
 		- suitable for OLAP (online Analytics Processing) style applications
-		  as they support adhoc querying the data
+		  as they support adhoc querying of the data
 
 - ACID
 	- Atomicity
 		- There should not be any partially completed transaction;
-		- Either it should be completed applied or rolled back.
+		- Either it should be completely applied or rolled back.
 
 	- Consistency
 		- characteristic that requires data updated via transactions to respect the other
@@ -82,43 +97,65 @@ Data Sources
 		  are saved to permanent storage, such as disks.
 		- This prevents data loss during system failure, such as a power outage.
 
-- DDL commands
-	CREATE	: Create an object. ...
-	DROP 	: This SQL DDL command helps to delete objects. ...
-	ALTER 	: Used to alter the existing database or its object structures.
-	TRUNCATE: This SQL DDL command removes records from tables.
-	RENAME 	: Renaming the database objects.
+- SQL Commands
+	1) DDL (Data Definition Language) Commands – to define and modify the structure of a database.
+		CREATE	: To create a new database, table, view, index, or other database objects.
+		ALTER 	: To modify structure of an existing database object, such as a table or a column.
+		DROP 	: To delete a database object, such as a table or an index.
+		TRUNCATE: To removes all records from tables.
+		RENAME 	: To Rename the database objects.
 
-- DML commands
-	INSERT 		: It is used to insert data into a table.
-	UPDATE		: It is used to update existing data within a table.
-	DELETE 		: It is used to delete records from a database table.
-	LOCK		: Table control concurrency.
-	CALL		: Call a PL/SQL or JAVA subprogram.
-	EXPLAIN PLAN: It describes the access path to data.
+	2) DCL (Data Control Language) Commands – to control user/group access to the data in database
+		GRANT	: To provide privileges to a user or a role.
+		REVOKE	: To revoke privileges that were previously granted
 
-- Order of Execution
-	- From, Where, Group By, Having, Select, Order By, Limit
+	3) DQL (Data Query Language) Commands – to perform queries on data in database to retrieve necessary information from it.
+		SELECT 	: To retrive data from one or more tables.
+		FROM 	: Specifies the table(s) from which to retrieve the data.
+		WHERE 	: Applies conditions to filter the data
+		GROUP BY: Groups the result set by one or more columns.
+		HAVING 	: Applies conditions to filter the data
+		ORDER BY: sorts the result set based on one or more columns.
+		JOIN 	: Combines rows from two or more tables based on related columns
+
+	4) DML (Data Manipulation Language) Commands – to access, manipulate, and modify data in a database.
+		INSERT 		: It is used to insert data into a table.
+		UPDATE		: It is used to update existing data within a table.
+		DELETE 		: It is used to delete records from a database table.
+
+	5) TCL (Transaction Control Language) Commands – to control transactions in a database.
+		COMMIT				: Commits a transaction, making all the changes made within the transaction permanent.
+		ROLLBACK			: Rolls back a transaction, undoing all the changes made within the transaction.
+		SAVEPOINT			: Sets a savepoint within a transaction, allowing to roll back to that savepoint later.
+		RELEASE SAVEPOINT	: Releases a savepoint within a transaction, making it no longer necessary to roll back to that savepoint.
+
+		SET TRANSACTION		: Sets characteristics for the current transaction, such as isolation level or transaction access mode.
+		BEGIN TRANSACTION (or BEGIN WORK)	: Starts a new transaction.
+		SET TRANSACTION READ ONLY			: Sets the transaction to read-only mode, indicating that no modifications will be made within the transaction.
+		SET TRANSACTION READ WRITE			: Sets the transaction to read-write mode, allowing modifications to be made within the transaction.
+
+	6) Others
+		LOCK		: Table control concurrency.
+		CALL		: Call a PL/SQL or JAVA subprogram.
+		EXPLAIN PLAN: It describes the access path to data.
+
 
 - Order in Commands
-	- Select, From , JOIN(ON), Where, Group BY, Having, Order By, Limit
+	- Select, From, JOIN(ON), Where, Group BY, HAVING, Order BY, LIMIT
+
+- Order of Execution
+	- From, Where, Group BY, HAVING, Select, Order BY, LIMIT
 
 
 - SQL JOINs
 	- https://insightoriel.com/what-is-join-in-sql/
+	- https://hackr.io/blog/sql-server-interview-questions
 	- Four types -  left, right, inner, and outer.
-	- (INNER) JOIN 		 : Returns records that have matching values in both tables.
-	- LEFT (OUTER) JOIN  : Returns all records from the left table, and the matched records from the right table.
-	- RIGHT (OUTER) JOIN : Returns all records from the right table, and the matched records from the left table.
+	1) (INNER) JOIN 		 : Returns records that have matching values in both tables.
+	2) LEFT (OUTER) JOIN  : Returns all records from the left table, and the matched records from the right table.
+	3) RIGHT (OUTER) JOIN : Returns all records from the right table, and the matched records from the left table.
 
-	- CROSS JOIN 		 : there is no ON clause here. All rows from the first table
-						   are combined with all rows from the second table.
-
-			SELECT w.name AS wine, m.name AS main_course
-			FROM wine w
-			CROSS JOIN main_course m;
-
-	- FULL OUTER JOIN
+	4) FULL (OUTER) JOIN	 : Returns all rows from both tables, matching rows based on the join condition. If a row in one table does not have a match in the other table, the result will contain NULL values for the unmatched columns.
 		-- MySql FULL OUTER JOIN
 
 				SELECT * FROM t1
@@ -127,8 +164,17 @@ Data Sources
 				SELECT * FROM t1
 				RIGHT JOIN t2 ON t1.id = t2.id
 				WHERE t1.id IS NULL
-	- SELF JOIN
-		- self join is like both inner join of same table, with same table with different alias
+
+	5) CROSS(or CARTESIAN) JOIN : there is no ON clause here. Each row from first table is combined with each row from second table.
+
+		select * from employees, departments
+
+		SELECT w.name AS wine, m.name AS main_course
+			FROM wine w
+			CROSS JOIN main_course m;
+
+	6) SELF JOIN				: Inner join of table, with same table with different alias. Useful when a table has a hierarchical structure or when comparing rows within the same table.
+
 		- Assume a table contain all employees and their manager information.
 		- Then, we can use this self join to get the employees and their manager names
 			Employee table  has three columns - id, name, manager_id
@@ -139,52 +185,105 @@ Data Sources
 			FROM employee e
 			INNER JOIN employee m  ON e.id = m.id
 
-	- number of records in each JOIN
+	7) NATURAL JOIN 	: Matches columns with the same name in both tables, without requiring an explicit join condition. However, it is less commonly used due to the potential for unexpected matches. (Oracle, PostgreSQL, MySQL, SQLite)
+
+	8) CROSS APPLY		: Applies a table-valued function to each row of another table, producing a result set that combines the rows from both.(SQL Server)
+
+	9) OUTER APPLY 		: Similar to Cross Apply, but also includes unmatched rows from the outer table.(SQL Server)
+
+- Number of records in each JOIN
 		TableA - 10 rows
 		TableB - 20 rows
 
-		CROSS JOIN -- 10 * 20 = 200 rows
+		INNER JOIN 				- Equal to matching number of records, based on condition
+		LEFT(OUTER) JOIN 		- (10) Equal to number of records in LEFT table
+		RIGHT(OUTER) JOIN 		- (20) Equal to number of records in RIGHT table
+		FULL (OUTER) JOIN 		- (10 + 20) Equal to summation of number of records in all tables
+		CROSS (CARTESIAN)JOIN	- (10 * 20) Equal to products of number of records in all tables
+		SELF JOIN				- Depends on matching values within same table based on join condition
+		NATURAL JOIN			- Depend on columns with same name in both/all tables
 
-		Left joins can increase the number of rows in the left table if there are multiple matches in the right table.
+		Also,
+		Left joins can increase number of rows in left table if there are multiple matches in right table. Same goes for other joins too.
 
-	- cartesian product - select * from employees, departments
+- FULL OUTER JOIN Vs UNION
+	- Full outer join combines the rows from two tables based on a common column, including unmatched rows, and provides a combined result set.
+	- Union and union all, combines the result sets of SELECT statements, regardless of any common columns between the statements.
+	- Ex:
+			SELECT *
+			FROM Customers
+			FULL OUTER JOIN Orders ON Customers.customer_id = Orders.customer_id;
 
+			SELECT column1, column2, column3 FROM TableA
+			UNION
+			SELECT column1, column2, column3 FROM TableB;
 
 - Normalization
-	- process of organizing the columns, tables of a database to minimize the
-		redundancy of data. Normalization involves in dividing large tables
-		into smaller tables and defining relationships between them.
-	- First Normal Form:
-		Duplicate columns from the same table needs to be eliminated.
-		We have to create separate tables for each group of related data and
+	- To divide large tables into smaller tables and defining relationships between them, to minimize the
+		redundancy of data.
+
+	1) First Normal Form (1NF):
+		- Duplicate columns from the same table needs to be eliminated.
+		- We have to create separate tables for each group of related data and
 		identify each row with a unique column or set of columns (Primary Key)
-	- Second Normal Form:
-		First it should meet the requirement of first normal form.
-		Removes the subsets of data that apply to multiple rows of a table and
+
+	2) Second Normal Form (2NF):
+		- First it should meet the requirement of first normal form.
+		- Removes the subsets of data that apply to multiple rows of a table and
 		place them in separate tables.
-		Relationships must be created between the new tables and their predecessors
+		- Relationships must be created between the new tables and their predecessors
 		through the use of foreign keys.
-	- Third Normal Form:
-		First it should meet the requirements of the second normal form.
-		Remove columns that are not depending upon the primary key.
+
+	3) Third Normal Form (3NF):
+		- First it should meet the requirements of the second normal form.
+		- Remove columns that are not depending upon the primary key.
 		- Most databases will be Third Normal Form
-	- Fourth Normal Form:
+
+	4) Fourth Normal Form (4NF):
 		- There should not be any multi-valued dependencies.
+		- Means, each column in a table is dependent on primary key and not on other non-key columns.
 
 - Relations
-	- one-to-one relationship
-		- simple reference between two tables. Consider Customer and Address tables
-		as an example.
-		- A customer can have only one address and an address references only one customer.
-	- One-to-many relationships
-		- Implemented by splitting the data into two tables with a primary key and
-			foreign key relationship.
-		- Here the row in one table is referenced by one or more rows in the other table.
-		An example is the Employees and Departments table, where the row in the Departments
-		table is referenced by one or more rows in the Employees table.
-	- Many-to-Many relationship
-		- created between two tables by creating a junction table with the key from both
-		the tables forming the composite primary key of the junction table.
+	1) One-to-One (1:1) Relationship:
+		- A row in one table is related to only one row in another table, and vice versa.
+		- Example:
+			- A person and their passport information.
+			- Each person has only one passport, and each passport belongs to only one person.
+
+	2) One-to-Many (1:N) Relationship:
+		- A row in one table is related to multiple rows in another table, but each row in the second table is related to only one row in the first table.
+		- Example:
+			- An order and its line items.
+			- Each order can have multiple line items, but each line item belongs to only one order.
+
+	3) Many-to-One (N:1) Relationship:
+		- Multiple rows in one table are related to a single row in another table.
+		- Example:
+			- Many employees working in the same department.
+			- Multiple employees can belong to a single department.
+
+	4) Many-to-Many (N:N) Relationship:
+		- Multiple rows in one table can be related to multiple rows in another table.
+		- Example:
+			- Students and courses.
+			- Multiple students can enroll in multiple courses, and each course can have multiple students.
+
+	5) Self-Referencing Relationship:
+		- A table can have a relationship with itself, where rows in the table are related to other rows within the same table.
+		- Example:
+			- An employee table with a "manager_id" column that references the primary key of another row in the same table to represent a hierarchical employee structure.
+
+	6) Junction Table (or Associative Table):
+		- Used to establish a many-to-many relationship by creating an intermediary table that holds the associations between the two related tables.
+		- Example:
+			- A table to associate students with courses they are enrolled in, containing student IDs and course IDs.
+
+Transaction Table
+	- Used to store individual transactions or events in a database
+	- Used to maintain an audit trail or track changes over time.
+	- Primary purpose is to provide a log or record of actions performed within the system.
+	- It focuses on recording details of each transaction, such as transaction date, time, participants, and relevant data associated with that specific event.
+
 
 -  Truncate vs Delete
 	- Both used to delete data from the table
@@ -426,7 +525,7 @@ Data Sources
 
 - DB View vs Materialized View
 	DB Views														|Materialized DB Views
-	------------------------------------------------------------------------------------------------------
+	----------------------------------------------------------------------------------------------
 	Virtual table and doesn’t occupy any storage space				|Copies of data are stored in the memory
 	It will have up to date data in it as it is executed at run-time|Needs to be refreshed every time when it is used as it has compiled data
 	Executed when a query is run n view using SELECT				|Executed and records are stored in the database
@@ -642,8 +741,7 @@ Characteristics of MySQL:
 		- InnoDB has row-level locking; MyISAM only has full table level locking
 		- InnoDB supports transactions, means we can commit and rollback
 		  MyISAM is faster to read
-		- InnoDB supports foreign keys and relationship constraints(referential integrity),
-		  where as MyISAM doesnt support.
+		- InnoDB supports foreign keys and relationship constraints(referential integrity), where as MyISAM doesnt support.
 		- InnoDB supports caching both data and indexes, but doesnt support full-text search.
 		  MyISAM is only meant for indexes, and full-text search.
 		- InnoDB supports transaction logs and data recovery on failure; whereas MyISAM doesnt.
@@ -1063,3 +1161,21 @@ TODO
 
 	https://www.databasestar.com/learn-sql/
 	https://www.kaggle.com/learn/intro-to-sql
+
+	1. SQLBolt		http://sqlbolt.com
+	2. SQLZoo		https://sqlzoo.net/wiki/SQL_Tutorial
+	3. SQLTest		http://sqltest.net
+	4. W3Schools	http://w3schools.com/sql/
+	5. Codecademy	http://codecademy.com/learn/learn-sql
+
+
+	☑️ Python 						➟ hackerrank .com
+	☑️ Data Structures & Algorithms ➟ Leetcode .com
+	☑️ Data Visualization 			➟ jovian. ml
+	☑️ Machine Learning 			➟ Kaggle .com
+	☑️ Mathematics 					➟ desmos .com
+	☑️ Statistics 					➟ seeing-theory.brown.edu
+	☑️ BigQuery 					➟ cloudskillsboost.google/quests/123
+
+	📈 For Visualization: Storytelling with Data by Cole Nussbaumer Knaflic.
+	📉For SQL: Learning SQL by Alan Beaulieu.

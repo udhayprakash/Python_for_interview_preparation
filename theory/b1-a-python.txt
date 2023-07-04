@@ -785,6 +785,9 @@ __getattribute__ vs__getattr__
 - namespaces
 	LEGB - Local, Enclosed, Global, Builtin scopes
 
+	And a class is not a scope entity in it’s own right - which means that attributes of a class or instance must be qualified by either ‘self’ or a specific class name.
+
+
 - py vs pyc
 	- py extension files are ordinary python files
 	- pyc extension files are python bytecode files,
