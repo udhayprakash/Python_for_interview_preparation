@@ -140,12 +140,324 @@ Data Sources
 		EXPLAIN PLAN: It describes the access path to data.
 
 
-- Order in Commands
+- Order in Commands definition
 	- Select, From, JOIN(ON), Where, Group BY, HAVING, Order BY, LIMIT
 
-- Order of Execution
-	- From, Where, Group BY, HAVING, Select, Order BY, LIMIT
+- order of execution sql queries/ SQL Query Order of Execution
+	1) FROM clause
+	2) WHERE
+	3) GROUP BY
+	4) HAVING
+	5) SELECT
+	6) DISTINCT
+	7) ORDER BY
+	8) LIMIT/OFFSET
 
+- SQL constraints
+	NOT NULL 	 # Ensures a column cannot have a NULL value
+	UNIQUE 		 # Ensures all values in a column are unique
+	PRIMARY KEY  # Identifies a record in a table, is NOT NULL & UNIQUE
+	FOREIGN KEY  # References a unique record from another table
+	CHECK		 # Ensures all column values satisfy a condition
+	DEFAULT		 # Set a default value for a column if none is entered
+	INDEX		 # Quick way of retrieving records from database
+
+- SQL Data Types
+	1) Numeric Types:
+		INTEGER			: Whole numbers ranging from -2,147,483,648 to 2,147,483,647.
+		SMALLINT		: Small whole numbers ranging from -32,768 to 32,767.
+		BIGINT			: Large whole numbers ranging from -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807.
+		DECIMAL(p, s)	: Exact numeric values with a specified precision (p) and scale (s).
+		NUMERIC(p, s)	: Synonym for DECIMAL.
+		FLOAT(p)		: Floating-point numbers with a variable precision, where p represents the minimum number of significant digits.
+		REAL			: Single-precision floating-point numbers.
+		DOUBLE PRECISION: Double-precision floating-point numbers.
+
+	2) Character Types:
+		CHAR(n)			: Fixed-length character strings of length n.
+		VARCHAR(n)		: Variable-length character strings with a maximum length of n.
+		TEXT			: Variable-length character strings with no specified length limit.
+
+	3) Date and Time Types:
+		DATE			: Dates in the format YYYY-MM-DD.
+		TIME			: Time values in the format HH:MI:SS.
+		TIMESTAMP		: Date and time values in the format YYYY-MM-DD HH:MI:SS.
+		INTERVAL		: Intervals representing a period of time.
+
+	4) Boolean Type:
+		BOOLEAN			: Represents a true or false value.
+
+	5) Binary Types:
+		BINARY(n)		: Fixed-length binary strings of length n.
+		VARBINARY(n)	: Variable-length binary strings with a maximum length of n.
+		BLOB			: Binary large objects for storing large amounts of binary data.
+
+	6) Enumeration Type:
+		ENUM('value1', 'value2', ...): A user-defined list of values where only one value can be chosen.
+
+	7) Set Type:
+		SET('value1', 'value2', ...): A user-defined list of values where multiple values can be chosen.
+
+	8) JSON Type:
+		JSON			: Stores JSON (JavaScript Object Notation) data.
+
+	9) Array Types:
+		ARRAY			: Represents an array or a list of elements.
+
+	10) XML Type:
+		XML				: Stores XML (eXtensible Markup Language) data.
+
+	11) Geometric Types:
+		POINT			: Represents a point in a two-dimensional space.
+		LINE			: Represents a straight line segment.
+		LSEG			: Represents a line segment with a starting and ending point.
+		BOX				: Represents a rectangular box.
+		PATH			: Represents a geometric path.
+		POLYGON			: Represents a closed geometric polygon.
+		CIRCLE			: Represents a circle.
+
+	12)Network Address Types:
+		INET			: Stores an IPv4 or IPv6 network address.
+		CIDR			: Represents an IPv4 or IPv6 network address and its associated subnet mask.
+		MACADDR			: Stores a media access control (MAC) address.
+		MACADDR8		: Stores an extended MAC address.
+
+	13) Bit String Types:
+		BIT(n): Fixed-length bit strings of length n.
+		BIT VARYING(n): Variable-length bit strings with a maximum length of n.
+
+
+- SQL Operators
+	1) Logical Operators
+		AND		: Returns true if both conditions are true.
+		OR		: Returns true if either condition is true.
+		NOT		: Negates the following condition.
+
+	2) Comparison Operators
+		= (Equal to)				: Tests if two values are equal.
+		<> or != (Not equal to)		: Tests if two values are not equal.
+		(Greater than)				: Tests if the left operand is greater than the right operand.
+		< (Less than)				: Tests if the left operand is less than the right operand.
+		= (Greater than or equal to): Tests if the left operand is greater than or equal to the right operand.
+		<= (Less than or equal to)	: Tests if the left operand is less than or equal to the right operand.
+		BETWEEN						: Tests if a value is within a specified range.
+		LIKE						: Tests if a value matches a specified pattern.
+		IN							: Tests if a value is included in a specified set of values.
+		IS NULL						: Tests if a value is null.
+		IS NOT NULL					: Tests if a value is not null.
+
+	3) Arithmetic Operators
+		+ (Addition)				: Adds two values.
+		- (Subtraction)				: Subtracts the right operand from the left operand.
+		* (Multiplication)			: Multiplies two values.
+		/ (Division)				: Divides the left operand by the right operand.
+		% (Modulo)					: Returns the remainder of division between left operand and right operand.
+
+	4) String Operators:
+		|| (Concatenation)			: Concatenates two or more strings.
+
+	5) Aggregate Functions:
+		COUNT()						: Returns the number of rows or non-null values.
+		SUM()						: Calculates the sum of a column's values.
+		AVG()						: Calculates the average of a column's values.
+		MIN()						: Returns the minimum value from a column.
+		MAX()						: Returns the maximum value from a column.
+
+	6) Set Operators:
+		UNION			: Combines the result sets of two or more SELECT statements.
+		INTERSECT		: Returns the common rows between two or more SELECT statements.
+		EXCEPT or MINUS	: Returns rows that exist in first SELECT statement but not in subsequent SELECT statement(s).
+
+	7) Conditional Operators:
+		CASE			: Performs conditional operations in SQL queries.
+		COALESCE		: Returns the first non-null value in a list.
+		NULLIF			: Compares two expressions and returns null if they are equal.
+
+
+- Window Functions:
+	- window functions operate on a set of rows and return a single aggregated value for each row.
+	- Unlike regular aggregate functions, window functions retuns single aggregated value for each row.
+
+	- Ranking Windows Functions
+		1) RANK()
+			- Assigns a rank to each row within a partition or result set.
+			Constraints: The ORDER BY clause is required to determine the ranking order.
+		2) DENSE_RANK()
+			- Assigns a rank to each row within a partition or result set, with no gaps in the ranking values.
+			Constraints: The ORDER BY clause is required to determine the ranking order.
+		3) NTILE()
+			- Divides a result set into a specified number of groups and assigns a group number to each row.
+			Constraints: The number of groups must be specified.
+
+	- Analytical window functions
+		1) ROW_NUMBER()
+			- generates incremental row number dynamically, for each row, based on given order
+				Ex: ROW_NUMBER() OVER (ORDER BY marks) as row_num
+			- If partition by clause is added, the sequencing will be for each of the partition
+				Ex: ROW_NUMBER() OVER (PARTITION BY dept_name ORDER BY marks) as row_num
+		2) PERCENT_RANK()
+			- Calculates the relative rank of a row within a partition as a value between 0 and 1.
+		3) CUME_DIST()
+			- Calculates the cumulative distribution of values within a partition.
+
+	- Value Access Window Function
+		1) LEAD()
+			- Accesses the value of a subsequent row within the same result set.
+			- to get next record. If you give number, say 5, it will give next 5th record
+			Constraints: Requires the use of an ORDER BY clause to define the order of rows.
+		2) LAG()
+			- Accesses the value of a previous row within the same result set.
+			- to get previous record. If you give number, say 5, it will give previous 5th record
+			Constraints: Requires the use of an ORDER BY clause to define the order of rows.
+		3) FIRST_VALUE()
+			- Returns the first value in a sorted group.
+			Constraints: Requires the use of an ORDER BY clause to define the order of rows.
+		4) LAST_VALUE()
+			- Returns the last value in a sorted group.
+			Constraints: Requires the use of an ORDER BY clause to define the order of rows.
+
+	- Navigation Window Functions:
+		a) FIRST_VALUE():
+			- Returns the first value in a sorted group.
+			Constraints: Requires the use of an ORDER BY clause to define the order of rows.
+		b) LAST_VALUE():
+			- Returns the last value in a sorted group.
+			Constraints: Requires the use of an ORDER BY clause to define the order of rows.
+		c) NTH_VALUE():
+			- Returns the value of an expression from the nth row in an ordered set of rows.
+			Constraints: Requires the use of an ORDER BY clause to define the order of rows.
+
+	- Aggregate Functions:
+		- Windows aggregate functions are combination of these regular aggregate functions with OVER clause
+		1) COUNT()
+			- Returns the number of rows or non-null values in a column or expression.
+			Constraints: Can be used with all data types.
+		2) SUM()
+			- Calculates the sum of values in a column or expression.
+			Constraints: Typically used with numeric data types.
+		3) AVG()
+			- Calculates the average of values in a column or expression.
+			Constraints: Typically used with numeric data types.
+		4) MIN()
+			- Returns the minimum value from a column or expression.
+			Constraints: Can be used with all data types.
+		5) MAX()
+			- Returns the maximum value from a column or expression.
+			Constraints: Can be used with all data types.
+		6) GROUP_CONCAT()
+			- Concatenates strings from multiple rows into a single string.
+			Constraints: Often used with string data types.
+		7) STDDEV()
+			- Calculates the standard deviation of values in a column or expression.
+			Constraints: Typically used with numeric data types.
+		8) VARIANCE()
+			- Calculates the variance of values in a column or expression.
+			Constraints: Typically used with numeric data types.
+
+	- Statistical Window Functions:
+		1) CORR()
+			- Calculates the correlation coefficient between two sets of values.
+		2) COVAR_POP()
+			- Calculates the population covariance between two sets of values.
+		3) COVAR_SAMP()
+			- Calculates the sample covariance between two sets of values.
+
+	- Distribution Window Functions:
+		1) PERCENTILE_CONT()
+			- Calculates the interpolated value at a specified percentile in a group.
+		2) PERCENTILE_DISC()
+			- Calculates the value at a specified percentile in a group.
+
+	- Linear Regression Window Functions:
+		- Perform linear regression calculations on a set of data points within a window.
+		1) REGR_SLOPE()
+			- Calculates the slope of the linear regression line for a set of data points within a window.
+			- It returns the slope as a floating-point number.
+		2) REGR_INTERCEPT()
+			- Calculates the y-intercept of the linear regression line for a set of data points within a window.
+			- It returns the y-intercept as a floating-point number.
+		3) REGR_COUNT()
+			- Counts the number of non-null pairs of values used in the linear regression calculation within a window.
+			- It returns the count as an integer.
+		4) REGR_R2()
+			- Calculates the coefficient of determination (R-squared) for the linear regression line within a window.
+			- R-squared indicates the proportion of the variance in the dependent variable that can be explained by the independent variable.
+			- It returns the R-squared value as a floating-point number between 0 and 1.
+		5) REGR_AVGX()
+			- Calculates the average of the independent variable (X) values within a window for the linear regression calculation.
+			- It returns the average X value as a floating-point number.
+		6) REGR_AVGY()
+			- Calculates the average of the dependent variable (Y) values within a window for the linear regression calculation.
+			- It returns the average Y value as a floating-point number.
+		7) REGR_SXX()
+			- Calculates the sum of squares of the independent variable (X) values within a window for the linear regression calculation.
+			- It returns the sum of squares as a floating-point number.
+		8) REGR_SYY()
+			- Calculates the sum of squares of the dependent variable (Y) values within a window for the linear regression calculation.
+			- It returns the sum of squares as a floating-point number.
+		9) REGR_SXY()
+			- Calculates the sum of the products of the independent variable (X) values and dependent variable (Y) values within a window for the linear regression calculation.
+			- It returns the sum of products as a floating-point number.
+
+- rownumber vs rank vs denserank
+	- ROW_NUMBER() assigns a unique row number to each row based on the order specified, sequentially.
+	- RANK() assigns a unique rank to each row based on the order specified.
+		- If two rows have same values and are assigned the same rank, the next rank will be skipped.
+		- Ex:
+			SELECT Name, Marks, RANK() OVER (ORDER BY Marks DESC) AS Rank FROM Students
+
+			Name	Marks	Rank
+			--------------------
+			Bob		92		1
+			David	92		1
+			Alice	85		3
+			Emma	85		3
+			Charlie	78		5
+
+	- DENSE_RANK() assigns a unique rank to each row based on the order specified.
+		- If two rows have same values, they are assigned the same rank, and there are no gaps in ranking values.
+		- Ex:
+			SELECT Name, Marks, DENSE_RANK() OVER (ORDER BY Marks DESC) AS DenseRank FROM Students
+
+			Name	Marks	DenseRank
+			-------------------------
+			Bob		92		1
+			David	92		1
+			Alice	85		2
+			Emma	85		2
+			Charlie	78		3
+
+	- CONCLUSION:
+		ROW_NUMBER() -- 1,2,3,4,5 (different rank no. to same value)
+		RANK() 		 -- 1,2,2,4,5 (same rank no. to same value but next rank is skipped)
+		DENSE_RANK() -- 1,2,2,3,4 (same rank no. to same value but no skip in rank no.)
+
+• Two ways of writing SQL Queries
+	a) Using comma separator
+		- This approach involves listing multiple tables in the FROM clause separated by commas and applying join conditions in the WHERE clause.
+		- ex:
+				SELECT *
+				FROM Table1, Table2
+				WHERE Table1.id = Table2.id;
+		- Pros:
+			- Simple and straightforward syntax.
+			- Works well for joining a small number of tables with simple join conditions.
+			- Can be easier to read and understand for basic queries.
+		- Cons:
+			- Limited flexibility in expressing complex join conditions or performing different types of joins (e.g., inner join, outer join).
+			- May lead to Cartesian product (unintended duplication of rows) if join conditions are not specified correctly.
+			- May result in longer query execution time for large tables or complex queries due to inefficient join operations.
+
+	b) Using JOIN
+		- In this approach, tables are joined using explicit JOIN clauses (e.g., INNER JOIN, LEFT JOIN, etc.) in the FROM clause, specifying the join conditions.
+		- Pros:
+			- Offers more flexibility in expressing various types of joins and complex join conditions.
+			- Provides better readability and maintainability, especially for complex queries involving multiple tables.
+			- Can result in better query optimization and performance when used appropriately.
+		- Cons:
+			- Requires a good understanding of join types and syntax.
+			- May result in more verbose queries compared to the comma separator approach.
+			- Incorrect usage of joins or missing join conditions can lead to incorrect results.
 
 - SQL JOINs
 	- https://insightoriel.com/what-is-join-in-sql/
@@ -284,54 +596,11 @@ Transaction Table
 	- Primary purpose is to provide a log or record of actions performed within the system.
 	- It focuses on recording details of each transaction, such as transaction date, time, participants, and relevant data associated with that specific event.
 
+- bridge table
+	- A bridge table is used to connect two or more tables that have a many-to-many relationship.
+	- It typically contains foreign keys to the primary keys of the other tables, and each row in the table represents a relationship between the data in those tables.
+	- The bridge table is used to establish a many-to-many relationship between the tables, and allows queries to be performed that involve both sets of data.
 
--  Truncate vs Delete
-	- Both used to delete data from the table
-	- Truncate is a DDL statement. Delete is a DML statement
-	- Truncate does not generate rollback segments. Whereas Delete does.
-	- In case of delete, rollback recovers data before issuing a commit.
-		In case of truncate, you cannot recover data.
-	- Truncate does not fire any delete triggers created on the table.
-		Whereas the delete does.
-
-- DELETE
-	- DML COMMAND
-	- Delete Rows from the table one by one
-	- We can use where clause with Delete to delete single row
-	- Delete is slower than truncate
-	- ROLLBACK is possible with DELETE
-
-- DROP
-	- DDL COMMAND
-	- Delete the entire structure or schema
-	- We can't use where clause with drop
-	- Drop is slower than DELETE & TRUNCATE
-	- ROLLBACK IS NOT POSSIBLE WITH DROP
-
-- TRUNCATE
-	- DDL COMMAND
-	- Truncate deletes rows at a one goal
-	- We can't use where clause with Truncate
-	- Truncate faster than both DELETE & DROP
-	- Rollback is not possible with Truncate
-
-- HAVING
-	Having clause in SQL is used to filter records in combination with the GROUP BY clause.
-	Select department_id, Min (Salary) From Employees Group By Department_id Having MIN (salary) < 3500;
-
-- WHERE
-	where clause cannot filter aggregated records. HAVING is a column operation.
-
-
-- Union vs Union all
-	- Union set operator removes duplicate records. Whereas union all does not.
-	- Union operator sorts the data in ascending order. union all does not.
-	- Union all is faster than union operator.
-
-- Intersect vs Except
-	- INTERSECT: Takes the data from both result sets which are in common.
-	- EXCEPT: Takes the data from the first result set, but not in the second
-			  result set (i.e. no matching to each other)
 - keys
 	- Primary key:
 		- used to uniquely identify each row in a table and does not allow null values.
@@ -343,6 +612,243 @@ Transaction Table
 		- Unique key identifies a each row in the table uniquely.
 		- Unique key allows null values.
 		- composite unique key is a unique key made up of a combination of columns
+
+- DELETE
+	- DML COMMAND
+	- Delete Rows from the table one by one
+	- We can use where clause with Delete to delete single row
+	- Delete is slower than truncate
+	- ROLLBACK is possible with DELETE
+
+- TRUNCATE
+	- DDL COMMAND
+	- Truncate deletes rows at a one goal
+	- We can't use where clause with Truncate
+	- Truncate faster than both DELETE & DROP
+	- Rollback is not possible with Truncate
+
+- DROP
+	- DDL COMMAND
+	- Delete the entire structure or schema
+	- We can't use where clause with drop
+	- Drop is slower than DELETE & TRUNCATE
+	- ROLLBACK IS NOT POSSIBLE WITH DROP
+
+-  Truncate vs Delete
+	- Both used to delete data from the table
+	- Truncate is a DDL statement. Delete is a DML statement
+	- Truncate does not generate rollback segments. Whereas Delete does.
+	- In case of delete, rollback recovers data before issuing a commit.
+		In case of truncate, you cannot recover data.
+	- Truncate does not fire any delete triggers created on the table.
+		Whereas the delete does.
+
+- COALESCE
+	- it will return the first non-null value, in the column
+	- Also, We can use it to replace null values in a join with some default value
+		COALESCE(field, 'default')
+
+- Having vs Where
+	- HAVING clause is used with the GROUP BY clause to filter grouped records based on aggregate functions.
+	- It operates on the result of the grouping.
+	- filters based on the result of aggregate functions, such as MIN, MAX, SUM, COUNT, etc.
+
+	- WHERE clause is used to filter individual records before any grouping or aggregation occurs.
+	- It applies to the raw data.
+	- WHERE clause cannot filter aggregated records. HAVING is a column operation.
+
+
+- Union vs Union all
+	- Union set operator removes duplicate records. Whereas union all does not.
+	- Union operator sorts the data in ascending order. union all does not.
+	- Union all is faster than union operator.
+
+- Intersect vs Except
+	- INTERSECT: Takes the data from both result sets which are in common.
+	- EXCEPT: Takes the data from the first result set, but not in the second
+			  result set (i.e. no matching to each other)
+
+- Subquery
+	- subquery is also called as nested or inner query.
+	- It is a query nested within another query.
+	- subquery can be used in various parts of a SQL statement, such as SELECT, FROM, WHERE, HAVING, JOIN.
+	- A query can contain more than one sub-query.
+
+	- Constraints of Subqueries:
+		- A sub-query must be enclosed in the parenthesis.
+		- A sub-query cannot contain an ORDER-BY clause.
+		- A sub-query must be put in the right hand of the comparison operator, and
+		- The result of a subquery should be compatible with the operator or condition where it is used.
+
+	- Types
+		1) Scalar subquery
+			- A scalar subquery is a subquery that returns a single value.
+			- It can be used in expressions or conditions where a single value is expected, such as SELECT, WHERE, or HAVING clauses.
+			- Example: SELECT name FROM employees WHERE salary > (SELECT AVG(salary) FROM employees)
+
+		2) Single-row sub-query
+			- A single-row subquery is a subquery that returns a single row with one or more columns.
+			- It can be used in conditions where a comparison is made with a single row, such as WHERE or HAVING clauses.
+			- Example: SELECT name FROM employees WHERE department_id = (SELECT department_id FROM departments WHERE name = 'IT')
+
+		3) Multiple-row Subquery
+			- A multiple-row subquery is a subquery that returns multiple rows with one or more columns.
+			- It can be used in conditions where multiple rows are compared or when the IN or ANY/ALL operators are used.
+			- Example: SELECT name FROM employees WHERE department_id IN (SELECT department_id FROM departments WHERE location = 'New York')
+
+		4) Multiple-Column Subquery:
+			- A multiple-column subquery is a subquery that returns multiple columns.
+			- It can be used in situations where we need to retrieve multiple columns from a subquery to be used in the outer query.
+			- The result of the subquery is treated as a table or a derived table, and we can reference its columns in the outer query.
+			- Example: SELECT name, department FROM employees WHERE (department, salary) IN (SELECT department, MAX(salary) FROM employees GROUP BY department)
+
+		5) Correlated Subquery:
+			- A correlated subquery is a subquery that refers to a column from the outer query.
+			- The subquery is evaluated once for each row processed by the outer query.
+			- It can be used to filter the results based on values from the outer query.
+			- Example: SELECT name FROM employees e WHERE salary > (SELECT AVG(salary) FROM employees WHERE department_id = e.department_id)
+		- Multiple column sub-query, where the sub-query returns multiple columns.
+
+
+- Subquery vs JOIN vs CTE
+	- subqueries can be used, when we need to perform calculations or filtering based on the results of another query. They are flexible, easy to understand; but can impact performance when dealing with large data.
+	- JOINs can be used to combine related data from multiple tables. They provide good performance and expressiveness but can be complex.
+	- Use CTEs to simplify complex queries and enhance code readability. They are reusable but have limited scope and require optimization.
+
+
+- CTE
+	- Common Table Expressions (CTEs) are temporary result sets that are defined within a query and can be referenced multiple times within that query.
+	- CTEs makes code readable, by breaking down logic, to managable parts.
+	- CTEs can also be used as views.
+	- CTE's members cannot use the clauses of keywords like Distinct, Group By, Having, Top,
+	  Joins limiting by this type of the queries that can be created and reducing their complexity.
+
+	- TYPES
+		1) Non-Recursive CTE:
+			- It does not refer to itself within its definition.
+			- The CTE is defined only once and used as a derived table in the subsequent query.
+			- ex:
+						WITH cte AS (
+						  SELECT * FROM employees WHERE salary > 5000
+						)
+						SELECT * FROM cte WHERE department = 'IT';
+
+		2) Recursive CTE:
+			- A recursive CTE, also known as a hierarchical or self-referencing CTE, refers to itself within its definition.
+			- It allows for recursive queries, which are useful for handling hierarchical or nested data structures.
+			- Recursive CTEs require two parts: the anchor member and the recursive member.
+				= anchor member		: defines the base case or initial rows, and
+				= recursive member 	: defines the subsequent iterations or recursive steps.
+			- The recursion continues until a termination condition is met.
+			- Ex:
+						WITH RECURSIVE cte (id, name, manager_id) AS (
+						  SELECT id, name, manager_id FROM employees WHERE id = 1
+						  UNION ALL
+						  SELECT e.id, e.name, e.manager_id FROM employees e
+						  INNER JOIN cte ON e.manager_id = cte.id
+						)
+						SELECT * FROM cte;
+
+
+						WITH odd_num_cte (id, n) AS (
+							SELECT 1, 1
+							UNION ALL
+							SELECT id+1, n+2 from odd_num_cte where id < 5
+						)
+						SELECT * FROM odd_num_cte;
+
+- Temporary Tables:
+	- Definition:
+		- Temporary tables are physical tables that are created and exist for a specific session or transaction.
+		- They are created using the CREATE TABLE statement and can be modified like regular tables.
+	- Scope:
+		- Temporary tables have a broader scope and can be accessed and manipulated within a session or transaction until they are explicitly dropped or the session ends.
+	- Usage:
+		- Temporary tables are useful for storing intermediate results, joining complex queries, and performing multi-step data transformations or aggregations.
+	- Syntax:
+		- Temporary tables are created using the CREATE TABLE statement with the addition of the keyword "TEMPORARY" or "TEMP" before the table name.
+	- Ex:
+						CREATE TEMPORARY TABLE temp_employees AS
+						SELECT * FROM employees WHERE salary > 5000;
+
+						SELECT * FROM temp_employees WHERE department = 'IT';
+
+						DROP TABLE temp_employees;
+
+	- temp tables types
+		- Table variables (DECLARE @t TABLE)
+			- visible only to the connection that creates it, and
+			- are deleted when the batch or stored procedure ends.
+
+		- Local temporary tables (CREATE TABLE #t)
+			- visible only to the connection that creates it, and
+			- are deleted when the connection is closed.
+
+		- Global temporary tables (CREATE TABLE ##t)
+			- visible to everyone, and
+			- are deleted when all connections that have referenced them have closed.
+
+		- Tempdb permanent tables (USE tempdb CREATE TABLE t)
+			- visible to everyone, and
+			- are deleted when the server is restarted.
+
+
+- CTE vs temptables
+	- CTEs are preferable when we need a temporary result set within a specific query,
+	= temporary tables are suitable for larger or more persistent intermediate result sets that need to be accessed across multiple queries or sessions.
+
+- temp table or table variable
+	- table variable is faster than the temporary table.
+	- Temporary tables are allowed CREATE INDEXes whereas, Table variables aren't allowed CREATE INDEX instead they can have an index by using Primary Key or Unique Constraint.
+
+	- Table variable (@table) is created in the memory, Whereas, Temporary table (##temp/#temp) is created in tempdb database.
+	- However, if there is a memory pressure the pages belonging to a table variable may be pushed to tempdb.
+	- Table variables cannot be involved in transactions, logging or locking.
+
+
+- DB view vs CTE
+	- CTE cannot be nested while Views can be nested.
+	- View once declared can be used for any number of times but CTE cannot be used.
+	It should be declared every time you want to use it.
+
+- In-memory data structure store databases
+	- They are well-suited for applications that require fast access to frequently accessed data and low latency data processing.
+	- They can provide high performance and scalability for applications that need to handle large volumes of data and support real-time data processing.
+	- Ex: Redis, Memcached, Apache Ignite, Aerospike
+
+
+- DB View vs Materialized View
+	DB Views														|Materialized DB Views
+	----------------------------------------------------------------------------------------------
+	Virtual table and doesn’t occupy any storage space				|Copies of data are stored in the memory
+	It will have up to date data in it as it is executed at run-time|Needs to be refreshed every time when it is used as it has compiled data
+	Executed when a query is run n view using SELECT				|Executed and records are stored in the database
+	Data access is slower	 										|Faster data access because data is directly accessed from physical location
+	Generally, used to restrict data from database					|Generally, used in data warehousing
+
+
+- Cursor
+	- Used when application logic need to work with one row at a time, rather than entire result at once.
+	- Can be used
+		- To iterate over a large number of records.
+		- To perform complex operations on a set of records.
+		- To process records in a specific order.
+	- Types
+		1) Forward-only cursors	: can only be traversed in the forward direction.
+		2) Bidirectional cursors: can be traversed in both the forward and backward directions.
+	- Advatanges
+		- Cursors provide first few rows before the whole result set is assembled.
+		  so, better response time is achived, compared to traditional queries, without cursor.
+	- Limitations
+		- Uses more resource because each time you fetch a row from cursor, it results in
+		  a network roundtrip.
+		- Because of the round trips, performance and speed is slow
+	- Best Practices
+		- Use cursors only when necessary.
+		- Use the most efficient type of cursor for the task at hand.
+		- Close cursors when you are finished with them.
+
+	- Alternatively, we can use JOIN to retrieve the data much fastly
 
 - Stored procedure vs Functions
 	- procedure allows SELECT as well as DML(INSERT/UPDATE/DELETE) statement in it
@@ -369,43 +875,10 @@ Transaction Table
 	- And, transaction statements cant be used inside a trigger; whereas transaction statements
 	  like begin transaction, commit transaction and rollback, can be used in stored procedures.
 
-- SubQuery properties
-	- A sub-query must be enclosed in the parenthesis.
-	- A sub-query must be put in the right hand of the comparison operator, and
-	- A sub-query cannot contain an ORDER-BY clause.
-	- A query can contain more than one sub-query.
-	- Types
-		- Single-row sub-query, where the sub-query returns only one row.
-		- Multiple-row sub-query, where the sub-query returns multiple rows,. and
-		- Multiple column sub-query, where the sub-query returns multiple columns.
-
-- COALESCE
-	- it will return the first non-null value, in the column
-	- Also, We can use it to replace null values in a join with some default value
-		COALESCE(field, 'default')
-
-- Cursor
-	- Used when application logic need to work with one row at a time, rather than entire result at once.
-	- Can be used
-		- To iterate over a large number of records.
-		- To perform complex operations on a set of records.
-		- To process records in a specific order.
-	- Types
-		1) Forward-only cursors: can only be traversed in the forward direction.
-		2) Bidirectional cursors: can be traversed in both the forward and backward directions.
-	- Advatanges
-		- Cursors provide first few rows before the whole result set is assembled.
-		  so, better response time is achived, compared to traditional queries, without cursor.
-	- Limitations
-		- Uses more resource because each time you fetch a row from cursor, it results in
-		  a network roundtrip.
-		- Because of the round trips, performance and speed is slow
-	- Best Practices
-		- Use cursors only when necessary.
-		- Use the most efficient type of cursor for the task at hand.
-		- Close cursors when you are finished with them.
-
-	- Alternatively, we can use JOIN to retrieve the data much fastly
+- User-defined Functions Vs Stored Procedures
+	- The function must return a value but in Stored Procedure it is optional. Even a procedure can return zero or n values.
+	- Functions can have only input parameters for it whereas Procedures can have input or output parameters.
+	- Functions can be called from Procedure whereas Procedures cannot be called from a Function.
 
 - DB Indexing
 	- Clustered
@@ -436,120 +909,40 @@ Transaction Table
 	• Sharding key: a specific column value that indicates which shard this row is stored in.
 	• Sharding algorithm: an algorithm to distribute your data to one or more shards.
 
-- window functions
-	- window functions operate on a set of rows and return a single aggregated value for each row.
-	- Unlike regular aggregate functions, window functions retuns single aggregated value for each row.
-	- There are 3 types of window functions
-		- Aggregate window functions - SUM(), MAX(), MIN(), AVG(), COUNT()
-		- Analytical window functions
-			- Ranking Window Functions - RANK(), DENSE_RANK(), ROW_NUMBER(), NTILE()
-					ROW_NUMBER() -- 1,2,3,4,5 (different rank no. to same value)
-					RANK() 		 -- 1,2,2,4,5 (same rank no. to same value but next rank is skipped)
-					DENSE_RANK() -- 1,2,2,3,4 (same rank no. to same value but no skip in rank no.)
-
-					ROW_NUMBER()
-						- generates incremental row number dynamically, for each row, based on given order
-							Ex: ROW_NUMBER() OVER (ORDER BY marks) as row_num
-						- If partition by clause is added, the sequencing will be for each of the partition
-							Ex: ROW_NUMBER() OVER (PARTITION BY dept_name ORDER BY marks) as row_num
-
-			- Value Window Functions - LAG(), LEAD(), FIRST_VALUE(), LAST_VALUE()
-				- LEAD - to get next record. If you give number, say 5, it will give next 5th record
-				- LAG - to get previous record. If you give number, say 5, it will give previous 5th record
 
 - Partition tables
-===================
 	- Partitioning tables is a way to divide a large table into smaller, more manageable pieces.
 	- This can improve query performance by reducing the amount of data that needs to be scanned.
 	- To partition a table in PostgreSQL, you can use the CREATE TABLE command with the PARTITION BY clause.
 	- This clause specifies the partitioning method and the partition key
 
 	- Partition types
-		1) Range partitioning: partitions are defined based on a range of values for the partition key.
-		2) Hash partitioning: partitions are determined based on a hash function applied to the partition key.
-		3) List partitioning: partitions are defined based on a list of values for the partition key.
+		1) Range partitioning	: partitions are defined based on a range of values for the partition key.
+		2) Hash partitioning	: partitions are determined based on a hash function applied to the partition key.
+		3) List partitioning	: partitions are defined based on a list of values for the partition key.
 
 	- considerations when partitioning tables
 		- Make sure your partition key is carefully chosen, as it will determine the efficiency of partitioning.
 		- Be aware of potential data skew, where some partitions are much larger than others.
 		- Be careful when performing operations that affect multiple partitions, such as altering the partition key or merging partitions, as these can cause deadlocks.
 
-- SQL constraints
-	NOT NULL 	 # Ensures a column cannot have a NULL value
-	UNIQUE 		 # Ensures all values in a column are unique
-	PRIMARY KEY  # Identifies a record in a table, is NOT NULL & UNIQUE
-	FOREIGN KEY  # References a unique record from another table
-	CHECK		 # Ensures all column values satisfy a condition
-	DEFAULT		 # Set a default value for a column if none is entered
-	INDEX		 # Quick way of retrieving records from database
-
-
-- temp tables
-	- Table variables (DECLARE @t TABLE) are visible only to the connection that creates it,
-					and are deleted when the batch or stored procedure ends.
-	- Local temporary tables (CREATE TABLE #t) are visible only to the connection that creates it,
-					and are deleted when the connection is closed.
-	- Global temporary tables (CREATE TABLE ##t) are visible to everyone, and are deleted when all
-					connections that have referenced them have closed.
-	- Tempdb permanent tables (USE tempdb CREATE TABLE t) are visible to everyone, and are deleted
-					when the server is restarted.
-
-- CTE
-	- means Common Table Expressions
-	- It is a temporary named result set that can be referenced within a SELECT, INSERT, UPDATE or DELETE statements.
-	- CTEs can also be used as views.
-	- CTE's members cannot use the clauses of keywords like Distinct, Group By, Having, Top,
-	  Joins limiting by this type of the queries that can be created and reducing their complexity.
-
-	-Example
-		WITH
-		odd_num_cte (id, n) AS
-		(
-			SELECT 1, 1
-			UNION ALL
-			SELECT id+1, n+2 from odd_num_cte where id < 5
-		)
-		SELECT * FROM odd_num_cte;
-
-
-- DB view vs CTE
-	- CTE cannot be nested while Views can be nested.
-	- View once declared can be used for any number of times but CTE cannot be used.
-	It should be declared every time you want to use it.
-
-- In-memory data structure store databases
-	- They are well-suited for applications that require fast access to frequently accessed data and low latency data processing.
-	- They can provide high performance and scalability for applications that need to handle large volumes of data and support real-time data processing.
-	- Ex: Redis, Memcached, Apache Ignite, Aerospike
-
-
-- DB View vs Materialized View
-	DB Views														|Materialized DB Views
-	----------------------------------------------------------------------------------------------
-	Virtual table and doesn’t occupy any storage space				|Copies of data are stored in the memory
-	It will have up to date data in it as it is executed at run-time|Needs to be refreshed every time when it is used as it has compiled data
-	Executed when a query is run n view using SELECT				|Executed and records are stored in the database
-	Data access is slower	 										|Faster data access because data is directly accessed from physical location
-	Generally, used to restrict data from database					|Generally, used in data warehousing
 
 - DB Triggers
 	- they are kind of stored procedures, which reacts to certain actions we make in db.
 	- actions like creating/updating/deleting a record
-	- 3 groups
-		- DML (data manipulation language) triggers react to INSERT, UPDATE, and DELETE
-		- DDL (data definition language) triggers react to  CREATE, ALTER, and DROP
-		- Logon triggers reacts to LOGON events
+	- TYPES
+		- DML (data manipulation language) triggers
+			- fired in response to data manipulation ops such as INSERT, UPDATE or DELETE statements on a table.
+		- DDL (data definition language) triggers
+			- fired in response to changes in the database schema or structure.
+			- react to  CREATE, ALTER, and DROP operations
+			- used to enforce data integrity rules or audit schema changes.
+		- Logon triggers
+			- reacts to LOGON events; means fired when a user successfully logs in to the database.
+			- used to enforce security policies or perform certain actions upon user login.
+
 	ref: https://www.sqlshack.com/learn-sql-sql-triggers/
 
-- bridge table
-	- A bridge table is used to connect two or more tables that have a many-to-many relationship.
-	- It typically contains foreign keys to the primary keys of the other tables, and each row in the table represents a relationship between the data in those tables.
-	- The bridge table is used to establish a many-to-many relationship between the tables, and allows queries to be performed that involve both sets of data.
-
-- transaction table
-	- A transaction table is used to record individual transactions or events that occur within a system.
-	- Each row in the transaction table represents a single transaction or event, and typically includes information about the date and time of the transaction, the user who initiated the transaction, and any data that was modified as part of the transaction.
-	- It is used in systems that require auditing or tracking of changes to data.
 
 - N+1 problem
 	- This problem occurs in ORMs.
@@ -565,17 +958,6 @@ Transaction Table
 	- SYSDATE() returns the time at which it executes.
 	- NOW() returns a constant time that indicates the time at which the statement began to execute.
 	- Example - Within a stored routine or trigger, NOW() returns the time at which the routine or triggering statement began to execute.
-
-- order of sql queries/ SQL Query Order of Execution
-	1) FROM clause
-	2) WHERE
-	3) GROUP BY
-	4) HAVING
-	5) SELECT
-	6) DISTINCT
-	7) ORDER BY
-	8) LIMIT/OFFSET
-
 
 - row-store vs column-store
 	- row store
@@ -702,19 +1084,6 @@ Database Design Principles
 	4) Set the fill factor to 0 or 100 (they are equivalent) so that no space in the table is left empty, reducing the number of pages that the data is spread across.
 	5) Change the recovery model of the database to Simple, reducing the overhead for the transaction log.
 
-- rank vs dense rank
-	views vs materialized views
-	stored procedures
-
-- User-defined Functions Vs Stored Procedures
-	- The function must return a value but in Stored Procedure it is optional. Even a procedure can return zero or n values.
-	- Functions can have only input parameters for it whereas Procedures can have input or output parameters.
-	- Functions can be called from Procedure whereas Procedures cannot be called from a Function.
-
-- sql subquery properties
-	- A subquery should be placed within the right hand of the comparison operator, and
-	  a subquery cannot contain an ORDER BY clause.
-	- A query can contain more than one sub-queries.
 
 - SQL Queries
 	SELECT SYSDATE();								-- 2021-07-13 06:12
@@ -967,55 +1336,24 @@ SQL Alchemy Loading - https://docs.sqlalchemy.org/en/14/orm/loading_relationship
 	- https://aws.amazon.com/data-warehouse/
 	- single, complete and consistent store of data obtained from
 	  a variety of different sources made available to end users
+	- TYPE
+		1) OLTP -- for warehouse
+			- Involve the day-to-day processing of transactions, such as data ingestion, updates, and real-time data retrieval.
+			- optimized for transactional throughput and concurrency
+			- designed to handle frequent insert, update, and delete operations on smaller subsets of data
+			- prioritize data consistency and integrity and support high transactional throughput with low latency.
 
-	OLAP -- for  application
-	OLTP -- for warehouse
+		2) OLAP -- for application
+			- Involve complex analytical queries and multidimensional analysis.
+			- focuses on providing users with ability to analyze data from different perspectives or dimensions
+			- designed to handle large volumes of historical data and support sophisticated calculations and aggregations.
+			- provide features such as drill-down, slice-and-dice, pivot, and advanced visualization capabilities to help users gain insights from the data.
+			- OLAP is optimized for query performance and ad hoc analysis.
 
-	OLAP (online analytical processing) is a computing method that
-	enables users to easily and selectively extract and query data in
-	order to analyze it from different points of view.
-
-	By data storage mode, OLAP is three types:
-	1) MOLAP is a multi-dimensional storage mode
-	2) ROLAP is a relational mode of storage
-	3) HOLAP is a combination of multi-dimensional and relational elements.
-
-star schema (or) dimension modelling
-	-  fact tables are used to record a business event and dimension tables are used to record the attributes of business items(eg user, item tables in an e-commerce app).
-	- For example, in an e-commerce website, a fact table would contain information about orders, such as when the order was placed, the items in that order, who placed that order, etc.
-	The dimension tables would be an item table (containing item id, item price, size, etc) and an user table (containing user id, user name, user address etc).
-
-- slowly changing dimensions
-	- It is a dimension that stores and manages both current and historical data over time, in a data warehouse.
-	- It helps in tracking the history of dimension records.
-	- Types
-		- Type 0 SCD – The Fixed Method.
-		- Type 1 SCD – Overwriting the old value by new values.
-		- Type 2 SCD – Creating a new additional record by row versioning.
-						means current record is marked as inactive, and latest record is marked open/active
-		- Type 3 SCD – Adding a new column to show the previous value.
-						means new column will store the previous existing value, for that column, in the record.
-		- Type 4 SCD – Using historical table.
-						means, the dimension table has the latest value while its history is maintained in a separate table.
-		- Type 6 SCD - A combination of Type 1, 2 & 3 are used to track changes in dimension.
-		              Type 6 is adopted in scenarios where multiple parts of a record are slowly changing dimensions, but using multiple implementations of a single type could lead to issues with rapid inflation of table size.
-
-
-- SCD vs CDC ( sowly changing dimensions vs change data capture
-	- SCD is ideal for organizations that must maintain a record of all changes to the data flowing through their systems.
-	- And CDC is ideal if the business process requires only that the changed data arrive in to the target.
-
-
-- star schema vs snowflake schema
-	- Snowflake Schema is an extension of a Star Schema, and it adds additional dimensions.
-	- In a star schema, only single join defines the relationship between the fact table and any dimension tables.
-	  whereas Star schema contains a fact table surrounded by dimension tables.
-	- Snowflake schema is surrounded by dimension table which are in turn surrounded by dimension table.
-	- A snowflake schema requires many joins to fetch the data.
-	- Comparing Star vs Snowflake schema, Start schema has simple DB design, while Snowflake schema has very complex DB design.
-
-	- https://www.guru99.com/star-snowflake-data-warehousing.html
-
+			- By data storage mode, OLAP is three types:
+				1) MOLAP is a multi-dimensional storage mode
+				2) ROLAP is a relational mode of storage
+				3) HOLAP is a combination of multi-dimensional and relational elements.
 
 - Fact Table
 	- A fact table is a primary table in a dimensional model.
@@ -1076,6 +1414,42 @@ star schema (or) dimension modelling
 	9) Step Dimensions
 		- Sequential processes, like web page events, mostly have a separate row in a fact table for every step in a process. It tells where the specific step should be used in the overall session.
 
+
+- star schema (or) dimension modelling
+	- fact tables are used to record a business event and dimension tables are used to record the attributes of business items(eg user, item tables in an e-commerce app).
+	- For example, in an e-commerce website, a fact table would contain information about orders, such as when the order was placed, the items in that order, who placed that order, etc.
+	The dimension tables would be an item table (containing item id, item price, size, etc) and an user table (containing user id, user name, user address etc).
+
+- slowly changing dimensions
+	- It is a dimension that stores and manages both current and historical data over time, in a data warehouse.
+	- It helps in tracking the history of dimension records.
+	- Types
+		- Type 0 SCD – The Fixed Method.
+		- Type 1 SCD – Overwriting the old value by new values.
+		- Type 2 SCD – Creating a new additional record by row versioning.
+						means current record is marked as inactive, and latest record is marked open/active
+		- Type 3 SCD – Adding a new column to show the previous value.
+						means new column will store the previous existing value, for that column, in the record.
+		- Type 4 SCD – Using historical table.
+						means, the dimension table has the latest value while its history is maintained in a separate table.
+		- Type 6 SCD - A combination of Type 1, 2 & 3 are used to track changes in dimension.
+		              Type 6 is adopted in scenarios where multiple parts of a record are slowly changing dimensions, but using multiple implementations of a single type could lead to issues with rapid inflation of table size.
+
+- SCD vs CDC ( sowly changing dimensions vs change data capture)
+	- SCD is ideal for organizations that must maintain a record of all changes to the data flowing through their systems.
+	- And CDC is ideal if the business process requires only that the changed data arrive in to the target.
+
+
+- star schema vs snowflake schema
+	- Snowflake Schema is an extension of a Star Schema, and it adds additional dimensions.
+	- In a star schema, only single join defines the relationship between the fact table and any dimension tables.
+	  whereas Star schema contains a fact table surrounded by dimension tables.
+	- Snowflake schema is surrounded by dimension table which are in turn surrounded by dimension table.
+	- A snowflake schema requires many joins to fetch the data.
+	- Comparing Star vs Snowflake schema, Start schema has simple DB design, while Snowflake schema has very complex DB design.
+
+	- https://www.guru99.com/star-snowflake-data-warehousing.html
+
 DataMart vs DataWarehouse Vs DataBase vs Operational DataStore
 	- https://www.zuar.com/blog/data-mart-vs-data-warehouse-vs-database-vs-data-lake/
 
@@ -1107,17 +1481,18 @@ DB Design Books
 
 CAP Theorem
 ===========
-Consistency        : Every read receives the most recent write or an error
-Availability       : Every request receives a (non-error) response, without the guarantee that it contains the most recent write
-Partition tolerance: The system continues to operate despite an arbitrary number of messages being dropped (or delayed) by the network between nodes
+	Consistency        : Every read receives the most recent write or an error
+	Availability       : Every request receives a (non-error) response, without the guarantee that it contains the most recent write
+	Partition tolerance: The system continues to operate despite an arbitrary number of messages being dropped (or delayed) by the network between nodes
 
-- When a network partition failure happens should we decide to
-	- Cancel the operation and thus decrease the availability but ensure consistency
+- When a network partition failure happens, we can choose to
+	- Cancel the operation and thus decrease the availability but ensure consistency, or
 	- Proceed with the operation and thus provide availability but risk inconsistency
 
 - It is impossible for distributed systems to guarantee consistency, availability and partition tolerance at same time.
-- Apache cassandra is an AP system; means availability and partition tolerance holds true,
-	but not for Consistency but this can further tuned via replication factor(how many copies of data) and consistency level (read and write).
+- Apache cassandra is an AP system;
+	- means availability and partition tolerance holds true,but not for Consistency
+	- but this can further tuned via replication factor(how many copies of data) and consistency level (read and write).
 
 DB Partitioning
 ===============
@@ -1127,11 +1502,11 @@ DB Partitioning
 - popular in distributed database management systems, where each partition may be spread over multiple nodes, with users at the node performing local transactions on the partition.
 - They are of TWO types
 	1) Vertical DB partitioning
-	- Vertical partitioning splits a table into two or more tables containing different columns
-	- To reduce access times, wide text or BLOB columns can be split to its own table.
-	- Another example is to restrict access to sensitive data e.g. passwords, salary information etc.
+		- Vertical partitioning splits a table into two or more tables containing different columns
+		- To reduce access times, wide text or BLOB columns can be split to its own table.
+		- Another example is to restrict access to sensitive data e.g. passwords, salary information etc.
 	2) Horizontal partitioning involves putting different rows into different tables.
-	- A view with a union of these partitions, will provide complete view of all customers.
+		- A view with a union of these partitions, will provide complete view of all customers.
 
 
 TODO

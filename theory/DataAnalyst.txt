@@ -1,3 +1,7 @@
+Data Analysis
+	- Feature Engineering
+	- Data Wrangling
+	- EDA
 
 Business Analyst questions
 	data dictionary
