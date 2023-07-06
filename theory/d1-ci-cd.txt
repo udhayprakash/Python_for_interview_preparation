@@ -11,7 +11,9 @@ CI/CD
 		1. unit testing
 		2. Integration testing
 		3. code coverage check -- whether it is greater than 90% or not
-		4. Static code analysis with flake8 and SonarQube
+		4. Static code analysis with
+			- flake8 or SonarQube, for application code
+			- Checkov for scanning infrastructure as code (IaC) YAML files
 		5. security scanning using Veracode
 
 	Packaging

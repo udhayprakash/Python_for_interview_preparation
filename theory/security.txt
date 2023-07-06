@@ -17,6 +17,23 @@ TLS vs mTLS
 		- client verifies the server certificates and server verifies the client certificates.
 		- Sometimes two-way SSL is also known as Mutual Authentication
 
+PCI Compliance
+	- PCI means Payment Card Industry
+	- requirement for organizations that accept, store, or transmit credit card information to adhere to a set of security standards
+	- There are four levels of PCI compliance, depending on the volume of credit card transactions an organization processes.
+		- Level 1 organizations process the most transactions, and Level 4 organizations process the least.
+		- The higher the level, the more stringent the compliance requirements.
+
+SOC2 Compliance
+	- SOC means Service Organization Control
+	- Its a cybersecurity compliance framework that specifies how organizations should protect customer data from unauthorized access, security incidents, etc
+	- Functions
+		1) incident responder,
+		2) security investigator,
+		3) advanced security analyst,
+		4) SOC manager and
+		5) security engineer/architect
+
 SQL injection atack
 
 Cross-Site Scripting(XSS)

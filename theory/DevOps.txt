@@ -1,0 +1,25 @@
+Application Performance Monitoring (APM)
+------------------------------------------
+- Synthetic Monitoring
+	- using scripts to simulate user behavior on a website or web app.
+	- used to identify any potential problems, from real user perspective, before they impact end users
+	- It includes, testing for base level metrics
+
+- base level metrics
+	- Response Time			: to measure the time it takes for app to respond to user requests
+	- Error Rate			: to measure number of errors that occur when users interact with application
+	- Uptime				: to ensure application is always up and running
+	- Page load time		: to measure time taken for web page to load
+	- Functional Correctness: to verify application functionality
+
+	- Availability			: Measures percentage of time the application is accessible to users without any disruptions or downtime.
+	- Throughput			: refers to number of requests or transactions the application can handle per unit of time. It assesses the application's capacity and performance under a given workload.
+	- Latency				: time taken for a request to travel from the user to the application and back. It measures the delay or responsiveness of the application and is particularly important for real-time or interactive applications.
+	- Resource Utilization	: Resource utilization metrics, such as CPU usage, memory consumption, and network bandwidth, provide insights into the application's efficiency and resource requirements. Monitoring these metrics helps optimize performance and identify potential bottlenecks.
+	- User Satisfaction		: User satisfaction metrics, such as surveys, ratings, and feedback, help evaluate the overall user experience and satisfaction with the application. They provide qualitative insights into user perceptions and preferences.
+
+	- Conversion Rates		: Conversion rates measure the percentage of users who complete a desired action, such as making a purchase, signing up for a service, or filling out a form. They indicate the effectiveness of the application in achieving its intended goals.
+
+	- Retention Rate		: Retention rate measures the percentage of users who continue to use the application over a specific period. It reflects the application's ability to engage and retain users, indicating its value and appeal.
+
+	- User Engagement		: User engagement metrics, such as time spent on the application, frequency of visits, and interaction patterns, help assess user involvement and interest. They provide insights into user behavior and the effectiveness of features or content.

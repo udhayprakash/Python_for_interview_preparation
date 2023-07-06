@@ -107,12 +107,39 @@ Django Migrations
 	will be created.
 
 - commands
+	Python manage.py startproject <Project>--> creates django project with given name "Project"
+	Python manage.py startapp <appname>   ---> creates django app, with given "appname"
+	Python manage.py runserver 			 ----> Will run local server
+	Python manage.py createsuperuser	 ----> creates a superuser, with given username and password
+	Python manage.py testserver			 ----> Runs a development server with data
+
 	Python manage.py makemigrations ----> Will create the migration files, in app/migrations folder
-	Python manage.py migrate        ----> will Apply the migrations files, on to the database.
 	Python manage.py showmigrations ----> will see the status of migrations, on to the database.
 	python manage.py sqlmigrate <appname> <migration number eg. 0001 or 0004>
-									----> will display the SQL statements for a specific migration of the app.
-	python manage.py migrate --prune option allows deleting nonexistent migrations from the django_migrations table.
+									----> will display SQL statements for a specific migration of app.
+	Python manage.py migrate        ----> will Apply the migrations files, on to the database.
+	python manage.py migrate 		----> prune option allows deleting nonexistent migrations from the django_migrations table.
+	python manage.py squashmigrations---> Squashes an existing set of migrations( from first until specified) into a single new one
+
+	python manage.py diffsettings  	 ---> displays the difference between current settings.py & Django's default settings
+
+	python manage.py shell      	 ---> runs a python interactive interpreter
+	python manage.py dbshell      	 ---> runs command-line client for specified database or default
+
+	python manage.py dumpdata  	 	 ---> Outputs the contents of database as a fixture of given format
+	python manage.py inspectdb	 	 ---> Inspect the database tables in given database and outputs a django model module
+	python manage.py loaddata	 	 ---> Installs the named fixtures in the database
+	python manage.py flush  	 	 ---> Removes all data from databse, including data added during migration
+	python manage.py sqlflush  	 	 ---> Returns a list of the SQL statements required to return all tables in the database to the state
+	python manage.py sqlsequencereset---> Prints the SQL statements for resetting sequences for given app name(s)
+
+	python manage.py check			----> checks entire project for potential problems
+	python manage.py compilemessages----> compiles .po files to .mo files for use with builtin gettext support
+	python manage.py createcachetable---> creates a cache table in django application
+database if none is provided
+	python manage.py makemessages 	 ---> Runs over entire source tree of current directory and pulls out all strings marked for translation
+	python manage.py sendtestmail 	 ---> sends a test email to email addresses specified as arguments
+
 
 - For rollbacking migrations, we need to identify the last migration to which we want to revert and use its migration file name as migration target
 	python manage.py migrate app_name target_migration

@@ -162,6 +162,18 @@ Data Sources
 	DEFAULT		 # Set a default value for a column if none is entered
 	INDEX		 # Quick way of retrieving records from database
 
+- keys
+	- Primary key:
+		- used to uniquely identify each row in a table and does not allow null values.
+		- composite primary key
+			- combination of multiple columns, to make the primary key
+	- Foreign key:
+		- it is one or more columns whose values are based on the primary key values from another table.
+	- Unique Key:
+		- Unique key identifies a each row in the table uniquely.
+		- Unique key allows null values.
+		- composite unique key is a unique key made up of a combination of columns
+
 - SQL Data Types
 	1) Numeric Types:
 		INTEGER			: Whole numbers ranging from -2,147,483,648 to 2,147,483,647.
@@ -601,17 +613,6 @@ Transaction Table
 	- It typically contains foreign keys to the primary keys of the other tables, and each row in the table represents a relationship between the data in those tables.
 	- The bridge table is used to establish a many-to-many relationship between the tables, and allows queries to be performed that involve both sets of data.
 
-- keys
-	- Primary key:
-		- used to uniquely identify each row in a table and does not allow null values.
-		- composite primary key
-			- combination of multiple columns, to make the primary key
-	- Foreign key:
-		- it is one or more columns whose values are based on the primary key values from another table.
-	- Unique Key:
-		- Unique key identifies a each row in the table uniquely.
-		- Unique key allows null values.
-		- composite unique key is a unique key made up of a combination of columns
 
 - DELETE
 	- DML COMMAND
