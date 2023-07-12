@@ -95,8 +95,7 @@ In Monolithic,
 		- Bug in any module can potentially bring down the entire application
 
 In Microservices,
-	Split application into smaller, independent services
-	based on business functionalities
+	Split application into smaller, independent services based on business functionalities
 	Apps should be Loosely coupled
 		Separation of concerns: means 1 service for 1 specific job
 		Self-contained & independent

@@ -395,13 +395,19 @@ database if none is provided
 	>>> created
 	False
 
+- value() and only()
+	- values() method returns a QuerySet that contains dictionaries instead of model instances.
+		- Each dictionary represents an object from the queryset and contains only the fields specified in the values method.
+	- only() method returns a QuerySet that includes only the specified fields of the model.
+		- It allows us to reduce memory usage by fetching only the necessary fields for a particular operation.
+
 - N+1 problem
 	- This problem occurs in ORMs.
-	- The problem occurs when you have a query that loads a set of objects, and then each object requires an additional query to load its associated data.
-	  If you have N objects, this can result in N + 1 queries being executed against the database, where the first query retrieves the N objects, and then one additional query is executed for each of the N objects to retrieve the associated data.
+	- The problem occurs when we have a query that loads a set of objects, and then each object requires an additional query to load its associated data.
+	  If we have N objects, this can result in N + 1 queries being executed against the database, where the first query retrieves the N objects, and then one additional query is executed for each of the N objects to retrieve the associated data.
 	- It means larger the value of N, the more queries will be executed, the larger the performance impact.
 
-	- In Django, we can use the select_related and prefetch_related methods to address the N+1 problem and improve the performance of your database queries.
+	- In Django, we can use the select_related and prefetch_related methods to address the N+1 problem and improve the performance of wer database queries.
 
 	- Problem
 		if there are two models, Author and Book, where each Book is associated with an Author, and we want to retrieve all the books and the associated authors:
@@ -454,23 +460,23 @@ database if none is provided
 	2) MultipleObjectsReturned
 		- Raised when a query returns multiple results for a specific model instance when only one is expected.
 		- To address this exception, we can use a more specific query to retrieve a single object, such as filtering on a unique field or using the first() method instead of get().
-		- Alternatively, we can handle the exception by catching it in your code and taking appropriate action, such as raising a custom error or returning a default value.
+		- Alternatively, we can handle the exception by catching it in wer code and taking appropriate action, such as raising a custom error or returning a default value.
 
 	3) FieldError
 		- Raised when a field name is invalid or a query contains an invalid field.
-		- To address this exception, we should check your code for typos or syntax errors in your query or field names, and make sure that we're using the correct syntax for querying related models and fields.
+		- To address this exception, we should check wer code for typos or syntax errors in wer query or field names, and make sure that we're using the correct syntax for querying related models and fields.
 
 	4) ValidationError
 		- Raised when a model instance fails validation (e.g. due to invalid data or missing required fields).
-		- To address this exception, we should ensure that your code validates user input and model instances before saving them to the database, and handle validation errors by displaying appropriate error messages to the user.
+		- To address this exception, we should ensure that wer code validates user input and model instances before saving them to the database, and handle validation errors by displaying appropriate error messages to the user.
 
 	5) IntegrityError
 		- Raised when a database constraint is violated (e.g. unique constraint or foreign key constraint).
-		- To address this exception, we should ensure that your code checks for and handles database constraints appropriately, such as by catching and handling constraint violations or displaying helpful error messages to the user.
+		- To address this exception, we should ensure that wer code checks for and handles database constraints appropriately, such as by catching and handling constraint violations or displaying helpful error messages to the user.
 
 	6) OperationalError
 		- Raised when a database operation fails due to a connection issue or other database error.
-		- To address this exception, we should ensure that your code handles database connection issues and retries failed operations when possible, or displays helpful error messages to the user when a database operation fails.
+		- To address this exception, we should ensure that wer code handles database connection issues and retries failed operations when possible, or displays helpful error messages to the user when a database operation fails.
 
 
 - Optimizing ORM queries - https://schegel.net/posts/optimizing-django-orm-queries/
