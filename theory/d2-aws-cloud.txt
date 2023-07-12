@@ -686,22 +686,23 @@ boto3
 		fruit/banana.txt
 
 AWS Secrets Manager
-- Rotate secrets safely ( we can keep expiry and rotate values whenever needed )
-- Manage access with fine-grained policies ( we can create a policy that enables developers to retrieve secrets values )
-- Secure and audit secrets centrally ( it gives audit trail how many used from which account )
-- Pay as you go ( No of secret value and no of API calls made for retrieval )
-- Easily replicate secrets to multiple regions ( cross regions access is allow )
+-------------------
+	- Rotate secrets safely ( we can keep expiry and rotate values whenever needed )
+	- Manage access with fine-grained policies ( we can create a policy that enables developers to retrieve secrets values )
+	- Secure and audit secrets centrally ( it gives audit trail how many used from which account )
+	- Pay as you go ( No of secret value and no of API calls made for retrieval )
+	- Easily replicate secrets to multiple regions ( cross regions access is allow )
 
-- It enables to rotate, manage, and retrieve database credentials, API keys, and other secrets throughout their lifecycle.
-- secret rotation with built-in integration for Amazon Relational Database Service (Amazon RDS), Amazon Redshift,
-and Amazon DocumentDB.
-- Also, the service is extensible to other types of secrets, including API keys and OAuth tokens.
-- In addition, Secrets Manager enables you to control access to secrets using fine-grained permissions and audit secret rotation
-centrally for resources in the AWS Cloud, third-party services, and on-premises.
+	- It enables to rotate, manage, and retrieve database credentials, API keys, and other secrets throughout their lifecycle.
+	- secret rotation with built-in integration for Amazon Relational Database Service (Amazon RDS), Amazon Redshift,
+	and Amazon DocumentDB.
+	- Also, the service is extensible to other types of secrets, including API keys and OAuth tokens.
+	- In addition, Secrets Manager enables you to control access to secrets using fine-grained permissions and audit secret rotation
+	centrally for resources in the AWS Cloud, third-party services, and on-premises.
 
-- To access the secrets manager, we can use either
-	- AWS credentials ( combination of access key and secret key )
-	- AWS SDK ( server side SDK or client side SDK
+	- To access the secrets manager, we can use either
+		- AWS credentials ( combination of access key and secret key )
+		- AWS SDK ( server side SDK or client side SDK
 
 s3 classification
 -----------------
@@ -726,6 +727,12 @@ Once an S3 Lifecycle policy is set, your data will automatically transfer to a d
 
 we can create life cycle rules to delete files from a specific folder, like older than 30 days, etc
 
+
+- s3 Limitations
+-----------------
+	 - By default, each AWS account can create up to 100 buckets.
+	 - But we can request to increase this bucket limit by contacting AWS support.
+	 - But we can request to increase this bucket limit by contacting AWS support.
 AWS account security tools
 --------------------------
 
@@ -836,6 +843,48 @@ ALB vs ELB
 	2) Reduced scalability: Sticky sessions can make it difficult to scale an application, as the load balancer cannot distribute requests evenly across all servers.
 	3) Increased complexity: Sticky sessions can increase the complexity of an application, as the application must be able to handle requests from multiple servers.
 
+
+- DynamoDB
+----------
+	- dynamoDb datatypes supports
+		- String
+			- A sequence of characters.
+			- The maximum length of a string is 256 KB.
+		- Number
+			- A numeric value.
+			- The supported number types are integers, floating-point numbers, and decimals.
+		- Binary
+			- A sequence of bytes.
+			- The maximum length of a binary is 1 MB.
+		- Boolean
+			- A value that can be either true or false.
+			- There are no limitations on the use of booleans.
+		- Null
+			- A value that is not defined.
+			- Nulls are not allowed in primary keys or sort keys.
+		- List
+			- A collection of items.
+			- The maximum size of a list is 1 MB.
+		- Map
+			- A collection of key-value pairs.
+			- The maximum size of a map is 1 MB.
+		- Set
+			- A collection of unique items.
+			- The maximum size of a set is 1 MB.
+
+- aws simpleDB vs dynamodb
+---------------------------
+	- Both are NoSQL databases
+
+		------------------------------------------------------------------------------
+		Feature			SimpleDB					DynamoDB
+		------------------------------------------------------------------------------
+		Data model		Simple key-value pairs		Flexible schema
+		Performance		Good for low-volume apps	Good for high-volume applications
+		Scalability		Scales horizontally			Scales vertically and horizontally
+		Cost			Less expensive				More expensive
+		Ease of use		Easy to use					More complex to use
+		------------------------------------------------------------------------------
 
 Interview Questions Bank
 ========================

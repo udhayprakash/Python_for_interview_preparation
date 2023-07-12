@@ -35,6 +35,7 @@ In Public Cloud, I am mostly associated with AWS Cloud.
 In AWS Cloud, I worked with
 	Server-based Architectures with
 		- EC2 Instances
+		- Elastic BeanStack
 		- Elastic Load balancer
 		- Auto-Scaling
 		- Route53
@@ -227,7 +228,7 @@ Built new connections to databases like ORE, Snowflake, Redshift, and Teradata f
 incorporated everything in a python library to make the DA's life easier.
 
 Rewrote the Teradata SQL queries to Amazon Snowflake as part of database migration.
-===========================================================================================================
+========================================================================================================
 I have 6+ years of experience in the IT industry as a Python developer.
 Currently working with Capital one we mainly focus on providing a better customer experience.
 I played the role of both a python developer & frontend developer.

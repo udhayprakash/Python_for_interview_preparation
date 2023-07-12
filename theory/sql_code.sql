@@ -476,3 +476,28 @@ SET
 WHERE
     c1.customer_id = 5 AND c2.customer_id = 2;
 =====================================================================================
+You have a table named EMPLOYEE that looks like the following columns and data:
+		-------------------------
+		Name 	Earnings 	Age
+		-------------------------
+		abc		$50,000		35
+		edf		$45,001		60
+		hij		$30,000		25
+		klm		$45,000		45
+		nop		$75,000		55
+		-------------------------
+
+What does the following query return?
+
+	Select MAX(Earnings) as Salary
+	From EMPLOYEE
+	Where Salary < (select max(Earnings) from EMPLOYEE)
+
+a) $75,000
+b) $45,000 and $45,001
+c) $30,000
+d) $50,000
+e) Returns all rows, ordered by the largest salary to the lowest salary
+
+Ans) d
+=====================================================================================
