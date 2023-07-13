@@ -1,4 +1,3 @@
-#!/usr/bin/python3
 """
 Purpose: Binary Search Tree
 

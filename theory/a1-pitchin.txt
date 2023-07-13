@@ -1,4 +1,4 @@
-Thank you for the briefing. Now, I can understand more about the position.
+ Thank you for the briefing. Now, I can understand more about the position.
 After listening to the conversation, I am more confident to say that, “I am best fit for this role”
 
 INTRODUCTION:
@@ -25,7 +25,7 @@ In Python,
 	So, created unit tests and integration tests for the source code, using either unittest or pytest modules.
 
 In Caching,
-- I worked with Redis
+- I worked with Redis and ElasticSearch
 
 In scheduling,
 - I worked with celery.
@@ -44,6 +44,8 @@ In AWS Cloud, I worked with
 		- s3 bucket for file storage
 		- s3 Glacier for Archival Storage
 
+	In Databases,
+		AWS RDS & Redshift for relational databases
 	Server-less Architectures with
 		- AWS Lambda - with either time-triggered or event triggered
 		- AWS API Gateway with http-triggered
@@ -275,6 +277,9 @@ I worked on
 	Data Visualization and Reporting -- with PowerBI and Python based modules
 
 Expert in SQL too
+
+worked with files
+	tex, csv, parquet, Avro
 
 In databases,
 - In relational dB, I worked with MySQL, MS SQL, oracle dB and PostgreSQL.

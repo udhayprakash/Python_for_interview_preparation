@@ -1,3 +1,22 @@
+Big O notation
+	- used to describe the performance characteristics of algorithms and how their execution time or space requirements scale with the input size.
+
+	O(1) - Constant Time: The algorithm's runtime or space requirement remains constant, regardless of the input size. Examples include accessing an element in an array or performing a simple arithmetic operation.
+
+	O(log n) - Logarithmic Time: The algorithm's runtime grows logarithmically with the input size. Commonly associated with divide and conquer algorithms like binary search, where the input size is halved at each step.
+
+	O(n) - Linear Time: The algorithm's runtime or space requirement grows linearly with the input size. Examples include traversing an array or performing a simple linear search.
+
+	O(n log n) - Linearithmic Time: The algorithm's runtime grows in proportion to n multiplied by the logarithm of n. Often seen in efficient sorting algorithms like merge sort and quicksort.
+
+	O(n^2) - Quadratic Time: The algorithm's runtime or space requirement grows quadratically with the input size. Commonly associated with nested loops, where the algorithm needs to perform an operation for each pair of elements.
+
+	O(n^c) - Polynomial Time: The algorithm's runtime or space requirement grows as a polynomial function of the input size, where c is a constant. Examples include algorithms with triple nested loops or higher.
+
+	O(2^n) - Exponential Time: The algorithm's runtime or space requirement grows exponentially with the input size. Commonly seen in brute force algorithms that explore all possible combinations or subsets of the input.
+
+	O(n!) - Factorial Time: The algorithm's runtime or space requirement grows factorially with the input size. Often associated with algorithms that need to compute all permutations or combinations of the input.
+
 Merge Sort
 	Time complexity - O(n Log N)
 	space Complexity - O(n)

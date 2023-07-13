@@ -468,6 +468,9 @@ subprocess popen vs run
 
 	- In Cpython, as it goes with reference based assignment, if two threads are trying to update, say, the same list, it can lead to data races, and deadlock.
 	- To avoid deadlocks, it will lock a single thread, safely execute it, and release it.
+
+	It is a mutex (or a lock) that allows only one thread to hold the control of the Python interpreter. This means that only one thread can be in a state of execution at any point in time
+
 	- Due to this, we can't achieve concurrency with python, unlike other languages.
 
 	- Next solution is multiprocessing. But, it is resource exhaustive. And, the maximum limit on the processes which can be created, is limited to the system hardware limits.
