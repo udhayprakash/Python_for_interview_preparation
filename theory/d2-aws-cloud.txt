@@ -448,6 +448,11 @@ I have experience migrating applications and data, from on-prem to cloud
 
 - IAM
 -------
+	- User - indivdual
+	- Role -> service to sevice relation
+	- Group --> For more than one resource
+	- policy --> basic permission entity
+
 	- IAM roles define the set of permissions for making AWS service request
 	- IAM policies define the permissions that you will require.
 

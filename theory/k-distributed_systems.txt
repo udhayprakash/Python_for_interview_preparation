@@ -14,6 +14,14 @@ Redis
 			- API responses
 			- session data in web applications, messaging/streamsing systems
 
+Celery
+	In my web applications, for the long running jobs, I need to go for distributed setup, to avoid timeouts, for frontend.
+	So, I  used celery to register those jobs, and sent back the celery job id to frontend. It will use polling mechanism to check for completion of the job.
+
+	On other side, this celery is interfaced with Redis (in one project) or RabbitMQ (in another) for processing.
+
+	Celery was also used for scheduling periodic jobs, In the celery interface/flower
+
 - Queues
 =========
 - ADVANTAGES

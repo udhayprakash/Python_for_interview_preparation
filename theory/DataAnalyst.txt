@@ -37,3 +37,9 @@ Data cleansing and transformation
 	- Data enrichment: bringing additional data from external sources
 	- Data deduplication: remove duplicates from data
 	- Data masking: sometimes you need to obfuscate data for security reasons
+
+
+
+variable Relative Strength(VRS) Index
+
+Macroeconomic

@@ -167,7 +167,7 @@ ___
 - docker.yaml
 --------------
 
-	FROM python:3.6
+	FROM python:3.9
 
 	# Create app directory
 	WORKDIR /app
@@ -339,3 +339,62 @@ Heroku
 	web: mercury run 0.0.0.0:$PORT
 
 TODO - https://github.com/sunnybhambhani/kubernetes
+
+
+
+=========================
+
+Being a go developer
+	build pipeline -> linting - compiling -> dockerImage -> PR Merged -> image to ECR
+		- feature, pull request against master, trigger pipeline
+			fail fast
+		- compilation
+		- artifact is jar/dockerfile
+	Deployment Pipeline ->
+
+docker image size control
+multi-build docker file
+docker - ADD vs COPY, ENTRYPOINT vs CMD
+securing docker file
+Aquasec -- for analyzing docker images
+
+	slim, alphine, full, distroless(), headless --- check this classfication
+
+Helm Charts - multiple files
+	- to control app
+
+
+kubernetes deployment two ways - kubctl,
+
+components
+	server side
+		1) kube api server
+		2) etcd server
+		3) controllers
+		4) Scheduler
+
+	worker side
+		kubelet (agent to report)
+
+
+route53 -> ELB/ALB -> Kubernetes pods
+
+kubernetes.yaml
+helmchart.yaml it is like make ; can be applied for mulltiple environments; app rollback
+
+rpm vs yum
+	- rpm will not manage dependency. We ned to give all
+	- yum will automatically get all dependencies
+
+Kubectl vs helmchart
+
+Tools
+	- AWS : ECS, fargate(managed), EKS
+		- EKS
+	- Metrics server
+	- secrets operator - syncing secrets from external to within
+	- certmanager operator
+	- externalDNS operator
+
+OpenShift
+*** kubeadm - managing entire infrastructure, and provisioning
