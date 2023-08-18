@@ -1302,19 +1302,42 @@ Hadoop
 
 HDFS (Hadoop Distributed File System)
 =======================================
-	- HDFS architecture - key components include
+	- HDFS architecture - Core components include
 		1) NameNode
-			- The master node that manages the file system metadata and access.
+			- Its the master node that manages the file system metadata(file names, file sizes, and file locations,...) and access.
 			- It maintains the directory tree, file metadata, and mappings of data blocks to DataNodes.
+			- And, Secondary NameNode is a backup for the NameNode. It periodically synchronizes its metadata with the NameNode.
+
 		2) DataNodes
-			- The worker nodes in the cluster that store the actual data blocks.
+			- are the worker nodes in the cluster that store the actual data blocks/files.
 			- The blocks are replicated across multiple DataNodes for fault tolerance.
+			- These are slave nodes in hadoop Cluster
 		3) Client
 			- The client contacts NameNode for file metadata and interacts with DataNodes directly to read/write file data.
 		4) Blocks
 			- Files are split into blocks of fixed size (e.g. 128 MB) and stored across DataNodes.
 			- Each block is replicated for fault tolerance.
 		5) Namenode and Datanodes are the Master and Slave daemons.
+		6) JobTracker
+			- is the master node for MapReduce jobs.
+			- It schedules jobs, tracks job progress, and manages resources.
+		7) TaskTracker
+			- are the slave nodes for MapReduce jobs.
+			- They execute MapReduce tasks and report their progress to the JobTracker.
+
+	- HDFS architecture - Other components include
+		1) Hadoop Distributed File System (HDFS):
+			- HDFS is the distributed file system that stores data in Hadoop clusters.
+		2) Apache ZooKeeper:
+			- ZooKeeper is a distributed coordination service that is used by Hadoop to manage cluster metadata.
+		3) Apache Hadoop MapReduce:
+			- MapReduce is a programming model and an associated implementation for processing and generating large data sets.
+		4) Apache Hadoop Hive:
+			- Hive is a data warehouse infrastructure built on top of Hadoop.
+			- It provides a SQL-like language for querying data stored in Hadoop.
+		5) Apache Hadoop HBase:
+			- HBase is a distributed NoSQL database that is built on top of Hadoop.
+			- It provides a column-oriented storage model that is optimized for large amounts of semi-structured data
 
 	- HDFS architecture follows a master-slave model:
 		- The NameNode (master) manages the file system namespace and metadata.
@@ -1326,6 +1349,19 @@ HDFS (Hadoop Distributed File System)
 		- Scalable across machines - storage capacity grows linearly by adding nodes.
 		- Fault tolerant - file replication provides resilience against failure.
 		- Designed for high throughput of large files rather than low latency.
+
+Hadoop Commands:
+	To copy from source file to destination file,
+		hdfs dfs -cp source_file dest_file
+
+	To overwite destination file, if it already exists,
+		hdfs dfs -cp -f source_file dest_file
+
+	To copy source directory to destination directory,
+		hdfs dfs -cp -r source_dir dest_dir
+
+	To overwite destination directory, if it already exits,
+		hdfs dfs -cp -f -r source_dir dest_dir
 
 Hadoop Node types
 	1) NameNode

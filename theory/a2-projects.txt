@@ -181,7 +181,7 @@ Current project - RealEstate
 	- Our team is responsible for giving the prediction, for better planning
 	- We collect data from different sources like climate info, crop yield, agriculture growth, geographic and geological informations
 
-Current Project - MetaData Analytics
+Current Project - Products Feedback Analytics
 ------------------------------------
 	- We are part of the R&D team.
 	- We have access to the data lake, which has all the meta data of the products and their events.
@@ -189,8 +189,22 @@ Current Project - MetaData Analytics
 	- Objective of this project is
 		- We will group the problems and cluster them and associate them to the products.
 		- This output will help in next versions
-
 	- Stakeholders are internal product Owners of this
+
+Current Project - MetaData Analytics
+------------------------------------
+	I am part of Metadata analytics project.
+		This project is for collection and storage of metadata of all datasets.
+		This metadata is used for understanding the business Gap Analytics and other anomaly detections.
+
+	I was part of this project from the ideation stage, to design, implementation setup,
+		and demoing to the clients and post support.
+		Majorly I contributed in writing python scripts
+			- for the metadata analysis,
+			- for creating the ETLs as part of the business requirements
+			- REST APIs and web application for the application data consumption
+		Also, I have first hand experience in requirement gathering, refinements, creating Jira,
+			and demoing to clients, and getting feedback.
 
 Current Project - Retail Web application
 -----------------------------
