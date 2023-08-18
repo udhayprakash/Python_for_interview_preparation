@@ -13,8 +13,8 @@ python 2 vs 3
 =============
 - In python2, default encoding is ascii, whereas in Python 3, default is utf-8
 - In python2, dictionaries are unordered, whereas from python 3.6, dictionaries will retain the assigned order.
-- Python 2 suports both old style classes and new style classes when inheriting object; whereas python3 supports only new-style classes.
-- In python2, range, map, filter will return list; where these are iterators in python3.
+- Python 2 supports both old style classes and new style classes when inheriting object; whereas python3 supports only new-style classes.
+- In python2, range, map, filter will return a list; where these are iterators in python3.
 - For range,
 	In python 2,
 		- range will give list of integers
@@ -70,7 +70,7 @@ Python Questions
 	- Mutable object - it is editable. we can add, remove any element in it.
 	- indexed and retains the order of initialization
 	- will retain duplicates and can store any data type
-
+	- Attributes - append, extend, insert
 - Tuple
 	- same as a list, but once created, we can't change any element in it .
 	- it is immutable object
@@ -89,11 +89,9 @@ Python Questions
 	- ex: {1:2, 3:4, 5:6}
 
 - conclusions
-	- List is suitable when the order of storage is needed and/or
-	  if there were more writes.
+	- List is suitable when the order of storage is needed and/or if there were more writes.
 	- Dict suitable when there were more reads
-	- Set is suitable when unique values are needed and/or set operations like union,
-	  intersection, etc are needed.
+	- Set is suitable when unique values are needed and/or set operations like union, intersection, etc are needed.
 	- Tuple is suitable when there need to be immutability
 
 - mutable vs immutable
@@ -286,6 +284,8 @@ subprocess popen vs run
 		- When an exception occurs, the program stops executing the current function and looks for an exception handler that can handle the exception.
 		- If no handler is found, the program terminates with an error.
 
+OOP
+====
 - OOP analogy
 	1) Objects are like real-world things.
 	   For example, a car is an object. It has properties (e.g., color, make, model), and it can perform actions (e.g., drive, turn, stop).
@@ -316,8 +316,8 @@ subprocess popen vs run
 
 	3) INHERITANCE:
 		- python supports single, multiple and multi-level inheritance, using MRO (Method Resolution Order)
-				single ---> one parent & one child
-				multiple --> two parents & one child
+				single ---> one parent class & one child class
+				multiple --> two parent classes & one child class
 				multi-level -->  parent1 => child ==> subChild
 		- Method Resolution Order is the order in which base classes are searched for a member during lookup.
 		  hybrid & hierarchical
@@ -366,9 +366,8 @@ subprocess popen vs run
 	- These classes are used for inheritance only, and not for creating instances.
 
 - Virtual environment
-	- It is like a container, for isolating the project dependencies
-	- When in same server, we need to execute different versions, Or same python version, with different module
-		versions, we go with a virtual environment.
+	- It is like a container, for isolating the project dependencies.
+	- When in same server, we need to execute different versions, Or same python version, with different module versions, we go with a virtual environment.
 	- virtual environments can be created using modules like
 		- virtualenv
 		- pipenv, or
@@ -412,13 +411,11 @@ subprocess popen vs run
 
 - Decorators
 	- Generally, when some code is repeating, we will create a function, reuse the code.
-	- If there were more than one function, with some part of the code which is common among all,
-      in that case, we extract common code, create a closure for it, and use it as a decorator.
+	- If there were more than one function, with some part of the code which is common among all, in that case, we extract common code, create a closure for it, and use it as a decorator.
 	- built-in decorators are classmethod, staticmethod and property
-	- I created custom decorators for calculating the time taken by functions, or
-	  like logging the events, etc
-	Advantage - better code reusability
-	No performance change, as same code lines will execute
+	- I created custom decorators for calculating the time taken by functions, or like logging the events, etc
+	- Advantage - better code reusability
+	- No performance change, as same code lines will execute
 
 - decorator wraps
 	- Decorators are the function which takes another functions as arguments.
@@ -458,6 +455,40 @@ subprocess popen vs run
 	- continue will skip the current loop, whereas
 	  break will stop the entire loop
 
+- fruitful function
+	- function that returns a value or a result.
+	- It performs some computation and provides an output that can be used by the calling code.
+
+- Pure functions
+	- functions, which, will not modify any of the objects passed to it as parameters, and
+	-  It has no side effects, such as updating global variables, displaying a value, or getting user input
+
+				def add_time(t1, t2):
+					h = t1.hours + t2.hours
+					m = t1.minutes + t2.minutes
+					s = t1.seconds + t2.seconds
+
+					if s >=60:
+						s -= 60
+						m += 1
+					if m >= 60:
+						m -= 60
+						h += 1
+					sum_t  = MyTime(h, m, s)
+					return sum_t
+- Modifier functions
+	- functions, which, will modify one or more of the objects it gets as parameters.
+
+				def increment(t, secs):
+					t.seconds += secs
+
+					if t.seconds >= 60:
+						t.seconds -= 60
+						t.minutes += 1
+					if t.minutes >= 60:
+						t.minutes -= 60
+						t.hours += 1
+
 - race condition
 	- A race condition occurs when two or more threads can access shared data and they try to change it at the same time.
 	- Because the thread scheduling algorithm can swap between threads at any time, you don't know the order in which the threads will attempt to access the shared data.
@@ -477,11 +508,11 @@ subprocess popen vs run
 	- So, from python 3.6, with the advent of async and await keywords, I am using the asyncio based non-blocking execution.
 	- Here, within the single thread event loop, we will invoke all child threads; which is a solution to this GIL problem
 
-- Multiprocessing vs Multithreading
-	- Tasks are of two types
-	- Multithreading for IO-bound tasks.
-	- Multiprocessing for CPU-bound tasks.
-		- computationally-intensive tasks such as compression or hashing.
+	Conclusion is that
+		- Multithreading works better for IO-bound tasks
+			- reading/writing from files/db, etc
+		- Multiprocessing works better for CPU-bound tasks
+			- computationally-intensive tasks such as compression or hashing.
 
 - Multithreading in Python
 	- I Used multithreading module for it.
@@ -831,21 +862,21 @@ __getattribute__ vs__getattr__
 
 Heap vs stack
 --------------
-- Whenever an object is created, it’s always stored in the Heap space, and stack memory contains the reference to it.
-- Stack memory only contains local primitive variables and reference variables to objects in heap space.
-- Objects stored in the heap are globally accessible whereas stack memory can’t be accessed by other threads.
-- Memory management in stack is done in LIFO manner whereas it’s more complex in Heap memory because it’s used globally.
-- Stack memory is short-lived whereas heap memory lives from the start till the	end of application execution.
-- Heap memory is used by all the parts of the application, stack memory is used	only by one thread of execution.
-- When stack memory is full, Java runtime throws java.lang.StackOverFlowError
-  When heap memory is full, it throws java.lang.OutOfMemoryError: Java Heap Space error.
-- Stack memory is faster than heap memory.
+	- Whenever an object is created, it’s always stored in the Heap space, and stack memory contains the reference to it.
+	- Stack memory only contains local primitive variables and reference variables to objects in heap space.
+	- Objects stored in the heap are globally accessible whereas stack memory can’t be accessed by other threads.
+	- Memory management in stack is done in LIFO manner whereas it’s more complex in Heap memory because it’s used globally.
+	- Stack memory is short-lived whereas heap memory lives from the start till the	end of application execution.
+	- Heap memory is used by all the parts of the application, stack memory is used	only by one thread of execution.
+	- When stack memory is full, Java runtime throws java.lang.StackOverFlowError
+	  When heap memory is full, it throws java.lang.OutOfMemoryError: Java Heap Space error.
+	- Stack memory is faster than heap memory.
 
 global variables in python
 --------------------------
-- I use Enum for storing the global variables.
-- I will segrgate them based on the usage.
-- will store them in __init__.py file, and load at the package level.
+	- I use Enum for storing the global variables.
+	- I will segrgate them based on the usage.
+	- will store them in __init__.py file, and load at the package level.
 
 
 - static class vs singleton
@@ -867,7 +898,7 @@ global variables in python
 
 
 Python secure coding best practices
-===================================
+------------------------------------
 	1) Always sanitize external data
 		- to avoid injctions, cross-side scripting, or Denial of Service(DoS) attacks
 	2) Scan your code
@@ -1123,56 +1154,6 @@ Also supports concurrency too.
 Polar syntax is similar to pandas and pyspark, yet it is written in RUST,
 So, is extremely fast and support concurrency
 
-
-
-Machine learning Models
-========================
-1) Supervised Learning
-	a) Regression
-		- Linear Regression
-			- Multiple Linear
-			- Polynomial
-		- Decision Tree
-		- Random Forest
-		- Neural Network
-
-	b) Classification
-		- Logistic Regression
-		- Support Vector Machine
-		- Naive Bayes
-		- Decision Tree, Random Forest, Neural Network
-
-2) Un-supervised Learning -> Patterns from input data without references to labeled outcomes
-	- Clustering ->
-		- K-means
-		- Hierarchical
-		- Mean shift
-		- Density based
-	- Dimensionality Reduction - process of reducing the dimension of your feature set
-		- Feature elimination
-		- Feature Extraction
-			- Principal Component Analysis
-
-
-Precision
-	indicates the positive prediction made by the model
-	It refers to the number of true positives divided by total number of postive predictions
-
-
-Accurancy Vs precision
-	Accurancy tells how many times the ML model was correct overall
-	Precision is how good the model is at predicting a sepcific category
-
-- pyspark
-========
-	spark
-	pyspark bucketby vs partitionby
-	pyspark compression parquet
-	spark splittable compression
-	sqlContext.setConf("spark.sql.parquet.compression.codec.", "snappy")
-	How to read large parquet file
-	map and reduce in big data
-
 - pandas vs pyspark
 ------------------
 	- Pandas run operations on a single machine whereas PySpark runs on multiple machines.
@@ -1210,32 +1191,141 @@ Accurancy Vs precision
 	   ram,   121	, 21-02-2000, 31-05-2010
 	   ram,   121	, 31-05-2010, NULL
 
+- read large parquet file
+-------------------------
+	- There were many ways
+
+	1) Using the DataFrameReader API to load Parquet files as DataFrames:
+			df = spark.read.parquet('large_file.parquet')
+
+	2) Enable predicate pushdown to only read relevant partitions/columns:
+		df = spark.read.parquet('data.parquet', columns=['id', 'name'])
+	3) Using partitioning to break up large files into smaller partitioned files based on a column like date. 	It enables pruning partitions through pushdown.
+	4) Co-partition Hive tables with corresponding Parquet data to optimize query performance.
+	5) Increasing the number of cores/executors for more parallelism when reading.
+	6) Using DataBricks IO cache to cache hot Parquet files in memory:
+			spark.conf.set("spark.databricks.io.cache.enabled", "true")
+
+	7) Using Parquet with ORC for even better compression. ORC indexes help skip irrelevant rows/groups.
+	8) For extreme cases, down-sample Parquet files before analysis to experiment and iteratively develop models.
 
 
-- High Performance Computing, in python
-	- Dask
-		- for distributed computing.
-		- facilitates running many computations at the same time, either on a single machine or on many separate computers (cluster).
-		- Under the hood, Dask breaks a single large data processing job into many smaller tasks, which are then handled by numpy or pandas
-		- https://dask.org/
-	- Modin
-		- designed to parallelize pandas DataFrames by automatically distributing the
-		  computation across all of the system’s available CPU cores.
-		- Modin simply divides an existing DataFrame into different parts such that each part can be sent to a different CPU core. And to be more precise, Modin partitions the DataFrames across both rows and columns, which makes its parallel processing highly scalable for DataFrames of any size and shape.
-		- https://github.com/modin-project/modin
-	- vaex — 7k GitHub stars
-	- datatable — 1.5k GitHub stars
-	- cuDF — ~4.5k GitHub stars
-	- pyspark
-	- Koalas — ~3k GitHub stars
-	- polars — ~5k GitHub stars
+- repartition()
+	Repartition RDDs or DataFrames into new number of partitions.
+		df = df.repartition(100)
 
+- coalesce()
+	Decrease the number of partitions in RDD or DataFrame.
+		df = df.coalesce(10)
+
+- pyspark bucketby vs partitionby
+
+	bucketBy() allows fixing the number of buckets, partitionBy() does not.
+	bucketBy() attempts to distribute rows evenly, partitionBy() does not.
+	bucketBy() can bucket based on a hash of column values, partitionBy() partitions based on exact column values.
+	bucketBy() results in a BucketedRandomProjection, partitionBy() results in a Partitioning.
+
+	bucketBy()
+		- splits the DataFrame into a fixed number of buckets based on the values of one or more columns
+		- The number of buckets is specified by the user.
+		- Rows with similar values for the bucketing columns will be placed in the same bucket.
+		- bucketBy() is often used to distribute data evenly for joining or sampling.
+
+	partitionBy()
+		- splits the DataFrame into partitions based on the values of one or more columns.
+		- It does not require specifying the number of partitions upfront.
+		- Rows with the same values for the partitioning columns will be in the same partition.
+		- partitionBy() is often used to optimize physical data layout for faster query performance.
+
+- pyspark compression parquet
+	- suported compression codes are 'none', 'uncompressed', 'snappy', 'gzip', and 'lzo'
+	- Snappy is generally a good default.
+			df.write.parquet('data.parquet', compression='snappy')
+
+	- Compression can be done in different ways:
+		- Specify compression per column:
+				df.write.parquet('data.parquet', compression={
+					'large_column': 'gzip',
+					'other_columns': 'snappy'
+				})
+
+		- Configure compression globally in Spark session:
+				spark.conf.set("spark.sql.parquet.compression.codec", "snappy")
+				or
+				sqlContext.setConf("spark.sql.parquet.compression.codec.", "snappy")
+
+		- Enable dictionary encoding for string columns:
+				df.write.option("parquet.dictionary.encoding", "true").parquet("data.parquet")
+
+		- Use a high compression codec for partitioned columns:
+				df.write.parquet(
+					"data.parquet",
+					partitionBy('eventDate'),
+					compression={ 'eventDate': 'gzip' }
+				)
 
 Hadoop
 ======
-HDFS
-	- means Hadoop Distributed File System
-	- architecture - https://hadoop.apache.org/docs/r1.2.1/hdfs_design.html
+	- Hadoop is an open-source big data framework for storing & processing large datasets across clusters
+	- Hadoop provides distributed storage via HDFS and batch processing via MapReduce.
+
+	- Main components
+		1) HDFS (Hadoop Distributed File System):
+			- Distributed and scalable filesystem for storing large datasets.
+			- Provides high throughput access across clusters.
+		2) YARN (Yet Another Resource Negotiator):
+			- Cluster resource management for scheduling and managing jobs.
+			- Allows multiple data processing engines to run on Hadoop.
+		3) MapReduce:
+			- Programming model for large scale data processing on Hadoop.
+		4) Pig:
+			- High level dataflow language and execution framework for parallel computation.
+			- Provides SQL-like language for MapReduce tasks.
+		5) Hive:
+			- Data warehouse software for reading, writing and managing large datasets in distributed storage using SQL. Built on top of HDFS.
+		6) Oozie:
+			- Workflow scheduler system to manage Hadoop jobs.
+			- Defines workflows and job dependencies for coordination.
+		7) ZooKeeper:
+			- Centralized service for distributed coordination between applications and services.
+			- Enables synchronization and configuration maintenance.
+		8) HBase:
+			- Distributed, scalable NoSQL database that runs on HDFS.
+			- Provides real-time read/write access to large datasets.
+		9) Sqoop:
+			- Tool to transfer bulk data between Hadoop and external structured datastores like RDBMS.
+			- Useful for importing/exporting between Hadoop and external databases.
+		10) Flume:
+			- Distributed, reliable service for collecting, aggregating and moving large amounts of log data into Hadoop. Useful for aggregating web/app log data.
+		11) Mahout:
+			- Scalable machine learning and data mining library for Hadoop. Implementations of classification, clustering and collaborative filtering algorithms.
+
+HDFS (Hadoop Distributed File System)
+=======================================
+	- HDFS architecture - key components include
+		1) NameNode
+			- The master node that manages the file system metadata and access.
+			- It maintains the directory tree, file metadata, and mappings of data blocks to DataNodes.
+		2) DataNodes
+			- The worker nodes in the cluster that store the actual data blocks.
+			- The blocks are replicated across multiple DataNodes for fault tolerance.
+		3) Client
+			- The client contacts NameNode for file metadata and interacts with DataNodes directly to read/write file data.
+		4) Blocks
+			- Files are split into blocks of fixed size (e.g. 128 MB) and stored across DataNodes.
+			- Each block is replicated for fault tolerance.
+		5) Namenode and Datanodes are the Master and Slave daemons.
+
+	- HDFS architecture follows a master-slave model:
+		- The NameNode (master) manages the file system namespace and metadata.
+		- The DataNodes (slaves) manage data storage on the hosts they run on.
+		- Clients read/write files by contacting the NameNode for file locations and then streaming the data from/to the DataNodes.
+		- The cluster can scale horizontally simply by adding more DataNodes. NameNode allows incremental scaling of storage.
+
+	- ADVANTAGES
+		- Scalable across machines - storage capacity grows linearly by adding nodes.
+		- Fault tolerant - file replication provides resilience against failure.
+		- Designed for high throughput of large files rather than low latency.
 
 Hadoop Node types
 	1) NameNode
@@ -1290,16 +1380,19 @@ Datanodes
 	- DataNodes also perform block creation, deletion, and replication upon instruction from the NameNode.
 
 master vs datanode
+---------------
 	- Data nodes store the data, and participate in the cluster's indexing and search capabilities, while
 	- master nodes are responsible for managing the cluster's activities and storing the cluster state, including the metadata.
 
 jobtracker vs tasktracker
-- JobTracker is the service within Hadoop that is responsible for taking client requests.
-- It assigns them to TaskTrackers on DataNodes where the data required is locally present.
-- If that is not possible, JobTracker tries to assign the tasks to TaskTrackers within the
-  same rack where the data is locally present.
+---------------
+	- JobTracker is the service within Hadoop that is responsible for taking client requests.
+	- It assigns them to TaskTrackers on DataNodes where the data required is locally present.
+	- If that is not possible, JobTracker tries to assign the tasks to TaskTrackers within the
+	  same rack where the data is locally present.
 
-HDFS vs NFs
+HDFS vs NFS
+---------------
 	- HDFS is a file system where data is distributed among many data nodes
 	  so, more reliability, when if one of those systems, was failed.
 	- NFS is file system or protocol which allows its clients to access file
@@ -1307,16 +1400,25 @@ HDFS vs NFs
 
 bucket vs HDFS
 ---------------
-	Platform: Buckets are a storage service provided by Google Cloud Platform (GCP), while HDFS is a file system designed for the Apache Hadoop platform.
-	Architecture: Buckets are a single-tenant storage system, meaning that each bucket is owned and managed by a single GCP project or user. HDFS is a distributed file system designed to be used in a cluster of computers.
-	Data Replication: Buckets automatically replicate data across multiple data centers for redundancy and high availability, while HDFS stores data across multiple nodes in a cluster.
-	APIs: Buckets can be accessed using APIs such as REST APIs, Google Cloud SDK, or client libraries, while HDFS has its own APIs and protocols for accessing data.
-	Use Cases: Buckets are designed for storing unstructured data such as images, videos, logs, and other types of files, while HDFS is designed for storing and processing large data sets using distributed computing.
+	Platform:
+		Buckets are a storage service provided by Google Cloud Platform (GCP), while HDFS is a file system designed for the Apache Hadoop platform.
+	Architecture:
+		Buckets are a single-tenant storage system, meaning that each bucket is owned and managed by a single GCP project or user. HDFS is a distributed file system designed to be used in a cluster of computers.
+	Data Replication:
+		Buckets automatically replicate data across multiple data centers for redundancy and high availability, while HDFS stores data across multiple nodes in a cluster.
+	APIs:
+		Buckets can be accessed using APIs such as REST APIs, Google Cloud SDK, or client libraries, while HDFS has its own APIs and protocols for accessing data.
+	Use Cases:
+		Buckets are designed for storing unstructured data such as images, videos, logs, and other types of files, while HDFS is designed for storing and processing large data sets using distributed computing.
 
-	Scalability: Both Buckets and HDFS are designed to be highly scalable and able to handle large amounts of data. However, HDFS is typically used in large-scale distributed computing environments, which may make it more suitable for extremely large datasets.
-	Availability: Buckets automatically replicate data across multiple data centers for redundancy and high availability, which can make it more reliable than HDFS, which requires manual configuration for high availability.
-	Cost: The cost of using Buckets versus HDFS depends on the specific cloud provider and usage patterns. Generally, Buckets are priced based on the amount of data stored and data egress, while HDFS requires dedicated hardware and may have higher upfront costs.
-	Integration: Buckets are part of the Google Cloud Platform ecosystem and integrate with other GCP services such as BigQuery and Dataflow, which can make it easier to build and deploy data pipelines. HDFS, on the other hand, is typically used with Apache Hadoop and other open-source big data tools.
+	Scalability:
+		Both Buckets and HDFS are designed to be highly scalable and able to handle large amounts of data. However, HDFS is typically used in large-scale distributed computing environments, which may make it more suitable for extremely large datasets.
+	Availability:
+		Buckets automatically replicate data across multiple data centers for redundancy and high availability, which can make it more reliable than HDFS, which requires manual configuration for high availability.
+	Cost:
+		The cost of using Buckets versus HDFS depends on the specific cloud provider and usage patterns. Generally, Buckets are priced based on the amount of data stored and data egress, while HDFS requires dedicated hardware and may have higher upfront costs.
+	Integration:
+		Buckets are part of the Google Cloud Platform ecosystem and integrate with other GCP services such as BigQuery and Dataflow, which can make it easier to build and deploy data pipelines. HDFS, on the other hand, is typically used with Apache Hadoop and other open-source big data tools.
 
 Ansible
 -------
@@ -1324,139 +1426,194 @@ Ansible
 	All import statements are pre-processed at the time playbooks are parsed.
 	All include statements are processed as they are encountered during the execution of the playbook.
 
+
+Machine learning Models
+========================
+1) Supervised Learning
+	a) Regression
+		- Linear Regression
+			- Multiple Linear
+			- Polynomial
+		- Decision Tree
+		- Random Forest
+		- Neural Network
+
+	b) Classification
+		- Logistic Regression
+		- Support Vector Machine
+		- Naive Bayes
+		- Decision Tree, Random Forest, Neural Network
+
+2) Un-supervised Learning -> Patterns from input data without references to labeled outcomes
+	- Clustering ->
+		- K-means
+		- Hierarchical
+		- Mean shift
+		- Density based
+	- Dimensionality Reduction - process of reducing the dimension of your feature set
+		- Feature elimination
+		- Feature Extraction
+			- Principal Component Analysis
+
+
+Precision
+	indicates the positive prediction made by the model
+	It refers to the number of true positives divided by total number of postive predictions
+
+Accurancy Vs precision
+	Accurancy tells how many times the ML model was correct overall
+	Precision is how good the model is at predicting a sepcific category
+
+- High Performance Computing, in python
+---------------------------------------
+	- Dask
+		- for distributed computing.
+		- facilitates running many computations at the same time, either on a single machine or on many separate computers (cluster).
+		- Under the hood, Dask breaks a single large data processing job into many smaller tasks, which are then handled by numpy or pandas
+		- https://dask.org/
+	- Modin
+		- designed to parallelize pandas DataFrames by automatically distributing the
+		  computation across all of the system’s available CPU cores.
+		- Modin simply divides an existing DataFrame into different parts such that each part can be sent to a different CPU core. And to be more precise, Modin partitions the DataFrames across both rows and columns, which makes its parallel processing highly scalable for DataFrames of any size and shape.
+		- https://github.com/modin-project/modin
+	- vaex — 7k GitHub stars
+	- datatable — 1.5k GitHub stars
+	- cuDF — ~4.5k GitHub stars
+	- pyspark
+	- Koalas — ~3k GitHub stars
+	- polars — ~5k GitHub stars
+
 =======================================================================
 Q1) Describe truthy vs falsy
 Ans) Python supports boolean type: True, False
 
-bool() -- builtin function which will result the boolean-ness of the object in it.
+	bool() -- builtin function which will result the boolean-ness of the object in it.
 
-For integers,
-	0 			-> False
-	non-zero 	-> True
-For floats,
-	0.0			-> False
-	non-zero	-> True
-	0.000001    -> True
+	For integers,
+		0 			-> False
+		non-zero 	-> True
+	For floats,
+		0.0			-> False
+		non-zero	-> True
+		0.000001    -> True
 
-For None		-> False
+	For None		-> False
 
-For boolean
-	False		-> False
-	True 		-> True
+	For boolean
+		False		-> False
+		True 		-> True
 
-For empty collections,
-	empty list 	[] 		-> False
-	empty tuple () 		-> False
-	empty set   set()	-> False
-	empty dict 	{}		-> False
+	For empty collections,
+		empty list 	[] 		-> False
+		empty tuple () 		-> False
+		empty set   set()	-> False
+		empty dict 	{}		-> False
 
-	with atleast one element, it is True
+		with atleast one element, it is True
 
-For relational and logical operations, based on result
-	logical and --> will result in True, if all are True ONLY, else False
-	logical OR  --> will result in False, if all are False ONLY, else True
+	For relational and logical operations, based on result
+		logical and --> will result in True, if all are True ONLY, else False
+		logical OR  --> will result in False, if all are False ONLY, else True
 
 Q2) How do you get the last item of a list?
 Ans) we can use the reverse index to retrieve the last element from the list
 
- Ex: mylist = [23, 45,  6,  3, 23, 65,  2,   4]
-			   0   1    2   3   4   5   6     7  <----- forward indexing
-			   -8  -7  -6  -5  -4  -3  -2    -1  <------ reverse indexing
+	 Ex: mylist = [23, 45,  6,  3, 23, 65,  2,   4]
+				   0   1    2   3   4   5   6     7  <----- forward indexing
+				   -8  -7  -6  -5  -4  -3  -2    -1  <------ reverse indexing
 
-	lastnum = mylist[-1]
+		lastnum = mylist[-1]
 
-	Also, we can get indirectly (not preferred) by
-		lastNum = mylist[len(mylist) - 1]
+		Also, we can get indirectly (not preferred) by
+			lastNum = mylist[len(mylist) - 1]
 
 Q3) What does a leading _ (underscore) before a variable typically identify in python (used as a common naming convention)?
 Ans) Python follows naming convention called name mangling for the variables/methods
 
-	name 	-> Public variable  	- no leading underscores - can be accessed directly
-	_name	-> Protected variables  - one leading underscore - can be accessed directly
-	__name	-> Private variables 	- two leading underscores - prepend class name as protected variable before it to access
-										Ex: _ClassName__name
+		name 	-> Public variable  	- no leading underscores - can be accessed directly
+		_name	-> Protected variables  - one leading underscore - can be accessed directly
+		__name	-> Private variables 	- two leading underscores - prepend class name as protected variable before it to access
+											Ex: _ClassName__name
 
-	__name__ -> built-in variables, or dunder methods, or magic methods
-				there are some specific methods, as such.
+		__name__ -> built-in variables, or dunder methods, or magic methods
+					there are some specific methods, as such.
 
 What is a magic method ( aka dunder method)?
-Ans)
-These are the builtin methods with some specific usage
-As they start and end with two (double) underscores, they were called as dunder (double-underscore) methods.
-Examples:
-	__init__		constructor method - responsible for added default actions, after creating instance
-	__del__			destructor method  - will invoke when deleting the instance
-	__new__			method responsible for creating the instance, from a class
+Ans) These are the builtin methods with some specific usage
+	As they start and end with two (double) underscores, they were called as dunder (double-underscore) methods.
+	Examples:
+		__init__		constructor method - responsible for added default actions, after creating instance
+		__del__			destructor method  - will invoke when deleting the instance
+		__new__			method responsible for creating the instance, from a class
 
-	__slot__				will restrict the attributes of class instance
+		__slot__				will restrict the attributes of class instance
 
-	__enter__ & __exit__ 	used for creating custom context managers
+		__enter__ & __exit__ 	used for creating custom context managers
 
-	__iter__ & __next__ 	used for creating custom iterator classes
+		__iter__ & __next__ 	used for creating custom iterator classes
 
+	Also, if we create the class methods with dundermethods like __add__, then
+	with the instances, instead of addressing with this method names like
 
-Also, if we create the class methods with dundermethods like __add__, then
-with the instances, instead of addressing with this method names like
+		instance1.__add__(instance2)
 
-	instance1.__add__(instance2)
-
-we can also do as below
-	instance1 + instance2
+	we can also do as below
+		instance1 + instance2
 
 
 Q4) What was introduced in python 3.6 that changed string formatting?
 What do you prefer: f-string or .format()?
-Ans)  String formattings in python
-	- old style formatting  - using % with the specific data types
-		Ex: language = "%s is rank %d language " %("python", 1)
+Ans) String formattings in python
+		- old style formatting  - using % with the specific data types
+			Ex: language = "%s is rank %d language " %("python", 1)
 
 
-	- new style formatting - using format() with placeholders, and not specific on data types
-		Ex: language = "{0} is rank {1} language ".format("python", 1)
+		- new style formatting - using format() with placeholders, and not specific on data types
+			Ex: language = "{0} is rank {1} language ".format("python", 1)
 
-	- F-strings (from python 3.6)  -- advanced formatting
-		Ex:
-			lang = "python"
-			rank = 1
-			language = f"{lang} is rank {rank} language "
+		- F-strings (from python 3.6)  -- advanced formatting
+			Ex:
+				lang = "python"
+				rank = 1
+				language = f"{lang} is rank {rank} language "
 
-		Also, we can do computations within the braces to do more operations
+			Also, we can do computations within the braces to do more operations
 
-			language = f"{lang.upper()} is rank {float(rank)} language "
+				language = f"{lang.upper()} is rank {float(rank)} language "
 
-	- F-string assignments ( from python 3.8)
-		it will help in the debugging results.
-		Instead of
-			print("langauge = ", language)
-			print("langauge = %s"% language)
-			print("langauge = {}".format(language))
-			print(f"langauge = {language}")
+		- F-string assignments ( from python 3.8)
+			it will help in the debugging results.
+			Instead of
+				print("langauge = ", language)
+				print("langauge = %s"% language)
+				print("langauge = {}".format(language))
+				print(f"langauge = {language}")
 
-		we can write as
-			print(f"{language =}"
+			we can write as
+				print(f"{language =}"
 
-	Finally, among the three (old-style, new-style with format() and f-strings), the
-	F-string based formatting with take the least amount of time.
+		Finally, among the three (old-style, new-style with format() and f-strings), the
+		F-string based formatting with take the least amount of time.
 
-	So, i prefer F-strings among all.
+		So, i prefer F-strings among all.
 
 Q5) How to cache data in Python
 Ans) It can be done in 3 ways
-	 1) Using cache, like
-			- functool.lru_cache
-			- Memcache
-			- or, redis cache
-	 2) Using sessions  if is a web application
-	 3) Using the database, for persistence
+		 1) Using cache, like
+				- functool.lru_cache
+				- Memcache
+				- or, redis cache
+		 2) Using sessions  if is a web application
+		 3) Using the database, for persistence
 
-    Also,
-		We can import in the __init__.py file in package level and import
-		It will be there for the entire session
+		Also,
+			We can import in the __init__.py file in package level and import
+			It will be there for the entire session
 
 1) Difference between JSON and XML data in REST API
 Ans) Worked mostly with JSON for REST APIs
-	REST APIs support both.
-	JSON object has a type, whereas XML data is typeless
+		REST APIs support both.
+		JSON object has a type, whereas XML data is typeless
 
 3) Difference between Git Add and Git Reset commands
 Ans) git add command will stage the give file/folders, for next commit.
@@ -1472,9 +1629,7 @@ Ans)flask is suitable when no-sql database is of choice, or when small utility a
 6) Difference between _init() and __str_() methods ?
 Ans) __init__() is constructor method
 	 __str__() is dunder method which is called which print() function is used to display class instance
-big data
-	mapper - producer
-	reduce - receiver
+
 
 Python Programming
 ==================
@@ -1538,10 +1693,7 @@ Ans) Hoping the question is comma-delimited string. if so,
 		joined = ','.join(chars) # joining the list of strings, to a single string, with again comma as the delimiter
 
 9) How to denote a comment in python?
-Ans) Unlike many languages (like java, c++, ...), python dont have multiple comments, as it is an interpreter based language,
-where only one line of code is processed by the interpreter each time. Python has only line comments, with # (hash/pound) operator.
-It will have its effect from the place it is defined, till the end of that line. This operator will be treated as ordinary character,
-if it is part of any string.
+Ans) Unlike many languages (like java, c++, ...), python dont have multiple comments, as it is an interpreter based language, where only one line of code is processed by the interpreter each time. Python has only line comments, with # (hash/pound) operator. It will have its effect from the place it is defined, till the end of that line. This operator will be treated as ordinary character, if it is part of any string.
 
 10) When would you use the keyword self?
 Ans)self acts as a placeholder of the instance, being passed to the class.

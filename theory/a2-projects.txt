@@ -19,6 +19,11 @@ my responsibilities here include
 
 	Docker.yaml → Jenkins CI/CD → containers  -> AWS ECR →  aws code pipeline → AWS EKS → kubernetes.yaml → orchestrate the pods
 
+In terms of team,
+	In backend, apart from me, there were two junior developers
+	In frontend, two developers were present
+	And we have a couple of data scientists, who will architect the dataflows
+
 In Machine Learning,
 	I worked with a Linear regression algorithm, using the scikit-learn module.
 	The use-case is that there was an archive database.
@@ -53,10 +58,32 @@ In terms of technical stack,
 	Static content pushed to and served from S3
 	A CDN in front of the static content on S3
 
-In terms of team,
-	In backend, apart from me, there were two junior developers
-	In frontend, two developers were present
-	And we have a couple of data scientists, who will architect the dataflows
+
+Project - CASH app storing ATM informations
+============================================
+	The application that I have worked on is the CASH App application where it stores the ATM Schedule information. so what happens is all the
+	service schedules related to the ATM is stored in this application. All the permutations and the combintions of ATM schedules are stored in the database related to the application.
+
+	All the ATM Schedules information that is stored in db has to be sent to the vendors very morning. In order to do that I have set up a cron job in the ec2 instance in aws cloud platform
+	that would send out the files to the external file gateway. I have successfully onboarded the application to onepipeine.We are using RDS Database and the application has to run on that.
+
+	I have completed doing the RDS Instance setup in dev, UAT and in production as well. I have Modified the existing code to the 3.9 version of python and I have Used flak framework to develop that application. I am responsible for Cleaning up the existing code and making it more efficient for the users to understand and i am also responsible for the modularization of the code.
+
+	The code for the whole application is divided into the modules and the supporting modules for this application are maintained under one directory. each module hold separate functionality to maintain easily. I have written All the unit test cases and maintained in the tests directory. Each test modules is created & maintained for each module in the main application.
+
+	In this project, We are using AWS Cloud and in this cloud particularly we are working with AWS API's lambda functionalities and with s3, buckets, and with CloudWatch for simple notification services, EC2, ECS, ECR and like RDS, and IAM security groups and all these things etc.
+
+	Coming to the front end part of the application , I've worked with HTML, CSS, JavaScript bootstrap, Angular, and testing frameworks like jasmine and karma,
+	and also have upskilled with React and I am comfortable with the React , but my projects were more on the angular side.
+
+	So, then like I've used tools like sonar lint, sonar cube for code quality checks.
+
+	I have used postman as the API testing tool before integrating with the front end to simplify and streamline the process of developing, testing,  and for sending HTTP requests to APIs and receiving responses, making it easier to interact with APIs during development and testing phases and also used jenkins build pipelines for the automation and continouous integration as well.
+
+	I have also worked on writing the python scripts that automates the holiday schedules for the capital one in order to send the data to the venors as well as worked on the python script can generate reports by pulling data from various sources, processing it, and presenting it in a formatted document, such as PDF or Excel and I am using the Python's data processing libraries, such as Pandas and NumPy, for the collected data in order to get transformed and aggregated.
+
+	This is pretty much I have worked in my current project.
+
 ------------------------------------------------------
 In AWS cloud, my roles involve,
 	I will create the architecture,
@@ -125,6 +152,7 @@ Current Project - Customer Behaviour Analytics project
 	- We analyse those offline data, and bring insights from them.
 	- These results will be used in different domains, within the organization.
 
+
 Current Project - Customer Feedback messages Analyses
 -----------------------------------------------------
 	current project details with Customer feedback analysis.
@@ -138,6 +166,7 @@ Current Project - Customer Feedback messages Analyses
 		- Finally, the prediction results were stored in database.
 
 		- Also, create Django web application, to dashboard the results and REST APIs for app-to-app communication.
+
 
 Current project - Mortgage analytics
 -----------------------------------
@@ -158,10 +187,10 @@ Current Project - MetaData Analytics
 	- We have access to the data lake, which has all the meta data of the products and their events.
 
 	- Objective of this project is
-		- We will group the problems and cluster them and associated to the products.
+		- We will group the problems and cluster them and associate them to the products.
 		- This output will help in next versions
 
-	- Stakeholders are internal product	Owners of this
+	- Stakeholders are internal product Owners of this
 
 Current Project - Retail Web application
 -----------------------------
@@ -193,7 +222,7 @@ Current Project - Infra Automation - 1 click automation -- AWS CLOUD automation
 	- For that, I wrote boto 3 scripts to scan all existing resources and add tags to them.
 	- Similarly, based on Event hub, automatically added tags for newly creating resources too.
 	- We have different types of tags, like user, team, etc, to different kinds of analytics
- 	- Now, based on these tags, do different sets of analytics and give insights based on them, like
+ 	- Now, based on these tags, did different sets of analytics and give insights based on them, like
 		- billing
 		- cost optimization
 		- rule/access violations and/or potential violations

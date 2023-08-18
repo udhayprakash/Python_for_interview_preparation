@@ -9,10 +9,24 @@ Redis
 		- Redis Database for data persistence
 			- point-in-time snapshots of a dataset at specified intervals
 	- USAGE:
-		- cache to stre frequently access data
+		- cache to store frequently access data
 			- queried database results
 			- API responses
 			- session data in web applications, messaging/streamsing systems
+
+
+	1) Redis
+		- I worked with redis in multiple projects, mainly as a cache.
+		- Also, worked along with celery, as a mesage broker
+
+	2) fastapi
+		- I worked with fastapi for creating both web app and REST APIs.
+		- I worked with Redis-fastapi for
+			- Rate limiting with Redis Counter, which is natively supported
+			- Cache frequent database queries & Cache Serialization rendering
+			= Also, used redis for storing session data
+			- Also, used Redis pub/sub channels to send messages between FastAPI processes/servers
+			- And, used Redis lists as queues to coordinate background jobs and workers
 
 Celery
 	In my web applications, for the long running jobs, I need to go for distributed setup, to avoid timeouts, for frontend.
@@ -82,6 +96,7 @@ Scalability is the term we use to describe a system’s ability to cope with inc
 
 	- Microservices can address these limitations.
 	- Microservices are a type of service-oriented architecture that emphasizes small, independent services that work together to form a larger application.
+
 
 monolithic vs microservice
 ==========================
@@ -170,10 +185,46 @@ Redis Usecases
 	Queues
 	Caching
 
-Airflow
+- Airflow
+-------
 	DAG means Directed Acyclic Graph.
 	is a collection of all the tasks you want to run, organized in a way that reflects their relationships and dependencies.
 	A DAG is defined in a Python script, which represents the DAGs structure (tasks and their dependencies) as code.
+
+- Apache Kafka
+-------------
+	- Kafka is a distributed streaming platform for building real-time data pipelines and streaming applications.
+	- USAGE/ Usecases
+		- Stream processing, website activity tracking, metrics collection, log aggregation, event sourcing, commitment log for distributed systems.
+	- Advantages
+		- High Availability
+			- Kafka replicates data across brokers using a replication factor. If a broker fails, replicas on other brokers ensure data is preserved.
+		- Message persistence
+			- Messages are persisted to disk in the broker using a configurable retention period.
+			- This allows replay of messages if needed.
+		- scalability
+			- Kafka scales via partitioning of topics across brokers. More partitions allow greater parallelism.
+
+	- Kafka Components:
+		1) Topic 		- A particular stream of data, similar to a table in a database. Messages are stored in topics.
+		2) Producer 	- Creates new messages and publishes them to Kafka topics.
+		3) Consumer 	- Subscribes to topics and processes messages published to them.
+		4) Broker 		- Kafka cluster is composed of multiple brokers which manage data persistence and replication.
+		5) Zookeeper	- Kafka uses Zookeeper for coordination between brokers and consumers, for configuration, cluster management.
+		6) Kafka Connect- Integration framework to build producers and consumers that import/export data from Kafka.
+
+	- Kafka Partitioning
+		- Kafka's partitioning allows large data streams to be divided into parallel pipelines for scalability.
+		- The criteria depends on data access patterns.
+		- Partitioning criteria:
+			1) Hash Partitioning
+				- A hash of the key is used to determine partition.
+				- Ensures messages with the same key go to the same partition.
+			2) Range Partitioning
+				- Messages are partitioned by key ranges for sorting and grouping.
+			3) Round Robin 	- Messages are assigned to partitions in a round robin fashion to balance load.
+			4) Time Based 	- Messages are partitioned by timestamp to group events together.
+			5) Random 		- Messages are randomly distributed across partitions.
 
 
 message queue vs kafka

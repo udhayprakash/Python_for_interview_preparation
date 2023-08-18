@@ -8,6 +8,7 @@ packages = [{include = "python_for_interview_preparation"}]
 
 [tool.poetry.dependencies]
 python = "^3.11"
+pre-commit = "^3.3.3"
 
 
 [tool.poetry.group.dev.dependencies]

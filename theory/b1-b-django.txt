@@ -260,8 +260,8 @@ database if none is provided
 	- GZipMiddleware 		- will compress the response
 	- CommonMiddleware  	- handles a variety of Django settings to control certain aspects of your project.
 							  Ex: APPEND_SLASH setting will redirect a request like
-										  example.com/accounts to example.com/accounts/.
-	- SessionMiddleware     - manages the session state of a user.
+										  example.com/accounts to example.com/accounts/
+	- SessionMiddleware     - manages the session state of a user
 
 	- Other examples include SecurityMiddleware, SessionMiddleware, AuthenticationMiddleware.
 	- I created a custom Middleware for counting the User requests and analytics on it.

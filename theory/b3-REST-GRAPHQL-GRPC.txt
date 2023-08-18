@@ -232,6 +232,11 @@ JWT (JSON Web Tokens)
 	- JWT is simpler than SAML 1.1/2.0 and supported by all devices and it is more
 	powerful than SWT(Simple Web Token).
 
+	- sections of a JSON Web Token (JWT):
+		1) Header: The header contains the type of token (JWT), the hashing algorithm used to sign the token, and the token's kid (key ID).
+		2) Payload: The payload contains the claims, which are the data that is being transmitted. The claims can be anything, but they are typically used to represent the identity of the user, the time the token was issued, and the time the token expires.
+		3) Signature: The signature is used to verify the authenticity of the token. It is calculated using the header, the payload, and a secret key.
+
 OAuth2
 	- OAuth2 solve a problem that user wants to access the data using client
 	 software like browse based web apps, native mobile apps or desktop apps.

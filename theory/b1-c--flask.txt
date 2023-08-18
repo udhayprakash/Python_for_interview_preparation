@@ -1,5 +1,36 @@
 flask
 =====
+With flask,
+	I worked on creating both Web Applications and REST APIs.
+
+	Used Blueprints to modularize the code for each resource in the API
+	Used ORM libraries like SQLAlchemy to interface with databases
+		and Albemenic for Database migrations
+	Worked with multiple extensions like
+
+		Flask-SQLAlchemy - This extension provides support for SQLAlchemy, a popular ORM library.
+		Flask-WTF - This extension provides support for WTForms, a popular form library.
+		Flask-Mail - This extension provides support for sending email.
+		Flask-RESTful - This extension provides support for creating RESTful APIs.
+		Flask-Uploads - This extension provides support for uploading files.
+		Flask-DebugToolbar - This extension provides a debugging toolbar for Flask applications.
+		Flask-Login - This extension provides support for user login and logout.
+		Flask-Security - This extension provides a more comprehensive security framework for Flask applications.
+		Flask-Caching - This extension provides support for caching data in memory or on disk.
+
+		Flask-JWT for authentication and authorization
+		Flask-SQLAlchemy - Provides ORM database layer to allow interacting with SQL databases like SQLite, MySQL, Postgres, etc. Very commonly used for database models and queries.
+		Flask-Migrate - Handles SQLAlchemy database migrations and schema changes in Flask apps using Alembic. Useful during development and deployment.
+		Flask-Login - Manages user authentication, sessions and protects views. Quick way to add login/logout to apps.
+		Flask-WTF - Integration with WTForms for form validation and CSRF protection. Useful for building web forms.
+		Flask-RESTful - Provides tools for building REST APIs with Flask including request parsing and response generation.
+		Flask-JWT - Adds JSON web token support for stateless authentication of REST APIs. Useful for mobile or AJAX apps.
+		Flask-Mail - Makes sending transactional emails from Flask apps easy such as account confirmation emails.
+		Flask-Cache - Adds caching support to Flask for performance gains. Supports simple and memcache types.
+		Flask-Bootstrap - Quick way to integrate Bootstrap frontend styling for templates.
+		Flask-DebugToolbar - Provides a debugging toolbar with useful runtime info like performance stats, routes, logs etc.
+
+
 In production, instead of app.run, we use
 	gunicorn --worker-class gevent --workers 8 --bind 0.0.0.0:5000 wsgi:app --max-requests 10000 --timeout 5 --keep-alive 5 --log-level info
 

@@ -542,9 +542,9 @@ RDS vs DynamoDb
 - DynamoDB can support tables of any size, where as in RDS, the storage size changes
 	based on the database engine used.
 - Storing data in DyanmoDb costs more, compared to RDS or Aurora.
-- DynamoDb is very fast as it is key-value database
+- DynamoDB is very fast as it is key-value database
 
-- DynamoDb should not be used:
+- DynamoDB should not be used:
 	- When multi-item or cross table transactions are required.
 	- When complex queries and joins are required.
 	- When real-time analytics on historic data is required.
@@ -552,7 +552,7 @@ RDS vs DynamoDb
 SNS vs SQS
 ==========
 SNS - sends messages to the subscriber using push mechanism and no need of pull.
-SQS - it is a message queue service used by distributed applications to exchange messages through a polling model, and can be used to decouple sending and 		receiving components.
+SQS - it is a message queue service used by distributed applications to exchange messages through a polling model, and can be used to decouple sending and receiving components.
 
 
 - sqs
@@ -893,6 +893,34 @@ ALB vs ELB
 
 Interview Questions Bank
 ========================
+Q1) Design a serverless API with DynamoDB or RDS as a backend.
+Ans) My design steps are:
+	Step 1: Use API Gateway to create the API endpoints. API Gateway will trigger the Lambda functions and handle the request/response flow.
+	Step 2: Create Lambda functions to handle the API logic and interact with DynamoDB. For example,
+		- GET function to retrieve an item by primary key
+		- POST function to create a new item
+		- PUT function to update an existing item
+		- DELETE function to remove an item
+	Step 3: Set up DynamoDB tables to store the data. Include primary keys and indexes as appropriate for the access patterns.
+	Step 4: Give Lambda functions permissions to read/write to DynamoDB.
+	Step 5: Use DynamoDB SDK in Lambda functions to perform CRUD operations:
+		- GetItem/PutItem to read/write individual items
+		- Query/Scan to retrieve multiple items
+		- UpdateItem to update attributes
+		- DeleteItem to delete an item
+	Step 6: Return appropriate HTTP status codes and responses from Lambda.
+	Step 7: Set up error handling in the Lambda functions to handle issues gracefully.
+	Step 8: Configure CORS on API Gateway to enable cross-origin requests.
+
+
+Q2) What are some of limitations with AWS Lambda and how have you solved them in the past.
+Ans) AWS Lambda Limitations include:
+	a) Execution duration: Lambda functions are limited to 15 minutes max. For long-running processes, I've either broken work into segments under 15 mins or switched to using Docker/ECS.
+	b) Cold starts: Spinning up a new container for each invocation can mean slow cold start times. I've solved this by optimizing code/dependencies, using provisioned concurrency, or switching to keeping containers warm with ECS.
+	c) No persistent filesystem: Lambda functions don't have persistent local filesystem across invocations. I've stored files in S3 or used SQLite in /tmp if small reference data needed.
+	d) Deployment Package Size: The default deployment package size is 50 MB. To better resuse, I've used Lambda Layers for reusing dependencies across multiple lambda functions.
+	d) Memory limits: Max memory allocated to Lambda functions within VPC is 10GB, and for functions not deployed within a VPC is 3GB; which can be insufficient for memory intensive apps. I've optimized memory usage or distributed processing across Lambda functions.
+
 1. GUI is being called by a lot(millions of customers). You have a currency of lets say 100 requests per second and lets say your API response time should be less than a second and How do you build? what kind of API will you build ?and what's that model look like? just walk me through.
 
 Ans : prepare on the tools AWS route 53, APIs tuning for 100 session

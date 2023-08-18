@@ -46,6 +46,8 @@ In AWS Cloud, I worked with
 
 	In Databases,
 		AWS RDS & Redshift for relational databases
+		AWS DynamoDB for nosql
+
 	Server-less Architectures with
 		- AWS Lambda - with either time-triggered or event triggered
 		- AWS API Gateway with http-triggered
@@ -60,6 +62,12 @@ In AWS Cloud, I worked with
 Also, have experience in creating the CI/CD setup using Jenkins and Groovy script.
 
 And, I have experience in agile methodologies like Scrum, Kanban in facilitating agile ceremonies like daily standups,sprint reviews, plannings and retrospectives. I am familiar with Agile tools like Jira and skilled in working with cross-functional teams including Dev team, QA testers, and PM/PO's.
+
+In GCP, worked with
+	VMs for server
+	GCP functions for Serverless
+	GKE and CloudRun for Container orchestration
+	CloudSQl with PostgreSQL
 
 I have experience in the entire data wrangling activities , from data source, transformations, cleansing and finally creating golden records
 
@@ -102,6 +110,8 @@ how do you learn new technologies, and trends
 	- Apart from them, I go through the stackoverflow questions and workplace stackoverflow questions, in my free time.
 	- And, part of enhancements or POCs, I research and read, and sometimes implement, based on some articles
 	- sometimes, I will listen to some tech related podcasts.
+	- Most important , is it will practice
+		- Complete the exercises
 
 Python Podcasts
 ================
@@ -141,9 +151,14 @@ When Programming started
 	I looked for work in it, and landed as a python developer.
 	That is my journey
 
+Documentation Experience
+------------------------
+	I have experience in writing both high-level documentation (using Atlassian Wiki) and Low-level documentations using docstrings in code, and using pydoc/ sphinx modules
+
 -------------------------
 Questions to Interviewers
 -------------------------
+	- May I know the Business problem, that we are about to address, with this project?
 	- May I know about the project, and the system architecture like the tools used, database, etc?
 	- What are you expecting from me, for this role? What can be the day-to-day activities? what does a successful person look like on your team?
 

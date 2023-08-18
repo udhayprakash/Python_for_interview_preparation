@@ -1,3 +1,113 @@
+Thank you for the briefing. Now, I can understand more about the position.
+After listening to the conversation, I am more confident to say that, “I am best fit for this role”
+
+INTRODUCTION:
+-------------
+I am a Data Analyst,
+	With over 5 years of experience developing data models and managing information systems, I have a strong background in leveraging data to meet organisational needs. I am skilled at working cross-functionally to understand business requirements and translate those into effective data solutions.
+
+	Throughout my career, I have consistently demonstrated my ability to interpret complex data sets, identify meaningful insights, and communicate recommendations clearly to stakeholders. I am comfortable working with statistical analysis and data visualization to find trends and patterns that drive business decisions.
+
+	Data integrity and quality are extremely important to me. I have implemented robust processes for data validation, error checking, and redundancy elimination that ensure we have accurate, consistent data as the foundation for analysis. This allows the organization to trust the insights from the data.
+
+	Partnering with teams across functions is crucial to driving value from data. I excel at collaborating with business leaders and technical teams to gather requirements, understand how they use data, and build solutions that meet their needs. My goal is enabling data-driven decision making.
+
+	Optimization and continuous improvement are central to my approach. I constantly look for ways to enhance data systems, analytics, and processes to improve efficiency, quality, and business impact. I leverage my technical skills and business acumen to find those opportunities.
+
+In terms of the tools, I utilized:
+
+In Data Collection & Storage:
+	SQL databases (e.g. MySQL, Microsoft SQL Server) to store and organize data
+	NoSQL databases (e.g. MongoDB) to store unstructured or non-relational data
+	Web scraping tools (e.g. Python libraries like BeautifulSoup) to collect data from websites
+	APIs to access data from third-party platforms and services
+	Excel or CSV files to collect data from business users
+	Data Processing & Cleaning:
+	Python or R to process, transform, and clean data
+	Pandas, NumPy libraries for data manipulation
+	Regex to find and replace patterns in data
+	Lookup tables or master data to map different values to common formats
+	Various techniques like handling missing values, fixing incorrect data types, removing duplicates
+
+In Analysis:
+	Python libraries like Pandas, NumPy, SciPy for statistical analysis
+	Machine learning libraries like Scikit-Learn, TensorFlow for predictive modeling
+	Tableau, Power BI for data visualization and creating interactive dashboards
+	Excel or Google Sheets for simple analysis and visualization
+
+In Reporting & Communication:
+	Dashboards and reports in tools like Tableau, Power BI, Looker to share insights
+	Jupyter Notebooks to document analysis and share reproducible code
+	Excel, PowerPoint to create reports and presentations for stakeholders
+	Emails, meetings, documentation to explain analysis methodology, findings, recommendations
+
+In Data Pipeline & Operations:
+	Workflow schedulers like Airflow, Luigi to automate pipelines
+	Version control with Git to manage changes to analysis code
+	Metadata management tools to catalog data sources, metrics, etc.
+	Monitoring data quality, integrity; fixing issues as they arise
+
+
+======================================================================================================================================
+Tablue Developer - INTRODUCTION
+--------------------------------
+Introduction
+	Good morning! My name is [] and I have over 5 years of experience in IT analytics and business intelligence. Based on the job description, I believe I am a strong match for this role owing to my background in SQL, Tableau, testing and communication skills.
+
+SQL Experience
+	Regarding the day-to-day responsibilities, I possess over 5 years of hands-on SQL experience including:
+	Query optimization, performance tuning using EXPLAIN plans
+	Developing complex joins, subqueries, CTEs across large datasets
+	Data investigation by analyzing query plans, logs and traces
+	Implementing best practices like aliases, commenting, formatting code
+	Exposure to various SQL dialects like MySQL, Hive, BigQuery, Snowflake
+	I am confident I can reliably analyze embedded SQL across Tableau dashboards and validate query performance.
+
+Tableau Experience
+	In addition, I have 3 years of Tableau expertise specifically around:
+	Connecting to databases like MySQL, Snowflake to ingest data
+	Building dashboards using various charts, filters, parameters
+	Implementing dashboard actions, cross-highlighting, tooltips
+	Creating calculated fields, groups, sets for data analysis
+	Performance tuning using extracts, Data Engine
+	Exposure to Tableau Server for sharing dashboards interactively
+	With this background, I can seamlessly re-engineer the Tableau dashboards to the new data sources.
+
+Testing and Communication
+	Finally, I have executed various test planning, test cases to validate reports and dashboards. I can apply similar techniques here for side-by-side validation and highlight any differences through clear communication including defect reports.
+
+Documentation Skills:
+	Have exposure to documenting release processes, maintenance procedures in past roles.
+	Can create detailed job aids on the monthly processes highlighting key tasks, owners, timelines.
+	Will gather inputs from team members to draft knowledge base articles for troubleshooting common issues.
+
+In summary, I am confident my skills make me a strong fit for supporting this Tableau and data transition project. I can clarify or expand on any part of my background - please let me know if you need any additional details!
+======================================================================================================================================
+
+
+
+PII
+---
+	- Personally Identifiable Information
+	- Any information that can be used on its own or with other information to identify, contact, ot locate a single person, or to identify an individual
+	- ex: Name, emailID, Phone number, address, photo, data of birth, bank account number, national identifiers(SSN, Aadhar number, PAN, etc), IP address, location data, etc.
+	- NIST SP800-122 Ssection 2, GDPR Article 4 (Personal data)
+
+PHI
+---
+	- Protected Health Information
+	- Protected health information includes all individually identifiable health information
+	- ex: Medical history, test result, insurance information, data about physical or mental health or condition of an individual.
+	- HIPPA & 160.103 Definitions - Protected health information
+
+SPI
+---
+	- Sensitive Personal Information/ Special Categories of Personal data
+	- These are the data that if compromized has high potential of risk to the rights and freedoms of an individual.
+	- ex: Race, ethnicity, political opinions, religious or philosophical beliefs, trade union membership, genetic data, biometric data, data concerning health or data concerning a natural person's sex life or sexual orientation
+	- GDPR Article 9 (Processing of special catergories of personal data)
+
+
 Data Analysis
 	- Feature Engineering
 	- Data Wrangling
@@ -43,3 +153,58 @@ Data cleansing and transformation
 variable Relative Strength(VRS) Index
 
 Macroeconomic
+
+
+========================
+Medical Field Business Analyst
+========================
+
+- Process & Tools used
+	Requirement Gathering:
+		- Conduct interviews, workshops, and surveys to gather requirements.
+		- Tools: Microsoft Word for questionnaires, Google Forms for surveys, Microsoft Teams or Zoom for remote interviews.
+
+	Working with Technical and Non-Technical People:
+		- Facilitate communication between technical and non-technical stakeholders to bridge the gap in understanding.
+		- Tools: Microsoft Teams, Slack, or any other team collaboration platform.
+
+	Documentation:
+		- Create comprehensive documentation of the gathered requirements, business processes, and system specifications.
+		- Tools: Microsoft Word, Google Docs, Confluence, or other documentation tools.
+
+	Gap Analysis:
+		- Analyze the difference between current and desired states to identify gaps and improvement areas.
+		- Tools: Microsoft Excel or Google Sheets for data analysis, visualization tools like Tableau or Power BI for creating visual representations.
+
+	Additionally, some specialized tools that are relevant in the medical field:
+
+	Electronic Health Record (EHR) Systems:
+		EHR systems facilitate the management of patient records, medical history, and treatment plans.
+		Examples: Epic, Cerner, Allscripts, Meditech.
+
+	Clinical Decision Support Systems (CDSS):
+		CDSS provides healthcare professionals with clinical knowledge and patient-specific information to aid in decision-making.
+		Examples: Zynx Health, CDS Hooks.
+
+	Medical Imaging and PACS (Picture Archiving and Communication Systems) Software:
+		These tools help manage and share medical images such as X-rays, MRIs, and CT scans.
+		Examples: Philips IntelliSpace PACS, GE Centricity PACS, McKesson Radiology.
+
+	Health Information Exchange (HIE) Platforms:
+		HIE platforms facilitate the secure exchange of patient health information between different healthcare organizations.
+		Examples: Carequality, CommonWell Health Alliance.
+
+	Requirements Management Tools:
+		These tools help track and manage requirements throughout the project lifecycle.
+		Examples: IBM Engineering Requirements Management DOORS, Jira, Trello.
+
+
+
+TODO
+
+
+	Tools
+	Process
+	Situations
+	Challenges
+	Compliances

@@ -1,5 +1,5 @@
-- reason for go?
-==============
+Go Experience
+-------------
 In Golang, I created microservices and ETL jobs,
 	Mainly using go concurrency.
 	Used Gokit for microservices implementation,
@@ -8,19 +8,47 @@ In Golang, I created microservices and ETL jobs,
 	BDD with ginko framework
 	Learning the GRPC
 
+Why Go?
+-------------
+- Improving efficiency to achieve cost savings in infrastructure requirements and energy consumption
+	It is known for its high performance and efficiency.
+	It has a lightweight runtime, fast start-up times and efficient memory management, making it ideal for building scalable and resource efficient applications.
+	Open source & no-license cost
+
+- Ability to handle large scale applications with a high throughput and low latency
+	Its concurrent, portable, resilient, maintainable, backward compatible and garbage collection features make it suitable for building microservices that can handle many requests in parallel.
+
+- Ease of development and deployment
+	Has a simple syntax which makes it easy to learn and code.
+	It also has a built in testing framework and a strong support for containerization technologies like Docker, which makes deployment of Microservices easier
+
+
+- array vs slice
+----------------
+	- arrays are fixed size collections of elements of same type.
+	- arrays have a contiguous memory allocation
+
+	- Slices are dynamic size, and referenced on top of arrays
+	- Size of slices can change at any time
+
+SOLID Design Principle
+----------------------
+	S stands for - Single Responsibility Principle:
+
+
 - GOROOT vs GOPATH
-===================
+----------------------
 	- GOROOT environment variable specifies the location of the Go installation, while
 	- GOPATH environment variable specifies the location of your workspace where you store your Go projects and packages.
 
 Concurrency Vs Parallelism
-==========================
+--------------------------
 	- Concurrency is the ability to run multiple tasks at the same time.
 	- Parallelism is the ability to run multiple tasks at the same time on multiple CPU cores. Golang supports both concurrency and parallelism. However, it is important to note that concurrency does not always mean parallelism. In fact, in many cases, concurrency can be more efficient than parallelism.
 
 
 Goroutines
-============
+----------
 - Advantages
 	- They are lightweight and cheap to create.
 	- They can be scheduled to run on any available CPU core.
@@ -30,6 +58,12 @@ Goroutines
 	- They can be difficult to debug.
 	- They can be inefficient if they are not used correctly.
 	- They can be a source of race conditions.
+
+- goroutine vs threads
+----------------------
+	- Goroutines are created by Go runtime; whereas OS threads are managed by operating system.
+	- Goroutines are more lightweight and efficient than threads, allowing you to create thousands of goroutines without consuming too much memory.
+	- Threads are heavier compared to goroutines, as each thread has its own stack and resources associated with it.
 
 
 - Go Data Structure

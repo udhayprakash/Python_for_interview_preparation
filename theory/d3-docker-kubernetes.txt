@@ -47,6 +47,7 @@ ___
 
 		Example:
 		docker build -t vieux/apache:2.0
+
 15. docker checkpoint create  - creates a new checkpoint
 16. docker checkpoint ls  - lists existing checkpoints
 17. docker checkpoint rm  - deletes an existing checkpoint

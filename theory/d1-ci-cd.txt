@@ -1,8 +1,9 @@
 CI/CD
 	- it  means Continuous Integration/Continuous Deployment
+	- I have experience with Jenkins, AWS CodeBuild & CodePipeline
+
 	- I worked with Jenkins
-	- created a EC2 instance, installed Jenkins, added plugins like Filesystem Trigger,
-	  code Build plugin, http request plugin, ...
+	- created a EC2 instance, installed Jenkins, added plugins like Filesystem Trigger, code Build plugin, http request plugin, ...
 	- I used bitbucket as the code repository.
 	- Gone to settings, and brought the webhook and integrated it into Jenkins.
 	- Now any git push to the bitbucket event will trigger the build process.
@@ -13,12 +14,12 @@ CI/CD
 		3. code coverage check -- whether it is greater than 90% or not
 		4. Static code analysis with
 			- flake8 or SonarQube, for application code
-			- Checkov for scanning infrastructure as code (IaC) YAML files
+			- Checkov for scanning infrastructure as code (IaaC), YAML files
 		5. security scanning using Veracode
 
 	Packaging
-		I create a setup.py file, where  will add all the dist utils things for creating a wheel file
-		One this wheel file is created, next step is deployment
+		I create a setup.py file, where  I will add all the dist utils things for creating a wheel file
+		Once this wheel file is created, next step is deployment
 
 	Current Project with AWS codeBuild + codepipeline
 
@@ -29,8 +30,8 @@ CI/CD
 	- Also, worked with cloudformation.json templates for infra management.
 		 - Terraform is a very naive experience
 
-	- Code Flow process
-		- feature branch -(Pull requests)(once completed) - dev branch -(testers signoff)-> release branch -(signoff from client)- production branch
+- Code Flow process
+	- feature branch -(Pull requests)(once completed) - dev branch -(testers signoff)-> release branch -(signoff from client)- production branch
 
 - https://www.xenonstack.com/blog/continuous-integration-and-delivery
 
@@ -74,7 +75,8 @@ CI/CD
 			}
 
 - Declarative pipelines Features
-	1) Declarative syntax: pipelines are defined using a simple and structured syntax that is easy to read and understand.
+	1) Declarative syntax:
+			- pipelines are defined using a simple and structured syntax that is easy to read and understand.
 	2) Easy pipeline visualization: pipelines are automatically visualized in the Jenkins UI, making it easy to understand the pipeline flow and status.
 	3) Stage-based execution: pipelines are defined in stages, with each stage containing one or more steps. This makes it easy to define and manage complex pipelines.
 	4) Integration with Jenkins plugins: declarative pipelines can easily integrate with Jenkins plugins, making it easy to extend the functionality of the pipeline.
@@ -107,55 +109,56 @@ SDLC
 
 Development Process
 -------------------
-System design
-Data flow design
-DataBase design
-Creating jira, by speaking with stakeholders
-Implement, commit code, build and test
-Release code at end of sprint
-Demoing the new features to clients/Stakeholders
+	System design
+	Data flow design
+	DataBase design
+	Creating jira, by speaking with stakeholders
+	Implement, commit code, build and test
+	Release code at end of sprint
+	Demoing the new features to clients/Stakeholders
 
 
 Code Flow
 ----------
-- First, we will reach out to the clients/Stakeholders and gather the requirements.
-- Then, we create JIRAs correspondingly, in the backend.
-- During the Sprint planning, we discuss with all the Stakeholders to prioritise the JIRAs for the sprint.
-- Then, for each of the JIRAs given, we will create a branch
-  Under the feature branch, we will start developing
-  We will follow TDD - Test driven development
-	Unittest mocks or pytest fixtures for mocking the 3rd party resources or REST APIs
-	Use mypy for testing the annotations and types
-	For linting, i used pylint and autopep8 for reformatting code for PEP8 guidelines.
+	- First, we will reach out to the clients/Stakeholders and gather the requirements.
+	- Then, we create JIRAs correspondingly, in the backend.
+	- During the Sprint planning, we discuss with all the Stakeholders to prioritise the JIRAs for the sprint.
+	- Then, for each of the JIRAs given, we will create a branch
+	  Under the feature branch, we will start developing
+	  We will follow TDD - Test driven development
+		Unittest mocks or pytest fixtures for mocking the 3rd party resources or REST APIs
+		Use mypy for testing the annotations and types
+		For linting, I used pylint and autopep8 for reformatting code for PEP8 guidelines.
 
-	We need to ensure all existing and new test cases are running
-	Then, push the code
-	Then, CI/CD process will run
-	If all correct, then we can give pull request
+		We need to ensure all existing and new test cases are running
+		Then, push the code
+		Then, CI/CD process will run
+		If all correct, then we can give pull request
 
-- Then, two  approvals needed; team will review the code; if any changes I will
-  Address them;
-  Else they will approve; I will merge the code
-  Then, code goes to next branch
+	- Then, two  approvals needed; team will review the code; if any changes I will
+	  Address them;
+	  Else they will approve; I will merge the code
+	  Then, code goes to next branch
 
-- We are with python; we add release tag and push the code
-  Python doesn't have build, so next step is deployment.
+	- We are with python; we add release tag and push the code
+	  Python doesn't have build, so next step is deployment.
 
 
 Agile Methodology
 -----------------
-- We will follow all Agile ceremonies
-- We will sit with the clients for requirement gathering
-  Then, place the jiras in the backlog
-- During the sprint planning, we will discuss on want among them to take, check for any dependencies and get all needed things.
-- At the end of the sprint, we will have sprint review and retrospective meetings
-- We give utmost importance to these review feedbacks, and try to improve this continuous process
+	- We will follow all Agile ceremonies
+	- We will sit with the clients for requirement gathering
+	  Then, place the jiras in the backlog
+	- During the sprint planning, we will discuss what we want among them to take, check for any dependencies and get all needed things.
+	- At the end of the sprint, we will have sprint review and retrospective meetings
+	- We give utmost importance to these review feedbacks, and try to improve this continuous process
+
 
 Agile
 ------
-- Agile is an iterative approach to project management and software development that helps teams deliver value to their customers faster and with fewer headaches.
-- The three C's of Agile are  Card, Conversation and Confirmation.
-- Means first create stories, discuss on them, and deliver them.
+	- Agile is an iterative approach to project management and software development that helps teams deliver value to their customers faster and with fewer headaches.
+	- The three C's of Agile are  Card, Conversation and Confirmation.
+	- Means first create stories, discuss on them, and deliver them.
 
 
 Agile Methodology Disadvantages
@@ -185,6 +188,7 @@ Agile vs scrum
 --------------
 - Agile is a philosophy, whereas scrum is a type of agile methodology.
 
+
 Agile vs kanban
 ---------------
 Feature			|Agile											| Kanban
@@ -204,8 +208,8 @@ Planning		|The team meets regularly to assess progress and make changes to the p
 Documentation	|The team documents the project's requirements and progress
 				| The team does not document the project's requirements or progress
 
-Testing		|The team tests the project's features at the end of each sprint
-			| The team tests the project's features continuously
+Testing			|The team tests the project's features at the end of each sprint
+				| The team tests the project's features continuously
 
 Deployment		| The project is deployed at the end of each sprint
 				| The project is deployed continuously
@@ -372,6 +376,28 @@ How to debug code defect  give troubleshooting process, tell for python coding
 	10) Ask for help: If you're still having trouble identifying the issue, reach out to other developers or online forums for help. Sometimes a fresh pair of eyes can help spot
 
 
+Operational Twin/ digital twin
+==============================
+	- It enables the creation of a digital twin of a real-world(business) process using a combination of automatic process mining and machine learning. Process mapping and KPI Visualization
+	- Benefits
+		- Process Mapping
+				- What does my process look it
+				- Can identity redundant steps, drivers and correlations, bottlenecks, etc, of the process
+		- Prediction
+				- What happens tomorrow/ in a week?
+				- Can trigger targeted actions in advance on specific customers or stages, and accurately forecast KPIs
+		- Scenario Testing
+				- What would happen if ..?
+				- Can predict and assess outcomes of future internal or external events
+		- Optimisation
+				- How can we improve?
+				- Can automatically find steps or parameters to target to maximise or minimise KPIs
+		- Vulnerability Discovery
+				- What are the risks
+				- Can identity expected or unexpected operatinal resilience challenges
+	- Use cases
+		- Mortgage Pre-delinquency
+			- raising  interest rates, and modelling the impact
 
 Jenkins Q&APIs
 ===============

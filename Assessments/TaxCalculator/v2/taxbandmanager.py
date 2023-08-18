@@ -87,7 +87,7 @@ class TaxBandManager:
     def list_bands(self):
         self.logger.debug("Listing all tax bands:")
         if not self.tax_bands:
-            self.logger.info("  No tax bands found")
+            self.logger.info("No tax bands REGISTERED YET. Create one")
             return
         for band_name, band_values in self.tax_bands.items():
             self.logger.info(f"  {band_name}: {band_values}")

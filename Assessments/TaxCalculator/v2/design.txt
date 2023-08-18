@@ -1,0 +1,55 @@
+create a CLI tool in Python for taxband manager and tax_calculator
+
+Two classes:
+	class TaxBandManager
+		- methods : list_bands, create_band, update_band, delete_band, setdefaultband(bandname)
+		- bands should be stored in JSON file
+		- Logging should be present for each action
+
+	class TaxCalculator
+		- methods: input_validator, calcuate_tax
+
+one function
+	main()
+		argparse to get user inputs
+
+		create TaxBandManager instance if --taxband choosen
+
+			tax_calculator.py --taxband list
+			tax_calculator.py --taxband create
+			tax_calculator.py --taxband update
+			tax_calculator.py --taxband delete
+
+			tax_calculator.py --taxband setdefaultband bandname
+
+			tax_calculator.py --bandname ukband --salary 989779
+			tax_calculator.py --salary 989779
+
+
+python tax_calculator2.py taxband list  # should list all bands
+python tax_calculator2.py taxband list  bandname # should list specified bandname
+
+python tax_calculator2.py taxband delete bandname
+python tax_calculator2.py taxband delete bandname
+
+python tax_calculator2.py taxband create bandname  # bandname mandatory
+python tax_calculator2.py taxband update bandname # bandname mandatory
+
+
+update the main functon argparse code to
+
+
+
+    # Valid Cases
+    tc.calculate_tax("ukband", 0)
+    tc.calculate_tax("ukband", 1000)
+    tc.calculate_tax("ukband", 3000.45)
+    tc.calculate_tax("ukband", 12000)
+    tc.calculate_tax("ukband", 23456)
+    tc.calculate_tax("ukband", 54987)
+
+    # InValid Salary
+    tc.calculate_tax("ukband", -213)
+
+    # UnRegistered Tax Band
+    tc.calculate_tax("usband", 54987)

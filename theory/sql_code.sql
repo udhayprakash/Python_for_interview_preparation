@@ -476,7 +476,7 @@ SET
 WHERE
     c1.customer_id = 5 AND c2.customer_id = 2;
 =====================================================================================
-You have a table named EMPLOYEE that looks like the following columns and data:
+Q) You have a table named EMPLOYEE that looks like the following columns and data:
 		-------------------------
 		Name 	Earnings 	Age
 		-------------------------
@@ -487,17 +487,173 @@ You have a table named EMPLOYEE that looks like the following columns and data:
 		nop		$75,000		55
 		-------------------------
 
-What does the following query return?
+	What does the following query return?
 
-	Select MAX(Earnings) as Salary
-	From EMPLOYEE
-	Where Salary < (select max(Earnings) from EMPLOYEE)
+		Select MAX(Earnings) as Salary
+		From EMPLOYEE
+		Where Salary < (select max(Earnings) from EMPLOYEE)
 
-a) $75,000
-b) $45,000 and $45,001
-c) $30,000
-d) $50,000
-e) Returns all rows, ordered by the largest salary to the lowest salary
+	a) $75,000
+	b) $45,000 and $45,001
+	c) $30,000
+	d) $50,000
+	e) Returns all rows, ordered by the largest salary to the lowest salary
 
 Ans) d
 =====================================================================================
+Q) 	Table name: flight
+	Columns: source, destination, dept_time, arrival_time
+
+	Write the query returning all the flights between A to B on a given date, with one layover in between
+
+	SELECT
+		f1.source, f1.destination, f1.dept_time, f2.arrival_time
+	FROM flight f1
+	JOIN flight f2 ON f1.destination = f2.source
+	WHERE f1.source = 'A'
+	AND f2.destination = 'B'
+	AND DATE(f1.dept_time) = '2022-07-21'
+	AND f2.dept_time > f1.arrival_time
+
+
+	To get the layover time between the connecting flights, we can calculate the difference between the arrival time of the first flight (f1) and the departure time of the second flight (f2).
+
+	SELECT
+	  f1.source,
+	  f1.destination,
+	  f1.dept_time,
+	  f2.arrival_time,
+	  TIMEDIFF(f2.dept_time, f1.arrival_time) AS layover_time
+	FROM flight f1
+	JOIN flight f2 ON f1.destination = f2.source
+	WHERE
+	  f1.source = 'A'
+	  AND f2.destination = 'B'
+	  AND DATE(f1.dept_time) = '2022-07-21'
+	  AND f2.dept_time > f1.arrival_time
+=====================================================================================
+Q) migrate all vaues from 5th row to 2th row
+	CREATE TABLE table1 (
+	  id INT,
+	  letter VARCHAR(1)
+	);
+
+	INSERT INTO table1 VALUES
+	  (1, 'a'),
+	  (2, 'b'),
+	  (3, 'c'),
+	  (4, 'd'),
+	  (5, 'e');
+Ans)
+	To read only,
+		SELECT
+		  t1.id AS id,
+		  CASE WHEN t1.id = 2 THEN t2.letter ELSE t1.letter END AS letter
+		FROM table1 t1
+		JOIN table1 t2 ON t2.id = 5;
+
+	To update changes,
+
+		DECLARE
+		  c5_data customers%ROWTYPE;
+		  c2_data customers%ROWTYPE;
+
+		BEGIN
+		  SELECT * INTO c5_data FROM customers WHERE customer_id = 5;
+		  SELECT * INTO c2_data FROM customers WHERE customer_id = 2;
+
+		  -- Swap values
+		  UPDATE customers SET
+			first_name = c5_data.first_name,
+			last_name = c5_data.last_name,
+			age = c5_data.age,
+			country = c5_data.country
+		  WHERE customer_id = 2;
+
+		  UPDATE customers SET
+			first_name = c2_data.first_name,
+			last_name = c2_data.last_name,
+			age = c2_data.age,
+			country = c2_data.country
+		  WHERE customer_id = 5;
+
+		END;
+=========================================================================================
+Q) Design an object model for a learning management / university course management system like D2L.
+	E.g Entities: teachers, students, courses, assignments etc
+
+	Courses: Math 1, Math2, …
+	Semesters: Spring 2022, Summer 2022, …
+	Teachers: Mr. Smith, Mrs. McDonald
+		Math 1 is offered in Spring 2022 by Mr. Smith
+		Math 2 is offered in Spring 2022 by Mr. Smith and Summer 2022 by Mrs. McDonald
+	Students:
+		Julie and John Julie is enrolled in Math 2 in summer 2022 taught by Mrs. McDonald
+		John is enrolled in Math 1 in spring 2022 taught by Mr Smith, and
+		Math 2 in summer 2022 taught by Mrs. McDonald
+
+	We have two assignments Assignment A, Assignment B in Math 2 offered on summer 2022 by Mrs McDonald
+	We have two assignments assignment X, assignment Y in Math 2 offered on Spring 2022 by Mr Smith
+	John got 95/100 in assignment A in Math 2 while he took in summer 2022 … Table_name
+
+	Fiel_1: Int
+
+	Ensure that students has completed some mandatory courses , before staring new course
+	what if there were multiple prequestes
+
+	After Desiginng, get all prequests for a given course SQL
+
+Ans)
+		Person
+			id
+			name
+
+		Student
+			id
+			person_id (FK to Person table)
+
+		Teacher
+			id
+			person_id (FK to Person table)
+
+		Course
+			id
+			name
+			teacher_id (FK to Teacher table)
+			semester_id (FK to Semester table)
+
+		Semester
+			id
+			name
+			year
+
+		Enrollment
+			id
+			student_id (FK to Student table)
+			course_id (FK to Course table)
+
+		Assignment
+			id
+			name
+			course_id (FK to Course table)
+			max_points
+
+		Submission
+			id
+			student_id (FK to Student table)
+			assignment_id (FK to Assignment table)
+			points
+
+		-- To ensure that students have completed mandatory prerequisites before starting a new course
+
+		CoursePrerequisite
+			id
+			course_id (FK to Course table)
+			prerequisite_course_id (FK to Course table)
+
+		SELECT
+			p.name
+		FROM Course c
+		JOIN CoursePrerequisite cp ON c.id = cp.course_id
+		JOIN Course p ON cp.prerequisite_course_id = p.id
+		WHERE c.name = 'Course 101';

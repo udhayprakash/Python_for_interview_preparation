@@ -1,25 +1,234 @@
-Debt vs Equity
-==============
- - "Debt" involves borrowing money to be repaid, plus interest, while "equity" involves raising money by selling interests in the company
+Market
+======
+	1) Primary market:
+		- A primary market is where new securities are issued for the first time.
+		- This is where companies raise capital by selling shares of stock or bonds to investors.
+
+	2) Secondary market:
+		- A secondary market is where existing securities are traded between investors.
+		- This is where investors can buy and sell shares of stock, bonds, and other securities.
+
+	3) Over-the-counter (OTC) market:
+		- An OTC market is a decentralized market where securities are traded directly between two parties.
+		- This market is not as regulated as the primary or secondary markets.
+
+	4) Exchange-traded market:
+		- An exchange-traded market is a centralized market where securities are traded on an exchange.
+		- This market is more regulated than the OTC market.
+
+	5) Futures market:
+		- A futures market is a market where contracts for the future delivery of a commodity or financial instrument are traded.
+		- This market is used to hedge against price risk or to speculate on future price movements.
+
+	6) Options market:
+		- An options market is a market where contracts that give the holder the right, but not the obligation, to buy or sell a security at a specified price on or before a specified date are traded.
+		- This market is used to hedge against price risk or to speculate on future price movements.
 
 
-preferred shares
-	- Preference shares/stock, are shares of a company's stock with dividends that are paid out to shareholders before common stock dividends are issued.
-	- If the company enters bankruptcy, preferred stockholders are entitled to be paid from company assets before common stockholders.
+Financial Instruments
+=====================
+	1) Stocks:
+		- Stocks are shares of ownership in a company.
+		- When we buy a stock, we are buying a small piece of the company.
 
-Common shares
-	- Common shares are issued to business owners and other investors as proof of the money they have paid into a company.
-	- Of all shareholders, common shareholders have the least claim on a company's assets.
+	2) Bonds:
+		- Bonds are loans that we make to a company or government.
+		- When we buy a bond, we are lending money to the company or government and they agree to pay us back with interest.
+
+	3) Derivatives:
+		- Derivatives are financial instruments that derive their value from another asset.
+		- For example, a futures contract is a derivative that derives its value from the price of a commodity.
+
+	4) Currencies:
+		- Currencies are the unit of exchange in a country.
+		- When we buy or sell a currency, we are exchanging one currency for another.
+
+	5) Commodities:
+		- Commodities are raw materials that are used to produce goods or services.
+		- For example, oil, gold, and wheat are all commodities.
+
+	6) Exchange-traded funds (ETFs):
+		- ETFs are baskets of securities that are traded on an exchange.
+		- ETFs can be a good way to invest in a variety of assets, such as stocks, bonds, and commodities.
+
+	7) Mutual funds:
+		- Mutual funds are also baskets of securities, but they are not traded on an exchange.
+		- Mutual funds are typically managed by a professional investment manager.
+
+
+share
+=====
+	1) Common shares:
+		- Common shares are the most basic type of share.
+		- They give the holder the right to vote on company matters and to receive dividends, if any.
+		- Of all shareholders, common shareholders have the least claim on a company's assets.
+
+	2) Preferred shares:
+		- Preferred shares have a higher claim on a company's assets and earnings than common shares.
+		- They also typically pay a fixed dividend, regardless of how well the company is doing.
+		- dividends that are paid out to shareholders before common stock dividends are issued.
+		- If the company enters bankruptcy, preferred stockholders are entitled to be paid from company assets before common stockholders.
+
+	3) Callable shares:
+		- Callable shares can be redeemed by the company at a specified price.
+		- This gives the company the flexibility to repurchase the shares if they become too expensive.
+
+	4) Convertible shares:
+		- Convertible shares can be converted into another type of security, such as a bond or a warrant.
+		- This gives the holder the flexibility to choose the security that best suits their needs.
+
+
+	5) Restricted shares:
+		- Restricted shares are shares that have certain restrictions on them, such as a lock-up period or a minimum holding period.
+
+	6) Phantom shares:
+		- Phantom shares are not real shares, but they give the holder the right to receive the same economic benefits as if they owned real shares.
+
+	7) Exchangeable shares:
+		- Exchangeable shares can be exchanged for shares of another company.
+		- This gives the holder the flexibility to invest in a different company if they so choose.
 
 Shares in a limited company
-	1) Ordinary shares.
-	2) Non-voting shares.
-	3) Preference shares.
-	4) Redeemable shares.
+	1) Ordinary shares
+	2) Non-voting shares
+	3) Preference shares
+	4) Redeemable shares
 
 
-VAR
-	- Value at Risk (VaR) is a statistic that is used in risk management to predict the greatest possible losses over a specific time frame.
+Debt vs Equity
+--------------
+	 - "Debt" involves borrowing money to be repaid, plus interest, while
+	 - "equity" involves raising money by selling interests in the company
+
+Bonds
+=====
+	- Face value:
+		- amount of money that the issuer of the bond agrees to pay back to the bondholder at maturity.
+
+	- Coupon:
+		- interest rate that the issuer of the bond agrees to pay to the bondholder.
+
+	- Maturity:
+		- date on which the issuer of the bond agrees to pay back the face value of the bond to the bondholder.
+
+	- Yield:
+		- return that an investor expects to receive from the bond.
+
+	- Credit rating:
+		- measure of the issuer's ability to repay the bond.
+
+	- Default:
+		- A default occurs when the issuer of a bond fails to make a payment on the bond.
+
+	- Call option:
+		- A call option gives the issuer of a bond the right to repurchase the bond before maturity.
+
+	- Put option:
+		- A put option gives the bondholder the right to sell the bond back to the issuer before maturity.
+
+	- Callable bond			: bond that can be repurchased by the issuer before maturity.
+	- Convertible bond		: bond that can be converted into shares of stock.
+	- Floating-rate bond	: bond that pays interest that fluctuates with market interest rates.
+	- Zero-coupon bond		: bond that does not pay interest until maturity.
+	- High-yield bond		: (junk bond), is a bond that is considered to be high-risk.
+	- Subordinated bond		: bond that has a lower priority than other types of bonds, such as secured bonds.
+	- Inflation-linked bond	: bond that is linked to the rate of inflation.
+
+
+Debt Securities
+===============
+	1) Corporate bonds:
+		- Corporate bonds are issued by companies to raise money.
+		- They are typically secured by assets of the company, such as buildings or equipment.
+
+	2) Government bonds:
+		- Government bonds are issued by governments to raise money.
+		- They are considered to be very safe investments, as governments have a strong track record of repaying their debts.
+
+	3) Municipal bonds:
+		- Municipal bonds are issued by local governments to raise money.
+		- They are typically considered to be a safe investment, as local governments have a strong track record of repaying their debts.
+
+	4) Convertible bonds:
+		- Convertible bonds are bonds that can be converted into shares of stock.
+		- This gives investors the option to profit from the appreciation of the company's stock.
+
+	5) Floating-rate bonds:
+		- Floating-rate bonds are bonds that pay interest that fluctuates with market interest rates.
+		- This means that the interest payments on floating-rate bonds may go up or down over time, depending on market conditions.
+
+	6) Zero-coupon bonds:
+		- Zero-coupon bonds do not pay interest until maturity.
+		- This means that investors do not receive any income from the bonds until they mature.
+		- However, zero-coupon bonds typically have a higher yield than bonds that pay interest regularly.
+
+Debentures
+==========
+	- bondholders will receive a fixed amount of interest each year until the debenture matures.
+	- Pros: Potential for higher yield, Longer maturity, Potential for capital appreciation
+	- cons: Unsecured, Fixed or floating interest rate, Longer maturity, Higher risk
+
+bonds vs debentures
+--------------------
+	- Security:
+		- Bonds are secured loans, while debentures are unsecured loans.
+		- If the company defaults on its debt, bond holders have a claim on company's assets, while debenture holders do not.
+
+	- Issuer:
+		- Bonds can be issued by companies, governments, or other entities, while debentures are typically issued by companies.
+
+	- Maturity:
+		- Bonds typically have a shorter maturity than debentures.
+		- Bond holders get their investment back sooner than debenture holders.
+
+	- Risk:
+		- Bonds are typically considered to be less risky than debentures, as bond holders have a claim on the company's assets.
+
+primary market debentures
+-------------------------
+	- new securities are issued for the first time
+	- companies, governments, or other entities issue debentures to raise money.
+	- less liquid than the secondary market, as there will be fewer buyers and sellers in the primary market.
+	- Features
+		Issuer		: company, government, or other entity that is issuing the debenture.
+		Underwriter	: The underwriter is the financial institution that is responsible for selling the debentures to investors.
+		Pricing		: The price of a debenture is determined by the underwriter based on a number of factors, including the creditworthiness of the issuer, the interest rate environment, and the demand for debentures.
+		Proceeds	: The proceeds from the sale of debentures are used by the issuer to raise money.
+
+	- Benefits
+		- New issue premium:
+			- Investors who buy debentures in the primary market may be able to get a new issue premium, which is a premium above the face value of the debenture.
+		- Access to new investment opportunities:
+			- The primary market provides investors with access to new investment opportunities that may not be available in the secondary market.
+		- Supporting the issuer:
+			- By investing in debentures in the primary market, investors are helping to support the issuer and its growth.
+
+	- Risks
+		Illiquidity:
+			- The primary market for debentures is typically less liquid than the secondary market, which means that it may be difficult to sell debentures in the primary market.
+		Risk of default:
+			- issuer of a debenture may default on debenture, which means that investors may not be repaid their investment.
+		Interest rate risk:
+			- If interest rates rise, the value of debentures may fall
+
+role of front desk person for primary market debentures
+--------------------------------------------------------
+	- to facilitate the issuance of new debentures
+	- Providing information to investors about the debentures that are being issued, such as
+		- the terms of the debentures,
+		- the creditworthiness of the issuer, and
+		- the interest rate environment
+	- Accepting orders from investors, who want to buy debentures.
+	- Processing orders from investors, which includes verifying the identity of the investors, ensuring that the orders are filled, and sending confirmations to the investors.
+	- Monitoring the market for debentures, which includes tracking the price of debentures, the demand for debentures, and the creditworthiness of the issuers.
+
+
+----------------------------------------------------------------------------------------
+
+Value at Risk (VaR)
+	-  risk management metric that quantifies potential loss of an investment or portfolio over a specific time horizon, at a certain level of confidence
+	-  estimates the maximum loss that an investment is likely to experience under normal market conditions over a given time period and with a specified probability
+
 	- VAR is determined by three variables:
 		1) period,
 		2) confidence level, and
@@ -50,3 +259,128 @@ Gain to Pain ratio:
 
 	- Formula is
 		Gain to Pain Ratio = Total Returns/ Absolute value of negative returns
+
+
+Liquidity Management(LM), for Payments
+=======================================
+ - Practice of managing cash, including assets that can easily be converted to cash
+	- Individual
+		- Monthly Income, Investments, Outgoing payments
+	- Corporations
+		- Accounts - Cash, assets
+		- Single or multiple currencies
+		- Single region or multiple regions or jurisdictions
+
+- Tools for LM
+	- Credit Interest
+	- Overdraft  - line of credit - shortter - higher interest - given on overnight basis
+	- Daylight overdrafts (or) Intraday credit limits
+		- Movement of funds in and out of an account - on an intraday basis
+	- ZBAs - Zero Balance Accounts
+		- Regular current accounts from which the account holder can make/receive payments
+		- It's a subaccount created as part of a grouping of accounts, often to segregate different types of payment activity, generally to ease the reconciliation process.
+		- Under one Master accounts, there will be multiple ZBAs, created for different types of businesses, of a company
+	- Sweep Structures
+		- Like ZBA structure, but balance need not be zero at the end of each processing day
+		- customer can leave a specified amount in the account that is being 'swept', called a TARGET BALANCE.
+		- In auto-sweep, not necessary to move funds from one account to other on daily basis, instead at intervals such as weeky/monthly or at target balance. But customer can make funds movement request outside auto schedule absed on his/her needs.
+		- Used by both corporations or individual retail clients
+		- Two-way sweep
+			- process of moving funds from one account to another and then back again, usually at pre-agreed intervals
+	- Notional Pooling
+		- surplus balances in one account are OFFSET by overdrawn positions in another account without physically moving funds between accounts
+		- Interest is paid/charged on net balance of all accounts in notional pool
+		- No Physical movement of funds between accounts
+		- Not Allowed in all countries (ex: US, JAPAN only ZBA/Sweep structure)
+		- Also, there can be Multi-currency notional pooling
+	- POBO (pay on behalf of) & ROBO (receive on behalf of)
+		- All of subsidiaries within a legal entity give permission for one enity to make all of its payments and accept all of its receipts.
+		- Greter efficiencies for cutomers, leading to cost savings
+		- POBO
+			- A scheme whereby one legal entity allows another legal entity within a group of companies to make their payments
+		- ROBO
+			- A scheme whereby one legal entity allows another legal entity within a group of companies to receive their payments
+
+
+- Strategies for liquidity management may include:
+
+	a. Cash Flow Forecasting:
+		- Predicting incoming and outgoing cash flows to anticipate potential shortfalls or surpluses in liquidity.
+
+	b. Cash Reserves:
+		- Maintaining a prudent level of cash reserves or cash equivalents to handle unforeseen events or emergencies.
+
+	c. Working Capital Management:
+		- Optimizing the management of current assets (e.g., accounts receivable, inventory) and current liabilities (e.g., accounts payable) to ensure smooth operations.
+
+	d. Short-Term Borrowing:
+		- Utilizing short-term borrowing facilities, such as lines of credit or overdrafts, to cover temporary cash shortfalls.
+
+	e. Investment of Surplus Funds:
+		- Investing excess cash in low-risk, short-term instruments to earn some return while remaining readily available for use.
+
+
+
+
+
+
+Commodity Trade
+===============
+
+Futures contract
+	An agreement between two parties for a delivery of a commodity at a future date
+
+various approaching for trading in market
+	Hedging
+
+	Arbitrage
+	Directional
+
+
+﻿
+
+Hedging
+	> What	: An investment to mitigate risk from price fluctuations in the primary investment asset.
+	> Why	: To mitigate the risk on underlying asset for farmers and investors.
+	> How	: Hedging between underlying asset and corresponding Futures/Options contracts.
+	> Prerequisite	: High correlation is required between the hedging instruments.
+	> Advantage		: Less investment for mitigation from price uncertainty.
+
+﻿
+Arbitrage
+	Calendar Spread:
+		➤ What: Difference between two Futures Calendar contracts.
+		➤ Attributes:
+			➤ Builds Stationary Series with hedge ratio -1.
+			➤ Mean reverting
+			➤ Lower margin requirement - requires approximately 1/4th of margin
+			➤ Less market risk and excellent profit potential
+	Pair Trading:
+		> What: Trading between two/more highly negatively/positively fundamentally correlated commodities.
+		➤ Attributes:
+			➤ Difference between two Futures Commodity contracts.(if positively correlated)
+			➤ Builds Stationary Series with hedge ratio
+			➤ Usually Mean reverting
+			➤ Less market risk and excellent profit potential
+
+﻿
+
+Algo Trading Stages
+	Trading Concept
+	Filtering Criteria
+	Visualize the Model
+	Backtesting
+	Optimization
+	Paper Trading
+	Go Live
+
+﻿
+
+Trading Concept
+	Activities in Formulate the Trading Concept:
+		> Brainstorming ideas
+		> Finalize Trading logic/idea
+		> Frequency of trades
+		> Choose market segment (Equity/Commodity/FX/Crypto)
+		> Back testing period
+		> Automation tools/languages

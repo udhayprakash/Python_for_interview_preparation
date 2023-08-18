@@ -1,11 +1,23 @@
 ETL Jobs
 =========
-I have the experience in creating ETL jobs with event-driven architecture, like
+I have the experience in creating ETL jobs, like
+
 1) In a s3 bucket, when a new file comes, that event will trigger a lambda, which parses that csv file content,
 	and transforms using pandas dataframes, and finally push the resultant information, into AWS RDS, using RDS Proxy.
 
-2) time triggered  ---> periodically, it will check for new data in the files and dump them together
-		say it may run for every 1 hr
+2) Implemented a time-triggered ETL pipeline that periodically loads new data files:
+	- First, stored the raw data files in S3 buckets
+	- Then, used AWS Cloudwatch Events to trigger an AWS Lambda function, every 1 hour
+	- The Lambda function, written in python, will
+		- Get the list of files in the s3 bucket using boto3
+		- filtered new files added in last 1 hour, based on LastModified date
+		- Loaded all files, using pandas, cleansed, transformed and appended all dataframes, into single dataframes
+		- Dumped the final dataframe into AWS Redshift using psycopg2 library
+		- Handled errors and retries gracefully in the Lambda function.
+		- Used AWS CloudWatch Logs to monitor the Lambda and set alarms for errors.
+		- Lastly, scheduled the CloudWatch Event to trigger every 1 hour based on a fixed rate expression.
+
+
 3) http triggered -- > some one want to push data to out application
 		--- I exposed my lambda via API gateway --
 
@@ -19,8 +31,6 @@ Also, used the AWS Glue jobs for transformation of around 50k records.
 I configured the glue data catalogue to pick the specific columns AND  perform operations
 	Within the python code, I connected with the pyspark for some transformations, etc
 And dumped final results in either parquet for any further jobs, or to the db
-
-s3 -> AWS Athena -> AWS Lambda -> AWS API Gateway -> QuickSight
 
 Funnel is the ETL tool, to pull the social media data, to a csv
 GCP DataFusion
@@ -55,8 +65,34 @@ ETL Job :: aws kinesis stream ---> SQS ---> event triggered ---> AWS lambda
 			Send an email notification.
 			Trigger another AWS service.
 
+
+AWS ETL job types
+------------------
+	1) Lambda-triggered ETL
+		- Trigger ETL workflows using AWS Lambda whenever a file arrives in S3 or a record is added to DynamoDB/Kinesis. Provides serverless automation.
+
+	2) 	Batch ETL
+		- Extract data from sources like S3, transform it, and load into data warehouses like Redshift for analytics.
+		- Scheduling tools like Airflow can automate and orchestrate these batches.
+
+	3) Streaming ETL
+		- Continuously extract streaming data from sources like Kinesis, process events in real-time, and load into destinations like Elasticsearch.
+		- Useful for real-time analytics and data pipelines.
+
+	4) Metadata-driven ETL
+		- Use AWS Glue crawlers to scan data sources, catalog metadata like schemas and tables, and then automate ETL jobs based on the catalog.
+
+	5) Containerized ETL
+		- Build Docker containers with your ETL logic and run them on ECS or EKS.
+		- Helps standardize and deploy ETL processing.
+
+	6) Machine Learning ETL
+		- Enrich data during ETL by passing it through ML models for classification, predictions, recommendations etc. before loading.
+	7) Database migration
+		- Tools like AWS Database Migration Service can help move databases from on-prem RDBMS or warehouses into cloud data stores.
+
 ETL best practices
-===================
+------------------------
 1) Extract necessary data only
 	- Data profiling and cleansing, to remove duplicate and unnecessary data.
 
@@ -78,89 +114,6 @@ ETL best practices
 		- Customer Service/support
 
 
-Data Migration Strategy
-------------------------
-We can take offsets from the db and transfer,
-	Say when I pulled there were 100 records
-	Say after active migration, we repoint to new db, so, no more data to old db.
-
-	Say now there were 120 records count
-	Remaining small chunk (20 records), we will get after active migration
-
-	I know, I will make hold of offset when pull the data
-	I mean, I will count the no of records at that time, when I am pulling
-
-Slowly Changing Dimensions
----------------------------
-- dimensions that change slowly over time, rather than changing on regular schedule, time-base.
-- implementing one of the SCD types should enable users assigning proper dimension's attribute
-  value for given date.
-- Example of such dimensions could be: customer, geography, employee.
-- SCD approaches can be like
-	Type 0 - The passive method
-	Type 1 - Overwriting the old value
-	Type 2 - Creating a new additional record
-	Type 3 - Adding a new column
-	Type 4 - Using historical table
-	Type 6 - Combine approaches of types 1,2,3 (1+2+3=6)
-- In detail,
-	Type 0
-		- The passive method.
-		- In this method no special action is performed upon dimensional changes.
-		- Some dimension data can remain the same as it was first time inserted, others may
-		  be overwritten.
-	Type 1
-		- Overwriting the old value.
-		- In this method no history of dimension changes is kept in the database.
-		- The old dimension value is simply overwritten be the new one.
-		- This type is easy to maintain and is often use for data which changes are caused
-		  by processing corrections(e.g. removal special characters, correcting spelling errors).
-	Type 2
-		- Creating a new additional record.
-		- In this methodology all history of dimension changes is kept in the database.
-		- You capture attribute change by adding a new row with a new surrogate key to the
-		  dimension table.
-		- Both the prior and new rows contain as attributes the natural key(or other durable
-          identifier).
-		- Also 'effective date' and 'current indicator' columns are used in this method.
-		- There could be only one record with current indicator set to 'Y'.
-		- For 'effective date' columns, i.e. start_date and end_date, the end_date for current
-		  record usually is set to value 9999-12-31.
-		- Introducing changes to the dimensional model in type 2 could be very expensive
-		  database operation so it is not recommended to use it in dimensions where a new
-		  attribute could be added in the future.
-	Type 3
-		- Adding a new column.
-		- In this type usually only the current and previous value of dimension is kept in
-		  the database.
-		- The new value is loaded into 'current/new' column and the old one into 'old/previous'
-		  column.
-		- Generally speaking the history is limited to the number of column created for
-		  storing historical data.
-		- This is the least commonly needed technique.
-	Type 4
-		- Using historical table.
-		- In this method a separate historical table is used to track all dimension's
-		  attribute historical changes for each of the dimension.
-		- The 'main' dimension table keeps only the current data e.g. customer and
-		  customer_history tables.
-	Type 6
-		- Combine approaches of types 1,2,3 (1+2+3=6).
-		- In this type we have in dimension table such additional columns as:
-
-		current_type 	- for keeping current value of the attribute. All history records
-                          for given item of attribute have the same current value.
-		historical_type - for keeping historical value of the attribute. All history
-		                  records for given item of attribute could have different values.
-		start_date 		- for keeping start date of 'effective date' of attribute's history.
-		end_date 		- for keeping end date of 'effective date' of attribute's history.
-		current_flag 	- for keeping information about the most recent record.
-
-		- In this method to capture attribute change we add a new record as in type 2.
-		- The current_type information is overwritten with the new one as in type 1.
-		- We store the history in a historical_column as in type 3.
-
-
 Data Pipeline
 --------------
 	Let me quickly explain the recent data pipeline, which we have built.
@@ -176,3 +129,86 @@ Data Pipeline
 	data bricks file system and create the data bricks jobs in the data bricks using notebook tasks and these egg dependencies.
 
 	Let me quickly explain the working environment. I was working in the agile environment, where we used to have sprint planning meetings, scrum calls, and retro meetings for every sprint. The sprint duration was 2 weeks. We used JIRA for the project management and Github for the version control
+
+
+Databricks Experience
+======================
+	1) ETL Pipelines
+		- Used Spark DataFrames APIs in Python to transform large datasets stored in S3, Redshift and DynamoDB
+		- Built data pipelines to extract, transform and load data into Delta Lake for analytics
+		- Leveraged schema inference, handling null and duplicate values during transformations
+
+			Extract data(read data from sources like S3, Redshift, DynamoDB, etc)
+					users_df = spark.read.parquet('s3://bucket/users/')
+					orders_df = spark.read.format('jdbc').options(...).load()
+
+			Transform data (transformations like filtering, aggregations, handling nulls)
+					clean_users_df = users_df.filter(users_df.age > 0)
+					orders_df = orders_df.groupby('user_id').agg({'amount':'sum'})
+					joined_df = users_df.join(orders_df, 'user_id', 'left')
+
+			Load to Delta Lake
+					clean_users_df.write.format('delta').mode('overwrite').save('/delta/users')
+					joined_df.write.format('delta').partitionBy('country').mode('append').save('/delta/users_orders')
+
+
+	2) Machine Learning
+		- Trained ML models like XGBoost, logistic regression on structured data using Spark MLlib in Python
+		- Built pipelines for feature engineering, hyperparameter tuning and model evaluation
+		- Deployed models and exposed predictions using Spark MLflow
+
+	3) Stream Processing
+		- Used Structured Streaming in Python to consume and process real-time data streams
+		- Applied windowing aggregations, joins and filters on event streams
+		- Built dashboards on stream analytics using PySpark, Plotly and Flask
+
+	4) Orchestration
+		- Created interactive notebooks to orchestrate Spark jobs, schedule workflows using cron schedules and handle failures
+		- Automated pipelines with Job Bookmarks and Delta Live Tables for idempotent execution
+
+	5) Monitoring & Optimization
+		- Enabled adaptive query execution, caching, broadcast joins to optimize Spark workloads
+		- Used Spark UI and logs to monitor job performance, resource usage and tuning
+
+normal apache spark vs databricks
+---------------------------------
+	Architecture
+		Apache Spark runs on Hadoop YARN or Mesos cluster managers
+		Databricks runs on its own proprietary runtime optimized for low latency and high concurrency
+
+	Performance
+		Databricks runtime provides higher performance - optimized JVM, caching, indexing
+		Better support for iterative workloads with spark optimized file format
+
+	Scalability
+		Databricks scales seamlessly to 100s of nodes without throughput degradation
+		Apache Spark needs tuning configuration, pool sizing for large clusters
+
+	High Availability
+		Databricks offers zero downtime high availability with hot standby nodes
+		Apache Spark needs additional components like Zookeeper for HA
+
+	Security
+		Databricks has inbuilt Role Based Access Control, auditing capabilities
+		Apache Spark relies on Hadoop/OS level security
+
+	Cost
+		Apache Spark is open source and can be self-hosted
+		Databricks charges based on usage and number of nodes
+
+	Workloads
+		Apache Spark is very flexible and can run a wide variety of workloads
+		Databricks is optimized for data engineering and machine learning use cases
+
+
+Data Migration Strategy
+------------------------
+We can take offsets from the db and transfer,
+	Say when I pulled there were 100 records
+	Say after active migration, we repoint to new db, so, no more data to old db.
+
+	Say now there were 120 records count
+	Remaining small chunk (20 records), we will get after active migration
+
+	I know, I will make hold of offset when pull the data
+	I mean, I will count the no of records at that time, when I am pulling

@@ -48,7 +48,7 @@
             - Code Readability
             - documentaion
             - Relying on Core language Libraries, to Avoid Future (deep) dependencies risk
-       I Ensured to address all these aspects
+       I ensured to address all these aspects
 
     2) Design Patterns:
         I used Memoization design pattern to store results, for a given band namme and salary pair; until the tax band slabs were updated/deleted.
@@ -63,11 +63,3 @@
 ### Future Enhancement
 
     A web application (Flask/FastAPI) can be created for adding further ease
-
-- Monkey patching is replacing a function/method/class by another at runtime,
-  for testing purpses, fixing a bug or otherwise changing behaviour.
-
-  Usage:
-  monkeytype run <file>.py dumps function call traces into SQLite databse
-  monkeytype stub <module>.py outputs preview of annotated code
-  monkeytype apply <module>.py applies the annotated code to the file
