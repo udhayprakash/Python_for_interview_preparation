@@ -657,3 +657,69 @@ Ans)
 		JOIN CoursePrerequisite cp ON c.id = cp.course_id
 		JOIN Course p ON cp.prerequisite_course_id = p.id
 		WHERE c.name = 'Course 101';
+===============================================================================================================
+CREATE TABLE PRODUCTS
+(
+       PRODUCT_ID     INTEGER,
+       PRODUCT_NAME   VARCHAR2(30)
+);
+CREATE TABLE SALES
+(
+       SALE_ID        INTEGER,
+       PRODUCT_ID     INTEGER,  FK
+       YEAR           INTEGER,
+       Quantity       INTEGER,
+       PRICE          INTEGER
+);
+
+
+
+SELECT * FROM PRODUCTS;
+
+		PRODUCT_ID PRODUCT_NAME
+		-----------------------
+		100        Nokia
+		200        IPhone
+		300        Samsung
+
+SELECT * FROM SALES;
+
+		SALE_ID PRODUCT_ID YEAR QUANTITY PRICE
+		--------------------------------------
+		1       100        2010   25     5000
+		2       100        2011   16     5000
+		3       100        2012   8      5000
+		4       200        2010   10     9000
+		5       200        2011   15     9000
+		6       200        2012   20     9000
+		7       300        2010   20     7000
+		8       300        2011   18     7000
+		9       300        2012   20     7000
+
+1. Write a SQL query to find the products which does not have sales at all?
+	select P.PRODUCT_ID, P.PRODUCT_NAME
+	FROM PRODUCTS P
+	LEFT JOIN SALES S ON P.PRODUCT_ID = S.PRODUCT_ID
+	WHERE S.SALE_ID IS NULL;
+
+2. Write a SQL query to find the products whose sales decreased in 2012 compared to 2011?
+
+	select P.PRODUCT_ID, P.PRODUCT_NAME
+	FROM PRODUCTS P
+	LEFT JOIN SALES S1 ON P.PRODUCT_ID = S1.PRODUCT_ID AND S1.YEAR= 2011
+	LEFT JOIN SALES S2 ON P.PRODUCT_ID = S2.PRODUCT_ID AND S2.YEAR= 2012
+	WHERE S1.QUANTITY  > S2.QUANTITY
+
+3. Write a query to select the top product sold in each year?
+	select S.YEAR, P.PRODUCT_ID, P.PRODUCT_NAME, MAX(QUANTITY)
+	FROM PRODUCTS P
+	LEFT JOIN SALES S ON P.PRODUCT_ID = S.PRODUCT_ID
+	GROUP BY S.YEAR
+
+4.Write a SQL query to find the products which have continuous increase in sales every year?
+	SELECT P.PRODUCT_ID, P.PRODUCT_NAME
+	FROM PRODUCTS P
+	INNER JOIN SALES S1 ON P.PRODUCT_ID = S1.PRODUCT_ID AND S1.YEAR = 2010
+	INNER JOIN SALES S2 ON P.PRODUCT_ID = S2.PRODUCT_ID AND S2.YEAR = 2011 AND S2.QUANTITY > S1.QUANTITY
+	INNER JOIN SALES S3 ON P.PRODUCT_ID = S3.PRODUCT_ID AND S3.YEAR = 2012 AND S3.QUANTITY > S2.QUANTITY;
+===============================================================================================================
