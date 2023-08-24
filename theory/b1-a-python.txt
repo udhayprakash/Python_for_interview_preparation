@@ -1743,6 +1743,28 @@ Ans)
 	last_month_last_date = curr_month_first_date - timedelta(days=1)
 	print(last_month_last_date)
 
+
+1) What is your experience with building Restful APIs using Python/Flask Framework?
+Ans) Yes, I have experience in creating web applications and REST APIs using python frameworks like Flask, Django & FastAPI.
+	Worked on both MVC and MVT architectures.
+	Worked with sqlachemy for ORM, with flask applications
+	Worked on Albemic for sql migrations, with flask applications
+
+2) Have you worked with any testing frameworks in Python, such as unittest, pytest or behave? which one do you prefer and why ?
+Ans) Worked majorly with Test Driven Development, with python test frameworks - unittest and pytest.
+	When working with 3rd party REST APIs or Database connections, used mocking in unittest and pytest fixtures.
+	Also, Worked with BDD - Behaviour Driven Development with behave framework. It is good in scenarios when test script need to be understandable by non-developers.
+	I prefer, Pytest to unittest, because of lesser boilerplate code.
+
+3) Have you worked on testing APIs/microservices with Python?
+Ans) Yes, I worked on testing APIs and microservices with Python. It can be verifying response codes, serialization, input validation, authentication, etc. Common approaches include writing test clients using requests library, or integrated frameworks like pytest-flask. Automated integration/contract testing were also used.
+
+4) Have you worked on regression test automation of reports (excel/csv based) ?
+Ans) yes, I worked on Locust python framework and Jmeter scripts for load/regression testing. Also, worked with Robotframework too. Used Python modules (csv, pandas, ..) for parsing/creating/transfoming the excel/csv reports/datasets.
+
+5) How do you approach test automation design to ensure maintainability, scalability and reusability of test code?
+Ans) In my view, a good test automation follows principles like DRY, separation of concerns, and atomic/modular tests. Abstraction using pages, components and utility functions improves maintainability. CI/CD pipeline integration and version control also enable collaboration and change management.
+
 Networking( only answer this if you have experience in this area)
 ======================================================================
 1) Give me an example of a layer 4 protocol

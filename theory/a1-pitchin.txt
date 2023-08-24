@@ -69,7 +69,24 @@ In GCP, worked with
 	GKE and CloudRun for Container orchestration
 	CloudSQl with PostgreSQL
 
-I have experience in the entire data wrangling activities , from data source, transformations, cleansing and finally creating golden records
+
+In Azure Cloud,
+	Server-based Architectures:
+		Azure Virtual Machines, Azure App Service,  Azure Load Balancer,  Azure Virtual Machine Scale Sets, Azure DNS
+	Storage:
+		Azure Blob Storage, Azure Blob Storage Archive Tier
+	Databases:
+		Azure SQL Database & Azure Synapse Analytics,  Azure Cosmos DB
+	Serverless Architectures:
+		Azure Functions,  Azure API Management + Functions,  Azure Logic Apps, Azure Active Directory
+	Messaging:
+		SQS - Azure Queue Storage
+		SNS - Azure Service Bus
+		SES - Azure SendGrid
+	Big Data:
+	Azure HDInsight,  Azure Data Factory, Azure Data Catalog
+
+I have experience in the entire data wrangling activities, from data source, transformations, cleansing and finally creating golden records
 
 In terms of Data Visualization, I worked with
 	Python modules like matplotlib, seaborn, plotly
@@ -109,7 +126,7 @@ how do you learn new technologies, and trends
 	- I subscribed to various blogs and weekly newsletters
 	- Apart from them, I go through the stackoverflow questions and workplace stackoverflow questions, in my free time.
 	- And, part of enhancements or POCs, I research and read, and sometimes implement, based on some articles
-	- sometimes, I will listen to some tech related podcasts.
+	- Sometimes, I will listen to some tech related podcasts.
 	- Most important , is it will practice
 		- Complete the exercises
 
@@ -158,23 +175,17 @@ Documentation Experience
 -------------------------
 Questions to Interviewers
 -------------------------
-	- May I know the Business problem, that we are about to address, with this project?
+	- May I know the Business problem that we are about to address, with this project?
 	- May I know about the project, and the system architecture like the tools used, database, etc?
-	- What are you expecting from me, for this role? What can be the day-to-day activities? what does a successful person look like on your team?
 
-	- What is the volume of data, which we will be working on, on a daily basis. some approximate numbers of records?
+	- What is the volume of data, which we will be working on, on a daily basis? Some approximate numbers of records?
 	- What kind of data do we work with, and what are our data sources?
 	- Were we using any custom/in-house frameworks/tools in our project? If so, can you help with the details? (like your own databases, etc..)
 
-	- How is success defined in this role?
-	- What do you like most about this company/team/project?
-	- How would you describe the team?
-	- What do the day to day responsibilities look like?
-	- How will the project/work impact the company as a whole?
-	- What is the overall vision for this team?
-
+	- What are you expecting from me, for this role? What can be the day-to-day activities? what does a successful person look like on your team?
 	- within the first 3-4 months of hire, what are the pain-points you would like me to tackle?
 	- In the next 3-6 months, what were your major priorities, towards this project?
+
 	- Hope we are using agile methodology!  And how about the sprint cycle duration?
 	- Can I know about the work culture of our company?
 

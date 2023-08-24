@@ -29,8 +29,7 @@
 - Disadvantages/Problems with unit testing
 	Initially time taking
 	But subsequently, it will be fast, after each Iteration
-	As code is more reliable, very less chances of code related production issues.
-
+	As code is more reliable, there are very less chances of code related production issues.
 
 In Unittesting, for each test suite, there will be
 	a pair of class methods, called setup and tearDown

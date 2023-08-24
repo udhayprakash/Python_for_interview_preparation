@@ -14,7 +14,6 @@ Redis
 			- API responses
 			- session data in web applications, messaging/streamsing systems
 
-
 	1) Redis
 		- I worked with redis in multiple projects, mainly as a cache.
 		- Also, worked along with celery, as a mesage broker
@@ -24,7 +23,7 @@ Redis
 		- I worked with Redis-fastapi for
 			- Rate limiting with Redis Counter, which is natively supported
 			- Cache frequent database queries & Cache Serialization rendering
-			= Also, used redis for storing session data
+			- Also, used redis for storing session data
 			- Also, used Redis pub/sub channels to send messages between FastAPI processes/servers
 			- And, used Redis lists as queues to coordinate background jobs and workers
 

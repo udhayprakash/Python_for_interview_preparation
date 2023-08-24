@@ -90,8 +90,7 @@ Project/task you are proud of
 	- My framework will take these jobs, create a data structure in such a way that
 		- most dependent jobs will execute first, followed by less dependent jobs, and lastly the least dependent jobs.
 		- And, the intermediate data is stored in pickle file.
-		- In this way, if something is commonly needed by multiple jobs, instead of rehitting and repeating the process,
-		I can reuse the already generated data from these pickle file.
+		- In this way, if something is commonly needed by multiple jobs, instead of rehitting and repeating the process, I can reuse the already generated data from these pickle file.
 	- Due to all this, all solved multiple jobs.
 		1. Reduced the redundant ETL transactions
 		2. Increased the isolation of problem, so, easy

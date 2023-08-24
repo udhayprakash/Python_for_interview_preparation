@@ -329,7 +329,7 @@ SDLC
 ------
 	Requirement gathering
 	Sprint planning
-	In sprint, witing code and test case, we do TDD – test driven develop,emt
+	In sprint, witing code and test case, we do TDD – test driven development
 	Build procss – CI/CD - Jenkins
 	Pull request. Two approvals
 	cod e merges to dev
