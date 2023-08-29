@@ -22,7 +22,8 @@ In Data Collection & Storage:
 	Web scraping tools (e.g. Python libraries like BeautifulSoup) to collect data from websites
 	APIs to access data from third-party platforms and services
 	Excel or CSV files to collect data from business users
-	Data Processing & Cleaning:
+
+In Data Processing & Cleaning:
 	Python or R to process, transform, and clean data
 	Pandas, NumPy libraries for data manipulation
 	Regex to find and replace patterns in data
@@ -48,7 +49,7 @@ In Data Pipeline & Operations:
 	Monitoring data quality, integrity; fixing issues as they arise
 
 
-======================================================================================================================================
+============================================================================================================
 Tablue Developer - INTRODUCTION
 --------------------------------
 Introduction
