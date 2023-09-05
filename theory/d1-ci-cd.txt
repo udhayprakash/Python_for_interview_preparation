@@ -141,7 +141,7 @@ Code Flow
 	  Then, code goes to next branch
 
 	- We are with python; we add release tag and push the code
-	  Python doesn't have build, so next step is deployment.
+	  Python doesn't have a build, so the next step is deployment.
 
 
 Agile Methodology

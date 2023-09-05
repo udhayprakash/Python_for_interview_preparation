@@ -48,45 +48,6 @@ In Data Pipeline & Operations:
 	Metadata management tools to catalog data sources, metrics, etc.
 	Monitoring data quality, integrity; fixing issues as they arise
 
-
-============================================================================================================
-Tablue Developer - INTRODUCTION
---------------------------------
-Introduction
-	Good morning! My name is [] and I have over 5 years of experience in IT analytics and business intelligence. Based on the job description, I believe I am a strong match for this role owing to my background in SQL, Tableau, testing and communication skills.
-
-SQL Experience
-	Regarding the day-to-day responsibilities, I possess over 5 years of hands-on SQL experience including:
-	Query optimization, performance tuning using EXPLAIN plans
-	Developing complex joins, subqueries, CTEs across large datasets
-	Data investigation by analyzing query plans, logs and traces
-	Implementing best practices like aliases, commenting, formatting code
-	Exposure to various SQL dialects like MySQL, Hive, BigQuery, Snowflake
-	I am confident I can reliably analyze embedded SQL across Tableau dashboards and validate query performance.
-
-Tableau Experience
-	In addition, I have 3 years of Tableau expertise specifically around:
-	Connecting to databases like MySQL, Snowflake to ingest data
-	Building dashboards using various charts, filters, parameters
-	Implementing dashboard actions, cross-highlighting, tooltips
-	Creating calculated fields, groups, sets for data analysis
-	Performance tuning using extracts, Data Engine
-	Exposure to Tableau Server for sharing dashboards interactively
-	With this background, I can seamlessly re-engineer the Tableau dashboards to the new data sources.
-
-Testing and Communication
-	Finally, I have executed various test planning, test cases to validate reports and dashboards. I can apply similar techniques here for side-by-side validation and highlight any differences through clear communication including defect reports.
-
-Documentation Skills:
-	Have exposure to documenting release processes, maintenance procedures in past roles.
-	Can create detailed job aids on the monthly processes highlighting key tasks, owners, timelines.
-	Will gather inputs from team members to draft knowledge base articles for troubleshooting common issues.
-
-In summary, I am confident my skills make me a strong fit for supporting this Tableau and data transition project. I can clarify or expand on any part of my background - please let me know if you need any additional details!
-======================================================================================================================================
-
-
-
 PII
 ---
 	- Personally Identifiable Information
@@ -199,13 +160,64 @@ Medical Field Business Analyst
 		These tools help track and manage requirements throughout the project lifecycle.
 		Examples: IBM Engineering Requirements Management DOORS, Jira, Trello.
 
+-------------------------
+Questions to Interviewers
+-------------------------
+Regarding tools:
+	What business analysis tools do you use here (e.g. requirements management, process modeling, etc.)?
+	How much training is provided on new tools? Is there a budget for conferences/classes?
+	What collaboration/documentation tools do you find most effective (SharePoint, Confluence, etc.)?
+
+Regarding people:
+	What does a typical business analyst's workload look like here in terms of projects and responsibilities?
+	How are business analysts involved in the software development life cycle?
+	How much interaction do analysts have with stakeholders from other departments?
+	How are teams structured and what roles make up a project team?
+
+Regarding stakeholders:
+	Who are the primary internal stakeholders business analysts work with?
+	What methods do you use to communicate with executive stakeholders?
+	How are conflicts or disagreements with stakeholders resolved?
+
+Regarding processes:
+	Walk me through the typical lifecycle of a project here from initial idea to launch.
+	How is collaboration handled between business teams and technical teams?
+	How are priorities and requirements managed as projects progress?
+	What processes are in place for documentation, testing and approval?
 
 
-TODO
+=====================================================================================================
+Tablue Developer - INTRODUCTION
+--------------------------------
+Introduction
+	Good morning! My name is [] and I have over 5 years of experience in IT analytics and business intelligence. Based on the job description, I believe I am a strong match for this role owing to my background in SQL, Tableau, testing and communication skills.
 
+SQL Experience
+	Regarding the day-to-day responsibilities, I possess over 5 years of hands-on SQL experience including:
+	Query optimization, performance tuning using EXPLAIN plans
+	Developing complex joins, subqueries, CTEs across large datasets
+	Data investigation by analyzing query plans, logs and traces
+	Implementing best practices like aliases, commenting, formatting code
+	Exposure to various SQL dialects like MySQL, Hive, BigQuery, Snowflake
+	I am confident I can reliably analyze embedded SQL across Tableau dashboards and validate query performance.
 
-	Tools
-	Process
-	Situations
-	Challenges
-	Compliances
+Tableau Experience
+	In addition, I have 3 years of Tableau expertise specifically around:
+	Connecting to databases like MySQL, Snowflake to ingest data
+	Building dashboards using various charts, filters, parameters
+	Implementing dashboard actions, cross-highlighting, tooltips
+	Creating calculated fields, groups, sets for data analysis
+	Performance tuning using extracts, Data Engine
+	Exposure to Tableau Server for sharing dashboards interactively
+	With this background, I can seamlessly re-engineer the Tableau dashboards to the new data sources.
+
+Testing and Communication
+	Finally, I have executed various test planning, test cases to validate reports and dashboards. I can apply similar techniques here for side-by-side validation and highlight any differences through clear communication including defect reports.
+
+Documentation Skills:
+	Have exposure to documenting release processes, maintenance procedures in past roles.
+	Can create detailed job aids on the monthly processes highlighting key tasks, owners, timelines.
+	Will gather inputs from team members to draft knowledge base articles for troubleshooting common issues.
+
+In summary, I am confident my skills make me a strong fit for supporting this Tableau and data transition project. I can clarify or expand on any part of my background - please let me know if you need any additional details!
+=====================================================================================================

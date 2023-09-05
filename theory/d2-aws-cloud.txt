@@ -554,6 +554,23 @@ SNS vs SQS
 SNS - sends messages to the subscriber using push mechanism and no need of pull.
 SQS - it is a message queue service used by distributed applications to exchange messages through a polling model, and can be used to decouple sending and receiving components.
 
+SQS offers a managed, highly scalable queue for buffering workload distribution across decoupled systems. SNS provides managed pub/sub capability for pushing instant notifications to multiple interested subscribers.
+
+Use SQS when:
+	You need a simple queue to buffer tasks and distribute workload across systems.
+	Your systems need to poll and pull messages from the queue.
+	Loose coupling and item-at-a-time processing is required.
+	A distributed architecture with decoupled components is in place.
+	Order of messages does not matter.
+	You need a buffer for traffic spikes.
+
+Use SNS when:
+	You need push notifications to multiple subscribers and systems.
+	Event notifications matter more than data payload.
+	Fanout messaging is required to push to multiple consumers.
+	Loose coupling is required without dependency on consumers.
+	Instant push notifications are important, like alerts.
+	Payload size is generally limited.
 
 - sqs
 	- Amazon SQS supports two types of queues:

@@ -28,7 +28,7 @@ Use the STAR (Situation, Task, Action, Result) technique when answering example 
 	For a one minute book of work, I need to spend 190 seconds, or 3 minutes. Or, for one day of work, I need to process for 3 days.
 
 	When using the cProfiler, I understood that it is taking more time at the xml to dictionary conversion.
-	As I used xmltodict python module for this conversion, I went to code base of that module, pulled the exact code responsible for this conversion, and added to my code.
+	As I used the xmltodict python module for this conversion, I went to code base of that module, pulled the exact code responsible for this conversion, and added to my code.
 	Also, refactored my script further, which resulted in optimization from 19 seconds to 14 seconds.
 
 	Still when seen in cProfiler, I found that it is taking time at the XML to dictionary conversion only.

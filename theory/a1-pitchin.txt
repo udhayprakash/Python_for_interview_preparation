@@ -31,6 +31,8 @@ In scheduling,
 - I worked with celery.
 - I did integrations with django applications for periodic jobs
 
+For datajobs, with Airflow
+
 In Public Cloud, I am mostly associated with AWS Cloud.
 In AWS Cloud, I worked with
 	Server-based Architectures with
@@ -80,11 +82,9 @@ In Azure Cloud,
 	Serverless Architectures:
 		Azure Functions,  Azure API Management + Functions,  Azure Logic Apps, Azure Active Directory
 	Messaging:
-		SQS - Azure Queue Storage
-		SNS - Azure Service Bus
-		SES - Azure SendGrid
+		Azure Queue Storage, Azure Service Bus, Azure SendGrid
 	Big Data:
-	Azure HDInsight,  Azure Data Factory, Azure Data Catalog
+		Azure HDInsight,  Azure Data Factory, Azure Data Catalog
 
 I have experience in the entire data wrangling activities, from data source, transformations, cleansing and finally creating golden records
 
@@ -92,7 +92,7 @@ In terms of Data Visualization, I worked with
 	Python modules like matplotlib, seaborn, plotly
 	Javascript libraries like d3.js and highcharts
 
-        PowerBI and Tablue
+        PowerBI and Tableau
 Created charts, graphs, pie/ sunburn/ and interactive charts
 
 

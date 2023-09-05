@@ -168,7 +168,7 @@ ___
 - docker.yaml
 --------------
 
-	FROM python:3.9
+	FROM python:3.10
 
 	# Create app directory
 	WORKDIR /app
@@ -186,7 +186,7 @@ ___
 
 - flask docker.yaml file
 
-	FROM python:3.8-slim-buster
+	FROM python:3.10-slim-buster
 
 	WORKDIR /python-docker
 

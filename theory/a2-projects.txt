@@ -181,6 +181,26 @@ Current project - RealEstate
 	- Our team is responsible for giving the prediction, for better planning
 	- We collect data from different sources like climate info, crop yield, agriculture growth, geographic and geological informations
 
+	As part of CBRE's real estate planning team, we rely heavily on making accurate predictions to advise optimal locations and types of properties to develop.
+
+	Recently, we started collecting large amounts of unstructured data from surveys, news articles, social media posts related to real estate market conditions.
+
+	To make use of this valuable data, I decided to employ natural language processing techniques in Python to extract insights.
+
+	First, I collected the textual data into a corpus and preprocessed it by cleaning, normalizing and filtering out noise.
+
+	Next, I performed topic modeling using latent semantic analysis to identify key themes and trends in the corpus. This gave us useful topic clusters related to real estate like "housing demand", "rental prices", "new construction" etc.
+
+	Using named entity recognition, I could extract useful entity types like locations, property types, company names which provided geographical and market insights.
+
+	For sentiment analysis, I built a classifier model using Python's NLTK library to categorize text snippets as positive, negative or neutral sentiment. This helped gauge public opinion on locations and projects.
+
+	By analyzing sentiment trends over time, we could correlate it with actual real estate price movements to include sentiment as a variable in our pricing prediction models.
+
+	Using part-of-speech tagging and parsing, I could extract useful statistics like percentages of adjectives used or frequencies of key phrases. These text metrics offered additional predictive signals.
+
+	In the end, combining natural language processing with our structured data led to more accurate real estate forecasting and recommendation models using Python. This improved our planning and business outcomes significantly.
+
 Current Project - Products Feedback Analytics
 ------------------------------------
 	- We are part of the R&D team.
