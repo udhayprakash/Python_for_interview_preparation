@@ -115,7 +115,7 @@ difficulties working with technologies and how did you resolved it?
 Biggest Failures
 ----------------
 - I worked on AWS lambda, when they were introduced, some 4 years back.
-  At that test, there is no ecosystem for the local development, unittest, and mocking.
+  At that time, there was no ecosystem for the local development, unittest, and mocking.
 
   I used to write test cases for other code workflows; but not for the aws lambda code.
   In a particular Aws lambda, I created logic to do recursive calls, based on an environment variable.

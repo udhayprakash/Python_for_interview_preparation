@@ -1,0 +1,92 @@
+Ansible
+-------
+- Its a devops tool for orchestration, automation, configuration, and management of IT infrastructure
+- LIMITATIONS include
+	- No debugging, performance, complex data structures and control flow. Complex data structures. Many network automation tasks require complex data structures. One of the first things I considered when learning Ansible was to use it to perform network discovery.
+
+- Ansible Playbook
+	- It is a like a blueprint of automation tasks.
+	- These tasks can range from installations, to configurations.
+	- Ansible playbooks are executed on a set, group, or classification of hosts, which together make up an Ansible inventory.
+
+- Ansible Tower
+	- It is a web-based UI that provides a dashboard with status summaries of all the hosts,
+		allows quick deployments, and
+		monitors all configurations.
+	- Also, the tower allows us to share the SSH credentials without exposing them,
+	- logs all the jobs, manage inventories graphically and syncs them with a wide variety of cloud providers.
+	- It also has REST API, for integrations; I used in one of the projects
+
+
+- Ansible Vault
+	- It is used to keep sensitive data such as passwords instead of placing it as plaintext in playbooks or roles.
+	- Any structured data file or any single value inside the YAML file can be encrypted by Ansible.
+	- To encrypt a file,
+		ansible-vault encrypt foo.yml bar.yml baz.yml
+	- And similarly to decrypt,
+		ansible-vault decrypt foo.yml bar.yml baz.yml
+
+- Ansible Facts
+	- Ansible facts are data related to the remote systems, including
+		- operating systems,
+		- IP addresses,
+		- any attached filesystems, and more.
+	- We can access this data in the ansible_facts variable.
+	- By default, we can also access some Ansible facts as top-level variables with the ansible_ prefix.
+
+	- Also, We can define three types of custom facts in Ansible.
+		1) Global facts: These facts are accessible from every host in your inventory file.
+		2) Group facts: These facts are only accessible from a specific set of hosts or a host group.
+		3) Host facts: These facts are only accessible from a particular host.
+
+- Ansible callback plugin
+	- callback plugins help in adding additional behavior to ansible when responding to events.
+	- By default, callback plugins control most of the output that we see, when running command line programs,
+	  Also, we can use callback plugins to add additional output, integrate with other tools and marshal the events to a storage backend.
+	- Examples
+		- The log_plays callback is an example of how to record playbook events to a log file, and the mail callback sends email on playbook failures.
+		- The say callback responds with computer synthesized speech in relation to playbook events.
+
+Enabling callback plugins
+
+ref - https://www.middlewareinventory.com/blog/ansible-playbook-example/
+
+- import vs include
+	All import statements are pre-processed at the time playbooks are parsed.
+	All include statements are processed as they are encountered during the execution of the playbook.
+
+Q&A
+----
+1) What is your preferred method for running a Python script from an Ansible playbook? Why?
+Ans) My preferred method for running a Python script from an Ansible playbook is to use the ansible.builtin.script module. This module allows to run a local script on the remote nodes without having to transfer the script file.
+	Main Advantages of using the script module, are:
+		a) Simple and straightforward to use:
+			Just specify the path to the local script and any arguments. Ansible will take care of transferring the script and executing it remotely.
+		b) Idempotent:
+			The script module will check if the script has already been run and avoid re-running it if the output is the same. This makes playbook runs efficient.
+		c) Built-in:
+			The script module comes packaged with Ansible so you don't have to install any custom plugins.
+		d) Secure:
+			Ansible will copy the script through SSH temporarily so you don't have to place scripts on the remote servers.
+
+2) Please describe your most recent automation experience using Ansible or Python
+Ans) Project is for the Infrastructure Automation.
+	Used Ansible playbooks to talk to infrastructure vendor SDKs to increase/decrease the storage space.
+	But, exposed to end users with REST API.
+
+	Request Flow:
+		client API Request -> Django REST API -> parse content -> Ansible Script -> Vendor SDK -> Storage Device
+
+	- Leveraged Ansible features like variables, templates and roles to organize the code. Variables help avoid hardcoding things like storage sizes or device IPs. Templates enable reuse of API payload structures. And roles package up automation for each vendor SDK.
+
+	- For API security, implemented authentication via tokens or API keys.
+
+	Challenges
+		- Following up with the Vendor SDK changes. Sometimes, certain things were not well documented
+		- Storage devices were both SAN and NAS. Vendors were Hitachi, Dell-EMC, HP & AWS EBS. Maintaining Multi-vendor compatibility of functionality is challanging, as
+				- implementations in each project may be different
+				- New features may not be added in all vendors, in same timeline
+		- For idempotency, I added some conditional checks before modifying storage. For example, checking the current provisioned capacity against the requested capacity and only changing it if different. The Ansible uri module is handy for querying API endpoints to get current state.
+		- API Rate Limiting was done using builtin features of Django REST framework
+		- Testing and CI/CD is always a challenge with infrastructure automation. We hopefully built out unit tests for the components using pytest. And had CI/CD pipelines to run tests before deploying playbook changes. Testing the playbooks themselves can require mocking.
+		- Change management is also tricky - having a way to coordinate changes and track inventory is important. Ansible Tower helped me for this.

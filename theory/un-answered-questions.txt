@@ -129,7 +129,6 @@ Databases
 	get first two records in each group
 	What are different isolation levels in SQL?
 	SQL - horizontal vs Vertical Scaling
-	second highest and second smallest, among the list of numbers
 	indexing -- update effect
 	data consistency sql vs nosql
 	database indexing clustered or nonclustered

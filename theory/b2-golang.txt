@@ -6,7 +6,7 @@ In Golang, I created microservices and ETL jobs,
 	and Cobra package for creating command line utilities.
 	GORM - for working with the databases
 	BDD with ginko framework
-	Learning the GRPC
+	Worked on creating the GRPC
 
 Why Go?
 -------------
@@ -22,6 +22,9 @@ Why Go?
 	Has a simple syntax which makes it easy to learn and code.
 	It also has a built in testing framework and a strong support for containerization technologies like Docker, which makes deployment of Microservices easier
 
+
+- How started Golang
+---------------------
 
 - array vs slice
 ----------------

@@ -13,6 +13,7 @@ python 2 vs 3
 =============
 - In python2, default encoding is ascii, whereas in Python 3, default is utf-8
 - In python2, dictionaries are unordered, whereas from python 3.6, dictionaries will retain the assigned order.
+- Python 3 uses absolute imports by default instead of relative imports.
 - Python 2 supports both old style classes and new style classes when inheriting object; whereas python3 supports only new-style classes.
 - In python2, range, map, filter will return a list; where these are iterators in python3.
 - For range,
@@ -330,6 +331,9 @@ OOP
 				addition operation between integers
 				List concatenation operator between lists
 				Tuple concatenation operator between tuples
+		operator overloading allows to redefine the behavior of native operators (+,-, *, /, +=, -=, **, etc.)
+		It means we can create code with greater readability, since we use native operators to define new representations, comparisons, and operations between objects that we have created.
+		Ex: Using dunder methods  __add__ and __sub__, we can use + and - opertors respectively on the class instances
 
 - self
 	- It is the first argument in instance methods.
@@ -1455,13 +1459,6 @@ bucket vs HDFS
 		The cost of using Buckets versus HDFS depends on the specific cloud provider and usage patterns. Generally, Buckets are priced based on the amount of data stored and data egress, while HDFS requires dedicated hardware and may have higher upfront costs.
 	Integration:
 		Buckets are part of the Google Cloud Platform ecosystem and integrate with other GCP services such as BigQuery and Dataflow, which can make it easier to build and deploy data pipelines. HDFS, on the other hand, is typically used with Apache Hadoop and other open-source big data tools.
-
-Ansible
--------
-- import vs include
-	All import statements are pre-processed at the time playbooks are parsed.
-	All include statements are processed as they are encountered during the execution of the playbook.
-
 
 Machine learning Models
 ========================

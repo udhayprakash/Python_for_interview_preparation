@@ -27,8 +27,7 @@ CI/CD
 		We use docker.yaml for containzation
 		And kubernetes.yaml for orchestration
 
-	- Also, worked with cloudformation.json templates for infra management.
-		 - Terraform is a very naive experience
+	- Also, worked with cloudformation.json templates, or Terraform,  for infra management.
 
 - Code Flow process
 	- feature branch -(Pull requests)(once completed) - dev branch -(testers signoff)-> release branch -(signoff from client)- production branch
@@ -122,6 +121,7 @@ Code Flow
 ----------
 	- First, we will reach out to the clients/Stakeholders and gather the requirements.
 	- Then, we create JIRAs correspondingly, in the backend.
+	- During the refinement calls, we will try to refine them.
 	- During the Sprint planning, we discuss with all the Stakeholders to prioritise the JIRAs for the sprint.
 	- Then, for each of the JIRAs given, we will create a branch
 	  Under the feature branch, we will start developing
@@ -322,7 +322,7 @@ code review/feedbacks
 
 	5. Review:
 		Organize regular meetings to Track Progress.
-		Once a week first, then once a month an then Quarterly, for example.
+		Once a week first, then once a month and then Quarterly, for example.
 
 
 SDLC

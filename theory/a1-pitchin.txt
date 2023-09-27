@@ -25,13 +25,13 @@ In Python,
 	So, created unit tests and integration tests for the source code, using either unittest or pytest modules.
 
 In Caching,
-- I worked with Redis and ElasticSearch
+- I worked with Redis and Memcache
 
 In scheduling,
 - I worked with celery.
 - I did integrations with django applications for periodic jobs
 
-For datajobs, with Airflow
+For datajobs orchestration, I worked with Airflow
 
 In Public Cloud, I am mostly associated with AWS Cloud.
 In AWS Cloud, I worked with
@@ -63,6 +63,8 @@ In AWS Cloud, I worked with
 
 Also, have experience in creating the CI/CD setup using Jenkins and Groovy script.
 
+In terms of Infrastructure as a code, Worked mainly with Cloudformation templates, then terraform and Pulumi python module too
+
 And, I have experience in agile methodologies like Scrum, Kanban in facilitating agile ceremonies like daily standups,sprint reviews, plannings and retrospectives. I am familiar with Agile tools like Jira and skilled in working with cross-functional teams including Dev team, QA testers, and PM/PO's.
 
 In GCP, worked with
@@ -70,7 +72,6 @@ In GCP, worked with
 	GCP functions for Serverless
 	GKE and CloudRun for Container orchestration
 	CloudSQl with PostgreSQL
-
 
 In Azure Cloud,
 	Server-based Architectures:
@@ -156,7 +157,7 @@ Learning new language
 When Programming started
 ========================
 	I am interested in playing online games.
-	When I am in my graduation, hope you remember, angry birds became a big hit.
+	When I was in my graduation, I hope you remember, angry birds became a big hit.
 
 	I played different games, but this is simple.
 	So, I thought of creating one.
@@ -175,7 +176,7 @@ Documentation Experience
 -------------------------
 Questions to Interviewers
 -------------------------
-	- May I know the Business problem that we are about to address, with this project?
+	- May I know the Business problem that we are about to address with this project?
 	- May I know about the project, and the system architecture like the tools used, database, etc?
 
 	- What is the volume of data, which we will be working on, on a daily basis? Some approximate numbers of records?
@@ -200,8 +201,7 @@ Questions to Interviewers
 		Have experience in working on financial products, best practices to follow. So, I can be productive, with minimal training.
 
 
-	- As I'm understanding the current landscape of your environment, what is your vision of future innovation
-	and or new technologies you want to bring within the next 2-4 years, and why so?
+	- As I'm understanding the current landscape of your environment, what is your vision of future innovation and or new technologies you want to bring within the next 2-4 years, and why so?
 
 	- Will there be an opportunity to reach out to the clients, either for requirement gathering and/or for demoing the end solution?
 	- Have I answered all your questions?
@@ -240,12 +240,9 @@ Used Django and python to build an application which shows the data movement sta
 hands-on experience using Python in developing data-based applications,
 
 
+Reading the unstructured large text files (around 70 Gigabytes each from external vendor) into Pyspark DataFrames, cleaning the data and making it structured and storing it in Amazon S3 to use it for further processes.
 
-Reading the unstructured large text files (around 70 Gigabytes each from external vendor) into Pyspark DataFrames,
- cleaning the data and making it structured and storing it in Amazon S3 to use it for further processes.
-
-Worked on high configuration EMR cluster to run Spark jobs and created bootstrap scripts to install additional
- applications required on the EMR cluster.
+Worked on high configuration EMR cluster to run Spark jobs and created bootstrap scripts to install additional applications required on the EMR cluster.
 
 Based on the new or updated business requirements, redesigned and implemented the Rules for Processing Workflows.
 
@@ -307,9 +304,9 @@ worked with files
 	tex, csv, parquet, Avro
 
 In databases,
-- In relational dB, I worked with MySQL, MS SQL, oracle dB and PostgreSQL.
-- In no-relational dB, I worked with MongoDB and Cassandra.
-- In data warehousing, I worked with Snowflake schema
+	- In relational dB, I worked with MySQL, MS SQL, oracle dB and PostgreSQL.
+	- In no-relational dB, I worked with MongoDB and Cassandra.
+	- In data warehousing, I worked with Snowflake schema
 
 
 1. -- data gather

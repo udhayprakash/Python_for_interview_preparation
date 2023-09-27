@@ -1591,6 +1591,8 @@ TODO
 	https://www.databasestar.com/sql-cheat-sheets/
 	https://www.stratascratch.com/
 
+	https://github.com/Coder-World04/Complete-Advanced-SQL-Series
+
 	https://dev.mysql.com/doc/refman/8.0/en/tutorial.html
 	https://www.linkedin.com/events/sqlfordataanalytics-datascience7040893287821426688/comments/
 

@@ -217,14 +217,18 @@ Current Project - MetaData Analytics
 		This project is for collection and storage of metadata of all datasets.
 		This metadata is used for understanding the business Gap Analytics and other anomaly detections.
 
+	This Project does two things
+		1) Collection metadata, about all the registered datasets of internal applications
+			With that info, help them streamline their data, Identify anomalies, outliers, etc.
+		2) Based on that metadata, once stabilised, We will create synthetic data, which is input for the ML models, within the Organization
+
 	I was part of this project from the ideation stage, to design, implementation setup,
 		and demoing to the clients and post support.
 		Majorly I contributed in writing python scripts
 			- for the metadata analysis,
 			- for creating the ETLs as part of the business requirements
 			- REST APIs and web application for the application data consumption
-		Also, I have first hand experience in requirement gathering, refinements, creating Jira,
-			and demoing to clients, and getting feedback.
+		Also, I have first hand experience in requirement gathering, refinements, creating Jira, and demoing to clients, and getting feedback.
 
 Current Project - Retail Web application
 -----------------------------

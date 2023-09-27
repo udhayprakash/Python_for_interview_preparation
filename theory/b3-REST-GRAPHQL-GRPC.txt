@@ -407,3 +407,7 @@ cookie
 		- Step 2: Then, client's browser attaches a cookie header with the value sent by the server in set-cookie.
 
 		- This process repeats for every request, till session time-out.
+
+
+- API Integration
+------------------

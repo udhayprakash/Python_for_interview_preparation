@@ -63,3 +63,17 @@ In Flask,
 	For Serialization, worked with Marshmallow
 
 	For ORM, worked wih Sqlachemy
+
+
+- FastAPI experience
+==================
+	Mostly, I used fastapi for creating REST APIs.
+	I made use of the fastapi's declarative approach for defining endpoints,
+		defined serializers, request parameters, path operations and response models,
+		just by declaring Python classes and functions with type hints
+
+	Relied on the automatic interactive docs from OpenAPI and Swagger UI.
+	Used Pydantic for data validation and serialization
+	In some projects, used async APIs when high concurrent APIs were needed.
+	Used Redis as cache for performance optimization and rate-limiting the API calls
+	Also, Integrated with various authentication systems like JWT, OAuth, etc using FastAPI utilities.

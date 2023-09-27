@@ -257,3 +257,48 @@ Data Structures
 - B-tree: A self-balancing tree data structure that maintains sorted data and is commonly used in databases and file systems.
 - Red-Black Tree: A self-balancing binary search tree with additional properties that ensure balanced operations.
 - Priority Queue: A queue where each element has a priority associated with it, and the element with the highest priority is dequeued first.
+
+
+- Algorithm Design approaches
+-----------------------------
+	1. Brute Force
+		- It's the most basic approach.
+		- Methodically list all the possible candidates for the solution.
+		- Check to see if the problem statement is satisfied for each option.
+		- It always finds the best solution but doesn't scale with the input size.
+		- Example: Find the closest pair of points
+
+	2. Divide and Conquer
+		- It's a top-down method that has 3 steps:
+			- Break up the main problem into some smaller ones.
+			- Solve each subproblem separately and recursively.
+			- Combine the solution of the subproblems to find the solution to the main problem.
+		- Example: Merge sort
+
+	3. Greedy
+		- It's a way to solve problems involving optimization.
+		- The idea is to increase or decrease a value or objective.
+		- At each step, choose the option that looks like the best way to reach the goal.
+		- It doesn't always give the best answer but usually comes close.
+		- Example: Fractional Knapsack
+
+	4. Dynamic Programming
+		- It works from the bottom up.
+		- Figure out how to solve small problems, then combine these solutions to solve a bigger problem.
+		- Helpful when subproblems overlap and are exponentially large in number.
+		- It is often applicable to solve optimization problems.
+		- Example: Solve the Fibonacci sequence
+
+	5. Backtracking
+		- It is a depth-first search of the possible solutions to a problem.
+		- If a solution doesn't work during the search:
+			• Go back to the point where you had to choose between different options.
+			• Choose the next option
+		- Example: Find a path in a maze
+
+	6. Branch and Bound
+		- It is used to solve optimization problems:
+			• Break the problem down into smaller parts.
+			• Solve the sub-problems recursively
+			• Use bounds to get rid of the subproblems that are not optimal
+		- Example: Travelling salesman problem
