@@ -411,3 +411,26 @@ cookie
 
 - API Integration
 ------------------
+
+
+
+
+- What happens after typing a URL into the browser?
+------------------------------------------------------
+	1. The user prompts the URL into the browser and press Enter.
+		The URL includes a scheme, the website's domain name, and a resource path.
+
+	2. The browser uses a domain name system (DNS) lookup to determine the IP address for the domain.
+		Data can be cached at several levels to speed up the lookup process.
+		For example, it can be cached in the browser cache or in the ISP cache.
+		The browser gets the IP address from the DNS servers if it is not yet cached.
+
+	3. The browser establishes a TCP connection with the server and sends an HTTP request to it.
+
+	4. The server processes the request,
+			within the application server,
+				first, Validate the data in the request
+				then, Validated the authenticity of the request
+				and finally, sends back the response
+
+	5. When a successful response with status code 200 is received, the browser renders the HTML content.
