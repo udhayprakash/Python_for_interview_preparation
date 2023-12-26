@@ -2,6 +2,8 @@
 # the greatest common divisor of two nonnegative integers.
 
 
+import secrets
+
 def euclid_gcd(a, b, verbose=False):
     while b > 0:
         a, b = b, a % b
@@ -161,11 +163,7 @@ if __name__ == "__main__":
     shorter = [str(x) for x in range(1, 5000) if len(str(x)) > len(roman_encode(x))]
     print(f"Numbers longer written in Arabic than in Roman are: {', '.join(shorter)}")
 
-    # Random sampling is often a good way to estimate the behaviour of
-    # some process for which we don't know the analytical solution.
-    from random import randint
-
-    digits = [final_digit(randint(2, 1000) ** randint(2, 1000)) for i in range(3000)]
+    digits = [final_digit(secrets.SystemRandom().randint(2, 1000) ** secrets.SystemRandom().randint(2, 1000)) for i in range(3000)]
     print("For random integer powers, the final digit counts are:")
     counts = [(i, digits.count(i)) for i in range(1, 10)]
     # Strange result. Why does that happen?

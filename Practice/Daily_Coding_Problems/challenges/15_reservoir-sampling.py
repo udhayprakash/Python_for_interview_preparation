@@ -5,17 +5,16 @@ Facebook
 Given a stream of elements too large to store in memory, pick a random element from the stream with uniform probability.
 
 """
-
-import random
 from datetime import datetime
+import secrets
 
 
 class Stream:
     def __init__(self):
-        self.pseudoStream = [random.randint(-10000, 10000)] * 10000000 + [None]
+        self.pseudoStream = [secrets.SystemRandom().randint(-10000, 10000)] * 10000000 + [None]
 
     def nextSample(self):
-        return random.choice(self.pseudoStream)
+        return secrets.SystemRandom().choice(self.pseudoStream)
 
 
 def selectSample():
@@ -24,7 +23,7 @@ def selectSample():
     stream = Stream()
 
     selectedSample = stream.nextSample()
-    maxProbability = random.random()
+    maxProbability = secrets.SystemRandom().random()
 
     while True:
         currentSample = stream.nextSample()
@@ -35,7 +34,7 @@ def selectSample():
 
         sampleCount += 1
 
-        currentProbability = random.random()
+        currentProbability = secrets.SystemRandom().random()
 
         if currentProbability > maxProbability:
             selectedSample = currentSample

@@ -1,6 +1,8 @@
 # Convert the words in the text to title case. (Not same as uppercase.)
 
 
+import secrets
+
 def title_words(text):
     prev = " "
     result = ""
@@ -79,9 +81,6 @@ def rot13(text):
             else:
                 result += c  # Other characters are taken as is.
     return result
-
-
-from random import choice
 
 # Given a sentence and a function f that converts one word, translate
 # the entire sentence. Since whitespace and punctuation must be kept
@@ -198,7 +197,7 @@ def tutnese(sentence):
                 skip = True  # skip the duplicated letter after this one
             else:
                 if c in reps:
-                    rep = choice(reps[c])
+                    rep = secrets.SystemRandom().choice(reps[c])
                     if word[idx].isupper():
                         rep = rep[0].upper() + rep[1:]
                     result += rep

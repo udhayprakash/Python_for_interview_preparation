@@ -6,6 +6,8 @@
 # to be neighbours if their Hamming distance equals one.
 
 
+import secrets
+
 def hamming_distance(w1, w2):
     d = 0
     for i in range(len(w1)):
@@ -47,7 +49,6 @@ def word_layers(start, neighbours, maxd=99):
 
 
 if __name__ == "__main__":
-    from random import sample
 
     # The length of the words that we consider.
     n = 5
@@ -78,7 +79,7 @@ if __name__ == "__main__":
     singletons = [x for x in wordlist if neighbours[x] == []]
     print(f"There are {len(singletons)} singleton words in the dictionary:")
     print("Here is a random sample of 50 such singletons.")
-    print(sample(singletons, 50))
+    print(secrets.SystemRandom().sample(singletons, 50))
 
     # Compute the total number of neighbours, and find the word
     # that has the largest number of neighbours.
@@ -97,6 +98,6 @@ if __name__ == "__main__":
     print(f"Word layers starting from {mword!r} have sizes:")
     for i in range(1, len(wl) - 1):
         print(f"Level {i} contains {len(wl[i])} words.", end=" ")
-        print(f"Some are: {', '.join(sample(wl[i], min(5, len(wl[i]))))}.")
+        print(f"Some are: {', '.join(secrets.SystemRandom().sample(wl[i], min(5, len(wl[i]))))}.")
         total += len(wl[i])
     print(f"A total of {total} words are reachable from {mword!r}.")

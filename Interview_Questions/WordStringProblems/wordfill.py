@@ -1,5 +1,5 @@
 import bisect
-import random
+import secrets
 
 
 # Recursively fill an n-by-n box of letters so that every row and
@@ -46,12 +46,12 @@ if __name__ == "__main__":
     result = []
     while len(result) < rows * cols:
         # The first word on the first row.
-        w1 = random.choice(wordlist)
+        w1 = secrets.SystemRandom().choice(wordlist)
         # Find the section of words that start with same letter.
         i1 = bisect.bisect_left(wordlist, w1[0])
         i2 = bisect.bisect_right(wordlist, chr(ord(w1[0]) + 1))
         # Choose one of those words as the first vertical word.
-        w2 = wordlist[random.randint(i1, i2 - 1)]
+        w2 = wordlist[secrets.SystemRandom().randint(i1, i2 - 1)]
         for sol in itertools.islice(wordfill(n, 1, [w1], [w2], wordlist, 0), 1):
             result.append(sol)
 

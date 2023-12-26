@@ -3,6 +3,8 @@
 # given, search only within the subarray from i up to j, inclusive.
 
 
+import secrets
+
 def two_summers(items, goal, i=None, j=None):
     i = i if i else 0
     j = j if j else 0
@@ -180,14 +182,12 @@ if __name__ == "__main__":
     print("\nComputing the intersection:")
     print(intersection_sorted([-4, -2, 10, 12], [-2, 0, 6, 10, 11]))
 
-    from random import randint
-
     kinds = ["yule", "dice", "sokal-sneath", "jaccard", "matching", "rogers-tanimoto"]
     print("\nHere are some dissimilarity metrics for random bit vectors.\n")
     print("v1       v2       yule   dice   s-s    jac    match  r-t")
     for i in range(10):
-        v1 = [randint(0, 1) for i in range(8)]
-        v2 = [randint(0, 1) for i in range(8)]
+        v1 = [secrets.SystemRandom().randint(0, 1) for i in range(8)]
+        v2 = [secrets.SystemRandom().randint(0, 1) for i in range(8)]
         # No vector can ever be dissimilar from itself.
         if any([dissimilarity(v1, v1, kind) != 0 for kind in kinds]):
             print("Something is hinky with dissimilarities!")

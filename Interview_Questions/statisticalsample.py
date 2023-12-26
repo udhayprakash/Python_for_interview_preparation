@@ -3,6 +3,8 @@
 # answers returned by trialf.
 
 
+import secrets
+
 def trial_average(trialf, n, trialargs=[]):
     total = 0
     for i in range(n):
@@ -22,7 +24,7 @@ def coupon_collector_trial(n):
     total = 0
     while remain > 0:
         total += 1
-        curr = random.randint(0, n - 1)
+        curr = secrets.SystemRandom().randint(0, n - 1)
         if result[curr] == 0:
             result[curr] = 1
             remain -= 1
@@ -34,8 +36,8 @@ def coupon_collector_trial(n):
 
 
 def estimate_pi_trial():
-    x = random.random()
-    y = random.random()
+    x = secrets.SystemRandom().random()
+    y = secrets.SystemRandom().random()
     if x * x + y * y <= 1:
         return 1
     else:
@@ -50,8 +52,8 @@ def snake_eyes_or_boxcars_trial():
     count = 0
     d1, d2 = 2, 2
     while not ((d1 == 1 and d2 == 1) or (d1 == 6 and d2 == 6)):
-        d1 = random.randint(1, 6)
-        d2 = random.randint(1, 6)
+        d1 = secrets.SystemRandom().randint(1, 6)
+        d2 = secrets.SystemRandom().randint(1, 6)
         count += 1
     return count
 
@@ -71,7 +73,7 @@ def snake_oil_salesman_trial(step):
     count = 1
     curr = 0
     while True:
-        curr += random.randint(1, step) * random.choice([-1, 1])
+        curr += secrets.SystemRandom().randint(1, step) * secrets.SystemRandom().choice([-1, 1])
         if curr in visited:
             return count
         else:
@@ -97,12 +99,12 @@ def distribution_trial(f1, f2):
 
 
 def monty_hall_switching_trial():
-    car = random.randint(1, 3)
-    guess = random.randint(1, 3)
+    car = secrets.SystemRandom().randint(1, 3)
+    guess = secrets.SystemRandom().randint(1, 3)
     if car != guess:
         monty = 6 - car - guess
     else:
-        monty = random.choice([[2, 3], [1, 3], [1, 2]][car - 1])
+        monty = secrets.SystemRandom().choice([[2, 3], [1, 3], [1, 2]][car - 1])
     guess = 6 - guess - monty
     return int(guess == car)
 
@@ -118,7 +120,7 @@ def poisson_trial(lamb):
     count = 0
     while total < 1:
         count += 1
-        total += random.expovariate(lamb)
+        total += secrets.SystemRandom().expovariate(lamb)
     return count - 1
 
 

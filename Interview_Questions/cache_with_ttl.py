@@ -1,10 +1,10 @@
-import random
 import time
 from dataclasses import dataclass
 from datetime import datetime
 from decimal import Decimal
 from functools import update_wrapper, wraps
 from typing import Dict, List, Tuple
+import secrets
 
 
 # ttls = {
@@ -71,7 +71,7 @@ currency_conversions: List[Tuple[str, str]] = [
 
 for i in range(4):
     tic = time.perf_counter()
-    base_currency, target_currency = random.choice(currency_conversions)
+    base_currency, target_currency = secrets.SystemRandom().choice(currency_conversions)
     rate: Decimal = client.get_rate(base_currency, target_currency)
     toc = time.perf_counter()
     times.append(toc - tic)

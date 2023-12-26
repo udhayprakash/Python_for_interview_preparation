@@ -1,5 +1,7 @@
 # Tic Tac Toe game in python by techwithtim
 
+import secrets
+
 board = [" " for x in range(10)]
 
 
@@ -93,10 +95,9 @@ def compMove():
 
 
 def selectRandom(li):
-    import random
 
     ln = len(li)
-    r = random.randrange(0, ln)
+    r = secrets.SystemRandom().randrange(0, ln)
     return li[r]
 
 

@@ -1,5 +1,5 @@
-import random
 import time
+import secrets
 
 
 def print_guessed_letter(_user_guess_list):
@@ -32,10 +32,10 @@ def main():
         # Choosing the Secret word
         while True:
             if category.upper() == "S":
-                secret_word = random.choice(superHeroes)
+                secret_word = secrets.SystemRandom().choice(superHeroes)
                 break
             elif category.upper() == "F":
-                secret_word = random.choice(fruits)
+                secret_word = secrets.SystemRandom().choice(fruits)
                 break
             else:
                 category = input(
