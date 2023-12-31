@@ -6,6 +6,8 @@
 # Factorial of n is the product of positive integers up to n.
 
 
+import secrets
+
 def factorial(n):
     """Return the factorial of a positive integer.
     n -- The positive integer whose factorial is computed.
@@ -169,13 +171,6 @@ def demonstrate_parameter_passing(x):
 demonstrate_parameter_passing(items)
 print(f"Items is now: {items}")  # [1, 2, 99, 4, 5]
 
-# Next, let's write a function that allows us to roll a die a given
-# number of times, and return the sum of these rolls. This function
-# shows how to generate a random integer from the given range (once
-# again, the upper bound is exclusive) and how to use default parameters.
-
-import random
-
 
 def roll_dice(rolls, faces=6):
     """Roll a die given number of times and return the sum.
@@ -184,7 +179,7 @@ def roll_dice(rolls, faces=6):
     """
     total = 0
     for x in range(rolls):
-        total += random.randrange(1, faces + 1)
+        total += secrets.SystemRandom().randrange(1, faces + 1)
     return total
 
 

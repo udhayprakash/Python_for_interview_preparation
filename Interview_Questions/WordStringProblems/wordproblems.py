@@ -1,5 +1,5 @@
 from bisect import bisect_left, bisect_right
-from random import choice, sample
+import secrets
 
 # Compute a histogram of individual characters in words.
 
@@ -295,23 +295,23 @@ if __name__ == "__main__":
     pals = palindromes(words)
     print(f"\nThere are {len(pals)} palindromes. ", end="")
     print("Some of them are:")
-    print(", ".join(sample(pals, 10)))
+    print(", ".join(secrets.SystemRandom().sample(pals, 10)))
 
     sems = semordnilap(words)
     print(f"\nThere are {len(sems)} semordnilaps. Some of them are:")
-    print(", ".join(sample(sems, 10)))
+    print(", ".join(secrets.SystemRandom().sample(sems, 10)))
 
     almost = almost_palindromes(words)
     print(f"\nThere are {len(almost)} almost palindromes. ", end="")
     print("Some of them are:")
-    print(", ".join(sample(almost, 10)))
+    print(", ".join(secrets.SystemRandom().sample(almost, 10)))
 
     print("\nLet us next look for some rotodromes.")
     for i in range(2, 13):
         rotos = rotodromes([w for w in words if len(w) == i])
         print(f"There are {len(rotos)} rotodromes of length {i}. ", end="")
         print(f"Some of them are:")
-        print(f"{', '.join(sample(rotos, min(10, len(rotos))))}.")
+        print(f"{', '.join(secrets.SystemRandom().sample(rotos, min(10, len(rotos))))}.")
 
     name = "Donald Erwin Knuth"
     print(f"\nSome consonant rotations of {name!r}.")
@@ -355,7 +355,7 @@ if __name__ == "__main__":
     count, total = 0, 0
     while count < 10:
         total += 1
-        first = choice(words5)
+        first = secrets.SystemRandom().choice(words5)
         best = [first]
         while len(best) < 5:
             better = word_chain(words5, [first], 1, len(best) + 1)
@@ -372,10 +372,10 @@ if __name__ == "__main__":
     elim_dict_list = remain_words(words)
     startwords = list(elim_dict_list[8])
     for i in range(10):
-        word = choice(startwords)
+        word = secrets.SystemRandom().choice(startwords)
         while len(word) > 1:
             print(word, end=" -> ")
-            word = choice(elim_dict_list[len(word)][word])
+            word = secrets.SystemRandom().choice(elim_dict_list[len(word)][word])
         print(word)
 
     print("\nLet us compute all anagrams for the six letter words.")

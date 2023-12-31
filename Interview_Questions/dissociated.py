@@ -1,4 +1,4 @@
-import random
+import secrets
 
 # Read through the text and build a dictionary that, for each found
 # pattern up to length n, gives the string of letters that follow that
@@ -30,7 +30,7 @@ def dissociated_press(table, m, result, maxpat=3):
         follow = table.get(pattern, "")
         if len(follow) > 0:
             # Choose a random continuation for pattern and result.
-            c = random.choice(follow)
+            c = secrets.SystemRandom().choice(follow)
             result += c
             pattern += c
             m -= 1

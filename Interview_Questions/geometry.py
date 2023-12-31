@@ -13,6 +13,8 @@
 # the points are collinear.
 
 
+import secrets
+
 def cross(p1, p2, p3):
     (x1, y1), (x2, y2), (x3, y3) = p1, p2, p3
     return (x2 - x1) * (y3 - y1) - (y2 - y1) * (x3 - x1)
@@ -258,11 +260,10 @@ def closest_points(pts):
 
 
 if __name__ == "__main__":
-    import random
 
     print("Let us compute the convex hull of a big grid.")
     pts = [(x, y) for x in range(100) for y in range(100)]
-    random.shuffle(pts)
+    secrets.SystemRandom().shuffle(pts)
     pts = convex_hull(pts)
     print("The convex hull consists of the four corners:")
     print(pts)
@@ -271,7 +272,7 @@ if __name__ == "__main__":
     print(f"Next, create {m} random points on the plane.")
     pts.add((0, 0))
     while len(pts) < m:
-        pts.add((random.randint(1, m), random.randint(1, m)))
+        pts.add((secrets.SystemRandom().randint(1, m), secrets.SystemRandom().randint(1, m)))
     pts = list(pts)
     print(f"Closest point distance is {closest_points(pts):.3f}.")
 

@@ -12,8 +12,7 @@ restore(short), which expands the shortened string into the original url. If no 
 Hint: What if we enter the same URL twice?
 
 """
-
-import random
+import secrets
 
 URLDict = dict()
 alphabets = "abcdefghijklmnopqrstuvwxyz"
@@ -25,7 +24,7 @@ def createShortURL():
     shortURL = ""
     while shortURL == "":
         while len(shortURL) < 6:
-            shortURL += random.choice(alnum)
+            shortURL += secrets.SystemRandom().choice(alnum)
         if shortURL in URLDict.keys():
             shortURL = ""
     return shortURL

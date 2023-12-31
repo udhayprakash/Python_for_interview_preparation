@@ -1,5 +1,5 @@
-import random
 from math import floor, sqrt
+import secrets
 
 # Given current generation of solution candidates sorted in the order
 # of increasing fitness, compute the next generation of candidates.
@@ -17,8 +17,8 @@ def compute_next_gen(current, fitness, combine, newsize=None, elitism=0):
     while len(next_gen) < newsize:
         # Choose the parents to create two new offspring so that higher
         # fitness solutions have a higher chance of being chosen.
-        i1 = int(floor(sqrt(random.randint(0, n * n - 1))))
-        i2 = int(floor(sqrt(random.randint(0, n * n - 1))))
+        i1 = int(floor(sqrt(secrets.SystemRandom().randint(0, n * n - 1))))
+        i2 = int(floor(sqrt(secrets.SystemRandom().randint(0, n * n - 1))))
         # Create the offspring and add them to the next generation.
         (o1, o2) = combine(current[i1], current[i2])
         next_gen.append(o1)
@@ -32,7 +32,7 @@ def compute_next_gen(current, fitness, combine, newsize=None, elitism=0):
 
 
 def one_point_crossover(s1, s2):
-    i = random.randint(1, len(s1) - 1)
+    i = secrets.SystemRandom().randint(1, len(s1) - 1)
     return (s1[:i] + s2[i:], s2[:i] + s1[i:])
 
 
@@ -42,7 +42,7 @@ def burst_crossover(s1, s2, prob=10):
     for i in range(len(s1)):
         r1 += s1[i]
         r2 += s2[i]
-        if random.randint(0, 99) < prob:
+        if secrets.SystemRandom().randint(0, 99) < prob:
             (s1, s2) = (s2, s1)
     return (r1, r2)
 
@@ -50,7 +50,7 @@ def burst_crossover(s1, s2, prob=10):
 if __name__ == "__main__":
     # Make the randomness repeatable between runs. Change
     # the seed value to get a different random pattern.
-    random.seed(8765)
+    secrets.SystemRandom().seed(8765)
     # Read in the wordlist.
     with open("words_alpha.txt", encoding="utf-8") as f:
         wordlist = [x.strip() for x in f if x.islower()]
@@ -126,10 +126,10 @@ if __name__ == "__main__":
         for i in range(n):
             if forced and forced[i] != "*":
                 pat += forced[i]
-            elif not forced and random.randint(0, 99) < prob:
+            elif not forced and secrets.SystemRandom().randint(0, 99) < prob:
                 pat += "*"
             else:
-                pat += random.choices(chars, weights=cfreq, k=1)[0]
+                pat += secrets.SystemRandom().choices(chars, weights=cfreq, k=1)[0]
         return pat
 
     # Find the best way to fill in the asterisks of the given

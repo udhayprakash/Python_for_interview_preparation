@@ -6,14 +6,14 @@ You are given an array of length n + 1 whose elements belong to the set {1, 2, .
 By the pigeonhole principle, there must be a duplicate. Find it in linear time and space.
 
 """
-import random
+import secrets
 
 
 def generateList():
-    n = random.randint(10, 100)
+    n = secrets.SystemRandom().randint(10, 100)
     l = [x for x in range(1, n)]
-    l.append(random.choice(l))
-    random.shuffle(l)
+    l.append(secrets.SystemRandom().choice(l))
+    secrets.SystemRandom().shuffle(l)
     return l
 
 

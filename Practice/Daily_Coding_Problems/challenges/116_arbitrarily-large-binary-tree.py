@@ -7,8 +7,7 @@ Generate a finite, but an arbitrarily large binary tree quickly in O(1).
 That is, generate() should return a tree whose size is unbounded but finite.
 
 """
-
-import random
+import secrets
 
 
 class Node:
@@ -22,7 +21,7 @@ class Node:
     @property
     def left(self):
         if not self._isLeftEvaluated:
-            if random.random() < 0.5:
+            if secrets.SystemRandom().random() < 0.5:
                 self._left = Node()
             self._isLeftEvaluated = True
         return self._left
@@ -30,7 +29,7 @@ class Node:
     @property
     def right(self):
         if not self._isRightEvaluated:
-            if random.random() < 0.5:
+            if secrets.SystemRandom().random() < 0.5:
                 self._right = Node()
             self._isRightEvaluated = True
         return self._right

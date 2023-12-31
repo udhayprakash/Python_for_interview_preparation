@@ -1,5 +1,7 @@
 # The dictionary of Morse codes and the corresponding letters.
 
+import secrets
+
 codes = {
     ".-": "a",
     "-...": "b",
@@ -67,7 +69,6 @@ def decode_morse(message):
 
 
 if __name__ == "__main__":
-    from random import sample
 
     with open("words_alpha.txt", encoding="utf-8") as f:
         wordlist = [word.strip().lower() for word in f if len(word) < 8]
@@ -76,7 +77,7 @@ if __name__ == "__main__":
     # Convert to set for a quick lookup of individual words.
     words = set(wordlist)
 
-    for text in sample(wordlist, 20):
+    for text in secrets.SystemRandom().sample(wordlist, 20):
         enc = encode_morse(text)
         print(f"The word {text!r} encodes in Morse to {enc!r}.")
         print(f"The Morse code message {enc!r} decodes to words:")

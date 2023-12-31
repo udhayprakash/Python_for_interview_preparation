@@ -9,7 +9,7 @@ Priority
     - scissor > paper
     - paper > rock
 """
-import random
+import secrets
 
 
 def play_with_computer():
@@ -17,7 +17,7 @@ def play_with_computer():
     user_input = input("Enter rock, paper or scissor:").strip().lower()
     if user_input not in ("rock", "paper", "scissor"):
         return "INVALID INPUT"
-    computer_input = random.choice(["rock", "paper", "scissor"])
+    computer_input = secrets.SystemRandom().choice(["rock", "paper", "scissor"])
     print(f"computer_input = {computer_input}")
     if user_input == computer_input:
         return "draw"
@@ -36,7 +36,7 @@ def play_with_computer():
     user_input = input("Enter rock, paper or scissor:").strip().lower()
     if user_input not in ("rock", "paper", "scissor"):
         return "INVALID INPUT"
-    computer_input = random.choice(["rock", "paper", "scissor"])
+    computer_input = secrets.SystemRandom().choice(["rock", "paper", "scissor"])
     print(f"computer_input = {computer_input}")
     if user_input == computer_input:
         return "draw"

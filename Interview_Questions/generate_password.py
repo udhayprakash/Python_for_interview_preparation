@@ -4,13 +4,13 @@
 2. Should have one small, one capital, one number and one special character
 3. Example "I am awesome" -> i@mAw3s0me
 """
-import random
 import string
+import secrets
 
 
 def get_random_position(sentence, _used_indices):
     while True:
-        index = random.randint(0, len(sentence) - 1)
+        index = secrets.SystemRandom().randint(0, len(sentence) - 1)
         if index not in _used_indices:
             return index
 

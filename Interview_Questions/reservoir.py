@@ -1,4 +1,4 @@
-from random import randint
+import secrets
 
 # Randomly choose k elements from those produced by iterator it.
 
@@ -9,7 +9,7 @@ def reservoir(items, k):
         if count < k:  # First k elements build up the reservoir.
             buffer.append(v)
         else:
-            idx = randint(0, count)
+            idx = secrets.SystemRandom().randint(0, count)
             if idx < k:  # The new element hits the reservoir.
                 buffer[idx] = v  # displace some previous element
         count += 1
