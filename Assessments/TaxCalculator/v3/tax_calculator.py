@@ -4,7 +4,7 @@ Main entry point for the tax calculator CLI.
 import argparse
 
 from bands.band_manager import BandManager
-from calculation.tax_calculator import TaxCalculator
+from calculation import TaxCalculator
 from utils.logger import Logger
 
 
