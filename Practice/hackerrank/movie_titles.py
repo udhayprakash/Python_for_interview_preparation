@@ -32,7 +32,7 @@ def getMovieTitles(substr):
     titles = []
     while True:
         url = f"https://jsonmock.hackerrank.com/api/movies/search/?Title={substr}&page={page}"
-        response_data = requests.get(url).json()
+        response_data = requests.get(url, timeout=60).json()
         if response_data["page"] == response_data["total_pages"]:
             break
         titles.extend([each["Title"] for each in response_data["data"]])

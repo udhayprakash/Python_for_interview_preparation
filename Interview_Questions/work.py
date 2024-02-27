@@ -27,7 +27,7 @@ dw = csv.DictWriter(fh, fieldnames=headers)
 dw.writeheader()
 i = 0
 while i < 10:
-    response = requests.get("https://pipl.ir/v1/getPerson")
+    response = requests.get("https://pipl.ir/v1/getPerson", timeout=60)
     # pprint(response.json()['person']['personal'].keys())
     dw.writerow(response.json()["person"]["personal"])
     i += 1
