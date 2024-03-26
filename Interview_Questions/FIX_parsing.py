@@ -61,12 +61,12 @@ def complete_task(log_lines: List[str]):
     prices = result.get(50.0, [])
 
     # buys
-    buys_sum = sum([(prices[i] * qty) for i, qty in enumerate(qtys) if qty > 0])
-    weighted_buys_avg = buys_sum / sum([qty for qty in qtys if qty > 0])
+    buys_sum = sum((prices[i] * qty) for i, qty in enumerate(qtys) if qty > 0)
+    weighted_buys_avg = buys_sum / sum(qty for qty in qtys if qty > 0)
 
     # Sells
-    sells_sum = sum([(prices[i] * qty) for i, qty in enumerate(qtys) if qty < 0])
-    weighted_sells_avg = sells_sum / sum([qty for qty in qtys if qty < 0])
+    sells_sum = sum((prices[i] * qty) for i, qty in enumerate(qtys) if qty < 0)
+    weighted_sells_avg = sells_sum / sum(qty for qty in qtys if qty < 0)
 
     print("qty weighted avg buy price", weighted_buys_avg)
     print("qty weighted avg sells price", weighted_sells_avg)
@@ -90,12 +90,12 @@ def complete_task(log_lines: str) -> None:
     prices = sorted(map(float, re.findall(r"\|?50=(\d+\.\d+)\|+?", log_lines)))
 
     # buys
-    buys_sum = sum([(prices[i] * qty) for i, qty in enumerate(qtys) if qty > 0])
-    weighted_buys_avg = buys_sum / sum([qty for qty in qtys if qty > 0])
+    buys_sum = sum((prices[i] * qty) for i, qty in enumerate(qtys) if qty > 0)
+    weighted_buys_avg = buys_sum / sum(qty for qty in qtys if qty > 0)
 
     # Sells
-    sells_sum = sum([(prices[i] * qty) for i, qty in enumerate(qtys) if qty < 0])
-    weighted_sells_avg = sells_sum / sum([qty for qty in qtys if qty < 0])
+    sells_sum = sum((prices[i] * qty) for i, qty in enumerate(qtys) if qty < 0)
+    weighted_sells_avg = sells_sum / sum(qty for qty in qtys if qty < 0)
 
     print("qty weighted avg buy price", weighted_buys_avg)
     print("qty weighted avg sells price", weighted_sells_avg)
