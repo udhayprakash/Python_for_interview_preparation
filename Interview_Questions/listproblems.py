@@ -189,7 +189,7 @@ if __name__ == "__main__":
         v1 = [secrets.SystemRandom().randint(0, 1) for i in range(8)]
         v2 = [secrets.SystemRandom().randint(0, 1) for i in range(8)]
         # No vector can ever be dissimilar from itself.
-        if any([dissimilarity(v1, v1, kind) != 0 for kind in kinds]):
+        if any(dissimilarity(v1, v1, kind) != 0 for kind in kinds):
             print("Something is hinky with dissimilarities!")
         res = [f"{dissimilarity(v1, v2, kind):.4f}" for kind in kinds]
         res = " ".join(res)

@@ -3,7 +3,7 @@ def minimum_suffix(words):
     i = 1
     while True:
         suffic = min_wrd[-i:]
-        if all([word.endswith(suffic) for word in words]):
+        if all(word.endswith(suffic) for word in words):
             i += 1
         else:
             if i == 1:
