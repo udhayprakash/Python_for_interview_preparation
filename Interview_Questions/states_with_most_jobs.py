@@ -13,11 +13,10 @@ to you when writing or editing code.
 """
 import os
 
-import requests
-
 # pip3 install python-dotenv
 # Load .env file using:
 from dotenv import load_dotenv
+from security import safe_requests
 
 load_dotenv("states_with_most_jobs.ini")
 
@@ -59,8 +58,7 @@ def get_data(url, host_dns, _payload):
     authKey = os.getenv("authKey")
     userAgent = os.getenv("userAgent")  # 'petercho39@gmail.com'
 
-    r = requests.get(
-        url,
+    r = safe_requests.get(url,
         headers={
             "Host": host_dns,
             "User-Agent": userAgent,

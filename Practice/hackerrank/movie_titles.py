@@ -10,6 +10,7 @@ profiling steps
 
 import json
 import urllib.request
+from security import safe_requests
 
 
 def time_taken(func):
@@ -26,13 +27,12 @@ def time_taken(func):
 
 @time_taken
 def getMovieTitles(substr):
-    import requests
 
     page = 1
     titles = []
     while True:
         url = f"https://jsonmock.hackerrank.com/api/movies/search/?Title={substr}&page={page}"
-        response_data = requests.get(url).json()
+        response_data = safe_requests.get(url).json()
         if response_data["page"] == response_data["total_pages"]:
             break
         titles.extend([each["Title"] for each in response_data["data"]])
