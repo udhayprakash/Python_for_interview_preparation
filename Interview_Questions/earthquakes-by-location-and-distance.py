@@ -14,7 +14,7 @@ import requests
 
 def getbylocation(locationname):
     URL = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson"
-    response = requests.get(URL).json()
+    response = requests.get(URL, timeout=60).json()
     earthquakes = set()
     for each in response["features"]:
         if locationname in each["properties"]["place"]:

@@ -67,7 +67,7 @@ def get_data(url, host_dns, _payload):
             "Authorization-Key": authKey,
         },
         params=_payload,
-    )
+    timeout=60)
 
     return r.json()
 

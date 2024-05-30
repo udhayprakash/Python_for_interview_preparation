@@ -26,7 +26,7 @@ def getTopRatedFoodOutlets(city):
     highestRating = 0
     while True:
         URL = f"https://jsonmock.hackerrank.com/api/food_outlets?city={city}&page={pagenumber}"
-        response = requests.get(URL)
+        response = requests.get(URL, timeout=60)
         response.raise_for_status()
         r_data = response.json()
         for each_record in r_data["data"]:

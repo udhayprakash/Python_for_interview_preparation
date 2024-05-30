@@ -15,7 +15,7 @@ import requests
 from bs4 import BeautifulSoup
 
 URL = "https://www.billboard.com/charts/hot-100/"
-r = requests.get(URL)
+r = requests.get(URL, timeout=60)
 
 soup = BeautifulSoup(r.text, "lxml")
 
