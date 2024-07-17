@@ -1,12 +1,12 @@
 #!/usr/bin/python
-import requests
+from security import safe_requests
 
 
 def get_number_of_movies(sub_str):
     end_point = "https://jsonmock.hackerrank.com/api/movies/search/?Title={}".format(
         sub_str
     )
-    response = requests.get(end_point)
+    response = safe_requests.get(end_point)
     return response.json()["total"]
 
 

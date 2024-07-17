@@ -1,13 +1,8 @@
 #!/bin/python3
 
-import math
 import os
-import random
-import re
-import sys
 from collections import defaultdict
-
-import requests
+from security import safe_requests
 
 #
 # Complete the 'getTopRatedFoodOutlets' function below.
@@ -26,7 +21,7 @@ def getTopRatedFoodOutlets(city):
     highestRating = 0
     while True:
         URL = f"https://jsonmock.hackerrank.com/api/food_outlets?city={city}&page={pagenumber}"
-        response = requests.get(URL)
+        response = safe_requests.get(URL)
         response.raise_for_status()
         r_data = response.json()
         for each_record in r_data["data"]:
