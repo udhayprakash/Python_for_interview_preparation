@@ -1,3 +1,70 @@
+Q) Query to Remove duplicate records from a table
+
+	WITH CTE AS(
+	   SELECT ROW_NUMBER() OVER(
+	       PARTITION BY column1, column2, column3
+	       ORDER BY column1) AS RowNumber
+	   FROM your_table)
+	DELETE FROM CTE
+	WHERE RowNumber > 1
+
+Q) Create a table with even numbered records
+	CREATE TABLE even_records AS
+	SELECT *
+	FROM original_table
+	WHERE MOD(id, 2) = 0;
+
+=================================================================
+MSSQL Employee Promotions
+
+Microsoft SQL version: 12.0
+
+In this MSSQL challenge, your query should identify employees who have a higher salary than their manager. Display each employee's Name, Salary and ManagerName. If the employee does not have a manager, the ManagerName should be displayed as 'No manager'. The result should be ordered by the difference between the employee`s and their manager`s salaries in descending order. Additionally, include column titled PromotionOpportunity that indicates 'YES' if the employee`s salary is higher than their manager`s and 'no' otherwise.
+
+Table Name: maintable_S8A93
+
+Table Schema
+-------------------------------------------------------
+﻿ID		Name			DivisionID	ManagerID	Salary
+-------------------------------------------------------
+﻿356		Daniel Smith	100			133			40000
+122		Arnold Sully	101			null		60000
+467		Lisa Roberts	100			null		80000
+112		Mary Dial		105			467			65000
+775		Dennis Front	103			null		90000
+111		Larry Weis		104			35534		75000
+222		Mark Red		102			133			86000
+577		Robert Night	105			12353		76000
+133		Susan Wall		105			577			110000
+-------------------------------------------------------
+﻿
+Correct below SQL query
+
+	WITH EmployeeManager AS (
+		SELECT 
+			E1.Name AS Name,
+			CAST(E1.Salary AS FLOAT) AS Salary,
+			ISNULL(E2.Name, 'No manager') AS ManagerName,
+			CAST(ISNULL(E2.Salary, 0) AS FLOAT) AS ManagerSalary,
+			CASE 
+				WHEN CAST(E1.Salary AS FLOAT) > CAST(ISNULL(E2.Salary, 0) AS FLOAT) THEN 'YES'
+				ELSE 'NO'
+			END AS PromotionOpportunity
+		FROM 
+			maintable_S8A93 E1
+		LEFT JOIN 
+			maintable_S8A93 E2 ON E1.ManagerID = E2.ID
+	)
+	SELECT 
+		Name,
+		Salary,
+		ManagerName,
+		PromotionOpportunity
+	FROM 
+		EmployeeManager
+	ORDER BY 
+		(Salary - ManagerSalary) DESC;
+===================================================================
 https://www.w3schools.com/sql/trysql.asp?filename=trysql_select_all
 
 A) What are the products ordered by customerId =4 (Around the horn)
