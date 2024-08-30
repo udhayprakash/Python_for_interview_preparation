@@ -1,12 +1,14 @@
 DB Experience
 =============
-- I didnt work on database administration, but with development work only
 - As a developer, I worked with all kinds of features, except managing the databases
-- In terms of features, I worked with
-	database design & Entity-Relationship Diagrams
-	creating tables and establishing relations
-	creating db triggers, db views, SQL procs, etc
-	Also, Performance optimization, Indexing
+- In terms of features, I worked with,
+	- Data Modelling, design and creating Entity-Relationship diagrams
+	- creating tables and establishing relations
+	- creating db triggers, db views, stored procedures, user-defined functions, etc
+	- Wrote complex queries involving multiple joins, subqueries, and window functions.
+	- Experience with performance tuning and query optimization, including analyzing and improving execution plans.
+	- Worked with various SQL dialects including PostgreSQL, MySQL, Oracle, and SQL Server.
+	- Experience with handling large datasets and writing efficient queries for big data environments like Hive and Presto.
 
 Data Sources
 	- both internal and external to the organization
