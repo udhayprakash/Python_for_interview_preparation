@@ -417,7 +417,7 @@ OOP
 	- Generally, when some code is repeating, we will create a function, reuse the code.
 	- If there were more than one function, with some part of the code which is common among all, in that case, we extract common code, create a closure for it, and use it as a decorator.
 	- built-in decorators are classmethod, staticmethod and property
-	- I created custom decorators for calculating the time taken by functions, or like logging the events, etc
+	- Also, I created custom decorators for calculating the time taken by functions, exception-handling, or like logging the events, etc
 	- Advantage - better code reusability
 	- No performance change, as same code lines will execute
 
