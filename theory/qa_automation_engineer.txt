@@ -1,0 +1,49 @@
+INTRODUCTION:
+I am a QA Automation Developer specializing in Python, with extensive experience in test automation for web, mobile, and API testing. My work is split approximately 70% on test automation development and 30% on test strategy and manual testing.
+In Test Automation:
+
+I've developed robust automation frameworks using Python for web, mobile, and API testing.
+For web automation, I've extensively used Selenium WebDriver with Python bindings.
+In mobile testing, I've worked with Appium for both Android and iOS platforms.
+For API testing, I've utilized libraries like requests and pytest-bdd for behavior-driven development.
+
+In Test Frameworks:
+
+I've implemented and maintained Page Object Model (POM) design patterns for better code organization and reusability.
+I've worked with test runners like pytest and unittest for executing test suites.
+I've integrated reporting tools like Allure and pytest-html for comprehensive test result analysis.
+
+In Continuous Integration/Continuous Deployment (CI/CD):
+
+I've integrated automated tests with CI/CD pipelines using tools like Jenkins, GitLab CI, and GitHub Actions.
+I've set up automated test execution as part of the deployment process to ensure quality at each release.
+
+In Version Control and Collaboration:
+
+I'm proficient with Git for version control and have experience with collaborative development using GitHub and GitLab.
+I've participated in code reviews to maintain code quality and share knowledge within the team.
+
+In Test Data Management:
+
+I've worked with various databases including MySQL, PostgreSQL, and MongoDB for test data setup and verification.
+I've created data generation scripts and managed test environments to ensure consistent and reliable test execution.
+
+In Performance and Load Testing:
+
+I've used tools like Locust and JMeter to create and execute performance tests.
+I've analyzed performance metrics and provided insights for application optimization.
+
+In Test Practices:
+
+I follow test-driven development (TDD) principles, writing tests before implementing features.
+I've created comprehensive test plans and test cases, ensuring thorough coverage of application functionalities.
+I've performed both functional and non-functional testing, including usability, security, and accessibility testing.
+
+In Collaboration:
+
+I've worked closely with developers, product managers, and other stakeholders to ensure quality throughout the software development lifecycle.
+I've participated in Agile ceremonies, contributing to sprint planning, daily stand-ups, and retrospectives.
+
+For Test Management:
+
+I've used tools like JIRA and TestRail for test case management, defect tracking, and reporting.
