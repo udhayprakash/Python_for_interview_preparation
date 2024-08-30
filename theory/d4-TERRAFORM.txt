@@ -1,4 +1,16 @@
+Terraform Experience
+======================
+I used Terraform to manage infrastructure across AWS Cloud, Azure and Onprime environments
+	- Developing modular and reusable Terraform configurations for various infrastructure components like VPCs, EC2 instances, RDS databases, and S3 buckets.
+	- Implementing state management strategies, including using remote state storage and state locking to enable team collaboration.
+	- Creating CI/CD pipelines for infrastructure deployment, integrating Terraform with tools like Jenkins or GitLab CI.
+	- Managing multiple environments (dev, staging, prod) using Terraform workspaces or separate state files.
+	- Implementing best practices for security and compliance, including using variables for sensitive information and integrating with secrets management systems.
+	- Developing custom Terraform modules to encapsulate complex infrastructure patterns and promote reusability across projects.
+	- Troubleshooting and optimizing Terraform configurations, including resolving dependency issues and improving plan/apply performance.
+
 IaaC
+====
 	- Infrastructure as a Code
 	- Provisioning infrastructure through software to achieve consistent and predictable deployments.
 	- Benifits
