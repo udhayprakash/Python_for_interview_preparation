@@ -4,10 +4,11 @@
 	- Unit testing – with unittest mocking or pytest fixture, for mocking 3rd party REST APIs or db interactions
 	- Integration testing - to test the end to end flow
 	- Regression testing - or load testing to check the load bearing capability
-		- used Jmeter scripts for the same.
+		- used Jmeter scripts for the same. And, python locust module too.
 	- API testing with postman & its automation with newman scripts
 	- Functional testing With selenium. Wrote python scripts using pyselenium module
-	- Also, Behavior Driven Development(BDD) with Behave framework
+	- Also, Behavior Driven Development(BDD) with Behave framework.
+	- And, In one project, did security testing using tools like OWASP ZAP or Burp suite, for verifying authentication, authorization, input validations, vulnerability scanning, etc.
 
 - Generally, we follow TDD - test driven development
 - It means that
