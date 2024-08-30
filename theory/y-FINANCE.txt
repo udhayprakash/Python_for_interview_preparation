@@ -25,6 +25,18 @@ Market
 		- This market is used to hedge against price risk or to speculate on future price movements.
 
 
+Asset 
+=====
+	An asset is any item of economic value that can be owned or controlled to produce value. In finance, assets are typically resources that can generate cash flows.
+
+- Types of assets / Classification:
+	a) Equities (stocks)
+	b) Fixed Income (bonds)
+	c) Cash and Cash Equivalents
+	d) Real Estate
+	e) Commodities
+	f) Derivatives (options, futures, swaps)
+
 Financial Instruments
 =====================
 	1) Stocks:
@@ -113,9 +125,16 @@ Bonds
 
 	- Yield:
 		- return that an investor expects to receive from the bond.
+	- yield curve
+		- line that plots the interest rates of bonds having equal credit quality but differing maturity dates.
+		- The slope of the yield curve gives an idea of future interest rate changes and economic activity.
 
 	- Credit rating:
 		- measure of the issuer's ability to repay the bond.
+
+	- duration in bond investing
+		- Duration is a measure of a bond's sensitivity to interest rate changes.
+		- It indicates how much the price of a bond is likely to change when interest rates move.
 
 	- Default:
 		- A default occurs when the issuer of a bond fails to make a payment on the bond.
@@ -128,11 +147,11 @@ Bonds
 
 	- Callable bond			: bond that can be repurchased by the issuer before maturity.
 	- Convertible bond		: bond that can be converted into shares of stock.
-	- Floating-rate bond	: bond that pays interest that fluctuates with market interest rates.
+	- Floating-rate bond	        : bond that pays interest that fluctuates with market interest rates.
 	- Zero-coupon bond		: bond that does not pay interest until maturity.
 	- High-yield bond		: (junk bond), is a bond that is considered to be high-risk.
 	- Subordinated bond		: bond that has a lower priority than other types of bonds, such as secured bonds.
-	- Inflation-linked bond	: bond that is linked to the rate of inflation.
+	- Inflation-linked bond	        : bond that is linked to the rate of inflation.
 
 
 Debt Securities
@@ -226,22 +245,35 @@ role of front desk person for primary market debentures
 ----------------------------------------------------------------------------------------
 
 Value at Risk (VaR)
-	-  risk management metric that quantifies potential loss of an investment or portfolio over a specific time horizon, at a certain level of confidence
+	-  risk management metric/statistical measure that estimates the potential loss in value of an asset or portfolio over a defined period for a given confidence interval. For example, a 1-day 95% VaR of $1 million means there's a 5% chance that the portfolio will lose more than $1 million in a day.
 	-  estimates the maximum loss that an investment is likely to experience under normal market conditions over a given time period and with a specified probability
-
-	- VAR is determined by three variables:
-		1) period,
-		2) confidence level, and
-		3) the size of the possible loss.
-	- There are three methods of calculating Value at Risk (VaR) including
-		1) the historical method,
-		2) the variance-covariance method, and
-		3) the Monte Carlo simulation.
 
 	- WHY VAR
 		- It will address questions like:
 			1) What can I expect to lose in dollars with a 95% or 99% level of confidence next month?
 			2) What is the maximum percentage I can expect to lose with 95% or 99% confidence over the next year?
+	- VAR is determined by three variables:
+		1) period,
+		2) confidence level, and
+		3) the size of the possible loss.
+
+
+	- VaR Modelling
+		It determines the potential for loss in the entity being assessed, and the probability of occurrence for the defined loss.
+	
+	- Methods of Calculating VaR
+		1) Parametric (Variance-Covariance) Method: 
+			- This method assumes that stock returns are normally distributed.
+			- It calculates VaR using standard statistical techniques that are based on the mean (expected return) and standard deviation (volatility) of the investment’s returns.
+	
+		2) Historical Simulation Method:
+			- This method uses historical data to generate a probability distribution.
+			- That is, it re-organizes actual historical returns, putting them in order from worst to best. It then assumes that history will repeat itself, from a risk perspective1.
+	
+		3) Monte Carlo Simulation Method:
+			- This method uses computerized mathematical techniques that allow people to account for risk in quantitative analysis and decision making. 
+			- It provides a range of possible outcomes and the probabilities they will occur for any choice of action
+
 
 Risk-Adjusted Return (RAR)
 	- calculates the returns earned, relative to the volatility.
@@ -322,32 +354,118 @@ Liquidity Management(LM), for Payments
 
 
 
+- Derivative
+=============
+	a financial instrument whose value depends on (or derives from) the values of other, more basic, underlying variables. Very often the variables underlying derivatives are the prices of traded assets.
+	It is a financial security with a value that is reliant upon or derived from, an underlying asset or group of assets. 
+	active trading in credit derivatives, electricity derivatives, weather derivatives, and insurance derivatives algorithmic trading (also known as blackbox trading, automated trading, high-frequency trading, or robo trading).
+	Common derivatives include futures, forwards, options, and swaps.
 
 
-Commodity Trade
-===============
+open outcry system -> Electronic Trading System 
+over-the-counter market
+	Trades are done over the phone and are
+	usually between two financial institutions or between a financial institution and one of
+	its clients (typically a corporate treasurer or fund manager). Financial institutions often
+	act as market makers for the more commonly traded instruments. This means that they
+	are always prepared to quote both a bid price (a price at which they are prepared to
+	buy) and an offer price (a price at which they are prepared to sell).
+	Much larger than exchange traded market. 
+	
+Common Derivatives 
+------------------
+	- Spot Contract 
+		- agreement to buy or sell an asset today
 
-Futures contract
-	An agreement between two parties for a delivery of a commodity at a future date
+	- Forward Contract
+		- agreement to buy or sell an asset at a certain future time for a certain price.
+		- Here, buyer will take long position, and selling will take the short position
 
-various approaching for trading in market
-	Hedging
+	- Future contracts 
+		- same as forward contracts, but traded in exchange.
+		- An agreement to buy or sell a specific asset at a predetermined price at a specified time in the future.
+		- Futures are used for hedging or speculating on the price movement of the underlying asset.
 
-	Arbitrage
-	Directional
+		- futures vs forwards
+			While both are contracts to exchange an asset at a future date, futures are standardized and traded on exchanges, while forwards are customized and traded over-the-counter.
 
+	- option
+		An option is a contract that gives the buyer the right, but not the obligation, to buy (call option) or sell (put option) an underlying asset at a specific price on or before a certain date.
+		- Traded both on exchanges and in the over-the-counter market
+		types:
+			1. call option gives the holder the right to buy the underlying asset by a certain date for a certain price
+			2. put option gives the holder the right to sell the underlying asset by a certain date for a certain price.
+			
+		Price of contract   ---->  exercise price or strike price
+		date in the contract---->  expiration date or maturity
+		
+		American options can be exercised at any time up to the expiration date.
+		European options can be exercised only on the expiration date itself
+		
+		It costs nothing to enter into a forward or futures contract, there is a cost to acquiring an option.
+		
+		The price of a call option decreases as the strike price increases, while the price of a put option increases as the strike price increases. Both types of option tend to become more valuable as their time to maturity increases
+		
+		
+	participants in options markets:
+		1. Buyers of calls
+		2. Sellers of calls
+		3. Buyers of puts
+		4. Sellers of puts
 
-﻿
+		Buyers are referred to as having long positions; sellers are referred to as having short
+		positions. Selling an option is also known as writing the option.
 
-Hedging
-	> What	: An investment to mitigate risk from price fluctuations in the primary investment asset.
-	> Why	: To mitigate the risk on underlying asset for farmers and investors.
-	> How	: Hedging between underlying asset and corresponding Futures/Options contracts.
+Trader categories
+	1. Hedgers use derivatives to reduce the risk that they face from potential future movements in a market variable.
+	2. Speculators use them to bet on the future direction of a market variable.
+	3. Arbitrageurs take offsetting positions in two or more instruments to lock in a profit.
+
+Hedge Fund
+	> What			: An investment to mitigate risk from price fluctuations in the primary investment asset.
+	> Why			: To mitigate the risk on underlying asset for farmers and investors.
+	> How			: Hedging between underlying asset and corresponding Futures/Options contracts.
 	> Prerequisite	: High correlation is required between the hedging instruments.
 	> Advantage		: Less investment for mitigation from price uncertainty.
 
+	- Have no regulations, like mutual funds. 
+	- This gives them a great deal of freedom to develop sophisticated, unconventional, and proprietary investment strategies.
+	- The fees charged by hedge fund managers are dependent on the fund’s performance and are relatively high—typically 1 to 2% of the amount invested plus 20% of the profits.
+	
+	- Hedge Fund manager uses derivatives to setup a speculative or arbitrage position.
+	- For every investment strategy, 
+		1. Evaluate the risks to which the fund is exposed
+		2. Decide which risks are acceptable and which will be hedged
+		3. Devise strategies (usually involving derivatives) to hedge the unacceptable risks.
+
+Strategies Examples
+	Long/Short Equities: 
+		Purchase securities considered to be undervalued and short those considered to be overvalued in such a way that the exposure to the overall direction of the market is small.
+	Convertible Arbitrage:
+		Take a long position in a convertible bond combined with an actively managed short position in the underlying equity.
+	Distressed Securities:
+		Buy securities issued by companies in or close to bankruptcy.
+	Emerging Markets:
+		Invest in debt and equity of companies in developing or emerging countries and in the debt of the countries themselves.
+	Global Macro:
+		Carry out trades that reflect anticipated global macroeconomic trends.
+	Merger Arbitrage:
+		Trade after a merger or acquisition is announced so that a profit is made if the announced deal takes place.
+
+- Black-Scholes model
+	Black-Scholes model is a mathematical model used to determine the fair price or theoretical value for a call or put option based on five key variables: stock price, strike price, time until expiration, risk-free rate, and volatility.
+
+
+- Greeks in options trading
+	The Greeks are a set of risk measures used in options trading. They include:
+		Delta	: Rate of change in option value per unit change in underlying asset price
+		Gamma	: Rate of change in delta per unit change in underlying asset price
+		Theta	: Rate of change in option value with respect to time
+		Vega	: Rate of change in option value per unit change in volatility
+
 ﻿
 Arbitrage
+=========
 	Calendar Spread:
 		➤ What: Difference between two Futures Calendar contracts.
 		➤ Attributes:
@@ -384,3 +502,131 @@ Trading Concept
 		> Choose market segment (Equity/Commodity/FX/Crypto)
 		> Back testing period
 		> Automation tools/languages
+
+
+- Portfolio
+	A portfolio is a collection of financial assets held by an individual or institution. It may include various types of assets to diversify risk.
+
+	
+- Risk in finance
+	Risk in finance refers to the possibility that an investment's actual return will differ from the expected return.
+	It often implies the potential for financial loss.
+
+
+- common types of financial risks?
+
+	a) Market Risk		: Risk of losses due to movements in market prices
+	b) Credit Risk		: Risk that a borrower will default on debt
+	c) Liquidity Risk	: Risk that an asset can't be bought or sold quickly enough
+	d) Operational Risk	: Risk of loss due to failed internal processes, people, or systems
+
+
+- Volatility
+	It is a statistical measure of the dispersion of returns for a given security or market index. Higher volatility means the price of the asset can change dramatically over a short time period in either direction.
+
+
+- correlation in finance
+	Correlation measures how two securities move in relation to each other. A correlation of 1 means perfect positive correlation, -1 means perfect negative correlation, and 0 means no correlation.
+
+
+- diversification
+	Diversification is a risk management strategy that mixes a variety of investments within a portfolio to reduce the impact of any single investment's performance on the overall portfolio.
+
+- alpha
+	Alpha is a measure of an investment's performance on a risk-adjusted basis relative to a benchmark index. A positive alpha of 1.0 means the investment has outperformed its benchmark index by 1%.
+
+- beta
+	Beta is a measure of a stock's volatility in relation to the overall market. A beta of 1 indicates that the stock's price moves with the market. A beta greater than 1 is more volatile than the market, while a beta less than 1 is less volatile.
+
+- Sharpe ratio
+	Sharpe ratio is a way to examine the performance of an investment by adjusting for its risk. It is the average return earned in excess of the risk-free rate per unit of volatility or total risk.
+
+- arbitrage
+	Arbitrage is the simultaneous purchase and sale of an asset to profit from a difference in the price.
+	It exploits short-lived variations in the price of identical or similar financial instruments in different markets or forms.
+
+
+- leverage
+	Leverage refers to the use of borrowed capital to increase the potential return of an investment.
+	While it can multiply gains, it can also multiply losses.
+
+
+- backtesting
+	Backtesting is the process of testing a trading strategy or analytical model using historical data to see how accurately the strategy or model would have predicted actual results.
+
+
+- Portfolio Risk Decomposition
+	Its a method of breaking down the total risk of a portfolio into its constituent parts.
+	This typically involves analyzing the contribution of each asset or factor to the overall portfolio risk.
+	It helps in understanding which elements are driving the portfolio's risk and can assist in risk management and portfolio optimization.
+
+
+- Capital Asset Pricing Model (CAPM)?
+	CAPM is a model that describes the relationship between the expected return of an asset and its risk. It suggests that the expected return of an asset is the risk-free rate plus a risk premium based on the asset's beta.
+
+- Efficient frontier
+	It is a set of optimal portfolios that offer the highest expected return for a defined level of risk or the lowest risk for a given level of expected return.
+
+
+
+Additional Relevant Concepts:
+
+	Risk-adjusted performance measures
+	Stress testing and scenario analysis
+	Factor models (e.g., Fama-French three-factor model)
+	Time series analysis in finance
+	Portfolio optimization techniques
+	Risk budgeting
+	Liquidity risk modeling
+	Credit risk modeling
+	Market microstructure
+	High-frequency trading considerations
+	Machine learning applications in quantitative finance
+
+Financial Data Sources and Systems:
+
+	Understanding of MSCI Barra risk models
+	Bloomberg risk systems
+	FactSet
+	Data cleaning and preprocessing for financial data
+	Handling time series data in finance
+
+Risk Management and Analytics:
+
+	Portfolio VaR (parametric and conditional)
+	Monte-Carlo VaR (MCVaR)
+	Scenario-based portfolio P&L analysis
+	Risk factor decomposition
+	Attribution analysis (risk-based and return-based)
+	Tail risk measures (e.g., Expected Shortfall)
+	Incorporating transaction costs in risk models
+	Multi-asset class risk modeling
+
+Quantitative Methods and Techniques:
+
+	Statistical hypothesis testing in finance
+	Regression analysis for financial modeling
+	Time series forecasting methods (e.g., ARIMA, GARCH)
+	Principal Component Analysis (PCA) in finance
+	Copula theory for dependency modeling
+	Bayesian methods in finance
+	Numerical methods for option pricing (e.g., finite difference methods)
+
+Regulatory and Compliance:
+
+	Understanding of Basel III regulations
+	Value at Risk (VaR) regulatory requirements
+	Stress testing requirements for financial institutions
+	Model risk management
+	
+
+
+Python Modules
+===============
+
+	
+Dataset 
+========	
+	Bloomberg
+	FactSet
+
