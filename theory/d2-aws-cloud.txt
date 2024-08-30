@@ -87,11 +87,16 @@ ec2 vs Lambda
 Lambda
 =======
 IN AWS Lambda,
-1) I worked on creating event-triggered jobs, by configuring s3 bucket events like new file creation, file update/deletion, etc.
-2) Also, configured lambda to run with AWS Event bridge, based events too.
-3) And, worked on creating time-triggered jobs.
-4) And, worked with Step functions, for integrating multiple jobs.
-5) Within lambdas, I used boto3 to connect with any AWS resource;
+1) I  developed Lambda functions to process data streams from Kinesis, transforming and loading data into S3 or DynamoDB.
+2) Also, Creating API endpoints using Lambda and API Gateway, often for data retrieval or updates.
+3) And, worked on creating event-triggered jobs, by configuring s3 bucket events like new file creation, file update/deletion, etc.
+4) Also, configured lambda to run with AWS Event bridge, based events too, and time-triggered jobs, with Event Scheduler
+5) And, worked with Step functions, for integrating multiple jobs.
+6) Optimizing Lambda functions for performance and cost, including managing dependencies, minimizing cold starts, and efficient memory allocation.
+7) Implementing scheduled tasks using Lambda and CloudWatch Events for regular data updates or maintenance jobs.
+8) Integrating Lambda with other AWS services like SQS, SNS, and Step Functions for complex workflows.
+
+9) Within lambdas, I used boto3 to connect with any AWS resource;
    and AWS RDS proxy for RDS database integrations.
 
 - Lambda Triggers
@@ -114,15 +119,11 @@ IN AWS Lambda,
 	- scheduled trigger with rate() function, we can trigger lambda, for every 5min, 1min, etc
 
 - Lambda layer
-	- It is an archive containing additional code, such as libraries, dependencies, or
-	  even custom runtimes.
-	- When you include a layer in a function, the contents are extracted to the /opt
-	  directory in the execution environment.
+	- It is an archive containing additional code, such as libraries, dependencies, or even custom runtimes.
+	- When you include a layer in a function, the contents are extracted to the /opt directory in the execution environment.
 
-	- For a Lambda function, there is a maximum of 5 layers and a maximum size
-	  for all layers of 250 MB (uncompressed).
-	  This maximum applies regardless of whether you are using an official AWS
-	  runtime or a custom runtime.
+	- For a Lambda function, there is a maximum of 5 layers and a maximum size for all layers of 250 MB (uncompressed).
+	  This maximum applies regardless of whether you are using an official AWS runtime or a custom runtime.
 	  The Application Security layer size is about 30 MB.
 
 - chalice framework
