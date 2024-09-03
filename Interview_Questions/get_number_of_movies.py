@@ -6,7 +6,7 @@ def get_number_of_movies(sub_str):
     end_point = "https://jsonmock.hackerrank.com/api/movies/search/?Title={}".format(
         sub_str
     )
-    response = requests.get(end_point)
+    response = requests.get(end_point, timeout=60)
     return response.json()["total"]
 
 

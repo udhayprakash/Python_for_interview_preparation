@@ -27,7 +27,7 @@ class NetworkDeviceChecker:
     def check_mac_address(self, mac_address):
         """Check the status of a single MAC address using the RESTful API."""
         try:
-            response = requests.get(self.api_base_url + mac_address)
+            response = requests.get(self.api_base_url + mac_address, timeout=60)
             response.raise_for_status()
 
             result = {
